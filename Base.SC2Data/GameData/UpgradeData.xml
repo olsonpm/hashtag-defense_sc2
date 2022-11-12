@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUpgrade id="BunkerTurretDamageHd">
+        <EffectArray Reference="Effect,ShrikeTurretDamageHd,Amount" Value="0.8"/>
+        <EffectArray Reference="Weapon,ShrikeTurretHd,Level" Value="1"/>
+        <MaxLevel value="100"/>
+    </CUpgrade>
+    <CUpgrade id="PhotonCannonDamageHd">
+        <EffectArray Reference="Effect,PhotonCannonUHd,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,PhotonCannonHd,Level" Value="1"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="SpineCrawlerDamageHd">
+        <EffectArray Reference="Effect,ImpalerTentacleDamageHd,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,ImpalerTentacleHd,Level" Value="1"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value=""/>
+        <AffectedUnitArray value="SpineCrawlerHd"/>
+    </CUpgrade>
+    <CUpgrade id="UnitDamageZergHd">
+        <EffectArray Reference="Effect,GuassRifleInfestedTerranHd,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,GuassRifleInfestedTerranHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,AcidSalivaDamageHd,Amount" Value="2.5"/>
+        <EffectArray Reference="Weapon,AcidSalivaRoachHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,LurkerDamageHd,Amount" Value="1.5"/>
+        <EffectArray Reference="Weapon,SpinesLurkerHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,NeedleSpinesDamageHd,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,NeedleSpinesHydraliskHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,GlaiveWurmImpact1DamageHd,Amount" Value="3"/>
+        <EffectArray Reference="Effect,GlaiveWurmImpact2DamageHd,Amount" Value="2"/>
+        <EffectArray Reference="Effect,GlaiveWurmImpact3DamageHd,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,GlaiveWurmHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,CrucioShockCannonBlastInfestedSiegeTankHd,Amount" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonDirectedInfestedSiegeTankHd,Amount" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonDummyInfestedSiegeTankHd,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,CrucioShockCannonInfestedSiegeTankHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,AcidSporesDamageGuardianHd,Amount" Value="4"/>
+        <EffectArray Reference="Weapon,AcidSporesGuardianHd,Level" Value="1"/>
+        <AffectedUnitArray value="InfestedTerranHd"/>
+        <AffectedUnitArray value="RoachHd"/>
+        <AffectedUnitArray value="LurkerHd"/>
+        <AffectedUnitArray value="HydraliskHd"/>
+        <MaxLevel value="100"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="UnitDamageTerranHd">
+        <MaxLevel value="100"/>
+        <EffectArray Reference="Effect,GuassRifleHd,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,GuassRifleHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,PunisherGrenadesDamageHd,Amount" Value="2.5"/>
+        <EffectArray Reference="Weapon,PunisherGrenadesHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,FlameThrowerDamageFirebatHd,Amount" Value="1.5"/>
+        <EffectArray Reference="Weapon,FirebatHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,C10CanisterRifleDamageGhostHd,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,C10CanisterRifleHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,90mmCannonsDamageSiegeTankHd,Amount" Value="4"/>
+        <EffectArray Reference="Effect,CrucioShockCannonBlastDamageSiegeTankHd,Amount" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonDirectedDamageSiegeTankHd,Amount" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonDummyDamageSiegeTankHd,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,90mmCannonsHd,Level" Value="1"/>
+        <EffectArray Reference="Weapon,CrucioShockCannonSiegeTankHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,ThorsHammerDamageHd,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,ThorsHammerHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,LiberatorAGDamageHd,Amount" Value="5"/>
+        <EffectArray Reference="Weapon,LiberatorAGWeaponHd,Level" Value="1"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="UnitDamageProtossHd">
+        <MaxLevel value="100"/>
+        <EffectArray Reference="Effect,AdeptDamageHd,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,AdeptHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,ParticleDisruptorsDamageStalkerHd,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,ParticleDisruptorsHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,PsionicShockwaveDamageHd,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,PsionicShockwaveHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,PhaseDisruptorsDamageImmortalHd,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,PhaseDisruptorsHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,ScarabExplodeDamageHd,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,ScarabsReaverHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,ThermalLancesDamageHd,Amount" Value="1.5"/>
+        <EffectArray Reference="Weapon,ThermalLancesHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,TempestDamageGroundHd,Amount" Value="4"/>
+        <EffectArray Reference="Weapon,TempestGroundHd,Level" Value="1"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+</Catalog>

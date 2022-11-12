@@ -1,0 +1,9 @@
+- add more mods
+  : support units
+  : respawn
+  : spawn lesser units upon death
+- true boss if full lives
+- bank to use essentially as cookies.  e.g. inform player that you cannot maze with units
+- creative mode
+  : no round timer.  Instead have a command to start the wave
+  : always have 6 choosers in unit area

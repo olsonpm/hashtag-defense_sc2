@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirementCountBehavior id="CountBehaviorArmorpiercingModeCompleteOnlyAtUnit2">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ArmorpiercingModeHd" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorFullRefundAvailableHdCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="FullRefundAvailableHd" State="CompleteOnly"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountUpgrade id="CountUpgradeBunkerTurretDamageHdCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="BunkerTurretDamageHd" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradePhotonCannonDamageHdCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="PhotonCannonDamageHd" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeSpineCrawlerDamageHdCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="SpineCrawlerDamageHd" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeUnitDamageProtossHdCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="UnitDamageProtossHd" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeUnitDamageTerranHdCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="UnitDamageTerranHd" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeUnitDamageZergHdCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="UnitDamageZergHd" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementLT id="LTCountUpgradeBunkerTurretDamageHdCompleteOnly100">
+        <OperandArray index="0" value="CountUpgradeBunkerTurretDamageHdCompleteOnly"/>
+        <OperandArray index="1" value="100"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradePhotonCannonDamageHdCompleteOnly100">
+        <OperandArray index="0" value="CountUpgradePhotonCannonDamageHdCompleteOnly"/>
+        <OperandArray index="1" value="100"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeSpineCrawlerDamageHdCompleteOnly100">
+        <OperandArray index="0" value="CountUpgradeSpineCrawlerDamageHdCompleteOnly"/>
+        <OperandArray index="1" value="100"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeUnitDamageProtossHdCompleteOnly100">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeUnitDamageProtossHdCompleteOnly"/>
+        <OperandArray index="1" value="100"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeUnitDamageTerranHdCompleteOnly100">
+        <OperandArray index="0" value="CountUpgradeUnitDamageTerranHdCompleteOnly"/>
+        <OperandArray index="1" value="100"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeUnitDamageZergHdCompleteOnly100">
+        <OperandArray index="0" value="CountUpgradeUnitDamageZergHdCompleteOnly"/>
+        <OperandArray index="1" value="100"/>
+    </CRequirementLT>
+    <CRequirementCountUnit id="UnitQueen2QueuedOrBetter">
+        <Count Link="ArmoredQueenEnemyHd"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUpgrade id="UpgradeHydralisk2CompleteOnly">
+        <Count Link="HydraliskHd"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeHydralisk2QueuedOrBetter">
+        <Count Link="HydraliskHd"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeLurker2CompleteOnly">
+        <Count Link="LurkerCPHd"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeLurker2QueuedOrBetter">
+        <Count Link="LurkerCPHd"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeMutalisk2CompleteOnly">
+        <Count Link="MutaliskHd"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeMutalisk2QueuedOrBetter">
+        <Count Link="MutaliskHd"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeRoach2CompleteOnly">
+        <Count Link="RoachHd"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeRoach2QueuedOrBetter">
+        <Count Link="RoachHd"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeUltralisk2CompleteOnly">
+        <Count Link="BiologicalUltraliskEnemyHd"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeUltralisk2QueuedOrBetter">
+        <Count Link="BiologicalUltraliskEnemyHd"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeZergling2CompleteOnly">
+        <Count Link="WeaklingEnemyHd"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeZergling2QueuedOrBetter">
+        <Count Link="WeaklingEnemyHd"/>
+    </CRequirementCountUpgrade>
+</Catalog>

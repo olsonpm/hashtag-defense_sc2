@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorUnitCompareBehaviorCount id="HasLiberatorMorphBehaviorHd">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="LiberatorTargetMorphBehaviorHd"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoLiberatorYoinkHd">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="YoinkTentacle"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationPlacement id="IsBuildableTerrainHd">
+        <ResultFailed value="CantLandLocationInvalid,CantPlaceSpawnFlag"/>
+        <Range value="0.1"/>
+        <Unit value="SpawnFlagPlacementTestHd"/>
+    </CValidatorLocationPlacement>
+    <CValidatorLocationCompareRange id="LiberatorAGNotOutOfRangeHd">
+        <Compare value="LE"/>
+        <Range value="9"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="LiberatorAGTargetsHd">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <Compare value="GT"/>
+        <Behavior value="LiberatorTargetMorphAGAttackableHd"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="LiberatorMorphValidatorCombineHd">
+        <Type value="And"/>
+        <CombineArray value="CasterNotDead"/>
+        <CombineArray value="HasLiberatorMorphBehaviorHd"/>
+        <CombineArray value="HasNoLiberatorYoinkHd"/>
+        <CombineArray value="LiberatorNotRecallingMothershipHd"/>
+        <CombineArray value="LiberatorNotRecallingMothershipCoreHd"/>
+        <CombineArray value="LiberatorAGNotOutOfRangeHd"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="LiberatorNotRecallingMothershipCoreHd">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="MothershipCoreRecalling"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="LiberatorNotRecallingMothershipHd">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="MothershipRecalling"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerCompareResource id="HasAtLeast2MinsHd">
+        <Compare value="GE"/>
+        <Value value="2"/>
+    </CValidatorPlayerCompareResource>
+    <CValidatorUnitType id="SpineCrawlerHd">
+        <Value value="SpineCrawler"/>
+    </CValidatorUnitType>
+</Catalog>

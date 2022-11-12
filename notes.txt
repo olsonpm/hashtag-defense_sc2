@@ -1,0 +1,330 @@
+# delme
+
+Mods are buffed by 10%.
+Enemies get +10% health.
+Positive player attribute damages (e.g. +dmg vs Light units) are bumped by 10%
+
+
+# bugs
+
+ - make sure shields for enemies have names
+ - fix bunker attack
+ - make sure units let up on how much they upgrade
+
+
+
+# todo
+
+ - make the increased unit graphics a clickable unit so people can click it and
+   understand what it does
+ - unit balance
+ - heroes
+ - unique bosses
+ - add obvious visual effects for units with mods
+ - add true ending
+
+
+
+# ideas for mods
+ - broodling spawn
+ - immortal barrier
+
+
+
+# units by round
+
+00. weakling
+  : 60 hp
+01-03. simple marine, roach, zealot
+  : 80 hp
+  : roach @ 100 hp
+  : zealot @ 4 armor
+04. simple boss archon
+  : 300 hp
+  : 6 armor
+
+* light bumps to 4 armor
+* armored bumps to 8 armor
+
+05. drone / stalker
+  : 160 hp
+06. scv / cutie
+  : 180 hp
+07. probe / marauder
+  : 200 hp
+08. broodling / zealot
+  : 220 hp
+09. dehaka / alarak
+  : 500 hp
+  : dehaka @ 20 armor & 2 speed
+  : alarak @ 10 armor & 3 speed
+
+* light bumps to 6 armor
+* armored and mechanical bumps to 10 armor
+
+10. prisoner / queen
+  : 440 hp
+11. adept / hellbat
+  : 460 hp
+12. reaper / dragoon / hydralisk
+  : 480 hp
+  : hydra @ 600hp
+13. infested terran / quilly / goliath
+  : 500 hp
+14. eradicator / hybrid dominator
+  : 1500 hp
+  : eradicator @ 30 armor & 2 speed
+  : hybrid dominator @ 20 armor & 3 speed
+
+* hp bumps to 800
+* biological hp bumps to 1000
+* light bumps to 12 armor
+* biological bumps to 16 armor
+* armored and mechanical bump to 20
+
+15. ravager / viking (assault mode)
+  : 800 hp
+  : ravager @ 1000 hp
+16. ghost / cyclone
+  : 850 hp
+17. ravasaur / shikoto coupe
+  : 900 hp
+  : ravasaur @ 1100 hp
+18. locust / immortal / ursadon
+  : 950 hp
+19. kerrigan / giant rory swann
+  : 3000 hp
+  : kerrigan @ 30 armor & 3 speed
+  : giant rory swann @ 40 armor & 2 speed
+
+* hp bumps to 1400
+* biological hp bumps to 1700
+* light bumps to 20 armor
+* biological bumps to 25 armor
+* armored and mechanical bumps to 30 armor
+
+20. kerrigan / siege tank (tank mode)
+  : 1400 hp
+  : kerrigan @ 1700 hp
+21. high templar / pygalisk
+  : 1500 hp
+22. ultralisk / warhound
+  : 1600 hp
+  : ultralisk @ 1900 hp
+23. war pig / herc / militarized transport
+  : 1700 hp
+24. yagdra / stone zealot
+  : 5000 hp
+  : yagdra @ 40 armor & 3 speed
+  : stone zealot @ 60 armor & 2 speed
+
+
+# units by attribute
+
+##light
+
+terran
+ - x scv
+ - x ghost
+ - x prisoner
+ - x reaper
+ - x war pig
+
+toss
+ - x probe
+ - x adept
+ - x high templar
+
+zerg
+ - x broodling
+ - x drone
+ - x infested terran
+ - x locust
+
+
+
+## armored
+
+terran
+ - x hellbat
+ - x herc
+ - x marauder
+ - x cyclone
+
+toss
+ - x dragoon
+ - x stalker
+ - x zealot
+ - x immortal
+
+zerg
+ - x cutie
+ - x pygalisk
+ - x quilly
+ - x queen
+
+
+
+## biological
+
+terran
+
+toss
+
+zerg
+ - x hydralisk
+ - x ravager
+ - x ravasaur
+ - x ultralisk
+ - x ursadon
+ - x kerrigan
+
+
+
+## mechanical
+
+terran
+ - x siege tank (tank mode)
+ - x viking (assault mode)
+ - x warhound
+ - x goliath
+ - x militarized transport
+ - x shikoto coupe
+
+toss
+
+zerg
+
+
+
+## boss
+
+terran
+ - x eradicator
+ - x giant rory swann
+
+toss
+ - x stone zealot
+ - x alarak
+ - x hybrid dominator
+
+zerg
+ - x yagdra
+ - x dehaka
+ - x kerrigan
+
+
+# end units by attribute
+
+
+
+# player units vs attributes
+
+light
+armored
+biological
+mechanical
+boss
+
+bunker
+ - bad vs boss
+ - bad vs armored
+ - bad vs mechanical
+
+marine (1 chooser)
+ - bad vs armored
+ - bad vs boss
+marauder (2 choosers)
+ - good vs armored
+ - bad vs biological
+firebat (2 choosers)
+ - good vs light
+ - bad vs mechanical
+ghost (3 choosers)
+ - good vs biological
+ - good vs boss
+tank (4 choosers)
+ - good vs armored
+ - good vs mechanical
+thor (5 choosers)
+ - good vs light
+ - good vs biological
+liberator (6 choosers)
+ - good vs boss
+ - good vs mechanical
+
+totals (not including bunker)
+ - light: +2
+ - armored: +2 -1
+ - biological: +2 -1
+ - mechanical: +2 -1
+ - boss: +2 -1
+
+photon cannon
+ - bad vs boss
+ - bad vs armored
+ - bad vs biological
+adept (1 chooser)
+ - bad vs armored
+ - bad vs boss
+stalker (2 choosers)
+ - good vs armored
+ - bad vs mechanical
+archon (2 choosers)
+ - good vs light
+ - bad vs biological
+immortal (3 choosers)
+ - good vs armored
+ - good vs mechanical
+reaver (4 choosers)
+ - good vs biological
+ - good vs boss
+colossus (5 choosers)
+ - good vs light
+ - good vs biological
+tempest (6 choosers)
+ - good vs mechanical
+ - good vs boss
+
+totals (not including photon cannon)
+ - light: +2
+ - armored: +2 -1
+ - biological: +2 -1
+ - mechanical: +2 -1
+ - boss: +2 -1
+
+
+spine crawler
+ - bad vs boss
+ - bad vs armored
+ - bad vs biological
+infested terran (1 chooser)
+ - bad vs armored
+ - bad vs boss
+roach (2 choosers)
+ - good vs armored
+ - bad vs mechanical
+lurker (2 choosers)
+ - good vs light
+ - bad vs biological
+hydra (3 choosers)
+ - good vs biological
+ - good vs boss
+mutalisk (4 choosers)
+ - good vs light
+ - good vs mechanical
+infested tank (5 choosers)
+ - good vs armored
+ - good vs biological
+guardian (6 choosers)
+ - good vs mechanical
+ - good vs boss
+
+totals (not including spine crawler)
+ - light: +2
+ - armored: +2 -1
+ - biological: +2 -1
+ - mechanical: +2 -1
+ - boss: +2 -1
+
+# end player units vs attributes

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSound id="Yagdra_BloodPoolHd" parent="Death">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Yagdra_BloodPool.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Yagdra_BloodPool_Fire.wav" FacialGroup=""/>
+        <Pitch value="-4.000000,-1.000000"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Yagdra_BodyHitHd" parent="Death">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Yagdra_BodyHit_1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Yagdra_BodyHit_2.wav" FacialGroup=""/>
+        <Pitch value="-4.000000,-2.000000"/>
+        <Volume value="-5.000000,-4.000000"/>
+    </CSound>
+    <CSound id="Yagdra_BodyHitJuiceHd" parent="Death">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Yagdra_BodyHit_Juice_3.wav" FacialGroup=""/>
+        <Pitch value="-4.000000,-2.000000"/>
+        <Volume value="-5.000000,-4.000000"/>
+    </CSound>
+    <CSound id="Yagdra_DeathRoar2Hd" parent="HoS_DeathBoss">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Yagdra_DeathRoar_00.wav" FacialGroup=""/>
+        <Pitch value="2.000000,3.000000"/>
+        <Volume value="-15.000000,-14.000000"/>
+    </CSound>
+    <CSound id="Yagdra_DieBodyFallHd" parent="Death">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Yagdra_Die_BodyFall_1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Yagdra_Die_BodyFall_2.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Yagdra_Die_BodyFall_St.wav" FacialGroup=""/>
+        <Pitch value="-3.000000,-2.000000"/>
+        <Volume value="-8.000000,-7.000000"/>
+    </CSound>
+    <CSound id="Yagdra_VoxDieGurgleHd" parent="Death">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Yagdra_Vx_Die_Gurgle_1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Yagdra_Vx_Die_Gurgle_2.wav" FacialGroup=""/>
+        <Pitch value="-3.000000,-1.000000"/>
+        <Volume value="-4.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Yagdra_VoxRoarHd" parent="HoS_DeathBoss">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Yagdra_Vx_Roar_1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Yagdra_Vx_Roar_2.wav" FacialGroup=""/>
+        <Pitch value="-3.000000,0.000000"/>
+        <Volume value="-20.000000,-19.000000"/>
+    </CSound>
+    <CSound id="Zerus01_Brakk_Meat_SplatsHd" parent="Death">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Brakk_Meat_Splats_1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Brakk_Meat_Splats_2.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Brakk_Meat_Splats_3.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Brakk_Meat_Splats_4.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Volume value="-5.000000,-4.000000"/>
+    </CSound>
+</Catalog>

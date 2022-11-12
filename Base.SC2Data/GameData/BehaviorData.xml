@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff id="AddedArmorHardModHd">
+        <InfoIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification LifeArmorMultiplier="1.3" ShieldArmorBonus="2" ShieldArmorMultiplier="1.3">
+            <LifeArmorBonus value="2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AddedShieldsStandardModHd">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel0.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <VitalMaxFractionArray index="Shields" value="-0.8"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AddedShieldsHardModHd">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel0.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <VitalMaxFractionArray index="Shields" value="-0.7"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DecreaseVsMechanicalAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Mechanical" value="-0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DecreaseVsLightAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Light" value="-0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DecreaseVsBiologicalAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Biological" value="-0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DecreaseVsBossAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Heroic" value="-0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="FullRefundAvailableHd">
+        <InfoIcon value="Assets\Textures\icon-highyieldmineral.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreaseVsArmoredHardAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Armored" value="0.3"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DecreaseVsArmoredAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Armored" value="-0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreaseVsBiologicalHardAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Biological" value="0.3"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreaseVsBossHardAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Heroic" value="0.3"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreaseVsLightStandardAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Light" value="0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreaseSpeedStandardHardModHd">
+        <InfoIcon value="Assets\Textures\speedfreaks_coop.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <AdditiveMoveSpeedFactor value="0.3"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreaseVsLightHardAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Light" value="0.3"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreaseVsArmoredStandardAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Armored" value="0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreaseVsBiologicalStandardAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Biological" value="0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreaseVsMechanicalStandardAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Mechanical" value="0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreaseVsMechanicalHardAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Mechanical" value="0.3"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreaseVsBossStandardAttributeDamageHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Heroic" value="0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="RemoveShieldsHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <VitalMaxFractionArray index="Shields" value="-1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ArmorpiercingModeHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <WeaponEnableArray value="LanceMissileLaunchersHd"/>
+            <WeaponDisableArray value="JavelinMissileLaunchers"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreaseSpeedStandardModHd">
+        <InfoIcon value="Assets\Textures\speedfreaks_coop.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <AdditiveMoveSpeedFactor value="0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AddedArmorStandardModHd">
+        <InfoIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification LifeArmorMultiplier="1.2" ShieldArmorBonus="2" ShieldArmorMultiplier="1.2">
+            <LifeArmorBonus value="2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="LiberatorInitialMovableHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="3.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="LiberatorTargetMorphAGAttackableHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <MaxStackCount value="65535"/>
+        <MaxStackCountPerCaster value="1"/>
+        <Duration value="0.3125"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="LiberatorTargetMorphBehaviorHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="HasNoLiberatorYoinkHd"/>
+        <RemoveValidatorArray value="IsNotRecallingCombine"/>
+    </CBehaviorBuff>
+    <CBehaviorResource id="2MineralsHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\icon-mineral.dds"/>
+        <Capacity value="2"/>
+        <Contents value="2"/>
+        <HarvestTime value="2.786"/>
+        <HarvestAmount value="5"/>
+        <Flags index="RemoveWhenEmpty" value="1"/>
+        <ReturnDelay value="0.5"/>
+        <ExhaustedAlert value="ResourceExhausted_Mineral"/>
+        <DepletionThreshold value="750"/>
+        <DepletionVariationCount value="4"/>
+        <CarryResourceBehavior value="CarryMineralFieldMinerals"/>
+        <IdealHarvesterCount value="3"/>
+    </CBehaviorResource>
+    <CBehaviorBuff id="CloakHd">
+        <Alignment value="Positive"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <StateFlags index="Cloak" value="1"/>
+        </Modification>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PushHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Period value="0.0625"/>
+        <InitialEffect value="PushSAHd"/>
+        <PeriodicEffect value="PushSAHd"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ShrikeTurretHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Modification>
+            <WeaponEnableArray value="ShrikeTurretHd"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnParentHd">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnBotHd" parent="SpawnParentHd">
+        <Name value="Behavior/Name/SpawnBotHd"/>
+        <Tooltip value="Behavior/Tooltip/spawnParentHd"/>
+        <Cost>
+            <Charge Link="Behavior/spawnParentHd"/>
+            <Cooldown Link="Behavior/spawnParentHd"/>
+        </Cost>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/spawnParentHd"/>
+                <Cooldown Link="Behavior/spawnParentHd"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnBotLeftBotHd" parent="SpawnParentHd">
+        <Name value="Behavior/Name/SpawnBotLeftBotHd"/>
+        <Tooltip value="Behavior/Tooltip/spawnParentHd"/>
+        <Cost>
+            <Charge Link="Behavior/spawnParentHd"/>
+            <Cooldown Link="Behavior/spawnParentHd"/>
+        </Cost>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/spawnParentHd"/>
+                <Cooldown Link="Behavior/spawnParentHd"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnBotLeftLeftHd" parent="SpawnParentHd">
+        <Name value="Behavior/Name/SpawnBotLeftLeftHd"/>
+        <Tooltip value="Behavior/Tooltip/spawnParentHd"/>
+        <Cost>
+            <Charge Link="Behavior/spawnParentHd"/>
+            <Cooldown Link="Behavior/spawnParentHd"/>
+        </Cost>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/spawnParentHd"/>
+                <Cooldown Link="Behavior/spawnParentHd"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnBotRightBotHd" parent="SpawnParentHd">
+        <Name value="Behavior/Name/SpawnBotRightBotHd"/>
+        <Tooltip value="Behavior/Tooltip/spawnParentHd"/>
+        <Cost>
+            <Charge Link="Behavior/spawnParentHd"/>
+            <Cooldown Link="Behavior/spawnParentHd"/>
+        </Cost>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/spawnParentHd"/>
+                <Cooldown Link="Behavior/spawnParentHd"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnBotRightRightHd" parent="SpawnParentHd">
+        <Name value="Behavior/Name/SpawnBotRightRightHd"/>
+        <Tooltip value="Behavior/Tooltip/spawnParentHd"/>
+        <Cost>
+            <Charge Link="Behavior/spawnParentHd"/>
+            <Cooldown Link="Behavior/spawnParentHd"/>
+        </Cost>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/spawnParentHd"/>
+                <Cooldown Link="Behavior/spawnParentHd"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnLeftHd" parent="SpawnParentHd">
+        <Name value="Behavior/Name/SpawnLeftHd"/>
+        <Tooltip value="Behavior/Tooltip/spawnParentHd"/>
+        <Cost>
+            <Charge Link="Behavior/spawnParentHd"/>
+            <Cooldown Link="Behavior/spawnParentHd"/>
+        </Cost>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/spawnParentHd"/>
+                <Cooldown Link="Behavior/spawnParentHd"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnRightHd" parent="SpawnParentHd">
+        <Name value="Behavior/Name/SpawnRightHd"/>
+        <Tooltip value="Behavior/Tooltip/spawnParentHd"/>
+        <Cost>
+            <Charge Link="Behavior/spawnParentHd"/>
+            <Cooldown Link="Behavior/spawnParentHd"/>
+        </Cost>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/spawnParentHd"/>
+                <Cooldown Link="Behavior/spawnParentHd"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnTopHd" parent="SpawnParentHd">
+        <Name value="Behavior/Name/SpawnTopHd"/>
+        <Tooltip value="Behavior/Tooltip/spawnParentHd"/>
+        <Cost>
+            <Charge Link="Behavior/spawnParentHd"/>
+            <Cooldown Link="Behavior/spawnParentHd"/>
+        </Cost>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/spawnParentHd"/>
+                <Cooldown Link="Behavior/spawnParentHd"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnTopLefToptHd" parent="SpawnParentHd">
+        <Name value="Behavior/Name/SpawnTopLefToptHd"/>
+        <Tooltip value="Behavior/Tooltip/spawnParentHd"/>
+        <Cost>
+            <Charge Link="Behavior/spawnParentHd"/>
+            <Cooldown Link="Behavior/spawnParentHd"/>
+        </Cost>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/spawnParentHd"/>
+                <Cooldown Link="Behavior/spawnParentHd"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnTopLefLeftHd" parent="SpawnParentHd">
+        <Name value="Behavior/Name/SpawnTopLefLeftHd"/>
+        <Tooltip value="Behavior/Tooltip/spawnParentHd"/>
+        <Cost>
+            <Charge Link="Behavior/spawnParentHd"/>
+            <Cooldown Link="Behavior/spawnParentHd"/>
+        </Cost>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/spawnParentHd"/>
+                <Cooldown Link="Behavior/spawnParentHd"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnTopRightTopHd" parent="SpawnParentHd">
+        <Name value="Behavior/Name/SpawnTopRightTopHd"/>
+        <Tooltip value="Behavior/Tooltip/spawnParentHd"/>
+        <Cost>
+            <Charge Link="Behavior/spawnParentHd"/>
+            <Cooldown Link="Behavior/spawnParentHd"/>
+        </Cost>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/spawnParentHd"/>
+                <Cooldown Link="Behavior/spawnParentHd"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnTopRightRightHd" parent="SpawnParentHd">
+        <Name value="Behavior/Name/SpawnTopRightRightHd"/>
+        <Tooltip value="Behavior/Tooltip/spawnParentHd"/>
+        <Cost>
+            <Charge Link="Behavior/spawnParentHd"/>
+            <Cooldown Link="Behavior/spawnParentHd"/>
+        </Cost>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/spawnParentHd"/>
+                <Cooldown Link="Behavior/spawnParentHd"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+</Catalog>

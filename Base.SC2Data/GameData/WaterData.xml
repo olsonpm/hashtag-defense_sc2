@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWater id="ZhakulDas">
+        <!--        <IsLava value="1"/>
+        <LavaModel value="LavaSilver"/> -->
+        <State index="0" Height="3.050000"/>
+    </CWater>
+</Catalog>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Regions>
+    <region id="1">
+        <name value="enemy tele capture - left - top"/>
+        <shape type="rect">
+            <quad value="71,100.5,75,109"/>
+        </shape>
+    </region>
+    <region id="2">
+        <name value="enemy tele capture - left - bot"/>
+        <shape type="rect">
+            <quad value="71.001,91,75,99.5"/>
+        </shape>
+    </region>
+    <region id="3">
+        <name value="enemy tele capture - right - bot"/>
+        <shape type="rect">
+            <quad value="125,91,129.001,99.5"/>
+        </shape>
+    </region>
+    <region id="4">
+        <name value="enemy tele capture - right - top"/>
+        <shape type="rect">
+            <quad value="125,100.5,129,109"/>
+        </shape>
+    </region>
+    <region id="5">
+        <name value="enemy tele capture - top - right"/>
+        <shape type="rect">
+            <quad value="100.5,125,109.0002,129.0002"/>
+        </shape>
+    </region>
+    <region id="6">
+        <name value="enemy tele capture - top - left"/>
+        <shape type="rect">
+            <quad value="91.25,125,99.7502,129.0002"/>
+        </shape>
+    </region>
+    <region id="7">
+        <name value="enemy tele capture - bot - left"/>
+        <shape type="rect">
+            <quad value="91,71,99.5,75"/>
+        </shape>
+    </region>
+    <region id="8">
+        <name value="enemy tele capture - bot - right"/>
+        <shape type="rect">
+            <quad value="100.5,71,109,75"/>
+        </shape>
+    </region>
+    <region id="9">
+        <name value="enemy clear - top"/>
+        <shape type="rect">
+            <quad value="91,158,109,161"/>
+        </shape>
+    </region>
+    <region id="10">
+        <name value="enemy clear - top right - top"/>
+        <shape type="rect">
+            <quad value="135,158,153,161"/>
+        </shape>
+    </region>
+    <region id="11">
+        <name value="enemy clear - top right - right"/>
+        <shape type="rect">
+            <quad value="158,135,161,153"/>
+        </shape>
+    </region>
+    <region id="12">
+        <name value="enemy clear - right"/>
+        <shape type="rect">
+            <quad value="158,91,161,109"/>
+        </shape>
+    </region>
+    <region id="13">
+        <name value="enemy clear - bot right - right"/>
+        <shape type="rect">
+            <quad value="158,47,161,65"/>
+        </shape>
+    </region>
+    <region id="14">
+        <name value="enemy clear - bot right - bot"/>
+        <shape type="rect">
+            <quad value="135,39,153,42"/>
+        </shape>
+    </region>
+    <region id="15">
+        <name value="enemy clear - bot"/>
+        <shape type="rect">
+            <quad value="91,39,109,42"/>
+        </shape>
+    </region>
+    <region id="16">
+        <name value="enemy clear - bot left - bot"/>
+        <shape type="rect">
+            <quad value="47,39,65,42"/>
+        </shape>
+    </region>
+    <region id="17">
+        <name value="enemy clear - bot left - left"/>
+        <shape type="rect">
+            <quad value="39,47,42,65"/>
+        </shape>
+    </region>
+    <region id="18">
+        <name value="enemy clear - left"/>
+        <shape type="rect">
+            <quad value="39,91,42,109"/>
+        </shape>
+    </region>
+    <region id="19">
+        <name value="enemy clear - top left - left"/>
+        <shape type="rect">
+            <quad value="39,135,42,153"/>
+        </shape>
+    </region>
+    <region id="20">
+        <name value="enemy clear - top left - top"/>
+        <shape type="rect">
+            <quad value="47,158,65,161"/>
+        </shape>
+    </region>
+    <region id="21">
+        <name value="choose defender location"/>
+        <shape type="rect">
+            <quad value="84,80,116,108"/>
+        </shape>
+    </region>
+    <region id="22">
+        <name value="keep spawn clear - left - left"/>
+        <shape type="rect">
+            <quad value="39,91,45.5,109"/>
+        </shape>
+    </region>
+    <region id="23">
+        <name value="keep spawn clear - left - right"/>
+        <shape type="rect">
+            <quad value="66.5,91,75,109"/>
+        </shape>
+    </region>
+    <region id="24">
+        <name value="keep spawn clear - bot left - left"/>
+        <shape type="rect">
+            <quad value="39,47,45.5,65"/>
+        </shape>
+    </region>
+    <region id="25">
+        <name value="keep spawn clear - bot left - bot"/>
+        <shape type="rect">
+            <quad value="47,39,65,45.5"/>
+        </shape>
+    </region>
+    <region id="26">
+        <name value="keep spawn clear - bot - bot"/>
+        <shape type="rect">
+            <quad value="91,39,109,45.5"/>
+        </shape>
+    </region>
+    <region id="27">
+        <name value="keep spawn clear - bot - top"/>
+        <shape type="rect">
+            <quad value="91,66.5,109,75"/>
+        </shape>
+    </region>
+    <region id="28">
+        <name value="keep spawn clear - bot right - bot"/>
+        <shape type="rect">
+            <quad value="135,39,153,45.5"/>
+        </shape>
+    </region>
+    <region id="29">
+        <name value="keep spawn clear - bot right - right"/>
+        <shape type="rect">
+            <quad value="154.5,47,161,65"/>
+        </shape>
+    </region>
+    <region id="30">
+        <name value="keep spawn clear - right - right"/>
+        <shape type="rect">
+            <quad value="154.5,91,161,109"/>
+        </shape>
+    </region>
+    <region id="31">
+        <name value="keep spawn clear - right - left"/>
+        <shape type="rect">
+            <quad value="125,91,133.5,109"/>
+        </shape>
+    </region>
+    <region id="32">
+        <name value="keep spawn clear - top right - right"/>
+        <shape type="rect">
+            <quad value="154.5,135,161,153"/>
+        </shape>
+    </region>
+    <region id="33">
+        <name value="keep spawn clear - top right - top"/>
+        <shape type="rect">
+            <quad value="135,154.5,153,161"/>
+        </shape>
+    </region>
+    <region id="34">
+        <name value="keep spawn clear - top - top"/>
+        <shape type="rect">
+            <quad value="91,154.5,109,161"/>
+        </shape>
+    </region>
+    <region id="35">
+        <name value="keep spawn clear - top - bot"/>
+        <shape type="rect">
+            <quad value="91,125,109,133.5"/>
+        </shape>
+    </region>
+    <region id="36">
+        <name value="keep spawn clear - top left - top"/>
+        <shape type="rect">
+            <quad value="47,154.5,65,161"/>
+        </shape>
+    </region>
+    <region id="37">
+        <name value="keep spawn clear - top left - left"/>
+        <shape type="rect">
+            <quad value="39,135,45.5,153"/>
+        </shape>
+    </region>
+</Regions>

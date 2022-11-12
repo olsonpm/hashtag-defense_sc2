@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Actor id="SYSTEM_ActorConfig"/>
+<Actor id="UIScreenNumber1Hd"/>
+<Actor id="UIScreenNumber2Hd"/>
+<Actor id="UIScreenNumber6Hd"/>
+<Actor id="UIScreenPlusHd"/>
+<Behavior id="FullRefundAvailableHd"/>
+<Behavior id="RemoveShieldsHd"/>
+<Behavior id="CloakHd"/>
+<Behavior id="PushHd"/>
+<Model id="CurrentEnemyIndicatorHd"/>
+<Sound id="UI_GenericError"/>
+<Sound id="Probe_Explode"/>
+<Sound id="Alert_TerranNeedMoreMinerals"/>
+<Terrain id="PurifierJungle"/>
+<Unit id="SpawnFlagHd"/>
+<Unit id="LiberatorAGHd"/>
+<Unit id="InfestedSiegeTankHd"/>
+<Unit id="SiegeTankSiegedHd"/>
+<Unit id="SiegeTankHd"/>
+<Unit id="LightDroneEnemyHd"/>
+<Unit id="LightProbeEnemyHd"/>
+<Unit id="LightSCVEnemyHd"/>
+<Unit id="InvisibleWaypointChooserHd"/>
+<Unit id="ExtraLifeHd"/>
+<Unit id="BottomHdDefendLocationBeacon"/>
+<Unit id="BottomLeftHdDefendLocationBeacon"/>
+<Unit id="BottomRightHdDefendLocationBeacon"/>
+<Unit id="DroneHd"/>
+<Unit id="LeftHdDefendLocationBeacon"/>
+<Unit id="2MineralsHd"/>
+<Unit id="ProbeHd"/>
+<Unit id="RightHdDefendLocationBeacon"/>
+<Unit id="SCVHd"/>
+<Unit id="TopHdDefendLocationBeacon"/>
+<Unit id="TopLeftHdDefendLocationBeacon"/>
+<Unit id="TopRightHdDefendLocationBeacon"/>
+<Unit id="ChooserHd"/>
+</Preload>

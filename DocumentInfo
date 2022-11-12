@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DocInfo>
+    <ModType>
+        <Value>Interface</Value>
+    </ModType>
+    <Icon>
+        <Value>icon.png</Value>
+    </Icon>
+    <Dependencies>
+        <Value>bnet:Void (Campaign)/0.0/999,file:Campaigns/Void.SC2Campaign</Value>
+    </Dependencies>
+    <Screenshot>
+        <File>
+            <Value>screenshot_terran-defense.png</Value>
+            <Value>screenshot_mods-enemies-and-lives.png</Value>
+            <Value>screenshot_terran-units.png</Value>
+        </File>
+        <CaptionId>
+            <Value>1</Value>
+            <Value>2</Value>
+            <Value>3</Value>
+        </CaptionId>
+        <Flags>
+            <Value> </Value>
+            <Value> </Value>
+            <Value> </Value>
+        </Flags>
+    </Screenshot>
+    <PatchNote>
+        <Version>
+            <Value>0.2</Value>
+            <Value>0.3</Value>
+            <Value>0.4</Value>
+        </Version>
+        <Date>
+            <Value>11/11/2022</Value>
+            <Value>11/11/2022</Value>
+            <Value>11/11/2022</Value>
+        </Date>
+        <Notes>
+            <Value>1</Value>
+            <Value>2</Value>
+            <Value>3</Value>
+        </Notes>
+    </PatchNote>
+</DocInfo>

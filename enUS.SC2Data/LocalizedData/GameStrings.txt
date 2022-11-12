@@ -1,0 +1,747 @@
+﻿Abil/Name/BuildProtossHd=Build
+Abil/Name/BuildSpawnFlagHd=Build Spawn Flag
+Abil/Name/BuildTerranHd=Build
+Abil/Name/BuildZergHd=Build
+Abil/Name/BurrowLurkerHd=Burrow Lurker
+Abil/Name/ClearUnitChooserRallyHd=Clear Unit Chooser Rally
+Abil/Name/InfestedSiegeTankRootHd=Root
+Abil/Name/InfestedSiegeTankUprootHd=Uproot
+Abil/Name/LiberatorAATargetHd=AA Target
+Abil/Name/LiberatorAGTargetHd=AG Target
+Abil/Name/LiberatorMorphToAAHd=Morph to AA
+Abil/Name/LiberatorMorphToAGHd=Morph to AG
+Abil/Name/LoadUnloadBunkerHd=Load-Unload
+Abil/Name/RallyUnitChoosersHereHd=Rally Unit Choosers Here
+Abil/Name/ReaverHangarHd=Reaver Hangar
+Abil/Name/SalvageFullRefundHd=Salvage - Full Refund
+Abil/Name/SalvageHalfRefundHd=Salvage - Half Refund
+Abil/Name/SalvageNoRefundHd=Salvage - No Refund
+Abil/Name/SiegeModeHd=Siege
+Abil/Name/UnburrowLurkerHd=Unburrow Lurker
+Abil/Name/UnsiegeHd=Unsiege
+Abil/Name/UpgradeBunkerTurretDamageResearchCenterHd=Upgrade Bunker Turret Damage
+Abil/Name/UpgradePhotonCannonDamageResearchCenterHd=Upgrade Photon Cannon Damage
+Abil/Name/UpgradeSpineCrawlerDamageResearchCenterHd=Upgrade Spine Crawler Damage
+Abil/Name/UpgradeUnitDamageProtossHd=Upgrade Unit Damage
+Abil/Name/UpgradeUnitDamageTerranHd=Upgrade Unit Damage
+Abil/Name/UpgradeUnitDamageZergHd=Upgrade Unit Damage
+Attribute001/Desc=Specifies whether and how much time is given at the start and between rounds.
+Attribute001/Name=Round Timer
+Attribute001/Value001/Desc=All players will need to click 'Ready' for each round to start.  Recommended for first time players.
+Attribute001/Value001/Name=None
+Attribute001/Value002/Desc=120s at the start, 40s between rounds.  Players still have the option to skip the timer - where if all players skip then the round is started.
+Attribute001/Value002/Name=Default
+Attribute001/Value003/Desc=60s at the start, 20s between rounds.  Players still have the option to skip the timer - where if all players skip then the round is started.
+Attribute001/Value003/Name=Quick
+Attribute001/Value004/Desc=40s at the start, 0s between rounds.  Players still have the option to skip the initial timer - where if all players skip then the round is started.
+Attribute001/Value004/Name=Nonstop
+Attribute002/Name=Difficulty
+Attribute002/Value001/Name=Standard
+Attribute002/Value002/Desc=Standard + 
+Attribute002/Value003/Desc=Mods are buffed by 10%.  Enemies get +10% health.  Positive player attribute damages (e.g. +dmg vs Light units) are bumped by 10%
+Attribute002/Value003/Name=Hard
+Attribute002/Value004/Desc=ay not be possible
+Attribute003/Desc=Adds mods to all rounds after the Simple Boss Archon.  By default each round has a 66% chance of being modded.
+Attribute003/Name=Add mods to all rounds
+Attribute003/Value001/Name=No
+Attribute003/Value002/Name=Yes
+Behavior/Name/AddedArmorHardModHd=Added Armor
+Behavior/Name/AddedArmorStandardModHd=Added Armor
+Behavior/Name/AddedShieldsHardModHd=Added Shields
+Behavior/Name/AddedShieldsStandardModHd=Added Shields
+Behavior/Name/FullRefundAvailableHd=Full Refund Available
+Behavior/Name/IncreaseSpeedStandardHardModHd=Increased Speed
+Behavior/Name/IncreaseSpeedStandardModHd=Increased Speed
+Button/Name/BuildBunkerHd=Build Bunker
+Button/Name/BuildSpineCrawlerZergHd=Build Spine Crawler
+Button/Name/BuildWallProtossHd=Build Wall
+Button/Name/BuildWallTerranHd=Build Wall
+Button/Name/BuildWallZergHd=Build Wall
+Button/Name/BurrowLurkerMPHd=Burrow
+Button/Name/ClearUnitChooserRallyHd=Clear Unit Chooser Rally
+Button/Name/InfestedSiegeTankRootHd=Root
+Button/Name/InfestedSiegeTankUprootHd=Uproot
+Button/Name/PhotonCannonHd=Photon Cannon
+Button/Name/PlaceSpawnFlagHd=Place Spawn Flag
+Button/Name/RallyChoosersHereHd=Rally Choosers Here
+Button/Name/SalvageFullRefundHd=Salvage - Full Refund
+Button/Name/SalvageHalfRefundHd=Salvage - Half Refund
+Button/Name/SalvageNoRefundHd=Salvage
+Button/Name/SpineCrawlerRootHd=Root
+Button/Name/SpineCrawlerUprootHd=Uproot
+Button/Name/UpgradeBunkerTurretDamageHd=Upgrade Bunker Turret Damage
+Button/Name/UpgradePhotonCannonDamageHd=Upgrade Photon Cannon Damage
+Button/Name/UpgradeSpineCrawlerDamageHd=Upgrade Spine Crawler Damage
+Button/Name/UpgradeUnitDamageProtossHd=Upgrade Unit Damage
+Button/Name/UpgradeUnitDamageTerranHd=Upgrade Unit Damage
+Button/Name/UpgradeUnitDamageZergHd=Upgrade Unit Damage
+Button/Tooltip/AddedArmorModHd=Experimental space/time manipulator. Grants the ability to slow units in a target area.
+Button/Tooltip/ArchonHd=Powerful psionic attacker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/ArmoredCutieEnemyHd=A native insectoid species of the planet Nelyth.
+Button/Tooltip/ArmoredCycloneEnemyHd=Mobile assault drone. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/ArmoredDragoonEnemyHd=Aiur Faction<n/>Ranged assault strider. Has enhanced life and attack damage.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/ArmoredHellbatEnemyHd=Close range combat unit. Deals damage in a small frontal cone. Can transform into a fast scout unit.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/ArmoredHercEnemyHd=Front-line infantry. Can use Grapple.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/ArmoredImmortalEnemyHd=Assault strider. Can use Barrier to absorb damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/ArmoredMarauderEnemyHd=Heavy assault infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/ArmoredPygaliskEnemyHd=New xenotype created by Dominion scientists.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/ArmoredQueenEnemyHd=Support unit. Can use Spawn Creep Tumor and Rapid Transfusion.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/ArmoredQuillyEnemyHd=Primal Zerg ruminant omnivore. Roams in small herds.
+Button/Tooltip/ArmoredStalkerEnemyHd=Ranged attack strider. Can use Blink.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/ArmoredZealotEnemyHd=Purifier Faction<n/>Powerful melee warrior. Has Charge and Reconstruction abilities.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/BeefySCVTestHd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/BiologicalAberrationEnemyHd=Aberrations are durable units that deal heavy damage.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
+Button/Tooltip/BiologicalHydraliskEnemyHd=Ranged attacker. Can morph into a Lurker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/BiologicalKerriganEnemyHd=Sarah Kerrigan is an elite Ghost with more life, a stronger attack, and devastating psionic abilities.
+Button/Tooltip/BiologicalRavagerEnemyHd=Ranged artillery. Can use Corrosive Bile.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/BiologicalRavasaurEnemyHd=Ranged unit. Shoots large globs of acid at long range.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/BiologicalUltraliskEnemyHd=Heavy assault beast. Has an area-damage attack.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/BiologicalUrsadonEnemyHd=Native Ursadon subspecies.
+Button/Tooltip/BossAlarakEnemyHd=Highlord of the Tal'darim. Powerful Psionic Warrior.
+Button/Tooltip/BossDehakaEnemyHd=A Primal Pack Leader. A skilled fighter who is immune to the effects of the Psi Destroyer Field.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/BossEradicatorEnemyHd=Large warbot built to pacify uncontrolled Zerg experiments.
+Button/Tooltip/BossGiantRorySwannEnemyHd=Swann can place a flame turret that he lovingly calls "Flaming Betty." <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c><n/>
+Button/Tooltip/BossHybridDominatorEnemyHd=Powerful psionic attacker.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c><n/><c val="FFE303">Detector</c>
+Button/Tooltip/BossKerriganEnemyHd=Kerrigan is a class 12 psionic. She commands god-like powers and cannot be killed with conventional weapons.
+Button/Tooltip/BossStoneZealotEnemyHd=Ancient guardian. You must destroy it to liberate the Artifact.
+Button/Tooltip/BossYagdraEnemyHd=Vile and dangerous Pack Leader who breathes acid, tunnels through the ground, and lays eggs.
+Button/Tooltip/BuildBunkerHd=Defensive structure. <n/>Infantry fights from inside. <n/><n/>
+Button/Tooltip/BuildSpineCrawlerZergHd=A wall that also attacks your enemies
+Button/Tooltip/BuildWallProtossHd=A cheap yet sturdy 2x2 wall
+Button/Tooltip/BuildWallTerranHd=A cheap yet sturdy 2x2 wall
+Button/Tooltip/BuildWallZergHd=A cheap yet sturdy 2x2 wall
+Button/Tooltip/BurrowLurkerMPHd=Buries the Lurker underground. Burrowed Lurkers are unable to move, but are able to attack. They cannot be seen without detection.
+Button/Tooltip/ChooserHd=Male Civilian.
+Button/Tooltip/ClearUnitChooserRallyHd=Clears the rally for your unit choosers
+Button/Tooltip/ColossusHd=Powerful battle strider. Can walk up and down cliffs. Attacks incinerate multiple enemies at once.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/DroneHd=Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/FirebatHd=Specialized anti-infantry attacker.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/GhostHd=Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/GuardianHd=Long-range anti-ground flyer. <n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/HydraliskHd=Ranged attacker. Can morph into a Lurker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/ImmortalHd=Assault strider. Can use Barrier to absorb damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/IncreasedSpeedModHd=Reactor charging station. Replenishes energy of all nearby friendly units.
+Button/Tooltip/InfestedSiegeTankHd=Infested heavy tank. Can uproot itself to become mobile.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/InfestedSiegeTankRootHd=Roots the Infested Siege Tank. A rooted Infested Siege Tank has the ability to attack ground units, but it's unable to move.
+Button/Tooltip/InfestedSiegeTankUprootHd=Uproots the Infested Siege Tank. An uprooted Infested Siege Tank has the ability to move but cannot attack. Moves much faster on creep.
+Button/Tooltip/InfestedSiegeTankUprootedHd=Infested heavy tank. Can move when uprooted, but cannot attack. Must plant itself in creep to attack.
+Button/Tooltip/InfestedTerranHd=An Infested Terran does moderate damage and lasts for <d ref="Behavior,InfestedTerranTimedLife,Duration"/> seconds.<n/><n/><c val="FFFF8A">Can attack ground and air units.</c>
+Button/Tooltip/KillEverythingMarineTestHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/LiberatorAGHd=Immobile defender. Deals heavy single target damage to ground units. Can switch into Fighter mode to provide air support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/LiberatorHd=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
+Button/Tooltip/LightDroneEnemyHd=Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/LightGhostEnemyHd=Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/LightHighTemplarEnemyHd=Potent psionic master. Can use Feedback and Psionic Storm. Can merge into an Archon.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/LightInfestedTerranEnemyHd=An Infested Terran does moderate damage and lasts for <d ref="Behavior,InfestedTerranTimedLife,Duration"/> seconds.<n/><n/><c val="FFFF8A">Can attack ground and air units.</c>
+Button/Tooltip/LightLocustEnemyHd=Spawns from Swarm Hosts. Locusts last <d ref="Behavior,LocustTimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/LightPrisonerEnemyHd=Captive Terran. Incarcerated for life aboard the Moros.
+Button/Tooltip/LightProbeEnemyHd=Basic worker unit. Can gather resources and warp in Protoss structures.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/LightReaperEnemyHd=Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use D8 Charge.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/LightSCVEnemyHd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/LightWarPigEnemyHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/LurkerHd=Anti-ground ambusher. Has a spine attack that damages all enemy units in its line of fire.<n/><n/><c val="ffff8a">Can attack ground units.<n/>Must burrow to attack.</c>
+Button/Tooltip/MarauderHd=Heavy assault infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/MarineHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/MechanicalGoliathEnemyHd=Heavy-fire support unit.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/MechanicalMilitarizedTransportEnemyHd=Armored personnel carrier.
+Button/Tooltip/MechanicalShikotoCoupeEnemyHd=The Shikoto Municipal Coupe. There's nothing boring about reliability.
+Button/Tooltip/MechanicalSiegeTankTankModeEnemyHd=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
+Button/Tooltip/MechanicalVikingAssaultModeEnemyHd=Durable support unit. Can switch into Fighter Mode to attack air units.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/MechanicalWarHoundEnemyHd=Anti-vehicle mech. Haywire missiles do bonus damage to mechanical units. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/MutaliskHd=Air unit. Bounces its shot to strike multiple targets.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/PerfectSpecimenModHd=Greater Essence
+Button/Tooltip/PhotonCannonHd=
+Button/Tooltip/ProbeHd=Basic worker unit. Can gather resources and warp in Protoss structures.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/RallyChoosersHereHd=Sends newly spawned choosers to this beacon.
+Button/Tooltip/ReaverHd=Aiur Faction<n/>Area damage siege unit. Builds and launches Scarabs for high burst damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/ResearchCenterProtossHd=Contains weapon and armor upgrades for Protoss ground units and shield upgrades for all Protoss units and structures.<n/><n/><c val="ffff8a">Enables:</c><n/>- Photon Cannons from Probes
+Button/Tooltip/ResearchCenterTerranHd=Contains upgrades for Terran infantry and structures. <n/><n/><c val="ffff8a">Enables:</c><n/>- Missile Turrets from SCVs<n/>- Sensor Towers from SCVs<n/>- Planetary Fortresses from Command Centers
+Button/Tooltip/ResearchCenterZergHd=Contains upgrades for Zerg ground units.<n/><n/><c val="ffff8a">Enables:</c><n/>- Aberrations from Larvae with Lair or Hive
+Button/Tooltip/RoachHd=Assault unit. Regenerates life quickly when burrowed. Can morph into a Ravager.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/SCVHd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/SalvageFullRefundHd=Salvages the structure, removing it and returning 100% of its cost.
+Button/Tooltip/SalvageHalfRefundHd=Salvages the structure, removing it and returning 50% of its cost.
+Button/Tooltip/SalvageNoRefundHd=Destroys the structure with no refund
+Button/Tooltip/SiegeTankHd=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
+Button/Tooltip/SiegeTankSiegedHd=Heavy tank. Can switch into Tank Mode to provide mobile tank support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/SimpleArmoredZealotHd=Powerful melee warrior. Can use Charge.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/SimpleBeefyRoachEnemyHd=Assault unit. Regenerates life quickly when burrowed. Can morph into a Ravager.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/SimpleBossArchonEnemyHd=Powerful psionic attacker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/SimpleQuickMarineEnemyHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/SpawnFlagHd=The planetary flag of Korhal, homeworld of Emperor Mengsk.
+Button/Tooltip/SpawnFlagPlacementTestHd=Provides supply.<n/>Supply allows you to warp in more units.<n/>Creates power for nearby structures.
+Button/Tooltip/SpineCrawlerHd=Anti-ground defensive structure. <n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/SpineCrawlerRootHd=Roots the Spine Crawler. A rooted Spine Crawler has the ability to attack ground units but is unable to move.
+Button/Tooltip/SpineCrawlerUprootHd=Uproots the Spine Crawler. An uprooted Spine Crawler has the ability to move but cannot attack. Moves much faster on creep.
+Button/Tooltip/StalkerHd=Ranged attack strider. Can use Blink.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/TempestHd=Purifier Faction<n/>Siege artillery craft. Attacks from long range. Can use Disintegration.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/TestWeaklingEnemyHd=Fast melee creature. Can morph into a Baneling.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
+Button/Tooltip/ThorHd=Heavy assault mech.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/TicklerMarineTestHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/UnitHasShieldsModHd=Ancient Protoss Relic. Collect it with a ground unit to gain a Protoss research point. 
+Button/Tooltip/UpgradePhotonCannonDamageHd=
+Button/Tooltip/UpgradeUnitDamageProtossHd=Upgrades the attacks of all units.
+Button/Tooltip/UpgradeUnitDamageTerranHd=Upgrades the attacks of all units.
+Button/Tooltip/UpgradeUnitDamageZergHd=Upgrades the attacks of all units.
+Button/Tooltip/WallProtossHd=Restores shields to nearby friendly units and structures.
+Button/Tooltip/WallTerranHd=Abandoned structure.
+Button/Tooltip/WallZergHd=<c val="ffff8a">Enables:</c><n/>- Infestors from Larvae<n/>- Swarm Hosts from Larvae
+Button/Tooltip/WarpInAdeptHd=Purifier Faction<n/>Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/WarpInLightAdeptEnemyHd=Purifier Faction<n/>Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/WeaklingEnemyHd=Fast melee creature. Can morph into a Baneling.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
+CantPlaceSpawnFlag=The Spawn Flag Can't Be Placed There
+DocInfo/DescLong=A polished take on a classic tower defense.<n/><n/>- All three races supported<n/>- 5 unit types with counters e.g. light/armored<n/>- 25 rounds with random enemies<n/>- Games should last between 15-30 minutes<n/>- Random "mods" per round e.g. enemies with additional armor
+DocInfo/DescShort=1-8
+DocInfo/HowToPlayAdvanced00=Income is gained as a team
+DocInfo/HowToPlayAdvanced01=Enemies are random and will be one of 5 types - buy units that counter those types
+DocInfo/HowToPlayAdvanced02=Play with a team to catch each other's leaking enemies.
+DocInfo/HowToPlayAdvanced03=Type "-autoskip" to automatically ready up each round
+DocInfo/HowToPlayAdvanced04=You can rally new choosers to beacons by selecting the beacon and clicking the rally button.
+DocInfo/HowToPlayBasic00=Choose where to defend
+DocInfo/HowToPlayBasic01=Build a defense that will take the enemies a long time to walk through
+DocInfo/HowToPlayBasic02=Buy units and upgrades to knock'em down
+DocInfo/HowToPlayWinning00=Beat all 25 rounds while losing at most 25 extra lives
+DocInfo/Name=#Defense
+DocInfo/PatchNote001=Fix game variant options
+DocInfo/PatchNote002=Fix player one hardcoded race and hopefully fix team settings
+DocInfo/PatchNote003=fix player 8 team and use custom teams instead of 2 teams in hopes to simplify the settings
+DocInfo/Screenshot01=A  failing terran defense
+DocInfo/Screenshot02=Mods, enemies and extra lives
+DocInfo/Screenshot03=Terran units to choose from
+DocInfo/Website=https://discord.gg/6ZfDWNF3jU
+Effect/Name/90mmCannonsDamageSiegeTankHd=90mm Cannons (Damage)
+Effect/Name/AcidSalivaDamageHd=Acid Saliva
+Effect/Name/AcidSalivaLMHd=Acid Saliva LM
+Effect/Name/AcidSalivaU=Ranged Acid Spines (Damage)
+Effect/Name/AcidSpinesDamageArmoredQueenEnemyHd=Acid Spines (Damage)
+Effect/Name/AcidSpinesLMArmoredQueenEnemyHd=Acid Spines LM
+Effect/Name/AcidSporesDamageGuardianHd=Acid Spores
+Effect/Name/AcidSporesLMGuardianHd=Acid Spores LM
+Effect/Name/AdeptDamageHd=Damage
+Effect/Name/AdeptLMHd=LM
+Effect/Name/ArcliteCannonDamageMechanicalSiegeTankTankModeEnemyHd=Arclite Cannon (Damage)
+Effect/Name/ArmoredCutieDamageEnemyHd=Armored Cutie (Damage)
+Effect/Name/ArmoredCutieLMEnemyHd=Armored Cutie LM
+Effect/Name/ArmoredCycloneAttackWeaponDamageEnemyHd=Armored Cyclone Attack Weapon Damage
+Effect/Name/ArmoredCycloneAttackWeaponLaunchMissileLeftEnemyHd=Armored Cyclone Attack Weapon Launch Missile Left
+Effect/Name/ArmoredCycloneAttackWeaponLaunchMissileLeftSetEnemyHd=Armored Cyclone Attack Weapon Launch Missile Left Set
+Effect/Name/ArmoredCycloneAttackWeaponLaunchMissileRightEnemyHd=Armored Cyclone Attack Weapon Launch Missile Right
+Effect/Name/ArmoredCycloneAttackWeaponLaunchMissileRightSetEnemyHd=Armored Cyclone Attack Weapon Launch Missile Right Set
+Effect/Name/ArmoredCycloneAttackWeaponLaunchMissileSwitchEnemyHd=Armored Cyclone Attack Weapon Launch Missile Switch
+Effect/Name/ArmoredDragoonDamageEnemyHd=Armored Dragoon (Damage)
+Effect/Name/ArmoredDragoonLMEnemyHd=Armored Dragoon LM
+Effect/Name/ArmoredHellbatDamageEnemyHd=Armored Hellbat (Damage)
+Effect/Name/ArmoredHellbatSAEnemyHd=Armored Hellbat SA
+Effect/Name/ArmoredHellbatSetEnemyHd=Armored Hellbat Set
+Effect/Name/ArmoredHercWeaponDamageEnemyHd=Armored Herc Weapon Damage
+Effect/Name/ArmoredPygaliskEnemyHd=Armored Pygalisk
+Effect/Name/ArmoredQuillyDamageEnemyHd=Armored Quilly (Damage)
+Effect/Name/ArmoredQuillyLMEnemyHd=Armored Quilly LM
+Effect/Name/BiologicalAberrationWeaponDamageEnemyHd=Biological Aberration Weapon (Damage)
+Effect/Name/BiologicalKerriganDamageEnemyHd=Biological Kerrigan (Damage)
+Effect/Name/BiologicalRavagerWeaponDamageEnemyHd=Biological Ravager Weapon (Damage)
+Effect/Name/BiologicalRavagerWeaponLMEnemyHd=Biological Ravager Weapon LM
+Effect/Name/BiologicalRavasaurDamageEnemyHd=Biological Ravasaur (Damage)
+Effect/Name/BiologicalRavasaurLMEnemyHd=Biological Ravasaur LM
+Effect/Name/BiologicalRavasaurSAEnemyHd=Biological Ravasaur SA
+Effect/Name/BossAlarakBaneBladesCPEnemyHd=Boss Alarak Bane Blades CP
+Effect/Name/BossAlarakBaneBladesDamageEnemyHd=Boss Alarak Bane Blades (Damage)
+Effect/Name/BossDehakaDamageEnemyHd=Boss Dehaka (Damage)
+Effect/Name/BossEradicatorDamageEnemyHd=Boss Eradicator (Damage)
+Effect/Name/BossYagdraFirebreathDamageCPEnemyHd=Boss Yagdra Firebreath Damage CP
+Effect/Name/BossYagdraFirebreathDamageEnemyHd=Boss Yagdra Firebreath (Damage)
+Effect/Name/BossYagdraFirebreathGoverningCPEnemyHd=Boss Yagdra Firebreath Governing CP
+Effect/Name/BossYagdraFirebreathIssueOrderEnemyHd=Boss Yagdra Firebreath Attack (Issue Order)
+Effect/Name/BossYagdraFirebreathStopIssueOrderEnemyHd=Boss Yagdra Firebreath Stop (Issue Order)
+Effect/Name/BossYagdraFirebreathWaitCPEnemyHd=Boss Yagdra Firebreath Wait CP
+Effect/Name/C10CanisterRifleDamageGhostHd=C-10 Canister Rifle (Damage)
+Effect/Name/C10CanisterRifleDamageLightGhostEnemyHd=C-10 Canister Rifle (Damage)
+Effect/Name/ClawsBiologicalUrsadonEnemyHd=Claws
+Effect/Name/CrucioShockCannonBlastDamageSiegeTankHd=Crucio Shock Cannon Blast (Damage)
+Effect/Name/CrucioShockCannonBlastInfestedSiegeTankHd=Crucio Shock Cannon Blast
+Effect/Name/CrucioShockCannonDirectedDamageSiegeTankHd=Crucio Shock Cannon Directed (Damage)
+Effect/Name/CrucioShockCannonDirectedInfestedSiegeTankHd=Crucio Shock Cannon Directed
+Effect/Name/CrucioShockCannonDummyDamageSiegeTankHd=Crucio Shock Cannon Dummy (Damage)
+Effect/Name/CrucioShockCannonDummyInfestedSiegeTankHd=Crucio Shock Cannon Dummy
+Effect/Name/DutchCPBossGiantRorySwannEnemyHd=Dutch CP
+Effect/Name/DutchConcussiveGrenadeDamage=Fist (Damage)
+Effect/Name/DutchDamageBossGiantRorySwannEnemyHd=Dutch (Damage)
+Effect/Name/DutchLMBossGiantRorySwannEnemyHd=Dutch LM
+Effect/Name/EntropyLanceDamageArmoredStalkerEnemyHd=Entropy Lance (Damage)
+Effect/Name/EntropyLanceLMArmoredStalkerEnemyHd=Entropy Lance (LM)
+Effect/Name/EyeBeamsGroundForwardPersistentBossStoneZealotEnemyHd=Eye Beams Ground Forward Persistent
+Effect/Name/EyeBeamsGroundLineDamageBossStoneZealotEnemyHd=Eye Beams Ground Line Damage
+Effect/Name/EyeBeamsGroundLineDamageDelayBossStoneZealotEnemyHd=Eye Beams Ground Line Damage Delay
+Effect/Name/EyeBeamsGroundLineSearchBossStoneZealotEnemyHd=Eye Beams Ground Line Search
+Effect/Name/EyeBeamsGroundLineSearchReverseBossStoneZealotEnemyHd=Eye Beams Ground Line Search Reverse
+Effect/Name/EyeBeamsGroundReversePersistentBossStoneZealotEnemyHd=Eye Beams Ground Reverse Persistent
+Effect/Name/EyeBeamsGroundSetBossStoneZealotEnemyHd=Eye Beams Ground (Set)
+Effect/Name/FistCPBossGiantRorySwannEnemyHd=Fist CP
+Effect/Name/FlameThrowerApplyDoTBehaviorHd=Flame Thrower (Apply DoT Behavior)
+Effect/Name/FlameThrowerCPFirebatHd=Flame Thrower CP
+Effect/Name/FlameThrowerDamageFirebatHd=Flame Thrower (Damage)
+Effect/Name/FlameThrowerDamageSetHd=Flame Thrower (Damage Set)
+Effect/Name/FlameThrowerEnumAreaFirebatHd=Flame Thrower (Enum Area)
+Effect/Name/FlameThrowerSetFirebatHd=Flame Thrower Set
+Effect/Name/FlameThrowerViralPlasmaDoTDamageHd=Flame Thrower (Viral Plasma DoT Damage)
+Effect/Name/FusionCutterLightSCVEnemyHd=Fusion Cutter (Damage)
+Effect/Name/GatlingCannonDamageMechanicalVikingAssaultModeEnemyHd=Gatling Cannon (Damage)
+Effect/Name/GlaiveWurmImpact1DamageHd=Glaive Wurm Impact 1 (Damage)
+Effect/Name/GlaiveWurmImpact1LMMutaliskHd=Glaive Wurm Impact 1 LM
+Effect/Name/GlaiveWurmImpact1SAMutaliskHd=Glaive Wurm Impact 1 SA
+Effect/Name/GlaiveWurmImpact1SetMutaliskHd=Glaive Wurm Impact 1 Set
+Effect/Name/GlaiveWurmImpact2DamageHd=Glaive Wurm Impact 2 (Damage)
+Effect/Name/GlaiveWurmImpact2LMMutaliskHd=Glaive Wurm Impact 2 LM
+Effect/Name/GlaiveWurmImpact2SAMutaliskHd=Glaive Wurm Impact 2 SA
+Effect/Name/GlaiveWurmImpact2SetMutaliskHd=Glaive Wurm Impact 2 Set
+Effect/Name/GlaiveWurmImpact3DamageHd=Glaive Wurm Impact 3 (Damage)
+Effect/Name/GlaiveWurmImpact3LMMutaliskHd=Glaive Wurm Impact 3 LM
+Effect/Name/GuassRifleHd=Guass Rifle
+Effect/Name/GuassRifleInfestedTerranHd=Guass Rifle
+Effect/Name/GuassRifleKillEverythingMarineTestHd=Guass Rifle (Damage)
+Effect/Name/GuassRifleLightInfestedTerranEnemyHd=Guass Rifle
+Effect/Name/GuassRifleLightWarPigEnemyHd=Gauss Rifle (Damage)
+Effect/Name/GuassRifleSimpleQuickMarineEnemyHd=Guass Rifle
+Effect/Name/GuassRifleTicklerMarineTestHd=Guass Rifle (Damage)
+Effect/Name/HydraliskMeleeSet2=Hydralisk Melee Set
+Effect/Name/ImpalerTentacleDamageHd=Spine Crawler (Damage)
+Effect/Name/ImpalerTentacleLMHd=Spine Crawler (Launch Missile)
+Effect/Name/InfestedSiegeTankSiegedSetHd=Infested SiegeTank - Sieged Set
+Effect/Name/JavelinMissileLaunchersDamageHd=Anti Air (Damage)
+Effect/Name/JavelinMissileLaunchersLM2=Anti Air (Launch Missile)
+Effect/Name/KaiserBladesDamageBiologicalUltraliskEnemyHd=Kaiser Blades (Damage)
+Effect/Name/LiberatorAGDamageHd=Liberator AG (Damage)
+Effect/Name/LiberatorAGMissileLMHd=Liberator AG Missile LM
+Effect/Name/LiberatorInterruptedMorphDelayPersistentHd=Liberator Interrupted Morph Delay Persistent
+Effect/Name/LiberatorTargetAAMorphOrderHd=Liberator Target AA Morph Order
+Effect/Name/LiberatorTargetAAMorphOrderSetHd=Liberator Target AA Morph Order Set
+Effect/Name/LiberatorTargetAAMorphRBHd=Liberator Target AA Morph RB
+Effect/Name/LiberatorTargetMorphABHd=Liberator Target Morph AB
+Effect/Name/LiberatorTargetMorphAGOrderHd=Liberator Target Morph AG Order
+Effect/Name/LiberatorTargetMorphDelayPersistentHd=Liberator Target Morph Delay Persistent
+Effect/Name/LiberatorTargetMorphOrderInitialSetHd=Liberator Target Morph Order Initial Set
+Effect/Name/LiberatorTargetMorphPersistentHd=Liberator Target Morph Persistent
+Effect/Name/LiberatorTargetMorphSearchABHd=Liberator Target Morph Search AB
+Effect/Name/LiberatorTargetMorphSearchAreaHd=Liberator Target Morph Search Area
+Effect/Name/LightAdeptDamageEnemyHd=Light Adept (Damage)
+Effect/Name/LightAdeptLMEnemyHd=Light Adept LM
+Effect/Name/LightHighTemplarWeaponDamageEnemyHd=Light High Templar Weapon (Damage)
+Effect/Name/LightHighTemplarWeaponEnemyHd=Light High Templar Weapon Set
+Effect/Name/LightHighTemplarWeaponLMEnemyHd=Light High Templar Weapon LM
+Effect/Name/LightLocustLMEnemyHd=Light Locust LM
+Effect/Name/LightLocustMeleeDamageEnemyHd=Light Locust Melee (Damage)
+Effect/Name/LightLocustRangedDamageEnemyHd=Light Locust Ranged (Damage)
+Effect/Name/LightPrisonerDamageEnemyHd=Light Prisoner (Damage)
+Effect/Name/LocustDamage=Locust Melee (Damage)
+Effect/Name/LurkerCPHd=Lurker CP
+Effect/Name/LurkerDamageHd=Lurker (Damage)
+Effect/Name/LurkerSAHd=Lurker SA
+Effect/Name/MaelstromRounds2=Maelstrom Rounds
+Effect/Name/MaelstromRoundsHd=Maelstrom Rounds
+Effect/Name/MechanicalMilitarizedTransportDamageEnemyHd=Mechanical Militarized Transport (Damage)
+Effect/Name/MechanicalShikotoCoupeDamageEnemyHd=Mechanical Shikoto Coupe (Damage)
+Effect/Name/MechanicalWarhoundLMEnemyHd=Mechanical Warhound LM
+Effect/Name/MechanicalWarhoundRangedDamageEnemyHd=Mechanical Warhound Ranged (Damage)
+Effect/Name/MeleeBiologicalHydraliskEnemyHd=Melee
+Effect/Name/MeleeNeedleSpinesDamageSimpleBeefyRoachEnemyHd=Melee Needle Spines (Damage)
+Effect/Name/MeleeSetSimpleBeefyRoachEnemyHd=Melee Set
+Effect/Name/NeedleClawsDamageLightBroodlingEnemyHd=Needle Claws (Damage)
+Effect/Name/NeedleSpinesDamageBiologicalHydraliskEnemyHd=Needle Spines (Damage)
+Effect/Name/NeedleSpinesDamageHd=Needle Spines
+Effect/Name/NeedleSpinesImpactSetBiologicalHydraliskEnemyHd=Needle Spines Impact Set
+Effect/Name/NeedleSpinesImpactSetHd=Needle Spines Impact Set
+Effect/Name/NeedleSpinesImpactSetUpgradedHd=Needle Spines Impact Set Upgraded
+Effect/Name/NeedleSpinesImpactSetUpgradedHd2=Needle Spines Impact Set Upgraded
+Effect/Name/NeedleSpinesImpactSwitchHd=Needle Spines Impact Switch
+Effect/Name/NeedleSpinesImpactSwitchHd2=Needle Spines Impact Switch
+Effect/Name/NeedleSpinesLMBiologicalHydraliskEnemyHd=Needle Spines LM
+Effect/Name/NeedleSpinesLaunchMissileHd=Needle Spines
+Effect/Name/P38ScytheGuassPistolCPLightReaperEnemyHd=P-38 Scythe Guass Pistol CP
+Effect/Name/P38ScytheGuassPistolDamageLightReaperEnemyHd=P-38 Scythe Guass Pistol (Damage)
+Effect/Name/ParticleBeamLightProbeEnemyHd=Particle Beam (Damage)
+Effect/Name/ParticleDisruptorsDamageStalkerHd=Particle Disruptors (Damage)
+Effect/Name/ParticleDisruptorsLMStalkerHd=Particle Disruptors LM
+Effect/Name/PhaseDisruptorsArmoredImmortalEnemyHd=Phase Disruptors
+Effect/Name/PhaseDisruptorsDamageImmortalHd=Phase Disruptors
+Effect/Name/PhotonCannonLMHd=Photon Cannon (Launch Missile)
+Effect/Name/PhotonCannonUHd=Photon Cannon (Damage)
+Effect/Name/PsiBladesCPArmoredZealotEnemyHd=Psi Blades CP
+Effect/Name/PsiBladesCPSimpleArmoredZealotEnemyHd=Psi Blades CP
+Effect/Name/PsiBladesDamageArmoredZealotEnemyHd=Psi Blades (Damage)
+Effect/Name/PsiBladesDamageSimpleArmoredZealotEnemyHd=Psi Blades (Damage)
+Effect/Name/PsiBlastDamageBossHybridDominatorEnemyHd=Psi Blast (Damage)
+Effect/Name/PsiBlastDamageBossKerriganEnemyHd=Psi Blast (Damage)
+Effect/Name/PsiBlastLMBossKerriganEnemyHd=Psi Blast LM
+Effect/Name/PsionicShockwave2CPHd=Psionic Shockwave 2 (CP)
+Effect/Name/PsionicShockwave2DamageHd=Psionic Shockwave 2 (Damage)
+Effect/Name/PsionicShockwave2SAHd=Psionic Shockwave 2 (SA)
+Effect/Name/PsionicShockwave3DamageHd=Psionic Shockwave 3 (Damage)
+Effect/Name/PsionicShockwaveCPHd=Psionic Shockwave (CP)
+Effect/Name/PsionicShockwaveDamageHd=Psionic Shockwave (Damage)
+Effect/Name/PsionicShockwaveDamageSimpleBossArchonEnemyHd=Psionic Shockwave (Damage)
+Effect/Name/PsionicShockwaveSAHd=Psionic Shockwave (SA)
+Effect/Name/PunisherGrenadesDamageArmoredMarauderEnemyHd=Punisher Grenades (Damage)
+Effect/Name/PunisherGrenadesDamageHd=Punisher Grenades (Damage)
+Effect/Name/PunisherGrenadesLMArmoredMarauderEnemyHd=Punisher Grenades LM
+Effect/Name/PunisherGrenadesLMHd=Punisher Grenades LM
+Effect/Name/PushSAHd=Push SA
+Effect/Name/RangedAcidSalivaLMSimpleBeefyRoachEnemyHd=Ranged Acid Saliva LM
+Effect/Name/RazorTalonsDamageBossKerriganEnemyHd=Razor Talons (Damage)
+Effect/Name/ScarabApplyRevealHd=Scarab Apply Reveal
+Effect/Name/ScarabExplodeDamageHd=Scarab Explode (Damage)
+Effect/Name/ScarabExplodeSetHd=Scarab Explode Set
+Effect/Name/ScarabLMHd=Scarab LM
+Effect/Name/ScarabLaunchPersistentHd=Scarab Launch Persistent
+Effect/Name/ScarabLaunchPersistentInitialHd=Scarab Launch Persistent Initial
+Effect/Name/ScarabLaunchSetHd=Scarab Launch Set
+Effect/Name/ScarabTimedLifeHd=Scarab Timed Life
+Effect/Name/ScarabUseMagazineHd=Scarab (Use Magazine)
+Effect/Name/ShrikeTurretDamageHd=Shrike Turret (Damage)
+Effect/Name/SiegeTankSiegedSetHd=SiegeTank - Sieged Set
+Effect/Name/SpinesLightDroneEnemyHd=Spines (Damage)
+Effect/Name/Talons=Talons Missile (Damage)
+Effect/Name/TalonsCPArmoredQueenEnemyHd=Talons CP
+Effect/Name/TalonsDamageArmoredQueenEnemyHd=Talons (Damage)
+Effect/Name/TalonsLMArmoredQueenEnemyHd=Talons LM
+Effect/Name/TalonsMissileBurstArmoredQueenEnemyHd=Talons Missile Burst
+Effect/Name/TempestDamageGroundHd=Tempest Damage (Ground)
+Effect/Name/TempestLaunchMissileGroundHd=Tempest Launch Missile (Ground)
+Effect/Name/ThermalLancesBackwardCPHd=Thermal Lances Backward CP
+Effect/Name/ThermalLancesDamageDelayCPHd=Thermal Lances Damage Delay CP
+Effect/Name/ThermalLancesDamageHd=Thermal Lances (Damage)
+Effect/Name/ThermalLancesForwardCPHd=Thermal Lances Forward CP
+Effect/Name/ThermalLancesSearchBackwardHd=Thermal Lances Search Backward
+Effect/Name/ThermalLancesSearchForwardHd=Thermal Lances Search Forward
+Effect/Name/ThermalLancesSetHd=Thermal Lances Set
+Effect/Name/ThorsHammerCPHd=Thor's Hammer CP
+Effect/Name/ThorsHammerDamageHd=Thor's Hammer (Damage)
+Effect/Name/TwinAutocannonsMechanicalGoliathEnemyHd=Twin Autocannons (Damage)
+Effect/Name/WarHound=Mechanical Warhound Melee (Damage)
+Effect/Name/WeaklingClawsHd=Weakling Claws (Damage)
+MapInfo/Player00/Name=Neutral
+MapInfo/Player01/Name=Player 1
+MapInfo/Player02/Name=Player 2
+MapInfo/Player03/Name=Player 3
+MapInfo/Player04/Name=Player 4
+MapInfo/Player05/Name=Player 5
+MapInfo/Player06/Name=Player 6
+MapInfo/Player07/Name=Player 7
+MapInfo/Player08/Name=Player 8
+MapInfo/Player09/Name=Hostile
+MapInfo/Player10/Name=Hostile
+Param/Expression/5AA39541=Unexpected race returned<n/>player: ~p~<n/>race: ~r~
+Param/Expression/EE5F32E3=<c val="~color_calamity~">Extra lives left: ~extra_lives_left~</c>
+Param/Expression/F3CACBA2=autoskip toggled to: ~autoskip~
+Param/Expression/lib_1_307E16AC=stage: ~ability_stage~
+Param/Value/6B70F853=The enemy will spawn when everyone is ready
+Param/Value/85DFF2CE=The enemy will spawn soon
+Param/Value/C3978B7F=Choose where to defend
+Param/Value/CB176063=
+Param/Value/D6EDA166=You start with 5 choosers to spend on minerals or units.  Make sure to use them !
+Param/Value/E58B56EB=Skip
+Param/Value/ED031DF0=Ready
+Param/Value/lib_1_0D4B38C5=Generic6 - Complete
+Param/Value/lib_1_0DDB8C11=<error: stage not found>
+Param/Value/lib_1_1660F597=Build7 - Collide
+Param/Value/lib_1_222792E0=Harvest3 - Harvest
+Param/Value/lib_1_28EC086C=<error: race not found>
+Param/Value/lib_1_2C79D0B3=Effect3 - Cast
+Param/Value/lib_1_2E58CBA2=Build6 - Finish
+Param/Value/lib_1_3022E928=Morph03 - Actor Start
+Param/Value/lib_1_315E0491=Morph13 - Abilities Start
+Param/Value/lib_1_367C28A1=Harvest1 - Approach Resource
+Param/Value/lib_1_36F8FDEE=Effect1 - Approach
+Param/Value/lib_1_411DDC33=Harvest5 - Wait for Drop Off
+Param/Value/lib_1_4134203F=Build1 - Approach
+Param/Value/lib_1_41418C08=Attack2 - Attack
+Param/Value/lib_1_45CC7D05=Zerg
+Param/Value/lib_1_48441561=Harvest7 - Drop Off
+Param/Value/lib_1_4A35FBAD=ff6166
+Param/Value/lib_1_4B0781BB=Protoss
+Param/Value/lib_1_4F06080C=Not enough minerals
+Param/Value/lib_1_5C203FFD=Generic2 - Queue
+Param/Value/lib_1_6546880C=Not enough minerals
+Param/Value/lib_1_693AB5CA=Morph05 - Stats Start
+Param/Value/lib_1_6D6E5434=Behavior2 - Toggled
+Param/Value/lib_1_76371732=Morph11 - Unit Start
+Param/Value/lib_1_78B24B45=Behavior1 - Untoggled
+Param/Value/lib_1_7923C72E=Build3 - Construct
+Param/Value/lib_1_79353442=Generic8 - Unpause
+Param/Value/lib_1_7E513C70=Attack1 - Approach
+Param/Value/lib_1_82D59DD9=Morph01 - Approach
+Param/Value/lib_1_875ED7AF=Morph12 - Unit End
+Param/Value/lib_1_8845F40E=Morph10 - Facing End
+Param/Value/lib_1_89DBB633=Harvest2 - Wait at Resource
+Param/Value/lib_1_8FB28264=Generic7 - Pause
+Param/Value/lib_1_92C481D4=Morph02 - Wait
+Param/Value/lib_1_94141FDC=Morph14 - Abilities End
+Param/Value/lib_1_96CA8A61=Terran
+Param/Value/lib_1_96D523DB=Morph07 - Collision Start
+Param/Value/lib_1_9AF529AD=Morph06 - Stats End
+Param/Value/lib_1_9BA4458C=Morph09 - Facing Start
+Param/Value/lib_1_A3DCFA2F=Effect2 - Prep
+Param/Value/lib_1_AC409659=Effect6 - Bail
+Param/Value/lib_1_ACFCE4F5=Generic5 - Preempt
+Param/Value/lib_1_AE6CBCB1=Morph15 - Mover Start
+Param/Value/lib_1_B1A9A0BE=Rally - Place
+Param/Value/lib_1_B515E506=Morph04 - Actor End
+Param/Value/lib_1_BF2D00E9=Harvest6 - Approach Drop Off
+Param/Value/lib_1_C0E52566=Morph16 - Mover End
+Param/Value/lib_1_C0FADEC6=Generic1 - Any
+Param/Value/lib_1_C807DFC8=Effect4 - Channel
+Param/Value/lib_1_CA9D1B07=Build2 - Wait
+Param/Value/lib_1_CEBB5E3B=Build4 - Pause
+Param/Value/lib_1_D41AC1FC=Generic4 - Cancel
+Param/Value/lib_1_DDF50FE4=Attack3 - Loiter
+Param/Value/lib_1_E19B5790=Generic3 - Execute
+Param/Value/lib_1_E222F185=Morph08 - Collision End
+Param/Value/lib_1_F40CAC62=Build5 - Resume
+Param/Value/lib_1_F8914108=Effect5 - Finish
+Param/Value/lib_1_FF091B5E=Harvest4 - Wait to Return
+Unit/InfoText/PerfectSpecimenModHd=Adds shields, armor and speed
+Unit/Name/1ChooserBeaconHd=1 Chooser
+Unit/Name/2ChooserBeaconHd=2 Choosers
+Unit/Name/2MineralsHd=2 Minerals
+Unit/Name/3ChooserBeaconHd=3 Choosers
+Unit/Name/4ChooserBeaconHd=4 Choosers
+Unit/Name/5ChooserBeaconHd=5 Choosers
+Unit/Name/6ChooserBeaconHd=6 Choosers
+Unit/Name/AcidSalivaWeaponRoachHd=Acid Saliva Weapon
+Unit/Name/AcidSalivaWeaponSimpleBeefyRoachEnemyHd=Acid Saliva Weapon
+Unit/Name/AcidSpinesWeaponArmoredQueenEnemyHd=Acid Spines Weapon
+Unit/Name/AcidSporesMissileHd=Acid Spore
+Unit/Name/AddedArmorModHd=Added Armor
+Unit/Name/AdeptHd=Adept
+Unit/Name/AdeptWeaponHd=Adept
+Unit/Name/ArchonHd=Archon
+Unit/Name/ArmoredCutieEnemyHd=Armored Cutie
+Unit/Name/ArmoredCutieWeaponEnemyHd=Armored Cutie Weapon
+Unit/Name/ArmoredCycloneEnemyHd=Armored Cyclone
+Unit/Name/ArmoredCycloneMissileEnemyHd=Armored Cyclone Missile
+Unit/Name/ArmoredDragoonEnemyHd=Armored Dragoon
+Unit/Name/ArmoredDragoonWeaponEnemyHd=Armored Dragoon Weapon
+Unit/Name/ArmoredHellbatEnemyHd=Armored Hellbat
+Unit/Name/ArmoredHercEnemyHd=Armored Herc
+Unit/Name/ArmoredImmortalEnemyHd=Armored Immortal
+Unit/Name/ArmoredMarauderEnemyHd=Armored Marauder
+Unit/Name/ArmoredPygaliskEnemyHd=Armored Pygalisk
+Unit/Name/ArmoredQueenEnemyHd=Armored Queen
+Unit/Name/ArmoredQuillyEnemyHd=Armored Quilly
+Unit/Name/ArmoredQuillyWeaponEnemyHd=Armored Quilly Weapon
+Unit/Name/ArmoredStalkerEnemyHd=Armored Stalker
+Unit/Name/ArmoredStalkerWeaponEnemyHd=Armored Stalker
+Unit/Name/ArmoredZealotEnemyHd=Armored Zealot
+Unit/Name/BeaconParentHd=Beacon Parent
+Unit/Name/BeefySCVTestHd=Beefy SCV
+Unit/Name/BiologicalAberrationEnemyHd=Biological Aberration
+Unit/Name/BiologicalHydraliskEnemyHd=Biological Hydralisk
+Unit/Name/BiologicalKerriganEnemyHd=Biological Kerrigan
+Unit/Name/BiologicalRavagerEnemyHd=Biological Ravager
+Unit/Name/BiologicalRavagerWeaponMissileEnemyHd=Biological Ravager Weapon Missile
+Unit/Name/BiologicalRavasaurEnemyHd=Biological Ravasaur
+Unit/Name/BiologicalRavasaurWeaponEnemyHd=Biological Ravasaur Weapon
+Unit/Name/BiologicalUltraliskEnemyHd=Biological Ultralisk
+Unit/Name/BiologicalUrsadonEnemyHd=Biological Ursadon
+Unit/Name/BossAlarakEnemyHd=Boss Alarak
+Unit/Name/BossDehakaEnemyHd=Boss Dehaka
+Unit/Name/BossEradicatorEnemyHd=Boss Eradicator
+Unit/Name/BossGiantRorySwannEnemyHd=Boss Giant Rory Swann
+Unit/Name/BossHybridDominatorEnemyHd=Boss Hybrid Dominator
+Unit/Name/BossKerriganEnemyHd=Boss Kerrigan
+Unit/Name/BossStoneZealotEnemyHd=Boss Stone Zealot
+Unit/Name/BossYagdraEnemyHd=Boss Yagdra
+Unit/Name/BottomHdDefendLocationBeacon=Bottom
+Unit/Name/BottomLeftHdDefendLocationBeacon=Bottom Left
+Unit/Name/BottomRightHdDefendLocationBeacon=Bottom Right
+Unit/Name/BunkerHd=Bunker
+Unit/Name/ChooserHd=Chooser
+Unit/Name/ColossusHd=Colossus
+Unit/Name/DroneHd=Drone
+Unit/Name/DutchWeaponBossGiantRorySwannEnemyHd=Dutch Weapon
+Unit/Name/ExtraLifeHd=Extra Life
+Unit/Name/FirebatHd=Firebat
+Unit/Name/GhostHd=Ghost
+Unit/Name/GlaiveWurmWeaponHd=Glave Wurm
+Unit/Name/GuardianHd=Guardian
+Unit/Name/HydraliskGroundWeapon=Needle Spines
+Unit/Name/HydraliskHd=Hydralisk
+Unit/Name/ImmortalHd=Immortal
+Unit/Name/IncreasedSpeedModHd=Increased Speed
+Unit/Name/InfestedSiegeTankHd=Infested Siege Tank
+Unit/Name/InfestedSiegeTankUprootedHd=Infested Siege Tank
+Unit/Name/InfestedTerranHd=Infested Terran
+Unit/Name/KillEverythingMarineTestHd=Kill Everything Marine
+Unit/Name/LeftHdDefendLocationBeacon=Left
+Unit/Name/LiberatorAGHd=Liberator
+Unit/Name/LiberatorAGMissileHd=Liberator AG Missile
+Unit/Name/LiberatorAGMorphModelHd=Liberator
+Unit/Name/LiberatorHd=Liberator
+Unit/Name/LiberatorMorphModelHd=Liberator
+Unit/Name/LightAdeptEnemyHd=Light Adept
+Unit/Name/LightAdeptWeaponEnemyHd=Light Adept
+Unit/Name/LightBroodlingEnemyHd=Light Broodling
+Unit/Name/LightDroneEnemyHd=Light Drone
+Unit/Name/LightGhostEnemyHd=Light Ghost
+Unit/Name/LightHighTemplarEnemyHd=Light High Templar
+Unit/Name/LightHighTemplarWeaponEnemyHd=Light High Templar Weapon
+Unit/Name/LightInfestedTerranEnemyHd=Light Infested Terran
+Unit/Name/LightLocustEnemyHd=Light Locust
+Unit/Name/LightLocustWeaponEnemyHd=Light Locust - Weapon
+Unit/Name/LightPrisonerEnemyHd=Light Prisoner
+Unit/Name/LightProbeEnemyHd=Light Probe
+Unit/Name/LightReaperEnemyHd=Light Reaper
+Unit/Name/LightSCVEnemyHd=Light SCV
+Unit/Name/LightWarPigEnemyHd=Light War Pig
+Unit/Name/LurkerHd=Lurker
+Unit/Name/LurkerMP=Lurker Burrowed
+Unit/Name/MarauderHd=Marauder
+Unit/Name/MarineHd=Marine
+Unit/Name/MechanicalGoliathEnemyHd=Mechanical Goliath
+Unit/Name/MechanicalMilitarizedTransportEnemyHd=Mechanical Militarized Transport
+Unit/Name/MechanicalShikotoCoupeEnemyHd=Mechanical Shikoto Coupe
+Unit/Name/MechanicalSiegeTankTankModeEnemyHd=Mechanical Siege Tank
+Unit/Name/MechanicalVikingAssaultModeEnemyHd=Mechanical Viking
+Unit/Name/MechanicalWarHoundEnemyHd=Mechanical Warhound
+Unit/Name/MechanicalWarhoundWeaponEnemyHd=Mechanical Warhound Weapon
+Unit/Name/MutaliskHd=Mutalisk
+Unit/Name/PerfectSpecimenModHd=Perfect Specimen
+Unit/Name/PhotonCannonHd=Photon Cannon
+Unit/Name/PhotonCannonWeaponHd=Photon Cannon Weapon
+Unit/Name/ProbeHd=Probe
+Unit/Name/PunisherGrenadesLMWeaponEnemyHd=Punisher Grenades
+Unit/Name/PunisherGrenadesLMWeaponHd=Punisher Grenades
+Unit/Name/RazorTalonsWeaponBossKerriganEnemyHd=Razor Talons Weapon
+Unit/Name/ReaverHd=Reaver
+Unit/Name/ResearchCenterProtossHd=Research Center
+Unit/Name/ResearchCenterTerranHd=Research Center
+Unit/Name/ResearchCenterZergHd=Research Center
+Unit/Name/RightHdDefendLocationBeacon=Right
+Unit/Name/RoachHd=Roach
+Unit/Name/SCVHd=SCV
+Unit/Name/ScarabHd=Scarab
+Unit/Name/ScarabWeaponHd=Scarab Weapon
+Unit/Name/SiegeTankHd=Siege Tank
+Unit/Name/SiegeTankSiegedHd=Siege Tank
+Unit/Name/SimpleArmoredZealotHd=Simple Armored Zealot
+Unit/Name/SimpleBeefyRoachEnemyHd=Simple Beefy Roach
+Unit/Name/SimpleBossArchonEnemyHd=Simple Boss Archon
+Unit/Name/SimpleQuickMarineEnemyHd=Simple Quick Marine
+Unit/Name/SpawnFlagHd=Spawn Flag
+Unit/Name/SpawnFlagPlacementTestHd=Spawn Flag Placement Test
+Unit/Name/SpineCrawlerHd=Spine Crawler
+Unit/Name/SpineCrawlerWeaponHd=Spine Crawler
+Unit/Name/StalkerHd=Stalker
+Unit/Name/StalkerWeaponHd=Stalker
+Unit/Name/TalonsMissileWeaponArmoredQueenEnemyHd=Talons Missile Weapon
+Unit/Name/TempestHd=Tempest
+Unit/Name/TempestWeaponGroundHd=Tempest Weapon (Ground)
+Unit/Name/ThorAAWeaponHd=Thor AA
+Unit/Name/ThorHd=Thor
+Unit/Name/TicklerMarineTestHd=Tickler Marine
+Unit/Name/TopHdDefendLocationBeacon=Top
+Unit/Name/TopLeftHdDefendLocationBeacon=Top Left
+Unit/Name/TopRightHdDefendLocationBeacon=Top Right
+Unit/Name/UnitBeaconParentHd=Unit Beacon Parent
+Unit/Name/UnitHasShieldsModHd=Unit Has Shields
+Unit/Name/UrsadonTestHd=Ursadon
+Unit/Name/WallProtossHd=Wall
+Unit/Name/WallTerranHd=Wall
+Unit/Name/WallZergHd=Wall
+Unit/Name/WeaklingEnemyHd=Weakling
+UnitKillRank/BossDehakaEnemyHd=Primal Pack Leader
+UnitSubtitle/BossDehakaEnemyHd=Primal Pack Leader
+Upgrade/Name/BunkerTurretDamageHd=Bunker Turret Damage
+Upgrade/Name/PhotonCannonDamageHd=Photon Cannon Damage
+Upgrade/Name/SpineCrawlerDamageHd=Spine Crawler Damage
+Upgrade/Name/UnitDamageProtossHd=Unit Damage
+Upgrade/Name/UnitDamageTerranHd=Unit Damage - Terran
+Upgrade/Name/UnitDamageZergHd=Unit Damage - Zerg
+Variant001/Team/00=The Defenders
+Weapon/Name/90mmCannonsHd=90mm Cannons
+Weapon/Name/AcidSalivaRoachHd=Acid Saliva
+Weapon/Name/AcidSpinesArmoredQueenEnemyHd=Acid Spines
+Weapon/Name/AcidSporesGuardianHd=Acid Spores
+Weapon/Name/AdeptHd=Purifier Glaive Cannon
+Weapon/Name/ArcliteCannonMechanicalSiegeTankTankModeEnemyHd=Arclite Cannon
+Weapon/Name/ArmoredCutieWeaponEnemyHd=Armored Cutie Weapon
+Weapon/Name/ArmoredQuillyMeleeEnemyHd=Armored Quilly Melee
+Weapon/Name/ArmoredQuillyRangedEnemyHd=Armored Quilly Ranged
+Weapon/Name/BaneBladesBossAlarakEnemyHd=Bane Blades
+Weapon/Name/C10CanisterRifleHd=C-10 Canister Rifle
+Weapon/Name/C10CanisterRifleLightGhostEnemyHd=C-10 Canister Rifle
+Weapon/Name/C14GaussRifleKillEverythingMarineTestHd=C-14 Gauss Rifle
+Weapon/Name/C14GaussRifleTicklerMarineTestHd=C-14 Gauss Rifle
+Weapon/Name/C20ACanisterRifleBiologicalKerriganEnemyHd=C-20A Canister Rifle
+Weapon/Name/ClawsBiologicalUrsadonEnemyHd=Claws
+Weapon/Name/ClawsBossDehakaEnemyHd=Claws
+Weapon/Name/ClawsLightDroneEnemyHd=Claws
+Weapon/Name/CrucioShockCannonInfestedSiegeTankHd=Crucio Shock Cannon
+Weapon/Name/CrucioShockCannonSiegeTankHd=Crucio Shock Cannon
+Weapon/Name/DutchBossGiantRorySwannEnemyHd=Dutch
+Weapon/Name/EyeBeamsGroundBossStoneZealotEnemyHd=Eye Beams Ground
+Weapon/Name/FirebatHd=Perdition Flamethrower
+Weapon/Name/FirebreathBossYagdraEnemyHd=Firebreath
+Weapon/Name/FistBossGiantRorySwannEnemyHd=Fist
+Weapon/Name/FusionCutterLightSCVEnemyHd=Fusion Cutter
+Weapon/Name/GatlingCannonMechanicalVikingAssaultModeEnemyHd=Gatling Cannon
+Weapon/Name/GaussRifleMechanicalShikotoCoupeEnemyHd=Gauss Rifle
+Weapon/Name/GlaiveWurmHd=Glave Wurm
+Weapon/Name/GuassRifleHd=C-14 Gauss Rifle
+Weapon/Name/GuassRifleInfestedTerranHd=Gauss Rifle
+Weapon/Name/GuassRifleLightInfestedTerranEnemyHd=Gauss Rifle
+Weapon/Name/GuassRifleMechanicalMilitarizedTransportEnemyHd=Gauss Rifle
+Weapon/Name/GuassRifleSimpleQuickMarineEnemyHd=Gauss Rifle
+Weapon/Name/H1FlashWelderArmoredHercEnemyHd=H1 Flash Welder
+Weapon/Name/ImpalerTentacleHd=Impaler Tentacle
+Weapon/Name/KaiserBladesArmoredPygaliskEnemyHd=Kaiser Blades
+Weapon/Name/KaiserBladesBiologicalUltraliskEnemyHd=Kaiser Blades
+Weapon/Name/LiberatorAGWeaponHd=Concord Cannon
+Weapon/Name/LightLocustMeleeEnemyHd=Light Locust Melee
+Weapon/Name/LightLocustRangedEnemyHd=Light Locust Ranged
+Weapon/Name/LightWarPigGaussRifleEnemyHd=Gauss Rifle
+Weapon/Name/MeatyFistLightPrisonerEnemyHd=Meaty Fist
+Weapon/Name/MechanicalWarhoundMeleeEnemyHd=Mechanical Warhound Melee
+Weapon/Name/MeleeBiologicalHydraliskEnemyHd=Melee
+Weapon/Name/MeleeNeedleSpinesSimpleBeefyRoachEnemyHd=Melee Needle Spines
+Weapon/Name/NapalmSprayArmoredHellbatEnemyHd=Napalm Spray
+Weapon/Name/NeedleClawsLightBroodlingEnemyHd=Needle Claws
+Weapon/Name/NeedleSpinesBiologicalHydraliskEnemyHd=Needle Spines
+Weapon/Name/NeedleSpinesHydraliskHd=Needle Spines
+Weapon/Name/P38GuassPistolLightReaperEnemyHd=P-38 Gauss Pistol
+Weapon/Name/ParticleBeamLightProbeEnemyHd=Particle Beam
+Weapon/Name/ParticleDisruptorsArmoredStalkerEnemyHd=Particle Disruptors
+Weapon/Name/ParticleDisruptorsHd=Particle Disruptors
+Weapon/Name/PeaceKeepersBossEradicatorEnemyHd=Peace Keepers
+Weapon/Name/PhaseDisruptorArmoredDragoonEnemyHd=Phase Disruptor
+Weapon/Name/PhaseDisruptorsArmoredImmortalEnemyHd=Phase Disruptors
+Weapon/Name/PhaseDisruptorsHd=Phase Disruptors
+Weapon/Name/PhotonCannonHd=Photon Cannon
+Weapon/Name/PsiBladesArmoredZealotEnemyHd=Psi Blades
+Weapon/Name/PsiBlastBossHybridDominatorEnemyHd=Psi Blast
+Weapon/Name/PsiBlastBossKerriganEnemyHd=Psi Blast
+Weapon/Name/PsionicShockwaveHd=Psionic Shockwave
+Weapon/Name/PsionicShockwaveSimpleBossArchonHd=Psionic Shockwave
+Weapon/Name/PunisherGrenadesArmoredMarauderEnemyHd=Punisher Grenades
+Weapon/Name/PunisherGrenadesHd=Punisher Grenades
+Weapon/Name/PurifierGlaiveCannonLightAdeptEnemyHd=Purifier Glaive Cannon
+Weapon/Name/PustulantSmashBiologicalAberrationEnemyHd=Pustulant Smash
+Weapon/Name/RailgunMechanicalWarhoundEnemyHd=Railgun
+Weapon/Name/RangedAcidSalivaSimpleBeefyRoachEnemyHd=Ranged Acid Saliva
+Weapon/Name/RavagerWeaponBiologicalRavagerEnemyHd=Plasma Discharge
+Weapon/Name/RazorTalonsBossKerriganEnemyHd=Razor Talons
+Weapon/Name/ScarabsReaverHd=Scarabs
+Weapon/Name/ShrikeTurretHd=Shrike Turret
+Weapon/Name/SimpleArmoredZealotPsiBladesEnemyHd=Psi Blades
+Weapon/Name/SpinesLurkerHd=Spines
+Weapon/Name/TalonsArmoredQueenEnemyHd=Talons
+Weapon/Name/TalonsMissileArmoredQueenEnemyHd=Talons Missile
+Weapon/Name/TempestGroundHd=Resonance Coil
+Weapon/Name/ThermalLancesHd=Thermal Lance
+Weapon/Name/ThorsHammerHd=Thor's Hammer
+Weapon/Name/TwinAutocannonsMechanicalGoliathEnemyHd=Twin Autocannons
+Weapon/Name/TyphoonMissilePodArmoredCycloneEnemyHd=Typhoon Missile Pod
+Weapon/Name/VolatileProjectionBiologicalRavasaurEnemyHd=Volatile Projection
+Weapon/Name/WeaklingClawsHd=Weakling Claws
+Weapon/Tip/AcidSpinesArmoredQueenEnemyHd=
+Weapon/Tip/GuassRifleHd=
+Weapon/Tip/TalonsArmoredQueenEnemyHd=

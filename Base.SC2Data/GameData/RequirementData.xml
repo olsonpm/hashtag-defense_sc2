@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirement id="HasFullRefundAvailableHd">
+        <NodeArray index="Use" Link="CountBehaviorFullRefundAvailableHdCompleteOnly"/>
+        <NodeArray index="Show" Link="CountBehaviorFullRefundAvailableHdCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="MaxBunkerTurretDamageNotReachedHd">
+        <NodeArray index="Use" Link="LTCountUpgradeBunkerTurretDamageHdCompleteOnly100"/>
+        <NodeArray index="Show" Link="LTCountUpgradeBunkerTurretDamageHdCompleteOnly100"/>
+    </CRequirement>
+    <CRequirement id="MaxPhotonCannonDamageNotReachedHd">
+        <NodeArray index="Use" Link="LTCountUpgradePhotonCannonDamageHdCompleteOnly100"/>
+        <NodeArray index="Show" Link="LTCountUpgradePhotonCannonDamageHdCompleteOnly100"/>
+    </CRequirement>
+    <CRequirement id="MaxSpineCrawlerDamageNotReachedHd">
+        <NodeArray index="Use" Link="LTCountUpgradeSpineCrawlerDamageHdCompleteOnly100"/>
+        <NodeArray index="Show" Link="LTCountUpgradeSpineCrawlerDamageHdCompleteOnly100"/>
+    </CRequirement>
+    <CRequirement id="MaxUnitDamageNotReachedZergHd">
+        <NodeArray index="Use" Link="LTCountUpgradeUnitDamageZergHdCompleteOnly100"/>
+        <NodeArray index="Show" Link="LTCountUpgradeUnitDamageZergHdCompleteOnly100"/>
+    </CRequirement>
+    <CRequirement id="MaxUnitDamageNotReachedTerranHd">
+        <NodeArray index="Use" Link="LTCountUpgradeUnitDamageTerranHdCompleteOnly100"/>
+        <NodeArray index="Show" Link="LTCountUpgradeUnitDamageTerranHdCompleteOnly100"/>
+    </CRequirement>
+    <CRequirement id="MaxUnitDamageNotReachedProtossHd">
+        <NodeArray index="Use" Link="LTCountUpgradeUnitDamageProtossHdCompleteOnly100"/>
+        <NodeArray index="Show" Link="LTCountUpgradeUnitDamageProtossHdCompleteOnly100"/>
+    </CRequirement>
+</Catalog>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="BuildBunkerHd">
+        <Icon value="Assets\Textures\btn-building-terran-bunker.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-bunker.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="BuildWallTerranHd">
+        <Icon value="Assets\Textures\btn-building-terran-barracksmengsk.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="BuildWallProtossHd">
+        <Icon value="Assets\Textures\btn-building-protoss-shieldbattery.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="BurrowLurkerMPHd">
+        <Icon value="Assets\Textures\btn-ability-zerg-burrow-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-burrow.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="ClearUnitChooserRallyHd">
+        <Icon value="Assets\Textures\btn-command-cancel.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-cancel.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value="Cancel"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="BuildWallZergHd">
+        <Icon value="Assets\Textures\btn-building-zerg-infestationpit.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="InfestedSiegeTankUprootHd">
+        <Icon value="Assets\Textures\btn-ability-zerg-uproot-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-uproot-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="InfestedSiegeTankRootHd">
+        <Icon value="Assets\Textures\btn-ability-zerg-root-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-root-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="NovaInfestedSiegeTankRoot"/>
+    </CButton>
+    <CButton id="PhotonCannonHd">
+        <Icon value="Assets\Textures\btn-building-protoss-photoncannon.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="PlaceSpawnFlagHd">
+        <Icon value="Assets\Textures\btn-icon-dominion.dds"/>
+    </CButton>
+    <CButton id="RallyChoosersHereHd">
+        <Icon value="Assets\Textures\btn-ability-terran-setrallypoint.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-setrallypoint.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value="Rally"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="SalvageHalfRefundHd">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="BuildSpineCrawlerZergHd">
+        <Icon value="Assets\Textures\btn-building-zerg-spinecrawler.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-zerg-spinecrawler.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="SalvageFullRefundHd">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="SalvageNoRefundHd">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="SpineCrawlerRootHd">
+        <Icon value="Assets\Textures\btn-ability-zerg-root-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-root-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="SpineCrawlerUprootHd">
+        <Icon value="Assets\Textures\btn-ability-zerg-uproot-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-uproot-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="UpgradeBunkerTurretDamageHd">
+        <Icon value="Assets\Textures\btn-research-zerg-shriketurret.dds"/>
+    </CButton>
+    <CButton id="UpgradePhotonCannonDamageHd">
+        <Icon value="Assets\Textures\btn-ability-zeratul-photoncannon-shadeprojection.dds"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="UpgradeSpineCrawlerDamageHd">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-seismicspines.dds"/>
+    </CButton>
+    <CButton id="UpgradeUnitDamageZergHd">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="zergmissileweapons1"/>
+    </CButton>
+    <CButton id="UpgradeUnitDamageTerranHd">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="zergmissileweapons1"/>
+    </CButton>
+    <CButton id="UpgradeUnitDamageProtossHd">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="zergmissileweapons1"/>
+    </CButton>
+</Catalog>
