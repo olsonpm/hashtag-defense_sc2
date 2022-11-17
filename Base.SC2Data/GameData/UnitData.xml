@@ -16,7 +16,7 @@
         <Response value="Flee"/>
         <LifeStart value="10000"/>
         <LifeMax value="10000"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="2.8125"/>
         <Acceleration value="2.5"/>
         <LateralAcceleration value="46"/>
@@ -120,8 +120,8 @@
         <Attributes index="Structure" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossBuildingPlating"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <StationaryTurningRate value="719.4726"/>
         <TurningRate value="719.4726"/>
         <Sight value="9"/>
@@ -167,12 +167,12 @@
         <LifeStart value="200"/>
         <LifeMax value="200"/>
         <LifeArmor value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossBuildingPlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <ShieldsStart value="200"/>
         <ShieldsMax value="200"/>
         <ShieldRegenDelay value="10"/>
         <ShieldRegenRate value="2"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <StationaryTurningRate value="719.4726"/>
         <TurningRate value="719.4726"/>
         <Sight value="9"/>
@@ -227,7 +227,7 @@
         <Collide index="Ground" value="1"/>
         <Collide index="Structure" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranBuildingPlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <StationaryTurningRate value="719.4726"/>
         <TurningRate value="719.4726"/>
         <Sight value="8"/>
@@ -278,8 +278,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46"/>
         <Sight value="10"/>
         <CostCategory value="Army"/>
@@ -336,8 +335,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <Sight value="10"/>
         <Food value="-2"/>
         <CostCategory value="Army"/>
@@ -403,7 +401,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -457,7 +455,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46"/>
         <StationaryTurningRate value="1499.9414"/>
         <Sight value="10"/>
@@ -493,7 +491,7 @@
         <HotkeyCategory value="Unit/Category/TerranUnits"/>
     </CUnit>
     <CUnit id="ArmoredCycloneEnemyHd">
-        <Attributes index="Light" value="1"/>
+        <Attributes index="Armored" value="1"/>
         <LifeMax value="850"/>
         <LifeStart value="850"/>
         <ShieldsStart value="850"/>
@@ -517,7 +515,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="64"/>
         <TurningRate value="360"/>
         <Sight value="11"/>
@@ -587,8 +585,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <Sight value="9"/>
         <Food value="-4"/>
         <CostCategory value="Army"/>
@@ -642,8 +639,7 @@
         <LifeStart value="275"/>
         <LifeMax value="275"/>
         <LifeArmor value="2"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergUltraliskArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <Speed value="2.9531"/>
         <SpeedMultiplierCreep value="1.3"/>
         <Acceleration value="1000"/>
@@ -717,7 +713,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <Sight value="13"/>
         <CostCategory value="Army"/>
@@ -772,8 +768,7 @@
         <PlaneArray index="Ground" value="1"/>
         <Collide index="Ground" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <Sight value="10"/>
         <CostCategory value="Army"/>
         <AttackTargetPriority value="20"/>
@@ -782,7 +777,6 @@
         <AbilArray Link="move"/>
         <BehaviorArray Link="DehakaJump"/>
         <WeaponArray Link="ClawsBossDehakaEnemyHd"/>
-        <WeaponArray Link="DehakaAir"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -825,7 +819,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranBuildingPlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Sight value="10"/>
         <CostCategory value="Technology"/>
         <CostResource index="Minerals" value="2"/>
@@ -895,7 +889,7 @@
         <PushPriority value="11"/>
         <Collide index="Ground" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46"/>
         <StationaryTurningRate value="494.2968"/>
         <TurningRate value="494.2968"/>
@@ -953,8 +947,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/HybridArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/HybridShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46"/>
         <Sight value="9"/>
         <CostResource index="Minerals" value="1200"/>
@@ -998,7 +991,7 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="2.9531"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46.0625"/>
@@ -1061,7 +1054,7 @@
         <Collide index="Burrow" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Mover value="Burrowed"/>
         <Sight value="10"/>
         <Food value="-3"/>
@@ -1130,7 +1123,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergBuildingArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <StationaryTurningRate value="719.4726"/>
         <TurningRate value="719.4726"/>
         <Sight value="9"/>
@@ -1172,7 +1165,7 @@
         <Attributes index="Biological" value="1"/>
         <LifeStart value="45"/>
         <LifeMax value="45"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="10"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46.0625"/>
@@ -1242,7 +1235,7 @@
         <Attributes index="Biological" value="1"/>
         <LifeStart value="45"/>
         <LifeMax value="45"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="10"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46.0625"/>
@@ -1309,7 +1302,7 @@
         <PlaneArray index="Ground" value="1"/>
         <Collide index="Ground" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="360"/>
         <TurningRate value="359.4726"/>
@@ -1362,7 +1355,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="115.1875"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -1426,7 +1419,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -1506,8 +1499,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -1583,8 +1575,7 @@
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
         <Response value="Flee"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -1647,7 +1638,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -1707,12 +1698,11 @@
         <HotkeyAlias value="Broodling"/>
         <HotkeyCategory value="Unit/Category/ZergStory"/>
         <LateralAcceleration value="46.0625"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <Mob value="Multiplayer"/>
         <PlaneArray index="Ground" value="1"/>
         <Race value="Zerg"/>
         <SelectAlias value="Broodling"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
         <Sight value="7"/>
         <StationaryTurningRate value="999.8437"/>
         <SubgroupPriority value="14"/>
@@ -1758,8 +1748,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -1825,8 +1814,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -1901,7 +1889,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="69.125"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -1969,8 +1957,7 @@
         <Collide index="Locust" value="1"/>
         <Collide index="LocustForceField" value="1"/>
         <Response value="Nothing"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <Sight value="6"/>
         <CostCategory value="Army"/>
@@ -2025,8 +2012,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/CritterGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <Sight value="6"/>
         <AttackTargetPriority value="20"/>
@@ -2073,7 +2059,7 @@
         <PushPriority value="11"/>
         <Collide index="Ground" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="10"/>
         <StationaryTurningRate value="360"/>
         <TurningRate value="180"/>
@@ -2158,8 +2144,7 @@
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
         <Response value="Flee"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -2225,8 +2210,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -2301,7 +2285,7 @@
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
         <Response value="Flee"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -2372,7 +2356,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -2436,7 +2420,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergUltraliskArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <Sight value="9"/>
         <Food value="-6"/>
@@ -2493,8 +2477,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <Sight value="9"/>
         <Food value="-1"/>
         <AbilArray Link="attack"/>
@@ -2534,7 +2517,7 @@
         <PushPriority value="9"/>
         <Collide index="Ground" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <Sight value="5"/>
         <AttackTargetPriority value="21"/>
@@ -2586,8 +2569,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -2654,7 +2636,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -2711,8 +2693,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <Sight value="9"/>
         <Food value="-3"/>
         <CostCategory value="Army"/>
@@ -2764,7 +2745,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="64"/>
         <TurningRate value="360"/>
         <Sight value="11"/>
@@ -2826,7 +2807,7 @@
         <PlaneArray index="Ground" value="1"/>
         <Collide index="Ground" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -2885,7 +2866,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="69.125"/>
         <TurningRate value="999.8437"/>
         <Sight value="10"/>
@@ -2953,8 +2934,7 @@
         <Collide index="Ground" value="1"/>
         <Collide index="Colossus" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <TurningRate value="360"/>
         <Sight value="9"/>
@@ -3012,7 +2992,7 @@
         <PlaneArray index="Ground" value="1"/>
         <Collide index="Ground" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <Sight value="11"/>
         <CostResource index="Minerals" value="250"/>
@@ -3052,7 +3032,6 @@
         <LeaderAlias value=""/>
     </CUnit>
     <CUnit id="SimpleBossArchonEnemyHd">
-        <Attributes index="Heroic" value="1"/>
         <LifeStart value="300"/>
         <LifeMax value="300"/>
         <ShieldsStart value="300"/>
@@ -3074,8 +3053,7 @@
         <Collide index="Ground" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -3129,7 +3107,7 @@
         <Attributes index="Biological" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="6"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46.0625"/>
@@ -3213,8 +3191,8 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <Speed value="2.5"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46.0625"/>
@@ -3276,8 +3254,8 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <Speed value="2.8125"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46"/>
@@ -3360,8 +3338,8 @@
         <Collide index="Flying" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <Mover value="Colossus"/>
         <Speed value="2.25"/>
         <Acceleration value="1000"/>
@@ -3427,8 +3405,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -3491,7 +3468,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -3567,8 +3544,8 @@
         <Response value="Flee"/>
         <LifeStart value="40"/>
         <LifeMax value="40"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <Mover value="Fly"/>
         <Speed value="20"/>
         <Acceleration value="100"/>
@@ -3634,7 +3611,7 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="750"/>
         <LifeMax value="750"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergBuildingArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <StationaryTurningRate value="719.4726"/>
         <TurningRate value="719.4726"/>
         <Sight value="9"/>
@@ -4035,8 +4012,8 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="400"/>
         <LifeMax value="400"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossBuildingPlating"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <StationaryTurningRate value="719.4726"/>
         <TurningRate value="719.4726"/>
         <Sight value="9"/>
@@ -4078,8 +4055,8 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <Speed value="2.25"/>
         <Acceleration value="1000"/>
         <Sight value="9"/>
@@ -4206,8 +4183,8 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <Speed value="2"/>
         <Acceleration value="1000"/>
         <Deceleration value="1000"/>
@@ -4275,7 +4252,7 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="850"/>
         <LifeMax value="850"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranBuildingPlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <StationaryTurningRate value="719.4726"/>
         <TurningRate value="719.4726"/>
         <Sight value="9"/>
@@ -4317,7 +4294,7 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="2.25"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46.0625"/>
@@ -4374,7 +4351,7 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="2.25"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46.0625"/>
@@ -4440,7 +4417,7 @@
         <Collide index="Flying" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranShipPlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Mover value="Fly"/>
         <Speed value="3.375"/>
         <Acceleration value="3.5"/>
@@ -4499,7 +4476,7 @@
         <Collide index="Flying" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranShipPlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Mover value="Fly"/>
         <Acceleration value="3.5"/>
         <StationaryTurningRate value="1499.9414"/>
@@ -4573,7 +4550,7 @@
         <LifeStart value="125"/>
         <LifeMax value="125"/>
         <LifeArmor value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="2.25"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="69.125"/>
@@ -4635,7 +4612,7 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="2.25"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46.0625"/>
@@ -4703,10 +4680,10 @@
         <Response value="Flee"/>
         <LifeStart value="20"/>
         <LifeMax value="20"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <ShieldsStart value="20"/>
         <ShieldsMax value="20"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <LateralAcceleration value="46"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -4821,7 +4798,7 @@
         <Response value="Flee"/>
         <LifeStart value="45"/>
         <LifeMax value="45"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <LateralAcceleration value="46"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -4885,7 +4862,7 @@
         <Collide index="Flying" value="1"/>
         <LifeStart value="10"/>
         <LifeMax value="10"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Mover value="Fly"/>
         <Speed value="6"/>
         <Acceleration value="1000"/>
@@ -4943,7 +4920,7 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="2.25"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="64"/>
@@ -5012,7 +4989,7 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Sight value="11"/>
         <Food value="-3"/>
         <CostCategory value="Army"/>
@@ -5139,8 +5116,8 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <Speed value="2.9492"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46"/>
@@ -5211,8 +5188,8 @@
         <Collide index="Flying" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <Mover value="Fly"/>
         <Speed value="1.875"/>
         <Acceleration value="1.0625"/>
@@ -5281,7 +5258,7 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="1.875"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46.0625"/>
@@ -5382,7 +5359,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -5445,7 +5422,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranShipPlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <StationaryTurningRate value="999.8437"/>
         <Sight value="10"/>
         <Food value="-2"/>
@@ -5512,7 +5489,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <TurningRate value="360"/>
         <Sight value="11"/>
@@ -5566,7 +5543,7 @@
         <LifeMax value="150"/>
         <LifeArmor value="1"/>
         <LifeRegenRate value="0.2734"/>
-        <LifeArmorName value="Unit/LifeArmorName/CritterGroundArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Mover value="CliffJumper"/>
         <Speed value="2"/>
         <Acceleration value="1000"/>
@@ -5629,8 +5606,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -5710,7 +5686,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -5783,8 +5759,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -5832,7 +5807,7 @@
         </ReviveInfoBase>
     </CUnit>
     <CUnit id="BiologicalUrsadonEnemyHd">
-        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
         <LifeMax value="1150"/>
         <LifeStart value="1150"/>
         <ShieldsStart value="1150"/>
@@ -5854,7 +5829,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/CritterGroundArmor"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="599.9414"/>
         <TurningRate value="599.9414"/>
@@ -5914,8 +5889,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <StationaryTurningRate value="59.9414"/>
         <TurningRate value="59.9414"/>
         <Sight value="14"/>

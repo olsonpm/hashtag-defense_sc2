@@ -1480,6 +1480,9 @@
     </CModel>
     <CModel id="SimpleQuickMarineEnemyHd" parent="MarineBase">
         <Model value="Assets\Units\Terran\Marine\Marine.m3"/>
+        <AttachProps Id="Ref_Origin" SquibType="Shield" RadiusShield="1.000000">
+            <Keys index="Shield" value="1"/>
+        </AttachProps>
     </CModel>
     <CModel id="SimpleQuickMarineAttackImpactEnemyHd" parent="LaunchFX">
         <Model value="Assets\Effects\Terran\MarineWeaponImpact\MarineWeaponImpact.m3"/>
@@ -2131,6 +2134,9 @@
         <Model value="Assets\Units\Zerg\Zergling\Zergling.m3"/>
         <ScaleMax value="0.840000,0.840000,0.840000"/>
         <ScaleMin value="0.700000,0.700000,0.700000"/>
+        <AttachProps Id="Ref_Origin" SquibType="Shield" RadiusShield="1.000000">
+            <Keys index="Shield" value="1"/>
+        </AttachProps>
     </CModel>
     <CModel id="SimpleArmoredZealotEnemyHd" parent="ZealotBase">
         <Model value="Assets\Units\Protoss\Zealot_Ex2\Zealot_Ex2.m3"/>

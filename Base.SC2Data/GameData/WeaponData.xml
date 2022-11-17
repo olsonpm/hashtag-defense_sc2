@@ -2,6 +2,7 @@
 <Catalog>
     <CWeaponLegacy id="ArcliteCannonMechanicalSiegeTankTankModeEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
         <DisplayEffect value="ArcliteCannonDamageMechanicalSiegeTankTankModeEnemyHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -19,6 +20,7 @@
         <Effect value="90mmCannonsDamageSiegeTankHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="AcidSpinesArmoredQueenEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Zerg"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
         <DisplayEffect value="AcidSpinesDamageArmoredQueenEnemyHd"/>
@@ -29,6 +31,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="C10CanisterRifleLightGhostEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
         <DisplayEffect value="C10CanisterRifleDamageLightGhostEnemyHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -53,13 +56,14 @@
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
         <DisplayEffect value="GuassRifleTicklerMarineTestHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Period value="0.8608"/>
+        <Period value="0.2"/>
         <DamagePoint value="0.05"/>
         <Backswing value="0.75"/>
         <Effect value="GuassRifleTicklerMarineTestHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="ClawsBossDehakaEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
         <DisplayEffect value="BossDehakaDamageEnemyHd"/>
@@ -71,6 +75,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="BaneBladesBossAlarakEnemyHd">
         <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-melleeweapon.dds"/>
         <DisplayEffect value="BossAlarakBaneBladesDamageEnemyHd"/>
@@ -95,6 +100,7 @@
         <Effect value="InfestedSiegeTankSiegedSetHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="DutchBossGiantRorySwannEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
         <DisplayEffect value="DutchDamageBossGiantRorySwannEnemyHd"/>
@@ -108,6 +114,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="GuassRifleMechanicalMilitarizedTransportEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
         <DisplayEffect value="MechanicalMilitarizedTransportDamageEnemyHd"/>
@@ -120,6 +127,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="GaussRifleMechanicalShikotoCoupeEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
         <DisplayEffect value="MechanicalShikotoCoupeDamageEnemyHd"/>
@@ -131,6 +139,7 @@
         <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="EyeBeamsGroundBossStoneZealotEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Protoss"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
         <DisplayEffect value="EyeBeamsGroundLineDamageBossStoneZealotEnemyHd"/>
@@ -171,6 +180,7 @@
         <LegacyOptions index="KeepChanneling" value="1"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="PsiBlastBossHybridDominatorEnemyHd">
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
         <DisplayEffect value="PsiBlastDamageBossHybridDominatorEnemyHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -180,6 +190,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="TwinAutocannonsMechanicalGoliathEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <Options index="LinkedCooldown" value="0"/>
@@ -190,6 +201,7 @@
         <Period value="1.5"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="H1FlashWelderArmoredHercEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
         <DisplayEffect value="ArmoredHercWeaponDamageEnemyHd"/>
@@ -201,6 +213,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="KaiserBladesBiologicalUltraliskEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
         <DisplayEffect value="KaiserBladesDamageBiologicalUltraliskEnemyHd"/>
@@ -216,6 +229,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="C20ACanisterRifleBiologicalKerriganEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
         <DisplayEffect value="BiologicalKerriganDamageEnemyHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -228,6 +242,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="PustulantSmashBiologicalAberrationEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
         <DisplayEffect value="BiologicalAberrationWeaponDamageEnemyHd"/>
@@ -239,6 +254,7 @@
         <Effect value="BiologicalAberrationWeaponDamageEnemyHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="NapalmSprayArmoredHellbatEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
         <DisplayEffect value="ArmoredHellbatDamageEnemyHd"/>
@@ -249,6 +265,7 @@
         <Effect value="ArmoredHellbatSetEnemyHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="PhaseDisruptorArmoredDragoonEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Protoss"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
         <DisplayEffect value="ArmoredDragoonDamageEnemyHd"/>
@@ -259,6 +276,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="PhaseDisruptorsArmoredImmortalEnemyHd">
         <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="6"/>
@@ -266,6 +284,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="PsiBladesArmoredZealotEnemyHd">
         <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
         <DisplayEffect value="PsiBladesDamageArmoredZealotEnemyHd"/>
@@ -279,6 +298,7 @@
     <CWeaponLegacy id="PsiBlastLightHightTemplarEnemyHd">
         <Name value="Weapon/Name/PsiBlast"/>
         <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
         <DisplayEffect value="LightHighTemplarWeaponDamageEnemyHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -288,6 +308,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="KaiserBladesArmoredPygaliskEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
         <DisplayEffect value="ArmoredPygaliskEnemyHd"/>
@@ -300,6 +321,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="FusionCutterLightSCVEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -308,6 +330,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="GuassRifleLightInfestedTerranEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Period value="0.8608"/>
@@ -316,6 +339,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="LightWarPigGaussRifleEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
         <DisplayEffect value="GuassRifleLightWarPigEnemyHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -326,6 +350,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="LightLocustRangedEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
         <DisplayEffect value="LightLocustRangedDamageEnemyHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -353,6 +378,7 @@
         <Effect value="LightLocustMeleeDamageEnemyHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="ArmoredCutieWeaponEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Zerg"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
         <DisplayEffect value="ArmoredCutieDamageEnemyHd"/>
@@ -363,6 +389,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="NeedleClawsLightBroodlingEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
         <DisplayEffect value="NeedleClawsDamageLightBroodlingEnemyHd"/>
@@ -374,6 +401,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="P38GuassPistolLightReaperEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
         <DisplayEffect value="P38ScytheGuassPistolDamageLightReaperEnemyHd"/>
         <DisplayAttackCount value="2"/>
@@ -386,6 +414,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="ParticleBeamLightProbeEnemyHd">
         <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -394,6 +423,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="PurifierGlaiveCannonLightAdeptEnemyHd">
         <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
         <DisplayEffect value="LightAdeptDamageEnemyHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -416,6 +446,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="NeedleSpinesBiologicalHydraliskEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
         <DisplayEffect value="NeedleSpinesDamageBiologicalHydraliskEnemyHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -424,6 +455,7 @@
         <Effect value="NeedleSpinesLMBiologicalHydraliskEnemyHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="ParticleDisruptorsArmoredStalkerEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Protoss"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
         <DisplayEffect value="EntropyLanceDamageArmoredStalkerEnemyHd"/>
@@ -446,6 +478,7 @@
         <Effect value="PsionicShockwaveDamageSimpleBossArchonEnemyHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="PunisherGrenadesArmoredMarauderEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
         <DisplayEffect value="PunisherGrenadesDamageArmoredMarauderEnemyHd"/>
@@ -458,6 +491,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="RavagerWeaponBiologicalRavagerEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
         <DisplayEffect value="BiologicalRavagerWeaponDamageEnemyHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -468,6 +502,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="GatlingCannonMechanicalVikingAssaultModeEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>
         <DisplayEffect value="GatlingCannonDamageMechanicalVikingAssaultModeEnemyHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -477,6 +512,7 @@
         <Effect value="GatlingCannonDamageMechanicalVikingAssaultModeEnemyHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="PeaceKeepersBossEradicatorEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
         <DisplayEffect value="BossEradicatorDamageEnemyHd"/>
@@ -488,6 +524,7 @@
         <Effect value="BossEradicatorDamageEnemyHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="PsiBlastBossKerriganEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Zerg"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
         <DisplayEffect value="PsiBlastDamageBossKerriganEnemyHd"/>
@@ -500,6 +537,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="RazorTalonsBossKerriganEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
         <DisplayEffect value="RazorTalonsDamageBossKerriganEnemyHd"/>
@@ -511,6 +549,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="VolatileProjectionBiologicalRavasaurEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
         <DisplayEffect value="BiologicalRavasaurDamageEnemyHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -603,6 +642,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="ClawsLightDroneEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
         <DisplayEffect value="SpinesLightDroneEnemyHd"/>
@@ -613,6 +653,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="ArmoredQuillyRangedEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
         <DisplayEffect value="ArmoredQuillyDamageEnemyHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -657,6 +698,7 @@
         <Effect value="TalonsCPArmoredQueenEnemyHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="TalonsMissileArmoredQueenEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Zerg"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
         <DisplayEffect value="TalonsMissileDamageArmoredQueenEnemyHd"/>
@@ -667,6 +709,7 @@
         <Effect value="TalonsMissileBurstArmoredQueenEnemyHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="TyphoonMissilePodArmoredCycloneEnemyHd">
+        <Options index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
         <DisplayEffect value="ArmoredCycloneAttackWeaponDamageEnemyHd"/>
@@ -677,6 +720,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="RailgunMechanicalWarhoundEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
         <DisplayEffect value="MechanicalWarhoundRangedDamageEnemyHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -913,6 +957,7 @@
         <Effect value="ThorsHammerCPHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="ClawsBiologicalUrsadonEnemyHd">
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
