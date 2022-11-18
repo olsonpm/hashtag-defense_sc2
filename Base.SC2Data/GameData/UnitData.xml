@@ -4545,8 +4545,6 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <Attributes index="Armored" value="1"/>
-        <Attributes index="Biological" value="1"/>
         <LifeStart value="125"/>
         <LifeMax value="125"/>
         <LifeArmor value="1"/>

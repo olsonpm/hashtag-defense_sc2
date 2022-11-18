@@ -331,5 +331,4 @@
     <ObjectUnit Id="469124253" Position="95,87,0" Scale="1,1,1" UnitType="BottomLeftHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="1976925429" Position="108.5,93,0" Scale="1,1,1" UnitType="RightHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="220038668" Position="101,85.5,0" Scale="1,1,1" UnitType="BottomHdDefendLocationBeacon" Player="9"/>
-    <ObjectUnit Id="1647449193" Position="55,114.5,0" Rotation="5.8854" Scale="1,1,1" UnitType="TicklerMarineTestHd" Player="1"/>
 </PlacedObjects>

@@ -745,6 +745,28 @@ Weapon/Name/TwinAutocannonsMechanicalGoliathEnemyHd=Twin Autocannons
 Weapon/Name/TyphoonMissilePodArmoredCycloneEnemyHd=Typhoon Missile Pod
 Weapon/Name/VolatileProjectionBiologicalRavasaurEnemyHd=Volatile Projection
 Weapon/Name/WeaklingClawsHd=Weakling Claws
+Weapon/Tip/90mmCannonsHd=Attack upgrades by <c val="00E35B">3</c>
+Weapon/Tip/AcidSalivaRoachHd=Attack upgrades by <c val="00E35B">2.5</c>
 Weapon/Tip/AcidSpinesArmoredQueenEnemyHd=
-Weapon/Tip/GuassRifleHd=
+Weapon/Tip/AcidSporesGuardianHd=Attack upgrades by <c val="00E35B">4</c>
+Weapon/Tip/AdeptHd=Attack upgrades by <c val="00E35B">1</c>
+Weapon/Tip/C10CanisterRifleHd=Attack upgrades by <c val="00E35B">3</c>
+Weapon/Tip/CrucioShockCannonInfestedSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="00B6E3">*Hits multiple enemies</c>
+Weapon/Tip/CrucioShockCannonSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="00B6E3">*Hits multiple enemies</c>
+Weapon/Tip/FirebatHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="00B6E3">*Hits multiple enemies</c>
+Weapon/Tip/GlaiveWurmHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="00B6E3">*Hits multiple enemies</c>
+Weapon/Tip/GuassRifleHd=Attack upgrades by <c val="00E35B">1</c>
+Weapon/Tip/GuassRifleInfestedTerranHd=Attack upgrades by <c val="00E35B">1</c>
+Weapon/Tip/LiberatorAGWeaponHd=Attack upgrades by <c val="00E35B">5</c>
+Weapon/Tip/NeedleSpinesHydraliskHd=Attack upgrades by <c val="00E35B">2</c>
+Weapon/Tip/ParticleDisruptorsHd=Attack upgrades by <c val="00E35B">2</c>
+Weapon/Tip/PhaseDisruptorsHd=Attack upgrades by <c val="00E35B">3</c>
+Weapon/Tip/PsionicShockwaveHd=Attack upgrades by <c val="00E35B">1</c><n/><c val="00B6E3">*Hits multiple enemies</c>
+Weapon/Tip/PunisherGrenadesHd=Attack upgrades by <c val="00E35B">2.5</c>
+Weapon/Tip/ScarabsReaverHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="00B6E3">*Hits multiple enemies</c>
+Weapon/Tip/SpinesLurkerHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="00B6E3">*Hits multiple enemies</c>
 Weapon/Tip/TalonsArmoredQueenEnemyHd=
+Weapon/Tip/TempestGroundHd=Attack upgrades by <c val="00E35B">4</c>
+Weapon/Tip/ThermalLancesHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="00B6E3">*Hits multiple enemies</c>
+Weapon/Tip/ThorsHammerHd=Attack upgrades by <c val="00E35B">3</c>
+testing=testing

@@ -54,7 +54,7 @@
         <EffectArray Reference="Weapon,FirebatHd,Level" Value="1"/>
         <EffectArray Reference="Effect,C10CanisterRifleDamageGhostHd,Amount" Value="3"/>
         <EffectArray Reference="Weapon,C10CanisterRifleHd,Level" Value="1"/>
-        <EffectArray Reference="Effect,90mmCannonsDamageSiegeTankHd,Amount" Value="4"/>
+        <EffectArray Reference="Effect,90mmCannonsDamageSiegeTankHd,Amount" Value="3"/>
         <EffectArray Reference="Effect,CrucioShockCannonBlastDamageSiegeTankHd,Amount" Value="2"/>
         <EffectArray Reference="Effect,CrucioShockCannonDirectedDamageSiegeTankHd,Amount" Value="2"/>
         <EffectArray Reference="Effect,CrucioShockCannonDummyDamageSiegeTankHd,Amount" Value="2"/>
