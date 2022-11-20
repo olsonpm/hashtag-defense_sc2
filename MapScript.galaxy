@@ -1153,11 +1153,11 @@ const int ge_clockwiseenemypathlocation_enemypathright = 3;
 const int ge_clockwiseenemypathlocation_enemypathbotrightright = 4;
 const int ge_clockwiseenemypathlocation_enemypathbotrightbot = 5;
 const int ge_clockwiseenemypathlocation_enemypathbot = 6;
-const int ge_clockwiseenemypathlocation_enemypathbotleftbot = 7;
-const int ge_clockwiseenemypathlocation_enemypathbotleftleft = 8;
+const int ge_clockwiseenemypathlocation_enemypathbotleftleft = 7;
+const int ge_clockwiseenemypathlocation_enemypathbotleftbot = 8;
 const int ge_clockwiseenemypathlocation_enemypathleft = 9;
-const int ge_clockwiseenemypathlocation_enemypathtopleftleft = 10;
-const int ge_clockwiseenemypathlocation_enemypathtoplefttop = 11;
+const int ge_clockwiseenemypathlocation_enemypathtoplefttop = 10;
+const int ge_clockwiseenemypathlocation_enemypathtopleftleft = 11;
 const int ge_enemyspawnpathsegments_spawntopsegment1 = 0;
 const int ge_enemyspawnpathsegments_spawntoprighttop = 1;
 const int ge_enemyspawnpathsegments_spawntoprightright = 2;
@@ -1230,8 +1230,8 @@ point[26] gv_enemyshowcasepoints;
 point[9][3] gv_enemyspawnpointsperlocation;
 region[9] gv_enemyteleregions;
 point[9] gv_enemytelespawns;
-unit[10] gv_invisiblewaypointchooserperplayer;
 point[26] gv_extralifepoints;
+unit[10] gv_invisiblewaypointchooserperplayer;
 int[16] gv_modtypedice;
 int gv_modtypedicelastindex;
 string[6] gv_modtypetomodunittype;
@@ -2299,12 +2299,12 @@ void gf_initlocationandsublocationtospawnclockwiselocation () {
     gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_botright][1] = ge_clockwiseenemypathlocation_enemypathbotrightbot;
     gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_bot][0] = ge_clockwiseenemypathlocation_enemypathbot;
     gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_bot][1] = ge_clockwiseenemypathlocation_enemypathbot;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_botleft][0] = ge_clockwiseenemypathlocation_enemypathbotleftbot;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_botleft][1] = ge_clockwiseenemypathlocation_enemypathbotleftleft;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_botleft][0] = ge_clockwiseenemypathlocation_enemypathbotleftleft;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_botleft][1] = ge_clockwiseenemypathlocation_enemypathbotleftbot;
     gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_left][0] = ge_clockwiseenemypathlocation_enemypathleft;
     gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_left][1] = ge_clockwiseenemypathlocation_enemypathleft;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_topleft][0] = ge_clockwiseenemypathlocation_enemypathtopleftleft;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_topleft][1] = ge_clockwiseenemypathlocation_enemypathtoplefttop;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_topleft][0] = ge_clockwiseenemypathlocation_enemypathtoplefttop;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_topleft][1] = ge_clockwiseenemypathlocation_enemypathtopleftleft;
 }
 
 void gf_initlocationchoosers () {
@@ -2568,11 +2568,11 @@ void gf_initspawnbehaviors () {
     gv_spawnbehaviors[ge_clockwiseenemypathlocation_enemypathbotrightright] = "SpawnBotRightRightHd";
     gv_spawnbehaviors[ge_clockwiseenemypathlocation_enemypathbotrightbot] = "SpawnBotRightBotHd";
     gv_spawnbehaviors[ge_clockwiseenemypathlocation_enemypathbot] = "SpawnBotHd";
-    gv_spawnbehaviors[ge_clockwiseenemypathlocation_enemypathbotleftbot] = "SpawnBotLeftBotHd";
     gv_spawnbehaviors[ge_clockwiseenemypathlocation_enemypathbotleftleft] = "SpawnBotLeftLeftHd";
+    gv_spawnbehaviors[ge_clockwiseenemypathlocation_enemypathbotleftbot] = "SpawnBotLeftBotHd";
     gv_spawnbehaviors[ge_clockwiseenemypathlocation_enemypathleft] = "SpawnLeftHd";
-    gv_spawnbehaviors[ge_clockwiseenemypathlocation_enemypathtopleftleft] = "SpawnTopLefLeftHd";
     gv_spawnbehaviors[ge_clockwiseenemypathlocation_enemypathtoplefttop] = "SpawnTopLefToptHd";
+    gv_spawnbehaviors[ge_clockwiseenemypathlocation_enemypathtopleftleft] = "SpawnTopLefLeftHd";
 }
 
 void gf_initspawnpointperplayer () {
@@ -3257,7 +3257,7 @@ bool auto_gf_spawnsingleenemy_TriggerFunc (bool testConds, bool runActions) {
         Wait(lp_afterNseconds, c_timeReal);
     }
 
-    gf_createmoddedunitatpoint(lp_enemyunittype, gv_enemyplayer, lp_enemyspawnpoint, 0, 0);
+    gf_createmoddedunitatpoint(lp_enemyunittype, gv_enemyplayer, lp_enemyspawnpoint, 0, lp_currentmodtype);
     lv__spawnedenemyunit = UnitLastCreated();
     UnitIssueOrder(lv__spawnedenemyunit, OrderTargetingPoint(AbilityCommand("move", 0), lp_enemyrallypoint), c_orderQueueReplace);
     UnitBehaviorAdd(lv__spawnedenemyunit, lp_spawnbehavior, lv__spawnedenemyunit, 1);

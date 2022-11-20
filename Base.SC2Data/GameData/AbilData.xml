@@ -33,6 +33,7 @@
         <LoadValidatorArray value="RequiresTerran"/>
         <LoadValidatorArray value="NotWidowMineTarget"/>
         <LoadValidatorArray value="IsNotHellionTank"/>
+        <LoadValidatorArray value="NotSCVHd"/>
     </CAbilTransport>
     <CAbilMorph id="BurrowLurkerHd">
         <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>

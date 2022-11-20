@@ -92,27 +92,33 @@
     </CButton>
     <CButton id="UpgradeBunkerTurretDamageHd">
         <Icon value="Assets\Textures\btn-research-zerg-shriketurret.dds"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
     </CButton>
     <CButton id="UpgradePhotonCannonDamageHd">
         <Icon value="Assets\Textures\btn-ability-zeratul-photoncannon-shadeprojection.dds"/>
         <HotkeyAlias value=""/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
     </CButton>
     <CButton id="UpgradeSpineCrawlerDamageHd">
         <Icon value="Assets\Textures\btn-upgrade-zerg-seismicspines.dds"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
     </CButton>
     <CButton id="UpgradeUnitDamageZergHd">
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
         <EditorCategories value="Race:Zerg"/>
         <HotkeyAlias value="zergmissileweapons1"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
     </CButton>
     <CButton id="UpgradeUnitDamageTerranHd">
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
         <EditorCategories value="Race:Zerg"/>
         <HotkeyAlias value="zergmissileweapons1"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
     </CButton>
     <CButton id="UpgradeUnitDamageProtossHd">
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
         <EditorCategories value="Race:Zerg"/>
         <HotkeyAlias value="zergmissileweapons1"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
     </CButton>
 </Catalog>

@@ -52,6 +52,19 @@ Behavior/Name/AddedShieldsStandardModHd=Added Shields
 Behavior/Name/FullRefundAvailableHd=Full Refund Available
 Behavior/Name/IncreaseSpeedStandardHardModHd=Increased Speed
 Behavior/Name/IncreaseSpeedStandardModHd=Increased Speed
+Behavior/Name/SpawnBotHd=Spawn - Bot
+Behavior/Name/SpawnBotLeftBotHd=Spawn - Bot Left - Bot
+Behavior/Name/SpawnBotLeftLeftHd=Spawn - Bot Left - Left
+Behavior/Name/SpawnBotRightBotHd=Spawn - Bot Right - Bot
+Behavior/Name/SpawnBotRightRightHd=Spawn - Bot Right - Right
+Behavior/Name/SpawnLeftHd=Spawn - Left
+Behavior/Name/SpawnParentHd=Spawn Parent
+Behavior/Name/SpawnRightHd=Spawn - Right
+Behavior/Name/SpawnTopHd=Spawn - Top
+Behavior/Name/SpawnTopLefLeftHd=Spawn - Top Left - Left
+Behavior/Name/SpawnTopLefToptHd=Spawn - Top Left - Top
+Behavior/Name/SpawnTopRightRightHd=Spawn - Top Right - Right
+Behavior/Name/SpawnTopRightTopHd=Spawn - Top Right - Top
 Button/Name/BuildBunkerHd=Build Bunker
 Button/Name/BuildSpineCrawlerZergHd=Build Spine Crawler
 Button/Name/BuildWallProtossHd=Build Wall
@@ -179,10 +192,12 @@ Button/Tooltip/TestWeaklingEnemyHd=Fast melee creature. Can morph into a Banelin
 Button/Tooltip/ThorHd=Heavy assault mech.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/TicklerMarineTestHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/UnitHasShieldsModHd=Ancient Protoss Relic. Collect it with a ground unit to gain a Protoss research point. 
-Button/Tooltip/UpgradePhotonCannonDamageHd=
-Button/Tooltip/UpgradeUnitDamageProtossHd=Upgrades the attacks of all units.
-Button/Tooltip/UpgradeUnitDamageTerranHd=Upgrades the attacks of all units.
-Button/Tooltip/UpgradeUnitDamageZergHd=Upgrades the attacks of all units.
+Button/Tooltip/UpgradeBunkerTurretDamageHd=Upgrades the bunker turret damage by <c val="00E35B">0.8</c><n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
+Button/Tooltip/UpgradePhotonCannonDamageHd=Upgrades the photon cannon damage by <c val="00E35B">1</c><n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
+Button/Tooltip/UpgradeSpineCrawlerDamageHd=Upgrades the spine crawler damage by <c val="00E35B">1</c><n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
+Button/Tooltip/UpgradeUnitDamageProtossHd=Upgrades the attack of all units.<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
+Button/Tooltip/UpgradeUnitDamageTerranHd=Upgrades the attack of all units.<n/><c val="00B6E3">2</c><img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
+Button/Tooltip/UpgradeUnitDamageZergHd=Upgrades the attack of all units.<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
 Button/Tooltip/WallProtossHd=Restores shields to nearby friendly units and structures.
 Button/Tooltip/WallTerranHd=Abandoned structure.
 Button/Tooltip/WallZergHd=<c val="ffff8a">Enables:</c><n/>- Infestors from Larvae<n/>- Swarm Hosts from Larvae
@@ -758,22 +773,25 @@ Weapon/Tip/AcidSpinesArmoredQueenEnemyHd=
 Weapon/Tip/AcidSporesGuardianHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/AdeptHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/C10CanisterRifleHd=Attack upgrades by <c val="00E35B">3</c>
-Weapon/Tip/CrucioShockCannonInfestedSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="00B6E3">*Hits multiple enemies</c>
-Weapon/Tip/CrucioShockCannonSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="00B6E3">*Hits multiple enemies</c>
-Weapon/Tip/FirebatHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="00B6E3">*Hits multiple enemies</c>
-Weapon/Tip/GlaiveWurmHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="00B6E3">*Hits multiple enemies</c>
+Weapon/Tip/CrucioShockCannonInfestedSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
+Weapon/Tip/CrucioShockCannonSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
+Weapon/Tip/FirebatHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
+Weapon/Tip/GlaiveWurmHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/GuassRifleHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/GuassRifleInfestedTerranHd=Attack upgrades by <c val="00E35B">1</c>
+Weapon/Tip/ImpalerTentacleHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/LiberatorAGWeaponHd=Attack upgrades by <c val="00E35B">5</c>
 Weapon/Tip/NeedleSpinesHydraliskHd=Attack upgrades by <c val="00E35B">2</c>
 Weapon/Tip/ParticleDisruptorsHd=Attack upgrades by <c val="00E35B">2</c>
 Weapon/Tip/PhaseDisruptorsHd=Attack upgrades by <c val="00E35B">3</c>
-Weapon/Tip/PsionicShockwaveHd=Attack upgrades by <c val="00E35B">1</c><n/><c val="00B6E3">*Hits multiple enemies</c>
+Weapon/Tip/PhotonCannonHd=Attack upgrades by <c val="00E35B">1</c>
+Weapon/Tip/PsionicShockwaveHd=Attack upgrades by <c val="00E35B">1</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/PunisherGrenadesHd=Attack upgrades by <c val="00E35B">2.5</c>
-Weapon/Tip/ScarabsReaverHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="00B6E3">*Hits multiple enemies</c>
-Weapon/Tip/SpinesLurkerHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="00B6E3">*Hits multiple enemies</c>
+Weapon/Tip/ScarabsReaverHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
+Weapon/Tip/ShrikeTurretHd=Attack upgrades by <c val="00E35B">0.8</c>
+Weapon/Tip/SpinesLurkerHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/TalonsArmoredQueenEnemyHd=
 Weapon/Tip/TempestGroundHd=Attack upgrades by <c val="00E35B">4</c>
-Weapon/Tip/ThermalLancesHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="00B6E3">*Hits multiple enemies</c>
+Weapon/Tip/ThermalLancesHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/ThorsHammerHd=Attack upgrades by <c val="00E35B">3</c>
 testing=testing

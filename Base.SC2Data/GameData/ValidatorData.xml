@@ -45,6 +45,10 @@
         <Compare value="GE"/>
         <Value value="2"/>
     </CValidatorPlayerCompareResource>
+    <CValidatorUnitType id="NotSCVHd">
+        <Value value="SCVHd"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
     <CValidatorUnitType id="SpineCrawlerHd">
         <Value value="SpineCrawler"/>
     </CValidatorUnitType>
