@@ -349,7 +349,6 @@ Effect/Name/LiberatorTargetMorphSearchAreaHd=Liberator Target Morph Search Area
 Effect/Name/LightAdeptDamageEnemyHd=Light Adept (Damage)
 Effect/Name/LightAdeptLMEnemyHd=Light Adept LM
 Effect/Name/LightHighTemplarWeaponDamageEnemyHd=Light High Templar Weapon (Damage)
-Effect/Name/LightHighTemplarWeaponEnemyHd=Light High Templar Weapon Set
 Effect/Name/LightHighTemplarWeaponLMEnemyHd=Light High Templar Weapon LM
 Effect/Name/LightLocustLMEnemyHd=Light Locust LM
 Effect/Name/LightLocustMeleeDamageEnemyHd=Light Locust Melee (Damage)

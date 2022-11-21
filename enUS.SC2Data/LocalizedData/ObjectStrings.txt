@@ -1039,7 +1039,6 @@ Effect/EditorPrefix/LiberatorTargetMorphSearchAreaHd=Hd -
 Effect/EditorPrefix/LightAdeptDamageEnemyHd=Hd - Enemy -
 Effect/EditorPrefix/LightAdeptLMEnemyHd=Hd - Enemy -
 Effect/EditorPrefix/LightHighTemplarWeaponDamageEnemyHd=Hd - Enemy -
-Effect/EditorPrefix/LightHighTemplarWeaponEnemyHd=Hd - Enemy -
 Effect/EditorPrefix/LightHighTemplarWeaponLMEnemyHd=Hd - Enemy -
 Effect/EditorPrefix/LightLocustLMEnemyHd=Hd - Enemy -
 Effect/EditorPrefix/LightLocustMeleeDamageEnemyHd=Hd - Enemy -

@@ -431,18 +431,15 @@
         <Kind value="Ranged"/>
         <Amount value="30"/>
     </CEffectDamage>
-    <CEffectSet id="LightHighTemplarWeaponEnemyHd">
-        <EffectArray value="LightHighTemplarWeaponDamageEnemyHd"/>
-    </CEffectSet>
     <CEffectDamage id="LightHighTemplarWeaponDamageEnemyHd" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
         <Kind value="Ranged"/>
-        <Amount value="9"/>
+        <Amount value="30"/>
         <Death value="Blast"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="LightHighTemplarWeaponLMEnemyHd">
         <EditorCategories value="Race:Protoss"/>
-        <ImpactEffect value="LightHighTemplarWeaponEnemyHd"/>
+        <ImpactEffect value="LightHighTemplarWeaponDamageEnemyHd"/>
         <AmmoUnit value="LightHighTemplarWeaponEnemyHd"/>
         <Movers Link="HighTemplarWeapon"/>
     </CEffectLaunchMissile>
