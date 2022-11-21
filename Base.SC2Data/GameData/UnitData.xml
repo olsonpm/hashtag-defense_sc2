@@ -1072,6 +1072,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="BurrowLurkerHd"/>
+        <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsBiologicalAttributeDamageHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -1081,6 +1082,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowLurkerMP" Type="AbilCmd" AbilCmd="BurrowLurkerHd,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.9375"/>
         <SeparationRadius value="0.75"/>
@@ -3275,6 +3277,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
+        <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsArmoredAttributeDamageHd"/>
         <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="AdeptHd"/>
@@ -3285,6 +3288,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="2"/>
@@ -3339,6 +3343,7 @@
         <AbilArray Link="Mergeable"/>
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="Warpable"/>
+        <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsBiologicalAttributeDamageHd"/>
         <WeaponArray Link="PsionicShockwaveHd"/>
         <CardLayouts>
@@ -3348,6 +3353,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="0.75"/>
@@ -3423,6 +3429,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
+        <AbilArray Link="BlinkHd"/>
         <WeaponArray Link="ThermalLancesHd" Turret="ColossusHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -3430,6 +3437,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <CardLayouts>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
@@ -3806,6 +3814,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
+        <AbilArray Link="BlinkHd"/>
         <WeaponArray Link="NeedleSpinesHydraliskHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -3813,6 +3822,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.625"/>
         <InnerRadius value="0.375"/>
@@ -3860,6 +3870,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
+        <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsArmoredAttributeDamageHd"/>
         <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="GuassRifleInfestedTerranHd"/>
@@ -3869,6 +3880,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <InnerRadius value="0.375"/>
@@ -4020,6 +4032,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="InfestedSiegeTankRootHd"/>
+        <AbilArray Link="BlinkHd"/>
         <WeaponArray Turret="SporeCrawlerUprooted"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
@@ -4029,6 +4042,7 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="InfestedSiegeTankRootHd" Type="AbilCmd" AbilCmd="InfestedSiegeTankRootHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="2"/>
         </CardLayouts>
         <CargoSize value="4"/>
         <ScoreMake value="275"/>
@@ -4136,6 +4150,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
+        <AbilArray Link="BlinkHd"/>
         <WeaponArray Link="PhaseDisruptorsHd" Turret="ImmortalHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -4143,6 +4158,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.75"/>
         <SeparationRadius value="0.625"/>
@@ -4268,6 +4284,7 @@
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="ReaverHangarHd"/>
         <AbilArray Link="HangarQueue5"/>
+        <AbilArray Link="BlinkHd"/>
         <WeaponArray Link="ScarabsReaverHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -4275,6 +4292,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>
@@ -4375,6 +4393,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
+        <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
         <WeaponArray Link="FirebatHd"/>
         <CardLayouts>
@@ -4383,6 +4402,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.4375"/>
         <CargoSize value="2"/>
@@ -4432,6 +4452,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
+        <AbilArray Link="BlinkHd"/>
         <WeaponArray Link="C10CanisterRifleHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -4439,6 +4460,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="AttackGhost" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
@@ -4626,6 +4648,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
+        <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsBiologicalAttributeDamageHd"/>
         <WeaponArray Link="PunisherGrenadesHd"/>
         <CardLayouts>
@@ -4634,6 +4657,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.5625"/>
         <InnerRadius value="0.375"/>
@@ -4687,6 +4711,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
+        <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsArmoredAttributeDamageHd"/>
         <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="GuassRifleHd"/>
@@ -4696,6 +4721,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
@@ -4819,6 +4845,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
+        <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
         <WeaponArray Link="AcidSalivaRoachHd"/>
         <CardLayouts>
@@ -4827,6 +4854,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.625"/>
         <CargoSize value="2"/>
@@ -4996,6 +5024,7 @@
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="SiegeModeHd"/>
+        <AbilArray Link="BlinkHd"/>
         <WeaponArray Link="90mmCannonsHd" Turret="SiegeTankHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -5004,7 +5033,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="SiegeMode" Type="AbilCmd" AbilCmd="SiegeModeHd,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="ShapedBlast" Type="Passive" Requirements="UseShapedBlastReq" Row="2" Column="2"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="2"/>
         </CardLayouts>
         <CargoSize value="4"/>
         <ScoreMake value="275"/>
@@ -5333,6 +5362,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
+        <AbilArray Link="BlinkHd"/>
         <WeaponArray Link="ThorsHammerHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -5341,6 +5371,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="ThorAPMode,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <CargoSize value="8"/>
         <ScoreMake value="500"/>

@@ -1594,6 +1594,23 @@
             <Image value="Assets\Textures\Wireframe-Critter-SnowBeast.dds"/>
         </Wireframe>
     </CActorMissile>
+    <CActorModel id="BlinkStopModelHd" parent="ModelAnimationStyleOneShot">
+        <InheritType value="OneShot"/>
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <On Terms="Effect.BlinkHd.Stop; At Source" Send="Create"/>
+        <On Terms="Effect.BlinkHd.Stop; At Source; ValidateUnit NoDarkProtoss" Send="ModelSwap DarkBlinkStopModel"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+    </CActorModel>
+    <CActorSound id="BlinkStopSoundHd" parent="SoundOneShot">
+        <On Terms="Effect.BlinkHd.Stop; At Source" Send="Create"/>
+        <On Terms="Effect.VoidStalkerBlinkShieldRestore.Stop; At Source" Send="Create"/>
+        <On Terms="Effect.VoidStalkerBlinkMultiple.Stop; At Source" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Sound value="Stalker_Blink"/>
+    </CActorSound>
     <CActorSound id="BossAlarakBaneBladeAttackLaunchSoundEnemyHd" parent="SoundOneShot">
         <On Terms="Effect.BossAlarakBaneBladesDamageEnemyHd.Start" Send="Create"/>
         <Sound value="Alarak_BaneBlade_AttackLaunchSound"/>

@@ -96,6 +96,10 @@
         <SelectionRadius value="1.999700"/>
         <ShadowRadius value="1.666500"/>
     </CModel>
+    <CModel id="BlinkStopModelHd" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\BlinkIn\BlinkIn.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
     <CModel id="FirebatAttackLaunchHd" parent="LaunchFX">
         <Model value="Assets\Effects\Terran\FirebatFireSprite\FirebatFireSprite.m3"/>
         <EditorCategories value="Race:Terran"/>
