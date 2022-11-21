@@ -2969,6 +2969,14 @@
             <Image value="Assets\Textures\Wireframe-Terran-goliath.dds"/>
         </Wireframe>
     </CActorUnit>
+    <CActorRange id="BunkerProtectRangeHd" parent="RangeWeapon" weapon="ShrikeTurretHd">
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
+    <CActorModel id="BunkerPlacementModelHd" parent="PlacementModel">
+        <On Terms="ActorCreation" Send="Create BunkerProtectRangeHd"/>
+        <On Terms="ActorDestruction" Target="BunkerProtectRangeHd" Send="Destroy"/>
+    </CActorModel>
     <CActorAction id="SlowTicklerMarineAttackTestHd" parent="GenericAttack" effectAttack="GuassRifleSlowTicklerMarineTestHd">
         <LaunchAssets Model="SlowTicklerMarineAttackLaunchTestHd" Sound="Marine_AttackLaunch"/>
         <ContainerAssets Model="MarineBunkerAttackLaunch" Sound="Marine_BunkerAttackLaunch"/>
@@ -5852,7 +5860,7 @@
         <DeathActorModel value="PhotonCannonDeath"/>
         <PlacementModel value="PhotonCannonPlacement"/>
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
-        <PlacementActorModel value="PhotonCannonPlacementModel"/>
+        <PlacementActorModel value="PhotonCannonPlacementModelHd"/>
         <PortraitModel value="PhotonCannonPortrait"/>
         <BarOffset value="60"/>
         <BarWidth value="75"/>
@@ -5887,7 +5895,7 @@
         <On Terms="ActorCreation" Send="Create PhotonCannonProtectRangeHd"/>
         <On Terms="ActorDestruction" Target="PhotonCannonProtectRangeHd" Send="Destroy"/>
     </CActorModel>
-    <CActorRange id="PhotonCannonProtectRangeHd" parent="RangeWeapon" weapon="PhotonCannon">
+    <CActorRange id="PhotonCannonProtectRangeHd" parent="RangeWeapon" weapon="PhotonCannonHd">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
         <IconArcLength value="3.250000"/>
     </CActorRange>
@@ -6208,7 +6216,7 @@
         <DeathCustoms ModelLink="BunkerUpgradeDeath" Name="Upgrade"/>
         <DeathCustoms ModelLink="BunkerDeathEmpty" Name="Empty"/>
         <PlacementModel value="BunkerPlacement"/>
-        <PlacementActorModel value="BunkerPlacementModel"/>
+        <PlacementActorModel value="BunkerPlacementModelHd"/>
         <PlaceholderActorModel value="BunkerPlaceholderModel"/>
         <PortraitModel value="BunkerPortrait"/>
         <BarOffset value="80"/>
