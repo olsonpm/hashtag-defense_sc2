@@ -4,6 +4,9 @@
         <NodeArray index="Use" Link="CountBehaviorFullRefundAvailableHdCompleteOnly"/>
         <NodeArray index="Show" Link="CountBehaviorFullRefundAvailableHdCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="IsEnemyHd">
+        <NodeArray index="Use" Link="Eq"/>
+    </CRequirement>
     <CRequirement id="MaxBunkerTurretDamageNotReachedHd">
         <NodeArray index="Use" Link="LTCountUpgradeBunkerTurretDamageHdCompleteOnly100"/>
         <NodeArray index="Show" Link="LTCountUpgradeBunkerTurretDamageHdCompleteOnly100"/>

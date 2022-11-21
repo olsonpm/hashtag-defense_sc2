@@ -95,6 +95,70 @@
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
     </CUnit>
+    <CUnit id="SlowTicklerMarineTestHd">
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="10000"/>
+        <LifeMax value="10000"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <Speed value="10"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="9"/>
+        <Food value="-1"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="20"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="10"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="Stimpack"/>
+        <WeaponArray Link="C14GaussRifleSlowTicklerMarineTestHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Stim" Type="AbilCmd" AbilCmd="Stimpack,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="50"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAI value="Marine"/>
+        <HotkeyCategory value="Unit/Category/TerranUnits"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <TauntDuration index="Cheer" value="5"/>
+        <TauntDuration index="Dance" value="5"/>
+    </CUnit>
     <CUnit id="WallProtossHd">
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
@@ -829,9 +893,9 @@
         <AbilArray Link="LoadUnloadBunkerHd"/>
         <AbilArray Link="Rally"/>
         <AbilArray Link="StopRedirect"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="AttackRedirect"/>
         <AbilArray Link="SalvageHalfRefundHd"/>
-        <AbilArray Link="attack"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="SalvageFullRefundHd"/>
         <BehaviorArray Link="TerranBuildingBurnDown"/>
@@ -841,17 +905,16 @@
         <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="ShrikeTurretHd" Turret="ShrikeTurretHd"/>
         <CardLayouts>
-            <LayoutButtons Face="AttackRedirect" Type="AbilCmd" AbilCmd="AttackRedirect,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="StopRedirect,Execute" Row="0" Column="1"/>
             <LayoutButtons Face="SetBunkerRallyPoint" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
             <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="LoadUnloadBunkerHd,Load" Row="2" Column="1"/>
             <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="LoadUnloadBunkerHd,UnloadAll" Row="2" Column="2"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageHalfRefundHd" Type="AbilCmd" AbilCmd="SalvageHalfRefundHd,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SalvageShared,Off" Row="2" Column="4"/>
-            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="0"/>
-            <LayoutButtons Face="SalvageHalfRefundHd" Type="AbilCmd" AbilCmd="SalvageHalfRefundHd,Execute" Row="2" Column="3"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -1065,7 +1128,7 @@
         <DamageDealtXP value="1"/>
         <DamageTakenXP value="1"/>
         <KillXP value="50"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="UnburrowLurkerHd"/>
         <AbilArray Link="BurrowLurkerHd"/>
         <AbilArray Link="move"/>
@@ -1076,7 +1139,7 @@
         <WeaponArray Link="SpinesLurkerHd" Turret="LurkerHd"/>
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="LurkerBurrowUp" Type="AbilCmd" AbilCmd="UnburrowLurkerHd,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
@@ -3208,7 +3271,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="20"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
@@ -3219,7 +3282,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
         </CardLayouts>
@@ -3271,7 +3334,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="80"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="Mergeable"/>
         <AbilArray Link="ProgressRally"/>
@@ -3282,7 +3345,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
         </CardLayouts>
@@ -3356,7 +3419,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="160"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
@@ -3365,9 +3428,8 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="CliffWalk" Type="Passive" Row="2" Column="0"/>
         </CardLayouts>
         <CardLayouts>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
@@ -3695,7 +3757,7 @@
         <CostCategory value="Army"/>
         <CostResource index="Minerals" value="150"/>
         <CostResource index="Vespene" value="200"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="stop"/>
         <WeaponArray Link="AcidSporesGuardianHd"/>
@@ -3704,7 +3766,7 @@
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>
@@ -3742,14 +3804,14 @@
         <DamageTakenXP value="1"/>
         <KillXP value="20"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <WeaponArray Link="NeedleSpinesHydraliskHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
         <Radius value="0.625"/>
@@ -3796,7 +3858,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="10"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <BehaviorArray Link="DecreaseVsArmoredAttributeDamageHd"/>
         <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
@@ -3805,7 +3867,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
         <Radius value="0.375"/>
@@ -3844,14 +3906,14 @@
         <DamageTakenXP value="1"/>
         <KillXP value="40"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <WeaponArray Link="GlaiveWurmHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
         <ScoreMake value="200"/>
@@ -3898,14 +3960,14 @@
         <DamageTakenXP value="1"/>
         <KillXP value="50"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="InfestedSiegeTankUprootHd"/>
         <WeaponArray Link="CrucioShockCannonInfestedSiegeTankHd" Turret="InfestedSiegeTankSiegedHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="InfestedSiegeTankUprootHd" Type="AbilCmd" AbilCmd="InfestedSiegeTankUprootHd,Execute" Row="2" Column="1"/>
         </CardLayouts>
@@ -4070,7 +4132,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="35"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
@@ -4079,7 +4141,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
         <Radius value="0.75"/>
@@ -4130,7 +4192,7 @@
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="SalvageHalfRefundHd"/>
         <AbilArray Link="SalvageFullRefundHd"/>
         <BehaviorArray Link="UnderConstruction"/>
@@ -4141,7 +4203,7 @@
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="SalvageHalfRefundHd" Type="AbilCmd" AbilCmd="SalvageHalfRefundHd,Execute" Row="2" Column="3"/>
         </CardLayouts>
@@ -4200,7 +4262,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="120"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
@@ -4211,7 +4273,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
         <Radius value="1"/>
@@ -4311,7 +4373,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="15"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
         <WeaponArray Link="FirebatHd"/>
@@ -4319,7 +4381,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
         <InnerRadius value="0.4375"/>
@@ -4368,7 +4430,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="30"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <WeaponArray Link="C10CanisterRifleHd"/>
         <CardLayouts>
@@ -4376,8 +4438,7 @@
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="TacNukeStrike,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="AttackGhost" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AttackGhost" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
@@ -4436,7 +4497,6 @@
         <DamageTakenXP value="1"/>
         <KillXP value="50"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="LiberatorMorphToAGHd"/>
         <AbilArray Link="LiberatorAGTargetHd"/>
@@ -4444,7 +4504,6 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="LiberatorAGMode" Type="AbilCmd" AbilCmd="LiberatorAGTargetHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
@@ -4494,7 +4553,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="50"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="LiberatorMorphToAAHd"/>
         <AbilArray Link="LiberatorMorphToAGHd"/>
         <AbilArray Link="LiberatorAATargetHd"/>
@@ -4503,7 +4562,7 @@
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="LiberatorAAMode" Type="AbilCmd" AbilCmd="LiberatorAATargetHd,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
         </CardLayouts>
         <Radius value="0.75"/>
         <SeparationRadius value="0.75"/>
@@ -4565,7 +4624,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="15"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <BehaviorArray Link="DecreaseVsBiologicalAttributeDamageHd"/>
         <WeaponArray Link="PunisherGrenadesHd"/>
@@ -4574,7 +4633,7 @@
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
         </CardLayouts>
         <Radius value="0.5625"/>
         <InnerRadius value="0.375"/>
@@ -4626,7 +4685,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="10"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <BehaviorArray Link="DecreaseVsArmoredAttributeDamageHd"/>
         <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
@@ -4635,7 +4694,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
         <Radius value="0.375"/>
@@ -4758,7 +4817,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="15"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
         <WeaponArray Link="AcidSalivaRoachHd"/>
@@ -4766,7 +4825,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
         <InnerRadius value="0.625"/>
@@ -4934,7 +4993,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="50"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="SiegeModeHd"/>
         <WeaponArray Link="90mmCannonsHd" Turret="SiegeTankHd"/>
@@ -4942,7 +5001,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="SiegeMode" Type="AbilCmd" AbilCmd="SiegeModeHd,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="ShapedBlast" Type="Passive" Requirements="UseShapedBlastReq" Row="2" Column="2"/>
@@ -4999,14 +5058,14 @@
         <DamageTakenXP value="1"/>
         <KillXP value="50"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="UnsiegeHd"/>
         <WeaponArray Link="CrucioShockCannonSiegeTankHd" Turret="SiegeTankSiegedHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Unsiege" Type="AbilCmd" AbilCmd="UnsiegeHd,Execute" Row="2" Column="1"/>
         </CardLayouts>
@@ -5065,7 +5124,7 @@
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="SalvageHalfRefundHd"/>
         <AbilArray Link="SalvageFullRefundHd"/>
         <BehaviorArray Link="DecreaseVsArmoredAttributeDamageHd"/>
@@ -5075,7 +5134,7 @@
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="SalvageHalfRefundHd" Type="AbilCmd" AbilCmd="SalvageHalfRefundHd,Execute" Row="2" Column="3"/>
         </CardLayouts>
@@ -5133,7 +5192,7 @@
         <KillXP value="35"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="Blink"/>
@@ -5143,7 +5202,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
             <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="Blink,Execute" Row="2" Column="0"/>
@@ -5205,7 +5264,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="120"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
@@ -5214,7 +5273,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
         </CardLayouts>
@@ -5272,14 +5331,14 @@
         <DamageTakenXP value="1"/>
         <KillXP value="160"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
+        <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <WeaponArray Link="ThorsHammerHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="ThorAPMode,Cancel" Row="2" Column="4"/>
         </CardLayouts>

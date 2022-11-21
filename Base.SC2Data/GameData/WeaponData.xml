@@ -61,6 +61,16 @@
         <Backswing value="0.75"/>
         <Effect value="GuassRifleTicklerMarineTestHd"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="C14GaussRifleSlowTicklerMarineTestHd">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="GuassRifleSlowTicklerMarineTestHd"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="2"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="GuassRifleSlowTicklerMarineTestHd"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="ClawsBossDehakaEnemyHd">
         <EditorCategories value="Race:Zerg"/>
         <Options index="Hidden" value="1"/>

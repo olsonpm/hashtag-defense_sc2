@@ -109,6 +109,17 @@
     <CModel id="BeefySCVTestHd" parent="SCVBase">
         <Model value="Assets\Units\Terran\SCV\SCV.m3"/>
     </CModel>
+    <CModel id="SlowTicklerMarineAttackImpactTestHd" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\MarineWeaponImpact\MarineWeaponImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="SlowTicklerMarineAttackLaunchTestHd" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\MarineWeaponLaunch\MarineWeaponLaunch.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="SlowTicklerMarineTestHd" parent="MarineBase">
+        <Model value="Assets\Units\Terran\Marine\Marine.m3"/>
+    </CModel>
     <CModel id="WallBirthProtossHd" parent="Building" Race="Protoss">
         <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_WarpIn\ProtossShield_Battery_WarpIn.m3"/>
         <Events>
@@ -656,7 +667,7 @@
         <Model value="Assets\Effects\Terran\MarineWeaponLaunch\MarineWeaponLaunch.m3"/>
         <EditorCategories value="Race:Terran"/>
     </CModel>
-    <CModel id="TicklerMarineTestHd2" parent="MarineBase">
+    <CModel id="TicklerMarineTestHd" parent="MarineBase">
         <Model value="Assets\Units\Terran\Marine\Marine.m3"/>
     </CModel>
     <CModel id="MechanicalShikotoCoupeEnemyHd" parent="Unit" Race="Terran">

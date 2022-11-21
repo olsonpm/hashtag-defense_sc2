@@ -139,6 +139,8 @@ void lib1_InitVariables () {
     }
     lib1_gv_colorcalamity = StringExternal("Param/Value/lib_1_4A35FBAD");
     lib1_gv_everysecond = TimerCreate();
+    lib1_gv_localdebug = true;
+    lib1_gv_test = true;
     for (init_i = 0; init_i <= 16; init_i += 1) {
         for (init_j = 0; init_j <= 16; init_j += 1) {
             lib1_gv_unitsingroupsofNperplayer[init_i][init_j] = UnitGroupEmpty();
@@ -1353,7 +1355,7 @@ void gf_inittelelocationtoenemyspawnpathsegments ();
 void gf_initspawnpoint (int lp_p, point lp_defendpoint);
 void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser);
 void gf_clearspawnlocationwhenempty ();
-void gf_createworkeratlocation (point lp_spawnpoint);
+void gf_createworkeratlocation (point lp_spawnpoint, int lp_p);
 void gf_initunitsforlocation (int lp_defenderlocation, int lp_player);
 void gf_initunit (int lp_defenderlocation, int lp_unitlocation, int lp_race);
 void gf_initunitbotright (int lp_defenderlocation, int lp_race);
@@ -1403,6 +1405,7 @@ trigger gt_upgradeprotossunitdamage;
 trigger gt_idleenemyworkers;
 trigger gt_keepspawnclearofunits;
 trigger gt_fullrefundavailablebetweenrounds;
+trigger gt_bunkerattackenemyandredirectattack;
 trigger gt_halfrefund;
 trigger gt_fullrefund;
 trigger gt_movespawnflag;
@@ -2640,7 +2643,7 @@ void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser)
     lv__defendpoint = gv_defendpointperlocation[lp_defenderlocation];
     gv_playertodefenderlocation[lp_p] = lp_defenderlocation;
     lib1_gf_pancameratopointforplayer(lp_p, lv__defendpoint);
-    gf_createworkeratlocation(lv__defendpoint);
+    gf_createworkeratlocation(lv__defendpoint, lp_p);
     UIClearMessages(PlayerGroupSingle(lp_p), c_messageAreaAll);
     UnitRemove(gv_defendlocationbeaconperlocation[lp_defenderlocation]);
     UnitRemove(lp_chooser);
@@ -2667,23 +2670,24 @@ void gf_clearspawnlocationwhenempty () {
 
 }
 
-void gf_createworkeratlocation (point lp_spawnpoint) {
+void gf_createworkeratlocation (point lp_spawnpoint, int lp_p) {
     // Automatic Variable Declarations
     string auto38B9D4FE_val;
 
     // Implementation
     auto38B9D4FE_val = PlayerRace(EventPlayer());
     if (auto38B9D4FE_val == "Zerg") {
-        lib1_gf_createunitatpoint("DroneHd", lp_spawnpoint, EventPlayer(), 0);
+        lib1_gf_createunitatpoint("DroneHd", lp_spawnpoint, lp_p, 0);
     }
     else if (auto38B9D4FE_val == "Terr") {
-        lib1_gf_createunitatpoint("SCVHd", lp_spawnpoint, EventPlayer(), 0);
+        lib1_gf_createunitatpoint("SCVHd", lp_spawnpoint, lp_p, 0);
     }
     else if (auto38B9D4FE_val == "Prot") {
-        lib1_gf_createunitatpoint("ProbeHd", lp_spawnpoint, EventPlayer(), 0);
+        lib1_gf_createunitatpoint("ProbeHd", lp_spawnpoint, lp_p, 0);
     }
     else {
     }
+    UnitControlGroupAddUnit(lp_p, 1, UnitLastCreated());
 }
 
 void gf_initunitsforlocation (int lp_defenderlocation, int lp_player) {
@@ -2807,6 +2811,7 @@ void gf_initunitleft (int lp_defenderlocation, int lp_p, int lp_race) {
     lv__point = gv_unitpoints[lp_defenderlocation][lv__location];
     lib1_gf_createunitatpoint("2MineralsHd", PointWithOffset(lv__point, 0.0, -0.5), 0, c_unitCreateIgnorePlacement);
     lib1_gf_createunitatpoint(lv__unit, PointWithOffset(lv__point, 0.0, 2.0), lp_p, c_unitCreateIgnorePlacement);
+    UnitControlGroupAddUnit(lp_p, 2, UnitLastCreated());
 }
 
 void gf_initunitarea (int lp_defenderlocation, int lp_p) {
@@ -4037,6 +4042,33 @@ void gt_fullrefundavailablebetweenrounds_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: bunker attack enemy and redirect attack
+//--------------------------------------------------------------------------------------------------
+bool gt_bunkerattackenemyandredirectattack_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_triggeringunitisoftype("BunkerHd"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitIssueOrder(EventUnit(), OrderTargetingUnit(AbilityCommand("AttackRedirect", 0), EventUnitTargetUnit()), c_orderQueueReplace);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_bunkerattackenemyandredirectattack_Init () {
+    gt_bunkerattackenemyandredirectattack = TriggerCreate("gt_bunkerattackenemyandredirectattack_Func");
+    TriggerAddEventUnitAbility(gt_bunkerattackenemyandredirectattack, null, AbilityCommand("AttackEnemyHd", 0), c_unitAbilStageExecute, false);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: half refund
 //--------------------------------------------------------------------------------------------------
 bool gt_halfrefund_Func (bool testConds, bool runActions) {
@@ -4912,6 +4944,7 @@ void InitTriggers () {
     gt_idleenemyworkers_Init();
     gt_keepspawnclearofunits_Init();
     gt_fullrefundavailablebetweenrounds_Init();
+    gt_bunkerattackenemyandredirectattack_Init();
     gt_halfrefund_Init();
     gt_fullrefund_Init();
     gt_movespawnflag_Init();

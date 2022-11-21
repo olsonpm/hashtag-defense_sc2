@@ -1,4 +1,5 @@
-﻿Abil/Name/BuildProtossHd=Build
+﻿Abil/Name/AttackEnemyHd=Attack Enemy
+Abil/Name/BuildProtossHd=Build
 Abil/Name/BuildSpawnFlagHd=Build Spawn Flag
 Abil/Name/BuildTerranHd=Build
 Abil/Name/BuildZergHd=Build
@@ -25,6 +26,7 @@ Abil/Name/UpgradeSpineCrawlerDamageResearchCenterHd=Upgrade Spine Crawler Damage
 Abil/Name/UpgradeUnitDamageProtossHd=Upgrade Unit Damage
 Abil/Name/UpgradeUnitDamageTerranHd=Upgrade Unit Damage
 Abil/Name/UpgradeUnitDamageZergHd=Upgrade Unit Damage
+Abil/TargetMessage/AttackEnemyHd=<IMG path="Assets\Textures\tutorialmouseleftbuttondown.dds" alignment="absolutemiddle"/>   To Attack<n/><IMG path="Assets\Textures\tutorialmouserightbuttondown.dds" alignment="absolutemiddle"/>   Cancel
 Attribute001/Desc=Specifies whether and how much time is given at the start and between rounds.
 Attribute001/Name=Round Timer
 Attribute001/Value001/Desc=All players will need to click 'Ready' for each round to start.  Recommended for first time players.
@@ -168,6 +170,7 @@ Button/Tooltip/SimpleArmoredZealotHd=Powerful melee warrior. Can use Charge.<n/>
 Button/Tooltip/SimpleBeefyRoachEnemyHd=Assault unit. Regenerates life quickly when burrowed. Can morph into a Ravager.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/SimpleBossArchonEnemyHd=Powerful psionic attacker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/SimpleQuickMarineEnemyHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/SlowTicklerMarineTestHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/SpawnFlagHd=The planetary flag of Korhal, homeworld of Emperor Mengsk.
 Button/Tooltip/SpawnFlagPlacementTestHd=Provides supply.<n/>Supply allows you to warp in more units.<n/>Creates power for nearby structures.
 Button/Tooltip/SpineCrawlerHd=Anti-ground defensive structure. <n/><n/><c val="ffff8a">Can attack ground units.</c>
@@ -319,6 +322,7 @@ Effect/Name/GuassRifleKillEverythingMarineTestHd=Guass Rifle (Damage)
 Effect/Name/GuassRifleLightInfestedTerranEnemyHd=Guass Rifle
 Effect/Name/GuassRifleLightWarPigEnemyHd=Gauss Rifle (Damage)
 Effect/Name/GuassRifleSimpleQuickMarineEnemyHd=Guass Rifle
+Effect/Name/GuassRifleSlowTicklerMarineTestHd=Guass Rifle (Damage)
 Effect/Name/GuassRifleTicklerMarineTestHd=Guass Rifle (Damage)
 Effect/Name/HydraliskMeleeSet2=Hydralisk Melee Set
 Effect/Name/ImpalerTentacleDamageHd=Spine Crawler (Damage)
@@ -435,6 +439,7 @@ Effect/Name/ThorsHammerDamageHd=Thor's Hammer (Damage)
 Effect/Name/TwinAutocannonsMechanicalGoliathEnemyHd=Twin Autocannons (Damage)
 Effect/Name/WarHound=Mechanical Warhound Melee (Damage)
 Effect/Name/WeaklingClawsHd=Weakling Claws (Damage)
+LoadingScreen/Tip= 
 MapInfo/Player00/Name=Neutral
 MapInfo/Player01/Name=Player 1
 MapInfo/Player02/Name=Player 2
@@ -645,6 +650,7 @@ Unit/Name/SimpleArmoredZealotHd=Simple Armored Zealot
 Unit/Name/SimpleBeefyRoachEnemyHd=Simple Beefy Roach
 Unit/Name/SimpleBossArchonEnemyHd=Simple Boss Archon
 Unit/Name/SimpleQuickMarineEnemyHd=Simple Quick Marine
+Unit/Name/SlowTicklerMarineTestHd=Slow Tickler Marine
 Unit/Name/SpawnFlagHd=Spawn Flag
 Unit/Name/SpawnFlagPlacementTestHd=Spawn Flag Placement Test
 Unit/Name/SpineCrawlerHd=Spine Crawler
@@ -690,6 +696,7 @@ Weapon/Name/BaneBladesBossAlarakEnemyHd=Bane Blades
 Weapon/Name/C10CanisterRifleHd=C-10 Canister Rifle
 Weapon/Name/C10CanisterRifleLightGhostEnemyHd=C-10 Canister Rifle
 Weapon/Name/C14GaussRifleKillEverythingMarineTestHd=C-14 Gauss Rifle
+Weapon/Name/C14GaussRifleSlowTicklerMarineTestHd=C-14 Gauss Rifle
 Weapon/Name/C14GaussRifleTicklerMarineTestHd=C-14 Gauss Rifle
 Weapon/Name/C20ACanisterRifleBiologicalKerriganEnemyHd=C-20A Canister Rifle
 Weapon/Name/ClawsBiologicalUrsadonEnemyHd=Claws

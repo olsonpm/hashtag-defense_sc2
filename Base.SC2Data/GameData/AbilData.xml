@@ -355,4 +355,10 @@
         <AutoCastValidatorArray value="HasAtLeast2MinsHd"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeUnitDamageProtossHd" Requirements="MaxUnitDamageNotReachedProtossHd"/>
     </CAbilEffectInstant>
+    <CAbilAttack id="AttackEnemyHd">
+        <TargetMessage value="Abil/TargetMessage/AttackEnemyHd"/>
+        <SupportedFilters value="-;Self,Player,Ally,Outer"/>
+        <MinAttackSpeedMultiplier value="0.25"/>
+        <MaxAttackSpeedMultiplier value="128"/>
+    </CAbilAttack>
 </Catalog>

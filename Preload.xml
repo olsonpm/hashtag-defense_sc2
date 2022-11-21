@@ -17,6 +17,7 @@
 <Unit id="SpawnFlagHd"/>
 <Unit id="LiberatorAGHd"/>
 <Unit id="InfestedSiegeTankHd"/>
+<Unit id="BunkerHd"/>
 <Unit id="SiegeTankSiegedHd"/>
 <Unit id="SiegeTankHd"/>
 <Unit id="LightDroneEnemyHd"/>

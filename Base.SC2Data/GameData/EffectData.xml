@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CEffectDamage id="GuassRifleSlowTicklerMarineTestHd" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <Kind value="Ranged"/>
+        <Amount value="1"/>
+    </CEffectDamage>
     <CEffectCreatePersistent id="BossAlarakBaneBladesCPEnemyHd">
         <EditorCategories value="Race:Protoss"/>
         <WhichLocation Value="TargetUnit"/>
