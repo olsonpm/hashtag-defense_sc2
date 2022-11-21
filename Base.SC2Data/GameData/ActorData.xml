@@ -4865,7 +4865,7 @@
         <ActionFlags index="VictimRevealsAttacker" value="1"/>
     </CActorAction>
     <CActorTurret id="ColossusTurretHd">
-        <On Terms="TurretEnable.Colossus" Send="Create"/>
+        <On Terms="TurretEnable.ColossusHd" Send="Create"/>
     </CActorTurret>
     <CActorUnit id="ExtraLifeHd" parent="GenericUnitStandardNoAutoSoundLinks" unitName="ExtraLifeHd">
         <Macros value="AntiGravDeathRemoveMacro"/>
