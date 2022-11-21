@@ -13,6 +13,9 @@ include "TriggerLibs/NativeLib"
 // Preset Declarations
 const int lib1_ge_removeunittype_kill = 0;
 const int lib1_ge_removeunittype_remove = 1;
+const int lib1_ge_race_protoss = 0;
+const int lib1_ge_race_terran = 1;
+const int lib1_ge_race_zerg = 2;
 
 // Constants
 const int lib1_gv_anyplayer = 16;
@@ -66,6 +69,7 @@ int lib1_gf_foraregionsetunitsingroupsofNforplayerthenreturnthenumberofgroupsfou
 text lib1_gf_getabililtystageastext (int lp_stage);
 int lib1_gf_getcurrenttimeint ();
 text lib1_gf_getplayerraceastext (int lp_p);
+int lib1_gf_getraceintegerfromplayer (int lp_p);
 int lib1_gf_numberofstructuresinregion (region lp_r, int lp_p);
 int lib1_gf_numberofunitsinregion (region lp_r, int lp_p);
 int lib1_gf_numberofunitsoftypeinregion (region lp_r, int lp_p, string lp_t);
@@ -507,7 +511,7 @@ text lib1_gf_getplayerraceastext (int lp_p) {
     string autoDDE34797_val;
 
     // Implementation
-    autoDDE34797_val = PlayerRace(EventPlayer());
+    autoDDE34797_val = PlayerRace(lp_p);
     if (autoDDE34797_val == "Prot") {
         return StringExternal("Param/Value/lib_1_4B0781BB");
     }
@@ -519,6 +523,33 @@ text lib1_gf_getplayerraceastext (int lp_p) {
     }
     else {
         return StringExternal("Param/Value/lib_1_28EC086C");
+    }
+}
+
+int lib1_gf_getraceintegerfromplayer (int lp_p) {
+    // Variable Declarations
+    int lv__race;
+
+    // Automatic Variable Declarations
+    string autoC73756C2_val;
+
+    // Variable Initialization
+
+    // Implementation
+    autoC73756C2_val = PlayerRace(lp_p);
+    if (autoC73756C2_val == "Prot") {
+        return lib1_ge_race_protoss;
+    }
+    else if (autoC73756C2_val == "Terr") {
+        return lib1_ge_race_terran;
+    }
+    else if (autoC73756C2_val == "Zerg") {
+        return lib1_ge_race_zerg;
+    }
+    else {
+        TextExpressionSetToken("Param/Expression/lib_1_0137C127", "p", IntToText(lp_p));
+        lib1_gf_displaydebugmessage(TextExpressionAssemble("Param/Expression/lib_1_0137C127"));
+        return -1;
     }
 }
 
@@ -1182,9 +1213,6 @@ const int ge_modtypes_increasespeed = 2;
 const int ge_modtypes_addarmor = 3;
 const int ge_modtypes_addshields = 4;
 const int ge_modtypes_perfectspecimen = 5;
-const int ge_race_protoss = 0;
-const int ge_race_terran = 1;
-const int ge_race_zerg = 2;
 
 //--------------------------------------------------------------------------------------------------
 // Global Variables
@@ -1210,6 +1238,7 @@ int gv_secondsbetweenrounds;
 bool[9] gv_activedefenderlocations;
 playergroup gv_activedefenders;
 playergroup gv_activedefendersplusallycomp;
+bool gv_allplayershavechosenlocation;
 string[9][4][3] gv_attributebuffperlocationandrace;
 bool[10] gv_autoskipbyplayer;
 fixed gv_chooserradius;
@@ -1254,6 +1283,7 @@ string[13] gv_spawnbehaviors;
 point[10] gv_spawnpointperplayer;
 int[9] gv_telelocationtoenemyspawnpathsegments;
 int[9] gv_telelocationtospawnclockwiselocation;
+bool gv_testingmultiplayerlocally;
 int[9][3] gv_locationandsublocationtoenemypathlocation;
 string[9] gv_unitbeaconperlocation;
 point[9][9] gv_unitbeaconpoints;
@@ -1365,7 +1395,6 @@ void gf_initunitleft (int lp_defenderlocation, int lp_p, int lp_race);
 void gf_initunitarea (int lp_defenderlocation, int lp_p);
 bool gf_unitisbuilder (unit lp_u);
 bool gf_unitisbossheroic (unit lp_u);
-int gf_getraceintegerfromplayer (int lp_p);
 int gf_rollmodtypedice ();
 void gf_applymodtounit (unit lp_u, int lp_modtype);
 void gf_createmoddedunitatpoint (string lp_ut, int lp_p, point lp_point, int lp_opts, int lp_modtype);
@@ -1404,7 +1433,7 @@ trigger gt_upgradeterranunitdamage;
 trigger gt_upgradeprotossunitdamage;
 trigger gt_idleenemyworkers;
 trigger gt_keepspawnclearofunits;
-trigger gt_fullrefundavailablebetweenrounds;
+trigger gt_fullrefundavailableatstartandbetweenrounds;
 trigger gt_bunkerattackenemyandredirectattack;
 trigger gt_halfrefund;
 trigger gt_fullrefund;
@@ -1542,40 +1571,40 @@ void gf_initunitpointstopleft () {
 void gf_initunitperlocationprotoss () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitperlocationandrace[ge_clockwiselocation_top][ge_race_protoss] = "StalkerHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_topright][ge_race_protoss] = "ArchonHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_right][ge_race_protoss] = "ImmortalHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_botright][ge_race_protoss] = "ReaverHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_bot][ge_race_protoss] = "ColossusHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_botleft][ge_race_protoss] = "TempestHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_left][ge_race_protoss] = "ResearchCenterProtossHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_topleft][ge_race_protoss] = "AdeptHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_protoss] = "StalkerHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_protoss] = "ArchonHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_protoss] = "ImmortalHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_protoss] = "ReaverHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_protoss] = "ColossusHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss] = "TempestHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_left][lib1_ge_race_protoss] = "ResearchCenterProtossHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_topleft][lib1_ge_race_protoss] = "AdeptHd";
 }
 
 void gf_initunitperlocationterran () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitperlocationandrace[ge_clockwiselocation_top][ge_race_terran] = "MarauderHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_topright][ge_race_terran] = "FirebatHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_right][ge_race_terran] = "GhostHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_botright][ge_race_terran] = "SiegeTankHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_bot][ge_race_terran] = "ThorHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_botleft][ge_race_terran] = "LiberatorHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_left][ge_race_terran] = "ResearchCenterTerranHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_topleft][ge_race_terran] = "MarineHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_terran] = "MarauderHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_terran] = "FirebatHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_terran] = "GhostHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_terran] = "SiegeTankHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran] = "ThorHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran] = "LiberatorHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_left][lib1_ge_race_terran] = "ResearchCenterTerranHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_topleft][lib1_ge_race_terran] = "MarineHd";
 }
 
 void gf_initunitperlocationzerg () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitperlocationandrace[ge_clockwiselocation_top][ge_race_zerg] = "RoachHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_topright][ge_race_zerg] = "LurkerHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_right][ge_race_zerg] = "HydraliskHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_botright][ge_race_zerg] = "MutaliskHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_bot][ge_race_zerg] = "InfestedSiegeTankUprootedHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_botleft][ge_race_zerg] = "GuardianHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_left][ge_race_zerg] = "ResearchCenterZergHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_topleft][ge_race_zerg] = "InfestedTerranHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_zerg] = "RoachHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_zerg] = "LurkerHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_zerg] = "HydraliskHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_zerg] = "MutaliskHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_zerg] = "InfestedSiegeTankUprootedHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_zerg] = "GuardianHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_left][lib1_ge_race_zerg] = "ResearchCenterZergHd";
+    gv_unitperlocationandrace[ge_clockwiselocation_topleft][lib1_ge_race_zerg] = "InfestedTerranHd";
 }
 
 void gf_initunitpoints () {
@@ -1737,82 +1766,86 @@ void gf_initalliance () {
     libNtve_gf_SetAllianceBetweenTwoPlayerGroups(gv_activedefenders, gv_enemy, libNtve_ge_AllianceSetting_Enemy);
     libNtve_gf_SetAllianceBetweenTwoPlayerGroups(gv_enemy, gv_activedefenders, libNtve_ge_AllianceSetting_Enemy);
     libNtve_gf_SetAllianceBetweenTwoPlayerGroups(PlayerGroupSingle(gv_allycompplayer), gv_enemy, libNtve_ge_AllianceSetting_Ally);
+    if (lib1_gf_istrue(gv_testingmultiplayerlocally)) {
+        libNtve_gf_SetPlayerGroupAlliance(gv_activedefendersplusallycomp, libNtve_ge_AllianceSetting_AllyWithSharedVisionControlAndSpending);
+    }
+
 }
 
 void gf_initattributebuffsperlocationandrace () {
     // Automatic Variable Declarations
     // Implementation
     if ((GameAttributeGameValue("2") == "0001")) {
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][ge_race_protoss][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][ge_race_protoss][0] = "IncreaseVsLightStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][ge_race_protoss][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][ge_race_protoss][1] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][ge_race_protoss][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][ge_race_protoss][1] = "IncreaseVsBossStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][ge_race_protoss][0] = "IncreaseVsLightStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][ge_race_protoss][1] = "IncreaseVsBiologicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][ge_race_protoss][0] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][ge_race_protoss][1] = "IncreaseVsBossStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_protoss][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_protoss][0] = "IncreaseVsLightStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_protoss][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_protoss][1] = "IncreaseVsMechanicalStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_protoss][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_protoss][1] = "IncreaseVsBossStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_protoss][0] = "IncreaseVsLightStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_protoss][1] = "IncreaseVsBiologicalStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss][0] = "IncreaseVsMechanicalStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss][1] = "IncreaseVsBossStandardAttributeDamageHd";
     }
     else {
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][ge_race_protoss][0] = "IncreaseVsArmoredHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][ge_race_protoss][0] = "IncreaseVsLightHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][ge_race_protoss][0] = "IncreaseVsArmoredHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][ge_race_protoss][1] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][ge_race_protoss][0] = "IncreaseVsBiologicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][ge_race_protoss][1] = "IncreaseVsBossHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][ge_race_protoss][0] = "IncreaseVsLightHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][ge_race_protoss][1] = "IncreaseVsBiologicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][ge_race_protoss][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][ge_race_protoss][1] = "IncreaseVsBossHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_protoss][0] = "IncreaseVsArmoredHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_protoss][0] = "IncreaseVsLightHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_protoss][0] = "IncreaseVsArmoredHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_protoss][1] = "IncreaseVsMechanicalHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_protoss][0] = "IncreaseVsBiologicalHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_protoss][1] = "IncreaseVsBossHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_protoss][0] = "IncreaseVsLightHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_protoss][1] = "IncreaseVsBiologicalHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss][1] = "IncreaseVsBossHardAttributeDamageHd";
     }
     if ((GameAttributeGameValue("2") == "0001")) {
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][ge_race_terran][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][ge_race_terran][0] = "IncreaseVsLightStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][ge_race_terran][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][ge_race_terran][1] = "IncreaseVsBossStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][ge_race_terran][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][ge_race_terran][1] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][ge_race_terran][0] = "IncreaseVsLightStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][ge_race_terran][1] = "IncreaseVsBiologicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][ge_race_terran][0] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][ge_race_terran][0] = "IncreaseVsBossStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_terran][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_terran][0] = "IncreaseVsLightStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_terran][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_terran][1] = "IncreaseVsBossStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_terran][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_terran][1] = "IncreaseVsMechanicalStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran][0] = "IncreaseVsLightStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran][1] = "IncreaseVsBiologicalStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsMechanicalStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsBossStandardAttributeDamageHd";
     }
     else {
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][ge_race_terran][0] = "IncreaseVsArmoredHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][ge_race_terran][0] = "IncreaseVsLightHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][ge_race_terran][0] = "IncreaseVsBiologicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][ge_race_terran][1] = "IncreaseVsBossHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][ge_race_terran][0] = "IncreaseVsArmoredHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][ge_race_terran][1] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][ge_race_terran][0] = "IncreaseVsLightHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][ge_race_terran][1] = "IncreaseVsBiologicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][ge_race_terran][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][ge_race_terran][0] = "IncreaseVsBossHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_terran][0] = "IncreaseVsArmoredHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_terran][0] = "IncreaseVsLightHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_terran][0] = "IncreaseVsBiologicalHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_terran][1] = "IncreaseVsBossHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_terran][0] = "IncreaseVsArmoredHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_terran][1] = "IncreaseVsMechanicalHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran][0] = "IncreaseVsLightHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran][1] = "IncreaseVsBiologicalHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsBossHardAttributeDamageHd";
     }
     if ((GameAttributeGameValue("2") == "0001")) {
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][ge_race_zerg][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][ge_race_zerg][0] = "IncreaseVsLightStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][ge_race_zerg][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][ge_race_zerg][1] = "IncreaseVsBossStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][ge_race_zerg][0] = "IncreaseVsLightStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][ge_race_zerg][1] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][ge_race_zerg][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][ge_race_zerg][1] = "IncreaseVsBiologicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][ge_race_zerg][0] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][ge_race_zerg][1] = "IncreaseVsBossStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_zerg][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_zerg][0] = "IncreaseVsLightStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_zerg][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_zerg][1] = "IncreaseVsBossStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_zerg][0] = "IncreaseVsLightStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_zerg][1] = "IncreaseVsMechanicalStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_zerg][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_zerg][1] = "IncreaseVsBiologicalStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_zerg][0] = "IncreaseVsMechanicalStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_zerg][1] = "IncreaseVsBossStandardAttributeDamageHd";
     }
     else {
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][ge_race_zerg][0] = "IncreaseVsArmoredHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][ge_race_zerg][0] = "IncreaseVsLightHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][ge_race_zerg][0] = "IncreaseVsBiologicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][ge_race_zerg][1] = "IncreaseVsBossHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][ge_race_zerg][0] = "IncreaseVsLightHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][ge_race_zerg][1] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][ge_race_zerg][0] = "IncreaseVsArmoredHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][ge_race_zerg][1] = "IncreaseVsBiologicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][ge_race_zerg][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][ge_race_zerg][1] = "IncreaseVsBossHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_zerg][0] = "IncreaseVsArmoredHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_zerg][0] = "IncreaseVsLightHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_zerg][0] = "IncreaseVsBiologicalHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_zerg][1] = "IncreaseVsBossHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_zerg][0] = "IncreaseVsLightHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_zerg][1] = "IncreaseVsMechanicalHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_zerg][0] = "IncreaseVsArmoredHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_zerg][1] = "IncreaseVsBiologicalHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_zerg][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_zerg][1] = "IncreaseVsBossHardAttributeDamageHd";
     }
 }
 
@@ -2399,6 +2432,12 @@ void gf_initplayergroups () {
         }
 
     }
+    if (lib1_gf_istrue(gv_testingmultiplayerlocally)) {
+        PlayerGroupAdd(gv_activedefenders, 2);
+        PlayerSetRace(2, "Terr");
+        TriggerDebugOutput(1, StringExternal("Param/Value/E444493B"), true);
+    }
+
     libNtve_gf_AddPlayerGroupToPlayerGroup(gv_activedefenders, gv_activedefendersplusallycomp);
     gv_numberofactivedefenders = PlayerGroupCount(gv_activedefenders);
 }
@@ -2666,6 +2705,7 @@ void gf_clearspawnlocationwhenempty () {
         UnitRemove(UnitFromId(1243337835));
         UnitRemove(UnitFromId(169646577));
         gf_startroundtimer(gv_secondsbeforefirstround);
+        gv_allplayershavechosenlocation = true;
     }
 
 }
@@ -2675,7 +2715,7 @@ void gf_createworkeratlocation (point lp_spawnpoint, int lp_p) {
     string auto38B9D4FE_val;
 
     // Implementation
-    auto38B9D4FE_val = PlayerRace(EventPlayer());
+    auto38B9D4FE_val = PlayerRace(lp_p);
     if (auto38B9D4FE_val == "Zerg") {
         lib1_gf_createunitatpoint("DroneHd", lp_spawnpoint, lp_p, 0);
     }
@@ -2703,7 +2743,7 @@ void gf_initunitsforlocation (int lp_defenderlocation, int lp_player) {
     // Variable Initialization
 
     // Implementation
-    lv__race = gf_getraceintegerfromplayer(lp_player);
+    lv__race = lib1_gf_getraceintegerfromplayer(lp_player);
     lv__unitlocation = 0;
     for ( ; ( (auto2DC0790A_ai >= 0 && lv__unitlocation <= auto2DC0790A_ae) || (auto2DC0790A_ai < 0 && lv__unitlocation >= auto2DC0790A_ae) ) ; lv__unitlocation += auto2DC0790A_ai ) {
         auto8234B7E9_val = lv__unitlocation;
@@ -2748,7 +2788,7 @@ void gf_initunitbotright (int lp_defenderlocation, int lp_race) {
     lv__point = gv_unitpoints[lp_defenderlocation][lv__location];
 
     // Implementation
-    if ((lp_race == ge_race_terran)) {
+    if ((lp_race == lib1_ge_race_terran)) {
         gf_createplayerunitatpoint(lv__location, lp_race, gv_allycompplayer, PointWithOffset(lv__point, 1.0, 1.0), "SiegeTankSiegedHd", 0);
         gf_createplayerunitatpoint(lv__location, lp_race, gv_allycompplayer, PointWithOffset(lv__point, -1.0, -1.0), "SiegeTankHd", 0);
     }
@@ -2768,7 +2808,7 @@ void gf_initunitbotleft (int lp_defenderlocation, int lp_race) {
 
     // Implementation
     lv__point = gv_unitpoints[lp_defenderlocation][lv__location];
-    if ((lp_race == ge_race_terran)) {
+    if ((lp_race == lib1_ge_race_terran)) {
         gf_createplayerunitatpoint(lv__location, lp_race, gv_allycompplayer, lv__point, "LiberatorAGHd", 0);
     }
     else {
@@ -2788,7 +2828,7 @@ void gf_initunitbot (int lp_defenderlocation, int lp_race) {
 
     // Implementation
     lv__point = gv_unitpoints[lp_defenderlocation][lv__location];
-    if ((lp_race == ge_race_zerg)) {
+    if ((lp_race == lib1_ge_race_zerg)) {
         gf_createplayerunitatpoint(lv__location, lp_race, gv_allycompplayer, lv__point, "InfestedSiegeTankHd", 0);
     }
     else {
@@ -2849,29 +2889,6 @@ bool gf_unitisbossheroic (unit lp_u) {
     // Automatic Variable Declarations
     // Implementation
     return UnitTypeTestAttribute(UnitGetType(lp_u), c_unitAttributeHeroic);
-}
-
-int gf_getraceintegerfromplayer (int lp_p) {
-    // Automatic Variable Declarations
-    string auto358FADB5_val;
-
-    // Implementation
-    auto358FADB5_val = PlayerRace(lp_p);
-    if (auto358FADB5_val == "Prot") {
-        return ge_race_protoss;
-    }
-    else if (auto358FADB5_val == "Terr") {
-        return ge_race_terran;
-    }
-    else if (auto358FADB5_val == "Zerg") {
-        return ge_race_zerg;
-    }
-    else {
-        TextExpressionSetToken("Param/Expression/5AA39541", "p", IntToText(lp_p));
-        TextExpressionSetToken("Param/Expression/5AA39541", "r", lib1_gf_getplayerraceastext(lp_p));
-        lib1_gf_displaydebugmessage(TextExpressionAssemble("Param/Expression/5AA39541"));
-        return -1;
-    }
 }
 
 int gf_rollmodtypedice () {
@@ -2976,7 +2993,7 @@ void gf_spawnunit (int lp_unitlocation, int lp_p) {
     // Automatic Variable Declarations
     // Variable Initialization
     lv__spawnpoint = gv_spawnpointperplayer[lp_p];
-    lv__race = gf_getraceintegerfromplayer(lp_p);
+    lv__race = lib1_gf_getraceintegerfromplayer(lp_p);
 
     // Implementation
     gf_createplayerunitatpoint(lp_unitlocation, lv__race, lp_p, lv__spawnpoint, lib1_gv_nogamelinkunittype, 0);
@@ -4006,9 +4023,9 @@ void gt_keepspawnclearofunits_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: full refund available between rounds
+// Trigger: full refund available at start and between rounds
 //--------------------------------------------------------------------------------------------------
-bool gt_fullrefundavailablebetweenrounds_Func (bool testConds, bool runActions) {
+bool gt_fullrefundavailableatstartandbetweenrounds_Func (bool testConds, bool runActions) {
     // Variable Declarations
     unit lv__building;
 
@@ -4018,7 +4035,7 @@ bool gt_fullrefundavailablebetweenrounds_Func (bool testConds, bool runActions) 
 
     // Conditions
     if (testConds) {
-        if (!(lib1_gf_istrue(DialogIsVisible(gv_rounddialog, 0)))) {
+        if (!(lib1_gf_istrue(lib1_gf_or2(!(gv_allplayershavechosenlocation), DialogIsVisible(gv_rounddialog, 0))))) {
             return false;
         }
     }
@@ -4034,11 +4051,11 @@ bool gt_fullrefundavailablebetweenrounds_Func (bool testConds, bool runActions) 
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_fullrefundavailablebetweenrounds_Init () {
-    gt_fullrefundavailablebetweenrounds = TriggerCreate("gt_fullrefundavailablebetweenrounds_Func");
-    TriggerAddEventUnitCreated(gt_fullrefundavailablebetweenrounds, null, "BuildZergHd", null);
-    TriggerAddEventUnitCreated(gt_fullrefundavailablebetweenrounds, null, "BuildTerranHd", null);
-    TriggerAddEventUnitCreated(gt_fullrefundavailablebetweenrounds, null, "BuildProtossHd", null);
+void gt_fullrefundavailableatstartandbetweenrounds_Init () {
+    gt_fullrefundavailableatstartandbetweenrounds = TriggerCreate("gt_fullrefundavailableatstartandbetweenrounds_Func");
+    TriggerAddEventUnitCreated(gt_fullrefundavailableatstartandbetweenrounds, null, "BuildZergHd", null);
+    TriggerAddEventUnitCreated(gt_fullrefundavailableatstartandbetweenrounds, null, "BuildTerranHd", null);
+    TriggerAddEventUnitCreated(gt_fullrefundavailableatstartandbetweenrounds, null, "BuildProtossHd", null);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -4943,7 +4960,7 @@ void InitTriggers () {
     gt_upgradeprotossunitdamage_Init();
     gt_idleenemyworkers_Init();
     gt_keepspawnclearofunits_Init();
-    gt_fullrefundavailablebetweenrounds_Init();
+    gt_fullrefundavailableatstartandbetweenrounds_Init();
     gt_bunkerattackenemyandredirectattack_Init();
     gt_halfrefund_Init();
     gt_fullrefund_Init();

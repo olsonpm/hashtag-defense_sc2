@@ -451,15 +451,16 @@ MapInfo/Player07/Name=Player 7
 MapInfo/Player08/Name=Player 8
 MapInfo/Player09/Name=Hostile
 MapInfo/Player10/Name=Hostile
-Param/Expression/5AA39541=Unexpected race returned<n/>player: ~p~<n/>race: ~r~
 Param/Expression/EE5F32E3=<c val="~color_calamity~">Extra lives left: ~extra_lives_left~</c>
 Param/Expression/F3CACBA2=autoskip toggled to: ~autoskip~
+Param/Expression/lib_1_0137C127=Unexpected race returned for player ~p~
 Param/Expression/lib_1_307E16AC=stage: ~ability_stage~
 Param/Value/6B70F853=The enemy will spawn when everyone is ready
 Param/Value/85DFF2CE=The enemy will spawn soon
 Param/Value/C3978B7F=Choose where to defend
 Param/Value/CB176063=
 Param/Value/D6EDA166=You start with 5 choosers to spend on minerals or units.  Make sure to use them !
+Param/Value/E444493B=testing multiplayer locally
 Param/Value/E58B56EB=Skip
 Param/Value/ED031DF0=Ready
 Param/Value/lib_1_0D4B38C5=Generic6 - Complete

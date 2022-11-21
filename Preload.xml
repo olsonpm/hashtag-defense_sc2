@@ -10,6 +10,7 @@
 <Behavior id="CloakHd"/>
 <Behavior id="PushHd"/>
 <Model id="CurrentEnemyIndicatorHd"/>
+<Race id="Terr"/>
 <Sound id="UI_GenericError"/>
 <Sound id="Probe_Explode"/>
 <Sound id="Alert_TerranNeedMoreMinerals"/>

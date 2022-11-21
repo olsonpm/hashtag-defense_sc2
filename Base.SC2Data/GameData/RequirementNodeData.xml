@@ -33,9 +33,6 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="UnitDamageZergHd" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
-    <CRequirementEq id="Eq">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
-    </CRequirementEq>
     <CRequirementLT id="LTCountUpgradeBunkerTurretDamageHdCompleteOnly100">
         <OperandArray index="0" value="CountUpgradeBunkerTurretDamageHdCompleteOnly"/>
         <OperandArray index="1" value="100"/>
