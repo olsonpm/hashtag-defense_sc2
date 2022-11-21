@@ -1163,12 +1163,12 @@
         <ExpireEffect value="PsionicShockwaveSAHd"/>
     </CEffectCreatePersistent>
     <CEffectCreatePersistent id="PsionicShockwave2CPHd">
+        <ValidatorArray value="noMarkers"/>
         <EditorCategories value=""/>
         <WhichLocation Value="TargetUnit"/>
         <InitialEffect value="PsionicShockwave2DamageHd"/>
         <ExpireDelay value="0.125"/>
         <ExpireEffect value="PsionicShockwave2SAHd"/>
-        <ValidatorArray value="noMarkers"/>
     </CEffectCreatePersistent>
     <CEffectDamage id="PsionicShockwaveDamageHd" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
@@ -1183,14 +1183,14 @@
     <CEffectEnumArea id="PsionicShockwaveSAHd">
         <EditorCategories value=""/>
         <SearchFilters value="-;Player,Ally,Neutral"/>
-        <AreaArray MaxCount="1" Radius="3" Effect="PsionicShockwave2CPHd"/>
+        <AreaArray MaxCount="1" Radius="5" Effect="PsionicShockwave2CPHd"/>
         <MaxCount value="1"/>
         <SearchFlags index="SameCliff" value="1"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="PsionicShockwave2SAHd">
         <EditorCategories value=""/>
         <SearchFilters value="-;Player,Ally,Neutral"/>
-        <AreaArray MaxCount="1" Radius="3" Effect="PsionicShockwave3DamageHd"/>
+        <AreaArray MaxCount="1" Radius="5" Effect="PsionicShockwave3DamageHd"/>
         <MaxCount value="1"/>
         <SearchFlags index="SameCliff" value="1"/>
     </CEffectEnumArea>

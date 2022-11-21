@@ -1425,8 +1425,6 @@ trigger gt_choosespawnlocationbot;
 trigger gt_choosespawnlocationbotleft;
 trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
-trigger gt_testcleartextmessages;
-trigger gt_testinitcam;
 trigger gt_upgradespinecrawlerdamage;
 trigger gt_upgradebunkerturretdamage;
 trigger gt_upgradephotoncannondamage;
@@ -3699,60 +3697,6 @@ void gt_choosespawnlocationtopleft_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: test - clear text messages
-//--------------------------------------------------------------------------------------------------
-bool gt_testcleartextmessages_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!(lib1_gf_istesting())) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    UIClearMessages(PlayerGroupSingle(1), c_messageAreaAll);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_testcleartextmessages_Init () {
-    gt_testcleartextmessages = TriggerCreate("gt_testcleartextmessages_Func");
-    TriggerAddEventMapInit(gt_testcleartextmessages);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: test - init cam
-//--------------------------------------------------------------------------------------------------
-bool gt_testinitcam_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!(lib1_gf_istesting())) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lib1_gf_setcameratopointforplayer(1, PointFromId(271112602));
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_testinitcam_Init () {
-    gt_testinitcam = TriggerCreate("gt_testinitcam_Func");
-    TriggerAddEventMapInit(gt_testinitcam);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: upgrade spine crawler damage
 //--------------------------------------------------------------------------------------------------
 bool gt_upgradespinecrawlerdamage_Func (bool testConds, bool runActions) {
@@ -5008,8 +4952,6 @@ void InitTriggers () {
     gt_choosespawnlocationbotleft_Init();
     gt_choosespawnlocationleft_Init();
     gt_choosespawnlocationtopleft_Init();
-    gt_testcleartextmessages_Init();
-    gt_testinitcam_Init();
     gt_upgradespinecrawlerdamage_Init();
     gt_upgradebunkerturretdamage_Init();
     gt_upgradephotoncannondamage_Init();
