@@ -225,6 +225,7 @@
     </CBehaviorBuff>
     <CBehaviorBuff id="SpawnParentHd">
         <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="SpawnBotHd" parent="SpawnParentHd">

@@ -1,15 +1,18 @@
 # delme
 
-Mods are buffed by 10%.
-Enemies get +10% health.
-Positive player attribute damages (e.g. +dmg vs Light units) are bumped by 10%
+green (amount)
+<c val="00E35B">
+
+blue minerals and side-note
+<c val="00B6E3">
+
+yellow side-note
+<c val="F1FF71">
 
 
 # bugs
 
- - make sure shields for enemies have names
  - fix bunker attack
- - make sure units let up on how much they upgrade
 
 
 
@@ -25,10 +28,20 @@ Positive player attribute damages (e.g. +dmg vs Light units) are bumped by 10%
 
 
 
-# ideas for mods
+# ideas
+
+## different mods
  - broodling spawn
  - immortal barrier
+ - support units
+ - respawn
+ - spawn lesser units upon death
 
+## misc ideas
+ - bank to use essentially as cookies.  e.g. inform player that you cannot maze with units
+ - creative mode
+   : no round timer.  Instead have a command to start the wave
+   : always have 6 choosers in unit area
 
 
 # units by round

@@ -32,18 +32,27 @@
             <Value>0.3</Value>
             <Value>0.4</Value>
             <Value>0.5</Value>
+            <Value>0.6</Value>
+            <Value>0.7</Value>
+            <Value>0.8</Value>
         </Version>
         <Date>
             <Value>11/11/2022</Value>
             <Value>11/11/2022</Value>
             <Value>11/11/2022</Value>
             <Value>11/18/2022</Value>
+            <Value>11/20/2022</Value>
+            <Value>11/20/2022</Value>
+            <Value>11/20/2022</Value>
         </Date>
         <Notes>
             <Value>1</Value>
             <Value>2</Value>
             <Value>3</Value>
             <Value>4,5,6,7,8,9,10</Value>
+            <Value>11,12,13,14,15,16</Value>
+            <Value>17</Value>
+            <Value>18</Value>
         </Notes>
     </PatchNote>
 </DocInfo>
