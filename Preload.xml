@@ -18,9 +18,15 @@
 <Unit id="SpawnFlagHd"/>
 <Unit id="LiberatorAGHd"/>
 <Unit id="InfestedSiegeTankHd"/>
+<Unit id="PhotonCannonProtossHd"/>
+<Unit id="WallProtossHd"/>
+<Unit id="SpineCrawlerHd"/>
+<Unit id="WallZergHd"/>
 <Unit id="BunkerHd"/>
+<Unit id="WallTerranHd"/>
 <Unit id="SiegeTankSiegedHd"/>
 <Unit id="SiegeTankHd"/>
+<Unit id="PathTesterRadius05Hd"/>
 <Unit id="LightDroneEnemyHd"/>
 <Unit id="LightProbeEnemyHd"/>
 <Unit id="LightSCVEnemyHd"/>

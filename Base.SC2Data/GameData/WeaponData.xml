@@ -870,11 +870,11 @@
     <CWeaponLegacy id="PhotonCannonHd">
         <EditorCategories value="Race:Protoss"/>
         <Icon value="Assets\Textures\btn-building-protoss-photoncannon.dds"/>
-        <DisplayEffect value="PhotonCannonUHd"/>
+        <DisplayEffect value="PhotonCannonDamageProtossHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <RangeSlop value="0"/>
         <Period value="2"/>
-        <Effect value="PhotonCannonLMHd"/>
+        <Effect value="PhotonCannonLMProtossHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="PsionicShockwaveHd">
         <EditorCategories value="Race:Protoss"/>

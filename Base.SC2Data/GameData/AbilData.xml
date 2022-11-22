@@ -204,10 +204,10 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <FlagArray index="PeonDisableCollision" value="1"/>
         <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="PhotonCannonHd">
+        <InfoArray index="Build1" Unit="PhotonCannonProtossHd" Time="0.1">
             <Button DefaultButtonFace="PhotonCannon"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="WallProtossHd">
+        <InfoArray index="Build2" Unit="WallProtossHd" Time="0.1">
             <Button DefaultButtonFace="BuildWallProtossHd"/>
         </InfoArray>
         <ConstructionMover value="Construction"/>
@@ -216,10 +216,10 @@
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <FlagArray index="PeonDisableCollision" value="1"/>
         <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="SpineCrawlerHd">
+        <InfoArray index="Build1" Unit="SpineCrawlerHd" Time="0.1">
             <Button DefaultButtonFace="BuildSpineCrawlerZergHd"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="WallZergHd">
+        <InfoArray index="Build2" Unit="WallZergHd" Time="0.1">
             <Button DefaultButtonFace="BuildWallZergHd"/>
         </InfoArray>
         <ConstructionMover value="Construction"/>
@@ -260,10 +260,10 @@
     <CAbilBuild id="BuildTerranHd">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <FlagArray index="PeonDisableCollision" value="1"/>
-        <InfoArray index="Build1" Unit="BunkerHd">
+        <InfoArray index="Build1" Unit="BunkerHd" Time="0.1">
             <Button DefaultButtonFace="BuildBunkerHd"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="WallTerranHd">
+        <InfoArray index="Build2" Unit="WallTerranHd" Time="0.1">
             <Button DefaultButtonFace="BuildWallTerranHd"/>
         </InfoArray>
         <FidgetDelayMin value="5"/>

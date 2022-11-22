@@ -1161,6 +1161,13 @@ const int gv_enemyplayer = 10;
 //--------------------------------------------------------------------------------------------------
 // Global Structures
 //--------------------------------------------------------------------------------------------------
+struct gs_pathtestsegmentinfo {
+    bool lv_isactive;
+    point lv_start;
+    point lv_destination;
+    unit lv_unit;
+};
+
 struct gs_unitandcurrentdestinationpoint {
     point lv_destinationpoint;
     unit lv_u;
@@ -1213,10 +1220,19 @@ const int ge_modtypes_increasespeed = 2;
 const int ge_modtypes_addarmor = 3;
 const int ge_modtypes_addshields = 4;
 const int ge_modtypes_perfectspecimen = 5;
+const int ge_pathtestsegments_verticalleft = 0;
+const int ge_pathtestsegments_verticaltop = 1;
+const int ge_pathtestsegments_verticalright = 2;
+const int ge_pathtestsegments_verticalbot = 3;
+const int ge_pathtestsegments_horizontaltop = 4;
+const int ge_pathtestsegments_horizontalleft = 5;
+const int ge_pathtestsegments_horizontalright = 6;
+const int ge_pathtestsegments_horizontalbot = 7;
 
 //--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
+bool gv_testpathlock;
 bool[10] gv_autoupgradelockperplayer;
 bool gv_lockkeepspawnclearofunits;
 bool gv_unitchooserlock;
@@ -1268,6 +1284,9 @@ int gv_modtypedicelastindex;
 string[6] gv_modtypetomodunittype;
 string[6] gv_modtypetobuff;
 int gv_numberofactivedefenders;
+gs_pathtestsegmentinfo[9] gv_pathtestsegments;
+unit[9][3] gv_pathtestsegmenttopathtesters;
+bool[9] gv_pathtestsegmenttoactivepath;
 bool[10] gv_playertoskipclicked;
 int[10] gv_playertodefenderlocation;
 int[26] gv_possibleenemyunitsperroundnumber;
@@ -1370,9 +1389,11 @@ void gf_initextralifepoints ();
 void gf_initextralives ();
 void gf_initlocationandsublocationtospawnclockwiselocation ();
 void gf_initlocationchoosers ();
+void gf_initmisc ();
 void gf_initmodtypedice ();
 void gf_initmodtypetobuff ();
 void gf_initmodtypetomodunit ();
+void gf_initpathtesters ();
 void gf_initplayergroups ();
 void gf_initpossibleenemyunitsperround ();
 void gf_initresources ();
@@ -1393,6 +1414,10 @@ void gf_initunitbotleft (int lp_defenderlocation, int lp_race);
 void gf_initunitbot (int lp_defenderlocation, int lp_race);
 void gf_initunitleft (int lp_defenderlocation, int lp_p, int lp_race);
 void gf_initunitarea (int lp_defenderlocation, int lp_p);
+bool gf_allactivepathsareclear ();
+bool gf_buildingiswall (unit lp_building);
+bool gf_buildingisattackingstructure (unit lp_building);
+void gf_refundplayer (int lp_p, unit lp_building);
 bool gf_unitisbuilder (unit lp_u);
 bool gf_unitisbossheroic (unit lp_u);
 int gf_rollmodtypedice ();
@@ -1425,6 +1450,7 @@ trigger gt_choosespawnlocationbot;
 trigger gt_choosespawnlocationbotleft;
 trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
+trigger gt_testpaths;
 trigger gt_upgradespinecrawlerdamage;
 trigger gt_upgradebunkerturretdamage;
 trigger gt_upgradephotoncannondamage;
@@ -2363,6 +2389,12 @@ void gf_initlocationchoosers () {
     }
 }
 
+void gf_initmisc () {
+    // Automatic Variable Declarations
+    // Implementation
+    UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeSupply, false);
+}
+
 void gf_initmodtypedice () {
     // Automatic Variable Declarations
     // Implementation
@@ -2410,6 +2442,40 @@ void gf_initmodtypetomodunit () {
     gv_modtypetomodunittype[ge_modtypes_increasespeed] = "IncreasedSpeedModHd";
     gv_modtypetomodunittype[ge_modtypes_addarmor] = "AddedArmorModHd";
     gv_modtypetomodunittype[ge_modtypes_perfectspecimen] = "PerfectSpecimenModHd";
+}
+
+void gf_initpathtesters () {
+    // Variable Declarations
+    int lv__pathtestsegmentidx;
+
+    // Automatic Variable Declarations
+    const int autoC1A79ACB_ae = 7;
+    const int autoC1A79ACB_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    gv_pathtestsegments[ge_pathtestsegments_verticalleft].lv_start = PointFromId(312025157);
+    gv_pathtestsegments[ge_pathtestsegments_verticalleft].lv_destination = PointFromId(2104189875);
+    gv_pathtestsegments[ge_pathtestsegments_verticaltop].lv_start = PointFromId(1965461556);
+    gv_pathtestsegments[ge_pathtestsegments_verticaltop].lv_destination = PointFromId(2019735321);
+    gv_pathtestsegments[ge_pathtestsegments_verticalbot].lv_start = PointFromId(2068411702);
+    gv_pathtestsegments[ge_pathtestsegments_verticalbot].lv_destination = PointFromId(63201720);
+    gv_pathtestsegments[ge_pathtestsegments_verticalright].lv_start = PointFromId(1277692723);
+    gv_pathtestsegments[ge_pathtestsegments_verticalright].lv_destination = PointFromId(6064204);
+    gv_pathtestsegments[ge_pathtestsegments_horizontaltop].lv_start = PointFromId(331529152);
+    gv_pathtestsegments[ge_pathtestsegments_horizontaltop].lv_destination = PointFromId(1705605065);
+    gv_pathtestsegments[ge_pathtestsegments_horizontalleft].lv_start = PointFromId(282270595);
+    gv_pathtestsegments[ge_pathtestsegments_horizontalleft].lv_destination = PointFromId(97662259);
+    gv_pathtestsegments[ge_pathtestsegments_horizontalright].lv_start = PointFromId(94086420);
+    gv_pathtestsegments[ge_pathtestsegments_horizontalright].lv_destination = PointFromId(454562883);
+    gv_pathtestsegments[ge_pathtestsegments_horizontalbot].lv_start = PointFromId(1755457878);
+    gv_pathtestsegments[ge_pathtestsegments_horizontalbot].lv_destination = PointFromId(1943289383);
+    lv__pathtestsegmentidx = 0;
+    for ( ; ( (autoC1A79ACB_ai >= 0 && lv__pathtestsegmentidx <= autoC1A79ACB_ae) || (autoC1A79ACB_ai < 0 && lv__pathtestsegmentidx >= autoC1A79ACB_ae) ) ; lv__pathtestsegmentidx += autoC1A79ACB_ai ) {
+        lib1_gf_createunitatpoint("PathTesterRadius05Hd", gv_pathtestsegments[lv__pathtestsegmentidx].lv_start, gv_allycompplayer, 0);
+        gv_pathtestsegments[lv__pathtestsegmentidx].lv_unit = UnitLastCreated();
+    }
 }
 
 void gf_initplayergroups () {
@@ -2876,6 +2942,51 @@ void gf_initunitarea (int lp_defenderlocation, int lp_p) {
     lv__beaconlocation = 0;
     for ( ; ( (auto307CE687_ai >= 0 && lv__beaconlocation <= auto307CE687_ae) || (auto307CE687_ai < 0 && lv__beaconlocation >= auto307CE687_ae) ) ; lv__beaconlocation += auto307CE687_ai ) {
         lib1_gf_createunitatpoint(gv_unitbeaconperlocation[lv__beaconlocation], gv_unitbeaconpoints[lp_defenderlocation][lv__beaconlocation], lp_p, 0);
+    }
+}
+
+bool gf_allactivepathsareclear () {
+    // Variable Declarations
+    int lv__pathtestsegmentidx;
+
+    // Automatic Variable Declarations
+    const int auto38FEEDC0_ae = 7;
+    const int auto38FEEDC0_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    lv__pathtestsegmentidx = 0;
+    for ( ; ( (auto38FEEDC0_ai >= 0 && lv__pathtestsegmentidx <= auto38FEEDC0_ae) || (auto38FEEDC0_ai < 0 && lv__pathtestsegmentidx >= auto38FEEDC0_ae) ) ; lv__pathtestsegmentidx += auto38FEEDC0_ai ) {
+        if (lib1_gf_istrue(gv_pathtestsegments[lv__pathtestsegmentidx].lv_isactive) && lib1_gf_isfalse(UnitPathableToPoint(gv_pathtestsegments[lv__pathtestsegmentidx].lv_unit, gv_pathtestsegments[lv__pathtestsegmentidx].lv_destination, 0.0, 0.0))) {
+            return false;
+        }
+
+    }
+    return true;
+}
+
+bool gf_buildingiswall (unit lp_building) {
+    // Automatic Variable Declarations
+    // Implementation
+    return lib1_gf_or3(lib1_gf_unitistype(lp_building, "WallProtossHd"), lib1_gf_unitistype(lp_building, "WallTerranHd"), lib1_gf_unitistype(lp_building, "WallZergHd"));
+}
+
+bool gf_buildingisattackingstructure (unit lp_building) {
+    // Automatic Variable Declarations
+    // Implementation
+    return lib1_gf_or3(lib1_gf_unitistype(lp_building, "PhotonCannonProtossHd"), lib1_gf_unitistype(lp_building, "BunkerHd"), lib1_gf_unitistype(lp_building, "SpineCrawlerHd"));
+}
+
+void gf_refundplayer (int lp_p, unit lp_building) {
+    // Automatic Variable Declarations
+    // Implementation
+    UnitKill(lp_building);
+    if (lib1_gf_or3(lib1_gf_unitistype(lp_building, "WallProtossHd"), lib1_gf_unitistype(lp_building, "WallTerranHd"), lib1_gf_unitistype(lp_building, "WallZergHd"))) {
+        PlayerModifyPropertyInt(lp_p, c_playerPropMinerals, c_playerPropOperAdd, 1);
+    }
+    else {
+        PlayerModifyPropertyInt(lp_p, c_playerPropMinerals, c_playerPropOperAdd, 2);
     }
 }
 
@@ -3374,6 +3485,7 @@ bool gt_initmap_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    gf_initmisc();
     gf_initenemyids();
     gf_initenemymaxhealthandshield();
     gf_initattributebuffsperlocationandrace();
@@ -3415,6 +3527,7 @@ bool gt_initmap_Func (bool testConds, bool runActions) {
     gf_initenemyperroundrest();
     gf_initenemymods();
     gf_initenemyshowcase();
+    gf_initpathtesters();
     return true;
 }
 
@@ -3447,6 +3560,8 @@ bool gt_choosespawnlocationtop_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    gv_pathtestsegments[ge_pathtestsegments_verticaltop].lv_isactive = true;
+    gv_pathtestsegments[ge_pathtestsegments_verticalbot].lv_isactive = true;
     gf_choosespawnlocation(lv_defenderlocation, EventPlayer(), EventUnit());
     TriggerDestroy(gt_choosespawnlocationtop);
     return true;
@@ -3481,6 +3596,8 @@ bool gt_choosespawnlocationtopright_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    gv_pathtestsegments[ge_pathtestsegments_verticalright].lv_isactive = true;
+    gv_pathtestsegments[ge_pathtestsegments_horizontaltop].lv_isactive = true;
     gf_choosespawnlocation(lv_defenderlocation, EventPlayer(), EventUnit());
     TriggerDestroy(gt_choosespawnlocationtopright);
     return true;
@@ -3515,6 +3632,8 @@ bool gt_choosespawnlocationright_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    gv_pathtestsegments[ge_pathtestsegments_horizontalleft].lv_isactive = true;
+    gv_pathtestsegments[ge_pathtestsegments_horizontalright].lv_isactive = true;
     gf_choosespawnlocation(lv_defenderlocation, EventPlayer(), EventUnit());
     TriggerDestroy(gt_choosespawnlocationright);
     return true;
@@ -3549,6 +3668,8 @@ bool gt_choosespawnlocationbotright_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    gv_pathtestsegments[ge_pathtestsegments_verticalright].lv_isactive = true;
+    gv_pathtestsegments[ge_pathtestsegments_horizontalbot].lv_isactive = true;
     gf_choosespawnlocation(lv_defenderlocation, EventPlayer(), EventUnit());
     TriggerDestroy(gt_choosespawnlocationbotright);
     return true;
@@ -3583,6 +3704,8 @@ bool gt_choosespawnlocationbot_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    gv_pathtestsegments[ge_pathtestsegments_verticaltop].lv_isactive = true;
+    gv_pathtestsegments[ge_pathtestsegments_verticalbot].lv_isactive = true;
     gf_choosespawnlocation(lv_defenderlocation, EventPlayer(), EventUnit());
     TriggerDestroy(gt_choosespawnlocationbot);
     return true;
@@ -3617,6 +3740,8 @@ bool gt_choosespawnlocationbotleft_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    gv_pathtestsegments[ge_pathtestsegments_verticalleft].lv_isactive = true;
+    gv_pathtestsegments[ge_pathtestsegments_horizontalbot].lv_isactive = true;
     gf_choosespawnlocation(lv_defenderlocation, EventPlayer(), EventUnit());
     TriggerDestroy(gt_choosespawnlocationbotleft);
     return true;
@@ -3651,6 +3776,8 @@ bool gt_choosespawnlocationleft_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    gv_pathtestsegments[ge_pathtestsegments_horizontalleft].lv_isactive = true;
+    gv_pathtestsegments[ge_pathtestsegments_horizontalright].lv_isactive = true;
     gf_choosespawnlocation(lv_defenderlocation, EventPlayer(), EventUnit());
     TriggerDestroy(gt_choosespawnlocationleft);
     return true;
@@ -3685,6 +3812,8 @@ bool gt_choosespawnlocationtopleft_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    gv_pathtestsegments[ge_pathtestsegments_verticalleft].lv_isactive = true;
+    gv_pathtestsegments[ge_pathtestsegments_horizontaltop].lv_isactive = true;
     gf_choosespawnlocation(lv_defenderlocation, EventPlayer(), EventUnit());
     TriggerDestroy(gt_choosespawnlocationtopleft);
     return true;
@@ -3694,6 +3823,45 @@ bool gt_choosespawnlocationtopleft_Func (bool testConds, bool runActions) {
 void gt_choosespawnlocationtopleft_Init () {
     gt_choosespawnlocationtopleft = TriggerCreate("gt_choosespawnlocationtopleft_Func");
     TriggerAddEventUnitRange(gt_choosespawnlocationtopleft, null, UnitFromId(1243337835), 1.0, true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: test paths
+//--------------------------------------------------------------------------------------------------
+bool gt_testpaths_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+    unit lv__building;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__p = EventPlayer();
+    lv__building = EventUnitCreatedUnit();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    while (gv_testpathlock) {
+        Wait(1.0, c_timeGame);
+    }
+    gv_testpathlock = true;
+    if ((!(gf_allactivepathsareclear()))) {
+        lib1_gf_messageuser(StringExternal("Param/Value/06E6A6BE"), lv__p);
+        gf_refundplayer(lv__p, lv__building);
+    }
+
+    gv_testpathlock = false;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_testpaths_Init () {
+    gt_testpaths = TriggerCreate("gt_testpaths_Func");
+    TriggerAddEventUnitCreated(gt_testpaths, null, "BuildZergHd", null);
+    TriggerAddEventUnitCreated(gt_testpaths, null, "BuildTerranHd", null);
+    TriggerAddEventUnitCreated(gt_testpaths, null, "BuildProtossHd", null);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -4952,6 +5120,7 @@ void InitTriggers () {
     gt_choosespawnlocationbotleft_Init();
     gt_choosespawnlocationleft_Init();
     gt_choosespawnlocationtopleft_Init();
+    gt_testpaths_Init();
     gt_upgradespinecrawlerdamage_Init();
     gt_upgradebunkerturretdamage_Init();
     gt_upgradephotoncannondamage_Init();

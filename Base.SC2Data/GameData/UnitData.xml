@@ -95,6 +95,110 @@
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
     </CUnit>
+    <CUnit id="PathTesterRadius05Hd">
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Worker" value="1"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="Unstoppable" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <DefaultAcquireLevel value="Defensive"/>
+        <Response value="Flee"/>
+        <LifeStart value="10000"/>
+        <LifeMax value="10000"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <Speed value="2.8125"/>
+        <Acceleration value="2.5"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Food value="-1"/>
+        <CostCategory value="Economy"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="16.667"/>
+        <AttackTargetPriority value="20"/>
+        <AIOverideTargetPriority value="10"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="10"/>
+        <AbilArray Link="move"/>
+        <InnerRadius value="0.5"/>
+        <MinimapRadius value="0"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="50"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="6"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkSCV"/>
+        <GlossaryCategory value="Unit/Category/TerranUnits"/>
+        <GlossaryPriority value="10"/>
+        <HotkeyCategory value="Unit/Category/TerranUnits"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="PathTesterRadius02Hd">
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Worker" value="1"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="Unstoppable" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <DefaultAcquireLevel value="Defensive"/>
+        <Response value="Flee"/>
+        <LifeStart value="10000"/>
+        <LifeMax value="10000"/>
+        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
+        <Speed value="2.8125"/>
+        <Acceleration value="2.5"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Food value="-1"/>
+        <CostCategory value="Economy"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="16.667"/>
+        <AttackTargetPriority value="20"/>
+        <AIOverideTargetPriority value="10"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="10"/>
+        <AbilArray Link="move"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
+        <MinimapRadius value="0"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="50"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="6"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkSCV"/>
+        <GlossaryCategory value="Unit/Category/TerranUnits"/>
+        <GlossaryPriority value="10"/>
+        <HotkeyCategory value="Unit/Category/TerranUnits"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
     <CUnit id="SlowTicklerMarineTestHd">
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
@@ -107,6 +211,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
+        <InnerRadius value="0.5"/>
         <Attributes index="Light" value="1"/>
         <Attributes index="Biological" value="1"/>
         <LifeStart value="10000"/>
@@ -139,15 +244,11 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Stim" Type="AbilCmd" AbilCmd="Stimpack,Execute" Row="2" Column="0"/>
         </CardLayouts>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <InnerRadius value="0.375"/>
         <CargoSize value="1"/>
         <ScoreMake value="50"/>
         <ScoreKill value="50"/>
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="15"/>
-        <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Marine"/>
         <HotkeyCategory value="Unit/Category/TerranUnits"/>
@@ -192,6 +293,7 @@
         <CostCategory value="Technology"/>
         <CostResource index="Minerals" value="1"/>
         <AttackTargetPriority value="11"/>
+        <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="SalvageNoRefundHd"/>
         <AbilArray Link="SalvageFullRefundHd"/>
         <CardLayouts>
@@ -330,7 +432,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
         <Mob value="Campaign"/>
@@ -386,7 +491,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
         <Mob value="Campaign"/>
@@ -453,7 +561,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Campaign"/>
@@ -506,7 +617,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -566,7 +680,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -636,7 +753,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
         <Mob value="Multiplayer"/>
@@ -733,14 +853,14 @@
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowInfestedAbominationDown,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="AberrationTowering" Type="Passive" Row="2" Column="0"/>
         </CardLayouts>
-        <Radius value="0.875"/>
-        <SeparationRadius value="0.875"/>
-        <InnerRadius value="0.75"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <CargoSize value="4"/>
         <ScoreMake value="400"/>
         <ScoreKill value="800"/>
         <SubgroupPriority value="9"/>
-        <MinimapRadius value="1"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
         <HotkeyCategory value="Unit/Category/ZergStory"/>
         <Fidget>
@@ -760,10 +880,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <Mob value="Campaign"/>
@@ -821,7 +941,10 @@
         <Acceleration value="1000"/>
         <RankDisplay value="Never"/>
         <KillDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <Subtitle value="UnitSubtitle/BossDehakaEnemyHd"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
@@ -943,7 +1066,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <Mob value="Campaign"/>
@@ -999,7 +1125,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
         <Mob value="Campaign"/>
@@ -1360,7 +1489,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <FlagArray index="UseLineOfSight" value="1"/>
@@ -1409,7 +1541,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Campaign"/>
@@ -1469,10 +1604,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <MinimapRadius value="0.375"/>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -1542,10 +1677,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <MinimapRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
         <Mob value="Multiplayer"/>
@@ -1623,10 +1758,10 @@
         <Acceleration value="100"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <MinimapRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <Mob value="Multiplayer"/>
@@ -1686,10 +1821,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <Radius value="0.2"/>
+        <MinimapRadius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <Mob value="Multiplayer"/>
@@ -1740,10 +1875,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <MinimapRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <AttackTargetPriority value="20"/>
         <Collide index="Ground" value="1"/>
         <Collide index="ForceField" value="1"/>
@@ -1797,10 +1932,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <Radius value="0.2"/>
+        <MinimapRadius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <Description value="Button/Tooltip/WarpInLightAdeptEnemyHd"/>
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
@@ -1867,7 +2002,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <Mob value="Multiplayer"/>
@@ -1942,7 +2080,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -2007,10 +2148,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <InnerRadius value="0.25"/>
+        <Radius value="0.2"/>
+        <MinimapRadius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <FlagArray index="UseLineOfSight" value="1"/>
@@ -2066,7 +2207,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <FlagArray index="UseLineOfSight" value="1"/>
@@ -2115,7 +2259,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <FlagArray index="UseLineOfSight" value="1"/>
@@ -2192,10 +2339,10 @@
         <Acceleration value="100"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <MinimapRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
         <Mob value="Multiplayer"/>
@@ -2263,7 +2410,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
         <Mob value="Multiplayer"/>
@@ -2333,10 +2483,10 @@
         <Acceleration value="100"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <MinimapRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -2405,10 +2555,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <Radius value="0.2"/>
+        <MinimapRadius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -2474,7 +2624,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <Mob value="Campaign"/>
@@ -2535,7 +2688,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <Race value="Zerg"/>
         <PlaneArray index="Ground" value="1"/>
         <Collide index="Ground" value="1"/>
@@ -2571,10 +2727,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.25"/>
-        <MinimapRadius value="0.25"/>
-        <SeparationRadius value="0.25"/>
-        <InnerRadius value="0.25"/>
+        <Radius value="0.2"/>
+        <MinimapRadius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <FlagArray index="UseLineOfSight" value="1"/>
@@ -2619,7 +2775,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <Mob value="Multiplayer"/>
@@ -2689,7 +2848,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <Mob value="Multiplayer"/>
@@ -2747,7 +2909,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <FlagArray index="PreventDestroy" value="1"/>
@@ -2796,7 +2961,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -2862,7 +3030,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
         <FlagArray index="PreventDestroy" value="1"/>
@@ -2920,7 +3091,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Campaign"/>
@@ -2986,7 +3160,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <Mob value="Multiplayer"/>
@@ -3050,7 +3227,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <FlagArray index="UseLineOfSight" value="1"/>
@@ -3107,7 +3287,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
         <Mob value="Multiplayer"/>
@@ -3463,7 +3646,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <Mob value="Multiplayer"/>
@@ -3523,10 +3709,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -4177,7 +4363,7 @@
         </Fidget>
         <TauntDuration index="Dance" value="5"/>
     </CUnit>
-    <CUnit id="PhotonCannonHd">
+    <CUnit id="PhotonCannonProtossHd">
         <Facing value="45"/>
         <Race value="Prot"/>
         <Mob value="Multiplayer"/>
@@ -4236,7 +4422,7 @@
         <AIEvalFactor value="0.8"/>
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
     </CUnit>
-    <CUnit id="PhotonCannonWeaponHd" parent="MISSILE">
+    <CUnit id="PhotonCannonWeaponProtossHd" parent="MISSILE">
         <Race value="Prot"/>
         <Mover value="PhotonCannonWeapon"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
@@ -5433,10 +5619,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <MinimapRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Campaign"/>
@@ -5496,7 +5682,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -5564,7 +5753,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -5683,6 +5875,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <Mob value="Multiplayer"/>
@@ -5729,14 +5925,11 @@
             <LayoutButtons Face="HotSZerglingFrenzy" Type="Passive" Requirements="HaveHotSZerglingFrenzy" Row="2" Column="1"/>
             <LayoutButtons Face="HotSMetabolicBoost" Type="Passive" Requirements="HaveHotSMetabolicBoost" Row="2" Column="1"/>
         </CardLayouts>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
         <CargoSize value="1"/>
         <ScoreMake value="25"/>
         <ScoreKill value="25"/>
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="8"/>
-        <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Zergling"/>
         <HotkeyCategory value="Unit/Category/ZergUnits"/>
@@ -5759,10 +5952,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
         <Mob value="Multiplayer"/>
@@ -5831,10 +6024,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <Radius value="0.375"/>
-        <MinimapRadius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <ReviveType value="Zealot"/>
         <Race value="Prot"/>
@@ -5906,7 +6099,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Mob value="Multiplayer"/>
         <FlagArray index="PreventDestroy" value="1"/>
@@ -5964,7 +6160,10 @@
         <Acceleration value="1000"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
-        <InnerRadius value="0.3"/>
+        <MinimapRadius value="0.2"/>
+        <Radius value="0.2"/>
+        <SeparationRadius value="0.2"/>
+        <InnerRadius value="0.2"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <FlagArray index="PreventDestroy" value="1"/>

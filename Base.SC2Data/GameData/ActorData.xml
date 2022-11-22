@@ -186,9 +186,39 @@
             <Image value="Assets\Textures\Wireframe-Zerg-Kraith.dds"/>
         </Wireframe>
     </CActorUnit>
+    <!-- copied from Liberty.SC2Mod -->
+    <!-- : remove "Create ##unitName##Build" message -->
+    <CActorUnit default="1" id="TerranBuildingNoConstructionAnimationHd" parent="GenericUnitStandard">
+        <Aliases value="_CreepEngulfable"/>
+        <On Terms="UnitConstruction.##unitName##.Start" Send="Create BuildingTerrainFlatten"/>
+        <On Terms="UnitConstruction.##unitName##.Cancel" Target="_BuildingTerrainFlatten" Send="Destroy"/>
+        <On Terms="UnitConstruction.##unitName##.Finish" Target="_BuildingTerrainFlatten" Send="Destroy"/>
+        <On Terms="UnitConstruction.##unitName##.Start" Send="QueryRadius 1.750000 BuildingCrushQueryResponse"/>
+        <On Terms="UnitBirth.##unitName##.Normal" Send="Create BuildingTerrainFlatten"/>
+        <On Terms="UnitBirth.##unitName##.Suppressed" Send="Create BuildingTerrainFlattenInstant"/>
+        <On Terms="UnitBirth.##unitName##.EditorPlaced" Send="Create BuildingTerrainFlattenEditor"/>
+        <On Terms="UnitDeath.##unitName##" Target="_BuildingTerrainFlatten" Send="Destroy"/>
+        <On Terms="UnitDeathCustomize; CreepEngulfs" Send="CreepEngulfmentStopTransition"/>
+        <On Terms="ActorCreation; CreepIntersects" Send="CreepEngulfmentStartTransition"/>
+        <ModelFlags index="OutlineOccluder" value="1"/>
+        <CreepHeightClass value="Default"/>
+        <CreepRateGrow value="Grow"/>
+        <CreepRateShrink value="Shrink"/>
+    </CActorUnit>
+    <CActorUnit default="1" id="TerranBuildingExNoArmorHd" parent="TerranBuildingNoConstructionAnimationHd">
+        <Macros value="SnowVisualUnitMacroMP"/>
+        <DeathArray index="Normal" ModelLink="##unitName##Death" SoundLink=""/>
+        <PlacementModel value="##unitName##Placement"/>
+        <PlacementSound value="Terran_BuildingPlacement"/>
+        <PortraitModel value="##unitName##Portrait"/>
+        <HeroIcon value="Assets\Textures\btn-building-terran-##unitName##.dds"/>
+        <SoundArray index="Construction" value="Terran_ConstructionWhat"/>
+        <UnitIcon value="Assets\Textures\btn-building-terran-##unitName##.dds"/>
+    </CActorUnit>
     <!--
         copied from Liberty.SC2Mod
         : no Life Armor Icons declared
+        : terran buildings also have their construction animation removed
     -->
     <CActorUnit default="1" id="ZergBuildingExNoArmorHd" parent="GenericUnitStandard">
         <Macros value="QueueAnim"/>
@@ -215,16 +245,6 @@
         <UnitFlags index="StandAnimBirthVariation" value="0"/>
         <UnitIcon value="Assets\Textures\btn-building-zerg-##unitName##.dds"/>
     </CActorUnit>
-    <CActorUnit default="1" id="TerranBuildingExNoArmorHd" parent="TerranBuilding">
-        <Macros value="SnowVisualUnitMacroMP"/>
-        <DeathArray index="Normal" ModelLink="##unitName##Death" SoundLink=""/>
-        <PlacementModel value="##unitName##Placement"/>
-        <PlacementSound value="Terran_BuildingPlacement"/>
-        <PortraitModel value="##unitName##Portrait"/>
-        <HeroIcon value="Assets\Textures\btn-building-terran-##unitName##.dds"/>
-        <SoundArray index="Construction" value="Terran_ConstructionWhat"/>
-        <UnitIcon value="Assets\Textures\btn-building-terran-##unitName##.dds"/>
-    </CActorUnit>
     <CActorUnit default="1" id="ProtossBuildingExNoArmorHd" parent="ProtossBuilding">
         <Macros value="BuildingFlattenTerrainMacro"/>
         <Macros value="SnowVisualBuildingMacroMP"/>
@@ -247,6 +267,12 @@
         <Model value="UIScreenParentHd"/>
         <HostSiteOps Ops="SOpUpdateUIScreenPosHd"/>
     </CActorModel>
+    <!-- Normally I try to copy rather than modify existing libs,  -->
+    <!-- however copying this would have taken me a while and I'm  -->
+    <!-- not imaginging much downside to such a small modification -->
+    <CActorProgress id="ZergConstruction">
+        <On Terms="Abil.BuildZergHd.BuiltStart" Send="Create"/>
+    </CActorProgress>
     <CActorAction id="AcidSpinesAttackArmoredQueenEnemyHd" parent="GenericAttack" effectImpact="AcidSpinesDamageArmoredQueenEnemyHd" effectLaunch="AcidSpinesLMArmoredQueenEnemyHd">
         <LaunchAttachQuery Methods="Weapon"/>
         <LaunchAssets Model="AcidSpinesAttackLaunchArmoredQueenEnemyHd" Sound="AcidSpines_AttackLaunch"/>
@@ -1023,6 +1049,115 @@
             <Image value="Assets\Textures\wireframe-protoss-zealot-purifier-shield02.dds"/>
             <Image value="Assets\Textures\wireframe-protoss-zealot-purifier-shield03.dds"/>
         </WireframeShield>
+    </CActorUnit>
+    <CActorUnit id="PathTesterRadius05Hd" parent="GenericUnitStandard" unitName="PathTesterRadius05Hd">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="CarryAnim"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="MacroWorkerHat"/>
+        <Macros value="CarryTerrazineNodeAnim"/>
+        <Macros value="CarryAnimCampaign"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <On Terms="Abil.SCVHarvest.Start" Send="TimerSet 0.000000,0.300000 Gather"/>
+        <On Terms="Abil.SCVHarvest.Stop" Send="AnimClear Gather"/>
+        <On Terms="Abil.SCVHarvest.Stop" Send="TimerKill Gather"/>
+        <On Terms="AnimDone.*.Complete; AnimName Gather" Send="TimerSet 0.000000,0.300000 Gather"/>
+        <On Terms="TimerExpired; TimerName Gather" Send="AnimPlay Gather Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Gather" Send="Create SCVGatherSound"/>
+        <On Terms="Abil.Repair.SourceChannelStart" Send="TimerSet 0.000000,0.300000 Repair"/>
+        <On Terms="Abil.Repair.SourceChannelStop" Send="TimerKill Repair"/>
+        <On Terms="Abil.Repair.SourceChannelStop" Send="AnimClear Repair"/>
+        <On Terms="AnimDone.*.Complete; AnimName Repair" Send="TimerSet 0.000000,0.300000 Repair"/>
+        <On Terms="TimerExpired; TimerName Repair" Send="AnimPlay Repair Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Repair" Send="Create SCVRepairSound"/>
+        <On Terms="Abil.*.WorkerStart" Send="TimerSet 0.000000,0.300000 Build"/>
+        <On Terms="Abil.*.WorkerStop" Send="TimerKill Build"/>
+        <On Terms="Abil.*.WorkerStop" Send="AnimClear Build"/>
+        <On Terms="Abil.*.WorkerCancel" Send="TimerKill Build"/>
+        <On Terms="Abil.*.WorkerCancel" Send="AnimClear Build"/>
+        <On Terms="AnimDone.*.Complete; AnimName Build" Send="TimerSet 0.000000,0.300000 Build"/>
+        <On Terms="TimerExpired; TimerName Build" Send="AnimPlay Build Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Build" Send="Create SCVBuildSound"/>
+        <On Terms="Abil.SCVHarvest.Start" Send="StatusSet CloakSound 1"/>
+        <On Terms="Behavior.CarryHarvestableVespeneGeyserGas.Create" Send="StatusSet CloakSound 1"/>
+        <On Terms="Confirmation.SCV.Start" Send="StatusSet CloakSound 0"/>
+        <On Terms="Behavior.CloakFieldEffect.Create; IsStatus CloakSound 0" Send="Create Worker_CloakFieldOn"/>
+        <On Terms="Behavior.CloakFieldEffect.Destroy; IsStatus CloakSound 0" Send="Create Worker_CloakFieldOff"/>
+        <On Terms="Abil.GatherSpecialObject.SourcePrepStart" Send="TimerSet 0.000000,0.300000 Gather"/>
+        <On Terms="Abil.GatherSpecialObject.SourceCastStop" Send="AnimClear Gather"/>
+        <On Terms="Abil.GatherSpecialObject.SourceCastStop" Send="TimerKill Gather"/>
+        <On Terms="AnimDone.*.Complete; AnimName Gather" Send="TimerSet 0.000000,0.300000 Gather"/>
+        <On Terms="TimerExpired; TimerName Gather" Send="AnimPlay Gather Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Gather" Send="Create SCVGatherSound"/>
+        <On Terms="Behavior.CarryChrysalisEgg.Create" Send="AnimGroupApply Gather"/>
+        <On Terms="Behavior.CarryChrysalisEgg.Destroy" Send="AnimGroupRemove Gather"/>
+        <On Terms="ActorCreation; ValidateUnit SCVUpgraded" Send="ModelSwap SCVFusionWelder"/>
+        <On Terms="Upgrade.FusionWelder.Add" Send="ModelSwap SCVFusionWelder"/>
+        <On Terms="Upgrade.DualFusionWelders.Add" Send="ModelSwap SCVFusionWelder"/>
+        <On Terms="Behavior.OracleCloakFieldEffect.Create; IsStatus CloakSound 0" Send="Create Worker_CloakFieldOn"/>
+        <On Terms="Behavior.OracleCloakFieldEffect.Destroy; IsStatus CloakSound 0" Send="Create Worker_CloakFieldOff"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SCV_Land"/>
+        <On Terms="Behavior.SCVFakeRepair.On" Send="AnimPlay Work,A Work,A"/>
+        <On Terms="AnimDone; AnimName Work,A; ValidateUnit HaveSCVFakeRepair" Send="AnimPlay Work,B Work,B"/>
+        <On Terms="AnimDone; AnimName Work,B; ValidateUnit HaveSCVFakeRepair" Send="AnimPlay Work,A Work,A"/>
+        <On Terms="Behavior.SCVFakeRepair.Off" Send="AnimClear Work,A"/>
+        <On Terms="Behavior.SCVFakeRepair.Off" Send="AnimClear Work,B"/>
+        <Model value="Invisible"/>
+        <AnimBlendTime value="0.500000"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <DeathArray index="Normal" ModelLink="SCVDeath" SoundLink="SCV_Explode"/>
+        <DeathCustoms ModelLink="SCVDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="Basic" Model="TerranSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ActorModel="SpineCrawlerHurlDeathRagdoll" ModelLink="SCVDeathRagdoll" Name="RagdollSpineCrawlerHurl">
+            <BodySquibs Name="Basic" Model="TerranSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PortraitModel value="SCVPortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.600000"/>
+            <RangeDown value="0.600000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSmall"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2"/>
+        <BarOffset value="40"/>
+        <BarWidth value="42"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-SCV.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-terran-scv.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+        <SoundArray index="Ready" value="SCV_Ready"/>
+        <SoundArray index="Help" value="Alert_TerranEconomyUnderAttack"/>
+        <SoundArray index="What" value="SCV_What"/>
+        <SoundArray index="Yes" value="SCV_Yes"/>
+        <SoundArray index="Attack" value="SCV_Attack"/>
+        <SoundArray index="Pissed" value="SCV_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-scv.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-SCV.dds"/>
+        </Wireframe>
     </CActorUnit>
     <CActorUnit id="BiologicalAberrationEnemyHd" parent="GenericUnitBaseNoShieldArmorIconHd" unitName="BiologicalAberrationEnemyHd">
         <Aliases value="_UnitLarge"/>
@@ -2994,6 +3129,115 @@
         <On Terms="ActorCreation" Send="Create BunkerProtectRangeHd"/>
         <On Terms="ActorDestruction" Target="BunkerProtectRangeHd" Send="Destroy"/>
     </CActorModel>
+    <CActorUnit id="PathTesterRadius02Hd" parent="GenericUnitStandard" unitName="PathTesterRadius02Hd">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="CarryAnim"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="MacroWorkerHat"/>
+        <Macros value="CarryTerrazineNodeAnim"/>
+        <Macros value="CarryAnimCampaign"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <On Terms="Abil.SCVHarvest.Start" Send="TimerSet 0.000000,0.300000 Gather"/>
+        <On Terms="Abil.SCVHarvest.Stop" Send="AnimClear Gather"/>
+        <On Terms="Abil.SCVHarvest.Stop" Send="TimerKill Gather"/>
+        <On Terms="AnimDone.*.Complete; AnimName Gather" Send="TimerSet 0.000000,0.300000 Gather"/>
+        <On Terms="TimerExpired; TimerName Gather" Send="AnimPlay Gather Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Gather" Send="Create SCVGatherSound"/>
+        <On Terms="Abil.Repair.SourceChannelStart" Send="TimerSet 0.000000,0.300000 Repair"/>
+        <On Terms="Abil.Repair.SourceChannelStop" Send="TimerKill Repair"/>
+        <On Terms="Abil.Repair.SourceChannelStop" Send="AnimClear Repair"/>
+        <On Terms="AnimDone.*.Complete; AnimName Repair" Send="TimerSet 0.000000,0.300000 Repair"/>
+        <On Terms="TimerExpired; TimerName Repair" Send="AnimPlay Repair Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Repair" Send="Create SCVRepairSound"/>
+        <On Terms="Abil.*.WorkerStart" Send="TimerSet 0.000000,0.300000 Build"/>
+        <On Terms="Abil.*.WorkerStop" Send="TimerKill Build"/>
+        <On Terms="Abil.*.WorkerStop" Send="AnimClear Build"/>
+        <On Terms="Abil.*.WorkerCancel" Send="TimerKill Build"/>
+        <On Terms="Abil.*.WorkerCancel" Send="AnimClear Build"/>
+        <On Terms="AnimDone.*.Complete; AnimName Build" Send="TimerSet 0.000000,0.300000 Build"/>
+        <On Terms="TimerExpired; TimerName Build" Send="AnimPlay Build Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Build" Send="Create SCVBuildSound"/>
+        <On Terms="Abil.SCVHarvest.Start" Send="StatusSet CloakSound 1"/>
+        <On Terms="Behavior.CarryHarvestableVespeneGeyserGas.Create" Send="StatusSet CloakSound 1"/>
+        <On Terms="Confirmation.SCV.Start" Send="StatusSet CloakSound 0"/>
+        <On Terms="Behavior.CloakFieldEffect.Create; IsStatus CloakSound 0" Send="Create Worker_CloakFieldOn"/>
+        <On Terms="Behavior.CloakFieldEffect.Destroy; IsStatus CloakSound 0" Send="Create Worker_CloakFieldOff"/>
+        <On Terms="Abil.GatherSpecialObject.SourcePrepStart" Send="TimerSet 0.000000,0.300000 Gather"/>
+        <On Terms="Abil.GatherSpecialObject.SourceCastStop" Send="AnimClear Gather"/>
+        <On Terms="Abil.GatherSpecialObject.SourceCastStop" Send="TimerKill Gather"/>
+        <On Terms="AnimDone.*.Complete; AnimName Gather" Send="TimerSet 0.000000,0.300000 Gather"/>
+        <On Terms="TimerExpired; TimerName Gather" Send="AnimPlay Gather Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Gather" Send="Create SCVGatherSound"/>
+        <On Terms="Behavior.CarryChrysalisEgg.Create" Send="AnimGroupApply Gather"/>
+        <On Terms="Behavior.CarryChrysalisEgg.Destroy" Send="AnimGroupRemove Gather"/>
+        <On Terms="ActorCreation; ValidateUnit SCVUpgraded" Send="ModelSwap SCVFusionWelder"/>
+        <On Terms="Upgrade.FusionWelder.Add" Send="ModelSwap SCVFusionWelder"/>
+        <On Terms="Upgrade.DualFusionWelders.Add" Send="ModelSwap SCVFusionWelder"/>
+        <On Terms="Behavior.OracleCloakFieldEffect.Create; IsStatus CloakSound 0" Send="Create Worker_CloakFieldOn"/>
+        <On Terms="Behavior.OracleCloakFieldEffect.Destroy; IsStatus CloakSound 0" Send="Create Worker_CloakFieldOff"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SCV_Land"/>
+        <On Terms="Behavior.SCVFakeRepair.On" Send="AnimPlay Work,A Work,A"/>
+        <On Terms="AnimDone; AnimName Work,A; ValidateUnit HaveSCVFakeRepair" Send="AnimPlay Work,B Work,B"/>
+        <On Terms="AnimDone; AnimName Work,B; ValidateUnit HaveSCVFakeRepair" Send="AnimPlay Work,A Work,A"/>
+        <On Terms="Behavior.SCVFakeRepair.Off" Send="AnimClear Work,A"/>
+        <On Terms="Behavior.SCVFakeRepair.Off" Send="AnimClear Work,B"/>
+        <Model value="Invisible"/>
+        <AnimBlendTime value="0.500000"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <DeathArray index="Normal" ModelLink="SCVDeath" SoundLink="SCV_Explode"/>
+        <DeathCustoms ModelLink="SCVDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="Basic" Model="TerranSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ActorModel="SpineCrawlerHurlDeathRagdoll" ModelLink="SCVDeathRagdoll" Name="RagdollSpineCrawlerHurl">
+            <BodySquibs Name="Basic" Model="TerranSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PortraitModel value="SCVPortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.600000"/>
+            <RangeDown value="0.600000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSmall"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2"/>
+        <BarOffset value="40"/>
+        <BarWidth value="42"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-SCV.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-terran-scv.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+        <SoundArray index="Ready" value="SCV_Ready"/>
+        <SoundArray index="Help" value="Alert_TerranEconomyUnderAttack"/>
+        <SoundArray index="What" value="SCV_What"/>
+        <SoundArray index="Yes" value="SCV_Yes"/>
+        <SoundArray index="Attack" value="SCV_Attack"/>
+        <SoundArray index="Pissed" value="SCV_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-scv.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-SCV.dds"/>
+        </Wireframe>
+    </CActorUnit>
     <CActorAction id="SlowTicklerMarineAttackTestHd" parent="GenericAttack" effectAttack="GuassRifleSlowTicklerMarineTestHd">
         <LaunchAssets Model="SlowTicklerMarineAttackLaunchTestHd" Sound="Marine_AttackLaunch"/>
         <ContainerAssets Model="MarineBunkerAttackLaunch" Sound="Marine_BunkerAttackLaunch"/>
@@ -3190,12 +3434,8 @@
         </WireframeShield>
     </CActorUnit>
     <CActorUnit id="WallProtossHd" parent="ProtossBuilding" unitName="WallProtossHd">
-        <On Terms="Behavior.FullRefundAvailableHd.On" Send="HaloStart"/>
+        <On Terms="ActorCreation; ValidateUnit HasFullRefundAvailableHd" Send="HaloStart"/>
         <On Terms="Behavior.FullRefundAvailableHd.Off" Send="HaloStop"/>
-        <!--
-        <Macros value="UnpoweredAnim"/>
-        <Macros value="ProtossBuildingPowerUp"/>
-        -->
         <On Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="ModelSwap ShieldBatteryTaldarim"/>
         <On Terms="UnitDeathCustomize; ValidateUnit NoDarkProtoss" Send="DeathCustomize DarkProtoss"/>
         <On Terms="UnitDeathCustomize; ValidateUnit CasterIsUnpoweredAndNotUnderConstructionAndHasDarkProtoss" Send="DeathCustomize Variation3"/>
@@ -3238,9 +3478,8 @@
     <CActorSiteOpRotationExplicit id="WallFacingDownTerranHd">
         <Forward value="0.000000,-1.000000,0.000000"/>
     </CActorSiteOpRotationExplicit>
-    <CActorModel id="WallTerranHdBuild" parent="TerranBuildingBuild"/>
     <CActorUnit id="WallTerranHd" parent="TerranBuildingExNoArmorHd" unitName="WallTerranHd">
-        <On Terms="Behavior.FullRefundAvailableHd.On" Send="HaloStart"/>
+        <On Terms="ActorCreation; ValidateUnit HasFullRefundAvailableHd" Send="HaloStart"/>
         <On Terms="Behavior.FullRefundAvailableHd.Off" Send="HaloStop"/>
         <BarOffset value="125"/>
         <BarWidth value="138"/>
@@ -3439,7 +3678,7 @@
     <CActorUnit id="WallZergHd" parent="ZergBuildingEx" unitName="WallZergHd">
         <Aliases value="_UnitHuge"/>
         <On Terms="UnitDeathCustomize; ValidateUnit HasZergGenericDeath" Send="DeathCustomize Detached"/>
-        <On Terms="Behavior.FullRefundAvailableHd.On" Send="HaloStart"/>
+        <On Terms="ActorCreation; ValidateUnit HasFullRefundAvailableHd" Send="HaloStart"/>
         <On Terms="Behavior.FullRefundAvailableHd.Off" Send="HaloStop"/>
         <DeathArray index="Normal" ModelLink="InfestationPitDeath" SoundLink="InfestationPit_Explode"/>
         <DeathArray index="UnderConstruction" ModelLink="InfestationPitDeathUnderConstruction" SoundLink="InfestationPit_Explode"/>
@@ -5817,17 +6056,17 @@
             <Image value="Assets\Textures\WireFrame-InfestedSiegeTank.dds"/>
         </Wireframe>
     </CActorUnit>
-    <CActorModel id="PhotonCannonHdBuild" parent="ProtossBuildingBuild">
+    <CActorModel id="PhotonCannonProtossHdBuild" parent="ProtossBuildingBuild">
         <Model value="PhotonCannonBuild"/>
     </CActorModel>
-    <CActorUnit id="PhotonCannonHd" parent="ProtossBuildingExNoArmorHd" unitName="PhotonCannonHd">
+    <CActorUnit id="PhotonCannonProtossHd" parent="ProtossBuildingExNoArmorHd" unitName="PhotonCannonProtossHd">
         <Aliases value="_UnitLarge"/>
-        <On Terms="Behavior.FullRefundAvailableHd.On" Send="HaloStart"/>
+        <On Terms="ActorCreation; ValidateUnit HasFullRefundAvailableHd" Send="HaloStart"/>
         <On Terms="Behavior.FullRefundAvailableHd.Off" Send="HaloStop"/>
         <On Terms="UnitDeathCustomize; ValidateUnit CasterIsUnpoweredAndNotUnderConstruction" Send="DeathCustomize Variation2"/>
-        <On Terms="ActorCreation" Send="Create PhotonCannonTurretLookAtHd"/>
-        <On Terms="Abil.attack.ReadyStart" Target="PhotonCannonTurretLookAtHd" Send="LookAtEngage"/>
-        <On Terms="Abil.attack.ReadyStop" Target="PhotonCannonTurretLookAtHd" Send="LookAtDisengage"/>
+        <On Terms="ActorCreation" Send="Create PhotonCannonTurretLookAtProtossHd"/>
+        <On Terms="Abil.attack.ReadyStart" Target="PhotonCannonTurretLookAtProtossHd" Send="LookAtEngage"/>
+        <On Terms="Abil.attack.ReadyStop" Target="PhotonCannonTurretLookAtProtossHd" Send="LookAtDisengage"/>
         <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PhotonCannonDarkDiffuse"/>
         <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PhotonCannonDarkSpecular"/>
         <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PhotonCannonDarkEmissive"/>
@@ -5877,7 +6116,7 @@
         <DeathActorModel value="PhotonCannonDeath"/>
         <PlacementModel value="PhotonCannonPlacement"/>
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
-        <PlacementActorModel value="PhotonCannonPlacementModelHd"/>
+        <PlacementActorModel value="PhotonCannonPlacementModelProtossHd"/>
         <PortraitModel value="PhotonCannonPortrait"/>
         <BarOffset value="60"/>
         <BarWidth value="75"/>
@@ -5898,25 +6137,25 @@
             <Image value="Assets\Textures\Wireframe-Protoss-PhotonCannon-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
-    <CActorAction id="PhotonCannonAttackHd" parent="GenericAttack" effectImpact="PhotonCannonUHd" effectLaunch="PhotonCannonLMHd">
+    <CActorAction id="PhotonCannonAttackProtossHd" parent="GenericAttack" effectImpact="PhotonCannonDamageProtossHd" effectLaunch="PhotonCannonLMProtossHd">
         <LaunchAssets Sound="PhotonCannon_AttackLaunch"/>
-        <Missile value="PhotonCannonAttackMissileHd"/>
-        <ImpactMap index="None" Model="PhotonCannonAttackImpactHd" Sound="PhotonCannon_AttackImpact"/>
+        <Missile value="PhotonCannonAttackMissileProtossHd"/>
+        <ImpactMap index="None" Model="PhotonCannonAttackImpactProtossHd" Sound="PhotonCannon_AttackImpact"/>
         <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
         <ImpactPhysics Name="PhotonCannonImpact" MatchKeys="Basic" Physics="PhotonCannonAttackDeathForce"/>
     </CActorAction>
-    <CActorMissile id="PhotonCannonAttackMissileHd" parent="GenericAttackMissile" unitName="PhotonCannonWeaponHd">
+    <CActorMissile id="PhotonCannonAttackMissileProtossHd" parent="GenericAttackMissile" unitName="PhotonCannonWeaponProtossHd">
         <On Terms="UnitBirth" Send="AnimSetTimeScaleAbsolute Lifetime 1.000000"/>
     </CActorMissile>
-    <CActorModel id="PhotonCannonPlacementModelHd" parent="PlacementModel">
-        <On Terms="ActorCreation" Send="Create PhotonCannonProtectRangeHd"/>
-        <On Terms="ActorDestruction" Target="PhotonCannonProtectRangeHd" Send="Destroy"/>
+    <CActorModel id="PhotonCannonPlacementModelProtossHd" parent="PlacementModel">
+        <On Terms="ActorCreation" Send="Create PhotonCannonProtectRangeProtossHd"/>
+        <On Terms="ActorDestruction" Target="PhotonCannonProtectRangeProtossHd" Send="Destroy"/>
     </CActorModel>
-    <CActorRange id="PhotonCannonProtectRangeHd" parent="RangeWeapon" weapon="PhotonCannonHd">
+    <CActorRange id="PhotonCannonProtectRangeProtossHd" parent="RangeWeapon" weapon="PhotonCannonHd">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
         <IconArcLength value="3.250000"/>
     </CActorRange>
-    <CActorLookAt id="PhotonCannonTurretLookAtHd" parent="UnitTurret">
+    <CActorLookAt id="PhotonCannonTurretLookAtProtossHd" parent="UnitTurret">
         <Types Id="DefaultLookAtTurret">
             <Start Group="Turret_Right" Weight="1" Time="250"/>
             <Stop Group="Turret_Right" Weight="1" Time="250"/>
@@ -6205,7 +6444,6 @@
         <ImpactMap index="None" Model="AdeptImpactHd" Sound="Adept_AttackImpact"/>
     </CActorAction>
     <CActorMissile id="AdeptAttackMissileHd" parent="GenericAttackMissile" unitName="AdeptWeaponHd"/>
-    <CActorModel id="BunkerHdBuild" parent="TerranBuildingBuild"/>
     <CActorUnit id="BunkerHd" parent="TerranBuildingExNoArmorHd" unitName="BunkerHd">
         <Aliases value="_UnitHuge"/>
         <Macros value="BunkerTransportAnim"/>
@@ -6225,7 +6463,7 @@
         <On Terms="Upgrade.NeoSteelFrame.Add; ValidateUnit NotDeadOrConstruction" Send="ModelSwap JumboBunker"/>
         <On Terms="Upgrade.TerranBuildingArmor.Add; ValidateUnit HasCargo" Send="AnimGroupApply Stand,Work Stand,Work,Start Stand,Work,End"/>
         <On Terms="Upgrade.TerranBuildingArmor.Add; ValidateUnit NotDeadOrConstruction" Send="ModelSwap BunkerUpgrade"/>
-        <On Terms="Behavior.FullRefundAvailableHd.On" Send="HaloStart"/>
+        <On Terms="ActorCreation; ValidateUnit HasFullRefundAvailableHd" Send="HaloStart"/>
         <On Terms="Behavior.FullRefundAvailableHd.Off" Send="HaloStop"/>
         <CreepHeightClass value="Small"/>
         <DeathArray index="Normal" ModelLink="BunkerDeath"/>
@@ -7709,7 +7947,7 @@
         <Remove Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
         <Remove Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
         <On Terms="UnitBirth.SpineCrawlerHd" Send="AnimGroupApply Burrow {} {} Instant"/>
-        <On Terms="Behavior.FullRefundAvailableHd.On" Send="HaloStart"/>
+        <On Terms="ActorCreation; ValidateUnit HasFullRefundAvailableHd" Send="HaloStart"/>
         <On Terms="Behavior.FullRefundAvailableHd.Off" Send="HaloStop"/>
         <On Terms="Behavior.Corruption.On" Send="AnimSetPaused Morph"/>
         <On Terms="Behavior.Corruption.Off" Send="AnimSetPaused Morph 0"/>

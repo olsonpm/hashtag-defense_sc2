@@ -96,6 +96,9 @@
         <SelectionRadius value="1.999700"/>
         <ShadowRadius value="1.666500"/>
     </CModel>
+    <CModel id="PathTesterRadius05Hd" parent="SCVBase">
+        <Model value="Assets\Units\Terran\SCV\SCV.m3"/>
+    </CModel>
     <CModel id="BlinkStopModelHd" parent="OneShotSpellFX">
         <Model value="Assets\Effects\Protoss\BlinkIn\BlinkIn.m3"/>
         <EditorCategories value="Race:Protoss"/>
@@ -111,6 +114,9 @@
         <EditorCategories value="Race:Terran"/>
     </CModel>
     <CModel id="BeefySCVTestHd" parent="SCVBase">
+        <Model value="Assets\Units\Terran\SCV\SCV.m3"/>
+    </CModel>
+    <CModel id="PathTesterRadius02Hd" parent="SCVBase">
         <Model value="Assets\Units\Terran\SCV\SCV.m3"/>
     </CModel>
     <CModel id="SlowTicklerMarineAttackImpactTestHd" parent="LaunchFX">
@@ -173,7 +179,6 @@
         <SelectionRadius value="1.000000"/>
         <ShadowRadius value="1.000000"/>
     </CModel>
-    <CModel id="WallTerranHdBuild" parent="BunkerBuildBase"/>
     <CModel id="WallDeathTerranHd" parent="BuildingDeath">
         <Model value="Assets\Effects\Terran\TerranBuildingDeath\TerranBuildingDeath.m3"/>
         <Events>
@@ -1426,7 +1431,6 @@
         <EditorCategories value="Race:Protoss"/>
         <RadiusLoose value="1.000000"/>
     </CModel>
-    <CModel id="BunkerHdBuild" parent="BunkerBuildBase"/>
     <CModel id="BunkerHd" parent="BunkerBase">
         <Model value="Assets\Buildings\Terran\BunkerEx1\BunkerEx1.m3"/>
         <ScaleMax value="0.660000,0.660000,0.660000"/>
@@ -1653,7 +1657,7 @@
         <Model value="Assets\Effects\Zerg\HydraliskMissile\HydraliskMissile.m3"/>
         <EditorCategories value="Race:Zerg"/>
     </CModel>
-    <CModel id="PhotonCannonHd" parent="PhotonCannonBase">
+    <CModel id="PhotonCannonProtossHd" parent="PhotonCannonBase">
         <Model value="Assets\Buildings\Protoss\PhotonCannonEx2\PhotonCannonEx2.m3"/>
         <TextureDeclares Prefix="photoncannon_">
             <Adaptions TriggerOnSubstring="_Diffuse" Slot="main"/>
@@ -1678,11 +1682,11 @@
             <Adaptions Slot="generic04"/>
         </TextureDeclares>
     </CModel>
-    <CModel id="PhotonCannonAttackImpactHd" parent="ImpactFX">
+    <CModel id="PhotonCannonAttackImpactProtossHd" parent="ImpactFX">
         <Model value="Assets\Effects\Protoss\PhaseCannonMissileImpact\PhaseCannonMissileImpact.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="PhotonCannonWeaponHd" parent="MissileFX">
+    <CModel id="PhotonCannonWeaponProtossHd" parent="MissileFX">
         <Model value="Assets\Effects\Protoss\PhaseCannonMissile\PhaseCannonMissile.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>

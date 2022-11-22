@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorUnitCompareBehaviorCount id="HasFullRefundAvailableHd">
+        <WhichUnit Value="Source"/>
+        <Value value="1"/>
+        <Behavior value="FullRefundAvailableHd"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="HasLiberatorMorphBehaviorHd">
         <WhichUnit Value="Caster"/>
         <Value value="1"/>

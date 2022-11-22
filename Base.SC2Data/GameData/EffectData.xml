@@ -1141,13 +1141,13 @@
         <Amount value="20"/>
         <SearchFlags index="CallForHelp" value="1"/>
     </CEffectDamage>
-    <CEffectLaunchMissile id="PhotonCannonLMHd">
+    <CEffectLaunchMissile id="PhotonCannonLMProtossHd">
         <ValidatorArray index="0" value="PhotonCannonTargetFilters"/>
         <EditorCategories value="Race:Protoss"/>
-        <ImpactEffect value="PhotonCannonUHd"/>
-        <AmmoUnit value="PhotonCannonWeaponHd"/>
+        <ImpactEffect value="PhotonCannonDamageProtossHd"/>
+        <AmmoUnit value="PhotonCannonWeaponProtossHd"/>
     </CEffectLaunchMissile>
-    <CEffectDamage id="PhotonCannonUHd" parent="DU_WEAP">
+    <CEffectDamage id="PhotonCannonDamageProtossHd" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
         <Kind value="Ranged"/>
         <Amount value="20"/>

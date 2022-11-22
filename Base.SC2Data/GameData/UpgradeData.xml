@@ -6,7 +6,7 @@
         <MaxLevel value="100"/>
     </CUpgrade>
     <CUpgrade id="PhotonCannonDamageHd">
-        <EffectArray Reference="Effect,PhotonCannonUHd,Amount" Value="1"/>
+        <EffectArray Reference="Effect,PhotonCannonDamageProtossHd,Amount" Value="1"/>
         <EffectArray Reference="Weapon,PhotonCannonHd,Level" Value="1"/>
         <MaxLevel value="100"/>
         <LeaderAlias value=""/>
