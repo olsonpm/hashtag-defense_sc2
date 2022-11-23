@@ -5410,7 +5410,7 @@
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
-        <AbilArray Link="Blink"/>
+        <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
         <WeaponArray Link="ParticleDisruptorsHd"/>
         <CardLayouts>
@@ -5420,7 +5420,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="Blink,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.625"/>
         <SeparationRadius value="0.625"/>

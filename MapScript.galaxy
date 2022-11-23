@@ -55,6 +55,7 @@ bool lib1_gf_istesting ();
 bool lib1_gf_isunitwithindistanceofpoint (unit lp_u, fixed lp_d, point lp_pt);
 bool lib1_gf_or2 (bool lp_bool1, bool lp_bool2);
 bool lib1_gf_or3 (bool lp_bool1, bool lp_bool2, bool lp_bool3);
+bool lib1_gf_playerisingroup (int lp_p, playergroup lp_pg);
 bool lib1_gf_timerisactive (timer lp_t);
 bool lib1_gf_timerisnotactive (timer lp_t);
 bool lib1_gf_triggeringplayerhasatleastNresources (int lp_mins, int lp_gas);
@@ -234,6 +235,12 @@ bool lib1_gf_or3 (bool lp_bool1, bool lp_bool2, bool lp_bool3) {
     // Automatic Variable Declarations
     // Implementation
     return (lp_bool1 || lp_bool2 || lp_bool3);
+}
+
+bool lib1_gf_playerisingroup (int lp_p, playergroup lp_pg) {
+    // Automatic Variable Declarations
+    // Implementation
+    return PlayerGroupHasPlayer(lp_pg, lp_p);
 }
 
 bool lib1_gf_timerisactive (timer lp_t) {
@@ -1164,6 +1171,11 @@ struct gs_pathtestsegmentinfo {
     point lv_start;
     point lv_destination;
     unit lv_unit;
+    point lv_oppositesideofmap;
+};
+
+struct gs_playerbankinfo {
+    bool lv_hasplayed;
 };
 
 struct gs_unitandcurrentdestinationpoint {
@@ -1285,6 +1297,8 @@ int gv_numberofactivedefenders;
 gs_pathtestsegmentinfo[9] gv_pathtestsegments;
 unit[9][3] gv_pathtestsegmenttopathtesters;
 bool[9] gv_pathtestsegmenttoactivepath;
+gs_playerbankinfo[9] gv_playerbankvars;
+bank[9] gv_playerbanks;
 bool[10] gv_playertoskipclicked;
 int[10] gv_playertodefenderlocation;
 int[26] gv_possibleenemyunitsperroundnumber;
@@ -1364,6 +1378,7 @@ void gf_initunitbeaconpoints ();
 void gf_initunitbeaconpointsperlocation ();
 void gf_initalliance ();
 void gf_initattributebuffsperlocationandrace ();
+void gf_initbanks ();
 void gf_initchooserspawnpoints ();
 void gf_initdefendlocationbeaconperlocation ();
 void gf_initdefendpointperlocation ();
@@ -1458,6 +1473,7 @@ trigger gt_upgradeprotossunitdamage;
 trigger gt_idleenemyworkers;
 trigger gt_keepspawnclearofunits;
 trigger gt_fullrefundavailableatstartandbetweenrounds;
+trigger gt_handleplayerdrop;
 trigger gt_bunkerattackenemyandredirectattack;
 trigger gt_halfrefund;
 trigger gt_fullrefund;
@@ -1870,6 +1886,69 @@ void gf_initattributebuffsperlocationandrace () {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_zerg][1] = "IncreaseVsBiologicalHardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_zerg][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_zerg][1] = "IncreaseVsBossHardAttributeDamageHd";
+    }
+}
+
+void gf_initbanks () {
+    // Variable Declarations
+    int lv__p;
+
+    // Automatic Variable Declarations
+    playergroup auto912567DF_g;
+    playergroup auto56E8F75F_g;
+    playergroup auto18A2A761_g;
+
+    // Variable Initialization
+
+    // Implementation
+    auto912567DF_g = gv_activedefenders;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(auto912567DF_g, lv__p);
+        if (lv__p < 0) { break; }
+        gv_playerbankvars[lv__p].lv_hasplayed = BankExists("hashtagdefense", lv__p);
+    }
+    auto56E8F75F_g = gv_activedefenders;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(auto56E8F75F_g, lv__p);
+        if (lv__p < 0) { break; }
+        BankLoad("hashtagdefense", lv__p);
+        gv_playerbanks[lv__p] = BankLastCreated();
+    }
+    if (lib1_gf_playerisingroup(1, gv_activedefenders)) {
+    }
+
+    if (lib1_gf_playerisingroup(2, gv_activedefenders)) {
+    }
+
+    if (lib1_gf_playerisingroup(3, gv_activedefenders)) {
+    }
+
+    if (lib1_gf_playerisingroup(4, gv_activedefenders)) {
+    }
+
+    if (lib1_gf_playerisingroup(5, gv_activedefenders)) {
+    }
+
+    if (lib1_gf_playerisingroup(6, gv_activedefenders)) {
+    }
+
+    if (lib1_gf_playerisingroup(7, gv_activedefenders)) {
+    }
+
+    if (lib1_gf_playerisingroup(8, gv_activedefenders)) {
+    }
+
+    auto18A2A761_g = gv_activedefenders;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(auto18A2A761_g, lv__p);
+        if (lv__p < 0) { break; }
+        if (lib1_gf_isfalse(gv_playerbankvars[lv__p].lv_hasplayed)) {
+            BankSave(gv_playerbanks[lv__p]);
+        }
+
     }
 }
 
@@ -2455,20 +2534,28 @@ void gf_initpathtesters () {
     // Implementation
     gv_pathtestsegments[ge_pathtestsegments_verticalleft].lv_start = PointFromId(312025157);
     gv_pathtestsegments[ge_pathtestsegments_verticalleft].lv_destination = PointFromId(2104189875);
+    gv_pathtestsegments[ge_pathtestsegments_verticalleft].lv_oppositesideofmap = PointFromId(1943289383);
     gv_pathtestsegments[ge_pathtestsegments_verticaltop].lv_start = PointFromId(1965461556);
     gv_pathtestsegments[ge_pathtestsegments_verticaltop].lv_destination = PointFromId(2019735321);
+    gv_pathtestsegments[ge_pathtestsegments_verticaltop].lv_oppositesideofmap = PointFromId(2068411702);
     gv_pathtestsegments[ge_pathtestsegments_verticalbot].lv_start = PointFromId(2068411702);
     gv_pathtestsegments[ge_pathtestsegments_verticalbot].lv_destination = PointFromId(63201720);
+    gv_pathtestsegments[ge_pathtestsegments_verticalbot].lv_oppositesideofmap = PointFromId(1965461556);
     gv_pathtestsegments[ge_pathtestsegments_verticalright].lv_start = PointFromId(1277692723);
     gv_pathtestsegments[ge_pathtestsegments_verticalright].lv_destination = PointFromId(6064204);
+    gv_pathtestsegments[ge_pathtestsegments_verticalright].lv_oppositesideofmap = PointFromId(1755457878);
     gv_pathtestsegments[ge_pathtestsegments_horizontaltop].lv_start = PointFromId(331529152);
     gv_pathtestsegments[ge_pathtestsegments_horizontaltop].lv_destination = PointFromId(1705605065);
+    gv_pathtestsegments[ge_pathtestsegments_horizontaltop].lv_oppositesideofmap = PointFromId(6064204);
     gv_pathtestsegments[ge_pathtestsegments_horizontalleft].lv_start = PointFromId(282270595);
     gv_pathtestsegments[ge_pathtestsegments_horizontalleft].lv_destination = PointFromId(97662259);
+    gv_pathtestsegments[ge_pathtestsegments_horizontalleft].lv_oppositesideofmap = PointFromId(94086420);
     gv_pathtestsegments[ge_pathtestsegments_horizontalright].lv_start = PointFromId(94086420);
     gv_pathtestsegments[ge_pathtestsegments_horizontalright].lv_destination = PointFromId(454562883);
+    gv_pathtestsegments[ge_pathtestsegments_horizontalright].lv_oppositesideofmap = PointFromId(282270595);
     gv_pathtestsegments[ge_pathtestsegments_horizontalbot].lv_start = PointFromId(1755457878);
     gv_pathtestsegments[ge_pathtestsegments_horizontalbot].lv_destination = PointFromId(1943289383);
+    gv_pathtestsegments[ge_pathtestsegments_horizontalbot].lv_oppositesideofmap = PointFromId(1277692723);
     lv__pathtestsegmentidx = 0;
     for ( ; ( (autoC1A79ACB_ai >= 0 && lv__pathtestsegmentidx <= autoC1A79ACB_ae) || (autoC1A79ACB_ai < 0 && lv__pathtestsegmentidx >= autoC1A79ACB_ae) ) ; lv__pathtestsegmentidx += autoC1A79ACB_ai ) {
         lib1_gf_createunitatpoint("PathTesterRadius05Hd", gv_pathtestsegments[lv__pathtestsegmentidx].lv_start, gv_allycompplayer, 0);
@@ -2745,15 +2832,26 @@ void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser)
     // Implementation
     lv__defendpoint = gv_defendpointperlocation[lp_defenderlocation];
     gv_playertodefenderlocation[lp_p] = lp_defenderlocation;
-    lib1_gf_pancameratopointforplayer(lp_p, lv__defendpoint);
-    gf_createworkeratlocation(lv__defendpoint, lp_p);
+    gv_activedefenderlocations[lp_defenderlocation] = true;
     UIClearMessages(PlayerGroupSingle(lp_p), c_messageAreaAll);
     UnitRemove(gv_defendlocationbeaconperlocation[lp_defenderlocation]);
     UnitRemove(lp_chooser);
     gf_initunitarea(lp_defenderlocation, lp_p);
-    gf_initspawnpoint(lp_p, lv__defendpoint);
-    gv_activedefenderlocations[lp_defenderlocation] = true;
     gf_clearspawnlocationwhenempty();
+    if (lib1_gf_istrue(gv_playerbankvars[lp_p].lv_hasplayed)) {
+        lib1_gf_pancameratopointforplayer(lp_p, lv__defendpoint);
+        gf_createworkeratlocation(lv__defendpoint, lp_p);
+        gf_initspawnpoint(lp_p, lv__defendpoint);
+    }
+    else {
+        lib1_gf_pancameratopointforplayer(lp_p, gv_chooserspawnpoints[lp_defenderlocation]);
+        lib1_gf_messageuser(StringExternal("Param/Value/D6EDA166"), lp_p);
+        Wait(15.0, c_timeReal);
+        lib1_gf_pancameratopointforplayer(lp_p, lv__defendpoint);
+        gf_createworkeratlocation(lv__defendpoint, lp_p);
+        gf_initspawnpoint(lp_p, lv__defendpoint);
+        lib1_gf_messageuser(StringExternal("Param/Value/D022AFAA"), lp_p);
+    }
 }
 
 void gf_clearspawnlocationwhenempty () {
@@ -2935,8 +3033,6 @@ void gf_initunitarea (int lp_defenderlocation, int lp_p) {
     lib1_gf_createunitatpoint("InvisibleWaypointChooserHd", lv__chooserspawnpoint, lp_p, 0);
     gv_invisiblewaypointchooserperplayer[lp_p] = UnitLastCreated();
     lib1_gf_createNunitsatpoint(5, "ChooserHd", lv__chooserspawnpoint, lp_p);
-    lib1_gf_messageuser(StringExternal("Param/Value/D6EDA166"), lp_p);
-    MinimapPing(PlayerGroupSingle(lp_p), lv__chooserspawnpoint, 10.0, Color(100.00, 100.00, 100.00));
     lv__beaconlocation = 0;
     for ( ; ( (auto307CE687_ai >= 0 && lv__beaconlocation <= auto307CE687_ae) || (auto307CE687_ai < 0 && lv__beaconlocation >= auto307CE687_ae) ) ; lv__beaconlocation += auto307CE687_ai ) {
         lib1_gf_createunitatpoint(gv_unitbeaconperlocation[lv__beaconlocation], gv_unitbeaconpoints[lp_defenderlocation][lv__beaconlocation], lp_p, 0);
@@ -2946,6 +3042,9 @@ void gf_initunitarea (int lp_defenderlocation, int lp_p) {
 bool gf_allactivepathsareclear () {
     // Variable Declarations
     int lv__pathtestsegmentidx;
+    int lv__distancetooppositesideofmap;
+    unit lv__pathtestunit;
+    point lv__destination;
 
     // Automatic Variable Declarations
     const int auto38FEEDC0_ae = 7;
@@ -2956,8 +3055,14 @@ bool gf_allactivepathsareclear () {
     // Implementation
     lv__pathtestsegmentidx = 0;
     for ( ; ( (auto38FEEDC0_ai >= 0 && lv__pathtestsegmentidx <= auto38FEEDC0_ae) || (auto38FEEDC0_ai < 0 && lv__pathtestsegmentidx >= auto38FEEDC0_ae) ) ; lv__pathtestsegmentidx += auto38FEEDC0_ai ) {
-        if (lib1_gf_istrue(gv_pathtestsegments[lv__pathtestsegmentidx].lv_isactive) && lib1_gf_isfalse(UnitPathableToPoint(gv_pathtestsegments[lv__pathtestsegmentidx].lv_unit, gv_pathtestsegments[lv__pathtestsegmentidx].lv_destination, 0.0, 0.0))) {
-            return false;
+        if (lib1_gf_istrue(gv_pathtestsegments[lv__pathtestsegmentidx].lv_isactive)) {
+            lv__pathtestunit = gv_pathtestsegments[lv__pathtestsegmentidx].lv_unit;
+            lv__destination = gv_pathtestsegments[lv__pathtestsegmentidx].lv_destination;
+            lv__distancetooppositesideofmap = AIPathingCostUnit(lv__pathtestunit, gv_pathtestsegments[lv__pathtestsegmentidx].lv_oppositesideofmap, c_includeAllBuildings);
+            if (lib1_gf_isfalse(UnitPathableToPoint(lv__pathtestunit, lv__destination, 0.0, lv__distancetooppositesideofmap))) {
+                return false;
+            }
+
         }
 
     }
@@ -3496,6 +3601,7 @@ bool gt_initmap_Func (bool testConds, bool runActions) {
     gf_initmodtypedice();
     gf_initmodtypetomodunit();
     gf_initplayergroups();
+    gf_initbanks();
     gf_initalliance();
     gf_initresources();
     gf_initlocationchoosers();
@@ -4222,6 +4328,53 @@ void gt_fullrefundavailableatstartandbetweenrounds_Init () {
     TriggerAddEventUnitCreated(gt_fullrefundavailableatstartandbetweenrounds, null, "BuildZergHd", null);
     TriggerAddEventUnitCreated(gt_fullrefundavailableatstartandbetweenrounds, null, "BuildTerranHd", null);
     TriggerAddEventUnitCreated(gt_fullrefundavailableatstartandbetweenrounds, null, "BuildProtossHd", null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: handle player drop
+//--------------------------------------------------------------------------------------------------
+bool gt_handleplayerdrop_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+    unit lv__u;
+
+    // Automatic Variable Declarations
+    playergroup autoDE897DD0_g;
+    unitgroup auto4BA32B1F_g;
+    int auto4BA32B1F_u;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoDE897DD0_g = gv_activedefenders;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(autoDE897DD0_g, lv__p);
+        if (lv__p < 0) { break; }
+        if ((PlayerStatus(lv__p) == c_playerStatusLeft)) {
+            PlayerGroupRemove(gv_activedefenders, lv__p);
+            PlayerGroupRemove(gv_activedefendersplusallycomp, lv__p);
+            auto4BA32B1F_g = UnitGroup(null, lv__p, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+            auto4BA32B1F_u = UnitGroupCount(auto4BA32B1F_g, c_unitCountAll);
+            for (;; auto4BA32B1F_u -= 1) {
+                lv__u = UnitGroupUnitFromEnd(auto4BA32B1F_g, auto4BA32B1F_u);
+                if (lv__u == null) { break; }
+                UnitKill(lv__u);
+            }
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_handleplayerdrop_Init () {
+    gt_handleplayerdrop = TriggerCreate("gt_handleplayerdrop_Func");
+    TriggerAddEventTimePeriodic(gt_handleplayerdrop, 1.0, c_timeReal);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -5128,6 +5281,7 @@ void InitTriggers () {
     gt_idleenemyworkers_Init();
     gt_keepspawnclearofunits_Init();
     gt_fullrefundavailableatstartandbetweenrounds_Init();
+    gt_handleplayerdrop_Init();
     gt_bunkerattackenemyandredirectattack_Init();
     gt_halfrefund_Init();
     gt_fullrefund_Init();

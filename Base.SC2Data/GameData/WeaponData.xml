@@ -125,7 +125,6 @@
     <CWeaponLegacy id="GuassRifleMechanicalMilitarizedTransportEnemyHd">
         <EditorCategories value="Race:Terran"/>
         <Options index="Hidden" value="1"/>
-        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
         <DisplayEffect value="MechanicalMilitarizedTransportDamageEnemyHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -138,7 +137,6 @@
     <CWeaponLegacy id="GaussRifleMechanicalShikotoCoupeEnemyHd">
         <EditorCategories value="Race:Terran"/>
         <Options index="Hidden" value="1"/>
-        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
         <DisplayEffect value="MechanicalShikotoCoupeDamageEnemyHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -201,8 +199,6 @@
     <CWeaponLegacy id="TwinAutocannonsMechanicalGoliathEnemyHd">
         <EditorCategories value="Race:Terran"/>
         <Options index="Hidden" value="1"/>
-        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
-        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <Options index="LinkedCooldown" value="0"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>

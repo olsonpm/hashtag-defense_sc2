@@ -70,7 +70,7 @@
         <MaxLevel value="100"/>
         <EffectArray Reference="Effect,AdeptDamageHd,Amount" Value="1"/>
         <EffectArray Reference="Weapon,AdeptHd,Level" Value="1"/>
-        <EffectArray Reference="Effect,ParticleDisruptorsDamageStalkerHd,Amount" Value="2"/>
+        <EffectArray Reference="Effect,ParticleDisruptorsDamageStalkerHd,Amount" Value="2.5"/>
         <EffectArray Reference="Weapon,ParticleDisruptorsHd,Level" Value="1"/>
         <EffectArray Reference="Effect,PsionicShockwaveDamageHd,Amount" Value="1"/>
         <EffectArray Reference="Weapon,PsionicShockwaveHd,Level" Value="1"/>
