@@ -1259,7 +1259,7 @@
         <DamageDealtXP value="1"/>
         <DamageTakenXP value="1"/>
         <KillXP value="50"/>
-        <AbilArray Link="AttackEnemyHd"/>
+        <AbilArray Link="attack"/>
         <AbilArray Link="UnburrowLurkerHd"/>
         <AbilArray Link="BurrowLurkerHd"/>
         <AbilArray Link="move"/>
@@ -1270,7 +1270,7 @@
         <WeaponArray Link="SpinesLurkerHd" Turret="LurkerHd"/>
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="LurkerBurrowUp" Type="AbilCmd" AbilCmd="UnburrowLurkerHd,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
