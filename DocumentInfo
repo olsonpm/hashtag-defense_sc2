@@ -37,6 +37,7 @@
             <Value>0.8</Value>
             <Value>0.9</Value>
             <Value>0.10</Value>
+            <Value>0.11</Value>
         </Version>
         <Date>
             <Value>11/11/2022</Value>
@@ -48,6 +49,7 @@
             <Value>11/20/2022</Value>
             <Value>11/22/2022</Value>
             <Value>11/22/2022</Value>
+            <Value>11/23/2022</Value>
         </Date>
         <Notes>
             <Value>1</Value>
@@ -59,6 +61,7 @@
             <Value>18</Value>
             <Value>19,20,21,22,23,24,25,26,27,28,29,30,31,32,33</Value>
             <Value>34,35</Value>
+            <Value>36,37,38,39,40,41,42,43,44,45</Value>
         </Notes>
     </PatchNote>
 </DocInfo>
