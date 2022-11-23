@@ -2470,6 +2470,7 @@ void gf_initmisc () {
     // Automatic Variable Declarations
     // Implementation
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeSupply, false);
+    UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeTeamResourceButton, false);
 }
 
 void gf_initmodtypedice () {
