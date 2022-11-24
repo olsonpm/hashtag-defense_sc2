@@ -222,4 +222,52 @@
             <quad value="39,135,45.5,153"/>
         </shape>
     </region>
+    <region id="38">
+        <name value="islands - left"/>
+        <shape type="rect">
+            <quad value="14,80,34,120"/>
+        </shape>
+    </region>
+    <region id="39">
+        <name value="islands - bot left"/>
+        <shape type="rect">
+            <quad value="36,14,76,34"/>
+        </shape>
+    </region>
+    <region id="40">
+        <name value="islands - bot"/>
+        <shape type="rect">
+            <quad value="80,14,120,34"/>
+        </shape>
+    </region>
+    <region id="41">
+        <name value="islands - bot right"/>
+        <shape type="rect">
+            <quad value="124,14,164,34"/>
+        </shape>
+    </region>
+    <region id="42">
+        <name value="islands - right"/>
+        <shape type="rect">
+            <quad value="166,80,186,120"/>
+        </shape>
+    </region>
+    <region id="43">
+        <name value="islands - top right"/>
+        <shape type="rect">
+            <quad value="124,166,164,186"/>
+        </shape>
+    </region>
+    <region id="44">
+        <name value="islands - top"/>
+        <shape type="rect">
+            <quad value="80,166,120,186"/>
+        </shape>
+    </region>
+    <region id="45">
+        <name value="islands - top left"/>
+        <shape type="rect">
+            <quad value="36,166,76,186"/>
+        </shape>
+    </region>
 </Regions>
