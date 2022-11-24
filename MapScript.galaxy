@@ -1269,9 +1269,9 @@ string[9][4][3] gv_attributebuffperlocationandrace;
 bool[10] gv_autoskipbyplayer;
 fixed gv_chooserradius;
 fixed gv_chooserradiusbig;
-point[9] gv_chooserspawnpoints;
 actor gv_currentenemyindicator;
 unit[9] gv_defendlocationbeaconperlocation;
+point[9] gv_defendlocationtochooserspawnpoint;
 region[9] gv_defendlocationtoislandsregion;
 int[9][3] gv_defendlocationtopathtestsegments;
 point[9] gv_defendpointperlocation;
@@ -1302,6 +1302,7 @@ gs_playerbankinfo[9] gv_playerbankvars;
 bank[9] gv_playerbanks;
 bool[10] gv_playertoskipclicked;
 int[10] gv_playertodefenderlocation;
+int[10] gv_playertonumchoosersspent;
 int[26] gv_possibleenemyunitsperroundnumber;
 string[26][5] gv_possibleenemyunitsperroundunits;
 int gv_rounddialog;
@@ -1447,6 +1448,7 @@ void gf_removefullrefund ();
 void gf_updateactivepathtests ();
 void gf_spawnunit (int lp_unitlocation, int lp_p);
 void gf_chooseunit (int lp_numchoosers, int lp_location, int lp_p, region lp_region, int lp_choicetype);
+bool gf_shouldpingchooser (int lp_p);
 void gf_endgame (int lp_gameovertype);
 void gf_incrementenemieskilled ();
 void gf_resetskipclicked ();
@@ -1503,6 +1505,7 @@ trigger gt_runround;
 trigger gt_skiproundtimer;
 trigger gt_teleenemies;
 trigger gt_everysecondupdatedialogtimervalue;
+trigger gt_pingchooserstonewusers;
 
 //--------------------------------------------------------------------------------------------------
 // Global Presets
@@ -1962,14 +1965,14 @@ void gf_initbanks () {
 void gf_initchooserspawnpoints () {
     // Automatic Variable Declarations
     // Implementation
-    gv_chooserspawnpoints[ge_clockwiselocation_top] = PointFromId(1249720996);
-    gv_chooserspawnpoints[ge_clockwiselocation_topright] = PointFromId(1983099440);
-    gv_chooserspawnpoints[ge_clockwiselocation_right] = PointFromId(1971071716);
-    gv_chooserspawnpoints[ge_clockwiselocation_botright] = PointFromId(745720542);
-    gv_chooserspawnpoints[ge_clockwiselocation_bot] = PointFromId(409578078);
-    gv_chooserspawnpoints[ge_clockwiselocation_botleft] = PointFromId(3552434);
-    gv_chooserspawnpoints[ge_clockwiselocation_left] = PointFromId(2101619351);
-    gv_chooserspawnpoints[ge_clockwiselocation_topleft] = PointFromId(493029576);
+    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_top] = PointFromId(1249720996);
+    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_topright] = PointFromId(1983099440);
+    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_right] = PointFromId(1971071716);
+    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_botright] = PointFromId(745720542);
+    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_bot] = PointFromId(409578078);
+    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_botleft] = PointFromId(3552434);
+    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_left] = PointFromId(2101619351);
+    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_topleft] = PointFromId(493029576);
 }
 
 void gf_initdefendlocationbeaconperlocation () {
@@ -2895,7 +2898,7 @@ void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser)
         gf_createworkeratlocation(lv__defendpoint, lp_p);
     }
     else {
-        lib1_gf_pancameratopointforplayer(lp_p, gv_chooserspawnpoints[lp_defenderlocation]);
+        lib1_gf_pancameratopointforplayer(lp_p, gv_defendlocationtochooserspawnpoint[lp_defenderlocation]);
         lib1_gf_messageuser(StringExternal("Param/Value/D6EDA166"), lp_p);
         Wait(15.0, c_timeReal);
         if (lib1_gf_playerisingroup(lp_p, gv_activedefenders)) {
@@ -3079,7 +3082,7 @@ void gf_initunitarea (int lp_defenderlocation, int lp_p) {
     const int auto307CE687_ai = 1;
 
     // Variable Initialization
-    lv__chooserspawnpoint = gv_chooserspawnpoints[lp_defenderlocation];
+    lv__chooserspawnpoint = gv_defendlocationtochooserspawnpoint[lp_defenderlocation];
 
     // Implementation
     gf_initunitsforlocation(lp_defenderlocation, lp_p);
@@ -3343,12 +3346,34 @@ void gf_chooseunit (int lp_numchoosers, int lp_location, int lp_p, region lp_reg
             for (;; auto6873F0E9_u -= 1) {
                 lv__u = UnitGroupUnitFromEnd(auto6873F0E9_g, auto6873F0E9_u);
                 if (lv__u == null) { break; }
+                gv_playertonumchoosersspent[lp_p] = (gv_playertonumchoosersspent[lp_p] + 1);
                 UnitKill(lv__u);
             }
         }
     }
 
     gv_unitchooserlockbyplayer[lp_p] = false;
+}
+
+bool gf_shouldpingchooser (int lp_p) {
+    // Variable Declarations
+    int lv__numchoosersspenttilwefiguretheplayergetsit;
+    int lv__defenderlocation;
+    point lv__chooserspawnpoint;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__numchoosersspenttilwefiguretheplayergetsit = 20;
+
+    // Implementation
+    lv__defenderlocation = gv_playertodefenderlocation[lp_p];
+    if ((lv__defenderlocation == -1)) {
+        return false;
+    }
+    else {
+        lv__chooserspawnpoint = gv_defendlocationtochooserspawnpoint[lv__defenderlocation];
+        return (lib1_gf_isfalse(gv_playerbankvars[lp_p].lv_hasplayed) && (gv_playertonumchoosersspent[lp_p] < lv__numchoosersspenttilwefiguretheplayergetsit) && (lib1_gf_numberofunitsoftypeinregion(RegionCircle(lv__chooserspawnpoint, 10.0), lp_p, "ChooserHd") > 6));
+    }
 }
 
 void gf_endgame (int lp_gameovertype) {
@@ -3391,7 +3416,7 @@ void gf_incrementenemieskilled () {
         while (true) {
             lv__p = PlayerGroupNextPlayer(auto1F3675BB_g, lv__p);
             if (lv__p < 0) { break; }
-            lv__chooserspawnpoint = gv_chooserspawnpoints[gv_playertodefenderlocation[lv__p]];
+            lv__chooserspawnpoint = gv_defendlocationtochooserspawnpoint[gv_playertodefenderlocation[lv__p]];
             lib1_gf_createunitatpoint("ChooserHd", lv__chooserspawnpoint, lv__p, 0);
             if (lib1_gf_istrue(gv_unitchooserpathexistsperplayer[lv__p])) {
                 lv__chooser = UnitLastCreated();
@@ -5352,6 +5377,44 @@ void gt_everysecondupdatedialogtimervalue_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: ping choosers to new users
+//--------------------------------------------------------------------------------------------------
+bool gt_pingchooserstonewusers_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+    int lv__defenderlocation;
+
+    // Automatic Variable Declarations
+    playergroup autoF0ECEF8D_g;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoF0ECEF8D_g = gv_activedefenders;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(autoF0ECEF8D_g, lv__p);
+        if (lv__p < 0) { break; }
+        if (gf_shouldpingchooser(lv__p)) {
+            lv__defenderlocation = gv_playertodefenderlocation[lv__p];
+            MinimapPing(PlayerGroupSingle(lv__p), gv_defendlocationtochooserspawnpoint[lv__defenderlocation], 2.0, Color(100.00, 0.00, 0.00));
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_pingchooserstonewusers_Init () {
+    gt_pingchooserstonewusers = TriggerCreate("gt_pingchooserstonewusers_Func");
+    TriggerAddEventTimePeriodic(gt_pingchooserstonewusers, 5.0, c_timeReal);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger Initialization
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
@@ -5397,6 +5460,7 @@ void InitTriggers () {
     gt_skiproundtimer_Init();
     gt_teleenemies_Init();
     gt_everysecondupdatedialogtimervalue_Init();
+    gt_pingchooserstonewusers_Init();
 }
 
 //--------------------------------------------------------------------------------------------------
