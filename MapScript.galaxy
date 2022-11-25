@@ -144,6 +144,8 @@ void lib1_InitVariables () {
     }
     lib1_gv_colorcalamity = StringExternal("Param/Value/lib_1_4A35FBAD");
     lib1_gv_everysecond = TimerCreate();
+    lib1_gv_localdebug = true;
+    lib1_gv_test = true;
     for (init_i = 0; init_i <= 16; init_i += 1) {
         for (init_j = 0; init_j <= 16; init_j += 1) {
             lib1_gv_unitsingroupsofNperplayer[init_i][init_j] = UnitGroupEmpty();
@@ -1352,6 +1354,7 @@ void InitGlobals () {
     gv_rounddialogitemtimervalue = c_invalidDialogControlId;
     gv_rounddialogitemskip = c_invalidDialogControlId;
     gv_roundtimerexists = true;
+    gv_testingmultiplayerlocally = true;
     gv_unitswithfullrefundavailable = UnitGroupEmpty();
 }
 
@@ -1445,7 +1448,9 @@ void gf_applymodtounit (unit lp_u, int lp_modtype);
 void gf_createmoddedunitatpoint (string lp_ut, int lp_p, point lp_point, int lp_opts, int lp_modtype);
 void gf_createplayerunitatpoint (int lp_location, int lp_race, int lp_player, point lp_point, string lp_utoverride, int lp_opts);
 void gf_removefullrefund ();
+void gf_removeplayer (int lp_p);
 void gf_updateactivepathtests ();
+void gf_skipforplayeriftimerisactive (int lp_p);
 void gf_spawnunit (int lp_unitlocation, int lp_p);
 void gf_chooseunit (int lp_numchoosers, int lp_location, int lp_p, region lp_region, int lp_choicetype);
 bool gf_shouldpingchooser (int lp_p);
@@ -1489,6 +1494,7 @@ trigger gt_fullrefund;
 trigger gt_movespawnflag;
 trigger gt_clearrallyunitchooser;
 trigger gt_rallyunitchooser;
+trigger gt_kick;
 trigger gt_autoskip;
 trigger gt_choosetop;
 trigger gt_choosetopright;
@@ -1500,12 +1506,12 @@ trigger gt_chooseleft;
 trigger gt_choosetopleft;
 trigger gt_allenemiesgone;
 trigger gt_clearenemies;
+trigger gt_everysecondupdatedialogtimervalue;
 trigger gt_gainchoosers;
 trigger gt_runround;
+trigger gt_pingchooserstonewusers;
 trigger gt_skiproundtimer;
 trigger gt_teleenemies;
-trigger gt_everysecondupdatedialogtimervalue;
-trigger gt_pingchooserstonewusers;
 
 //--------------------------------------------------------------------------------------------------
 // Global Presets
@@ -3255,6 +3261,46 @@ void gf_removefullrefund () {
     UnitGroupClear(gv_unitswithfullrefundavailable);
 }
 
+void gf_removeplayer (int lp_p) {
+    // Variable Declarations
+    unit lv__u;
+    int lv__defenderlocation;
+
+    // Automatic Variable Declarations
+    unitgroup autoF833A607_g;
+    int autoF833A607_u;
+    unitgroup auto4BA32B1F_g;
+    int auto4BA32B1F_u;
+
+    // Variable Initialization
+
+    // Implementation
+    lv__defenderlocation = gv_playertodefenderlocation[lp_p];
+    if ((lv__defenderlocation > -1)) {
+        gv_activedefenderlocations[lv__defenderlocation] = false;
+        autoF833A607_g = UnitGroup(null, gv_allycompplayer, gv_defendlocationtoislandsregion[lv__defenderlocation], UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        autoF833A607_u = UnitGroupCount(autoF833A607_g, c_unitCountAll);
+        for (;; autoF833A607_u -= 1) {
+            lv__u = UnitGroupUnitFromEnd(autoF833A607_g, autoF833A607_u);
+            if (lv__u == null) { break; }
+            UnitKill(lv__u);
+        }
+    }
+
+    PlayerModifyPropertyInt(lp_p, c_playerPropMinerals, c_playerPropOperSetTo, 0);
+    PlayerGroupRemove(gv_activedefenders, lp_p);
+    PlayerGroupRemove(gv_activedefendersplusallycomp, lp_p);
+    auto4BA32B1F_g = UnitGroup(null, lp_p, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto4BA32B1F_u = UnitGroupCount(auto4BA32B1F_g, c_unitCountAll);
+    for (;; auto4BA32B1F_u -= 1) {
+        lv__u = UnitGroupUnitFromEnd(auto4BA32B1F_g, auto4BA32B1F_u);
+        if (lv__u == null) { break; }
+        UnitKill(lv__u);
+    }
+    gf_skipforplayeriftimerisactive(lp_p);
+    gf_updateactivepathtests();
+}
+
 void gf_updateactivepathtests () {
     // Variable Declarations
     int lv__defenderlocation;
@@ -3291,6 +3337,17 @@ void gf_updateactivepathtests () {
         }
 
     }
+}
+
+void gf_skipforplayeriftimerisactive (int lp_p) {
+    // Automatic Variable Declarations
+    // Implementation
+    if (lib1_gf_timerisactive(gv_roundtimer) && lib1_gf_isfalse(gv_playertoskipclicked[lp_p])) {
+        gv_playertoskipclicked[lp_p] = true;
+        DialogControlSetEnabled(gv_rounddialogitemskip, PlayerGroupSingle(lp_p), false);
+        gf_skipifallclicked();
+    }
+
 }
 
 void gf_spawnunit (int lp_unitlocation, int lp_p) {
@@ -4437,15 +4494,9 @@ void gt_fullrefundavailableatstartandbetweenrounds_Init () {
 bool gt_handleplayerdrop_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv__p;
-    unit lv__u;
-    int lv__defenderlocation;
 
     // Automatic Variable Declarations
     playergroup autoDE897DD0_g;
-    unitgroup autoF833A607_g;
-    int autoF833A607_u;
-    unitgroup auto4BA32B1F_g;
-    int auto4BA32B1F_u;
 
     // Variable Initialization
 
@@ -4460,29 +4511,7 @@ bool gt_handleplayerdrop_Func (bool testConds, bool runActions) {
         lv__p = PlayerGroupNextPlayer(autoDE897DD0_g, lv__p);
         if (lv__p < 0) { break; }
         if ((PlayerStatus(lv__p) == c_playerStatusLeft)) {
-            lv__defenderlocation = gv_playertodefenderlocation[lv__p];
-            if ((lv__defenderlocation > -1)) {
-                gv_activedefenderlocations[lv__defenderlocation] = false;
-                autoF833A607_g = UnitGroup(null, gv_allycompplayer, gv_defendlocationtoislandsregion[lv__defenderlocation], UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-                autoF833A607_u = UnitGroupCount(autoF833A607_g, c_unitCountAll);
-                for (;; autoF833A607_u -= 1) {
-                    lv__u = UnitGroupUnitFromEnd(autoF833A607_g, autoF833A607_u);
-                    if (lv__u == null) { break; }
-                    UnitKill(lv__u);
-                }
-            }
-
-            PlayerModifyPropertyInt(lv__p, c_playerPropMinerals, c_playerPropOperSetTo, 0);
-            PlayerGroupRemove(gv_activedefenders, lv__p);
-            PlayerGroupRemove(gv_activedefendersplusallycomp, lv__p);
-            auto4BA32B1F_g = UnitGroup(null, lv__p, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-            auto4BA32B1F_u = UnitGroupCount(auto4BA32B1F_g, c_unitCountAll);
-            for (;; auto4BA32B1F_u -= 1) {
-                lv__u = UnitGroupUnitFromEnd(auto4BA32B1F_g, auto4BA32B1F_u);
-                if (lv__u == null) { break; }
-                UnitKill(lv__u);
-            }
-            gf_updateactivepathtests();
+            gf_removeplayer(lv__p);
         }
 
     }
@@ -4664,6 +4693,42 @@ void gt_rallyunitchooser_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: kick
+//--------------------------------------------------------------------------------------------------
+bool gt_kick_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_isdebugginglocally())) {
+            return false;
+        }
+
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+
+        if (!(lib1_gf_istrue(gv_testingmultiplayerlocally))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    GameOver(2, c_gameOverDefeat, false, false);
+    gf_removeplayer(2);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_kick_Init () {
+    gt_kick = TriggerCreate("gt_kick_Func");
+    TriggerAddEventChatMessage(gt_kick, c_playerAny, "-kick p2", true);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: auto skip
 //--------------------------------------------------------------------------------------------------
 bool gt_autoskip_Func (bool testConds, bool runActions) {
@@ -4682,12 +4747,6 @@ bool gt_autoskip_Func (bool testConds, bool runActions) {
     gv_autoskipbyplayer[lv__p] = !(gv_autoskipbyplayer[lv__p]);
     TextExpressionSetToken("Param/Expression/F3CACBA2", "autoskip", libNtve_gf_ConvertBooleanToText(gv_autoskipbyplayer[lv__p]));
     lib1_gf_messageuser(TextExpressionAssemble("Param/Expression/F3CACBA2"), lv__p);
-    if (lib1_gf_timerisactive(gv_roundtimer) && lib1_gf_isfalse(gv_playertoskipclicked[lv__p])) {
-        gv_playertoskipclicked[lv__p] = true;
-        DialogControlSetEnabled(gv_rounddialogitemskip, PlayerGroupSingle(lv__p), false);
-        gf_skipifallclicked();
-    }
-
     return true;
 }
 
@@ -5195,6 +5254,26 @@ void gt_clearenemies_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: every second, update dialog timer value
+//--------------------------------------------------------------------------------------------------
+bool gt_everysecondupdatedialogtimervalue_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_updatedialogtimervalue();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_everysecondupdatedialogtimervalue_Init () {
+    gt_everysecondupdatedialogtimervalue = TriggerCreate("gt_everysecondupdatedialogtimervalue_Func");
+    TriggerAddEventTimer(gt_everysecondupdatedialogtimervalue, lib1_gv_everysecond);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: gain choosers
 //--------------------------------------------------------------------------------------------------
 bool gt_gainchoosers_Func (bool testConds, bool runActions) {
@@ -5256,6 +5335,44 @@ bool gt_runround_Func (bool testConds, bool runActions) {
 void gt_runround_Init () {
     gt_runround = TriggerCreate("gt_runround_Func");
     TriggerAddEventTimer(gt_runround, gv_roundtimer);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: ping choosers to new users
+//--------------------------------------------------------------------------------------------------
+bool gt_pingchooserstonewusers_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+    int lv__defenderlocation;
+
+    // Automatic Variable Declarations
+    playergroup autoF0ECEF8D_g;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoF0ECEF8D_g = gv_activedefenders;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(autoF0ECEF8D_g, lv__p);
+        if (lv__p < 0) { break; }
+        if (gf_shouldpingchooser(lv__p)) {
+            lv__defenderlocation = gv_playertodefenderlocation[lv__p];
+            MinimapPing(PlayerGroupSingle(lv__p), gv_defendlocationtochooserspawnpoint[lv__defenderlocation], 2.0, Color(100.00, 0.00, 0.00));
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_pingchooserstonewusers_Init () {
+    gt_pingchooserstonewusers = TriggerCreate("gt_pingchooserstonewusers_Func");
+    TriggerAddEventTimePeriodic(gt_pingchooserstonewusers, 5.0, c_timeReal);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -5357,64 +5474,6 @@ void gt_teleenemies_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: every second, update dialog timer value
-//--------------------------------------------------------------------------------------------------
-bool gt_everysecondupdatedialogtimervalue_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gf_updatedialogtimervalue();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_everysecondupdatedialogtimervalue_Init () {
-    gt_everysecondupdatedialogtimervalue = TriggerCreate("gt_everysecondupdatedialogtimervalue_Func");
-    TriggerAddEventTimer(gt_everysecondupdatedialogtimervalue, lib1_gv_everysecond);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: ping choosers to new users
-//--------------------------------------------------------------------------------------------------
-bool gt_pingchooserstonewusers_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv__p;
-    int lv__defenderlocation;
-
-    // Automatic Variable Declarations
-    playergroup autoF0ECEF8D_g;
-
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    autoF0ECEF8D_g = gv_activedefenders;
-    lv__p = -1;
-    while (true) {
-        lv__p = PlayerGroupNextPlayer(autoF0ECEF8D_g, lv__p);
-        if (lv__p < 0) { break; }
-        if (gf_shouldpingchooser(lv__p)) {
-            lv__defenderlocation = gv_playertodefenderlocation[lv__p];
-            MinimapPing(PlayerGroupSingle(lv__p), gv_defendlocationtochooserspawnpoint[lv__defenderlocation], 2.0, Color(100.00, 0.00, 0.00));
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_pingchooserstonewusers_Init () {
-    gt_pingchooserstonewusers = TriggerCreate("gt_pingchooserstonewusers_Func");
-    TriggerAddEventTimePeriodic(gt_pingchooserstonewusers, 5.0, c_timeReal);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger Initialization
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
@@ -5444,6 +5503,7 @@ void InitTriggers () {
     gt_movespawnflag_Init();
     gt_clearrallyunitchooser_Init();
     gt_rallyunitchooser_Init();
+    gt_kick_Init();
     gt_autoskip_Init();
     gt_choosetop_Init();
     gt_choosetopright_Init();
@@ -5455,12 +5515,12 @@ void InitTriggers () {
     gt_choosetopleft_Init();
     gt_allenemiesgone_Init();
     gt_clearenemies_Init();
+    gt_everysecondupdatedialogtimervalue_Init();
     gt_gainchoosers_Init();
     gt_runround_Init();
+    gt_pingchooserstonewusers_Init();
     gt_skiproundtimer_Init();
     gt_teleenemies_Init();
-    gt_everysecondupdatedialogtimervalue_Init();
-    gt_pingchooserstonewusers_Init();
 }
 
 //--------------------------------------------------------------------------------------------------
