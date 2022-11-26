@@ -5987,7 +5987,7 @@
         <AbilArray Link="Charge"/>
         <BehaviorArray Link="ZealotRespawnDeath"/>
         <BehaviorArray Link="SOAHeroicShieldProcBuff"/>
-        <WeaponArray Link="SimpleArmoredZealotPsiBladesEnemyHd"/>
+        <WeaponArray Link="PsiBladesSimpleArmoredZealotEnemyHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>

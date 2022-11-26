@@ -1254,6 +1254,7 @@ int gv_currentround;
 int gv_enemieskilled;
 int gv_enemieskilledperchooserforsingleplayer;
 int gv_enemiesperround;
+fixed gv_initialsecondsbetweenenemies;
 bool gv_isspawningenemies;
 bool gv_lockclearenemies;
 bool gv_lockenemieskilled;
@@ -1262,6 +1263,7 @@ int gv_maxextralives;
 bool gv_roundfinished;
 timer gv_roundtimer;
 int gv_secondsbeforefirstround;
+int gv_secondsbetweenghostspawn;
 int gv_secondsbetweenrounds;
 bool[9] gv_activedefenderlocations;
 playergroup gv_activedefenders;
@@ -1279,6 +1281,8 @@ int[9][3] gv_defendlocationtopathtestsegments;
 point[9] gv_defendpointperlocation;
 playergroup gv_enemy;
 region[13] gv_enemyclearregionperlocation;
+timer[9] gv_enemyghostspawntimer;
+unitgroup gv_enemyghostsonmap;
 string[4] gv_enemygroupsimple;
 string[51] gv_enemyids;
 point[26] gv_enemymodpoints;
@@ -1333,15 +1337,21 @@ void InitGlobals () {
 
     gv_enemieskilledperchooserforsingleplayer = 4;
     gv_enemiesperround = 10;
+    gv_initialsecondsbetweenenemies = 0.8;
     gv_maxextralives = 25;
     gv_roundtimer = TimerCreate();
     gv_secondsbeforefirstround = 120;
+    gv_secondsbetweenghostspawn = 8;
     gv_secondsbetweenrounds = 40;
     gv_activedefenders = PlayerGroupEmpty();
     gv_activedefendersplusallycomp = PlayerGroupEmpty();
     gv_chooserradius = 2.0;
     gv_chooserradiusbig = 3.0;
     gv_enemy = PlayerGroupEmpty();
+    for (init_i = 0; init_i <= 8; init_i += 1) {
+        gv_enemyghostspawntimer[init_i] = TimerCreate();
+    }
+    gv_enemyghostsonmap = UnitGroupEmpty();
     for (init_i = 0; init_i <= 50; init_i += 1) {
         gv_enemyids[init_i] = "";
     }
@@ -1354,7 +1364,6 @@ void InitGlobals () {
     gv_rounddialogitemtimervalue = c_invalidDialogControlId;
     gv_rounddialogitemskip = c_invalidDialogControlId;
     gv_roundtimerexists = true;
-    gv_testingmultiplayerlocally = true;
     gv_unitswithfullrefundavailable = UnitGroupEmpty();
 }
 
@@ -1449,18 +1458,26 @@ void gf_createmoddedunitatpoint (string lp_ut, int lp_p, point lp_point, int lp_
 void gf_createplayerunitatpoint (int lp_location, int lp_race, int lp_player, point lp_point, string lp_utoverride, int lp_opts);
 void gf_removefullrefund ();
 void gf_removeplayer (int lp_p);
+void gf_startallenemyghostspawnlocations ();
+void gf_startenemyghostspawnatlocation (int lp_location);
+void gf_stopandclearenemyghostspawn ();
 void gf_updateactivepathtests ();
 void gf_skipforplayeriftimerisactive (int lp_p);
 void gf_spawnunit (int lp_unitlocation, int lp_p);
 void gf_chooseunit (int lp_numchoosers, int lp_location, int lp_p, region lp_region, int lp_choicetype);
+bool gf_isboss ();
+bool gf_isenemyghost (unit lp_u);
 bool gf_shouldpingchooser (int lp_p);
+int gf_getcurrentmodtype ();
+string gf_getcurrentenemyunittypetospawn ();
 void gf_endgame (int lp_gameovertype);
 void gf_incrementenemieskilled ();
 void gf_resetskipclicked ();
 void gf_runround ();
 void gf_skipifallclicked ();
 void gf_spawnenemies ();
-void gf_spawnsingleenemy (fixed lp_afterNseconds, int lp_currentmodtype, point lp_enemyrallypoint, point lp_enemyspawnpoint, string lp_enemyunittype, string lp_spawnbehavior);
+void gf_spawnenemyghostsatlocation (int lp_location);
+void gf_spawnsingleenemy (fixed lp_afterNseconds, int lp_currentmodtype, point lp_enemyrallypoint, point lp_enemyspawnpoint, string lp_enemyunittype, string lp_spawnbehavior, bool lp_isghost);
 void gf_startroundtimer (int lp_numseconds);
 void gf_subtractextralife ();
 void gf_updatedialogtimervalue ();
@@ -1511,6 +1528,7 @@ trigger gt_gainchoosers;
 trigger gt_runround;
 trigger gt_pingchooserstonewusers;
 trigger gt_skiproundtimer;
+trigger gt_spawnenemyghosts;
 trigger gt_teleenemies;
 
 //--------------------------------------------------------------------------------------------------
@@ -1819,8 +1837,8 @@ void gf_initalliance () {
     // Implementation
     PlayerSetState(9, c_playerStateShowWorldTip, false);
     libNtve_gf_SetPlayerGroupAlliance(gv_activedefendersplusallycomp, libNtve_ge_AllianceSetting_AllyWithSharedVision);
-    libNtve_gf_SetAllianceBetweenTwoPlayerGroups(gv_activedefenders, gv_enemy, libNtve_ge_AllianceSetting_Enemy);
-    libNtve_gf_SetAllianceBetweenTwoPlayerGroups(gv_enemy, gv_activedefenders, libNtve_ge_AllianceSetting_Enemy);
+    libNtve_gf_SetAllianceBetweenTwoPlayerGroups(gv_activedefenders, gv_enemy, libNtve_ge_AllianceSetting_EnemyWithSharedVision);
+    libNtve_gf_SetAllianceBetweenTwoPlayerGroups(gv_enemy, gv_activedefenders, libNtve_ge_AllianceSetting_EnemyWithSharedVision);
     libNtve_gf_SetAllianceBetweenTwoPlayerGroups(PlayerGroupSingle(gv_allycompplayer), gv_enemy, libNtve_ge_AllianceSetting_Ally);
     if (lib1_gf_istrue(gv_testingmultiplayerlocally)) {
         libNtve_gf_SetPlayerGroupAlliance(gv_activedefendersplusallycomp, libNtve_ge_AllianceSetting_AllyWithSharedVisionControlAndSpending);
@@ -2902,6 +2920,7 @@ void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser)
     if (lib1_gf_istrue(gv_playerbankvars[lp_p].lv_hasplayed)) {
         lib1_gf_pancameratopointforplayer(lp_p, lv__defendpoint);
         gf_createworkeratlocation(lv__defendpoint, lp_p);
+        gf_startenemyghostspawnatlocation(lp_defenderlocation);
     }
     else {
         lib1_gf_pancameratopointforplayer(lp_p, gv_defendlocationtochooserspawnpoint[lp_defenderlocation]);
@@ -2911,6 +2930,7 @@ void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser)
             lib1_gf_pancameratopointforplayer(lp_p, lv__defendpoint);
             gf_createworkeratlocation(lv__defendpoint, lp_p);
             lib1_gf_messageuser(StringExternal("Param/Value/D022AFAA"), lp_p);
+            gf_startenemyghostspawnatlocation(lp_defenderlocation);
         }
 
     }
@@ -3278,6 +3298,7 @@ void gf_removeplayer (int lp_p) {
     lv__defenderlocation = gv_playertodefenderlocation[lp_p];
     if ((lv__defenderlocation > -1)) {
         gv_activedefenderlocations[lv__defenderlocation] = false;
+        libNtve_gf_StopTimer(gv_enemyghostspawntimer[lv__defenderlocation]);
         autoF833A607_g = UnitGroup(null, gv_allycompplayer, gv_defendlocationtoislandsregion[lv__defenderlocation], UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
         autoF833A607_u = UnitGroupCount(autoF833A607_g, c_unitCountAll);
         for (;; autoF833A607_u -= 1) {
@@ -3299,6 +3320,61 @@ void gf_removeplayer (int lp_p) {
     }
     gf_skipforplayeriftimerisactive(lp_p);
     gf_updateactivepathtests();
+}
+
+void gf_startallenemyghostspawnlocations () {
+    // Variable Declarations
+    int lv__location;
+
+    // Automatic Variable Declarations
+    const int auto7C4E6946_ae = 7;
+    const int auto7C4E6946_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    lv__location = 0;
+    for ( ; ( (auto7C4E6946_ai >= 0 && lv__location <= auto7C4E6946_ae) || (auto7C4E6946_ai < 0 && lv__location >= auto7C4E6946_ae) ) ; lv__location += auto7C4E6946_ai ) {
+        if (lib1_gf_istrue(gv_activedefenderlocations[lv__location])) {
+            gf_startenemyghostspawnatlocation(lv__location);
+        }
+
+    }
+}
+
+void gf_startenemyghostspawnatlocation (int lp_location) {
+    // Automatic Variable Declarations
+    // Implementation
+    TimerStart(gv_enemyghostspawntimer[lp_location], gv_secondsbetweenghostspawn, true, c_timeReal);
+    gf_spawnenemyghostsatlocation(lp_location);
+}
+
+void gf_stopandclearenemyghostspawn () {
+    // Variable Declarations
+    int lv__location;
+    unit lv__u;
+
+    // Automatic Variable Declarations
+    unitgroup auto8A8D303B_g;
+    int auto8A8D303B_u;
+    const int autoDB047048_ae = 7;
+    const int autoDB047048_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    auto8A8D303B_g = gv_enemyghostsonmap;
+    auto8A8D303B_u = UnitGroupCount(auto8A8D303B_g, c_unitCountAll);
+    for (;; auto8A8D303B_u -= 1) {
+        lv__u = UnitGroupUnitFromEnd(auto8A8D303B_g, auto8A8D303B_u);
+        if (lv__u == null) { break; }
+        UnitRemove(lv__u);
+    }
+    UnitGroupClear(gv_enemyghostsonmap);
+    lv__location = 0;
+    for ( ; ( (autoDB047048_ai >= 0 && lv__location <= autoDB047048_ae) || (autoDB047048_ai < 0 && lv__location >= autoDB047048_ae) ) ; lv__location += autoDB047048_ai ) {
+        libNtve_gf_StopTimer(gv_enemyghostspawntimer[lv__location]);
+    }
 }
 
 void gf_updateactivepathtests () {
@@ -3412,6 +3488,18 @@ void gf_chooseunit (int lp_numchoosers, int lp_location, int lp_p, region lp_reg
     gv_unitchooserlockbyplayer[lp_p] = false;
 }
 
+bool gf_isboss () {
+    // Automatic Variable Declarations
+    // Implementation
+    return (ModI((gv_currentround + 1), 5) == 0);
+}
+
+bool gf_isenemyghost (unit lp_u) {
+    // Automatic Variable Declarations
+    // Implementation
+    return UnitHasBehavior2(lp_u, "EnemyGhostHd");
+}
+
 bool gf_shouldpingchooser (int lp_p) {
     // Variable Declarations
     int lv__numchoosersspenttilwefiguretheplayergetsit;
@@ -3431,6 +3519,18 @@ bool gf_shouldpingchooser (int lp_p) {
         lv__chooserspawnpoint = gv_defendlocationtochooserspawnpoint[lv__defenderlocation];
         return (lib1_gf_isfalse(gv_playerbankvars[lp_p].lv_hasplayed) && (gv_playertonumchoosersspent[lp_p] < lv__numchoosersspenttilwefiguretheplayergetsit) && (lib1_gf_numberofunitsoftypeinregion(RegionCircle(lv__chooserspawnpoint, 10.0), lp_p, "ChooserHd") > 6));
     }
+}
+
+int gf_getcurrentmodtype () {
+    // Automatic Variable Declarations
+    // Implementation
+    return gv_enemymods[gv_currentround][0];
+}
+
+string gf_getcurrentenemyunittypetospawn () {
+    // Automatic Variable Declarations
+    // Implementation
+    return gv_enemyperround[gv_currentround];
 }
 
 void gf_endgame (int lp_gameovertype) {
@@ -3508,6 +3608,7 @@ void gf_resetskipclicked () {
 void gf_runround () {
     // Automatic Variable Declarations
     // Implementation
+    gf_stopandclearenemyghostspawn();
     DialogSetVisible(gv_rounddialog, PlayerGroupAll(), false);
     gf_resetskipclicked();
     gf_removefullrefund();
@@ -3557,12 +3658,10 @@ void gf_spawnenemies () {
 
 bool auto_gf_spawnenemies_TriggerFunc (bool testConds, bool runActions) {
     // Variable Declarations
-    int lv__currentmodtype;
     int lv__enemiesperround;
     point lv__enemyrallypoint;
     point lv__enemyspawnpoint;
     int lv__i;
-    bool lv__isboss;
     int lv__location;
     fixed lv__secondsbetweenenemies;
     string lv__spawnbehavior;
@@ -3570,7 +3669,6 @@ bool auto_gf_spawnenemies_TriggerFunc (bool testConds, bool runActions) {
     unit lv__spawnedunit;
     gs_unitandcurrentdestinationpoint lv__spawnedunitanddestination;
     int lv__sublocation;
-    string lv__unittypetospawn;
 
     // Automatic Variable Declarations
     int auto45217C05_ae;
@@ -3581,20 +3679,17 @@ bool auto_gf_spawnenemies_TriggerFunc (bool testConds, bool runActions) {
     const int autoA599EEF7_ai = 1;
 
     // Variable Initialization
-    lv__currentmodtype = gv_enemymods[gv_currentround][0];
     lv__enemiesperround = gv_enemiesperround;
-    lv__isboss = (ModI((gv_currentround + 1), 5) == 0);
-    lv__secondsbetweenenemies = 0.8;
-    lv__unittypetospawn = gv_enemyperround[gv_currentround];
+    lv__secondsbetweenenemies = gv_initialsecondsbetweenenemies;
 
     // Implementation
     gv_isspawningenemies = true;
-    if (lib1_gf_istrue(lv__isboss)) {
+    if (gf_isboss()) {
         lv__enemiesperround = (lv__enemiesperround / 2);
         lv__secondsbetweenenemies = (lv__secondsbetweenenemies * 2.0);
     }
 
-    if ((lv__currentmodtype == ge_modtypes_increaseenemycount)) {
+    if ((gf_getcurrentmodtype() == ge_modtypes_increaseenemycount)) {
         lv__enemiesperround = (lv__enemiesperround + gv_enemymods[gv_currentround][1]);
     }
 
@@ -3610,7 +3705,7 @@ bool auto_gf_spawnenemies_TriggerFunc (bool testConds, bool runActions) {
                     lv__spawnbehavior = gv_spawnbehaviors[lv__spawnbehaviorlocation];
                     lv__enemyspawnpoint = gv_enemyspawnpointsperlocation[lv__location][lv__sublocation];
                     lv__enemyrallypoint = gv_enemyrallypointsperlocation[lv__location][lv__sublocation];
-                    gf_spawnsingleenemy((lv__sublocation * (lv__secondsbetweenenemies / 2.0)), lv__currentmodtype, lv__enemyrallypoint, lv__enemyspawnpoint, lv__unittypetospawn, lv__spawnbehavior);
+                    gf_spawnsingleenemy((lv__sublocation * (lv__secondsbetweenenemies / 2.0)), gf_getcurrentmodtype(), lv__enemyrallypoint, lv__enemyspawnpoint, gf_getcurrentenemyunittypetospawn(), lv__spawnbehavior, false);
                 }
             }
 
@@ -3624,6 +3719,37 @@ bool auto_gf_spawnenemies_TriggerFunc (bool testConds, bool runActions) {
     return true;
 }
 
+void gf_spawnenemyghostsatlocation (int lp_location) {
+    // Variable Declarations
+    point lv__enemyrallypoint;
+    point lv__enemyspawnpoint;
+    string lv__spawnbehavior;
+    int lv__spawnbehaviorlocation;
+    fixed lv__staggerseconds;
+    int lv__sublocation;
+
+    // Automatic Variable Declarations
+    const int auto3CA5BEB0_ae = 1;
+    const int auto3CA5BEB0_ai = 1;
+
+    // Variable Initialization
+    lv__staggerseconds = (gv_initialsecondsbetweenenemies / 2);
+
+    // Implementation
+    if (gf_isboss()) {
+        lv__staggerseconds = (lv__staggerseconds * 2);
+    }
+
+    lv__sublocation = 0;
+    for ( ; ( (auto3CA5BEB0_ai >= 0 && lv__sublocation <= auto3CA5BEB0_ae) || (auto3CA5BEB0_ai < 0 && lv__sublocation >= auto3CA5BEB0_ae) ) ; lv__sublocation += auto3CA5BEB0_ai ) {
+        lv__spawnbehaviorlocation = gv_locationandsublocationtoenemypathlocation[lp_location][lv__sublocation];
+        lv__spawnbehavior = gv_spawnbehaviors[lv__spawnbehaviorlocation];
+        lv__enemyspawnpoint = gv_enemyspawnpointsperlocation[lp_location][lv__sublocation];
+        lv__enemyrallypoint = gv_enemyrallypointsperlocation[lp_location][lv__sublocation];
+        gf_spawnsingleenemy((lv__sublocation * lv__staggerseconds), gf_getcurrentmodtype(), lv__enemyrallypoint, lv__enemyspawnpoint, gf_getcurrentenemyunittypetospawn(), lv__spawnbehavior, true);
+    }
+}
+
 trigger auto_gf_spawnsingleenemy_Trigger = null;
 fixed auto_gf_spawnsingleenemy_lp_afterNseconds;
 int auto_gf_spawnsingleenemy_lp_currentmodtype;
@@ -3631,14 +3757,16 @@ point auto_gf_spawnsingleenemy_lp_enemyrallypoint;
 point auto_gf_spawnsingleenemy_lp_enemyspawnpoint;
 string auto_gf_spawnsingleenemy_lp_enemyunittype;
 string auto_gf_spawnsingleenemy_lp_spawnbehavior;
+bool auto_gf_spawnsingleenemy_lp_isghost;
 
-void gf_spawnsingleenemy (fixed lp_afterNseconds, int lp_currentmodtype, point lp_enemyrallypoint, point lp_enemyspawnpoint, string lp_enemyunittype, string lp_spawnbehavior) {
+void gf_spawnsingleenemy (fixed lp_afterNseconds, int lp_currentmodtype, point lp_enemyrallypoint, point lp_enemyspawnpoint, string lp_enemyunittype, string lp_spawnbehavior, bool lp_isghost) {
     auto_gf_spawnsingleenemy_lp_afterNseconds = lp_afterNseconds;
     auto_gf_spawnsingleenemy_lp_currentmodtype = lp_currentmodtype;
     auto_gf_spawnsingleenemy_lp_enemyrallypoint = lp_enemyrallypoint;
     auto_gf_spawnsingleenemy_lp_enemyspawnpoint = lp_enemyspawnpoint;
     auto_gf_spawnsingleenemy_lp_enemyunittype = lp_enemyunittype;
     auto_gf_spawnsingleenemy_lp_spawnbehavior = lp_spawnbehavior;
+    auto_gf_spawnsingleenemy_lp_isghost = lp_isghost;
 
     if (auto_gf_spawnsingleenemy_Trigger == null) {
         auto_gf_spawnsingleenemy_Trigger = TriggerCreate("auto_gf_spawnsingleenemy_TriggerFunc");
@@ -3654,6 +3782,7 @@ bool auto_gf_spawnsingleenemy_TriggerFunc (bool testConds, bool runActions) {
     point lp_enemyspawnpoint = auto_gf_spawnsingleenemy_lp_enemyspawnpoint;
     string lp_enemyunittype = auto_gf_spawnsingleenemy_lp_enemyunittype;
     string lp_spawnbehavior = auto_gf_spawnsingleenemy_lp_spawnbehavior;
+    bool lp_isghost = auto_gf_spawnsingleenemy_lp_isghost;
 
     // Variable Declarations
     unit lv__spawnedenemyunit;
@@ -3671,6 +3800,11 @@ bool auto_gf_spawnsingleenemy_TriggerFunc (bool testConds, bool runActions) {
     UnitIssueOrder(lv__spawnedenemyunit, OrderTargetingPoint(AbilityCommand("move", 0), lp_enemyrallypoint), c_orderQueueReplace);
     UnitBehaviorAdd(lv__spawnedenemyunit, lp_spawnbehavior, lv__spawnedenemyunit, 1);
     UnitBehaviorAdd(lv__spawnedenemyunit, "PushHd", lv__spawnedenemyunit, 1);
+    if (lib1_gf_istrue(lp_isghost)) {
+        UnitBehaviorAdd(lv__spawnedenemyunit, "EnemyGhostHd", lv__spawnedenemyunit, 1);
+        UnitGroupAdd(gv_enemyghostsonmap, lv__spawnedenemyunit);
+    }
+
     return true;
 }
 
@@ -3762,6 +3896,7 @@ bool gt_initmap_Func (bool testConds, bool runActions) {
     }
 
     gf_initdefendlocationtoislandregion();
+    gf_initdefendlocationtopathtestsegments();
     gf_initmisc();
     gf_initenemyids();
     gf_initenemymaxhealthandshield();
@@ -4109,7 +4244,7 @@ bool gt_testpaths_Func (bool testConds, bool runActions) {
         Wait(1.0, c_timeGame);
     }
     gv_testpathlock = true;
-    if ((!(gf_allactivepathsareclear()))) {
+    if (lib1_gf_isfalse(gf_allactivepathsareclear())) {
         lib1_gf_messageuser(StringExternal("Param/Value/06E6A6BE"), lv__p);
         gf_refundplayer(lv__p, lv__building);
     }
@@ -5166,6 +5301,7 @@ bool gt_allenemiesgone_Func (bool testConds, bool runActions) {
         else {
             libNtve_gf_CreateModelAtPoint("CurrentEnemyIndicatorHd", gv_enemyshowcasepoints[gv_currentround]);
             gv_currentenemyindicator = libNtve_gf_ActorLastCreated();
+            gf_startallenemyghostspawnlocations();
             gf_startroundtimer(gv_secondsbetweenrounds);
         }
     }
@@ -5222,9 +5358,12 @@ bool gt_clearenemies_Func (bool testConds, bool runActions) {
             lv__u = UnitGroupUnitFromEnd(autoA9B761F0_g, autoA9B761F0_u);
             if (lv__u == null) { break; }
             if (lib1_gf_istrue(UnitHasBehavior2(lv__u, lv__spawnbehavior))) {
-                gf_subtractextralife();
-                if (gf_unitisbossheroic(lv__u)) {
+                if (lib1_gf_isfalse(gf_isenemyghost(lv__u))) {
                     gf_subtractextralife();
+                    if (gf_unitisbossheroic(lv__u)) {
+                        gf_subtractextralife();
+                    }
+
                 }
 
                 UnitRemove(lv__u);
@@ -5413,6 +5552,61 @@ void gt_skiproundtimer_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: spawn enemy ghosts
+//--------------------------------------------------------------------------------------------------
+bool gt_spawnenemyghosts_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    timer auto7CD6736A_val;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto7CD6736A_val = EventTimer();
+    if (auto7CD6736A_val == gv_enemyghostspawntimer[0]) {
+        gf_spawnenemyghostsatlocation(0);
+    }
+    else if (auto7CD6736A_val == gv_enemyghostspawntimer[1]) {
+        gf_spawnenemyghostsatlocation(1);
+    }
+    else if (auto7CD6736A_val == gv_enemyghostspawntimer[2]) {
+        gf_spawnenemyghostsatlocation(2);
+    }
+    else if (auto7CD6736A_val == gv_enemyghostspawntimer[3]) {
+        gf_spawnenemyghostsatlocation(3);
+    }
+    else if (auto7CD6736A_val == gv_enemyghostspawntimer[4]) {
+        gf_spawnenemyghostsatlocation(4);
+    }
+    else if (auto7CD6736A_val == gv_enemyghostspawntimer[5]) {
+        gf_spawnenemyghostsatlocation(5);
+    }
+    else if (auto7CD6736A_val == gv_enemyghostspawntimer[6]) {
+        gf_spawnenemyghostsatlocation(6);
+    }
+    else if (auto7CD6736A_val == gv_enemyghostspawntimer[7]) {
+        gf_spawnenemyghostsatlocation(7);
+    }
+    else {
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_spawnenemyghosts_Init () {
+    gt_spawnenemyghosts = TriggerCreate("gt_spawnenemyghosts_Func");
+    TriggerAddEventTimer(gt_spawnenemyghosts, gv_enemyghostspawntimer[0]);
+    TriggerAddEventTimer(gt_spawnenemyghosts, gv_enemyghostspawntimer[1]);
+    TriggerAddEventTimer(gt_spawnenemyghosts, gv_enemyghostspawntimer[2]);
+    TriggerAddEventTimer(gt_spawnenemyghosts, gv_enemyghostspawntimer[3]);
+    TriggerAddEventTimer(gt_spawnenemyghosts, gv_enemyghostspawntimer[4]);
+    TriggerAddEventTimer(gt_spawnenemyghosts, gv_enemyghostspawntimer[5]);
+    TriggerAddEventTimer(gt_spawnenemyghosts, gv_enemyghostspawntimer[6]);
+    TriggerAddEventTimer(gt_spawnenemyghosts, gv_enemyghostspawntimer[7]);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: tele enemies
 //--------------------------------------------------------------------------------------------------
 bool gt_teleenemies_Func (bool testConds, bool runActions) {
@@ -5520,6 +5714,7 @@ void InitTriggers () {
     gt_runround_Init();
     gt_pingchooserstonewusers_Init();
     gt_skiproundtimer_Init();
+    gt_spawnenemyghosts_Init();
     gt_teleenemies_Init();
 }
 

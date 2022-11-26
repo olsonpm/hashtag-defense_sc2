@@ -472,6 +472,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="PsionicShockwaveSimpleBossArchonHd">
         <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
         <DisplayEffect value="PsionicShockwaveDamageSimpleBossArchonEnemyHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -565,6 +566,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="RangedAcidSalivaSimpleBeefyRoachEnemyHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
         <DisplayEffect value="RangedAcidSpinesDamageSimpleBeefyRoachEnemyHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -613,6 +615,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="GuassRifleSimpleQuickMarineEnemyHd">
         <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Period value="0.8608"/>
@@ -634,17 +637,18 @@
         <Period value="2"/>
         <Effect value="MeleeSetSimpleBeefyRoachEnemyHd"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="SimpleArmoredZealotPsiBladesEnemyHd">
+    <CWeaponLegacy id="PsiBladesSimpleArmoredZealotEnemyHd">
         <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="PsiBladesDamageSimpleArmoredZealotEnemyHd"/>
         <DisplayAttackCount value="2"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="0.1"/>
         <Period value="1.2"/>
         <DamagePoint value="0"/>
         <Effect value="ZealotPsiBladesCleaveSet"/>
-        <DisplayEffect value="PsiBladesDamageSimpleArmoredZealotEnemyHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="ClawsLightDroneEnemyHd">
         <EditorCategories value="Race:Zerg"/>
@@ -752,6 +756,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="WeaklingClawsHd">
         <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
         <Options index="Melee" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
