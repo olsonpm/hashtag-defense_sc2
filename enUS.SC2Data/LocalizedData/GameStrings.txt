@@ -492,6 +492,7 @@ Param/Value/C3978B7F=Choose where to defend
 Param/Value/CB176063=
 Param/Value/D022AFAA=Here's a worker to start you off.  Use it to build a maze of defensive structures.
 Param/Value/D6EDA166=You start with 5 choosers to spend on minerals, upgrades and units.  You'll get more as the team kills enemies !<n/><n/>I'll show you where you'll be defending in a bit.
+Param/Value/DCD029C6=race changed
 Param/Value/E444493B=testing multiplayer locally
 Param/Value/E58B56EB=Skip
 Param/Value/ED031DF0=Ready

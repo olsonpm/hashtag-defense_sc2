@@ -13,11 +13,15 @@
 <Behavior id="PushHd"/>
 <Model id="CurrentEnemyIndicatorHd"/>
 <Race id="Terr"/>
+<Race id="Zerg"/>
+<Race id="Prot"/>
 <Sound id="UI_GenericError"/>
 <Sound id="Sentry_HallucinationDeathMedium"/>
 <Sound id="Probe_Explode"/>
 <Sound id="Alert_TerranNeedMoreMinerals"/>
 <Terrain id="PurifierJungle"/>
+<Unit id="Bunker"/>
+<Unit id="Marine"/>
 <Unit id="SpawnFlagHd"/>
 <Unit id="LiberatorAGHd"/>
 <Unit id="InfestedSiegeTankHd"/>
@@ -30,6 +34,7 @@
 <Unit id="SiegeTankSiegedHd"/>
 <Unit id="SiegeTankHd"/>
 <Unit id="PathTesterRadius05Hd"/>
+<Unit id="SlowTicklerMarineTestHd"/>
 <Unit id="LightDroneEnemyHd"/>
 <Unit id="LightProbeEnemyHd"/>
 <Unit id="LightSCVEnemyHd"/>

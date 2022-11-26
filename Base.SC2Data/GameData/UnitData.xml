@@ -1015,11 +1015,9 @@
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="LoadUnloadBunkerHd"/>
         <AbilArray Link="Rally"/>
-        <AbilArray Link="StopRedirect"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="AttackRedirect"/>
         <AbilArray Link="SalvageHalfRefundHd"/>
-        <AbilArray Link="stop"/>
         <AbilArray Link="SalvageFullRefundHd"/>
         <BehaviorArray Link="TerranBuildingBurnDown"/>
         <BehaviorArray Link="ShrikeTurretHd"/>
@@ -1029,7 +1027,6 @@
         <WeaponArray Link="ShrikeTurretHd" Turret="ShrikeTurretHd"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="StopRedirect,Execute" Row="0" Column="1"/>
             <LayoutButtons Face="SetBunkerRallyPoint" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
             <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="LoadUnloadBunkerHd,Load" Row="2" Column="1"/>
             <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="LoadUnloadBunkerHd,UnloadAll" Row="2" Column="2"/>
@@ -1037,7 +1034,6 @@
             <LayoutButtons Face="SalvageHalfRefundHd" Type="AbilCmd" AbilCmd="SalvageHalfRefundHd,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SalvageShared,Off" Row="2" Column="4"/>
-            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>

@@ -1226,6 +1226,14 @@ const int ge_enemyspawnpathsegments_spawntopsegment2 = 12;
 const int ge_enemyspawnpathsegments_spawnrightsegment2 = 13;
 const int ge_enemyspawnpathsegments_spawnbotsegment2 = 14;
 const int ge_enemyspawnpathsegments_spawnleftsegment2 = 15;
+const int ge_gameattributeaddmodstoallrounds_yes = 0;
+const int ge_gameattributeaddmodstoallrounds_no = 1;
+const int ge_gameattributedifficulty_standard = 0;
+const int ge_gameattributedifficulty_hard = 1;
+const int ge_gameattributeroundtimer_none = 0;
+const int ge_gameattributeroundtimer_default = 1;
+const int ge_gameattributeroundtimer_quick = 2;
+const int ge_gameattributeroundtimer_nonstop = 3;
 const int ge_modtypes_none = 0;
 const int ge_modtypes_increaseenemycount = 1;
 const int ge_modtypes_increasespeed = 2;
@@ -1296,6 +1304,9 @@ point[9][3] gv_enemyspawnpointsperlocation;
 region[9] gv_enemyteleregions;
 point[9] gv_enemytelespawns;
 point[26] gv_extralifepoints;
+int gv_gameattributeaddmodstoallrounds;
+int gv_gameattributedifficulty;
+int gv_gameattributeroundtimer;
 unit[10] gv_invisiblewaypointchooserperplayer;
 int[16] gv_modtypedice;
 int gv_modtypedicelastindex;
@@ -1341,7 +1352,7 @@ void InitGlobals () {
     gv_maxextralives = 25;
     gv_roundtimer = TimerCreate();
     gv_secondsbeforefirstround = 120;
-    gv_secondsbetweenghostspawn = 8;
+    gv_secondsbetweenghostspawn = 7;
     gv_secondsbetweenrounds = 40;
     gv_activedefenders = PlayerGroupEmpty();
     gv_activedefendersplusallycomp = PlayerGroupEmpty();
@@ -1419,6 +1430,7 @@ void gf_initenemyteleregions ();
 void gf_initenemytelespawns ();
 void gf_initextralifepoints ();
 void gf_initextralives ();
+void gf_initgameattributevars ();
 void gf_initlocationandsublocationtospawnclockwiselocation ();
 void gf_initlocationchoosers ();
 void gf_initmisc ();
@@ -1494,6 +1506,8 @@ trigger gt_choosespawnlocationbot;
 trigger gt_choosespawnlocationbotleft;
 trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
+trigger gt_testcleartextmessages;
+trigger gt_testinitcam;
 trigger gt_testpaths;
 trigger gt_upgradespinecrawlerdamage;
 trigger gt_upgradebunkerturretdamage;
@@ -1512,6 +1526,7 @@ trigger gt_movespawnflag;
 trigger gt_clearrallyunitchooser;
 trigger gt_rallyunitchooser;
 trigger gt_kick;
+trigger gt_changerace;
 trigger gt_autoskip;
 trigger gt_choosetop;
 trigger gt_choosetopright;
@@ -1849,7 +1864,7 @@ void gf_initalliance () {
 void gf_initattributebuffsperlocationandrace () {
     // Automatic Variable Declarations
     // Implementation
-    if ((GameAttributeGameValue("2") == "0001")) {
+    if ((gv_gameattributedifficulty == ge_gameattributedifficulty_standard)) {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_protoss][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_protoss][0] = "IncreaseVsLightStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_protoss][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
@@ -1873,7 +1888,7 @@ void gf_initattributebuffsperlocationandrace () {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss][1] = "IncreaseVsBossHardAttributeDamageHd";
     }
-    if ((GameAttributeGameValue("2") == "0001")) {
+    if ((gv_gameattributedifficulty == ge_gameattributedifficulty_standard)) {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_terran][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_terran][0] = "IncreaseVsLightStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_terran][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
@@ -1897,7 +1912,7 @@ void gf_initattributebuffsperlocationandrace () {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsBossHardAttributeDamageHd";
     }
-    if ((GameAttributeGameValue("2") == "0001")) {
+    if ((gv_gameattributedifficulty == ge_gameattributedifficulty_standard)) {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_zerg][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_zerg][0] = "IncreaseVsLightStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_zerg][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
@@ -2168,7 +2183,7 @@ void gf_initenemymaxhealthandshield () {
     lv__fieldpath = "";
 
     // Implementation
-    if ((GameAttributeGameValue("2") == "0003")) {
+    if ((gv_gameattributedifficulty == ge_gameattributedifficulty_hard)) {
         lv__catalogfieldpathstomodify[0] = "LifeMax";
         lv__catalogfieldpathstomodify[1] = "LifeStart";
         lv__catalogfieldpathstomodify[2] = "ShieldsMax";
@@ -2493,6 +2508,48 @@ void gf_initextralives () {
     }
 }
 
+void gf_initgameattributevars () {
+    // Automatic Variable Declarations
+    string auto63B48E0E_val;
+    string auto5C84F2C5_val;
+    string auto2DB5EFBA_val;
+
+    // Implementation
+    auto63B48E0E_val = GameAttributeGameValue("2");
+    if (auto63B48E0E_val == "0001") {
+        gv_gameattributedifficulty = ge_gameattributedifficulty_standard;
+    }
+    else if (auto63B48E0E_val == "0003") {
+        gv_gameattributedifficulty = ge_gameattributedifficulty_hard;
+    }
+    else {
+    }
+    auto5C84F2C5_val = GameAttributeGameValue("1");
+    if (auto5C84F2C5_val == "0001") {
+        gv_gameattributeroundtimer = ge_gameattributeroundtimer_none;
+    }
+    else if (auto5C84F2C5_val == "0002") {
+        gv_gameattributeroundtimer = ge_gameattributeroundtimer_default;
+    }
+    else if (auto5C84F2C5_val == "0003") {
+        gv_gameattributeroundtimer = ge_gameattributeroundtimer_quick;
+    }
+    else if (auto5C84F2C5_val == "0004") {
+        gv_gameattributeroundtimer = ge_gameattributeroundtimer_nonstop;
+    }
+    else {
+    }
+    auto2DB5EFBA_val = GameAttributeGameValue("3");
+    if (auto2DB5EFBA_val == "0002") {
+        gv_gameattributeaddmodstoallrounds = ge_gameattributeaddmodstoallrounds_yes;
+    }
+    else if (auto2DB5EFBA_val == "0001") {
+        gv_gameattributeaddmodstoallrounds = ge_gameattributeaddmodstoallrounds_no;
+    }
+    else {
+    }
+}
+
 void gf_initlocationandsublocationtospawnclockwiselocation () {
     // Automatic Variable Declarations
     // Implementation
@@ -2554,7 +2611,7 @@ void gf_initmodtypedice () {
     gv_modtypedice[7] = ge_modtypes_addshields;
     gv_modtypedice[8] = ge_modtypes_addshields;
     gv_modtypedice[9] = ge_modtypes_perfectspecimen;
-    if ((GameAttributeGameValue("3") == "0001")) {
+    if ((gv_gameattributeaddmodstoallrounds == ge_gameattributeaddmodstoallrounds_no)) {
         gv_modtypedice[10] = ge_modtypes_none;
         gv_modtypedice[11] = ge_modtypes_none;
         gv_modtypedice[12] = ge_modtypes_none;
@@ -2569,7 +2626,7 @@ void gf_initmodtypedice () {
 void gf_initmodtypetobuff () {
     // Automatic Variable Declarations
     // Implementation
-    if ((GameAttributeGameValue("2") == "0001")) {
+    if ((gv_gameattributedifficulty == ge_gameattributedifficulty_standard)) {
         gv_modtypetobuff[ge_modtypes_addshields] = "AddedShieldsStandardModHd";
         gv_modtypetobuff[ge_modtypes_addarmor] = "AddedArmorStandardModHd";
         gv_modtypetobuff[ge_modtypes_increasespeed] = "IncreaseSpeedStandardModHd";
@@ -2776,19 +2833,19 @@ void gf_initresources () {
 
 void gf_initroundtimer () {
     // Automatic Variable Declarations
-    string autoDB7F612B_val;
+    int autoDB7F612B_val;
 
     // Implementation
-    autoDB7F612B_val = GameAttributeGameValue("1");
-    if (autoDB7F612B_val == "0003") {
+    autoDB7F612B_val = gv_gameattributeroundtimer;
+    if (autoDB7F612B_val == ge_gameattributeroundtimer_quick) {
         gv_secondsbeforefirstround = 60;
         gv_secondsbetweenrounds = 20;
     }
-    else if (autoDB7F612B_val == "0004") {
+    else if (autoDB7F612B_val == ge_gameattributeroundtimer_nonstop) {
         gv_secondsbeforefirstround = 40;
         gv_roundtimerisnonstop = true;
     }
-    else if (autoDB7F612B_val == "0001") {
+    else if (autoDB7F612B_val == ge_gameattributeroundtimer_none) {
         gv_roundtimerexists = false;
     }
     else {
@@ -3897,6 +3954,7 @@ bool gt_initmap_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    gf_initgameattributevars();
     gf_initdefendlocationtoislandregion();
     gf_initdefendlocationtopathtestsegments();
     gf_initmisc();
@@ -4222,6 +4280,60 @@ bool gt_choosespawnlocationtopleft_Func (bool testConds, bool runActions) {
 void gt_choosespawnlocationtopleft_Init () {
     gt_choosespawnlocationtopleft = TriggerCreate("gt_choosespawnlocationtopleft_Func");
     TriggerAddEventUnitRange(gt_choosespawnlocationtopleft, null, UnitFromId(1243337835), 1.0, true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: test - clear text messages
+//--------------------------------------------------------------------------------------------------
+bool gt_testcleartextmessages_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UIClearMessages(PlayerGroupSingle(1), c_messageAreaAll);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_testcleartextmessages_Init () {
+    gt_testcleartextmessages = TriggerCreate("gt_testcleartextmessages_Func");
+    TriggerAddEventMapInit(gt_testcleartextmessages);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: test - init cam
+//--------------------------------------------------------------------------------------------------
+bool gt_testinitcam_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib1_gf_setcameratopointforplayer(1, PointFromId(271112602));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_testinitcam_Init () {
+    gt_testinitcam = TriggerCreate("gt_testinitcam_Func");
+    TriggerAddEventMapInit(gt_testinitcam);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -4863,6 +4975,53 @@ bool gt_kick_Func (bool testConds, bool runActions) {
 void gt_kick_Init () {
     gt_kick = TriggerCreate("gt_kick_Func");
     TriggerAddEventChatMessage(gt_kick, c_playerAny, "-kick p2", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: change race
+//--------------------------------------------------------------------------------------------------
+bool gt_changerace_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    string autoAD020825_val;
+
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_isdebugginglocally())) {
+            return false;
+        }
+
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib1_gf_displaydebugmessage(StringExternal("Param/Value/DCD029C6"));
+    autoAD020825_val = EventChatMessage(false);
+    if (autoAD020825_val == "-change race to terran") {
+        PlayerSetRace(1, "Terr");
+    }
+    else if (autoAD020825_val == "-change race to zerg") {
+        PlayerSetRace(1, "Zerg");
+    }
+    else if (autoAD020825_val == "-change race to protoss") {
+        PlayerSetRace(1, "Prot");
+    }
+    else {
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_changerace_Init () {
+    gt_changerace = TriggerCreate("gt_changerace_Func");
+    TriggerAddEventChatMessage(gt_changerace, c_playerAny, "-change race to terran", true);
+    TriggerAddEventChatMessage(gt_changerace, c_playerAny, "-change race to zerg", true);
+    TriggerAddEventChatMessage(gt_changerace, c_playerAny, "-change race to protoss", true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -5682,6 +5841,8 @@ void InitTriggers () {
     gt_choosespawnlocationbotleft_Init();
     gt_choosespawnlocationleft_Init();
     gt_choosespawnlocationtopleft_Init();
+    gt_testcleartextmessages_Init();
+    gt_testinitcam_Init();
     gt_testpaths_Init();
     gt_upgradespinecrawlerdamage_Init();
     gt_upgradebunkerturretdamage_Init();
@@ -5700,6 +5861,7 @@ void InitTriggers () {
     gt_clearrallyunitchooser_Init();
     gt_rallyunitchooser_Init();
     gt_kick_Init();
+    gt_changerace_Init();
     gt_autoskip_Init();
     gt_choosetop_Init();
     gt_choosetopright_Init();
