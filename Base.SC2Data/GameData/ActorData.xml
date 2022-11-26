@@ -267,6 +267,10 @@
         <Model value="UIScreenParentHd"/>
         <HostSiteOps Ops="SOpUpdateUIScreenPosHd"/>
     </CActorModel>
+    <CActorModel id="HallucinationDeathHd" parent="ModelAnimationStyleOneShotUNIT">
+        <EditorCategories value=""/>
+        <Model value="HallucinationDeath"/>
+    </CActorModel>
     <!-- Normally I try to copy rather than modify existing libs,  -->
     <!-- however copying this would have taken me a while and I'm  -->
     <!-- not imaginging much downside to such a small modification -->

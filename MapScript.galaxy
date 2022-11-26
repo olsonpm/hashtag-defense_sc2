@@ -3368,6 +3368,8 @@ void gf_stopandclearenemyghostspawn () {
     for (;; auto8A8D303B_u -= 1) {
         lv__u = UnitGroupUnitFromEnd(auto8A8D303B_g, auto8A8D303B_u);
         if (lv__u == null) { break; }
+        libNtve_gf_CreateActorAtPoint("HallucinationDeathHd", UnitGetPosition(lv__u));
+        SoundPlayAtPointForPlayer(SoundLink("Sentry_HallucinationDeathMedium", -1), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lv__u), 0.0, 100.0, 0.0);
         UnitRemove(lv__u);
     }
     UnitGroupClear(gv_enemyghostsonmap);
