@@ -484,6 +484,7 @@ MapInfo/Player10/Name=Hostile
 Param/Expression/1E71C629=Test Player ~kick_player~
 Param/Expression/27B4B0E7=Kick ~kick_player_name~ ?
 Param/Expression/32293807=Players are voting whether to kick Test Player ~kick_player~...
+Param/Expression/8097C5D0=1 / 2 = ~a~<n/>3 / 2 = ~b~
 Param/Expression/AA03E1AD=Kick Test Player ~kick_player~ ?
 Param/Expression/B019B228=Players are voting whether to kick ~kick_player_name~...
 Param/Expression/E7D75A99=Player ~result~ kicked ! (~value~/~threshold~)

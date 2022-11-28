@@ -144,6 +144,8 @@ void lib1_InitVariables () {
     }
     lib1_gv_colorcalamity = StringExternal("Param/Value/lib_1_4A35FBAD");
     lib1_gv_everysecond = TimerCreate();
+    lib1_gv_localdebug = true;
+    lib1_gv_test = true;
     for (init_i = 0; init_i <= 16; init_i += 1) {
         for (init_j = 0; init_j <= 16; init_j += 1) {
             lib1_gv_unitsingroupsofNperplayer[init_i][init_j] = UnitGroupEmpty();
@@ -1326,6 +1328,7 @@ int[16] gv_modtypedice;
 int gv_modtypedicelastindex;
 string[6] gv_modtypetomodunittype;
 string[6] gv_modtypetobuff;
+int gv_numenemieswhoreachedtheend;
 gs_pathtestsegmentinfo[9] gv_pathtestsegments;
 unit[9][3] gv_pathtestsegmenttopathtesters;
 bool[9] gv_pathtestsegmenttoactivepath;
@@ -1534,6 +1537,7 @@ bool gf_shouldpingchooser (int lp_p);
 int gf_getcurrentmodtype ();
 string gf_getcurrentenemyunittypetospawn ();
 void gf_endgame (int lp_gameovertype);
+void gf_enemyreachedend ();
 void gf_incrementenemieskilled ();
 void gf_resetskipclicked ();
 void gf_runround ();
@@ -1542,7 +1546,6 @@ void gf_spawnenemies ();
 void gf_spawnenemyghostsatlocation (int lp_location);
 void gf_spawnsingleenemy (fixed lp_afterNseconds, int lp_currentmodtype, point lp_enemyrallypoint, point lp_enemyspawnpoint, string lp_enemyunittype, string lp_spawnbehavior, bool lp_isghost);
 void gf_startroundtimer (int lp_numseconds);
-void gf_subtractextralife ();
 void gf_updatedialogtimervalue ();
 
 //--------------------------------------------------------------------------------------------------
@@ -3710,6 +3713,7 @@ void gf_removeplayer (int lp_p) {
     // Variable Initialization
 
     // Implementation
+    gv_numenemieswhoreachedtheend = 0;
     lv__defenderlocation = gv_playertodefenderlocation[lp_p];
     if ((lv__defenderlocation > -1)) {
         gv_activedefenderlocations[lv__defenderlocation] = false;
@@ -3977,6 +3981,32 @@ void gf_endgame (int lp_gameovertype) {
         if (lv__p < 0) { break; }
         GameOver(lv__p, lp_gameovertype, true, true);
     }
+}
+
+void gf_enemyreachedend () {
+    // Variable Declarations
+    int lv__numenemiesperlife;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__numenemiesperlife = ((PlayerGroupCount(gv_activedefenders) + 1) / 2);
+
+    // Implementation
+    gv_numenemieswhoreachedtheend = gv_numenemieswhoreachedtheend + 1;
+    if ((ModI(gv_numenemieswhoreachedtheend, lv__numenemiesperlife) == 0)) {
+        if ((gv_currentextralife < gv_maxextralives)) {
+            lib1_gf_removeunitoftypeatpoint(gv_allycompplayer, gv_extralifepoints[gv_currentextralife], lib1_ge_removeunittype_kill, "ExtraLifeHd");
+            gv_currentextralife = gv_currentextralife + 1;
+            lib1_gf_playsoundforallplayers(SoundLink("Probe_Explode", -1));
+            TextExpressionSetToken("Param/Expression/EE5F32E3", "color_calamity", lib1_gv_colorcalamity);
+            TextExpressionSetToken("Param/Expression/EE5F32E3", "extra_lives_left", IntToText((gv_maxextralives - gv_currentextralife)));
+            lib1_gf_messageallusersdebounced(TextExpressionAssemble("Param/Expression/EE5F32E3"), "extra lives remaining", 3);
+        }
+        else {
+            gf_endgame(c_gameOverDefeat);
+        }
+    }
+
 }
 
 void gf_incrementenemieskilled () {
@@ -4279,22 +4309,6 @@ void gf_startroundtimer (int lp_numseconds) {
     }
     else {
         gf_runround();
-    }
-}
-
-void gf_subtractextralife () {
-    // Automatic Variable Declarations
-    // Implementation
-    if ((gv_currentextralife < gv_maxextralives)) {
-        lib1_gf_removeunitoftypeatpoint(gv_allycompplayer, gv_extralifepoints[gv_currentextralife], lib1_ge_removeunittype_kill, "ExtraLifeHd");
-        gv_currentextralife = gv_currentextralife + 1;
-        lib1_gf_playsoundforallplayers(SoundLink("Probe_Explode", -1));
-        TextExpressionSetToken("Param/Expression/EE5F32E3", "color_calamity", lib1_gv_colorcalamity);
-        TextExpressionSetToken("Param/Expression/EE5F32E3", "extra_lives_left", IntToText((gv_maxextralives - gv_currentextralife)));
-        lib1_gf_messageallusersdebounced(TextExpressionAssemble("Param/Expression/EE5F32E3"), "extra lives remaining", 3);
-    }
-    else {
-        gf_endgame(c_gameOverDefeat);
     }
 }
 
@@ -6174,9 +6188,9 @@ bool gt_clearenemies_Func (bool testConds, bool runActions) {
             if (lv__u == null) { break; }
             if (lib1_gf_istrue(UnitHasBehavior2(lv__u, lv__spawnbehavior))) {
                 if (lib1_gf_isfalse(gf_isenemyghost(lv__u))) {
-                    gf_subtractextralife();
+                    gf_enemyreachedend();
                     if (gf_unitisbossheroic(lv__u)) {
-                        gf_subtractextralife();
+                        gf_enemyreachedend();
                     }
 
                 }
