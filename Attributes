@@ -45,6 +45,7 @@
         <Value>
             <Id Value="2"/>
             <Name Value="Attribute002/Value002/Name"/>
+            <Description Value="Attribute002/Value002/Desc"/>
         </Value>
         <Value>
             <Id Value="1"/>
