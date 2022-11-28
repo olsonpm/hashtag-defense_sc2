@@ -144,8 +144,6 @@ void lib1_InitVariables () {
     }
     lib1_gv_colorcalamity = StringExternal("Param/Value/lib_1_4A35FBAD");
     lib1_gv_everysecond = TimerCreate();
-    lib1_gv_localdebug = true;
-    lib1_gv_test = true;
     for (init_i = 0; init_i <= 16; init_i += 1) {
         for (init_j = 0; init_j <= 16; init_j += 1) {
             lib1_gv_unitsingroupsofNperplayer[init_i][init_j] = UnitGroupEmpty();
@@ -1307,7 +1305,23 @@ point[26] gv_extralifepoints;
 int gv_gameattributeaddmodstoallrounds;
 int gv_gameattributedifficulty;
 int gv_gameattributeroundtimer;
+int[10] gv_kickplayerlistdicancel;
+int[10][10] gv_kickplayerlistdiplayer;
+int[10] gv_kickplayerlistdialog;
+int gv_kickplayervotedialog;
+int gv_kickplayervotedimeh;
+int gv_kickplayervotedino;
+int gv_kickplayervotediyes;
+int gv_kickplayervoteinprogressdialog;
+bool gv_kickplayervoteinprogress;
+int gv_kickplayervoteresultsdialog;
+int gv_kickplayervoteresultsdiclose;
+timer gv_kickplayervotetimer;
+timer[10] gv_kickplayervotespamtimer;
+int gv_kickplayervotevalue;
+bool[10] gv_kickplayervotewascast;
 unit[10] gv_invisiblewaypointchooserperplayer;
+int[9][3] gv_locationandsublocationtoenemypathlocation;
 int[16] gv_modtypedice;
 int gv_modtypedicelastindex;
 string[6] gv_modtypetomodunittype;
@@ -1317,9 +1331,11 @@ unit[9][3] gv_pathtestsegmenttopathtesters;
 bool[9] gv_pathtestsegmenttoactivepath;
 gs_playerbankinfo[9] gv_playerbankvars;
 bank[9] gv_playerbanks;
+int gv_playerbeingvotedontokick;
 bool[10] gv_playertoskipclicked;
 int[10] gv_playertodefenderlocation;
 int[10] gv_playertonumchoosersspent;
+int gv_playerwhoinitiatedvote;
 int[26] gv_possibleenemyunitsperroundnumber;
 string[26][5] gv_possibleenemyunitsperroundunits;
 int gv_rounddialog;
@@ -1331,10 +1347,11 @@ bool gv_roundtimerisnonstop;
 bool[26] gv_roundstopickrandommod;
 string[13] gv_spawnbehaviors;
 point[10] gv_spawnpointperplayer;
+int gv_startvotetokickplayerdialog;
+int gv_startvotetokickplayerdibutton;
 int[9] gv_telelocationtoenemyspawnpathsegments;
 int[9] gv_telelocationtospawnclockwiselocation;
 bool gv_testingmultiplayerlocally;
-int[9][3] gv_locationandsublocationtoenemypathlocation;
 string[9] gv_unitbeaconperlocation;
 point[9][9] gv_unitbeaconpoints;
 int[10] gv_unitchooserpathdisplayperplayer;
@@ -1345,6 +1362,7 @@ unitgroup gv_unitswithfullrefundavailable;
 
 void InitGlobals () {
     int init_i;
+    int init_j;
 
     gv_enemieskilledperchooserforsingleplayer = 4;
     gv_enemiesperround = 10;
@@ -1366,6 +1384,28 @@ void InitGlobals () {
     for (init_i = 0; init_i <= 50; init_i += 1) {
         gv_enemyids[init_i] = "";
     }
+    for (init_i = 0; init_i <= 9; init_i += 1) {
+        gv_kickplayerlistdicancel[init_i] = c_invalidDialogControlId;
+    }
+    for (init_i = 0; init_i <= 9; init_i += 1) {
+        for (init_j = 0; init_j <= 9; init_j += 1) {
+            gv_kickplayerlistdiplayer[init_i][init_j] = c_invalidDialogControlId;
+        }
+    }
+    for (init_i = 0; init_i <= 9; init_i += 1) {
+        gv_kickplayerlistdialog[init_i] = c_invalidDialogId;
+    }
+    gv_kickplayervotedialog = c_invalidDialogId;
+    gv_kickplayervotedimeh = c_invalidDialogControlId;
+    gv_kickplayervotedino = c_invalidDialogControlId;
+    gv_kickplayervotediyes = c_invalidDialogControlId;
+    gv_kickplayervoteinprogressdialog = c_invalidDialogId;
+    gv_kickplayervoteresultsdialog = c_invalidDialogId;
+    gv_kickplayervoteresultsdiclose = c_invalidDialogControlId;
+    gv_kickplayervotetimer = TimerCreate();
+    for (init_i = 0; init_i <= 9; init_i += 1) {
+        gv_kickplayervotespamtimer[init_i] = TimerCreate();
+    }
     gv_modtypedicelastindex = 14;
     for (init_i = 0; init_i <= 9; init_i += 1) {
         gv_playertodefenderlocation[init_i] = -1;
@@ -1375,6 +1415,8 @@ void InitGlobals () {
     gv_rounddialogitemtimervalue = c_invalidDialogControlId;
     gv_rounddialogitemskip = c_invalidDialogControlId;
     gv_roundtimerexists = true;
+    gv_startvotetokickplayerdialog = c_invalidDialogId;
+    gv_startvotetokickplayerdibutton = c_invalidDialogControlId;
     gv_unitswithfullrefundavailable = UnitGroupEmpty();
 }
 
@@ -1447,6 +1489,7 @@ void gf_initspawnbehaviors ();
 void gf_initspawnpointperplayer ();
 void gf_inittelelocationtospawnclockwiselocation ();
 void gf_inittelelocationtoenemyspawnpathsegments ();
+void gf_initvotetokickplayerdialogs ();
 void gf_initspawnpoint (int lp_p, point lp_defendpoint);
 void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser);
 void gf_clearspawnlocationwhenempty ();
@@ -1462,6 +1505,14 @@ bool gf_allactivepathsareclear ();
 bool gf_buildingiswall (unit lp_building);
 bool gf_buildingisattackingstructure (unit lp_building);
 void gf_refundplayer (int lp_p, unit lp_building);
+void gf_castkickvote (int lp_playerwhovoted, int lp_vote);
+void gf_reenablestartvotebutton (int lp_p);
+void gf_resetvotestate ();
+void gf_handleplayerleavingwhowasbeingvotedon ();
+void gf_setkickvoteplayerlist ();
+void gf_startkickvoteforplayer (int lp_initiatedbyplayer, int lp_kickplayer);
+void gf_showvoteresults ();
+int gf_getvotevaluethreshold ();
 bool gf_unitisbuilder (unit lp_u);
 bool gf_unitisbossheroic (unit lp_u);
 int gf_rollmodtypedice ();
@@ -1507,6 +1558,13 @@ trigger gt_choosespawnlocationbotleft;
 trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
 trigger gt_testpaths;
+trigger gt_showkickplayerlist;
+trigger gt_kickplayerlistcancel;
+trigger gt_kickplayerlistchooseplayer;
+trigger gt_castkickvote;
+trigger gt_closevoteresults;
+trigger gt_spamtimerexpires;
+trigger gt_votetimerexpires;
 trigger gt_upgradespinecrawlerdamage;
 trigger gt_upgradebunkerturretdamage;
 trigger gt_upgradephotoncannondamage;
@@ -1523,8 +1581,9 @@ trigger gt_fullrefund;
 trigger gt_movespawnflag;
 trigger gt_clearrallyunitchooser;
 trigger gt_rallyunitchooser;
-trigger gt_kick;
 trigger gt_changerace;
+trigger gt_kick;
+trigger gt_testcastkickvote;
 trigger gt_autoskip;
 trigger gt_choosetop;
 trigger gt_choosetopright;
@@ -2710,6 +2769,10 @@ void gf_initplayergroups () {
     if (lib1_gf_istrue(gv_testingmultiplayerlocally)) {
         PlayerGroupAdd(gv_activedefenders, 2);
         PlayerSetRace(2, "Terr");
+        PlayerGroupAdd(gv_activedefenders, 3);
+        PlayerSetRace(3, "Prot");
+        PlayerGroupAdd(gv_activedefenders, 4);
+        PlayerSetRace(4, "Zerg");
         TriggerDebugOutput(1, StringExternal("Param/Value/E444493B"), true);
     }
 
@@ -2928,6 +2991,46 @@ void gf_inittelelocationtoenemyspawnpathsegments () {
     gv_telelocationtoenemyspawnpathsegments[5] = ge_enemyspawnpathsegments_spawnbotsegment2;
     gv_telelocationtoenemyspawnpathsegments[6] = ge_enemyspawnpathsegments_spawnleftsegment2;
     gv_telelocationtoenemyspawnpathsegments[7] = ge_enemyspawnpathsegments_spawnleftsegment2;
+}
+
+void gf_initvotetokickplayerdialogs () {
+    // Variable Declarations
+    int lv__kickplayer;
+    int lv__p;
+    text lv__kickplayername;
+    int lv__i;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((PlayerGroupCount(gv_activedefenders) > 2)) {
+        DialogCreate(400, 117, c_anchorTopRight, 20, 30, true);
+        gv_startvotetokickplayerdialog = DialogLastCreated();
+        libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 400, 50, c_anchorCenter, 0, 0, StringToText(""), StringExternal("Param/Value/01C984EA"), "");
+        gv_startvotetokickplayerdibutton = DialogControlLastCreated();
+        DialogSetImageVisible(DialogLastCreated(), false);
+        DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), true);
+        gf_setkickvoteplayerlist();
+        DialogCreate(600, 140, c_anchorTopRight, 20, 50, true);
+        gv_kickplayervoteinprogressdialog = DialogLastCreated();
+        DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), false);
+        DialogCreate(550, 160, c_anchorTopRight, 20, 50, true);
+        gv_kickplayervotedialog = DialogLastCreated();
+        libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 150, 50, c_anchorBottomLeft, 32, 25, StringToText(""), StringExternal("Param/Value/503B0A62"), "");
+        gv_kickplayervotediyes = DialogControlLastCreated();
+        libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 150, 50, c_anchorBottom, 0, 25, StringToText(""), StringExternal("Param/Value/F7CAD5E6"), "");
+        gv_kickplayervotedimeh = DialogControlLastCreated();
+        libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 150, 50, c_anchorBottomRight, 32, 25, StringToText(""), StringExternal("Param/Value/4B1CE14A"), "");
+        gv_kickplayervotedino = DialogControlLastCreated();
+        DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), false);
+        DialogCreate(550, 160, c_anchorTopRight, 20, 50, true);
+        gv_kickplayervoteresultsdialog = DialogLastCreated();
+        libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 150, 50, c_anchorBottom, 0, 30, StringToText(""), StringExternal("Param/Value/3C656979"), "");
+        gv_kickplayervoteresultsdiclose = DialogControlLastCreated();
+        DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), false);
+    }
+
 }
 
 void gf_initspawnpoint (int lp_p, point lp_defendpoint) {
@@ -3230,6 +3333,263 @@ void gf_refundplayer (int lp_p, unit lp_building) {
     }
 }
 
+void gf_castkickvote (int lp_playerwhovoted, int lp_vote) {
+    // Variable Declarations
+    bool lv__allvotescast;
+    int lv__p;
+    playergroup lv__pgwhovoted;
+
+    // Automatic Variable Declarations
+    playergroup auto69B67329_g;
+
+    // Variable Initialization
+    lv__allvotescast = true;
+    lv__pgwhovoted = PlayerGroupSingle(lp_playerwhovoted);
+
+    // Implementation
+    DialogSetVisible(gv_kickplayervotedialog, lv__pgwhovoted, false);
+    DialogSetVisible(gv_kickplayervoteinprogressdialog, lv__pgwhovoted, true);
+    gv_kickplayervotewascast[lp_playerwhovoted] = true;
+    gv_kickplayervotevalue = (gv_kickplayervotevalue + lp_vote);
+    auto69B67329_g = gv_activedefenders;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(auto69B67329_g, lv__p);
+        if (lv__p < 0) { break; }
+        if (lib1_gf_isfalse(gv_kickplayervotewascast[lv__p])) {
+            lv__allvotescast = false;
+        }
+
+    }
+    if (lib1_gf_istrue(lv__allvotescast)) {
+        gf_showvoteresults();
+    }
+
+}
+
+void gf_reenablestartvotebutton (int lp_p) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetDialogItemTooltip(gv_startvotetokickplayerdibutton, StringToText(""), PlayerGroupSingle(lp_p));
+    DialogControlSetEnabled(gv_startvotetokickplayerdibutton, PlayerGroupSingle(lp_p), true);
+}
+
+void gf_resetvotestate () {
+    // Variable Declarations
+    int lv__p;
+
+    // Automatic Variable Declarations
+    playergroup auto93892E18_g;
+
+    // Variable Initialization
+
+    // Implementation
+    DialogSetVisible(gv_kickplayervotedialog, PlayerGroupAll(), false);
+    DialogSetVisible(gv_kickplayervoteinprogressdialog, PlayerGroupAll(), false);
+    libNtve_gf_StopTimer(gv_kickplayervotetimer);
+    auto93892E18_g = gv_activedefenders;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(auto93892E18_g, lv__p);
+        if (lv__p < 0) { break; }
+        gv_kickplayervotewascast[lv__p] = false;
+    }
+    gv_kickplayervotevalue = 0;
+}
+
+void gf_handleplayerleavingwhowasbeingvotedon () {
+    // Variable Declarations
+    int lv__p;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    gf_resetvotestate();
+    gv_kickplayervoteinprogress = false;
+    if ((PlayerGroupCount(gv_activedefenders) > 2)) {
+        DialogSetVisible(gv_startvotetokickplayerdialog, PlayerGroupAll(), true);
+    }
+
+}
+
+void gf_setkickvoteplayerlist () {
+    // Variable Declarations
+    int lv__kickplayer;
+    int lv__p;
+    text lv__kickplayername;
+    int lv__i;
+    bool lv__dialogwasvisible;
+
+    // Automatic Variable Declarations
+    playergroup auto937E3BF3_g;
+    playergroup auto3330C1F6_g;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((PlayerGroupCount(gv_activedefenders) > 2)) {
+        auto937E3BF3_g = gv_activedefenders;
+        lv__p = -1;
+        while (true) {
+            lv__p = PlayerGroupNextPlayer(auto937E3BF3_g, lv__p);
+            if (lv__p < 0) { break; }
+            lv__dialogwasvisible = ((gv_kickplayerlistdialog[lv__p] != c_invalidDialogId) && DialogIsVisible(gv_kickplayerlistdialog[lv__p], lv__p));
+            if (lib1_gf_istrue(lv__dialogwasvisible)) {
+                DialogSetVisible(gv_kickplayerlistdialog[lv__p], PlayerGroupSingle(lv__p), false);
+            }
+
+            lv__i = 0;
+            DialogCreate(400, 750, c_anchorTopRight, 20, 50, true);
+            gv_kickplayerlistdialog[lv__p] = DialogLastCreated();
+            auto3330C1F6_g = gv_activedefenders;
+            lv__kickplayer = -1;
+            while (true) {
+                lv__kickplayer = PlayerGroupNextPlayer(auto3330C1F6_g, lv__kickplayer);
+                if (lv__kickplayer < 0) { break; }
+                if ((lv__kickplayer != lv__p)) {
+                    lv__kickplayername = PlayerName(lv__kickplayer);
+                    if (lib1_gf_istrue(gv_testingmultiplayerlocally)) {
+                        TextExpressionSetToken("Param/Expression/1E71C629", "kick_player", IntToText(lv__kickplayer));
+                        lv__kickplayername = TextExpressionAssemble("Param/Expression/1E71C629");
+                    }
+
+                    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 350, 50, c_anchorTop, 0, (25 + (lv__i * 60)), StringToText(""), lv__kickplayername, "");
+                    gv_kickplayerlistdiplayer[lv__p][lv__kickplayer] = DialogControlLastCreated();
+                    lv__i = lv__i + 1;
+                }
+
+            }
+            DialogSetSize(gv_kickplayerlistdialog[lv__p], 400, (25 + (lv__i * 60) + 75));
+            libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 350, 50, c_anchorBottom, 0, 25, StringToText(""), StringExternal("Param/Value/EFD827C1"), "");
+            gv_kickplayerlistdicancel[lv__p] = DialogControlLastCreated();
+            if (lib1_gf_istrue(lv__dialogwasvisible)) {
+                DialogSetVisible(gv_kickplayerlistdialog[lv__p], PlayerGroupSingle(lv__p), true);
+            }
+
+        }
+    }
+
+}
+
+void gf_startkickvoteforplayer (int lp_initiatedbyplayer, int lp_kickplayer) {
+    // Variable Declarations
+    int lv__p;
+
+    // Automatic Variable Declarations
+    playergroup auto8EDB22B6_g;
+    playergroup autoF0099513_g;
+
+    // Variable Initialization
+
+    // Implementation
+    gv_kickplayervoteinprogress = true;
+    gv_kickplayervotewascast[lp_initiatedbyplayer] = true;
+    gv_kickplayervotewascast[lp_kickplayer] = true;
+    auto8EDB22B6_g = gv_activedefenders;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(auto8EDB22B6_g, lv__p);
+        if (lv__p < 0) { break; }
+        DialogSetVisible(gv_kickplayerlistdialog[lv__p], PlayerGroupAll(), false);
+    }
+    DialogSetVisible(gv_startvotetokickplayerdialog, PlayerGroupAll(), false);
+    TextExpressionSetToken("Param/Expression/27B4B0E7", "kick_player_name", PlayerName(lp_kickplayer));
+    DialogSetTitle(gv_kickplayervotedialog, TextExpressionAssemble("Param/Expression/27B4B0E7"));
+    TextExpressionSetToken("Param/Expression/B019B228", "kick_player_name", PlayerName(lp_kickplayer));
+    DialogSetTitle(gv_kickplayervoteinprogressdialog, TextExpressionAssemble("Param/Expression/B019B228"));
+    if (lib1_gf_istrue(gv_testingmultiplayerlocally)) {
+        TextExpressionSetToken("Param/Expression/32293807", "kick_player", IntToText(lp_kickplayer));
+        DialogSetTitle(gv_kickplayervoteinprogressdialog, TextExpressionAssemble("Param/Expression/32293807"));
+        TextExpressionSetToken("Param/Expression/AA03E1AD", "kick_player", IntToText(lp_kickplayer));
+        DialogSetTitle(gv_kickplayervotedialog, TextExpressionAssemble("Param/Expression/AA03E1AD"));
+    }
+
+    DialogSetVisible(gv_kickplayervoteinprogressdialog, PlayerGroupSingle(lp_initiatedbyplayer), true);
+    DialogSetVisible(gv_kickplayervoteinprogressdialog, PlayerGroupSingle(lp_kickplayer), true);
+    autoF0099513_g = gv_activedefenders;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(autoF0099513_g, lv__p);
+        if (lv__p < 0) { break; }
+        if ((lv__p != lp_initiatedbyplayer) && (lv__p != lp_kickplayer)) {
+            DialogSetVisible(gv_kickplayervotedialog, PlayerGroupSingle(lv__p), true);
+        }
+
+    }
+    if (lib1_gf_istrue(gv_testingmultiplayerlocally)) {
+        TimerStart(gv_kickplayervotetimer, 10.0, false, c_timeReal);
+    }
+    else {
+        TimerStart(gv_kickplayervotetimer, 60.0, false, c_timeReal);
+    }
+}
+
+void gf_showvoteresults () {
+    // Variable Declarations
+    int lv__p;
+    int lv__votevaluethreshold;
+    text lv__voteresulttext;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__votevaluethreshold = gf_getvotevaluethreshold();
+
+    // Implementation
+    gv_kickplayervoteinprogress = false;
+    if ((gv_kickplayervotevalue >= lv__votevaluethreshold)) {
+        lv__voteresulttext = StringExternal("Param/Value/F4D146E3");
+        GameOver(gv_playerbeingvotedontokick, c_gameOverDefeat, true, true);
+        gf_removeplayer(gv_playerbeingvotedontokick);
+    }
+    else {
+        if (lib1_gf_istrue(gv_testingmultiplayerlocally)) {
+            TimerStart(gv_kickplayervotespamtimer[gv_playerwhoinitiatedvote], 10.0, false, c_timeReal);
+        }
+        else {
+            TimerStart(gv_kickplayervotespamtimer[gv_playerwhoinitiatedvote], 300.0, false, c_timeReal);
+        }
+        libNtve_gf_SetDialogItemTooltip(gv_startvotetokickplayerdibutton, StringExternal("Param/Value/60E74339"), PlayerGroupSingle(gv_playerwhoinitiatedvote));
+        DialogControlSetEnabled(gv_startvotetokickplayerdibutton, PlayerGroupSingle(gv_playerwhoinitiatedvote), false);
+        lv__voteresulttext = StringExternal("Param/Value/51E8C133");
+    }
+    TextExpressionSetToken("Param/Expression/E7D75A99", "result", lv__voteresulttext);
+    TextExpressionSetToken("Param/Expression/E7D75A99", "value", IntToText(gv_kickplayervotevalue));
+    TextExpressionSetToken("Param/Expression/E7D75A99", "threshold", IntToText(lv__votevaluethreshold));
+    DialogSetTitle(gv_kickplayervoteresultsdialog, TextExpressionAssemble("Param/Expression/E7D75A99"));
+    DialogSetVisible(gv_kickplayervoteresultsdialog, PlayerGroupAll(), true);
+    gf_resetvotestate();
+}
+
+int gf_getvotevaluethreshold () {
+    // Automatic Variable Declarations
+    int autoE5A7EBD6_val;
+
+    // Implementation
+    autoE5A7EBD6_val = PlayerGroupCount(gv_activedefenders);
+    if (autoE5A7EBD6_val == 3) {
+        return 1;
+    }
+    else if (autoE5A7EBD6_val == 4) {
+        return 2;
+    }
+    else if (autoE5A7EBD6_val == 5) {
+        return 2;
+    }
+    else if (autoE5A7EBD6_val == 6) {
+        return 2;
+    }
+    else if (autoE5A7EBD6_val == 7) {
+        return 3;
+    }
+    else if (autoE5A7EBD6_val == 8) {
+        return 3;
+    }
+    else {
+        return -1;
+    }
+}
+
 bool gf_unitisbuilder (unit lp_u) {
     // Automatic Variable Declarations
     // Implementation
@@ -3375,6 +3735,16 @@ void gf_removeplayer (int lp_p) {
     }
     gf_skipforplayeriftimerisactive(lp_p);
     gf_updateactivepathtests();
+    if (lib1_gf_istrue(gv_kickplayervoteinprogress)) {
+        if ((gv_playerbeingvotedontokick == lp_p)) {
+            gf_handleplayerleavingwhowasbeingvotedon();
+        }
+        else {
+            gf_castkickvote(lp_p, 0);
+        }
+    }
+
+    gf_setkickvoteplayerlist();
 }
 
 void gf_startallenemyghostspawnlocations () {
@@ -3999,6 +4369,7 @@ bool gt_initmap_Func (bool testConds, bool runActions) {
     gf_initenemymods();
     gf_initenemyshowcase();
     gf_initpathtesters();
+    gf_initvotetokickplayerdialogs();
     return true;
 }
 
@@ -4317,6 +4688,264 @@ void gt_testpaths_Init () {
     TriggerAddEventUnitCreated(gt_testpaths, null, "BuildZergHd", null);
     TriggerAddEventUnitCreated(gt_testpaths, null, "BuildTerranHd", null);
     TriggerAddEventUnitCreated(gt_testpaths, null, "BuildProtossHd", null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: show kick player list
+//--------------------------------------------------------------------------------------------------
+bool gt_showkickplayerlist_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+    int lv__di;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__p = EventPlayer();
+    lv__di = EventDialogControl();
+
+    // Conditions
+    if (testConds) {
+        if (!((lv__di == gv_startvotetokickplayerdibutton))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogSetVisible(gv_startvotetokickplayerdialog, PlayerGroupSingle(lv__p), false);
+    DialogSetVisible(gv_kickplayerlistdialog[lv__p], PlayerGroupSingle(lv__p), true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_showkickplayerlist_Init () {
+    gt_showkickplayerlist = TriggerCreate("gt_showkickplayerlist_Func");
+    TriggerAddEventDialogControl(gt_showkickplayerlist, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: kick player list - cancel
+//--------------------------------------------------------------------------------------------------
+bool gt_kickplayerlistcancel_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+    int lv__di;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__p = EventPlayer();
+    lv__di = EventDialogControl();
+
+    // Conditions
+    if (testConds) {
+        if (!((lv__di == gv_kickplayerlistdicancel[lv__p]))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogSetVisible(gv_startvotetokickplayerdialog, PlayerGroupSingle(lv__p), true);
+    DialogSetVisible(gv_kickplayerlistdialog[lv__p], PlayerGroupSingle(lv__p), false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_kickplayerlistcancel_Init () {
+    gt_kickplayerlistcancel = TriggerCreate("gt_kickplayerlistcancel_Func");
+    TriggerAddEventDialogControl(gt_kickplayerlistcancel, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: kick player list - choose player
+//--------------------------------------------------------------------------------------------------
+bool gt_kickplayerlistchooseplayer_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+    int lv__di;
+    int lv__kickplayer;
+
+    // Automatic Variable Declarations
+    const int auto0299985E_ae = 7;
+    const int auto0299985E_ai = 1;
+
+    // Variable Initialization
+    lv__p = EventPlayer();
+    lv__di = EventDialogControl();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv__kickplayer = 0;
+    for ( ; ( (auto0299985E_ai >= 0 && lv__kickplayer <= auto0299985E_ae) || (auto0299985E_ai < 0 && lv__kickplayer >= auto0299985E_ae) ) ; lv__kickplayer += auto0299985E_ai ) {
+        if ((lv__di == gv_kickplayerlistdiplayer[lv__p][lv__kickplayer])) {
+            gv_playerbeingvotedontokick = lv__kickplayer;
+            gv_playerwhoinitiatedvote = lv__p;
+            gf_startkickvoteforplayer(lv__p, lv__kickplayer);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_kickplayerlistchooseplayer_Init () {
+    gt_kickplayerlistchooseplayer = TriggerCreate("gt_kickplayerlistchooseplayer_Func");
+    TriggerAddEventDialogControl(gt_kickplayerlistchooseplayer, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: cast kick vote
+//--------------------------------------------------------------------------------------------------
+bool gt_castkickvote_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+    int lv__di;
+
+    // Automatic Variable Declarations
+    int auto931BA943_val;
+
+    // Variable Initialization
+    lv__p = EventPlayer();
+    lv__di = EventDialogControl();
+
+    // Conditions
+    if (testConds) {
+        if (!(((lv__di == gv_kickplayervotediyes) || (lv__di == gv_kickplayervotedino) || (lv__di == gv_kickplayervotedimeh)))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto931BA943_val = lv__di;
+    if (auto931BA943_val == gv_kickplayervotediyes) {
+        gf_castkickvote(lv__p, 1);
+    }
+    else if (auto931BA943_val == gv_kickplayervotedino) {
+        gf_castkickvote(lv__p, -1);
+    }
+    else {
+        gf_castkickvote(lv__p, 0);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_castkickvote_Init () {
+    gt_castkickvote = TriggerCreate("gt_castkickvote_Func");
+    TriggerAddEventDialogControl(gt_castkickvote, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: close vote results
+//--------------------------------------------------------------------------------------------------
+bool gt_closevoteresults_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+    int lv__di;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__p = EventPlayer();
+    lv__di = EventDialogControl();
+
+    // Conditions
+    if (testConds) {
+        if (!((lv__di == gv_kickplayervoteresultsdiclose))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogSetVisible(gv_kickplayervoteresultsdialog, PlayerGroupSingle(lv__p), false);
+    if ((PlayerGroupCount(gv_activedefenders) > 2)) {
+        DialogSetVisible(gv_startvotetokickplayerdialog, PlayerGroupSingle(lv__p), true);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_closevoteresults_Init () {
+    gt_closevoteresults = TriggerCreate("gt_closevoteresults_Func");
+    TriggerAddEventDialogControl(gt_closevoteresults, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: spam timer expires
+//--------------------------------------------------------------------------------------------------
+bool gt_spamtimerexpires_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+
+    // Automatic Variable Declarations
+    const int autoAF4ECC4F_ae = 8;
+    const int autoAF4ECC4F_ai = 1;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv__p = 1;
+    for ( ; ( (autoAF4ECC4F_ai >= 0 && lv__p <= autoAF4ECC4F_ae) || (autoAF4ECC4F_ai < 0 && lv__p >= autoAF4ECC4F_ae) ) ; lv__p += autoAF4ECC4F_ai ) {
+        if ((EventTimer() == gv_kickplayervotespamtimer[lv__p])) {
+            gf_reenablestartvotebutton(lv__p);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_spamtimerexpires_Init () {
+    gt_spamtimerexpires = TriggerCreate("gt_spamtimerexpires_Func");
+    TriggerAddEventTimer(gt_spamtimerexpires, gv_kickplayervotespamtimer[1]);
+    TriggerAddEventTimer(gt_spamtimerexpires, gv_kickplayervotespamtimer[2]);
+    TriggerAddEventTimer(gt_spamtimerexpires, gv_kickplayervotespamtimer[3]);
+    TriggerAddEventTimer(gt_spamtimerexpires, gv_kickplayervotespamtimer[4]);
+    TriggerAddEventTimer(gt_spamtimerexpires, gv_kickplayervotespamtimer[5]);
+    TriggerAddEventTimer(gt_spamtimerexpires, gv_kickplayervotespamtimer[6]);
+    TriggerAddEventTimer(gt_spamtimerexpires, gv_kickplayervotespamtimer[7]);
+    TriggerAddEventTimer(gt_spamtimerexpires, gv_kickplayervotespamtimer[8]);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: vote timer expires
+//--------------------------------------------------------------------------------------------------
+bool gt_votetimerexpires_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_showvoteresults();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_votetimerexpires_Init () {
+    gt_votetimerexpires = TriggerCreate("gt_votetimerexpires_Func");
+    TriggerAddEventTimer(gt_votetimerexpires, gv_kickplayervotetimer);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -4886,42 +5515,6 @@ void gt_rallyunitchooser_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: kick
-//--------------------------------------------------------------------------------------------------
-bool gt_kick_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!(lib1_gf_isdebugginglocally())) {
-            return false;
-        }
-
-        if (!(lib1_gf_istesting())) {
-            return false;
-        }
-
-        if (!(lib1_gf_istrue(gv_testingmultiplayerlocally))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    GameOver(2, c_gameOverDefeat, false, false);
-    gf_removeplayer(2);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_kick_Init () {
-    gt_kick = TriggerCreate("gt_kick_Func");
-    TriggerAddEventChatMessage(gt_kick, c_playerAny, "-kick p2", true);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: change race
 //--------------------------------------------------------------------------------------------------
 bool gt_changerace_Func (bool testConds, bool runActions) {
@@ -4966,6 +5559,123 @@ void gt_changerace_Init () {
     TriggerAddEventChatMessage(gt_changerace, c_playerAny, "-change race to terran", true);
     TriggerAddEventChatMessage(gt_changerace, c_playerAny, "-change race to zerg", true);
     TriggerAddEventChatMessage(gt_changerace, c_playerAny, "-change race to protoss", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: kick
+//--------------------------------------------------------------------------------------------------
+bool gt_kick_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    string auto200ECF1E_val;
+
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_isdebugginglocally())) {
+            return false;
+        }
+
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+
+        if (!(lib1_gf_istrue(gv_testingmultiplayerlocally))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib1_gf_displaydebugmessage(StringExternal("Param/Value/787F09A4"));
+    auto200ECF1E_val = EventChatMessage(false);
+    if (auto200ECF1E_val == "-kick p2") {
+        GameOver(2, c_gameOverDefeat, false, false);
+        gf_removeplayer(2);
+    }
+    else if (auto200ECF1E_val == "-kick p3") {
+        GameOver(3, c_gameOverDefeat, false, false);
+        gf_removeplayer(3);
+    }
+    else if (auto200ECF1E_val == "-kick p4") {
+        GameOver(4, c_gameOverDefeat, false, false);
+        gf_removeplayer(4);
+    }
+    else {
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_kick_Init () {
+    gt_kick = TriggerCreate("gt_kick_Func");
+    TriggerAddEventChatMessage(gt_kick, c_playerAny, "-kick p2", true);
+    TriggerAddEventChatMessage(gt_kick, c_playerAny, "-kick p3", true);
+    TriggerAddEventChatMessage(gt_kick, c_playerAny, "-kick p4", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: test cast kick vote
+//--------------------------------------------------------------------------------------------------
+bool gt_testcastkickvote_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    string autoA7D742DB_val;
+
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_isdebugginglocally())) {
+            return false;
+        }
+
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+
+        if (!(lib1_gf_istrue(gv_testingmultiplayerlocally))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib1_gf_displaydebugmessage(StringExternal("Param/Value/BC73E655"));
+    autoA7D742DB_val = EventChatMessage(false);
+    if (autoA7D742DB_val == "-vote yes p2") {
+        gf_castkickvote(3, 1);
+    }
+    else if (autoA7D742DB_val == "-vote meh p2") {
+        gf_castkickvote(3, 0);
+    }
+    else if (autoA7D742DB_val == "-vote no p2") {
+        gf_castkickvote(3, -1);
+    }
+    else if (autoA7D742DB_val == "-vote yes p3") {
+        gf_castkickvote(2, 1);
+    }
+    else if (autoA7D742DB_val == "-vote meh p3") {
+        gf_castkickvote(2, 0);
+    }
+    else if (autoA7D742DB_val == "-vote no p3") {
+        gf_castkickvote(2, -1);
+    }
+    else {
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_testcastkickvote_Init () {
+    gt_testcastkickvote = TriggerCreate("gt_testcastkickvote_Func");
+    TriggerAddEventChatMessage(gt_testcastkickvote, c_playerAny, "-vote yes p2", true);
+    TriggerAddEventChatMessage(gt_testcastkickvote, c_playerAny, "-vote meh p2", true);
+    TriggerAddEventChatMessage(gt_testcastkickvote, c_playerAny, "-vote no p2", true);
+    TriggerAddEventChatMessage(gt_testcastkickvote, c_playerAny, "-vote yes p3", true);
+    TriggerAddEventChatMessage(gt_testcastkickvote, c_playerAny, "-vote meh p3", true);
+    TriggerAddEventChatMessage(gt_testcastkickvote, c_playerAny, "-vote no p3", true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -5786,6 +6496,13 @@ void InitTriggers () {
     gt_choosespawnlocationleft_Init();
     gt_choosespawnlocationtopleft_Init();
     gt_testpaths_Init();
+    gt_showkickplayerlist_Init();
+    gt_kickplayerlistcancel_Init();
+    gt_kickplayerlistchooseplayer_Init();
+    gt_castkickvote_Init();
+    gt_closevoteresults_Init();
+    gt_spamtimerexpires_Init();
+    gt_votetimerexpires_Init();
     gt_upgradespinecrawlerdamage_Init();
     gt_upgradebunkerturretdamage_Init();
     gt_upgradephotoncannondamage_Init();
@@ -5802,8 +6519,9 @@ void InitTriggers () {
     gt_movespawnflag_Init();
     gt_clearrallyunitchooser_Init();
     gt_rallyunitchooser_Init();
-    gt_kick_Init();
     gt_changerace_Init();
+    gt_kick_Init();
+    gt_testcastkickvote_Init();
     gt_autoskip_Init();
     gt_choosetop_Init();
     gt_choosetopright_Init();
