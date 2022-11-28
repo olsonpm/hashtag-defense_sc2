@@ -1959,7 +1959,7 @@ void gf_initattributebuffsperlocationandrace () {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran][0] = "IncreaseVsLightStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran][1] = "IncreaseVsBiologicalStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsBossStandardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][1] = "IncreaseVsBossStandardAttributeDamageHd";
     }
     else {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_terran][0] = "IncreaseVsArmoredHardAttributeDamageHd";
@@ -1971,7 +1971,7 @@ void gf_initattributebuffsperlocationandrace () {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran][0] = "IncreaseVsLightHardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran][1] = "IncreaseVsBiologicalHardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsBossHardAttributeDamageHd";
+        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][1] = "IncreaseVsBossHardAttributeDamageHd";
     }
     if (lib1_gf_or2((gv_gameattributedifficulty == ge_gameattributedifficulty_beginner), (gv_gameattributedifficulty == ge_gameattributedifficulty_standard))) {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_zerg][0] = "IncreaseVsArmoredStandardAttributeDamageHd";

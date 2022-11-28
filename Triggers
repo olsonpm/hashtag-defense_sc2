@@ -12310,7 +12310,7 @@
         <Preset Type="PresetValue" Library="1" Id="C56712A9"/>
     </Element>
     <Element Type="Param" Id="7FD861D5">
-        <Value>0</Value>
+        <Value>1</Value>
         <ValueType Type="int"/>
     </Element>
     <Element Type="Param" Id="98258D34">
@@ -12600,7 +12600,7 @@
         <Preset Type="PresetValue" Library="1" Id="C56712A9"/>
     </Element>
     <Element Type="Param" Id="4152DA31">
-        <Value>0</Value>
+        <Value>1</Value>
         <ValueType Type="int"/>
     </Element>
     <Element Type="Param" Id="FF4C01D3">
