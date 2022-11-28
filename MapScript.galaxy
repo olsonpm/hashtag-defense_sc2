@@ -3819,8 +3819,7 @@ void gf_startallenemyghostspawnlocations () {
 void gf_startenemyghostspawnatlocation (int lp_location) {
     // Automatic Variable Declarations
     // Implementation
-    TimerStart(gv_enemyghostspawntimer[lp_location], gv_secondsbetweenghostspawn, true, c_timeReal);
-    gf_spawnenemyghostsatlocation(lp_location);
+    TimerStart(gv_enemyghostspawntimer[lp_location], 1.0, false, c_timeReal);
 }
 
 void gf_stopandclearenemyghostspawn () {
@@ -6464,6 +6463,7 @@ bool gt_spawnenemyghosts_Func (bool testConds, bool runActions) {
     }
     else {
     }
+    TimerStart(EventTimer(), gv_secondsbetweenghostspawn, false, c_timeReal);
     return true;
 }
 
