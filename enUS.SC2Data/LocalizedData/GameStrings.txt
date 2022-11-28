@@ -41,6 +41,7 @@ Attribute001/Value004/Name=Nonstop
 Attribute002/Name=Difficulty
 Attribute002/Value001/Name=Standard
 Attribute002/Value002/Desc=Standard + 
+Attribute002/Value002/Name=Beginner
 Attribute002/Value003/Desc=Mods are buffed by 10%.  Enemies get +10% health.  Positive player attribute damages (e.g. +dmg vs Light units) are bumped by 10%
 Attribute002/Value003/Name=Hard
 Attribute002/Value004/Desc=ay not be possible

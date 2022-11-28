@@ -1228,8 +1228,9 @@ const int ge_enemyspawnpathsegments_spawnbotsegment2 = 14;
 const int ge_enemyspawnpathsegments_spawnleftsegment2 = 15;
 const int ge_gameattributeaddmodstoallrounds_yes = 0;
 const int ge_gameattributeaddmodstoallrounds_no = 1;
-const int ge_gameattributedifficulty_standard = 0;
-const int ge_gameattributedifficulty_hard = 1;
+const int ge_gameattributedifficulty_beginner = 0;
+const int ge_gameattributedifficulty_standard = 1;
+const int ge_gameattributedifficulty_hard = 2;
 const int ge_gameattributeroundtimer_none = 0;
 const int ge_gameattributeroundtimer_default = 1;
 const int ge_gameattributeroundtimer_quick = 2;
@@ -1924,7 +1925,7 @@ void gf_initalliance () {
 void gf_initattributebuffsperlocationandrace () {
     // Automatic Variable Declarations
     // Implementation
-    if ((gv_gameattributedifficulty == ge_gameattributedifficulty_standard)) {
+    if (lib1_gf_or2((gv_gameattributedifficulty == ge_gameattributedifficulty_beginner), (gv_gameattributedifficulty == ge_gameattributedifficulty_standard))) {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_protoss][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_protoss][0] = "IncreaseVsLightStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_protoss][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
@@ -1948,7 +1949,7 @@ void gf_initattributebuffsperlocationandrace () {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss][1] = "IncreaseVsBossHardAttributeDamageHd";
     }
-    if ((gv_gameattributedifficulty == ge_gameattributedifficulty_standard)) {
+    if (lib1_gf_or2((gv_gameattributedifficulty == ge_gameattributedifficulty_beginner), (gv_gameattributedifficulty == ge_gameattributedifficulty_standard))) {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_terran][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_terran][0] = "IncreaseVsLightStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_terran][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
@@ -1972,7 +1973,7 @@ void gf_initattributebuffsperlocationandrace () {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsBossHardAttributeDamageHd";
     }
-    if ((gv_gameattributedifficulty == ge_gameattributedifficulty_standard)) {
+    if (lib1_gf_or2((gv_gameattributedifficulty == ge_gameattributedifficulty_beginner), (gv_gameattributedifficulty == ge_gameattributedifficulty_standard))) {
         gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_zerg][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_zerg][0] = "IncreaseVsLightStandardAttributeDamageHd";
         gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_zerg][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
@@ -2218,7 +2219,7 @@ void gf_initenemymaxhealthandshield () {
     int init_i;
 
     // Variable Declarations
-    string[5] lv__catalogfieldpathstomodify;
+    string[7] lv__catalogfieldpathstomodify;
     string lv__enemyid;
     string lv__fieldpath;
     int lv__i;
@@ -2228,6 +2229,22 @@ void gf_initenemymaxhealthandshield () {
     int[3] lv__playerstomodify;
 
     // Automatic Variable Declarations
+    const int autoCDE96088_ae = 1;
+    const int autoCDE96088_ai = 1;
+    const int auto2EE68CDD_ae = 3;
+    const int auto2EE68CDD_ai = 1;
+    const int auto261FFFE3_ae = 49;
+    const int auto261FFFE3_ai = 1;
+    const int auto391B7EFA_ae = 1;
+    const int auto391B7EFA_ai = 1;
+    const int auto5B122A43_ae = 3;
+    const int auto5B122A43_ai = 1;
+    const int autoD274128F_ae = 49;
+    const int autoD274128F_ai = 1;
+    const int autoB7F53D77_ae = 5;
+    const int autoB7F53D77_ai = 1;
+    const int auto0C94AF72_ae = 49;
+    const int auto0C94AF72_ai = 1;
     const int autoDDA5AA16_ae = 1;
     const int autoDDA5AA16_ai = 1;
     const int autoB71168CE_ae = 3;
@@ -2236,27 +2253,29 @@ void gf_initenemymaxhealthandshield () {
     const int auto2641D821_ai = 1;
 
     // Variable Initialization
-    for (init_i = 0; init_i <= 4; init_i += 1) {
+    for (init_i = 0; init_i <= 6; init_i += 1) {
         lv__catalogfieldpathstomodify[init_i] = "";
     }
     lv__enemyid = "";
     lv__fieldpath = "";
 
     // Implementation
+    lv__catalogfieldpathstomodify[0] = "LifeMax";
+    lv__catalogfieldpathstomodify[1] = "LifeStart";
+    lv__catalogfieldpathstomodify[2] = "ShieldsMax";
+    lv__catalogfieldpathstomodify[3] = "ShieldsStart";
+    lv__catalogfieldpathstomodify[4] = "LifeArmor";
+    lv__catalogfieldpathstomodify[5] = "ShieldArmor";
+    lv__playerstomodify[0] = gv_allycompplayer;
+    lv__playerstomodify[1] = gv_enemyplayer;
     if ((gv_gameattributedifficulty == ge_gameattributedifficulty_hard)) {
-        lv__catalogfieldpathstomodify[0] = "LifeMax";
-        lv__catalogfieldpathstomodify[1] = "LifeStart";
-        lv__catalogfieldpathstomodify[2] = "ShieldsMax";
-        lv__catalogfieldpathstomodify[3] = "ShieldsStart";
-        lv__playerstomodify[0] = gv_allycompplayer;
-        lv__playerstomodify[1] = gv_enemyplayer;
         lv__i = 0;
-        for ( ; ( (autoDDA5AA16_ai >= 0 && lv__i <= autoDDA5AA16_ae) || (autoDDA5AA16_ai < 0 && lv__i >= autoDDA5AA16_ae) ) ; lv__i += autoDDA5AA16_ai ) {
+        for ( ; ( (autoCDE96088_ai >= 0 && lv__i <= autoCDE96088_ae) || (autoCDE96088_ai < 0 && lv__i >= autoCDE96088_ae) ) ; lv__i += autoCDE96088_ai ) {
             lv__p = lv__playerstomodify[lv__i];
             lv__j = 0;
-            for ( ; ( (autoB71168CE_ai >= 0 && lv__j <= autoB71168CE_ae) || (autoB71168CE_ai < 0 && lv__j >= autoB71168CE_ae) ) ; lv__j += autoB71168CE_ai ) {
+            for ( ; ( (auto2EE68CDD_ai >= 0 && lv__j <= auto2EE68CDD_ae) || (auto2EE68CDD_ai < 0 && lv__j >= auto2EE68CDD_ae) ) ; lv__j += auto2EE68CDD_ai ) {
                 lv__k = 0;
-                for ( ; ( (auto2641D821_ai >= 0 && lv__k <= auto2641D821_ae) || (auto2641D821_ai < 0 && lv__k >= auto2641D821_ae) ) ; lv__k += auto2641D821_ai ) {
+                for ( ; ( (auto261FFFE3_ai >= 0 && lv__k <= auto261FFFE3_ae) || (auto261FFFE3_ai < 0 && lv__k >= auto261FFFE3_ae) ) ; lv__k += auto261FFFE3_ai ) {
                     lv__enemyid = gv_enemyids[lv__k];
                     lv__fieldpath = lv__catalogfieldpathstomodify[lv__j];
                     CatalogFieldValueModify(c_gameCatalogUnit, (lv__enemyid), (lv__fieldpath), lv__p, "1.1", c_upgradeOperationMultiply);
@@ -2264,7 +2283,30 @@ void gf_initenemymaxhealthandshield () {
             }
         }
     }
-
+    else if ((gv_gameattributedifficulty == ge_gameattributedifficulty_beginner)) {
+        lv__i = 0;
+        for ( ; ( (auto391B7EFA_ai >= 0 && lv__i <= auto391B7EFA_ae) || (auto391B7EFA_ai < 0 && lv__i >= auto391B7EFA_ae) ) ; lv__i += auto391B7EFA_ai ) {
+            lv__p = lv__playerstomodify[lv__i];
+            lv__j = 0;
+            for ( ; ( (auto5B122A43_ai >= 0 && lv__j <= auto5B122A43_ae) || (auto5B122A43_ai < 0 && lv__j >= auto5B122A43_ae) ) ; lv__j += auto5B122A43_ai ) {
+                lv__k = 0;
+                for ( ; ( (autoD274128F_ai >= 0 && lv__k <= autoD274128F_ae) || (autoD274128F_ai < 0 && lv__k >= autoD274128F_ae) ) ; lv__k += autoD274128F_ai ) {
+                    lv__enemyid = gv_enemyids[lv__k];
+                    lv__fieldpath = lv__catalogfieldpathstomodify[lv__j];
+                    CatalogFieldValueModify(c_gameCatalogUnit, (lv__enemyid), (lv__fieldpath), lv__p, "0.7", c_upgradeOperationMultiply);
+                }
+            }
+            lv__j = 4;
+            for ( ; ( (autoB7F53D77_ai >= 0 && lv__j <= autoB7F53D77_ae) || (autoB7F53D77_ai < 0 && lv__j >= autoB7F53D77_ae) ) ; lv__j += autoB7F53D77_ai ) {
+                lv__k = 0;
+                for ( ; ( (auto0C94AF72_ai >= 0 && lv__k <= auto0C94AF72_ae) || (auto0C94AF72_ai < 0 && lv__k >= auto0C94AF72_ae) ) ; lv__k += auto0C94AF72_ai ) {
+                    lv__enemyid = gv_enemyids[lv__k];
+                    lv__fieldpath = lv__catalogfieldpathstomodify[lv__j];
+                    CatalogFieldValueModify(c_gameCatalogUnit, (lv__enemyid), (lv__fieldpath), lv__p, "0.5", c_upgradeOperationMultiply);
+                }
+            }
+        }
+    }
 }
 
 void gf_initenemymodpoints () {
@@ -2576,7 +2618,10 @@ void gf_initgameattributevars () {
 
     // Implementation
     auto63B48E0E_val = GameAttributeGameValue("2");
-    if (auto63B48E0E_val == "0001") {
+    if (auto63B48E0E_val == "0002") {
+        gv_gameattributedifficulty = ge_gameattributedifficulty_beginner;
+    }
+    else if (auto63B48E0E_val == "0001") {
         gv_gameattributedifficulty = ge_gameattributedifficulty_standard;
     }
     else if (auto63B48E0E_val == "0003") {
@@ -2686,7 +2731,7 @@ void gf_initmodtypedice () {
 void gf_initmodtypetobuff () {
     // Automatic Variable Declarations
     // Implementation
-    if ((gv_gameattributedifficulty == ge_gameattributedifficulty_standard)) {
+    if (((gv_gameattributedifficulty == ge_gameattributedifficulty_beginner) || (gv_gameattributedifficulty == ge_gameattributedifficulty_standard))) {
         gv_modtypetobuff[ge_modtypes_addshields] = "AddedShieldsStandardModHd";
         gv_modtypetobuff[ge_modtypes_addarmor] = "AddedArmorStandardModHd";
         gv_modtypetobuff[ge_modtypes_increasespeed] = "IncreaseSpeedStandardModHd";
