@@ -65,6 +65,7 @@ bool lib1_gf_triggeringunitisoftype (string lp_t);
 bool lib1_gf_unitisalive (unit lp_u);
 bool lib1_gf_unitistype (unit lp_u, string lp_ut);
 bool lib1_gf_convertbooltoenabledisableoption (bool lp_bool);
+text lib1_gf_convertbooltoonoff (bool lp_bool);
 unit lib1_gf_findoneunitbytypeforplayer (string lp_unittype, int lp_p);
 int lib1_gf_foraregionsetunitsingroupsofNforplayerthenreturnthenumberofgroupsfound (region lp_r, int lp_p, int lp_n, string lp_unittype);
 text lib1_gf_getabililtystageastext (int lp_stage);
@@ -302,6 +303,17 @@ bool lib1_gf_convertbooltoenabledisableoption (bool lp_bool) {
     }
     else {
         return false;
+    }
+}
+
+text lib1_gf_convertbooltoonoff (bool lp_bool) {
+    // Automatic Variable Declarations
+    // Implementation
+    if (lib1_gf_istrue(lp_bool)) {
+        return StringExternal("Param/Value/lib_1_EE7F86C0");
+    }
+    else {
+        return StringExternal("Param/Value/lib_1_33A9FDCD");
     }
 }
 
@@ -1323,6 +1335,7 @@ int gv_kickplayervotevalue;
 bool[10] gv_kickplayervotewascast;
 unit[10] gv_invisiblewaypointchooserperplayer;
 int[9][3] gv_locationandsublocationtoenemypathlocation;
+int[9] gv_locationtoplayer;
 int[16] gv_modtypedice;
 int gv_modtypedicelastindex;
 string[6] gv_modtypetomodunittype;
@@ -1334,9 +1347,10 @@ bool[9] gv_pathtestsegmenttoactivepath;
 gs_playerbankinfo[9] gv_playerbankvars;
 bank[9] gv_playerbanks;
 int gv_playerbeingvotedontokick;
-bool[10] gv_playertoskipclicked;
 int[10] gv_playertodefenderlocation;
+bool[10] gv_playertoghostsenabled;
 int[10] gv_playertonumchoosersspent;
+bool[10] gv_playertoskipclicked;
 int gv_playerwhoinitiatedvote;
 int[26] gv_possibleenemyunitsperroundnumber;
 string[26][5] gv_possibleenemyunitsperroundunits;
@@ -1372,7 +1386,7 @@ void InitGlobals () {
     gv_maxextralives = 25;
     gv_roundtimer = TimerCreate();
     gv_secondsbeforefirstround = 120;
-    gv_secondsbetweenghostspawn = 7;
+    gv_secondsbetweenghostspawn = 10;
     gv_secondsbetweenrounds = 40;
     gv_activedefenders = PlayerGroupEmpty();
     gv_activedefendersplusallycomp = PlayerGroupEmpty();
@@ -1411,6 +1425,9 @@ void InitGlobals () {
     gv_modtypedicelastindex = 14;
     for (init_i = 0; init_i <= 9; init_i += 1) {
         gv_playertodefenderlocation[init_i] = -1;
+    }
+    for (init_i = 0; init_i <= 9; init_i += 1) {
+        gv_playertoghostsenabled[init_i] = true;
     }
     gv_rounddialog = c_invalidDialogId;
     gv_rounddialogitemlabel = c_invalidDialogControlId;
@@ -1587,6 +1604,7 @@ trigger gt_changerace;
 trigger gt_kick;
 trigger gt_testcastkickvote;
 trigger gt_autoskip;
+trigger gt_toggleghosts;
 trigger gt_choosetop;
 trigger gt_choosetopright;
 trigger gt_chooseright;
@@ -3103,6 +3121,7 @@ void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser)
     // Implementation
     lv__defendpoint = gv_defendpointperlocation[lp_defenderlocation];
     gv_playertodefenderlocation[lp_p] = lp_defenderlocation;
+    gv_locationtoplayer[lp_defenderlocation] = lp_p;
     gv_activedefenderlocations[lp_defenderlocation] = true;
     UIClearMessages(PlayerGroupSingle(lp_p), c_messageAreaAll);
     UnitRemove(gv_defendlocationbeaconperlocation[lp_defenderlocation]);
@@ -4216,6 +4235,7 @@ void gf_spawnenemyghostsatlocation (int lp_location) {
     // Variable Declarations
     point lv__enemyrallypoint;
     point lv__enemyspawnpoint;
+    int lv__p;
     string lv__spawnbehavior;
     int lv__spawnbehaviorlocation;
     fixed lv__staggerseconds;
@@ -4226,21 +4246,25 @@ void gf_spawnenemyghostsatlocation (int lp_location) {
     const int auto3CA5BEB0_ai = 1;
 
     // Variable Initialization
+    lv__p = gv_locationtoplayer[lp_location];
     lv__staggerseconds = (gv_initialsecondsbetweenenemies / 2);
 
     // Implementation
-    if (gf_isboss()) {
-        lv__staggerseconds = (lv__staggerseconds * 2);
+    if (lib1_gf_istrue(gv_playertoghostsenabled[lv__p])) {
+        if (gf_isboss()) {
+            lv__staggerseconds = (lv__staggerseconds * 2);
+        }
+
+        lv__sublocation = 0;
+        for ( ; ( (auto3CA5BEB0_ai >= 0 && lv__sublocation <= auto3CA5BEB0_ae) || (auto3CA5BEB0_ai < 0 && lv__sublocation >= auto3CA5BEB0_ae) ) ; lv__sublocation += auto3CA5BEB0_ai ) {
+            lv__spawnbehaviorlocation = gv_locationandsublocationtoenemypathlocation[lp_location][lv__sublocation];
+            lv__spawnbehavior = gv_spawnbehaviors[lv__spawnbehaviorlocation];
+            lv__enemyspawnpoint = gv_enemyspawnpointsperlocation[lp_location][lv__sublocation];
+            lv__enemyrallypoint = gv_enemyrallypointsperlocation[lp_location][lv__sublocation];
+            gf_spawnsingleenemy((lv__sublocation * lv__staggerseconds), gf_getcurrentmodtype(), lv__enemyrallypoint, lv__enemyspawnpoint, gf_getcurrentenemyunittypetospawn(), lv__spawnbehavior, true);
+        }
     }
 
-    lv__sublocation = 0;
-    for ( ; ( (auto3CA5BEB0_ai >= 0 && lv__sublocation <= auto3CA5BEB0_ae) || (auto3CA5BEB0_ai < 0 && lv__sublocation >= auto3CA5BEB0_ae) ) ; lv__sublocation += auto3CA5BEB0_ai ) {
-        lv__spawnbehaviorlocation = gv_locationandsublocationtoenemypathlocation[lp_location][lv__sublocation];
-        lv__spawnbehavior = gv_spawnbehaviors[lv__spawnbehaviorlocation];
-        lv__enemyspawnpoint = gv_enemyspawnpointsperlocation[lp_location][lv__sublocation];
-        lv__enemyrallypoint = gv_enemyrallypointsperlocation[lp_location][lv__sublocation];
-        gf_spawnsingleenemy((lv__sublocation * lv__staggerseconds), gf_getcurrentmodtype(), lv__enemyrallypoint, lv__enemyspawnpoint, gf_getcurrentenemyunittypetospawn(), lv__spawnbehavior, true);
-    }
 }
 
 trigger auto_gf_spawnsingleenemy_Trigger = null;
@@ -5750,7 +5774,7 @@ bool gt_autoskip_Func (bool testConds, bool runActions) {
     }
 
     gv_autoskipbyplayer[lv__p] = !(gv_autoskipbyplayer[lv__p]);
-    TextExpressionSetToken("Param/Expression/F3CACBA2", "autoskip", libNtve_gf_ConvertBooleanToText(gv_autoskipbyplayer[lv__p]));
+    TextExpressionSetToken("Param/Expression/F3CACBA2", "autoskip", lib1_gf_convertbooltoonoff(gv_autoskipbyplayer[lv__p]));
     lib1_gf_messageuser(TextExpressionAssemble("Param/Expression/F3CACBA2"), lv__p);
     return true;
 }
@@ -5759,6 +5783,34 @@ bool gt_autoskip_Func (bool testConds, bool runActions) {
 void gt_autoskip_Init () {
     gt_autoskip = TriggerCreate("gt_autoskip_Func");
     TriggerAddEventChatMessage(gt_autoskip, c_playerAny, "-autoskip", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: toggle ghosts
+//--------------------------------------------------------------------------------------------------
+bool gt_toggleghosts_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__p = EventPlayer();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gv_playertoghostsenabled[lv__p] = !(gv_playertoghostsenabled[lv__p]);
+    TextExpressionSetToken("Param/Expression/CB02BB58", "ghosts_enabled", lib1_gf_convertbooltoonoff(gv_playertoghostsenabled[lv__p]));
+    lib1_gf_messageuser(TextExpressionAssemble("Param/Expression/CB02BB58"), lv__p);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_toggleghosts_Init () {
+    gt_toggleghosts = TriggerCreate("gt_toggleghosts_Func");
+    TriggerAddEventChatMessage(gt_toggleghosts, c_playerAny, "-toggle ghosts", true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -6142,6 +6194,14 @@ bool gt_allenemiesgone_Func (bool testConds, bool runActions) {
     // Conditions
     if (testConds) {
         if (!(lib1_gf_isfalse(gv_isspawningenemies))) {
+            return false;
+        }
+
+        if (!(lib1_gf_isfalse(lib1_gf_timerisactive(gv_roundtimer)))) {
+            return false;
+        }
+
+        if (!(lib1_gf_istrue(gv_allplayershavechosenlocation))) {
             return false;
         }
 
@@ -6579,6 +6639,7 @@ void InitTriggers () {
     gt_kick_Init();
     gt_testcastkickvote_Init();
     gt_autoskip_Init();
+    gt_toggleghosts_Init();
     gt_choosetop_Init();
     gt_choosetopright_Init();
     gt_chooseright_Init();

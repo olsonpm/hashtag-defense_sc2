@@ -528,6 +528,7 @@ Param/Expression/32293807=Players are voting whether to kick Test Player ~kick_p
 Param/Expression/8097C5D0=1 / 2 = ~a~<n/>3 / 2 = ~b~
 Param/Expression/AA03E1AD=Kick Test Player ~kick_player~ ?
 Param/Expression/B019B228=Players are voting whether to kick ~kick_player_name~...
+Param/Expression/CB02BB58=ghosts toggled to: ~ghosts_enabled~
 Param/Expression/E7D75A99=Player ~result~ kicked ! (~value~/~threshold~)
 Param/Expression/EE5F32E3=<c val="~color_calamity~">Extra lives left: ~extra_lives_left~</c>
 Param/Expression/F3CACBA2=autoskip toggled to: ~autoskip~
@@ -565,6 +566,7 @@ Param/Value/lib_1_2C79D0B3=Effect3 - Cast
 Param/Value/lib_1_2E58CBA2=Build6 - Finish
 Param/Value/lib_1_3022E928=Morph03 - Actor Start
 Param/Value/lib_1_315E0491=Morph13 - Abilities Start
+Param/Value/lib_1_33A9FDCD=Off
 Param/Value/lib_1_367C28A1=Harvest1 - Approach Resource
 Param/Value/lib_1_36F8FDEE=Effect1 - Approach
 Param/Value/lib_1_411DDC33=Harvest5 - Wait for Drop Off
@@ -611,6 +613,7 @@ Param/Value/lib_1_D41AC1FC=Generic4 - Cancel
 Param/Value/lib_1_DDF50FE4=Attack3 - Loiter
 Param/Value/lib_1_E19B5790=Generic3 - Execute
 Param/Value/lib_1_E222F185=Morph08 - Collision End
+Param/Value/lib_1_EE7F86C0=On
 Param/Value/lib_1_F40CAC62=Build5 - Resume
 Param/Value/lib_1_F8914108=Effect5 - Finish
 Param/Value/lib_1_FF091B5E=Harvest4 - Wait to Return
