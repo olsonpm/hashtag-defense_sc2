@@ -109,8 +109,8 @@ Button/Tooltip/BossHybridDominatorEnemyHd=Powerful psionic attacker.<n/><n/><c v
 Button/Tooltip/BossKerriganEnemyHd=Kerrigan is a class 12 psionic. She commands god-like powers and cannot be killed with conventional weapons.
 Button/Tooltip/BossStoneZealotEnemyHd=Ancient guardian. You must destroy it to liberate the Artifact.
 Button/Tooltip/BossYagdraEnemyHd=Vile and dangerous Pack Leader who breathes acid, tunnels through the ground, and lays eggs.
-Button/Tooltip/BuildBunkerHd=Defensive structure. <n/>Infantry fights from inside. <n/><n/>
-Button/Tooltip/BuildSpineCrawlerZergHd=A wall that also attacks your enemies
+Button/Tooltip/BuildBunkerHd=A defensive structure with a turret that automatically attacks enemies.  Infantry can load in.
+Button/Tooltip/BuildSpineCrawlerZergHd=A defensive structure that automatically attacks enemies.
 Button/Tooltip/BuildWallProtossHd=A cheap yet sturdy 2x2 wall
 Button/Tooltip/BuildWallTerranHd=A cheap yet sturdy 2x2 wall
 Button/Tooltip/BuildWallZergHd=A cheap yet sturdy 2x2 wall
@@ -156,7 +156,9 @@ Button/Tooltip/MutaliskHd=Air unit. Bounces its shot to strike multiple targets.
 Button/Tooltip/PathTesterRadius02Hd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/PathTesterRadius05Hd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/PerfectSpecimenModHd=Greater Essence
+Button/Tooltip/PhotonCannonHd=A defensive structure that automatically attacks enemies.
 Button/Tooltip/PhotonCannonProtossHd=
+Button/Tooltip/PlaceSpawnFlagHd=Your purchased units will spawn here
 Button/Tooltip/ProbeHd=Basic worker unit. Can gather resources and warp in Protoss structures.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/RallyChoosersHereHd=Sends newly spawned choosers to this beacon.
 Button/Tooltip/ReaverHd=Aiur Faction<n/>Area damage siege unit. Builds and launches Scarabs for high burst damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
