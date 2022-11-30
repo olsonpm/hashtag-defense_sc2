@@ -6,7 +6,7 @@
         <Name Value="Attribute001/Name"/>
         <Description Value="Attribute001/Desc"/>
         <Availability Value="All"/>
-        <Visibility Value="Host"/>
+        <Visibility Value="All"/>
         <Access Value="Host"/>
         <PublicLocked/>
         <Value>
@@ -39,7 +39,7 @@
         <Type Value="Global"/>
         <Name Value="Attribute002/Name"/>
         <Availability Value="All"/>
-        <Visibility Value="Host"/>
+        <Visibility Value="All"/>
         <Access Value="Host"/>
         <PublicLocked/>
         <Value>
@@ -67,7 +67,7 @@
         <Name Value="Attribute003/Name"/>
         <Description Value="Attribute003/Desc"/>
         <Availability Value="All"/>
-        <Visibility Value="Host"/>
+        <Visibility Value="All"/>
         <Access Value="Host"/>
         <PublicLocked/>
         <Value>
