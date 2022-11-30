@@ -2179,7 +2179,7 @@
         <UnitGlossaryCamera value="Star2CameraMid05"/>
     </CModel>
     <CModel id="BossYagdraEnemyHd" parent="Unit" Race="Zerg">
-        <Model value="Assets\Units\Zerg\Yagdra\Yagdra.m3"/>
+        <Model value="Assets\Units\Zerg\Yagdra_Coop\Yagdra_Coop.m3"/>
         <Events>
             <Anim value="Spell,Start"/>
             <Name value="SpellStart"/>
