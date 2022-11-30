@@ -840,6 +840,7 @@
         <Period value="2"/>
         <DamagePoint value="0.125"/>
         <Effect value="LiberatorAGMissileLMHd"/>
+        <RangeSlop value="7"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="NeedleSpinesHydraliskHd">
         <EditorCategories value="Race:Zerg"/>

@@ -324,14 +324,39 @@
     <ObjectPoint Id="830891366" Position="56,144,0" Scale="1,1,1" Type="Normal" Name="defend - top left" Color="0,0,0,0"/>
     <ObjectPoint Id="437634046" Position="148,182,0" Scale="1,1,1" Type="Normal" Name="unit - tr - tl - unit" Color="0,0,0,0"/>
     <ObjectUnit Id="376238765" Position="107,87,0" Scale="1,1,1" UnitType="BottomRightHdDefendLocationBeacon" Player="9"/>
+    <ObjectUnit Id="1332169913" Position="56,123.5,0" Rotation="6.112" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="2068852537" Position="59,123,0" Rotation="0.0883" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="919074294" Position="57,120,0" Rotation="2.2497" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="962478102" Position="52,122.5,0" Rotation="2.5605" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="1134203937" Position="61.5,122,0" Rotation="5.477" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="1976925429" Position="108.5,93,0" Scale="1,1,1" UnitType="RightHdDefendLocationBeacon" Player="9"/>
+    <ObjectUnit Id="646927001" Position="59.5,126.5,0" Rotation="5.1921" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="1666498985" Position="60,123.5,0" Rotation="0.847" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="535608134" Position="61,126,0" Rotation="5.9438" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="1655948350" Position="49.5,123.5,0" Rotation="2.898" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="626711180" Position="60,121,0" Rotation="0.0747" Scale="1,1,1" UnitType="SCV" Player="10"/>
     <ObjectUnit Id="315128881" Position="53,109.5,0" Rotation="0.1215" Scale="1,1,1" UnitType="SCVHd" Player="1"/>
     <ObjectUnit Id="169646577" Position="107,99,0" Scale="1,1,1" UnitType="TopRightHdDefendLocationBeacon" Player="9"/>
-    <ObjectUnit Id="1976925429" Position="108.5,93,0" Scale="1,1,1" UnitType="RightHdDefendLocationBeacon" Player="9"/>
+    <ObjectUnit Id="1553167089" Position="59,125,0" Rotation="1.3693" Scale="1,1,1" UnitType="SCV" Player="10"/>
     <ObjectUnit Id="1243337835" Position="95,99,0" Scale="1,1,1" UnitType="TopLeftHdDefendLocationBeacon" Player="9"/>
-    <ObjectUnit Id="2131918387" Position="58,109,0" Rotation="5.2687" Scale="1,1,1" UnitType="DroneHd" Player="1"/>
-    <ObjectUnit Id="220038668" Position="101,85.5,0" Scale="1,1,1" UnitType="BottomHdDefendLocationBeacon" Player="9"/>
-    <ObjectUnit Id="17765034" Position="55.5,109,0" Rotation="0.3452" Scale="1,1,1" UnitType="ProbeHd" Player="1"/>
+    <ObjectUnit Id="1049692543" Position="57,126.5,0" Rotation="1.0932" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="795071797" Position="52.5,123.5,0" Rotation="1.741" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="1660847247" Position="54.5,126.5,0" Rotation="0.6596" Scale="1,1,1" UnitType="SCV" Player="10"/>
     <ObjectUnit Id="209261321" Position="101,100.5,0" Scale="1,1,1" UnitType="TopHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="302000048" Position="93.5,93,0" Scale="1,1,1" UnitType="LeftHdDefendLocationBeacon" Player="9"/>
+    <ObjectUnit Id="430036165" Position="57,124.5,0" Rotation="3.431" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="1272194126" Position="53,120.5,0" Rotation="4.6843" Scale="1,1,1" UnitType="SCV" Player="10"/>
     <ObjectUnit Id="469124253" Position="95,87,0" Scale="1,1,1" UnitType="BottomLeftHdDefendLocationBeacon" Player="9"/>
+    <ObjectUnit Id="41612296" Position="56.5,107.5,0" Rotation="0.8054" Scale="1,1,1" UnitType="LiberatorHd" Player="1"/>
+    <ObjectUnit Id="1937032250" Position="62.5,122.5,0" Rotation="5.5283" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="97152940" Position="51.5,125.5,0" Rotation="4.0322" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="331306101" Position="62.5,124,0" Rotation="5.1572" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="1667642182" Position="54,123.5,0" Rotation="3.5595" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="2131918387" Position="58,109,0" Rotation="5.2687" Scale="1,1,1" UnitType="DroneHd" Player="1"/>
+    <ObjectUnit Id="220038668" Position="101,85.5,0" Scale="1,1,1" UnitType="BottomHdDefendLocationBeacon" Player="9"/>
+    <ObjectUnit Id="341806186" Position="51,124,0" Rotation="4.74" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="931641947" Position="49.5,124.5,0" Rotation="1.7416" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="17765034" Position="55.5,109,0" Rotation="0.3452" Scale="1,1,1" UnitType="ProbeHd" Player="1"/>
+    <ObjectUnit Id="300681862" Position="62,125,0" Rotation="5.613" Scale="1,1,1" UnitType="SCV" Player="10"/>
+    <ObjectUnit Id="1816688221" Position="50.5,125.5,0" Rotation="3.8847" Scale="1,1,1" UnitType="SCV" Player="10"/>
 </PlacedObjects>
