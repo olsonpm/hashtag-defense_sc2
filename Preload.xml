@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Preload>
 <Actor id="SYSTEM_ActorConfig"/>
+<Actor id="HallucinationDeathHd"/>
 <Actor id="UIScreenNumber1Hd"/>
 <Actor id="UIScreenNumber2Hd"/>
 <Actor id="UIScreenNumber6Hd"/>
 <Actor id="UIScreenPlusHd"/>
-<Actor id="HallucinationDeathHd"/>
 <Behavior id="EnemyGhostHd"/>
 <Behavior id="FullRefundAvailableHd"/>
 <Behavior id="RemoveShieldsHd"/>

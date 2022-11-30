@@ -2243,12 +2243,6 @@ void gf_initenemymaxhealthandshield () {
     const int autoB7F53D77_ai = 1;
     const int auto0C94AF72_ae = 49;
     const int auto0C94AF72_ai = 1;
-    const int autoDDA5AA16_ae = 1;
-    const int autoDDA5AA16_ai = 1;
-    const int autoB71168CE_ae = 3;
-    const int autoB71168CE_ai = 1;
-    const int auto2641D821_ae = 49;
-    const int auto2641D821_ai = 1;
 
     // Variable Initialization
     for (init_i = 0; init_i <= 6; init_i += 1) {
