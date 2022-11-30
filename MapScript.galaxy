@@ -5480,19 +5480,24 @@ void gt_fullrefund_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_movespawnflag_Func (bool testConds, bool runActions) {
     // Variable Declarations
+    int lv__p;
     point lv__playerspawnpoint;
+    point lv__newspawnpoint;
 
     // Automatic Variable Declarations
     // Variable Initialization
+    lv__p = EventPlayer();
+    lv__playerspawnpoint = gv_spawnpointperplayer[EventPlayer()];
+    lv__newspawnpoint = EventUnitTargetPoint();
 
     // Actions
     if (!runActions) {
         return true;
     }
 
-    lv__playerspawnpoint = gv_spawnpointperplayer[EventPlayer()];
-    UnitRemove(lib1_gf_unitatpoint(lv__playerspawnpoint, EventPlayer(), "SpawnFlagHd"));
-    PointSet(lv__playerspawnpoint, EventUnitTargetPoint());
+    lib1_gf_removeallunitsoftypeinregion("SpawnFlagHd", RegionEntireMap(), lv__p);
+    lib1_gf_createunitatpoint("SpawnFlagHd", lv__newspawnpoint, lv__p, c_unitCreateIgnorePlacement);
+    PointSet(lv__playerspawnpoint, lv__newspawnpoint);
     return true;
 }
 
