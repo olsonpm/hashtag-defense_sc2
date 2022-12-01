@@ -48,8 +48,19 @@
             <Description Value="Attribute002/Value002/Desc"/>
         </Value>
         <Value>
+            <Id Value="4"/>
+            <Name Value="Attribute002/Value004/Name"/>
+            <Description Value="Attribute002/Value004/Desc"/>
+        </Value>
+        <Value>
+            <Id Value="5"/>
+            <Name Value="Attribute002/Value005/Name"/>
+            <Description Value="Attribute002/Value005/Desc"/>
+        </Value>
+        <Value>
             <Id Value="1"/>
             <Name Value="Attribute002/Value001/Name"/>
+            <Description Value="Attribute002/Value001/Desc"/>
         </Value>
         <Value>
             <Id Value="3"/>
