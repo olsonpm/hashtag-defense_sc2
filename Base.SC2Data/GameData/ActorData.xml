@@ -267,6 +267,12 @@
         <Model value="UIScreenParentHd"/>
         <HostSiteOps Ops="SOpUpdateUIScreenPosHd"/>
     </CActorModel>
+    <CActorModel id="ExitEffectHd" parent="ModelAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.ExitEffectHd.Start" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpPointUp"/>
+    </CActorModel>
     <CActorModel id="HallucinationDeathHd" parent="ModelAnimationStyleOneShotUNIT">
         <EditorCategories value=""/>
         <Model value="HallucinationDeath"/>

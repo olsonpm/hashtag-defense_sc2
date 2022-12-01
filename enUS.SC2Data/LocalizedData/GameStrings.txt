@@ -363,6 +363,7 @@ Effect/Name/DutchDamageBossGiantRorySwannEnemyHd=Dutch (Damage)
 Effect/Name/DutchLMBossGiantRorySwannEnemyHd=Dutch LM
 Effect/Name/EntropyLanceDamageArmoredStalkerEnemyHd=Entropy Lance (Damage)
 Effect/Name/EntropyLanceLMArmoredStalkerEnemyHd=Entropy Lance (LM)
+Effect/Name/ExitEffectHd=Exit Effect
 Effect/Name/EyeBeamsGroundForwardPersistentBossStoneZealotEnemyHd=Eye Beams Ground Forward Persistent
 Effect/Name/EyeBeamsGroundLineDamageBossStoneZealotEnemyHd=Eye Beams Ground Line Damage
 Effect/Name/EyeBeamsGroundLineDamageDelayBossStoneZealotEnemyHd=Eye Beams Ground Line Damage Delay

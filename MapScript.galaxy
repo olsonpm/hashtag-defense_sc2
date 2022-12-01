@@ -1541,6 +1541,7 @@ void gf_applymodtounit (unit lp_u, int lp_modtype);
 void gf_createmoddedunitatpoint (string lp_ut, int lp_p, point lp_point, int lp_opts, int lp_modtype);
 void gf_createplayerunitatpoint (int lp_location, int lp_race, int lp_player, point lp_point, string lp_utoverride, int lp_opts);
 void gf_removefullrefund ();
+void gf_removeghost (unit lp_u);
 void gf_removeplayer (int lp_p);
 void gf_startallenemyghostspawnlocations ();
 void gf_startenemyghostspawnatlocation (int lp_location);
@@ -1557,6 +1558,7 @@ string gf_getcurrentenemyunittypetospawn ();
 void gf_endgame (int lp_gameovertype);
 void gf_enemyreachedend ();
 void gf_incrementenemieskilled ();
+void gf_removeenemy (unit lp_u);
 void gf_resetskipclicked ();
 void gf_runround ();
 void gf_skipifallclicked ();
@@ -1578,8 +1580,6 @@ trigger gt_choosespawnlocationbot;
 trigger gt_choosespawnlocationbotleft;
 trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
-trigger gt_testcleartextmessages;
-trigger gt_testinitcam;
 trigger gt_testpaths;
 trigger gt_showkickplayerlist;
 trigger gt_kickplayerlistcancel;
@@ -3759,6 +3759,20 @@ void gf_removefullrefund () {
     UnitGroupClear(gv_unitswithfullrefundavailable);
 }
 
+void gf_removeghost (unit lp_u) {
+    // Variable Declarations
+    point lv__pos;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__pos = UnitGetPosition(lp_u);
+
+    // Implementation
+    libNtve_gf_CreateActorAtPoint("HallucinationDeathHd", lv__pos);
+    SoundPlayAtPointForPlayer(SoundLink("Sentry_HallucinationDeathMedium", -1), c_maxPlayers, PlayerGroupAll(), lv__pos, 0.0, 100.0, 0.0);
+    UnitRemove(lp_u);
+}
+
 void gf_removeplayer (int lp_p) {
     // Variable Declarations
     unit lv__u;
@@ -3856,9 +3870,7 @@ void gf_stopandclearenemyghostspawn () {
     for (;; auto8A8D303B_u -= 1) {
         lv__u = UnitGroupUnitFromEnd(auto8A8D303B_g, auto8A8D303B_u);
         if (lv__u == null) { break; }
-        libNtve_gf_CreateActorAtPoint("HallucinationDeathHd", UnitGetPosition(lv__u));
-        SoundPlayAtPointForPlayer(SoundLink("Sentry_HallucinationDeathMedium", -1), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(lv__u), 0.0, 100.0, 0.0);
-        UnitRemove(lv__u);
+        gf_removeghost(lv__u);
     }
     UnitGroupClear(gv_enemyghostsonmap);
     lv__location = 0;
@@ -4099,6 +4111,20 @@ void gf_incrementenemieskilled () {
         }
     }
 
+}
+
+void gf_removeenemy (unit lp_u) {
+    // Variable Declarations
+    point lv__pos;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__pos = UnitGetPosition(lp_u);
+
+    // Implementation
+    UnitCreateEffectPoint(lp_u, "ExitEffectHd", lv__pos);
+    SoundPlayAtPointForPlayer(SoundLink("Ultralisk_Death_Fall_Impact", -1), c_maxPlayers, PlayerGroupAll(), lv__pos, 0.0, 100.0, 0.0);
+    UnitRemove(lp_u);
 }
 
 void gf_resetskipclicked () {
@@ -4727,60 +4753,6 @@ bool gt_choosespawnlocationtopleft_Func (bool testConds, bool runActions) {
 void gt_choosespawnlocationtopleft_Init () {
     gt_choosespawnlocationtopleft = TriggerCreate("gt_choosespawnlocationtopleft_Func");
     TriggerAddEventUnitRange(gt_choosespawnlocationtopleft, null, UnitFromId(1243337835), 1.0, true);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: test - clear text messages
-//--------------------------------------------------------------------------------------------------
-bool gt_testcleartextmessages_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!(lib1_gf_istesting())) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    UIClearMessages(PlayerGroupSingle(1), c_messageAreaAll);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_testcleartextmessages_Init () {
-    gt_testcleartextmessages = TriggerCreate("gt_testcleartextmessages_Func");
-    TriggerAddEventMapInit(gt_testcleartextmessages);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: test - init cam
-//--------------------------------------------------------------------------------------------------
-bool gt_testinitcam_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!(lib1_gf_istesting())) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lib1_gf_setcameratopointforplayer(1, PointFromId(271112602));
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_testinitcam_Init () {
-    gt_testinitcam = TriggerCreate("gt_testinitcam_Func");
-    TriggerAddEventMapInit(gt_testinitcam);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -6348,13 +6320,15 @@ bool gt_clearenemies_Func (bool testConds, bool runActions) {
             if (lib1_gf_istrue(UnitHasBehavior2(lv__u, lv__spawnbehavior))) {
                 if (lib1_gf_isfalse(gf_isenemyghost(lv__u))) {
                     gf_enemyreachedend();
+                    gf_removeenemy(lv__u);
                     if (gf_unitisbossheroic(lv__u)) {
                         gf_enemyreachedend();
                     }
 
                 }
-
-                UnitRemove(lv__u);
+                else {
+                    gf_removeghost(lv__u);
+                }
             }
 
         }
@@ -6669,8 +6643,6 @@ void InitTriggers () {
     gt_choosespawnlocationbotleft_Init();
     gt_choosespawnlocationleft_Init();
     gt_choosespawnlocationtopleft_Init();
-    gt_testcleartextmessages_Init();
-    gt_testinitcam_Init();
     gt_testpaths_Init();
     gt_showkickplayerlist_Init();
     gt_kickplayerlistcancel_Init();

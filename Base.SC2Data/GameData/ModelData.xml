@@ -96,6 +96,10 @@
         <SelectionRadius value="1.999700"/>
         <ShadowRadius value="1.666500"/>
     </CModel>
+    <CModel id="ExitEffectHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\DarkArchon_MindControl_Beam\DarkArchon_MindControl_Beam.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
     <CModel id="PathTesterRadius05Hd" parent="SCVBase">
         <Model value="Assets\Units\Terran\SCV\SCV.m3"/>
     </CModel>

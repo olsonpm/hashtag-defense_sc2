@@ -11,6 +11,10 @@
         <TargetLocation Value="TargetPoint"/>
         <TeleportFlags index="TestCliff" value="1"/>
     </CEffectTeleport>
+    <CEffectCreatePersistent id="ExitEffectHd">
+        <EditorCategories value=""/>
+        <InitialDelay value="1"/>
+    </CEffectCreatePersistent>
     <CEffectDamage id="GuassRifleSlowTicklerMarineTestHd" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <Kind value="Ranged"/>

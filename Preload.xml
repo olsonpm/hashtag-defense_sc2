@@ -11,6 +11,7 @@
 <Behavior id="RemoveShieldsHd"/>
 <Behavior id="CloakHd"/>
 <Behavior id="PushHd"/>
+<Effect id="ExitEffectHd"/>
 <Model id="CurrentEnemyIndicatorHd"/>
 <Race id="Terr"/>
 <Race id="Zerg"/>
@@ -19,6 +20,7 @@
 <Sound id="Sentry_HallucinationDeathMedium"/>
 <Sound id="Probe_Explode"/>
 <Sound id="Alert_TerranNeedMoreMinerals"/>
+<Sound id="Ultralisk_Death_Fall_Impact"/>
 <Terrain id="PurifierJungle"/>
 <Unit id="SpawnFlagHd"/>
 <Unit id="LiberatorAGHd"/>
