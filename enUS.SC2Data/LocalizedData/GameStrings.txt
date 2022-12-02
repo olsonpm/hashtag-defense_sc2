@@ -552,6 +552,7 @@ Param/Value/6B70F853=The enemy will spawn when everyone is ready
 Param/Value/787F09A4=player kicked
 Param/Value/85DFF2CE=The enemy will spawn soon
 Param/Value/8D95612D=
+Param/Value/AF3855F5=-autoskip<n/>automatically clicks the skip button for you each round<n/><n/>-toggle ghosts<n/>toggles the ghost spawn before each round
 Param/Value/BC73E655=Vote was cast
 Param/Value/C3978B7F=Choose where to defend
 Param/Value/CB176063=

@@ -1612,6 +1612,7 @@ trigger gt_changerace;
 trigger gt_kick;
 trigger gt_testcastkickvote;
 trigger gt_autoskip;
+trigger gt_commands;
 trigger gt_toggleghosts;
 trigger gt_choosetop;
 trigger gt_choosetopright;
@@ -5869,6 +5870,32 @@ void gt_autoskip_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: commands
+//--------------------------------------------------------------------------------------------------
+bool gt_commands_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__p = EventPlayer();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib1_gf_messageuser(StringExternal("Param/Value/AF3855F5"), lv__p);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_commands_Init () {
+    gt_commands = TriggerCreate("gt_commands_Func");
+    TriggerAddEventChatMessage(gt_commands, c_playerAny, "-commands", true);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: toggle ghosts
 //--------------------------------------------------------------------------------------------------
 bool gt_toggleghosts_Func (bool testConds, bool runActions) {
@@ -6724,6 +6751,7 @@ void InitTriggers () {
     gt_kick_Init();
     gt_testcastkickvote_Init();
     gt_autoskip_Init();
+    gt_commands_Init();
     gt_toggleghosts_Init();
     gt_choosetop_Init();
     gt_choosetopright_Init();
