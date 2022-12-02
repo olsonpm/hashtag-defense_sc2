@@ -325,13 +325,10 @@
     <ObjectPoint Id="437634046" Position="148,182,0" Scale="1,1,1" Type="Normal" Name="unit - tr - tl - unit" Color="0,0,0,0"/>
     <ObjectUnit Id="376238765" Position="107,87,0" Scale="1,1,1" UnitType="BottomRightHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="1976925429" Position="108.5,93,0" Scale="1,1,1" UnitType="RightHdDefendLocationBeacon" Player="9"/>
-    <ObjectUnit Id="315128881" Position="53,109.5,0" Rotation="0.1215" Scale="1,1,1" UnitType="SCVHd" Player="1"/>
     <ObjectUnit Id="169646577" Position="107,99,0" Scale="1,1,1" UnitType="TopRightHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="1243337835" Position="95,99,0" Scale="1,1,1" UnitType="TopLeftHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="209261321" Position="101,100.5,0" Scale="1,1,1" UnitType="TopHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="302000048" Position="93.5,93,0" Scale="1,1,1" UnitType="LeftHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="469124253" Position="95,87,0" Scale="1,1,1" UnitType="BottomLeftHdDefendLocationBeacon" Player="9"/>
-    <ObjectUnit Id="2131918387" Position="58,109,0" Rotation="5.2687" Scale="1,1,1" UnitType="DroneHd" Player="1"/>
     <ObjectUnit Id="220038668" Position="101,85.5,0" Scale="1,1,1" UnitType="BottomHdDefendLocationBeacon" Player="9"/>
-    <ObjectUnit Id="17765034" Position="55.5,109,0" Rotation="0.3452" Scale="1,1,1" UnitType="ProbeHd" Player="1"/>
 </PlacedObjects>
