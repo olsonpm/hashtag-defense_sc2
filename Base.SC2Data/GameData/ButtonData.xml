@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="UpgradeToPhotonCannonHd">
+        <Icon value="Assets\Textures\btn-building-protoss-photoncannon.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HotkeyAlias value="PhotonCannonHd"/>
+    </CButton>
+    <CButton id="UpgradeToAttackDroneHubPhotonCannonHd">
+        <Icon value="Assets\Textures\btn-building-protoss-roboticssupportbay.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-protoss-roboticssupportbay.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="SalvageRefund4MineralsHd">
+        <TooltipFlags index="ShowResources" value="0"/>
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value="SalvageRefund1MineralHd"/>
+    </CButton>
+    <CButton id="SalvageRefund8MineralsHd">
+        <TooltipFlags index="ShowResources" value="0"/>
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value="SalvageRefund1MineralHd"/>
+    </CButton>
+    <CButton id="SalvageRefund10MineralsHd">
+        <TooltipFlags index="ShowResources" value="0"/>
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value="SalvageRefund1MineralHd"/>
+    </CButton>
+    <CButton id="UpgradeToBileLauncherSpineCrawlerHd">
+        <Icon value="Assets\Textures\btn-upgrade-zagara-increasebilelauncherrange.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-protoss-roboticssupportbay.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="UpgradeToAttackDroneHubPhotonCannonHd"/>
+    </CButton>
+    <CButton id="UpgradeToSpineCrawlerHd">
+        <Icon value="Assets\Textures\btn-building-zerg-spinecrawler.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HotkeyAlias value="PhotonCannonHd"/>
+    </CButton>
+    <CButton id="UpgradeToBunkerHd">
+        <Icon value="Assets\Textures\btn-building-terran-bunker.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HotkeyAlias value="PhotonCannonHd"/>
+    </CButton>
+    <CButton id="UpgradeToWasplingBurrowSpineCrawlerHd">
+        <Icon value="Assets\Textures\btn-building-zerg-nydusnetwork.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-protoss-roboticssupportbay.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="UpgradeToAttackDroneHubPhotonCannonHd"/>
+    </CButton>
+    <CButton id="UpgradeToBigBoyCannonPhotonCannonHd">
+        <Icon value="Assets\Textures\btn-upgrade-karax-newunitkhaydarinmonolith.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-protoss-roboticssupportbay.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HotkeyAlias value="UpgradeToAttackDroneHubPhotonCannonHd"/>
+    </CButton>
+    <CButton id="UpgradeToHolePuncherPhotonCannonHd">
+        <Icon value="Assets\Textures\btn-building-protoss-stargate.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-protoss-roboticssupportbay.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HotkeyAlias value="UpgradeToAttackDroneHubPhotonCannonHd"/>
+    </CButton>
+    <CButton id="UpgradeToMissileTurretBunkerHd">
+        <Icon value="Assets\Textures\btn-ability-stetmann-corruptormissilebarrage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-autoturret.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="UpgradeToHeavyTurretBunkerHd">
+        <Icon value="Assets\Textures\btn-ability-tychus-warhound-deployturret.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-autoturret.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="BuildBunkerHd">
         <Icon value="Assets\Textures\btn-building-terran-bunker.dds"/>
         <AlertIcon value="Assets\Textures\btn-building-terran-bunker.dds"/>
@@ -57,7 +135,8 @@
         <HotkeyAlias value="Rally"/>
         <Universal value="1"/>
     </CButton>
-    <CButton id="SalvageHalfRefundHd">
+    <CButton id="SalvageRefund1MineralHd">
+        <TooltipFlags index="ShowResources" value="0"/>
         <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
         <EditorCategories value="Race:Terran"/>
@@ -94,14 +173,25 @@
         <Icon value="Assets\Textures\btn-research-zerg-shriketurret.dds"/>
         <TooltipFlags index="ShowAutocast" value="0"/>
     </CButton>
-    <CButton id="UpgradePhotonCannonDamageHd">
-        <Icon value="Assets\Textures\btn-ability-zeratul-photoncannon-shadeprojection.dds"/>
+    <CButton id="UpgradeProtossStructureDamageHd">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-ability-zeratul-avatarofform-psionicblast.dds"/>
         <HotkeyAlias value=""/>
-        <TooltipFlags index="ShowAutocast" value="0"/>
     </CButton>
-    <CButton id="UpgradeSpineCrawlerDamageHd">
-        <Icon value="Assets\Textures\btn-upgrade-zerg-seismicspines.dds"/>
+    <CButton id="UpgradeZergStructureDamageHd">
         <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-seismicspines.dds"/>
+    </CButton>
+    <CButton id="UpgradeToArtilleryTurretBunkerHd">
+        <Icon value="Assets\Textures\btn-upgrade-terran-nova-siegetankrange.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-autoturret.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="UpgradeToSunkenColonySpineCrawlerHd">
+        <Icon value="Assets\Textures\btn-building-zerg-impalercolony.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-protoss-roboticssupportbay.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="UpgradeToAttackDroneHubPhotonCannonHd"/>
     </CButton>
     <CButton id="UpgradeUnitDamageZergHd">
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>

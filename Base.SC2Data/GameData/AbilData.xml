@@ -70,10 +70,81 @@
             </SectionArray>
         </InfoArray>
     </CAbilMorph>
-    <CAbilEffectInstant id="SalvageFullRefundHd" parent="Refund">
-        <Name value="Abil/Name/SalvageFullRefundHd"/>
-        <AINotifyEffect value="SalvageBunkerRefund"/>
-        <CmdButtonArray index="Execute" Requirements="HasFullRefundAvailableHd"/>
+    <CAbilArmMagazine id="MakeAttackDroneHd">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Launch value="ReleaseAtSource"/>
+        <Flags index="AutoCreate" value="1"/>
+        <Flags index="Retarget" value="1"/>
+        <Flags index="ShowStatus" value="0"/>
+        <Leash value="7"/>
+        <InfoArray index="Ammo1" CountStart="1" Manage="Recall" Unit="AttackDroneHd">
+            <Charge HideCount="1" Link="KaraxMicroBotActivated" Location="Unit"/>
+            <Button DefaultButtonFace="Servitors">
+                <Flags index="ToSelection" value="1"/>
+            </Button>
+            <Flags index="AutoBuild" value="1"/>
+            <Flags index="AutoBuildOn" value="1"/>
+            <Flags index="External" value="1"/>
+        </InfoArray>
+        <ExternalAngle value="0"/>
+        <ExternalAngle value="45"/>
+        <ExternalAngle value="90"/>
+        <ExternalAngle value="135"/>
+        <ExternalAngle value="180"/>
+        <ExternalAngle value="225"/>
+        <ExternalAngle value="270"/>
+        <ExternalAngle value="315"/>
+        <MaxCount value="1"/>
+    </CAbilArmMagazine>
+    <CAbilArmMagazine id="MakeWasplingHd">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Launch value="ReleaseAtSource"/>
+        <Flags index="AutoCreate" value="1"/>
+        <Flags index="Retarget" value="1"/>
+        <Flags index="ShowStatus" value="0"/>
+        <Leash value="7"/>
+        <InfoArray index="Ammo1" CountStart="1" Manage="Recall" Unit="WasplingHd">
+            <Charge HideCount="1" Link="KaraxMicroBotActivated" Location="Unit"/>
+            <Button DefaultButtonFace="Servitors">
+                <Flags index="ToSelection" value="1"/>
+            </Button>
+            <Flags index="AutoBuild" value="1"/>
+            <Flags index="AutoBuildOn" value="1"/>
+            <Flags index="External" value="1"/>
+        </InfoArray>
+        <ExternalAngle value="0"/>
+        <ExternalAngle value="45"/>
+        <ExternalAngle value="90"/>
+        <ExternalAngle value="135"/>
+        <ExternalAngle value="180"/>
+        <ExternalAngle value="225"/>
+        <ExternalAngle value="270"/>
+        <ExternalAngle value="315"/>
+        <MaxCount value="1"/>
+    </CAbilArmMagazine>
+    <CAbilEffectInstant id="SalvageFullRefundHd">
+        <CmdButtonArray index="Execute" Requirements="HasFullRefundAvailableSalvageHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="SalvageRefund4MineralsHd" parent="Refund">
+        <Name value="Abil/Name/SalvageRefund4MineralsHd"/>
+        <Cost>
+            <Resource index="Minerals" value="-4"/>
+        </Cost>
+        <CmdButtonArray index="Execute" Requirements="HasRefund4MineralsAvailableSalvageHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="SalvageRefund8MineralsHd" parent="Refund">
+        <Name value="Abil/Name/SalvageRefund8MineralsHd"/>
+        <Cost>
+            <Resource index="Minerals" value="-8"/>
+        </Cost>
+        <CmdButtonArray index="Execute" Requirements="HasRefund8MineralsAvailableSalvageHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="SalvageRefund10MineralsHd" parent="Refund">
+        <Name value="Abil/Name/SalvageRefund10MineralsHd"/>
+        <Cost>
+            <Resource index="Minerals" value="-10"/>
+        </Cost>
+        <CmdButtonArray index="Execute" Requirements="HasRefund10MineralsAvailableSalvageHd"/>
     </CAbilEffectInstant>
     <CAbilMorph id="UnburrowLurkerHd">
         <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
@@ -204,7 +275,7 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <FlagArray index="PeonDisableCollision" value="1"/>
         <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="PhotonCannonProtossHd" Time="0.1">
+        <InfoArray index="Build1" Unit="PhotonCannonHd" Time="0.1">
             <Button DefaultButtonFace="PhotonCannon"/>
         </InfoArray>
         <InfoArray index="Build2" Unit="WallProtossHd" Time="0.1">
@@ -253,9 +324,11 @@
         <Alert value="TrainComplete"/>
         <MaxCount value="1"/>
     </CAbilArmMagazine>
-    <CAbilEffectInstant id="SalvageHalfRefundHd" parent="Refund">
-        <Name value="Abil/Name/SalvageHalfRefundHd"/>
-        <AINotifyEffect value="SalvageBunkerRefund"/>
+    <CAbilEffectInstant id="SalvageRefund1MineralHd" parent="Refund">
+        <Name value="Abil/Name/SalvageRefund1MineralHd"/>
+        <Cost>
+            <Resource index="Minerals" value="-1"/>
+        </Cost>
     </CAbilEffectInstant>
     <CAbilBuild id="BuildTerranHd">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
@@ -265,6 +338,9 @@
         </InfoArray>
         <InfoArray index="Build2" Unit="WallTerranHd" Time="0.1">
             <Button DefaultButtonFace="BuildWallTerranHd"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="Bunker" Time="0.1">
+            <Button DefaultButtonFace="Bunker"/>
         </InfoArray>
         <FidgetDelayMin value="5"/>
         <FidgetDelayMax value="10"/>
@@ -326,7 +402,7 @@
         <Flags index="AutoCast" value="1"/>
         <AutoCastFilters value="Visible;-"/>
         <AutoCastValidatorArray value="HasAtLeast2MinsHd"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradePhotonCannonDamageHd" Requirements="MaxPhotonCannonDamageNotReachedHd"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeProtossStructureDamageHd" Requirements="MaxPhotonCannonDamageNotReachedHd"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="UpgradeSpineCrawlerDamageResearchCenterHd">
         <Alignment value="Positive"/>
@@ -334,7 +410,7 @@
         <Flags index="AutoCast" value="1"/>
         <AutoCastFilters value="Visible;-"/>
         <AutoCastValidatorArray value="HasAtLeast2MinsHd"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeSpineCrawlerDamageHd" Requirements="MaxSpineCrawlerDamageNotReachedHd"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeZergStructureDamageHd" Requirements="MaxSpineCrawlerDamageNotReachedHd"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="UpgradeBunkerTurretDamageResearchCenterHd">
         <Alignment value="Positive"/>
@@ -343,6 +419,96 @@
         <AutoCastFilters value="Visible;-"/>
         <AutoCastValidatorArray value="HasAtLeast2MinsHd"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeBunkerTurretDamageHd" Requirements="MaxBunkerTurretDamageNotReachedHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradeToAttackDroneHubPhotonCannonHd">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToAttackDroneHubPhotonCannonHd" Requirements="IsNotUpgradedPhotonCannonHd"/>
+        <Cost>
+            <Resource index="Minerals" value="4"/>
+            <Display index="Minerals" value="1"/>
+        </Cost>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradeToPhotonCannonHd">
+        <Cost>
+            <Resource index="Minerals" value="1"/>
+            <Display index="Minerals" value="1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToPhotonCannonHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradeToSpineCrawlerHd">
+        <Cost>
+            <Resource index="Minerals" value="1"/>
+            <Display index="Minerals" value="1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToSpineCrawlerHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradeToBunkerHd">
+        <Cost>
+            <Resource index="Minerals" value="1"/>
+            <Display index="Minerals" value="1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToBunkerHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradeToWasplingBurrowSpineCrawlerHd">
+        <Cost>
+            <Resource index="Minerals" value="4"/>
+            <Display index="Minerals" value="1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToWasplingBurrowSpineCrawlerHd" Requirements="IsNotUpgradedSpineCrawlerHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradeToBigBoyCannonPhotonCannonHd">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Cost>
+            <Resource index="Minerals" value="8"/>
+            <Display index="Minerals" value="1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToBigBoyCannonPhotonCannonHd" Requirements="IsNotUpgradedPhotonCannonHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradeToHolePuncherPhotonCannonHd">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Cost>
+            <Resource index="Minerals" value="10"/>
+            <Display index="Minerals" value="1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToHolePuncherPhotonCannonHd" Requirements="IsNotUpgradedPhotonCannonHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradeToMissileTurretBunkerHd">
+        <Effect index="0" value="UpgradeToMissileTurretSetBunkerHd"/>
+        <Cost>
+            <Resource index="Minerals" value="10"/>
+            <Display index="Minerals" value="1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToMissileTurretBunkerHd" Requirements="IsNotUpgradedBunkerHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradeToHeavyTurretBunkerHd">
+        <Effect index="0" value="UpgradeToHeavyTurretSetBunkerHd"/>
+        <Cost>
+            <Resource index="Minerals" value="4"/>
+            <Display index="Minerals" value="1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToHeavyTurretBunkerHd" Requirements="IsNotUpgradedBunkerHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradeToArtilleryTurretBunkerHd">
+        <Effect index="0" value="UpgradeToArtilleryTurretSetBunkerHd"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToArtilleryTurretBunkerHd" Requirements="IsNotUpgradedBunkerHd"/>
+        <Cost>
+            <Resource index="Minerals" value="8"/>
+            <Display index="Minerals" value="1"/>
+        </Cost>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradeToSunkenColonySpineCrawlerHd">
+        <Cost>
+            <Resource index="Minerals" value="10"/>
+            <Display index="Minerals" value="1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToSunkenColonySpineCrawlerHd" Requirements="IsNotUpgradedSpineCrawlerHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradeToBileLauncherSpineCrawlerHd">
+        <Cost>
+            <Resource index="Minerals" value="8"/>
+            <Display index="Minerals" value="1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToBileLauncherSpineCrawlerHd" Requirements="IsNotUpgradedSpineCrawlerHd"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="UpgradeUnitDamageZergHd">
         <Alignment value="Positive"/>

@@ -3,7 +3,7 @@
 green (amount)
 <c val="00E35B">
 
-blue minerals and side-note
+blue minerals
 <c val="00B6E3">
 
 yellow side-note
@@ -36,7 +36,6 @@ yellow side-note
  - spawn lesser units upon death
 
 ## misc ideas
- - bank to use essentially as cookies.  e.g. inform player that you cannot maze with units
  - creative mode
    : no round timer.  Instead have a command to start the wave
    : always have 6 choosers in unit area

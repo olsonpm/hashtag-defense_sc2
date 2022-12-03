@@ -96,9 +96,88 @@
         <SelectionRadius value="1.999700"/>
         <ShadowRadius value="1.666500"/>
     </CModel>
+    <CModel id="BunkerUpgradeHd" parent="BunkerBase">
+        <Model value="Assets\Buildings\Terran\BunkerUpgradeEx1\BunkerUpgradeEx1.m3"/>
+        <ScaleMax value="0.660000,0.660000,0.660000"/>
+        <ScaleMin value="0.660000,0.660000,0.660000"/>
+    </CModel>
     <CModel id="ExitEffectHd" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\DarkArchon_MindControl_Beam\DarkArchon_MindControl_Beam.m3"/>
         <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="ArtilleryTurretBunkerHd" parent="PersistentSpellFX">
+        <Model value="Assets\Doodads\MengskPalaceTurret\MengskPalaceTurret.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+    </CModel>
+    <CModel id="AttackDroneHd" parent="Unit">
+        <Model value="Assets\Units\Protoss\Karax_Servitor_Probe_A\Karax_Servitor_Probe_A.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="BigBoyCannonPowerUpModelHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\KhaydarinMonolith_Powerup\KhaydarinMonolith_Powerup.m3"/>
+        <AnimSpeed value="10.000000"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Lighting value="KhaydarinMonolithPowerUpModel"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="LongboltMissileWeaponMissileTurretHd" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\MissileTurretMissile\MissileTurretMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="MissileTurretBunkerHd" parent="MissileTurretBase">
+        <Model value="Assets\Buildings\Terran\MissileTurret_CovertOps\MissileTurret_CovertOps.m3"/>
+        <Lighting value="MissileTurretHd"/>
+    </CModel>
+    <CModel id="MissileTurretWeaponBunkerHd" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\MissileTurretMissile\MissileTurretMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="MissileTurretAttackImpactBunkerHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\MissileTurretMissileImpact\MissileTurretMissileImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="MissileTurretHd" parent="MissileTurretBase">
+        <Model value="Assets\Buildings\Terran\MissileTurret\MissileTurret.m3"/>
+    </CModel>
+    <CModel id="MissileTurretAttackImpactHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\MissileTurretMissileImpact\MissileTurretMissileImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="MissileTurretPlacementHd" parent="MissileTurretPlacementBase" low="MissileTurret">
+        <Model value="Assets\Buildings\Terran\MissileTurretPlacement\MissileTurretPlacement.m3"/>
+        <Lighting value="MissileTurretPlacement"/>
+    </CModel>
+    <CModel id="MissileTurretDeathBunkerHd" parent="MissileTurretDeathBase">
+        <Model value="Assets\Buildings\Terran\MissileTurret_CovertOps_Death\MissileTurret_CovertOps_Death.m3"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Terran_CovertOps_Explo_Gen"/>
+            <Type value="Sound"/>
+            <Payload value="Terran_CovertOps_Explo_Gen"/>
+        </Events>
+        <Events>
+            <Anim value="Death,01"/>
+            <Name value="Terran_CovertOps_Explo_Gen"/>
+            <Type value="Sound"/>
+            <Payload value="Terran_CovertOps_Explo_Gen"/>
+        </Events>
+        <Events>
+            <Anim value="Death,02"/>
+            <Name value="Terran_CovertOps_Explo_Gen"/>
+            <Type value="Sound"/>
+            <Time value="0.571000"/>
+            <Payload value="Terran_CovertOps_Explo_Gen"/>
+        </Events>
+        <Events>
+            <Anim value="Death,02"/>
+            <Name value="Terran_CovertOps_Impact_Metal"/>
+            <Type value="Sound"/>
+            <Time value="0.149000"/>
+            <Payload value="Terran_CovertOps_Impact_Metal"/>
+        </Events>
+        <AnimBlendTime value="0.000000"/>
     </CModel>
     <CModel id="PathTesterRadius05Hd" parent="SCVBase">
         <Model value="Assets\Units\Terran\SCV\SCV.m3"/>
@@ -123,6 +202,49 @@
     <CModel id="PathTesterRadius02Hd" parent="SCVBase">
         <Model value="Assets\Units\Terran\SCV\SCV.m3"/>
     </CModel>
+    <CModel id="HeavyTurretBunkerHd" parent="PersistentSpellFX">
+        <Model value="Assets\Units\Terran\AutoTurret_Junker_Collection\AutoTurret_Junker_Collection.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="HeavyTurretAttackLaunchBunkerHd" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\AutoTurretWeaponLaunch\AutoTurretWeaponLaunch.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+    </CModel>
+    <CModel id="HeavyTurretAttackImpactBunkerHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\AutoTurretWeaponImpact\AutoTurretWeaponImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+    </CModel>
+    <CModel id="ArtilleryTurretAttackDamageBunkerHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\FireImpact\FireImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="ArtilleryTurretAttackImpactBunkerHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\SiegeTankWeaponImpact\SiegeTankWeaponImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="ArtilleryTurretAttackLaunchBunkerHd" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\AutoTurretWeaponLaunch\AutoTurretWeaponLaunch.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="1.800000,1.800000,1.800000"/>
+        <ScaleMin value="1.800000,1.800000,1.800000"/>
+    </CModel>
+    <CModel id="AttackDroneHubHd" parent="RoboticsBayBase">
+        <Model value="Assets\Buildings\Protoss\RoboticsSupportBayEx1\RoboticsSupportBayEx1.m3"/>
+    </CModel>
+    <CModel id="AttackDroneBeamHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Karax_BasicAttack_Beam\Karax_BasicAttack_Beam.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="AttackDroneHubSplatHd" parent="Splat">
+        <Model value="Assets\Splats\Splat_RoboticsSupportBay\Splat_RoboticsSupportBay.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+    </CModel>
     <CModel id="SlowTicklerMarineAttackImpactTestHd" parent="LaunchFX">
         <Model value="Assets\Effects\Terran\MarineWeaponImpact\MarineWeaponImpact.m3"/>
         <EditorCategories value="Race:Terran"/>
@@ -133,6 +255,10 @@
     </CModel>
     <CModel id="SlowTicklerMarineTestHd" parent="MarineBase">
         <Model value="Assets\Units\Terran\Marine\Marine.m3"/>
+    </CModel>
+    <CModel id="RedOrbHolePuncherHd" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\TempestGroundMissile\TempestGroundMissile.m3"/>
+        <EditorCategories value="Race:Protoss"/>
     </CModel>
     <CModel id="WallBirthProtossHd" parent="Building" Race="Protoss">
         <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_WarpIn\ProtossShield_Battery_WarpIn.m3"/>
@@ -1661,7 +1787,7 @@
         <Model value="Assets\Effects\Zerg\HydraliskMissile\HydraliskMissile.m3"/>
         <EditorCategories value="Race:Zerg"/>
     </CModel>
-    <CModel id="PhotonCannonProtossHd" parent="PhotonCannonBase">
+    <CModel id="PhotonCannonHd" parent="PhotonCannonBase">
         <Model value="Assets\Buildings\Protoss\PhotonCannonEx2\PhotonCannonEx2.m3"/>
         <TextureDeclares Prefix="photoncannon_">
             <Adaptions TriggerOnSubstring="_Diffuse" Slot="main"/>
@@ -1686,11 +1812,11 @@
             <Adaptions Slot="generic04"/>
         </TextureDeclares>
     </CModel>
-    <CModel id="PhotonCannonAttackImpactProtossHd" parent="ImpactFX">
+    <CModel id="PhotonCannonAttackImpactHd" parent="ImpactFX">
         <Model value="Assets\Effects\Protoss\PhaseCannonMissileImpact\PhaseCannonMissileImpact.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="PhotonCannonWeaponProtossHd" parent="MissileFX">
+    <CModel id="PhotonCannonWeaponHd" parent="MissileFX">
         <Model value="Assets\Effects\Protoss\PhaseCannonMissile\PhaseCannonMissile.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
@@ -1801,11 +1927,9 @@
     <CModel id="ScarabWeaponHd" parent="MissileFX">
         <Model value="Assets\Effects\Protoss\Reaver_Missile\Reaver_Missile.m3"/>
     </CModel>
-    <CModel id="ShrikeTurretHd" parent="PersistentSpellFX">
+    <CModel id="ShrikeTurretBunkerHd" parent="PersistentSpellFX">
         <Model value="Assets\Buildings\Terran\BunkerShrikeTurret\BunkerShrikeTurret.m3"/>
         <EditorCategories value="Race:Terran"/>
-        <ScaleMax value="0.530000,0.530000,0.530000"/>
-        <ScaleMin value="0.530000,0.530000,0.530000"/>
     </CModel>
     <CModel id="SiegeTankHd" parent="SiegeTankBase">
         <Model value="Assets\Units\Terran\TankEx1\TankEx1.m3"/>

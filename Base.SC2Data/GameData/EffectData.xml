@@ -11,6 +11,42 @@
         <TargetLocation Value="TargetPoint"/>
         <TeleportFlags index="TestCliff" value="1"/>
     </CEffectTeleport>
+    <CEffectDamage id="ArtilleryTurretDamageBunkerHd" parent="DU_WEAP">
+        <ValidatorArray value="TargetRadiusSmall"/>
+        <EditorCategories value="Race:Terran"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Splash"/>
+        <Amount value="20"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="1" Fraction="1"/>
+        <AreaArray Radius="2" Fraction="0.75"/>
+        <AreaArray Radius="3" Fraction="0.5"/>
+        <ExcludeArray Value="Outer"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="DecreaseVsArmoredABHd">
+        <Behavior value="DecreaseVsArmoredAttributeDamageHd"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="DecreaseVsLightRBHd">
+        <BehaviorLink value="DecreaseVsArmoredAttributeDamageHd"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="DecreaseVsBiologicalRBHd">
+        <BehaviorLink value="DecreaseVsArmoredAttributeDamageHd"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="DecreaseVsMechanicalABHd">
+        <Behavior value="DecreaseVsMechanicalAttributeDamageHd"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="DecreaseVsLightABHd">
+        <Behavior value="DecreaseVsLightAttributeDamageHd"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="DecreaseVsBiologicalABHd">
+        <Behavior value="DecreaseVsBiologicalAttributeDamageHd"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="DecreaseVsBossABHd">
+        <Behavior value="DecreaseVsBossAttributeDamageHd"/>
+    </CEffectApplyBehavior>
     <CEffectCreatePersistent id="ExitEffectHd">
         <EditorCategories value=""/>
         <InitialDelay value="1"/>
@@ -137,13 +173,6 @@
         <Death value="Blast"/>
         <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
     </CEffectDamage>
-    <CEffectDamage id="CrucioShockCannonDummyInfestedSiegeTankHd" parent="DU_WEAP">
-        <Amount value="20"/>
-        <EditorCategories value="Race:Terran"/>
-        <Kind value="Splash"/>
-        <KindSplash value="Splash"/>
-        <Death value="Blast"/>
-    </CEffectDamage>
     <CEffectCreatePersistent id="DutchCPBossGiantRorySwannEnemyHd">
         <EditorCategories value="Race:Terran"/>
         <WhichLocation Value="TargetUnit"/>
@@ -254,6 +283,122 @@
         <Kind value="Ranged"/>
         <Amount value="1"/>
     </CEffectDamage>
+    <CEffectApplyBehavior id="IncreaseVsArmoredABHd">
+        <Behavior value="IncreaseVsArmoredAttributeDamageHd"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="IncreaseVsBiologicalABHd">
+        <Behavior value="IncreaseVsBiologicalAttributeDamageHd"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="IncreaseVsMechanicalABHd">
+        <Behavior value="IncreaseVsMechanicalAttributeDamageHd"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="IncreaseVsBossABHd">
+        <Behavior value="IncreaseVsBossAttributeDamageHd"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="BigBoyCannonDamageHd" parent="DU_WEAP">
+        <Amount value="20"/>
+        <AreaArray Radius="1" Fraction="1"/>
+        <AreaArray Radius="2" Fraction="0.75"/>
+        <AreaArray Radius="3" Fraction="0.5"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Splash"/>
+        <ExcludeArray Value="Outer"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="-;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+        <SearchFlags index="SameCliff" value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="BileLauncherDamageHd" parent="DU_WEAP">
+        <EditorCategories value="Race:Zerg"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Splash"/>
+        <Amount value="20"/>
+        <AreaArray Radius="1" Fraction="1"/>
+        <AreaArray Radius="2" Fraction="0.75"/>
+        <AreaArray Radius="3" Fraction="0.5"/>
+        <ExcludeArray Value="Outer"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="BileLauncherLMHd">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="BileLauncherDamageHd"/>
+        <AmmoUnit value="BileLauncherMissileHd"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="SunkenColonyDamageHd" parent="DU_WEAP">
+        <EditorCategories value="Race:Zerg"/>
+        <Amount value="30"/>
+    </CEffectDamage>
+    <CEffectDamage id="WasplingDamageHd" parent="DU_WEAP">
+        <EditorCategories value="Race:Zerg"/>
+        <Kind value="Ranged"/>
+        <Amount value="20"/>
+        <Death value="Disintegrate"/>
+    </CEffectDamage>
+    <CEffectDamage id="WasplingDamageDummyHd" parent="DU_WEAP">
+        <EditorCategories value="Race:Zerg"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="WasplingLMHd">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="WasplingDamageHd"/>
+        <AmmoUnit value="WasplingWeaponHd"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="LongboltMissileCPMissileTurretHd">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="2"/>
+        <PeriodicEffectArray value="LongboltMissileLMMissileTurretHd"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.1"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="LongboltMissileCPBunkerHd">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="LongboltMissileBlankLMBunkerHd"/>
+        <PeriodicEffectArray value="LongboltMissileLMBunkerHd"/>
+        <PeriodicEffectArray value="LongboltMissileBlankLMBunkerHd"/>
+        <PeriodicEffectArray value="LongboltMissileBlankLMBunkerHd"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.05"/>
+        <PeriodicPeriodArray value="0.1"/>
+        <PeriodicPeriodArray value="0.15"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="LongboltMissileDamageBunkerHd" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <Amount value="30"/>
+    </CEffectDamage>
+    <CEffectDamage id="LongboltMissileBlankDamageBunkerHd" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="LongboltMissileBlankLMBunkerHd">
+        <ValidatorArray index="0" value="RangeCheckLE15"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="LongboltMissileBlankDamageBunkerHd"/>
+        <AmmoUnit value="LongboltMissileBunkerHd"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="LongboltMissileLMMissileTurretHd">
+        <ValidatorArray index="0" value="RangeCheckLE15"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="LongboltMissileDamageMissileTurretHd"/>
+        <AmmoUnit value="LongboltMissileMissileTurretHd"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="LongboltMissileDamageMissileTurretHd" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <Amount value="12"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="LongboltMissileLMBunkerHd">
+        <ValidatorArray index="0" value="RangeCheckLE15"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="LongboltMissileDamageBunkerHd"/>
+        <AmmoUnit value="LongboltMissileBunkerHd"/>
+    </CEffectLaunchMissile>
     <CEffectCreatePersistent id="LurkerCPHd">
         <EditorCategories value="Race:Zerg"/>
         <WhichLocation Value="SourcePoint"/>
@@ -364,6 +509,59 @@
         <SearchFlags index="SameCliff" value="0"/>
         <ValidatorArray value="noMarkers"/>
     </CEffectDamage>
+    <CEffectDamage id="HeavyTurretDamageBunkerHd">
+        <EditorCategories value="Race:Terran"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="20"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+    </CEffectDamage>
+    <CEffectRemoveBehavior id="DecreaseVsArmoredRBHd">
+        <BehaviorLink value="DecreaseVsArmoredAttributeDamageHd"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="DecreaseVsMechanicalRBHd">
+        <BehaviorLink value="DecreaseVsMechanicalAttributeDamageHd"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="DecreaseVsBossRBHd">
+        <BehaviorLink value="DecreaseVsBossAttributeDamageHd"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="Refund4MineralsAvailableABSalvageHd">
+        <Behavior value="Refund4MineralsAvailableSalvageHd"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="Refund8MineralsAvailableABSalvageHd">
+        <Behavior value="Refund8MineralsAvailableSalvageHd"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="Refund10MineralsAvailableABSalvageHd">
+        <Behavior value="Refund10MineralsAvailableSalvageHd"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="AttackDroneDamageHd" parent="DU_WEAP">
+        <EditorCategories value="Race:Protoss"/>
+        <Amount value="20"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectDamage id="AttackDroneDamageDummyHd">
+        <EditorCategories value="Race:Protoss"/>
+    </CEffectDamage>
+    <CEffectDamage id="HolePuncherDamageHd">
+        <EditorCategories value="Race:Protoss"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <Visibility value="Visible"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="30"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="HolePuncherLMHd">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactEffect value="HolePuncherDamageHd"/>
+        <AmmoUnit value="RedOrbHolePuncherHd"/>
+    </CEffectLaunchMissile>
     <CEffectDamage id="TwinAutocannonsMechanicalGoliathEnemyHd" parent="DU_WEAP">
         <ValidatorArray value="CasterIsNotHidden"/>
         <EditorCategories value="Race:Terran"/>
@@ -828,6 +1026,55 @@
         <Amount value="30"/>
         <Death value="Eviscerate"/>
     </CEffectDamage>
+    <CEffectApplyBehavior id="IncreaseVsLightABHd">
+        <Behavior value="IncreaseVsLightAttributeDamageHd"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="UpgradeToMissileTurretABBunkerHd">
+        <Behavior value="MissileTurretBunkerHd"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="UpgradeToMissileTurretSetBunkerHd">
+        <EditorCategories value=""/>
+        <EffectArray value="UpgradeToMissileTurretABBunkerHd"/>
+        <EffectArray value="UpgradeTurretSetBunkerHd"/>
+        <EffectArray value="IncreaseVsBiologicalABHd"/>
+        <EffectArray value="IncreaseVsBossABHd"/>
+        <EffectArray value="Refund10MineralsAvailableABSalvageHd"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="UpgradeToHeavyTurretABBunkerHd">
+        <Behavior value="HeavyTurretBunkerHd"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="UpgradeToArtilleryTurretABBunkerHd">
+        <Behavior value="ArtilleryTurretBunkerHd"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="UpgradeToArtilleryTurretSetBunkerHd">
+        <EditorCategories value=""/>
+        <EffectArray value="UpgradeToArtilleryTurretABBunkerHd"/>
+        <EffectArray value="UpgradeTurretSetBunkerHd"/>
+        <EffectArray value="IncreaseVsArmoredABHd"/>
+        <EffectArray value="IncreaseVsMechanicalABHd"/>
+        <EffectArray value="Refund8MineralsAvailableABSalvageHd"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="UpgradeTurretABBunkerHd">
+        <Behavior value="UpgradedTurretBunkerHd"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="UpgradeToHeavyTurretSetBunkerHd">
+        <EditorCategories value=""/>
+        <EffectArray value="UpgradeToHeavyTurretABBunkerHd"/>
+        <EffectArray value="UpgradeTurretSetBunkerHd"/>
+        <EffectArray value="IncreaseVsLightABHd"/>
+        <EffectArray value="DecreaseVsBiologicalABHd"/>
+        <EffectArray value="Refund4MineralsAvailableABSalvageHd"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="RemoveShrikeTurretRBBunkerHd">
+        <BehaviorLink value="ShrikeTurretBunkerHd"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="UpgradeTurretSetBunkerHd">
+        <EffectArray value="UpgradeTurretABBunkerHd"/>
+        <EffectArray value="RemoveShrikeTurretRBBunkerHd"/>
+        <EffectArray value="DecreaseVsArmoredRBHd"/>
+        <EffectArray value="DecreaseVsMechanicalRBHd"/>
+        <EffectArray value="DecreaseVsBossRBHd"/>
+    </CEffectSet>
     <CEffectDamage id="WeaklingClawsHd" parent="DU_WEAP">
         <EditorCategories value="Race:Zerg"/>
         <Amount value="5"/>
@@ -854,13 +1101,6 @@
         <Amount value="20"/>
         <Death value="Blast"/>
         <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-    </CEffectDamage>
-    <CEffectDamage id="CrucioShockCannonDummyDamageSiegeTankHd" parent="DU_WEAP">
-        <EditorCategories value="Race:Terran"/>
-        <Kind value="Splash"/>
-        <KindSplash value="Splash"/>
-        <Amount value="20"/>
-        <Death value="Blast"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="FlameThrowerCPFirebatHd">
         <EditorCategories value="Race:Terran"/>
@@ -991,7 +1231,7 @@
         <Amount value="10"/>
         <Death value="Disintegrate"/>
     </CEffectDamage>
-    <CEffectDamage id="GuassRifleHd" parent="DU_WEAP">
+    <CEffectDamage id="GuassRifleDamageMarineHd" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <Kind value="Ranged"/>
         <Amount value="10"/>
@@ -1145,13 +1385,13 @@
         <Amount value="20"/>
         <SearchFlags index="CallForHelp" value="1"/>
     </CEffectDamage>
-    <CEffectLaunchMissile id="PhotonCannonLMProtossHd">
+    <CEffectLaunchMissile id="PhotonCannonLMHd">
         <ValidatorArray index="0" value="PhotonCannonTargetFilters"/>
         <EditorCategories value="Race:Protoss"/>
-        <ImpactEffect value="PhotonCannonDamageProtossHd"/>
-        <AmmoUnit value="PhotonCannonWeaponProtossHd"/>
+        <ImpactEffect value="PhotonCannonDamageHd"/>
+        <AmmoUnit value="PhotonCannonWeaponHd"/>
     </CEffectLaunchMissile>
-    <CEffectDamage id="PhotonCannonDamageProtossHd" parent="DU_WEAP">
+    <CEffectDamage id="PhotonCannonDamageHd" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
         <Kind value="Ranged"/>
         <Amount value="20"/>
@@ -1262,16 +1502,16 @@
         <EditorCategories value="Race:Protoss"/>
         <AmmoEffect value="ScarabTimedLifeHd"/>
     </CEffectUseMagazine>
-    <CEffectDamage id="ShrikeTurretDamageHd">
+    <CEffectDamage id="ShrikeTurretDamageBunkerHd">
         <EditorCategories value="Race:Terran"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
         <Flags index="Notification" value="1"/>
         <Kind value="Ranged"/>
-        <Amount value="12"/>
+        <Amount value="20"/>
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
-        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectSet id="SiegeTankSiegedSetHd">
         <EffectArray value="CrucioShockCannonDirectedDamageSiegeTankHd"/>

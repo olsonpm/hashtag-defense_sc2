@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorUnitCompareBehaviorCount id="BunkerHasArtilleryTurretHd">
+        <Value value="1"/>
+        <Behavior value="ArtilleryTurretBunkerHd"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="BunkerHasMissileTurretHd">
+        <Value value="1"/>
+        <Behavior value="MissileTurretBunkerHd"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="BunkerIsNotUpgradedHd">
+        <Behavior value="UpgradedTurretBunkerHd"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="BunkerHasHeavyTurretHd">
+        <Value value="1"/>
+        <Behavior value="HeavyTurretBunkerHd"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="PhotonCannonIsNotUpgradedHd">
+        <Behavior value="UpgradedPhotonCannonHd"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="PhotonCannonIsUpgradedHd">
+        <Value value="1"/>
+        <Behavior value="UpgradedPhotonCannonHd"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="HasFullRefundAvailableHd">
         <WhichUnit Value="Source"/>
         <Value value="1"/>
-        <Behavior value="FullRefundAvailableHd"/>
+        <Behavior value="FullRefundAvailableSalvageHd"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="HasLiberatorMorphBehaviorHd">
         <WhichUnit Value="Caster"/>
@@ -19,6 +41,10 @@
         <Range value="0.1"/>
         <Unit value="SpawnFlagPlacementTestHd"/>
     </CValidatorLocationPlacement>
+    <CValidatorUnitCompareBehaviorCount id="BunkerIsUpgradedHd">
+        <Value value="1"/>
+        <Behavior value="UpgradedTurretBunkerHd"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorLocationCompareRange id="LiberatorAGNotOutOfRangeHd">
         <Compare value="LE"/>
         <Range value="9"/>

@@ -29,6 +29,50 @@
         <Period value="1"/>
         <Effect value="AcidSpinesLMArmoredQueenEnemyHd"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="AttackDroneHd">
+        <EditorCategories value="Race:Protoss"/>
+        <DisplayEffect value="AttackDroneDamageHd"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Period value="2"/>
+        <Effect value="AttackDroneDamageDummyHd"/>
+        <Arc value="360"/>
+        <Icon value="Assets\Textures\btn-ability-zeratul-avatarofform-psionicblast.dds"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="BileBombBileLauncherHd">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-seismicspines.dds"/>
+        <DisplayEffect value="BileLauncherDamageHd"/>
+        <TargetFilters value="Ground;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <Period value="2"/>
+        <DamagePoint value="0.3"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Backswing value="0"/>
+        <Effect value="BileLauncherLMHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SubterraneanTentacleSunkenColonyHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-seismicspines.dds"/>
+        <DisplayEffect value="SunkenColonyDamageHd"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <Period value="2"/>
+        <DamagePoint value="0.8"/>
+        <Effect value="SunkenColonyDamageHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="WasplingHd">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-seismicspines.dds"/>
+        <DisplayEffect value="WasplingDamageHd"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Effect value="WasplingDamageDummyHd"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="C10CanisterRifleLightGhostEnemyHd">
         <EditorCategories value="Race:Terran"/>
         <Options index="Hidden" value="1"/>
@@ -102,7 +146,7 @@
         <EditorCategories value="Race:Terran"/>
         <Options index="DisplayCooldown" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
-        <DisplayEffect value="CrucioShockCannonDummyInfestedSiegeTankHd"/>
+        <DisplayEffect value="CrucioShockCannonDirectedInfestedSiegeTankHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="13"/>
         <MinimumRange value="2"/>
@@ -173,6 +217,80 @@
         <DamagePoint value="0.2"/>
         <Effect value="FistCPBossGiantRorySwannEnemyHd"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="HeavyTurretBunkerHd">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-research-zerg-shriketurret.dds"/>
+        <DisplayEffect value="HeavyTurretDamageBunkerHd"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="2"/>
+        <DamagePoint value="0.25"/>
+        <Range value="7"/>
+        <RangeSlop value="5"/>
+        <Effect value="HeavyTurretDamageBunkerHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ArtilleryTurretBunkerHd">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-research-zerg-shriketurret.dds"/>
+        <DisplayEffect value="ArtilleryTurretDamageBunkerHd"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="2"/>
+        <Range value="10"/>
+        <RangeSlop value="5"/>
+        <DamagePoint value="0.25"/>
+        <Effect value="ArtilleryTurretDamageBunkerHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="BigBoyCannonBeamHd">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="ContinuousScan" value="1"/>
+        <Icon value="Assets\Textures\btn-ability-zeratul-avatarofform-psionicblast.dds"/>
+        <DisplayEffect value="BigBoyCannonDamageHd"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <RangeSlop value="45"/>
+        <Period value="2"/>
+        <DamagePoint value="0.2"/>
+        <Effect value="BigBoyCannonDamageHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpinesWasplingHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
+        <DisplayEffect value="WasplingDamageHd"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="3"/>
+        <Period value="2"/>
+        <MinScanRange value="7"/>
+        <DamagePoint value="0.2666"/>
+        <Effect value="WasplingLMHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LongboltMissileMissileTurretHd">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-hisecautotracking.dds"/>
+        <DisplayEffect value="LongboltMissileDamageMissileTurretHd"/>
+        <TargetFilters value="Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <RangeSlop value="0"/>
+        <Period value="0.8608"/>
+        <Effect value="LongboltMissileCPMissileTurretHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MissileTurretBunkerHd">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-research-zerg-shriketurret.dds"/>
+        <DisplayEffect value="LongboltMissileDamageBunkerHd"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <RangeSlop value="0"/>
+        <Period value="2"/>
+        <Effect value="LongboltMissileCPBunkerHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AttackDroneBeamHd">
+        <EditorCategories value="Race:Protoss"/>
+        <DisplayEffect value="AttackDroneDamageHd"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="3"/>
+        <Period value="2"/>
+        <MinScanRange value="7"/>
+        <Effect value="AttackDroneDamageHd"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="SpinesLurkerHd">
         <EditorCategories value="Race:Zerg"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
@@ -195,6 +313,17 @@
         <Range value="3"/>
         <Period value="1.5"/>
         <Effect value="PsiBlastDamageBossHybridDominatorEnemyHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="RedOrbHolePuncherHd">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-ability-zeratul-avatarofform-psionicblast.dds"/>
+        <DisplayEffect value="HolePuncherDamageHd"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Effect value="HolePuncherLMHd"/>
+        <AllowedMovement value="Slowing"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="TwinAutocannonsMechanicalGoliathEnemyHd">
         <EditorCategories value="Race:Terran"/>
@@ -767,11 +896,11 @@
         <EditorCategories value="Race:Terran"/>
         <Options index="DisplayCooldown" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
-        <DisplayEffect value="CrucioShockCannonDummyDamageSiegeTankHd"/>
+        <DisplayEffect value="CrucioShockCannonBlastDamageSiegeTankHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="13"/>
         <Period value="2"/>
-        <Effect value="SiegeTankSiegedSetHd"/>
+        <Effect value="CrucioShockCannonBlastDamageSiegeTankHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="FirebatHd">
         <EditorCategories value="Race:Terran"/>
@@ -811,6 +940,8 @@
         <Period value="1"/>
         <DamagePoint value="0.05"/>
         <Backswing value="0.75"/>
+        <DisplayEffect value="GuassRifleDamageMarineHd"/>
+        <Effect value="GuassRifleDamageMarineHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="ImpalerTentacleHd">
         <EditorCategories value="Race:Zerg"/>
@@ -871,12 +1002,12 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="PhotonCannonHd">
         <EditorCategories value="Race:Protoss"/>
-        <Icon value="Assets\Textures\btn-building-protoss-photoncannon.dds"/>
-        <DisplayEffect value="PhotonCannonDamageProtossHd"/>
+        <Icon value="Assets\Textures\btn-ability-zeratul-avatarofform-psionicblast.dds"/>
+        <DisplayEffect value="PhotonCannonDamageHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <RangeSlop value="0"/>
         <Period value="2"/>
-        <Effect value="PhotonCannonLMProtossHd"/>
+        <Effect value="PhotonCannonLMHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="PsionicShockwaveHd">
         <EditorCategories value="Race:Protoss"/>
@@ -919,15 +1050,15 @@
         <Effect value="ScarabLaunchPersistentInitialHd"/>
         <AllowedMovement value="Slowing"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="ShrikeTurretHd">
+    <CWeaponLegacy id="ShrikeTurretBunkerHd">
         <EditorCategories value="Race:Terran"/>
-        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
-        <DisplayEffect value="ShrikeTurretDamageHd"/>
+        <Icon value="Assets\Textures\btn-research-zerg-shriketurret.dds"/>
+        <DisplayEffect value="ShrikeTurretDamageBunkerHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Period value="1"/>
+        <Period value="2"/>
         <DamagePoint value="0.25"/>
         <Backswing value="0.75"/>
-        <Effect value="ShrikeTurretDamageHd"/>
+        <Effect value="ShrikeTurretDamageBunkerHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="TempestGroundHd">
         <EditorCategories value="Race:Protoss"/>

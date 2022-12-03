@@ -21,6 +21,19 @@
         <YawIdleRate value="360"/>
         <Fidget DelayMax="30" DelayMin="10"/>
     </CTurret>
+    <CTurret id="BigBoyCannonHd">
+        <Idle value="Spin"/>
+        <YawArc value="360"/>
+        <YawRate value="180"/>
+        <YawIdleRate value="14.9414"/>
+        <Fidget DelayMax="30" DelayMin="10"/>
+    </CTurret>
+    <CTurret id="BileLauncherHd">
+        <Idle value="Hold"/>
+        <YawArc value="360"/>
+        <YawRate value="180"/>
+        <Fidget DelayMax="30" DelayMin="10"/>
+    </CTurret>
     <CTurret id="LurkerHd">
         <Idle value="Hold"/>
         <YawArc value="360"/>
@@ -78,13 +91,25 @@
         <YawRate value="720"/>
         <Fidget DelayMax="30" DelayMin="10"/>
     </CTurret>
+    <CTurret id="MissileTurretHd">
+        <Idle value="Spin"/>
+        <YawArc value="360"/>
+        <YawRate value="720"/>
+        <YawIdleRate value="45"/>
+        <Fidget DelayMax="30" DelayMin="10"/>
+    </CTurret>
     <CTurret id="PhotonCannonHd">
         <Idle value="Hold"/>
         <YawArc value="360"/>
         <YawRate value="720"/>
         <Fidget DelayMax="30" DelayMin="10"/>
     </CTurret>
-    <CTurret id="ShrikeTurretHd">
+    <CTurret id="SunkenColonyHd">
+        <Idle value="Hold"/>
+        <YawArc value="360"/>
+        <YawRate value="360"/>
+    </CTurret>
+    <CTurret id="TurretBunkerHd">
         <Idle value="Spin"/>
         <YawArc value="360"/>
         <YawRate value="720"/>

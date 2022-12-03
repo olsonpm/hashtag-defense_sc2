@@ -95,6 +95,432 @@
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
     </CUnit>
+    <CUnit id="AttackDroneHd">
+        <Race value="Prot"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Uncursorable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="AISupport" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Mover value="Fly"/>
+        <Speed value="6"/>
+        <Acceleration value="6"/>
+        <Sight value="7"/>
+        <Height value="1.5"/>
+        <CostCategory value="Army"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="Warpable"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray Link="AbilityTargetExclusionBehavior"/>
+        <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsLightAttributeDamageHd"/>
+        <WeaponArray Link="AttackDroneBeamHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+        </CardLayouts>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="4"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="BigBoyCannonHd">
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Never"/>
+        <Facing value="315"/>
+        <Race value="Prot"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Sight value="10"/>
+        <CostCategory value="Technology"/>
+        <CostResource index="Minerals" value="10"/>
+        <AttackTargetPriority value="20"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="AttackEnemyHd"/>
+        <AbilArray Link="SalvageRefund8MineralsHd"/>
+        <AbilArray Link="SalvageFullRefundHd"/>
+        <BehaviorArray Link="Refund8MineralsAvailableSalvageHd"/>
+        <BehaviorArray Link="IncreaseVsArmoredAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsMechanicalAttributeDamageHd"/>
+        <WeaponArray Link="BigBoyCannonBeamHd" Turret="BigBoyCannonHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund8MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund8MineralsHd,Execute" Row="2" Column="3"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="75"/>
+        <ScoreKill value="225"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Campaign"/>
+        <AIEvalFactor value="0.8"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="100"/>
+        <HotkeyCategory value="Unit/Category/ProtossStory"/>
+    </CUnit>
+    <CUnit id="BileLauncherHd">
+        <DeathRevealRadius value="3"/>
+        <Facing value="135"/>
+        <Race value="Zerg"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="AIThreatAir" value="1"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <Sight value="10"/>
+        <CostResource index="Minerals" value="10"/>
+        <AttackTargetPriority value="19"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="AttackEnemyHd"/>
+        <AbilArray Link="SalvageRefund8MineralsHd"/>
+        <AbilArray Link="SalvageFullRefundHd"/>
+        <BehaviorArray Link="Refund8MineralsAvailableSalvageHd"/>
+        <BehaviorArray Link="IncreaseVsArmoredAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsMechanicalAttributeDamageHd"/>
+        <WeaponArray Link="BileBombBileLauncherHd" Turret="BileLauncherHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund8MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund8MineralsHd,Execute" Row="2" Column="3"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="0.875"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="0.875"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Campaign"/>
+        <AIEvalFactor value="0.65"/>
+        <GlossaryCategory value="Unit/Category/ZergUnits"/>
+        <GlossaryPriority value="350"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Never"/>
+    </CUnit>
+    <CUnit id="BileLauncherMissileHd" parent="MISSILE_INVULNERABLE">
+        <Race value="Zerg"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="SunkenColonyHd">
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Facing value="135"/>
+        <Race value="Zerg"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="AIThreatAir" value="1"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <FlagArray index="AIAllowSuicideOverride" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="10"/>
+        <CostCategory value="Technology"/>
+        <CostResource index="Minerals" value="12"/>
+        <AttackTargetPriority value="19"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="AttackEnemyHd"/>
+        <AbilArray Link="SalvageRefund10MineralsHd"/>
+        <AbilArray Link="SalvageFullRefundHd"/>
+        <BehaviorArray Link="UnderConstruction"/>
+        <BehaviorArray Link="IncreaseVsBiologicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsBossAttributeDamageHd"/>
+        <BehaviorArray Link="Refund10MineralsAvailableSalvageHd"/>
+        <WeaponArray Link="SubterraneanTentacleSunkenColonyHd" Turret="SunkenColonyHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund10MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund10MineralsHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="0.875"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="250"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="0.875"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Campaign"/>
+        <AIEvalFactor value="0.65"/>
+    </CUnit>
+    <CUnit id="WasplingHd">
+        <Description value="Button/Tooltip/Locust"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Uncursorable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="AISupport" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Mover value="Fly"/>
+        <Speed value="6"/>
+        <Acceleration value="6"/>
+        <LateralAcceleration value="46.0625"/>
+        <Sight value="7"/>
+        <Height value="3.75"/>
+        <VisionHeight value="4"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="30"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <BehaviorArray Link="AbilityTargetExclusionBehavior"/>
+        <BehaviorArray Link="SwarmHostPressurizedGlands"/>
+        <BehaviorArray Link="IncreaseVsLightAttributeDamageHd"/>
+        <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
+        <WeaponArray Link="SpinesWasplingHd"/>
+        <WeaponArray Link="LocustFlyingPressurizedGlands"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <SubgroupPriority value="1"/>
+        <MinimapRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <HotkeyAlias value="Locust"/>
+        <HotkeyCategory value="Unit/Category/ZergStory"/>
+        <KillDisplay value="Never"/>
+        <RankDisplay value="Never"/>
+    </CUnit>
+    <CUnit id="WasplingWeaponHd" parent="MISSILE">
+        <Race value="Zerg"/>
+        <Mover value="MissileDefault"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="LongboltMissileMissileTurretHd" parent="MISSILE_HALFLIFE">
+        <Race value="Terr"/>
+        <Mover value="LongboltMissileWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="LongboltMissileBunkerHd" parent="MISSILE_HALFLIFE">
+        <Race value="Terr"/>
+        <Mover value="LongboltMissileWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="MissileTurretHd">
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="250"/>
+        <LifeMax value="250"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranBuildingPlating"/>
+        <Sight value="11"/>
+        <CostCategory value="Technology"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="25"/>
+        <AttackTargetPriority value="19"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="que1"/>
+        <BehaviorArray Link="TerranBuildingBurnDown"/>
+        <BehaviorArray Link="Detector11"/>
+        <BehaviorArray Link="UnderConstruction"/>
+        <BehaviorArray Link="HellstormMissiles"/>
+        <BehaviorArray Link="FireSuppressionSystem"/>
+        <WeaponArray Link="LongboltMissileMissileTurretHd" Turret="MissileTurretHd"/>
+        <WeaponArray Link="HailstormMissilePods" Turret="MissileTurretHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Halt" Type="AbilCmd" AbilCmd="BuildInProgress,Halt" Row="2" Column="3"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Detector" Type="Passive" Requirements="NotUnderConstruction" Row="2" Column="3"/>
+            <LayoutButtons Face="SelectBuilder" Type="SelectBuilder" Row="1" Column="3"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <GlossaryCategory value="Unit/Category/TerranUnits"/>
+        <GlossaryPriority value="310"/>
+        <GlossaryStrongArray value="Banshee"/>
+        <GlossaryStrongArray value="Mutalisk"/>
+        <GlossaryStrongArray value="VoidRay"/>
+        <GlossaryWeakArray value="Marine"/>
+        <GlossaryWeakArray value="Zergling"/>
+        <GlossaryWeakArray value="Zealot"/>
+        <HotkeyCategory value="Unit/Category/TerranUnits"/>
+    </CUnit>
+    <CUnit id="WasplingBurrowHd">
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Facing value="344.9707"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="7"/>
+        <CostCategory value="Technology"/>
+        <CostResource index="Minerals" value="6"/>
+        <AttackTargetPriority value="11"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="Rally"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="MakeWasplingHd"/>
+        <AbilArray Link="AttackEnemyHd"/>
+        <AbilArray Link="SalvageRefund4MineralsHd"/>
+        <AbilArray Link="SalvageFullRefundHd"/>
+        <BehaviorArray Link="Refund4MineralsAvailableSalvageHd"/>
+        <BehaviorArray Link="IncreaseVsLightAttributeDamageHd"/>
+        <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
+        <WeaponArray Link="WasplingHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund4MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund4MineralsHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="1.5"/>
+        <SeparationRadius value="1.5"/>
+        <Footprint value="Footprint2x2CreepContour"/>
+        <PlacementFootprint value="Footprint2x2Creep"/>
+        <ScoreMake value="350"/>
+        <ScoreKill value="400"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="1.5"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <GlossaryPriority value="249"/>
+        <HotkeyCategory value="Unit/Category/ZergUnits"/>
+        <TechTreeProducedUnitArray value="NydusCanal"/>
+    </CUnit>
     <CUnit id="PathTesterRadius05Hd">
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
@@ -199,6 +625,70 @@
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
     </CUnit>
+    <CUnit id="AttackDroneHubHd">
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="9"/>
+        <CostCategory value="Technology"/>
+        <CostResource index="Minerals" value="6"/>
+        <AttackTargetPriority value="11"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="MakeAttackDroneHd"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="AttackEnemyHd"/>
+        <AbilArray Link="SalvageRefund4MineralsHd"/>
+        <AbilArray Link="SalvageFullRefundHd"/>
+        <BehaviorArray Link="Refund4MineralsAvailableSalvageHd"/>
+        <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsLightAttributeDamageHd"/>
+        <WeaponArray Link="AttackDroneHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund4MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund4MineralsHd,Execute" Row="2" Column="3"/>
+        </CardLayouts>
+        <Radius value="1.5"/>
+        <SeparationRadius value="1.5"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="400"/>
+        <ScoreKill value="400"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="1.5"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <GlossaryPriority value="219"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
+    </CUnit>
     <CUnit id="SlowTicklerMarineTestHd">
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
@@ -260,6 +750,81 @@
         <TauntDuration index="Cheer" value="5"/>
         <TauntDuration index="Dance" value="5"/>
     </CUnit>
+    <CUnit id="HolePuncherHd">
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Facing value="315"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="10"/>
+        <CostCategory value="Technology"/>
+        <CostResource index="Minerals" value="12"/>
+        <AttackTargetPriority value="11"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="AttackEnemyHd"/>
+        <AbilArray Link="SalvageRefund10MineralsHd"/>
+        <AbilArray Link="SalvageFullRefundHd"/>
+        <BehaviorArray Link="IncreaseVsBiologicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsBossAttributeDamageHd"/>
+        <BehaviorArray Link="Refund10MineralsAvailableSalvageHd"/>
+        <WeaponArray Link="RedOrbHolePuncherHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund10MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund10MineralsHd,Execute" Row="2" Column="3"/>
+        </CardLayouts>
+        <Radius value="1.75"/>
+        <SeparationRadius value="1.75"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="300"/>
+        <ScoreKill value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="1.75"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Campaign"/>
+        <TechAliasArray value="Alias_Stargate"/>
+        <GlossaryPriority value="10"/>
+        <HotkeyCategory value="Unit/Category/ProtossStory"/>
+        <TechTreeProducedUnitArray value="Phoenix"/>
+        <TechTreeProducedUnitArray value="VoidRay"/>
+        <TechTreeProducedUnitArray value="Carrier"/>
+        <TechTreeProducedUnitArray value="Oracle"/>
+        <TechTreeProducedUnitArray value="Tempest"/>
+        <TechTreeProducedUnitArray value="Scout"/>
+    </CUnit>
+    <CUnit id="RedOrbHolePuncherHd" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="MissileDefault"/>
+        <EditorCategories value="ObjectFamily:Melee,ObjectType:Projectile"/>
+    </CUnit>
     <CUnit id="WallProtossHd">
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
@@ -296,7 +861,9 @@
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="SalvageNoRefundHd"/>
         <AbilArray Link="SalvageFullRefundHd"/>
+        <AbilArray Link="UpgradeToPhotonCannonHd"/>
         <CardLayouts>
+            <LayoutButtons Face="UpgradeToPhotonCannonHd" Type="AbilCmd" AbilCmd="UpgradeToPhotonCannonHd,Execute" Row="0" Column="0"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="SalvageNoRefundHd" Type="AbilCmd" AbilCmd="SalvageNoRefundHd,Execute" Row="2" Column="3"/>
         </CardLayouts>
@@ -402,7 +969,9 @@
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="SalvageNoRefundHd"/>
         <AbilArray Link="SalvageFullRefundHd"/>
+        <AbilArray Link="UpgradeToBunkerHd"/>
         <CardLayouts>
+            <LayoutButtons Face="UpgradeToBunkerHd" Type="AbilCmd" AbilCmd="UpgradeToBunkerHd,Execute" Row="0" Column="0"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="SalvageNoRefundHd" Type="AbilCmd" AbilCmd="SalvageNoRefundHd,Execute" Row="2" Column="3"/>
         </CardLayouts>
@@ -982,6 +1551,9 @@
         <AlliedPushPriority value="11"/>
     </CUnit>
     <CUnit id="BunkerHd">
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Never"/>
+        <WeaponArray Turret="TurretBunkerHd"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
         <DeathRevealRadius value="3"/>
@@ -1017,23 +1589,34 @@
         <AbilArray Link="Rally"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="AttackRedirect"/>
-        <AbilArray Link="SalvageHalfRefundHd"/>
+        <AbilArray Link="SalvageRefund1MineralHd"/>
         <AbilArray Link="SalvageFullRefundHd"/>
+        <AbilArray Link="UpgradeToHeavyTurretBunkerHd"/>
+        <AbilArray Link="UpgradeToArtilleryTurretBunkerHd"/>
+        <AbilArray Link="UpgradeToMissileTurretBunkerHd"/>
+        <AbilArray Link="SalvageRefund10MineralsHd"/>
+        <AbilArray Link="SalvageRefund4MineralsHd"/>
+        <AbilArray Link="SalvageRefund8MineralsHd"/>
         <BehaviorArray Link="TerranBuildingBurnDown"/>
-        <BehaviorArray Link="ShrikeTurretHd"/>
+        <BehaviorArray Link="ShrikeTurretBunkerHd"/>
         <BehaviorArray Link="DecreaseVsArmoredAttributeDamageHd"/>
         <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
         <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
-        <WeaponArray Link="ShrikeTurretHd" Turret="ShrikeTurretHd"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="SetBunkerRallyPoint" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
             <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="LoadUnloadBunkerHd,Load" Row="2" Column="1"/>
             <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="LoadUnloadBunkerHd,UnloadAll" Row="2" Column="2"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="SalvageHalfRefundHd" Type="AbilCmd" AbilCmd="SalvageHalfRefundHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund10MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund10MineralsHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund8MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund8MineralsHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund4MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund4MineralsHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund1MineralHd" Type="AbilCmd" AbilCmd="SalvageRefund1MineralHd,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SalvageShared,Off" Row="2" Column="4"/>
+            <LayoutButtons Face="UpgradeToHeavyTurretBunkerHd" Type="AbilCmd" AbilCmd="UpgradeToHeavyTurretBunkerHd,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="UpgradeToArtilleryTurretBunkerHd" Type="AbilCmd" AbilCmd="UpgradeToArtilleryTurretBunkerHd,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="UpgradeToMissileTurretBunkerHd" Type="AbilCmd" AbilCmd="UpgradeToMissileTurretBunkerHd,Execute" Row="0" Column="2"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -1199,6 +1782,7 @@
         <AbilArray Link="BurrowLurkerHd"/>
         <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsBiologicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsLightAttributeDamageHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1322,7 +1906,9 @@
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="SalvageNoRefundHd"/>
         <AbilArray Link="SalvageFullRefundHd"/>
+        <AbilArray Link="UpgradeToSpineCrawlerHd"/>
         <CardLayouts>
+            <LayoutButtons Face="UpgradeToSpineCrawlerHd" Type="AbilCmd" AbilCmd="UpgradeToSpineCrawlerHd,Execute" Row="0" Column="0"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
@@ -3524,6 +4110,7 @@
         <AbilArray Link="Warpable"/>
         <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsBiologicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsLightAttributeDamageHd"/>
         <WeaponArray Link="PsionicShockwaveHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -3609,6 +4196,8 @@
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="BlinkHd"/>
+        <BehaviorArray Link="IncreaseVsLightAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsBiologicalAttributeDamageHd"/>
         <WeaponArray Link="ThermalLancesHd" Turret="ColossusHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -3873,7 +4462,7 @@
         <AbilArray Link="UpgradeSpineCrawlerDamageResearchCenterHd"/>
         <AbilArray Link="UpgradeUnitDamageZergHd"/>
         <CardLayouts>
-            <LayoutButtons Face="UpgradeSpineCrawlerDamageHd" Type="AbilCmd" AbilCmd="UpgradeSpineCrawlerDamageResearchCenterHd,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="UpgradeZergStructureDamageHd" Type="AbilCmd" AbilCmd="UpgradeSpineCrawlerDamageResearchCenterHd,Execute" Row="0" Column="0"/>
             <LayoutButtons Face="UpgradeUnitDamageZergHd" Type="AbilCmd" AbilCmd="UpgradeUnitDamageZergHd,Execute" Row="0" Column="1"/>
         </CardLayouts>
         <Radius value="1.5"/>
@@ -3950,6 +4539,8 @@
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="stop"/>
+        <BehaviorArray Link="IncreaseVsMechanicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="AcidSporesGuardianHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -3997,6 +4588,8 @@
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="BlinkHd"/>
+        <BehaviorArray Link="IncreaseVsBiologicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="NeedleSpinesHydraliskHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -4102,6 +4695,8 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
+        <BehaviorArray Link="IncreaseVsLightAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsMechanicalAttributeDamageHd"/>
         <WeaponArray Link="GlaiveWurmHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -4156,6 +4751,8 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="InfestedSiegeTankUprootHd"/>
+        <BehaviorArray Link="IncreaseVsArmoredAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsBiologicalAttributeDamageHd"/>
         <WeaponArray Link="CrucioShockCannonInfestedSiegeTankHd" Turret="InfestedSiegeTankSiegedHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -4281,7 +4878,7 @@
         <AbilArray Link="UpgradePhotonCannonDamageResearchCenterHd"/>
         <AbilArray Link="UpgradeUnitDamageProtossHd"/>
         <CardLayouts>
-            <LayoutButtons Face="UpgradePhotonCannonDamageHd" Type="AbilCmd" AbilCmd="UpgradePhotonCannonDamageResearchCenterHd,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="UpgradeProtossStructureDamageHd" Type="AbilCmd" AbilCmd="UpgradePhotonCannonDamageResearchCenterHd,Execute" Row="0" Column="0"/>
             <LayoutButtons Face="UpgradeUnitDamageProtossHd" Type="AbilCmd" AbilCmd="UpgradeUnitDamageProtossHd,Execute" Row="0" Column="1"/>
         </CardLayouts>
         <Radius value="1.5"/>
@@ -4333,6 +4930,8 @@
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="BlinkHd"/>
+        <BehaviorArray Link="IncreaseVsArmoredAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsMechanicalAttributeDamageHd"/>
         <WeaponArray Link="PhaseDisruptorsHd" Turret="ImmortalHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -4359,7 +4958,9 @@
         </Fidget>
         <TauntDuration index="Dance" value="5"/>
     </CUnit>
-    <CUnit id="PhotonCannonProtossHd">
+    <CUnit id="PhotonCannonHd">
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Never"/>
         <Facing value="45"/>
         <Race value="Prot"/>
         <Mob value="Multiplayer"/>
@@ -4391,8 +4992,11 @@
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
-        <AbilArray Link="SalvageHalfRefundHd"/>
+        <AbilArray Link="SalvageRefund1MineralHd"/>
         <AbilArray Link="SalvageFullRefundHd"/>
+        <AbilArray Link="UpgradeToAttackDroneHubPhotonCannonHd"/>
+        <AbilArray Link="UpgradeToBigBoyCannonPhotonCannonHd"/>
+        <AbilArray Link="UpgradeToHolePuncherPhotonCannonHd"/>
         <BehaviorArray Link="UnderConstruction"/>
         <BehaviorArray Link="DecreaseVsArmoredAttributeDamageHd"/>
         <BehaviorArray Link="DecreaseVsBiologicalAttributeDamageHd"/>
@@ -4400,10 +5004,13 @@
         <WeaponArray Link="PhotonCannonHd" Turret="PhotonCannonHd"/>
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="SalvageHalfRefundHd" Type="AbilCmd" AbilCmd="SalvageHalfRefundHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund1MineralHd" Type="AbilCmd" AbilCmd="SalvageRefund1MineralHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="UpgradeToAttackDroneHubPhotonCannonHd" Type="AbilCmd" AbilCmd="UpgradeToAttackDroneHubPhotonCannonHd,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="UpgradeToBigBoyCannonPhotonCannonHd" Type="AbilCmd" AbilCmd="UpgradeToBigBoyCannonPhotonCannonHd,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="UpgradeToHolePuncherPhotonCannonHd" Type="AbilCmd" AbilCmd="UpgradeToHolePuncherPhotonCannonHd,Execute" Row="0" Column="2"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>
@@ -4418,7 +5025,7 @@
         <AIEvalFactor value="0.8"/>
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
     </CUnit>
-    <CUnit id="PhotonCannonWeaponProtossHd" parent="MISSILE">
+    <CUnit id="PhotonCannonWeaponHd" parent="MISSILE">
         <Race value="Prot"/>
         <Mover value="PhotonCannonWeapon"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
@@ -4467,6 +5074,8 @@
         <AbilArray Link="ReaverHangarHd"/>
         <AbilArray Link="HangarQueue5"/>
         <AbilArray Link="BlinkHd"/>
+        <BehaviorArray Link="IncreaseVsBiologicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="ScarabsReaverHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -4577,6 +5186,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsLightAttributeDamageHd"/>
         <WeaponArray Link="FirebatHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -4635,6 +5245,8 @@
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="BlinkHd"/>
+        <BehaviorArray Link="IncreaseVsBiologicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="C10CanisterRifleHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -4762,6 +5374,8 @@
         <AbilArray Link="LiberatorMorphToAGHd"/>
         <AbilArray Link="LiberatorAATargetHd"/>
         <BehaviorArray Link="LiberatorInitialMovableHd"/>
+        <BehaviorArray Link="IncreaseVsMechanicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="LiberatorAGWeaponHd" Turret="LiberatorAGHd"/>
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -4832,6 +5446,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsBiologicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsArmoredAttributeDamageHd"/>
         <WeaponArray Link="PunisherGrenadesHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -5029,6 +5644,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsArmoredAttributeDamageHd"/>
         <WeaponArray Link="AcidSalivaRoachHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -5207,6 +5823,8 @@
         <AbilArray Link="move"/>
         <AbilArray Link="SiegeModeHd"/>
         <AbilArray Link="BlinkHd"/>
+        <BehaviorArray Link="IncreaseVsArmoredAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsMechanicalAttributeDamageHd"/>
         <WeaponArray Link="90mmCannonsHd" Turret="SiegeTankHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -5271,6 +5889,8 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="UnsiegeHd"/>
+        <BehaviorArray Link="IncreaseVsArmoredAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsMechanicalAttributeDamageHd"/>
         <WeaponArray Link="CrucioShockCannonSiegeTankHd" Turret="SiegeTankSiegedHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -5336,18 +5956,24 @@
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
-        <AbilArray Link="SalvageHalfRefundHd"/>
+        <AbilArray Link="SalvageRefund1MineralHd"/>
         <AbilArray Link="SalvageFullRefundHd"/>
+        <AbilArray Link="UpgradeToWasplingBurrowSpineCrawlerHd"/>
+        <AbilArray Link="UpgradeToSunkenColonySpineCrawlerHd"/>
+        <AbilArray Link="UpgradeToBileLauncherSpineCrawlerHd"/>
         <BehaviorArray Link="DecreaseVsArmoredAttributeDamageHd"/>
         <BehaviorArray Link="DecreaseVsBiologicalAttributeDamageHd"/>
         <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="ImpalerTentacleHd" Turret="SpineCrawlerHd"/>
         <CardLayouts>
-            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="UpgradeToWasplingBurrowSpineCrawlerHd" Type="AbilCmd" AbilCmd="UpgradeToWasplingBurrowSpineCrawlerHd,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="UpgradeToBileLauncherSpineCrawlerHd" Type="AbilCmd" AbilCmd="UpgradeToBileLauncherSpineCrawlerHd,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="UpgradeToSunkenColonySpineCrawlerHd" Type="AbilCmd" AbilCmd="UpgradeToSunkenColonySpineCrawlerHd,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="SalvageHalfRefundHd" Type="AbilCmd" AbilCmd="SalvageHalfRefundHd,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund1MineralHd" Type="AbilCmd" AbilCmd="SalvageRefund1MineralHd,255" Row="2" Column="3"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.875"/>
         <SeparationRadius value="0.875"/>
@@ -5408,6 +6034,7 @@
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="BlinkHd"/>
         <BehaviorArray Link="DecreaseVsMechanicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsArmoredAttributeDamageHd"/>
         <WeaponArray Link="ParticleDisruptorsHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -5479,6 +6106,8 @@
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
+        <BehaviorArray Link="IncreaseVsMechanicalAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="TempestGroundHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -5545,6 +6174,8 @@
         <AbilArray Link="AttackEnemyHd"/>
         <AbilArray Link="move"/>
         <AbilArray Link="BlinkHd"/>
+        <BehaviorArray Link="IncreaseVsLightAttributeDamageHd"/>
+        <BehaviorArray Link="IncreaseVsBiologicalAttributeDamageHd"/>
         <WeaponArray Link="ThorsHammerHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>

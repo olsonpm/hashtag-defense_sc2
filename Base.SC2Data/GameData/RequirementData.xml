@@ -1,20 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CRequirement id="HasFullRefundAvailableHd">
-        <NodeArray index="Use" Link="CountBehaviorFullRefundAvailableHdCompleteOnly"/>
-        <NodeArray index="Show" Link="CountBehaviorFullRefundAvailableHdCompleteOnly"/>
+    <CRequirement id="HasFullRefundAvailableSalvageHd">
+        <NodeArray index="Use" Link="CountBehaviorFullRefundAvailableSalvageHdCompleteOnly"/>
+        <NodeArray index="Show" Link="CountBehaviorFullRefundAvailableSalvageHdCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HasRefund4MineralsAvailableSalvageHd">
+        <NodeArray index="Use" Link="CountBehaviorRefund4MineralsAvailableSalvageHdCompleteOnly"/>
+        <NodeArray index="Show" Link="CountBehaviorRefund4MineralsAvailableSalvageHdCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HasRefund8MineralsAvailableSalvageHd">
+        <NodeArray index="Use" Link="CountBehaviorRefund8MineralsAvailableSalvageHdCompleteOnly"/>
+        <NodeArray index="Show" Link="CountBehaviorRefund8MineralsAvailableSalvageHdCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HasRefund10MineralsAvailableSalvageHd">
+        <NodeArray index="Use" Link="CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnly"/>
+        <NodeArray index="Show" Link="CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="IsNotUpgradedBunkerHd">
+        <NodeArray index="Use" Link="EqCountBehaviorUpgradedTurretBunkerHdInProgressOrBetterAtUnit0"/>
+        <NodeArray index="Show" Link="EqCountBehaviorUpgradedTurretBunkerHdInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="IsNotUpgradedPhotonCannonHd">
+        <NodeArray index="Use" Link="EqCountBehaviorUpgradedPhotonCannonHdInProgressOrBetterAtUnit0"/>
+        <NodeArray index="Show" Link="EqCountBehaviorUpgradedPhotonCannonHdInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="IsNotUpgradedSpineCrawlerHd">
+        <NodeArray index="Use" Link="EqCountBehaviorUpgradedSpineCrawlerHdInProgressOrBetterAtUnit0"/>
+        <NodeArray index="Show" Link="EqCountBehaviorUpgradedSpineCrawlerHdInProgressOrBetterAtUnit0"/>
     </CRequirement>
     <CRequirement id="MaxBunkerTurretDamageNotReachedHd">
         <NodeArray index="Use" Link="LTCountUpgradeBunkerTurretDamageHdCompleteOnly100"/>
         <NodeArray index="Show" Link="LTCountUpgradeBunkerTurretDamageHdCompleteOnly100"/>
     </CRequirement>
     <CRequirement id="MaxPhotonCannonDamageNotReachedHd">
-        <NodeArray index="Use" Link="LTCountUpgradePhotonCannonDamageHdCompleteOnly100"/>
-        <NodeArray index="Show" Link="LTCountUpgradePhotonCannonDamageHdCompleteOnly100"/>
+        <NodeArray index="Use" Link="LTCountUpgradeProtossStructureDamageHdCompleteOnly100"/>
+        <NodeArray index="Show" Link="LTCountUpgradeProtossStructureDamageHdCompleteOnly100"/>
     </CRequirement>
     <CRequirement id="MaxSpineCrawlerDamageNotReachedHd">
-        <NodeArray index="Use" Link="LTCountUpgradeSpineCrawlerDamageHdCompleteOnly100"/>
-        <NodeArray index="Show" Link="LTCountUpgradeSpineCrawlerDamageHdCompleteOnly100"/>
+        <NodeArray index="Use" Link="LTCountUpgradeZergStructureDamageHdCompleteOnly100"/>
+        <NodeArray index="Show" Link="LTCountUpgradeZergStructureDamageHdCompleteOnly100"/>
     </CRequirement>
     <CRequirement id="MaxUnitDamageNotReachedZergHd">
         <NodeArray index="Use" Link="LTCountUpgradeUnitDamageZergHdCompleteOnly100"/>

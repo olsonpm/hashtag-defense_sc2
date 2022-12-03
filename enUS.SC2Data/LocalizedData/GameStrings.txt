@@ -13,17 +13,34 @@ Abil/Name/LiberatorAGTargetHd=AG Target
 Abil/Name/LiberatorMorphToAAHd=Morph to AA
 Abil/Name/LiberatorMorphToAGHd=Morph to AG
 Abil/Name/LoadUnloadBunkerHd=Load-Unload
+Abil/Name/MakeAttackDroneHd=Make Attack Drone
+Abil/Name/MakeWasplingHd=Make Waspling
 Abil/Name/RallyUnitChoosersHereHd=Rally Unit Choosers Here
 Abil/Name/ReaverHangarHd=Reaver Hangar
 Abil/Name/SalvageFullRefundHd=Salvage - Full Refund
-Abil/Name/SalvageHalfRefundHd=Salvage - Half Refund
 Abil/Name/SalvageNoRefundHd=Salvage - No Refund
+Abil/Name/SalvageRefund10MineralsHd=Salvage - Refund 10 Minerals
+Abil/Name/SalvageRefund1MineralHd=Salvage - Refund 1 Mineral
+Abil/Name/SalvageRefund4MineralsHd=Salvage - Refund 4 Minerals
+Abil/Name/SalvageRefund8MineralsHd=Salvage - Refund 8 Minerals
 Abil/Name/SiegeModeHd=Siege
 Abil/Name/UnburrowLurkerHd=Unburrow Lurker
 Abil/Name/UnsiegeHd=Unsiege
 Abil/Name/UpgradeBunkerTurretDamageResearchCenterHd=Upgrade Bunker Turret Damage
 Abil/Name/UpgradePhotonCannonDamageResearchCenterHd=Upgrade Photon Cannon Damage
 Abil/Name/UpgradeSpineCrawlerDamageResearchCenterHd=Upgrade Spine Crawler Damage
+Abil/Name/UpgradeToArtilleryTurretBunkerHd=Upgrade To Artillery Turret
+Abil/Name/UpgradeToAttackDroneHubPhotonCannonHd=Upgrade To Attack Drone Hub
+Abil/Name/UpgradeToBigBoyCannonPhotonCannonHd=Upgrade To Big Boy Cannon
+Abil/Name/UpgradeToBileLauncherSpineCrawlerHd=Upgrade To Bile Launcher
+Abil/Name/UpgradeToBunkerHd=Upgrade To Bunker
+Abil/Name/UpgradeToHeavyTurretBunkerHd=Upgrade To Heavy Turret
+Abil/Name/UpgradeToHolePuncherPhotonCannonHd=Upgrade To Hole Puncher
+Abil/Name/UpgradeToMissileTurretBunkerHd=Upgrade To Missile Turret
+Abil/Name/UpgradeToPhotonCannonHd=Upgrade To Photon Cannon
+Abil/Name/UpgradeToSpineCrawlerHd=Upgrade To Spine Crawler
+Abil/Name/UpgradeToSunkenColonySpineCrawlerHd=Upgrade To Sunken Colony
+Abil/Name/UpgradeToWasplingBurrowSpineCrawlerHd=Upgrade To Waspling Burrow
 Abil/Name/UpgradeUnitDamageProtossHd=Upgrade Unit Damage
 Abil/Name/UpgradeUnitDamageTerranHd=Upgrade Unit Damage
 Abil/Name/UpgradeUnitDamageZergHd=Upgrade Unit Damage
@@ -57,7 +74,7 @@ Behavior/Name/AddedArmorHardModHd=Added Armor
 Behavior/Name/AddedArmorStandardModHd=Added Armor
 Behavior/Name/AddedShieldsHardModHd=Added Shields
 Behavior/Name/AddedShieldsStandardModHd=Added Shields
-Behavior/Name/FullRefundAvailableHd=Full Refund Available
+Behavior/Name/FullRefundAvailableSalvageHd=Full Refund Available
 Behavior/Name/IncreaseSpeedStandardHardModHd=Increased Speed
 Behavior/Name/IncreaseSpeedStandardModHd=Increased Speed
 Button/Name/BuildBunkerHd=Build Bunker
@@ -73,16 +90,31 @@ Button/Name/PhotonCannonHd=Photon Cannon
 Button/Name/PlaceSpawnFlagHd=Place Spawn Flag
 Button/Name/RallyChoosersHereHd=Rally Choosers Here
 Button/Name/SalvageFullRefundHd=Salvage - Full Refund
-Button/Name/SalvageHalfRefundHd=Salvage - Half Refund
 Button/Name/SalvageNoRefundHd=Salvage
+Button/Name/SalvageRefund10MineralsHd=Salvage - Refund 10 Minerals
+Button/Name/SalvageRefund1MineralHd=Salvage - Refund 1 Mineral
+Button/Name/SalvageRefund4MineralsHd=Salvage - Refund 4 Minerals
+Button/Name/SalvageRefund8MineralsHd=Salvage - Refund 8 Minerals
 Button/Name/SpineCrawlerRootHd=Root
 Button/Name/SpineCrawlerUprootHd=Uproot
 Button/Name/UpgradeBunkerTurretDamageHd=Upgrade Bunker Turret Damage
-Button/Name/UpgradePhotonCannonDamageHd=Upgrade Photon Cannon Damage
-Button/Name/UpgradeSpineCrawlerDamageHd=Upgrade Spine Crawler Damage
+Button/Name/UpgradeProtossStructureDamageHd=Upgrade Protoss Structure Damage
+Button/Name/UpgradeToArtilleryTurretBunkerHd=Upgrade To Artillery Turret
+Button/Name/UpgradeToAttackDroneHubPhotonCannonHd=Upgrade To Attack Drone Hub
+Button/Name/UpgradeToBigBoyCannonPhotonCannonHd=Upgrade To Big Boy Cannon
+Button/Name/UpgradeToBileLauncherSpineCrawlerHd=Upgrade To Bile Launcher
+Button/Name/UpgradeToBunkerHd=Upgrade To Bunker
+Button/Name/UpgradeToHeavyTurretBunkerHd=Upgrade To Heavy Turret
+Button/Name/UpgradeToHolePuncherPhotonCannonHd=Upgrade To Hole Puncher
+Button/Name/UpgradeToMissileTurretBunkerHd=Upgrade To Missile Turret
+Button/Name/UpgradeToPhotonCannonHd=Upgrade To Photon Cannon
+Button/Name/UpgradeToSpineCrawlerHd=Upgrade To Spine Crawler
+Button/Name/UpgradeToSunkenColonySpineCrawlerHd=Upgrade To Sunken Colony
+Button/Name/UpgradeToWasplingBurrowSpineCrawlerHd=Upgrade To Waspling Burrow
 Button/Name/UpgradeUnitDamageProtossHd=Upgrade Unit Damage
 Button/Name/UpgradeUnitDamageTerranHd=Upgrade Unit Damage
 Button/Name/UpgradeUnitDamageZergHd=Upgrade Unit Damage
+Button/Name/UpgradeZergStructureDamageHd=Upgrade Zerg Structure Damage
 Button/Tooltip/AddedArmorModHd=Experimental space/time manipulator. Grants the ability to slow units in a target area.
 Button/Tooltip/ArchonHd=Powerful psionic attacker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/ArmoredCutieEnemyHd=A native insectoid species of the planet Nelyth.
@@ -97,7 +129,10 @@ Button/Tooltip/ArmoredQueenEnemyHd=Support unit. Can use Spawn Creep Tumor and R
 Button/Tooltip/ArmoredQuillyEnemyHd=Primal Zerg ruminant omnivore. Roams in small herds.
 Button/Tooltip/ArmoredStalkerEnemyHd=Ranged attack strider. Can use Blink.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/ArmoredZealotEnemyHd=Purifier Faction<n/>Powerful melee warrior. Has Charge and Reconstruction abilities.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/AttackDroneHubHd=Colossus tech structure.
 Button/Tooltip/BeefySCVTestHd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/BigBoyCannonHd=Extremely powerful defensive structure. Has superior range and damage, but is very expensive and attacks slowly.<n/><n/><c val="ffff8a">Can attack ground and air units.
+Button/Tooltip/BileLauncherHd=These powerful Bile Launchers are the Swarm's only hope to destroy Korhal's defense network.
 Button/Tooltip/BiologicalAberrationEnemyHd=Aberrations are durable units that deal heavy damage.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/BiologicalHydraliskEnemyHd=Ranged attacker. Can morph into a Lurker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/BiologicalKerriganEnemyHd=Sarah Kerrigan is an elite Ghost with more life, a stronger attack, and devastating psionic abilities.
@@ -126,6 +161,7 @@ Button/Tooltip/DroneHd=Basic worker unit. Can harvest minerals and vespene gas. 
 Button/Tooltip/FirebatHd=Specialized anti-infantry attacker.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/GhostHd=Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/GuardianHd=Long-range anti-ground flyer. <n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/HolePuncherHd=Enables warp in of Protoss air units.
 Button/Tooltip/HydraliskHd=Ranged attacker. Can morph into a Lurker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/ImmortalHd=Assault strider. Can use Barrier to absorb damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/IncreasedSpeedModHd=Reactor charging station. Replenishes energy of all nearby friendly units.
@@ -156,12 +192,12 @@ Button/Tooltip/MechanicalShikotoCoupeEnemyHd=The Shikoto Municipal Coupe. There'
 Button/Tooltip/MechanicalSiegeTankTankModeEnemyHd=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/MechanicalVikingAssaultModeEnemyHd=Durable support unit. Can switch into Fighter Mode to attack air units.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/MechanicalWarHoundEnemyHd=Anti-vehicle mech. Haywire missiles do bonus damage to mechanical units. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/MissileTurretHd=Anti-air defensive structure.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c><n/><c val="FFE303">Detector</c>
 Button/Tooltip/MutaliskHd=Air unit. Bounces its shot to strike multiple targets.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/PathTesterRadius02Hd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/PathTesterRadius05Hd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/PerfectSpecimenModHd=Greater Essence
-Button/Tooltip/PhotonCannonHd=A defensive structure that automatically attacks enemies.
-Button/Tooltip/PhotonCannonProtossHd=
+Button/Tooltip/PhotonCannonHd=
 Button/Tooltip/PlaceSpawnFlagHd=Your purchased units will spawn here
 Button/Tooltip/ProbeHd=Basic worker unit. Can gather resources and warp in Protoss structures.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/RallyChoosersHereHd=Sends newly spawned choosers to this beacon.
@@ -172,8 +208,11 @@ Button/Tooltip/ResearchCenterZergHd=Contains upgrades for Zerg ground units.<n/>
 Button/Tooltip/RoachHd=Assault unit. Regenerates life quickly when burrowed. Can morph into a Ravager.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/SCVHd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/SalvageFullRefundHd=Salvages the structure, removing it and returning 100% of its cost.
-Button/Tooltip/SalvageHalfRefundHd=Salvages the structure, removing it and returning 50% of its cost.
 Button/Tooltip/SalvageNoRefundHd=Destroys the structure with no refund
+Button/Tooltip/SalvageRefund10MineralsHd=Salvages the structure, removing it and refunding 10 minerals.
+Button/Tooltip/SalvageRefund1MineralHd=Salvages the structure, removing it and refunding 1 mineral.
+Button/Tooltip/SalvageRefund4MineralsHd=Salvages the structure, removing it and refunding 4 minerals.
+Button/Tooltip/SalvageRefund8MineralsHd=Salvages the structure, removing it and refunding 8 minerals.
 Button/Tooltip/SiegeTankHd=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/SiegeTankSiegedHd=Heavy tank. Can switch into Tank Mode to provide mobile tank support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/SimpleArmoredZealotHd=Powerful melee warrior. Can use Charge.<n/><n/><c val="ffff8a">Can attack ground units.</c>
@@ -192,17 +231,30 @@ Button/Tooltip/TestWeaklingEnemyHd=Fast melee creature. Can morph into a Banelin
 Button/Tooltip/ThorHd=Heavy assault mech.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/TicklerMarineTestHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/UnitHasShieldsModHd=Ancient Protoss Relic. Collect it with a ground unit to gain a Protoss research point. 
-Button/Tooltip/UpgradeBunkerTurretDamageHd=Upgrades the bunker turret damage by <c val="00E35B">0.8</c><n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
-Button/Tooltip/UpgradePhotonCannonDamageHd=Upgrades the photon cannon damage by <c val="00E35B">1</c><n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
-Button/Tooltip/UpgradeSpineCrawlerDamageHd=Upgrades the spine crawler damage by <c val="00E35B">1</c><n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
+Button/Tooltip/UpgradeBunkerTurretDamageHd=Upgrades the damage done by all bunker turrets<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
+Button/Tooltip/UpgradeProtossStructureDamageHd=Upgrades the damage done by all protoss structures<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
+Button/Tooltip/UpgradeToArtilleryTurretBunkerHd=The artillery turret attacks an area and specializes against units which are armored or mechanical.<n/>Base attack: <c val="00E35B">20</c><n/>Upgrades by: <c val="00E35B">2</c><n/>Range: <c val="00E35B">10</c><n/>Attack Speed: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToAttackDroneHubPhotonCannonHd=Houses an attack drone which does more damage and is good vs light enemies.  It struggles vs mechanical enemies.<n/>Base attack: <c val="00E35B">20</c><n/>Upgrades by: <c val="00E35B">2.5</c><n/>Range: <c val="00E35B">7</c><n/>Attack Speed: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToBigBoyCannonPhotonCannonHd=A large cannon that damages many enemies per hit.  Good vs armored and mechanical units.<n/>Base attack: <c val="00E35B">20</c><n/>Upgrades by: <c val="00E35B">2</c><n/>Range: <c val="00E35B">10</c><n/>Attack Speed: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToBileLauncherSpineCrawlerHd=Chronically hungover, this tower pukes on passersby.  Armored and mechanical units seem to be the most annoyed.<n/>Base attack: <c val="00E35B">20</c><n/>Upgrades by: <c val="00E35B">2</c><n/>Range: <c val="00E35B">10</c><n/>Attack Speed: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToBunkerHd=Upgrades this wall into a bunker
+Button/Tooltip/UpgradeToHeavyTurretBunkerHd=The heavy turret attacks slower but does more damage.  It does well vs light enemies but lacks against biological.<n/>Base attack: <c val="00E35B">20</c><n/>Upgrades by: <c val="00E35B">2.5</c><n/>Range: <c val="00E35B">7</c><n/>Attack Speed: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToHolePuncherPhotonCannonHd=A large cannon that punches a hole in its foe.  Great vs biological and boss units.<n/>Base attack: <c val="00E35B">30</c><n/>Upgrades by: <c val="00E35B">4</c><n/>Range: <c val="00E35B">10</c><n/>Attack Speed: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToMissileTurretBunkerHd=The missile turret strongly attacks individual units, specializing against biological units and bosses.<n/>Base attack: <c val="00E35B">30</c><n/>Upgrades by: <c val="00E35B">4</c><n/>Range: <c val="00E35B">10</c><n/>Attack Speed: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToPhotonCannonHd=Upgrades this wall into a photon cannon
+Button/Tooltip/UpgradeToSpineCrawlerHd=Upgrades this wall into a spine crawler
+Button/Tooltip/UpgradeToSunkenColonySpineCrawlerHd=The OG tower.  Does great damage to biological enemies and bosses.<n/>Base attack: <c val="00E35B">30</c><n/>Upgrades by: <c val="00E35B">4</c><n/>Range: <c val="00E35B">10</c><n/>Attack Speed: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToWasplingBurrowSpineCrawlerHd=Houses a waspling which does more damage and is good vs light enemies.  It struggles vs mechanical enemies.<n/>Base attack: <c val="00E35B">20</c><n/>Upgrades by: <c val="00E35B">2.5</c><n/>Range: <c val="00E35B">7</c><n/>Attack Speed: <c val="00E35B">2</c>
 Button/Tooltip/UpgradeUnitDamageProtossHd=Upgrades the attack of all units.<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
 Button/Tooltip/UpgradeUnitDamageTerranHd=Upgrades the attack of all units.<n/><c val="00B6E3">2</c><img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
 Button/Tooltip/UpgradeUnitDamageZergHd=Upgrades the attack of all units.<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
+Button/Tooltip/UpgradeZergStructureDamageHd=Upgrades the damage done by all protoss structures<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
 Button/Tooltip/WallProtossHd=Restores shields to nearby friendly units and structures.
 Button/Tooltip/WallTerranHd=Abandoned structure.
 Button/Tooltip/WallZergHd=<c val="ffff8a">Enables:</c><n/>- Infestors from Larvae<n/>- Swarm Hosts from Larvae
 Button/Tooltip/WarpInAdeptHd=Purifier Faction<n/>Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/WarpInLightAdeptEnemyHd=Purifier Faction<n/>Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/WasplingBurrowHd=Friendly ground units can use the Nydus Network to instantly travel to any other Nydus Network or Nydus Worm owned by the player.<n/><n/><c val="ffff8a">Enables:</c><n/>- Nydus Worm
 Button/Tooltip/WeaklingEnemyHd=Fast melee creature. Can morph into a Baneling.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 CantPlaceSpawnFlag=The Spawn Flag Can't Be Placed There
 DocInfo/DescLong=A polished take on a classic tower defense.<n/><n/>- All three races supported<n/>- 5 unit types with counters e.g. light/armored<n/>- 25 rounds with random enemies<n/>- Games should last between 15-30 minutes<n/>- Random "mods" per round e.g. enemies with additional armor
@@ -334,6 +386,12 @@ Effect/Name/ArmoredHercWeaponDamageEnemyHd=Armored Herc Weapon Damage
 Effect/Name/ArmoredPygaliskEnemyHd=Armored Pygalisk
 Effect/Name/ArmoredQuillyDamageEnemyHd=Armored Quilly (Damage)
 Effect/Name/ArmoredQuillyLMEnemyHd=Armored Quilly LM
+Effect/Name/ArtilleryTurretDamageBunkerHd=Artillery Turret (Damage)
+Effect/Name/AttackDroneDamageDummyHd=Attack Drone Damage Dummy
+Effect/Name/AttackDroneDamageHd=Attack Drone Damage
+Effect/Name/BigBoyCannonDamageHd=Big Boy Cannon Damage
+Effect/Name/BileLauncherDamageHd=Bile Launcher Damage
+Effect/Name/BileLauncherLMHd=Bile Launcher LM
 Effect/Name/BiologicalAberrationWeaponDamageEnemyHd=Biological Aberration Weapon (Damage)
 Effect/Name/BiologicalKerriganDamageEnemyHd=Biological Kerrigan (Damage)
 Effect/Name/BiologicalRavagerWeaponDamageEnemyHd=Biological Ravager Weapon (Damage)
@@ -359,8 +417,16 @@ Effect/Name/CrucioShockCannonBlastDamageSiegeTankHd=Crucio Shock Cannon Blast (D
 Effect/Name/CrucioShockCannonBlastInfestedSiegeTankHd=Crucio Shock Cannon Blast
 Effect/Name/CrucioShockCannonDirectedDamageSiegeTankHd=Crucio Shock Cannon Directed (Damage)
 Effect/Name/CrucioShockCannonDirectedInfestedSiegeTankHd=Crucio Shock Cannon Directed
-Effect/Name/CrucioShockCannonDummyDamageSiegeTankHd=Crucio Shock Cannon Dummy (Damage)
-Effect/Name/CrucioShockCannonDummyInfestedSiegeTankHd=Crucio Shock Cannon Dummy
+Effect/Name/DecreaseVsArmoredABHd=Decrease Vs Armored AB
+Effect/Name/DecreaseVsArmoredRBHd=Decrease Vs Armored RB
+Effect/Name/DecreaseVsBiologicalABHd=Decrease Vs Biological AB
+Effect/Name/DecreaseVsBiologicalRBHd=Decrease Vs Biological RB
+Effect/Name/DecreaseVsBossABHd=Decrease Vs Boss AB
+Effect/Name/DecreaseVsBossRBHd=Decrease Vs Boss RB
+Effect/Name/DecreaseVsLightABHd=Decrease Vs Light AB
+Effect/Name/DecreaseVsLightRBHd=Decrease Vs Light RB
+Effect/Name/DecreaseVsMechanicalABHd=Decrease Vs Mechanical AB
+Effect/Name/DecreaseVsMechanicalRBHd=Decrease Vs Mechanical RB
 Effect/Name/DutchCPBossGiantRorySwannEnemyHd=Dutch CP
 Effect/Name/DutchConcussiveGrenadeDamage=Fist (Damage)
 Effect/Name/DutchDamageBossGiantRorySwannEnemyHd=Dutch (Damage)
@@ -385,17 +451,17 @@ Effect/Name/FlameThrowerSetFirebatHd=Flame Thrower Set
 Effect/Name/FlameThrowerViralPlasmaDoTDamageHd=Flame Thrower (Viral Plasma DoT Damage)
 Effect/Name/FusionCutterLightSCVEnemyHd=Fusion Cutter (Damage)
 Effect/Name/GatlingCannonDamageMechanicalVikingAssaultModeEnemyHd=Gatling Cannon (Damage)
-Effect/Name/GlaiveWurmImpact1DamageHd=Glaive Wurm Impact 1 (Damage)
+Effect/Name/GlaiveWurmImpact1DamageHd=Glaive Wurm Impact 1 Damage
 Effect/Name/GlaiveWurmImpact1LMMutaliskHd=Glaive Wurm Impact 1 LM
 Effect/Name/GlaiveWurmImpact1SAMutaliskHd=Glaive Wurm Impact 1 SA
 Effect/Name/GlaiveWurmImpact1SetMutaliskHd=Glaive Wurm Impact 1 Set
-Effect/Name/GlaiveWurmImpact2DamageHd=Glaive Wurm Impact 2 (Damage)
+Effect/Name/GlaiveWurmImpact2DamageHd=Glaive Wurm Impact 2 Damage
 Effect/Name/GlaiveWurmImpact2LMMutaliskHd=Glaive Wurm Impact 2 LM
 Effect/Name/GlaiveWurmImpact2SAMutaliskHd=Glaive Wurm Impact 2 SA
 Effect/Name/GlaiveWurmImpact2SetMutaliskHd=Glaive Wurm Impact 2 Set
-Effect/Name/GlaiveWurmImpact3DamageHd=Glaive Wurm Impact 3 (Damage)
+Effect/Name/GlaiveWurmImpact3DamageHd=Glaive Wurm Impact 3 Damage
 Effect/Name/GlaiveWurmImpact3LMMutaliskHd=Glaive Wurm Impact 3 LM
-Effect/Name/GuassRifleHd=Guass Rifle
+Effect/Name/GuassRifleDamageMarineHd=Guass Rifle Damage
 Effect/Name/GuassRifleInfestedTerranHd=Guass Rifle
 Effect/Name/GuassRifleKillEverythingMarineTestHd=Guass Rifle (Damage)
 Effect/Name/GuassRifleLightInfestedTerranEnemyHd=Guass Rifle
@@ -403,9 +469,17 @@ Effect/Name/GuassRifleLightWarPigEnemyHd=Gauss Rifle (Damage)
 Effect/Name/GuassRifleSimpleQuickMarineEnemyHd=Guass Rifle
 Effect/Name/GuassRifleSlowTicklerMarineTestHd=Guass Rifle (Damage)
 Effect/Name/GuassRifleTicklerMarineTestHd=Guass Rifle (Damage)
+Effect/Name/HeavyTurretDamageBunkerHd=Heavy Turret (Damage)
+Effect/Name/HolePuncherDamageHd=Hole Puncher Damage
+Effect/Name/HolePuncherLMHd=Hole Puncher LM
 Effect/Name/HydraliskMeleeSet2=Hydralisk Melee Set
 Effect/Name/ImpalerTentacleDamageHd=Spine Crawler (Damage)
 Effect/Name/ImpalerTentacleLMHd=Spine Crawler (Launch Missile)
+Effect/Name/IncreaseVsArmoredABHd=Increase Vs Armored AB
+Effect/Name/IncreaseVsBiologicalABHd=Increase Vs Biological AB
+Effect/Name/IncreaseVsBossABHd=Increase Vs Boss AB
+Effect/Name/IncreaseVsLightABHd=Increase Vs Light AB
+Effect/Name/IncreaseVsMechanicalABHd=Increase Vs Mechanical AB
 Effect/Name/InfestedSiegeTankSiegedSetHd=Infested SiegeTank - Sieged Set
 Effect/Name/JavelinMissileLaunchersDamageHd=Anti Air (Damage)
 Effect/Name/JavelinMissileLaunchersLM2=Anti Air (Launch Missile)
@@ -432,8 +506,16 @@ Effect/Name/LightLocustMeleeDamageEnemyHd=Light Locust Melee (Damage)
 Effect/Name/LightLocustRangedDamageEnemyHd=Light Locust Ranged (Damage)
 Effect/Name/LightPrisonerDamageEnemyHd=Light Prisoner (Damage)
 Effect/Name/LocustDamage=Locust Melee (Damage)
+Effect/Name/LongboltMissileBlankDamageBunkerHd=Longbolt Missile Blank Damage
+Effect/Name/LongboltMissileBlankLMBunkerHd=Longbolt Missile Blank LM
+Effect/Name/LongboltMissileCPBunkerHd=Longbolt Missile CP
+Effect/Name/LongboltMissileCPMissileTurretHd=Longbolt Missile CP
+Effect/Name/LongboltMissileDamageBunkerHd=Longbolt Missile Damage
+Effect/Name/LongboltMissileDamageMissileTurretHd=Longbolt Missile Damage
+Effect/Name/LongboltMissileLMBunkerHd=Longbolt Missile LM
+Effect/Name/LongboltMissileLMMissileTurretHd=Longbolt Missile LM
 Effect/Name/LurkerCPHd=Lurker CP
-Effect/Name/LurkerDamageHd=Lurker (Damage)
+Effect/Name/LurkerDamageHd=Lurker Damage
 Effect/Name/LurkerSAHd=Lurker SA
 Effect/Name/MaelstromRounds2=Maelstrom Rounds
 Effect/Name/MaelstromRoundsHd=Maelstrom Rounds
@@ -462,8 +544,8 @@ Effect/Name/ParticleDisruptorsDamageStalkerHd=Particle Disruptors (Damage)
 Effect/Name/ParticleDisruptorsLMStalkerHd=Particle Disruptors LM
 Effect/Name/PhaseDisruptorsArmoredImmortalEnemyHd=Phase Disruptors
 Effect/Name/PhaseDisruptorsDamageImmortalHd=Phase Disruptors
-Effect/Name/PhotonCannonDamageProtossHd=Photon Cannon (Damage)
-Effect/Name/PhotonCannonLMProtossHd=Photon Cannon LM
+Effect/Name/PhotonCannonDamageHd=Photon Cannon Damage
+Effect/Name/PhotonCannonLMHd=Photon Cannon LM
 Effect/Name/PsiBladesCPArmoredZealotEnemyHd=Psi Blades CP
 Effect/Name/PsiBladesCPSimpleArmoredZealotEnemyHd=Psi Blades CP
 Effect/Name/PsiBladesDamageArmoredZealotEnemyHd=Psi Blades (Damage)
@@ -480,12 +562,16 @@ Effect/Name/PsionicShockwaveDamageHd=Psionic Shockwave (Damage)
 Effect/Name/PsionicShockwaveDamageSimpleBossArchonEnemyHd=Psionic Shockwave (Damage)
 Effect/Name/PsionicShockwaveSAHd=Psionic Shockwave SA
 Effect/Name/PunisherGrenadesDamageArmoredMarauderEnemyHd=Punisher Grenades (Damage)
-Effect/Name/PunisherGrenadesDamageHd=Punisher Grenades (Damage)
+Effect/Name/PunisherGrenadesDamageHd=Punisher Grenades Damage
 Effect/Name/PunisherGrenadesLMArmoredMarauderEnemyHd=Punisher Grenades LM
 Effect/Name/PunisherGrenadesLMHd=Punisher Grenades LM
 Effect/Name/PushSAHd=Push SA
 Effect/Name/RangedAcidSalivaLMSimpleBeefyRoachEnemyHd=Ranged Acid Saliva LM
 Effect/Name/RazorTalonsDamageBossKerriganEnemyHd=Razor Talons (Damage)
+Effect/Name/Refund10MineralsAvailableABSalvageHd=Refund 10 Minerals Available AB
+Effect/Name/Refund4MineralsAvailableABSalvageHd=Refund 4 Minerals Available AB
+Effect/Name/Refund8MineralsAvailableABSalvageHd=Refund 8 Minerals Available AB
+Effect/Name/RemoveShrikeTurretRBBunkerHd=Remove Shrike Turret RB
 Effect/Name/ScarabApplyRevealHd=Scarab Apply Reveal
 Effect/Name/ScarabExplodeDamageHd=Scarab Explode (Damage)
 Effect/Name/ScarabExplodeSetHd=Scarab Explode Set
@@ -495,9 +581,10 @@ Effect/Name/ScarabLaunchPersistentInitialHd=Scarab Launch Persistent Initial
 Effect/Name/ScarabLaunchSetHd=Scarab Launch Set
 Effect/Name/ScarabTimedLifeHd=Scarab Timed Life
 Effect/Name/ScarabUseMagazineHd=Scarab (Use Magazine)
-Effect/Name/ShrikeTurretDamageHd=Shrike Turret (Damage)
-Effect/Name/SiegeTankSiegedSetHd=SiegeTank - Sieged Set
+Effect/Name/ShrikeTurretDamageBunkerHd=Shrike Turret (Damage)
+Effect/Name/SiegeTankSiegedSetHd=Siege Tank - Sieged Set
 Effect/Name/SpinesLightDroneEnemyHd=Spines (Damage)
+Effect/Name/SunkenColonyDamageHd=Sunken Colony Damage
 Effect/Name/Talons=Talons Missile (Damage)
 Effect/Name/TalonsCPArmoredQueenEnemyHd=Talons CP
 Effect/Name/TalonsDamageArmoredQueenEnemyHd=Talons (Damage)
@@ -515,7 +602,18 @@ Effect/Name/ThermalLancesSetHd=Thermal Lances Set
 Effect/Name/ThorsHammerCPHd=Thor's Hammer CP
 Effect/Name/ThorsHammerDamageHd=Thor's Hammer (Damage)
 Effect/Name/TwinAutocannonsMechanicalGoliathEnemyHd=Twin Autocannons (Damage)
+Effect/Name/UpgradeToArtilleryTurretABBunkerHd=Upgrade To Artillery Turret AB
+Effect/Name/UpgradeToArtilleryTurretSetBunkerHd=Upgrade To Artillery Turret Set
+Effect/Name/UpgradeToHeavyTurretABBunkerHd=Upgrade To Heavy Turret AB
+Effect/Name/UpgradeToHeavyTurretSetBunkerHd=Upgrade To Heavy Turret Set
+Effect/Name/UpgradeToMissileTurretABBunkerHd=Upgrade To Missile Turret AB
+Effect/Name/UpgradeToMissileTurretSetBunkerHd=Upgrade To Missile Turret Set
+Effect/Name/UpgradeTurretABBunkerHd=Upgrade Turret AB
+Effect/Name/UpgradeTurretSetBunkerHd=Upgrade Turret Set
 Effect/Name/WarHound=Mechanical Warhound Melee (Damage)
+Effect/Name/WasplingDamageDummyHd=Waspling Damage Dummy
+Effect/Name/WasplingDamageHd=Waspling Damage
+Effect/Name/WasplingLMHd=Waspling LM
 Effect/Name/WeaklingClawsHd=Weakling Claws (Damage)
 LoadingScreen/Tip= 
 MapInfo/Player00/Name=Neutral
@@ -660,8 +758,13 @@ Unit/Name/ArmoredQuillyWeaponEnemyHd=Armored Quilly Weapon
 Unit/Name/ArmoredStalkerEnemyHd=Armored Stalker
 Unit/Name/ArmoredStalkerWeaponEnemyHd=Armored Stalker
 Unit/Name/ArmoredZealotEnemyHd=Armored Zealot
+Unit/Name/AttackDroneHd=Attack Drone
+Unit/Name/AttackDroneHubHd=Attack Drone Hub
 Unit/Name/BeaconParentHd=Beacon Parent
 Unit/Name/BeefySCVTestHd=Beefy SCV
+Unit/Name/BigBoyCannonHd=Big Boy Cannon
+Unit/Name/BileLauncherHd=Bile Launcher
+Unit/Name/BileLauncherMissileHd=Bile Launcher Missile
 Unit/Name/BiologicalAberrationEnemyHd=Biological Aberration
 Unit/Name/BiologicalHydraliskEnemyHd=Biological Hydralisk
 Unit/Name/BiologicalKerriganEnemyHd=Biological Kerrigan
@@ -692,6 +795,7 @@ Unit/Name/FirebatHd=Firebat
 Unit/Name/GhostHd=Ghost
 Unit/Name/GlaiveWurmWeaponHd=Glave Wurm
 Unit/Name/GuardianHd=Guardian
+Unit/Name/HolePuncherHd=Hole Puncher
 Unit/Name/HydraliskGroundWeapon=Needle Spines
 Unit/Name/HydraliskHd=Hydralisk
 Unit/Name/ImmortalHd=Immortal
@@ -721,6 +825,8 @@ Unit/Name/LightProbeEnemyHd=Light Probe
 Unit/Name/LightReaperEnemyHd=Light Reaper
 Unit/Name/LightSCVEnemyHd=Light SCV
 Unit/Name/LightWarPigEnemyHd=Light War Pig
+Unit/Name/LongboltMissileBunkerHd=Longbolt Missile
+Unit/Name/LongboltMissileMissileTurretHd=Longbolt Missile
 Unit/Name/LurkerHd=Lurker
 Unit/Name/LurkerMP=Lurker Burrowed
 Unit/Name/MarauderHd=Marauder
@@ -732,17 +838,19 @@ Unit/Name/MechanicalSiegeTankTankModeEnemyHd=Mechanical Siege Tank
 Unit/Name/MechanicalVikingAssaultModeEnemyHd=Mechanical Viking
 Unit/Name/MechanicalWarHoundEnemyHd=Mechanical Warhound
 Unit/Name/MechanicalWarhoundWeaponEnemyHd=Mechanical Warhound Weapon
+Unit/Name/MissileTurretHd=Missile Turret
 Unit/Name/MutaliskHd=Mutalisk
 Unit/Name/PathTesterRadius02Hd=Path Tester Radius 0.2
 Unit/Name/PathTesterRadius05Hd=Path Tester Radius 0.5
 Unit/Name/PerfectSpecimenModHd=Perfect Specimen
-Unit/Name/PhotonCannonProtossHd=Photon Cannon
-Unit/Name/PhotonCannonWeaponProtossHd=Photon Cannon Weapon
+Unit/Name/PhotonCannonHd=Photon Cannon
+Unit/Name/PhotonCannonWeaponHd=Photon Cannon Weapon
 Unit/Name/ProbeHd=Probe
 Unit/Name/PunisherGrenadesLMWeaponEnemyHd=Punisher Grenades
 Unit/Name/PunisherGrenadesLMWeaponHd=Punisher Grenades
 Unit/Name/RazorTalonsWeaponBossKerriganEnemyHd=Razor Talons Weapon
 Unit/Name/ReaverHd=Reaver
+Unit/Name/RedOrbHolePuncherHd=Red Orb
 Unit/Name/ResearchCenterProtossHd=Research Center
 Unit/Name/ResearchCenterTerranHd=Research Center
 Unit/Name/ResearchCenterZergHd=Research Center
@@ -764,6 +872,7 @@ Unit/Name/SpineCrawlerHd=Spine Crawler
 Unit/Name/SpineCrawlerWeaponHd=Spine Crawler
 Unit/Name/StalkerHd=Stalker
 Unit/Name/StalkerWeaponHd=Stalker
+Unit/Name/SunkenColonyHd=Sunken Colony
 Unit/Name/TalonsMissileWeaponArmoredQueenEnemyHd=Talons Missile Weapon
 Unit/Name/TempestHd=Tempest
 Unit/Name/TempestWeaponGroundHd=Tempest Weapon (Ground)
@@ -779,16 +888,19 @@ Unit/Name/UrsadonTestHd=Ursadon
 Unit/Name/WallProtossHd=Wall
 Unit/Name/WallTerranHd=Wall
 Unit/Name/WallZergHd=Wall
+Unit/Name/WasplingBurrowHd=Waspling Burrow
+Unit/Name/WasplingHd=Waspling
+Unit/Name/WasplingWeaponHd=Waspling Weapon
 Unit/Name/WeaklingEnemyHd=Weakling
 Unit/ShieldArmorName/ShieldArmor=Shield Armor
 UnitKillRank/BossDehakaEnemyHd=Primal Pack Leader
 UnitSubtitle/BossDehakaEnemyHd=Primal Pack Leader
 Upgrade/Name/BunkerTurretDamageHd=Bunker Turret Damage
-Upgrade/Name/PhotonCannonDamageHd=Photon Cannon Damage
-Upgrade/Name/SpineCrawlerDamageHd=Spine Crawler Damage
+Upgrade/Name/ProtossStructureDamageHd=Protoss Structure Damage
 Upgrade/Name/UnitDamageProtossHd=Unit Damage
 Upgrade/Name/UnitDamageTerranHd=Unit Damage - Terran
 Upgrade/Name/UnitDamageZergHd=Unit Damage - Zerg
+Upgrade/Name/ZergStructureDamageHd=Zerg Structure Damage
 Variant001/Team/00=The Defenders
 Weapon/Name/90mmCannonsHd=90mm Cannons
 Weapon/Name/AcidSalivaRoachHd=Acid Saliva
@@ -799,7 +911,12 @@ Weapon/Name/ArcliteCannonMechanicalSiegeTankTankModeEnemyHd=Arclite Cannon
 Weapon/Name/ArmoredCutieWeaponEnemyHd=Armored Cutie Weapon
 Weapon/Name/ArmoredQuillyMeleeEnemyHd=Armored Quilly Melee
 Weapon/Name/ArmoredQuillyRangedEnemyHd=Armored Quilly Ranged
+Weapon/Name/ArtilleryTurretBunkerHd=Artillery Turret
+Weapon/Name/AttackDroneBeamHd=Attack Drone Beam
+Weapon/Name/AttackDroneHd=Attack Drone
 Weapon/Name/BaneBladesBossAlarakEnemyHd=Bane Blades
+Weapon/Name/BigBoyCannonBeamHd=Big Boy Cannon Beam
+Weapon/Name/BileBombBileLauncherHd=Bile Bomb
 Weapon/Name/C10CanisterRifleHd=C-10 Canister Rifle
 Weapon/Name/C10CanisterRifleLightGhostEnemyHd=C-10 Canister Rifle
 Weapon/Name/C14GaussRifleKillEverythingMarineTestHd=C-14 Gauss Rifle
@@ -826,6 +943,7 @@ Weapon/Name/GuassRifleLightInfestedTerranEnemyHd=Gauss Rifle
 Weapon/Name/GuassRifleMechanicalMilitarizedTransportEnemyHd=Gauss Rifle
 Weapon/Name/GuassRifleSimpleQuickMarineEnemyHd=Gauss Rifle
 Weapon/Name/H1FlashWelderArmoredHercEnemyHd=H1 Flash Welder
+Weapon/Name/HeavyTurretBunkerHd=Heavy Turret
 Weapon/Name/ImpalerTentacleHd=Impaler Tentacle
 Weapon/Name/KaiserBladesArmoredPygaliskEnemyHd=Kaiser Blades
 Weapon/Name/KaiserBladesBiologicalUltraliskEnemyHd=Kaiser Blades
@@ -833,10 +951,12 @@ Weapon/Name/LiberatorAGWeaponHd=Concord Cannon
 Weapon/Name/LightLocustMeleeEnemyHd=Light Locust Melee
 Weapon/Name/LightLocustRangedEnemyHd=Light Locust Ranged
 Weapon/Name/LightWarPigGaussRifleEnemyHd=Gauss Rifle
+Weapon/Name/LongboltMissileMissileTurretHd=Longbolt Missile
 Weapon/Name/MeatyFistLightPrisonerEnemyHd=Meaty Fist
 Weapon/Name/MechanicalWarhoundMeleeEnemyHd=Mechanical Warhound Melee
 Weapon/Name/MeleeBiologicalHydraliskEnemyHd=Melee
 Weapon/Name/MeleeNeedleSpinesSimpleBeefyRoachEnemyHd=Melee Needle Spines
+Weapon/Name/MissileTurretBunkerHd=Missile Turret
 Weapon/Name/NapalmSprayArmoredHellbatEnemyHd=Napalm Spray
 Weapon/Name/NeedleClawsLightBroodlingEnemyHd=Needle Claws
 Weapon/Name/NeedleSpinesBiologicalHydraliskEnemyHd=Needle Spines
@@ -864,9 +984,12 @@ Weapon/Name/RailgunMechanicalWarhoundEnemyHd=Railgun
 Weapon/Name/RangedAcidSalivaSimpleBeefyRoachEnemyHd=Ranged Acid Saliva
 Weapon/Name/RavagerWeaponBiologicalRavagerEnemyHd=Plasma Discharge
 Weapon/Name/RazorTalonsBossKerriganEnemyHd=Razor Talons
+Weapon/Name/RedOrbHolePuncherHd=Red Orb
 Weapon/Name/ScarabsReaverHd=Scarabs
-Weapon/Name/ShrikeTurretHd=Shrike Turret
+Weapon/Name/ShrikeTurretBunkerHd=Shrike Turret
 Weapon/Name/SpinesLurkerHd=Spines
+Weapon/Name/SpinesWasplingHd=Spines
+Weapon/Name/SubterraneanTentacleSunkenColonyHd=Subterranean Tentacle
 Weapon/Name/TalonsArmoredQueenEnemyHd=Talons
 Weapon/Name/TalonsMissileArmoredQueenEnemyHd=Talons Missile
 Weapon/Name/TempestGroundHd=Resonance Coil
@@ -875,12 +998,18 @@ Weapon/Name/ThorsHammerHd=Thor's Hammer
 Weapon/Name/TwinAutocannonsMechanicalGoliathEnemyHd=Twin Autocannons
 Weapon/Name/TyphoonMissilePodArmoredCycloneEnemyHd=Typhoon Missile Pod
 Weapon/Name/VolatileProjectionBiologicalRavasaurEnemyHd=Volatile Projection
+Weapon/Name/WasplingHd=Waspling
 Weapon/Name/WeaklingClawsHd=Weakling Claws
 Weapon/Tip/90mmCannonsHd=Attack upgrades by <c val="00E35B">3</c>
 Weapon/Tip/AcidSalivaRoachHd=Attack upgrades by <c val="00E35B">2.5</c>
 Weapon/Tip/AcidSpinesArmoredQueenEnemyHd=
 Weapon/Tip/AcidSporesGuardianHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/AdeptHd=Attack upgrades by <c val="00E35B">1</c>
+Weapon/Tip/ArtilleryTurretBunkerHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
+Weapon/Tip/AttackDroneBeamHd=
+Weapon/Tip/AttackDroneHd=Attack upgrades by <c val="00E35B">2.5</c>
+Weapon/Tip/BigBoyCannonBeamHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
+Weapon/Tip/BileBombBileLauncherHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
 Weapon/Tip/C10CanisterRifleHd=Attack upgrades by <c val="00E35B">3</c>
 Weapon/Tip/CrucioShockCannonInfestedSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/CrucioShockCannonSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
@@ -888,19 +1017,24 @@ Weapon/Tip/FirebatHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF7
 Weapon/Tip/GlaiveWurmHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/GuassRifleHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/GuassRifleInfestedTerranHd=Attack upgrades by <c val="00E35B">1</c>
+Weapon/Tip/HeavyTurretBunkerHd=Attack upgrades by <c val="00E35B">2.5</c>
 Weapon/Tip/ImpalerTentacleHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/LiberatorAGWeaponHd=Attack upgrades by <c val="00E35B">5</c>
+Weapon/Tip/MissileTurretBunkerHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/NeedleSpinesHydraliskHd=Attack upgrades by <c val="00E35B">2</c>
 Weapon/Tip/ParticleDisruptorsHd=Attack upgrades by <c val="00E35B">2</c>
 Weapon/Tip/PhaseDisruptorsHd=Attack upgrades by <c val="00E35B">3</c>
 Weapon/Tip/PhotonCannonHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/PsionicShockwaveHd=Attack upgrades by <c val="00E35B">1</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/PunisherGrenadesHd=Attack upgrades by <c val="00E35B">2.5</c>
+Weapon/Tip/RedOrbHolePuncherHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/ScarabsReaverHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
-Weapon/Tip/ShrikeTurretHd=Attack upgrades by <c val="00E35B">0.8</c>
+Weapon/Tip/ShrikeTurretBunkerHd=Attack upgrades by <c val="00E35B">2</c>
 Weapon/Tip/SpinesLurkerHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
+Weapon/Tip/SubterraneanTentacleSunkenColonyHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/TalonsArmoredQueenEnemyHd=
 Weapon/Tip/TempestGroundHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/ThermalLancesHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/ThorsHammerHd=Attack upgrades by <c val="00E35B">3</c>
+Weapon/Tip/WasplingHd=Attack upgrades by <c val="00E35B">2.5</c>
 testing=testing

@@ -63,6 +63,7 @@ bool lib1_gf_triggeringplayerhasatleastNresources (int lp_mins, int lp_gas);
 bool lib1_gf_triggeringunitbelongstoplayergroup (playergroup lp_pg);
 bool lib1_gf_triggeringunitbelongstoplayer (int lp_p);
 bool lib1_gf_triggeringunitisoftype (string lp_t);
+bool lib1_gf_unithasbuff (unit lp_u, string lp_b);
 bool lib1_gf_unitisalive (unit lp_u);
 bool lib1_gf_unitistype (unit lp_u, string lp_ut);
 bool lib1_gf_convertbooltoenabledisableoption (bool lp_bool);
@@ -281,6 +282,12 @@ bool lib1_gf_triggeringunitisoftype (string lp_t) {
     // Automatic Variable Declarations
     // Implementation
     return (UnitGetType(EventUnit()) == lp_t);
+}
+
+bool lib1_gf_unithasbuff (unit lp_u, string lp_b) {
+    // Automatic Variable Declarations
+    // Implementation
+    return UnitHasBehavior2(lp_u, lp_b);
 }
 
 bool lib1_gf_unitisalive (unit lp_u) {
@@ -1294,7 +1301,6 @@ bool[9] gv_activedefenderlocations;
 playergroup gv_activedefenders;
 playergroup gv_activedefendersplusallycomp;
 bool gv_allplayershavechosenlocation;
-string[9][4][3] gv_attributebuffperlocationandrace;
 bool[10] gv_autoskipbyplayer;
 fixed gv_chooserradius;
 fixed gv_chooserradiusbig;
@@ -1373,6 +1379,7 @@ int gv_startvotetokickplayerdialog;
 int gv_startvotetokickplayerdibutton;
 int[9] gv_telelocationtoenemyspawnpathsegments;
 int[9] gv_telelocationtospawnclockwiselocation;
+int gv_testoverridegameattributedifficulty;
 bool gv_testingmultiplayerlocally;
 string[9] gv_unitbeaconperlocation;
 point[9][9] gv_unitbeaconpoints;
@@ -1442,6 +1449,7 @@ void InitGlobals () {
     gv_roundtimerexists = true;
     gv_startvotetokickplayerdialog = c_invalidDialogId;
     gv_startvotetokickplayerdibutton = c_invalidDialogControlId;
+    gv_testoverridegameattributedifficulty = -1;
     gv_unitswithfullrefundavailable = UnitGroupEmpty();
 }
 
@@ -1472,7 +1480,7 @@ void gf_initunitbeaconpointstopleft ();
 void gf_initunitbeaconpoints ();
 void gf_initunitbeaconpointsperlocation ();
 void gf_initalliance ();
-void gf_initattributebuffsperlocationandrace ();
+void gf_initattributebuffamounts ();
 void gf_initbanks ();
 void gf_initchooserspawnpoints ();
 void gf_initdefendlocationbeaconperlocation ();
@@ -1539,7 +1547,6 @@ void gf_startkickvoteforplayer (int lp_initiatedbyplayer, int lp_kickplayer);
 void gf_showvoteresults ();
 int gf_getvotevaluethreshold ();
 bool gf_unitisbuilder (unit lp_u);
-bool gf_unitisbossheroic (unit lp_u);
 int gf_rollmodtypedice ();
 void gf_applymodtounit (unit lp_u, int lp_modtype);
 void gf_createmoddedunitatpoint (string lp_ut, int lp_p, point lp_point, int lp_opts, int lp_modtype);
@@ -1551,6 +1558,7 @@ void gf_startallenemyghostspawnlocations ();
 void gf_startenemyghostspawnatlocation (int lp_location);
 void gf_stopandclearenemyghostspawn ();
 void gf_updateactivepathtests ();
+void gf_upgradebuilding (string lp_buildingtypetocreate);
 void gf_skipforplayeriftimerisactive (int lp_p);
 void gf_spawnunit (int lp_unitlocation, int lp_p);
 void gf_chooseunit (int lp_numchoosers, int lp_location, int lp_p, region lp_region, int lp_choicetype);
@@ -1584,6 +1592,8 @@ trigger gt_choosespawnlocationbot;
 trigger gt_choosespawnlocationbotleft;
 trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
+trigger gt_testinitrace;
+trigger gt_testdelme;
 trigger gt_testpaths;
 trigger gt_showkickplayerlist;
 trigger gt_kickplayerlistcancel;
@@ -1603,9 +1613,17 @@ trigger gt_keepspawnclearofunits;
 trigger gt_fullrefundavailableatstartandbetweenrounds;
 trigger gt_handleplayerdrop;
 trigger gt_bunkerattackenemyandredirectattack;
-trigger gt_halfrefund;
 trigger gt_fullrefund;
 trigger gt_movespawnflag;
+trigger gt_upgradebuildingprotossattackdronehub;
+trigger gt_upgradebuildingprotossbigboycannon;
+trigger gt_upgradebuildingprotossholepuncher;
+trigger gt_upgradebuildingprotossphotoncannon;
+trigger gt_upgradebuildingterranbunker;
+trigger gt_upgradebuildingzergbilelauncher;
+trigger gt_upgradebuildingzergspinecrawler;
+trigger gt_upgradebuildingzergsunkencolony;
+trigger gt_upgradebuildingzergwasplingburrow;
 trigger gt_clearrallyunitchooser;
 trigger gt_rallyunitchooser;
 trigger gt_changerace;
@@ -1947,81 +1965,36 @@ void gf_initalliance () {
 
 }
 
-void gf_initattributebuffsperlocationandrace () {
+void gf_initattributebuffamounts () {
+    int init_i;
+
+    // Variable Declarations
+    string[7] lv__catalogfieldpathstomodify;
+    string lv__enemyid;
+    string lv__fieldpath;
+    int lv__i;
+    int lv__j;
+    int lv__k;
+    int lv__p;
+    int[3] lv__playerstomodify;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+    for (init_i = 0; init_i <= 6; init_i += 1) {
+        lv__catalogfieldpathstomodify[init_i] = "";
+    }
+    lv__enemyid = "";
+    lv__fieldpath = "";
+
     // Implementation
-    if (lib1_gf_and2((gv_gameattributedifficulty >= ge_gameattributedifficulty_L1Beginner), (gv_gameattributedifficulty <= ge_gameattributedifficulty_L4Standard))) {
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_protoss][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_protoss][0] = "IncreaseVsLightStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_protoss][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_protoss][1] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_protoss][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_protoss][1] = "IncreaseVsBossStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_protoss][0] = "IncreaseVsLightStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_protoss][1] = "IncreaseVsBiologicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss][0] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss][1] = "IncreaseVsBossStandardAttributeDamageHd";
+    if ((gv_gameattributedifficulty == ge_gameattributedifficulty_L5Hard)) {
+        CatalogFieldValueModify(c_gameCatalogBehavior, "IncreaseVsArmoredAttributeDamageHd", "Modification.DamageDealtAttributeMultiplier[" + IntToString(c_unitAttributeArmored) + "]", gv_allycompplayer, "0.3", c_upgradeOperationSet);
+        CatalogFieldValueModify(c_gameCatalogBehavior, "IncreaseVsBiologicalAttributeDamageHd", "Modification.DamageDealtAttributeMultiplier[" + IntToString(c_unitAttributeBiological) + "]", gv_allycompplayer, "0.3", c_upgradeOperationSet);
+        CatalogFieldValueModify(c_gameCatalogBehavior, "IncreaseVsBossAttributeDamageHd", "Modification.DamageDealtAttributeMultiplier[" + IntToString(c_unitAttributeHeroic) + "]", gv_allycompplayer, "0.3", c_upgradeOperationSet);
+        CatalogFieldValueModify(c_gameCatalogBehavior, "IncreaseVsLightAttributeDamageHd", "Modification.DamageDealtAttributeMultiplier[" + IntToString(c_unitAttributeLight) + "]", gv_allycompplayer, "0.3", c_upgradeOperationSet);
+        CatalogFieldValueModify(c_gameCatalogBehavior, "IncreaseVsMechanicalAttributeDamageHd", "Modification.DamageDealtAttributeMultiplier[" + IntToString(c_unitAttributeMechanical) + "]", gv_allycompplayer, "0.3", c_upgradeOperationSet);
     }
-    else {
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_protoss][0] = "IncreaseVsArmoredHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_protoss][0] = "IncreaseVsLightHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_protoss][0] = "IncreaseVsArmoredHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_protoss][1] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_protoss][0] = "IncreaseVsBiologicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_protoss][1] = "IncreaseVsBossHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_protoss][0] = "IncreaseVsLightHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_protoss][1] = "IncreaseVsBiologicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss][1] = "IncreaseVsBossHardAttributeDamageHd";
-    }
-    if (lib1_gf_and2((gv_gameattributedifficulty >= ge_gameattributedifficulty_L1Beginner), (gv_gameattributedifficulty <= ge_gameattributedifficulty_L4Standard))) {
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_terran][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_terran][0] = "IncreaseVsLightStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_terran][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_terran][1] = "IncreaseVsBossStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_terran][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_terran][1] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran][0] = "IncreaseVsLightStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran][1] = "IncreaseVsBiologicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][1] = "IncreaseVsBossStandardAttributeDamageHd";
-    }
-    else {
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_terran][0] = "IncreaseVsArmoredHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_terran][0] = "IncreaseVsLightHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_terran][0] = "IncreaseVsBiologicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_terran][1] = "IncreaseVsBossHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_terran][0] = "IncreaseVsArmoredHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_terran][1] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran][0] = "IncreaseVsLightHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran][1] = "IncreaseVsBiologicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran][1] = "IncreaseVsBossHardAttributeDamageHd";
-    }
-    if (lib1_gf_and2((gv_gameattributedifficulty >= ge_gameattributedifficulty_L1Beginner), (gv_gameattributedifficulty <= ge_gameattributedifficulty_L4Standard))) {
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_zerg][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_zerg][0] = "IncreaseVsLightStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_zerg][0] = "IncreaseVsBiologicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_zerg][1] = "IncreaseVsBossStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_zerg][0] = "IncreaseVsLightStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_zerg][1] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_zerg][0] = "IncreaseVsArmoredStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_zerg][1] = "IncreaseVsBiologicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_zerg][0] = "IncreaseVsMechanicalStandardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_zerg][1] = "IncreaseVsBossStandardAttributeDamageHd";
-    }
-    else {
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_zerg][0] = "IncreaseVsArmoredHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_zerg][0] = "IncreaseVsLightHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_zerg][0] = "IncreaseVsBiologicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_zerg][1] = "IncreaseVsBossHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_zerg][0] = "IncreaseVsLightHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_zerg][1] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_zerg][0] = "IncreaseVsArmoredHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_zerg][1] = "IncreaseVsBiologicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_zerg][0] = "IncreaseVsMechanicalHardAttributeDamageHd";
-        gv_attributebuffperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_zerg][1] = "IncreaseVsBossHardAttributeDamageHd";
-    }
+
 }
 
 void gf_initbanks () {
@@ -2678,23 +2651,28 @@ void gf_initgameattributevars () {
     string auto2DB5EFBA_val;
 
     // Implementation
-    auto63B48E0E_val = GameAttributeGameValue("2");
-    if (auto63B48E0E_val == "0002") {
-        gv_gameattributedifficulty = ge_gameattributedifficulty_L1Beginner;
-    }
-    else if (auto63B48E0E_val == "0004") {
-        gv_gameattributedifficulty = ge_gameattributedifficulty_L2;
-    }
-    else if (auto63B48E0E_val == "0005") {
-        gv_gameattributedifficulty = ge_gameattributedifficulty_L3;
-    }
-    else if (auto63B48E0E_val == "0001") {
-        gv_gameattributedifficulty = ge_gameattributedifficulty_L4Standard;
-    }
-    else if (auto63B48E0E_val == "0003") {
-        gv_gameattributedifficulty = ge_gameattributedifficulty_L5Hard;
+    if ((gv_testoverridegameattributedifficulty > -1)) {
+        gv_gameattributedifficulty = gv_testoverridegameattributedifficulty;
     }
     else {
+        auto63B48E0E_val = GameAttributeGameValue("2");
+        if (auto63B48E0E_val == "0002") {
+            gv_gameattributedifficulty = ge_gameattributedifficulty_L1Beginner;
+        }
+        else if (auto63B48E0E_val == "0004") {
+            gv_gameattributedifficulty = ge_gameattributedifficulty_L2;
+        }
+        else if (auto63B48E0E_val == "0005") {
+            gv_gameattributedifficulty = ge_gameattributedifficulty_L3;
+        }
+        else if (auto63B48E0E_val == "0001") {
+            gv_gameattributedifficulty = ge_gameattributedifficulty_L4Standard;
+        }
+        else if (auto63B48E0E_val == "0003") {
+            gv_gameattributedifficulty = ge_gameattributedifficulty_L5Hard;
+        }
+        else {
+        }
     }
     auto5C84F2C5_val = GameAttributeGameValue("1");
     if (auto5C84F2C5_val == "0001") {
@@ -3435,7 +3413,7 @@ bool gf_buildingiswall (unit lp_building) {
 bool gf_buildingisattackingstructure (unit lp_building) {
     // Automatic Variable Declarations
     // Implementation
-    return lib1_gf_or3(lib1_gf_unitistype(lp_building, "PhotonCannonProtossHd"), lib1_gf_unitistype(lp_building, "BunkerHd"), lib1_gf_unitistype(lp_building, "SpineCrawlerHd"));
+    return lib1_gf_or3(lib1_gf_unitistype(lp_building, "PhotonCannonHd"), lib1_gf_unitistype(lp_building, "BunkerHd"), lib1_gf_unitistype(lp_building, "SpineCrawlerHd"));
 }
 
 void gf_refundplayer (int lp_p, unit lp_building) {
@@ -3713,12 +3691,6 @@ bool gf_unitisbuilder (unit lp_u) {
     return lib1_gf_or3(lib1_gf_unitistype(lp_u, "SCVHd"), lib1_gf_unitistype(lp_u, "DroneHd"), lib1_gf_unitistype(lp_u, "ProbeHd"));
 }
 
-bool gf_unitisbossheroic (unit lp_u) {
-    // Automatic Variable Declarations
-    // Implementation
-    return UnitTypeTestAttribute(UnitGetType(lp_u), c_unitAttributeHeroic);
-}
-
 int gf_rollmodtypedice () {
     // Automatic Variable Declarations
     // Implementation
@@ -3769,14 +3741,10 @@ void gf_createplayerunitatpoint (int lp_location, int lp_race, int lp_player, po
     // Variable Declarations
     unit lv__u;
     string lv__ut;
-    string lv__attrbuff1;
-    string lv__attrbuff2;
 
     // Automatic Variable Declarations
     // Variable Initialization
     lv__ut = gv_unitperlocationandrace[lp_location][lp_race];
-    lv__attrbuff1 = gv_attributebuffperlocationandrace[lp_location][lp_race][0];
-    lv__attrbuff2 = gv_attributebuffperlocationandrace[lp_location][lp_race][1];
 
     // Implementation
     if ((lp_utoverride != null)) {
@@ -3784,12 +3752,6 @@ void gf_createplayerunitatpoint (int lp_location, int lp_race, int lp_player, po
     }
 
     lib1_gf_createunitatpoint(lv__ut, lp_point, lp_player, lp_opts);
-    lv__u = UnitLastCreated();
-    UnitBehaviorAdd(lv__u, lv__attrbuff1, lv__u, 1);
-    if ((lv__attrbuff2 != null)) {
-        UnitBehaviorAdd(lv__u, lv__attrbuff2, lv__u, 1);
-    }
-
 }
 
 void gf_removefullrefund () {
@@ -3808,7 +3770,7 @@ void gf_removefullrefund () {
     for (;; auto62D363EA_u -= 1) {
         lv__u = UnitGroupUnitFromEnd(auto62D363EA_g, auto62D363EA_u);
         if (lv__u == null) { break; }
-        UnitBehaviorRemove(lv__u, "FullRefundAvailableHd", 1);
+        UnitBehaviorRemove(lv__u, "FullRefundAvailableSalvageHd", 1);
     }
     UnitGroupClear(gv_unitswithfullrefundavailable);
 }
@@ -3969,6 +3931,30 @@ void gf_updateactivepathtests () {
         }
 
     }
+}
+
+void gf_upgradebuilding (string lp_buildingtypetocreate) {
+    // Variable Declarations
+    int lv__p;
+    unit lv__u;
+    point lv__point;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__p = EventPlayer();
+    lv__u = EventUnit();
+    lv__point = UnitGetPosition(EventUnit());
+
+    // Implementation
+    lib1_gf_createunitatpoint(lp_buildingtypetocreate, lv__point, lv__p, c_unitCreateIgnorePlacement);
+    UnitSelect(UnitLastCreated(), lv__p, true);
+    if (lib1_gf_unithasbuff(lv__u, "FullRefundAvailableSalvageHd")) {
+        UnitBehaviorAdd(UnitLastCreated(), "FullRefundAvailableSalvageHd", lv__u, 1);
+        UnitGroupAdd(gv_unitswithfullrefundavailable, UnitLastCreated());
+    }
+
+    UnitKill(lv__u);
+    UnitGroupRemove(gv_unitswithfullrefundavailable, lv__u);
 }
 
 void gf_skipforplayeriftimerisactive (int lp_p) {
@@ -4481,12 +4467,12 @@ bool gt_initmap_Func (bool testConds, bool runActions) {
     }
 
     gf_initgameattributevars();
+    gf_initattributebuffamounts();
     gf_initdefendlocationtoislandregion();
     gf_initdefendlocationtopathtestsegments();
     gf_initmisc();
     gf_initenemyids();
     gf_initenemymaxhealthandshield();
-    gf_initattributebuffsperlocationandrace();
     gf_initmodtypetobuff();
     gf_initroundtimer();
     gf_initunitpoints();
@@ -4810,6 +4796,47 @@ void gt_choosespawnlocationtopleft_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: test - init race
+//--------------------------------------------------------------------------------------------------
+bool gt_testinitrace_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    PlayerSetRace(1, "Terr");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_testinitrace_Init () {
+    gt_testinitrace = TriggerCreate("gt_testinitrace_Func");
+    TriggerAddEventTimeElapsed(gt_testinitrace, 1.0, c_timeReal);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: test - delme
+//--------------------------------------------------------------------------------------------------
+bool gt_testdelme_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_testdelme_Init () {
+    gt_testdelme = TriggerCreate("gt_testdelme_Func");
+    TriggerAddEventMapInit(gt_testdelme);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: test paths
 //--------------------------------------------------------------------------------------------------
 bool gt_testpaths_Func (bool testConds, bool runActions) {
@@ -5128,7 +5155,7 @@ bool gt_upgradespinecrawlerdamage_Func (bool testConds, bool runActions) {
     gv_autoupgradelockperplayer[lv__p] = true;
     if (lib1_gf_triggeringplayerhasatleastNresources(2, 0)) {
         PlayerModifyPropertyInt(lv__p, c_playerPropMinerals, c_playerPropOperSubtract, 2);
-        TechTreeUpgradeAddLevel(lv__p, "SpineCrawlerDamageHd", 1);
+        TechTreeUpgradeAddLevel(lv__p, "ZergStructureDamageHd", 1);
     }
 
     gv_autoupgradelockperplayer[lv__p] = false;
@@ -5198,7 +5225,7 @@ bool gt_upgradephotoncannondamage_Func (bool testConds, bool runActions) {
     gv_autoupgradelockperplayer[lv__p] = true;
     if (lib1_gf_triggeringplayerhasatleastNresources(2, 0)) {
         PlayerModifyPropertyInt(lv__p, c_playerPropMinerals, c_playerPropOperSubtract, 2);
-        TechTreeUpgradeAddLevel(lv__p, "PhotonCannonDamageHd", 1);
+        TechTreeUpgradeAddLevel(lv__p, "ProtossStructureDamageHd", 1);
     }
 
     gv_autoupgradelockperplayer[lv__p] = false;
@@ -5380,6 +5407,14 @@ bool gt_keepspawnclearofunits_Func (bool testConds, bool runActions) {
             return false;
         }
 
+        if (!(lib1_gf_isfalse(lib1_gf_unitistype(EventUnit(), "AttackDroneHd")))) {
+            return false;
+        }
+
+        if (!(lib1_gf_isfalse(lib1_gf_unitistype(EventUnit(), "WasplingHd")))) {
+            return false;
+        }
+
         if (!(lib1_gf_isfalse(UnitFilterMatch(EventUnit(), lv__p, UnitFilter((1 << c_targetFilterMissile), 0, 0, 0))))) {
             return false;
         }
@@ -5455,7 +5490,7 @@ bool gt_fullrefundavailableatstartandbetweenrounds_Func (bool testConds, bool ru
         return true;
     }
 
-    UnitBehaviorAdd(lv__building, "FullRefundAvailableHd", lv__building, 1);
+    UnitBehaviorAdd(lv__building, "FullRefundAvailableSalvageHd", lv__building, 1);
     UnitGroupAdd(gv_unitswithfullrefundavailable, lv__building);
     return true;
 }
@@ -5532,55 +5567,47 @@ void gt_bunkerattackenemyandredirectattack_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: half refund
-//--------------------------------------------------------------------------------------------------
-bool gt_halfrefund_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv__cost;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lv__cost = UnitTypeGetCost(UnitGetType(EventUnit()), c_unitCostMinerals);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperAdd, (lv__cost / 2));
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_halfrefund_Init () {
-    gt_halfrefund = TriggerCreate("gt_halfrefund_Func");
-    TriggerAddEventUnitAbility(gt_halfrefund, null, AbilityCommand("SalvageHalfRefundHd", 0), c_abilEffectStageFinish, false);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: full refund
 //--------------------------------------------------------------------------------------------------
 bool gt_fullrefund_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv__cost;
+    unit lv__u;
+    int lv__p;
+    string lv__b;
 
     // Automatic Variable Declarations
     // Variable Initialization
+    lv__u = EventUnit();
+    lv__p = EventPlayer();
 
     // Actions
     if (!runActions) {
         return true;
     }
 
-    lv__cost = UnitTypeGetCost(UnitGetType(EventUnit()), c_unitCostMinerals);
+    lv__cost = UnitTypeGetCost(UnitGetType(lv__u), c_unitCostMinerals);
+    if (lib1_gf_unithasbuff(lv__u, "UpgradedTurretBunkerHd")) {
+        if (lib1_gf_unithasbuff(lv__u, "ArtilleryTurretBunkerHd")) {
+            lv__cost = lv__cost + CatalogFieldValueGetAsInt(c_gameCatalogAbil, "UpgradeToArtilleryTurretBunkerHd", "Cost[" + IntToString(0) + "].Resource[" + IntToString(c_resourceTypeMinerals) + "]", lv__p);
+        }
+        else if (lib1_gf_unithasbuff(lv__u, "HeavyTurretBunkerHd")) {
+            lv__cost = lv__cost + CatalogFieldValueGetAsInt(c_gameCatalogAbil, "UpgradeToHeavyTurretBunkerHd", "Cost[" + IntToString(0) + "].Resource[" + IntToString(c_resourceTypeMinerals) + "]", lv__p);
+        }
+        else if (lib1_gf_unithasbuff(lv__u, "MissileTurretBunkerHd")) {
+            lv__cost = lv__cost + CatalogFieldValueGetAsInt(c_gameCatalogAbil, "UpgradeToMissileTurretBunkerHd", "Cost[" + IntToString(0) + "].Resource[" + IntToString(c_resourceTypeMinerals) + "]", lv__p);
+        }
+    }
+
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperAdd, lv__cost);
+    UnitKill(lv__u);
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
 void gt_fullrefund_Init () {
     gt_fullrefund = TriggerCreate("gt_fullrefund_Func");
-    TriggerAddEventUnitAbility(gt_fullrefund, null, AbilityCommand("SalvageFullRefundHd", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(gt_fullrefund, null, AbilityCommand("SalvageFullRefundHd", 0), c_unitAbilStageExecute, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -5613,6 +5640,194 @@ bool gt_movespawnflag_Func (bool testConds, bool runActions) {
 void gt_movespawnflag_Init () {
     gt_movespawnflag = TriggerCreate("gt_movespawnflag_Func");
     TriggerAddEventUnitAbility(gt_movespawnflag, null, AbilityCommand("BuildSpawnFlagHd", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: upgrade building - protoss - attack drone hub
+//--------------------------------------------------------------------------------------------------
+bool gt_upgradebuildingprotossattackdronehub_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_upgradebuilding("AttackDroneHubHd");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_upgradebuildingprotossattackdronehub_Init () {
+    gt_upgradebuildingprotossattackdronehub = TriggerCreate("gt_upgradebuildingprotossattackdronehub_Func");
+    TriggerAddEventUnitAbility(gt_upgradebuildingprotossattackdronehub, null, AbilityCommand("UpgradeToAttackDroneHubPhotonCannonHd", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: upgrade building - protoss - big boy cannon
+//--------------------------------------------------------------------------------------------------
+bool gt_upgradebuildingprotossbigboycannon_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+    unit lv__u;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__p = EventPlayer();
+    lv__u = EventUnit();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_upgradebuilding("BigBoyCannonHd");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_upgradebuildingprotossbigboycannon_Init () {
+    gt_upgradebuildingprotossbigboycannon = TriggerCreate("gt_upgradebuildingprotossbigboycannon_Func");
+    TriggerAddEventUnitAbility(gt_upgradebuildingprotossbigboycannon, null, AbilityCommand("UpgradeToBigBoyCannonPhotonCannonHd", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: upgrade building - protoss - hole puncher
+//--------------------------------------------------------------------------------------------------
+bool gt_upgradebuildingprotossholepuncher_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_upgradebuilding("PhotonCannonHd");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_upgradebuildingprotossholepuncher_Init () {
+    gt_upgradebuildingprotossholepuncher = TriggerCreate("gt_upgradebuildingprotossholepuncher_Func");
+    TriggerAddEventUnitAbility(gt_upgradebuildingprotossholepuncher, null, AbilityCommand("UpgradeToPhotonCannonHd", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: upgrade building - protoss - photon cannon
+//--------------------------------------------------------------------------------------------------
+bool gt_upgradebuildingprotossphotoncannon_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_upgradebuilding("AttackDroneHubHd");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_upgradebuildingprotossphotoncannon_Init () {
+    gt_upgradebuildingprotossphotoncannon = TriggerCreate("gt_upgradebuildingprotossphotoncannon_Func");
+    TriggerAddEventUnitAbility(gt_upgradebuildingprotossphotoncannon, null, AbilityCommand("UpgradeToAttackDroneHubPhotonCannonHd", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: upgrade building - terran - bunker
+//--------------------------------------------------------------------------------------------------
+bool gt_upgradebuildingterranbunker_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_upgradebuilding("BunkerHd");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_upgradebuildingterranbunker_Init () {
+    gt_upgradebuildingterranbunker = TriggerCreate("gt_upgradebuildingterranbunker_Func");
+    TriggerAddEventUnitAbility(gt_upgradebuildingterranbunker, null, AbilityCommand("UpgradeToBunkerHd", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: upgrade building - zerg - bile launcher
+//--------------------------------------------------------------------------------------------------
+bool gt_upgradebuildingzergbilelauncher_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_upgradebuilding("BileLauncherHd");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_upgradebuildingzergbilelauncher_Init () {
+    gt_upgradebuildingzergbilelauncher = TriggerCreate("gt_upgradebuildingzergbilelauncher_Func");
+    TriggerAddEventUnitAbility(gt_upgradebuildingzergbilelauncher, null, AbilityCommand("UpgradeToBileLauncherSpineCrawlerHd", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: upgrade building - zerg - spine crawler
+//--------------------------------------------------------------------------------------------------
+bool gt_upgradebuildingzergspinecrawler_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_upgradebuilding("SpineCrawlerHd");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_upgradebuildingzergspinecrawler_Init () {
+    gt_upgradebuildingzergspinecrawler = TriggerCreate("gt_upgradebuildingzergspinecrawler_Func");
+    TriggerAddEventUnitAbility(gt_upgradebuildingzergspinecrawler, null, AbilityCommand("UpgradeToSpineCrawlerHd", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: upgrade building - zerg - sunken colony
+//--------------------------------------------------------------------------------------------------
+bool gt_upgradebuildingzergsunkencolony_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_upgradebuilding("SunkenColonyHd");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_upgradebuildingzergsunkencolony_Init () {
+    gt_upgradebuildingzergsunkencolony = TriggerCreate("gt_upgradebuildingzergsunkencolony_Func");
+    TriggerAddEventUnitAbility(gt_upgradebuildingzergsunkencolony, null, AbilityCommand("UpgradeToSunkenColonySpineCrawlerHd", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: upgrade building - zerg - waspling burrow
+//--------------------------------------------------------------------------------------------------
+bool gt_upgradebuildingzergwasplingburrow_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_upgradebuilding("WasplingBurrowHd");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_upgradebuildingzergwasplingburrow_Init () {
+    gt_upgradebuildingzergwasplingburrow = TriggerCreate("gt_upgradebuildingzergwasplingburrow_Func");
+    TriggerAddEventUnitAbility(gt_upgradebuildingzergwasplingburrow, null, AbilityCommand("UpgradeToWasplingBurrowSpineCrawlerHd", 0), c_unitAbilStageComplete, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -6401,7 +6616,7 @@ bool gt_clearenemies_Func (bool testConds, bool runActions) {
                 if (lib1_gf_isfalse(gf_isenemyghost(lv__u))) {
                     gf_removeenemy(lv__u);
                     gf_enemyreachedend();
-                    if (gf_unitisbossheroic(lv__u)) {
+                    if (gf_isboss()) {
                         gf_enemyreachedend();
                     }
 
@@ -6484,7 +6699,7 @@ bool gt_gainchoosers_Func (bool testConds, bool runActions) {
         Wait(1.0, c_timeGame);
     }
     gv_lockenemieskilled = true;
-    if (gf_unitisbossheroic(lv__u)) {
+    if (gf_isboss()) {
         gf_incrementenemieskilled();
     }
 
@@ -6723,6 +6938,8 @@ void InitTriggers () {
     gt_choosespawnlocationbotleft_Init();
     gt_choosespawnlocationleft_Init();
     gt_choosespawnlocationtopleft_Init();
+    gt_testinitrace_Init();
+    gt_testdelme_Init();
     gt_testpaths_Init();
     gt_showkickplayerlist_Init();
     gt_kickplayerlistcancel_Init();
@@ -6742,9 +6959,17 @@ void InitTriggers () {
     gt_fullrefundavailableatstartandbetweenrounds_Init();
     gt_handleplayerdrop_Init();
     gt_bunkerattackenemyandredirectattack_Init();
-    gt_halfrefund_Init();
     gt_fullrefund_Init();
     gt_movespawnflag_Init();
+    gt_upgradebuildingprotossattackdronehub_Init();
+    gt_upgradebuildingprotossbigboycannon_Init();
+    gt_upgradebuildingprotossholepuncher_Init();
+    gt_upgradebuildingprotossphotoncannon_Init();
+    gt_upgradebuildingterranbunker_Init();
+    gt_upgradebuildingzergbilelauncher_Init();
+    gt_upgradebuildingzergspinecrawler_Init();
+    gt_upgradebuildingzergsunkencolony_Init();
+    gt_upgradebuildingzergwasplingburrow_Init();
     gt_clearrallyunitchooser_Init();
     gt_rallyunitchooser_Init();
     gt_changerace_Init();

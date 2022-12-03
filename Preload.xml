@@ -6,11 +6,15 @@
 <Actor id="UIScreenNumber2Hd"/>
 <Actor id="UIScreenNumber6Hd"/>
 <Actor id="UIScreenPlusHd"/>
+<Behavior id="MissileTurretBunkerHd"/>
 <Behavior id="EnemyGhostHd"/>
-<Behavior id="FullRefundAvailableHd"/>
+<Behavior id="FullRefundAvailableSalvageHd"/>
+<Behavior id="ArtilleryTurretBunkerHd"/>
 <Behavior id="RemoveShieldsHd"/>
 <Behavior id="CloakHd"/>
 <Behavior id="PushHd"/>
+<Behavior id="HeavyTurretBunkerHd"/>
+<Behavior id="UpgradedTurretBunkerHd"/>
 <Effect id="ExitEffectHd"/>
 <Model id="CurrentEnemyIndicatorHd"/>
 <Race id="Terr"/>
@@ -23,9 +27,10 @@
 <Sound id="Ultralisk_Death_Fall_Impact"/>
 <Terrain id="PurifierJungle"/>
 <Unit id="SpawnFlagHd"/>
+<Unit id="AttackDroneHd"/>
 <Unit id="LiberatorAGHd"/>
 <Unit id="InfestedSiegeTankHd"/>
-<Unit id="PhotonCannonProtossHd"/>
+<Unit id="PhotonCannonHd"/>
 <Unit id="WallProtossHd"/>
 <Unit id="SpineCrawlerHd"/>
 <Unit id="WallZergHd"/>
@@ -33,7 +38,9 @@
 <Unit id="WallTerranHd"/>
 <Unit id="SiegeTankSiegedHd"/>
 <Unit id="SiegeTankHd"/>
+<Unit id="BigBoyCannonHd"/>
 <Unit id="PathTesterRadius05Hd"/>
+<Unit id="AttackDroneHubHd"/>
 <Unit id="LightDroneEnemyHd"/>
 <Unit id="LightProbeEnemyHd"/>
 <Unit id="LightSCVEnemyHd"/>
@@ -52,4 +59,8 @@
 <Unit id="TopLeftHdDefendLocationBeacon"/>
 <Unit id="TopRightHdDefendLocationBeacon"/>
 <Unit id="ChooserHd"/>
+<Unit id="WasplingBurrowHd"/>
+<Unit id="WasplingHd"/>
+<Unit id="SunkenColonyHd"/>
+<Unit id="BileLauncherHd"/>
 </Preload>

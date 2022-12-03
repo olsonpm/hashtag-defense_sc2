@@ -1,22 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CUpgrade id="BunkerTurretDamageHd">
-        <EffectArray Reference="Effect,ShrikeTurretDamageHd,Amount" Value="0.8"/>
-        <EffectArray Reference="Weapon,ShrikeTurretHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,ShrikeTurretDamageBunkerHd,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,ShrikeTurretBunkerHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,ArtilleryTurretDamageBunkerHd,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,ArtilleryTurretBunkerHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,HeavyTurretDamageBunkerHd,Amount" Value="2.5"/>
+        <EffectArray Reference="Weapon,HeavyTurretBunkerHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,LongboltMissileDamageBunkerHd,Amount" Value="4"/>
+        <EffectArray Reference="Weapon,MissileTurretBunkerHd,Level" Value="1"/>
         <MaxLevel value="100"/>
     </CUpgrade>
-    <CUpgrade id="PhotonCannonDamageHd">
-        <EffectArray Reference="Effect,PhotonCannonDamageProtossHd,Amount" Value="1"/>
+    <CUpgrade id="ProtossStructureDamageHd">
+        <EffectArray Reference="Effect,PhotonCannonDamageHd,Amount" Value="1"/>
         <EffectArray Reference="Weapon,PhotonCannonHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,AttackDroneDamageHd,Amount" Value="2.5"/>
+        <EffectArray Reference="Weapon,AttackDroneHd,Level" Value="1"/>
+        <EffectArray Reference="Weapon,AttackDroneBeamHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,BigBoyCannonDamageHd,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,BigBoyCannonBeamHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,HolePuncherDamageHd,Amount" Value="4"/>
+        <EffectArray Reference="Weapon,RedOrbHolePuncherHd,Level" Value="1"/>
         <MaxLevel value="100"/>
         <LeaderAlias value=""/>
     </CUpgrade>
-    <CUpgrade id="SpineCrawlerDamageHd">
+    <CUpgrade id="ZergStructureDamageHd">
         <EffectArray Reference="Effect,ImpalerTentacleDamageHd,Amount" Value="1"/>
         <EffectArray Reference="Weapon,ImpalerTentacleHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,WasplingDamageHd,Amount" Value="2.5"/>
+        <EffectArray Reference="Weapon,SpinesWasplingHd,Level" Value="1"/>
+        <EffectArray Reference="Weapon,WasplingHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,BileLauncherDamageHd,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,BileBombBileLauncherHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,SunkenColonyDamageHd,Amount" Value="4"/>
+        <EffectArray Reference="Weapon,SubterraneanTentacleSunkenColonyHd,Level" Value="1"/>
+        <AffectedUnitArray value="SpineCrawlerHd"/>
         <MaxLevel value="100"/>
         <LeaderAlias value=""/>
-        <AffectedUnitArray value="SpineCrawlerHd"/>
     </CUpgrade>
     <CUpgrade id="UnitDamageZergHd">
         <EffectArray Reference="Effect,GuassRifleInfestedTerranHd,Amount" Value="1"/>
@@ -46,7 +66,7 @@
     </CUpgrade>
     <CUpgrade id="UnitDamageTerranHd">
         <MaxLevel value="100"/>
-        <EffectArray Reference="Effect,GuassRifleHd,Amount" Value="1"/>
+        <EffectArray Reference="Effect,GuassRifleDamageMarineHd,Amount" Value="1"/>
         <EffectArray Reference="Weapon,GuassRifleHd,Level" Value="1"/>
         <EffectArray Reference="Effect,PunisherGrenadesDamageHd,Amount" Value="2.5"/>
         <EffectArray Reference="Weapon,PunisherGrenadesHd,Level" Value="1"/>

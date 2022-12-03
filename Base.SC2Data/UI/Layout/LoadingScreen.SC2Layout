@@ -474,7 +474,7 @@
                 <!-- Contents -->
                 <Frame type="Label" name="Lbl_Body">
                   <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
-                  <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
                   <Width val="800"/>
 
                   <Style val="LoadingScreenMission"/>
@@ -517,7 +517,7 @@
                 <!-- Contents -->
                 <Frame type="Label" name="Lbl_Body">
                   <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
-                  <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
                   <Width val="800"/>
 
                   <Style val="LoadingScreenMission"/>
@@ -541,7 +541,7 @@
                 <!-- Contents -->
                 <Frame type="Label" name="Lbl_Body">
                   <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
-                  <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
                   <Width val="800"/>
 
                   <Style val="LoadingScreenMission"/>
@@ -565,7 +565,7 @@
                 <!-- Contents -->
                 <Frame type="Label" name="Lbl_Body">
                   <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
-                  <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
                   <Width val="800"/>
 
                   <Style val="LoadingScreenMission"/>
