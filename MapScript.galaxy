@@ -5434,7 +5434,7 @@ bool gt_keepspawnclearofunits_Func (bool testConds, bool runActions) {
     for (;; auto6B9A0BEF_u -= 1) {
         lv__u = UnitGroupUnitFromEnd(auto6B9A0BEF_g, auto6B9A0BEF_u);
         if (lv__u == null) { break; }
-        if (lib1_gf_isfalse(gf_unitisbuilder(lv__u)) && lib1_gf_isfalse(UnitFilterMatch(lv__u, lv__p, UnitFilter((1 << c_targetFilterMissile), 0, 0, 0)))) {
+        if (lib1_gf_isfalse(gf_unitisbuilder(lv__u)) && lib1_gf_isfalse(UnitFilterMatch(lv__u, lv__p, UnitFilter((1 << c_targetFilterMissile), 0, 0, 0))) && lib1_gf_istrue(PlayerGroupHasPlayer(gv_activedefenders, UnitGetOwner(lv__u)))) {
             lv__p = UnitGetOwner(lv__u);
             lv__spawnpoint = gv_spawnpointperplayer[lv__p];
             UnitSetPosition(lv__u, lv__spawnpoint, false);

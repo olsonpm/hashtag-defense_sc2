@@ -36612,6 +36612,7 @@
         <FunctionCall Type="FunctionCall" Id="C5217050"/>
         <FunctionCall Type="FunctionCall" Id="0D2D9C70"/>
         <FunctionCall Type="FunctionCall" Id="CDE06330"/>
+        <FunctionCall Type="FunctionCall" Id="C4B259CB"/>
     </Element>
     <Element Type="FunctionCall" Id="90AF0459">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
@@ -36746,6 +36747,36 @@
         <ParameterDef Type="ParamDef" Library="Ntve" Id="B6F93566"/>
         <Value>Missile;-</Value>
         <ValueType Type="unitfilter"/>
+    </Element>
+    <Element Type="FunctionCall" Id="C4B259CB">
+        <FunctionDef Type="FunctionDef" Library="1" Id="3B5E3CED"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000003"/>
+        <Parameter Type="Param" Id="2FE72E89"/>
+    </Element>
+    <Element Type="Param" Id="2FE72E89">
+        <ParameterDef Type="ParamDef" Library="1" Id="84A12656"/>
+        <FunctionCall Type="FunctionCall" Id="C6357BC9"/>
+    </Element>
+    <Element Type="FunctionCall" Id="C6357BC9">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000062"/>
+        <Parameter Type="Param" Id="07804AF7"/>
+        <Parameter Type="Param" Id="8EC532BE"/>
+    </Element>
+    <Element Type="Param" Id="07804AF7">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000103"/>
+        <Variable Type="Variable" Id="8B86A48F"/>
+    </Element>
+    <Element Type="Param" Id="8EC532BE">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000375"/>
+        <FunctionCall Type="FunctionCall" Id="C648254E"/>
+    </Element>
+    <Element Type="FunctionCall" Id="C648254E">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000081"/>
+        <Parameter Type="Param" Id="58D7748E"/>
+    </Element>
+    <Element Type="Param" Id="58D7748E">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000140"/>
+        <Variable Type="Variable" Id="FA996CF5"/>
     </Element>
     <Element Type="Trigger" Id="B8C8A94E">
         <Variable Type="Variable" Id="ACAE7EC1"/>

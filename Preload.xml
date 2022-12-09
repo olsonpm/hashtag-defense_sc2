@@ -28,6 +28,7 @@
 <Terrain id="PurifierJungle"/>
 <Unit id="SpawnFlagHd"/>
 <Unit id="AttackDroneHd"/>
+<Unit id="WasplingHd"/>
 <Unit id="LiberatorAGHd"/>
 <Unit id="InfestedSiegeTankHd"/>
 <Unit id="PhotonCannonHd"/>
@@ -39,6 +40,9 @@
 <Unit id="SiegeTankSiegedHd"/>
 <Unit id="SiegeTankHd"/>
 <Unit id="BigBoyCannonHd"/>
+<Unit id="BileLauncherHd"/>
+<Unit id="SunkenColonyHd"/>
+<Unit id="WasplingBurrowHd"/>
 <Unit id="PathTesterRadius05Hd"/>
 <Unit id="AttackDroneHubHd"/>
 <Unit id="LightDroneEnemyHd"/>
@@ -59,8 +63,4 @@
 <Unit id="TopLeftHdDefendLocationBeacon"/>
 <Unit id="TopRightHdDefendLocationBeacon"/>
 <Unit id="ChooserHd"/>
-<Unit id="WasplingBurrowHd"/>
-<Unit id="WasplingHd"/>
-<Unit id="SunkenColonyHd"/>
-<Unit id="BileLauncherHd"/>
 </Preload>
