@@ -4351,24 +4351,24 @@
         <TauntDuration index="Cheer" value="5"/>
         <TauntDuration index="Dance" value="5"/>
     </CUnit>
-    <CUnit id="SpawnFlagHd">
+    <CUnit id="PurchasedUnitSpawnFlagHd">
         <DeathRevealRadius value="3"/>
         <FlagArray index="CreateVisible" value="1"/>
         <FlagArray index="Uncommandable" value="1"/>
         <FlagArray index="Unselectable" value="1"/>
         <FlagArray index="UseLineOfSight" value="1"/>
         <FlagArray index="Invulnerable" value="1"/>
-        <Sight value="3"/>
         <FogVisibility value="Snapshot"/>
         <PlaneArray index="Ground" value="1"/>
+        <Attributes index="Structure" value="1"/>
         <LifeStart value="60"/>
         <LifeMax value="60"/>
         <LifeArmor value="1"/>
-        <MinimapRadius value="0.375"/>
-        <LeaderAlias value=""/>
-        <Attributes index="Structure" value="1"/>
+        <Sight value="3"/>
         <Footprint value="UnbuildableBricks"/>
         <PlacementFootprint value="UnbuildableBricks"/>
+        <MinimapRadius value="0.375"/>
+        <LeaderAlias value=""/>
     </CUnit>
     <CUnit id="DroneHd">
         <KillDisplay value="Never"/>

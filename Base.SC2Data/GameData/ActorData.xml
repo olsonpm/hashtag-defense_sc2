@@ -6134,7 +6134,7 @@
         <AcquisitionPitchHalfArc value="15.000000"/>
         <AccuracyHalfArc value="5.000000"/>
     </CActorAction>
-    <CActorUnit id="SpawnFlagHd" parent="GenericUnitStandardNoAutoSoundLinks" unitName="SpawnFlagHd">
+    <CActorUnit id="SpawnFlagHd" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PurchasedUnitSpawnFlagHd">
         <On Terms="UnitDeathCustomize; ModelVariation 0" Send="DeathCustomize Variation0"/>
         <On Terms="UnitDeathCustomize; ModelVariation 1" Send="DeathCustomize Variation1"/>
         <On Terms="UnitDeathCustomize; ModelVariation 2" Send="DeathCustomize Variation2"/>
@@ -6152,6 +6152,10 @@
         <StatusBarFlags index="Progress" value="0"/>
         <StatusBarFlags index="Duration" value="0"/>
         <PlacementActorModel value="SpawnFlagPlacementModelHd"/>
+        <Model value="SpawnFlagHd"/>
+        <BuildModel value="SpawnFlagHd"/>
+        <PlacementModel value="SpawnFlagHd"/>
+        <HighlightTooltip value="Unit/Name/SpawnFlagHd"/>
     </CActorUnit>
     <CActorUnit id="ResearchCenterZergHd" parent="ZergBuildingExNoArmorHd" unitName="ResearchCenterZergHd">
         <Aliases value="_UnitHuge"/>

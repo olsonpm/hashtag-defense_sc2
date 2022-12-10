@@ -26529,7 +26529,7 @@
     </Element>
     <Element Type="Param" Id="962B55D8">
         <ParameterDef Type="ParamDef" Library="1" Id="376102D1"/>
-        <Value>SpawnFlagHd</Value>
+        <Value>PurchasedUnitSpawnFlagHd</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Unit"/>
     </Element>
@@ -37790,7 +37790,7 @@
     </Element>
     <Element Type="Param" Id="E2DE9112">
         <ParameterDef Type="ParamDef" Library="1" Id="D1F90C66"/>
-        <Value>SpawnFlagHd</Value>
+        <Value>PurchasedUnitSpawnFlagHd</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Unit"/>
     </Element>
@@ -37820,7 +37820,7 @@
     </Element>
     <Element Type="Param" Id="EF10A911">
         <ParameterDef Type="ParamDef" Library="1" Id="376102D1"/>
-        <Value>SpawnFlagHd</Value>
+        <Value>PurchasedUnitSpawnFlagHd</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Unit"/>
     </Element>
@@ -37972,7 +37972,7 @@
     </Element>
     <Element Type="Param" Id="66E093E6">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="3F2584C8"/>
-        <Value>UpgradeToPhotonCannonHd</Value>
+        <Value>UpgradeToHolePuncherPhotonCannonHd</Value>
         <ValueType Type="abilcmd"/>
     </Element>
     <Element Type="FunctionCall" Id="522BD82B">
@@ -37981,7 +37981,7 @@
     </Element>
     <Element Type="Param" Id="F64204AB">
         <ParameterDef Type="ParamDef" Id="4833C3FB"/>
-        <Value>PhotonCannonHd</Value>
+        <Value>HolePuncherHd</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Unit"/>
     </Element>
@@ -38010,7 +38010,7 @@
     </Element>
     <Element Type="Param" Id="E256165E">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="3F2584C8"/>
-        <Value>UpgradeToAttackDroneHubPhotonCannonHd</Value>
+        <Value>UpgradeToPhotonCannonHd</Value>
         <ValueType Type="abilcmd"/>
     </Element>
     <Element Type="FunctionCall" Id="222CD5AA">
@@ -38019,7 +38019,7 @@
     </Element>
     <Element Type="Param" Id="28302071">
         <ParameterDef Type="ParamDef" Id="4833C3FB"/>
-        <Value>AttackDroneHubHd</Value>
+        <Value>PhotonCannonHd</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Unit"/>
     </Element>

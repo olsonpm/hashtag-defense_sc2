@@ -3135,7 +3135,7 @@ void gf_initspawnpoint (int lp_p, point lp_defendpoint) {
     lv__initialspawnpoint = PointWithOffset(lp_defendpoint, 2.0, 0.0);
     lv__playerspawnpoint = gv_spawnpointperplayer[lp_p];
     PointSet(lv__playerspawnpoint, lv__initialspawnpoint);
-    lib1_gf_createunitatpoint("SpawnFlagHd", lv__playerspawnpoint, lp_p, 0);
+    lib1_gf_createunitatpoint("PurchasedUnitSpawnFlagHd", lv__playerspawnpoint, lp_p, 0);
 }
 
 void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser) {
@@ -5585,8 +5585,8 @@ bool gt_movespawnflag_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    lib1_gf_removeallunitsoftypeinregion("SpawnFlagHd", RegionEntireMap(), lv__p);
-    lib1_gf_createunitatpoint("SpawnFlagHd", lv__newspawnpoint, lv__p, c_unitCreateIgnorePlacement);
+    lib1_gf_removeallunitsoftypeinregion("PurchasedUnitSpawnFlagHd", RegionEntireMap(), lv__p);
+    lib1_gf_createunitatpoint("PurchasedUnitSpawnFlagHd", lv__newspawnpoint, lv__p, c_unitCreateIgnorePlacement);
     PointSet(lv__playerspawnpoint, lv__newspawnpoint);
     return true;
 }
@@ -5655,14 +5655,14 @@ bool gt_upgradebuildingprotossholepuncher_Func (bool testConds, bool runActions)
         return true;
     }
 
-    gf_upgradebuilding("PhotonCannonHd");
+    gf_upgradebuilding("HolePuncherHd");
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
 void gt_upgradebuildingprotossholepuncher_Init () {
     gt_upgradebuildingprotossholepuncher = TriggerCreate("gt_upgradebuildingprotossholepuncher_Func");
-    TriggerAddEventUnitAbility(gt_upgradebuildingprotossholepuncher, null, AbilityCommand("UpgradeToPhotonCannonHd", 0), c_unitAbilStageComplete, false);
+    TriggerAddEventUnitAbility(gt_upgradebuildingprotossholepuncher, null, AbilityCommand("UpgradeToHolePuncherPhotonCannonHd", 0), c_unitAbilStageComplete, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -5675,14 +5675,14 @@ bool gt_upgradebuildingprotossphotoncannon_Func (bool testConds, bool runActions
         return true;
     }
 
-    gf_upgradebuilding("AttackDroneHubHd");
+    gf_upgradebuilding("PhotonCannonHd");
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
 void gt_upgradebuildingprotossphotoncannon_Init () {
     gt_upgradebuildingprotossphotoncannon = TriggerCreate("gt_upgradebuildingprotossphotoncannon_Func");
-    TriggerAddEventUnitAbility(gt_upgradebuildingprotossphotoncannon, null, AbilityCommand("UpgradeToAttackDroneHubPhotonCannonHd", 0), c_unitAbilStageComplete, false);
+    TriggerAddEventUnitAbility(gt_upgradebuildingprotossphotoncannon, null, AbilityCommand("UpgradeToPhotonCannonHd", 0), c_unitAbilStageComplete, false);
 }
 
 //--------------------------------------------------------------------------------------------------

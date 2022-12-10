@@ -2241,6 +2241,7 @@ Unit/EditorPrefix/PhotonCannonWeaponHd=Hd -
 Unit/EditorPrefix/ProbeHd=Hd -
 Unit/EditorPrefix/PunisherGrenadesLMWeaponEnemyHd=Hd - Enemy - Weapon -
 Unit/EditorPrefix/PunisherGrenadesLMWeaponHd=Hd - Weapon -
+Unit/EditorPrefix/PurchasedUnitSpawnFlagHd=Hd -
 Unit/EditorPrefix/RazorTalonsWeaponBossKerriganEnemyHd=Hd - Enemy - Boss Kerrigan -
 Unit/EditorPrefix/ReaverHd=Hd -
 Unit/EditorPrefix/RedOrbHolePuncherHd=Hd - Hole Puncher -

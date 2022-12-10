@@ -200,6 +200,7 @@ Button/Tooltip/PerfectSpecimenModHd=Greater Essence
 Button/Tooltip/PhotonCannonHd=
 Button/Tooltip/PlaceSpawnFlagHd=Your purchased units will spawn here
 Button/Tooltip/ProbeHd=Basic worker unit. Can gather resources and warp in Protoss structures.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/PurchasedUnitSpawnFlagHd=The planetary flag of Korhal, homeworld of Emperor Mengsk.
 Button/Tooltip/RallyChoosersHereHd=Sends newly spawned choosers to this beacon.
 Button/Tooltip/ReaverHd=Aiur Faction<n/>Area damage siege unit. Builds and launches Scarabs for high burst damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/ResearchCenterProtossHd=Contains weapon and armor upgrades for Protoss ground units and shield upgrades for all Protoss units and structures.<n/><n/><c val="ffff8a">Enables:</c><n/>- Photon Cannons from Probes
@@ -220,7 +221,6 @@ Button/Tooltip/SimpleBeefyRoachEnemyHd=Assault unit. Regenerates life quickly wh
 Button/Tooltip/SimpleBossArchonEnemyHd=Powerful psionic attacker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/SimpleQuickMarineEnemyHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/SlowTicklerMarineTestHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
-Button/Tooltip/SpawnFlagHd=The planetary flag of Korhal, homeworld of Emperor Mengsk.
 Button/Tooltip/SpawnFlagPlacementTestHd=Provides supply.<n/>Supply allows you to warp in more units.<n/>Creates power for nearby structures.
 Button/Tooltip/SpineCrawlerHd=Anti-ground defensive structure. <n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/SpineCrawlerRootHd=Roots the Spine Crawler. A rooted Spine Crawler has the ability to attack ground units but is unable to move.
@@ -248,7 +248,7 @@ Button/Tooltip/UpgradeToWasplingBurrowSpineCrawlerHd=Houses a waspling which doe
 Button/Tooltip/UpgradeUnitDamageProtossHd=Upgrades the attack of all units.<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
 Button/Tooltip/UpgradeUnitDamageTerranHd=Upgrades the attack of all units.<n/><c val="00B6E3">2</c><img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
 Button/Tooltip/UpgradeUnitDamageZergHd=Upgrades the attack of all units.<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
-Button/Tooltip/UpgradeZergStructureDamageHd=Upgrades the damage done by all protoss structures<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
+Button/Tooltip/UpgradeZergStructureDamageHd=Upgrades the damage done by all zerg structures<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
 Button/Tooltip/WallProtossHd=Restores shields to nearby friendly units and structures.
 Button/Tooltip/WallTerranHd=Abandoned structure.
 Button/Tooltip/WallZergHd=<c val="ffff8a">Enables:</c><n/>- Infestors from Larvae<n/>- Swarm Hosts from Larvae
@@ -868,6 +868,7 @@ Unit/Name/PhotonCannonWeaponHd=Photon Cannon Weapon
 Unit/Name/ProbeHd=Probe
 Unit/Name/PunisherGrenadesLMWeaponEnemyHd=Punisher Grenades
 Unit/Name/PunisherGrenadesLMWeaponHd=Punisher Grenades
+Unit/Name/PurchasedUnitSpawnFlagHd=Purchased Unit Spawn Flag
 Unit/Name/RazorTalonsWeaponBossKerriganEnemyHd=Razor Talons Weapon
 Unit/Name/ReaverHd=Reaver
 Unit/Name/RedOrbHolePuncherHd=Red Orb
@@ -886,7 +887,6 @@ Unit/Name/SimpleBeefyRoachEnemyHd=Simple Beefy Roach
 Unit/Name/SimpleBossArchonEnemyHd=Simple Boss Archon
 Unit/Name/SimpleQuickMarineEnemyHd=Simple Quick Marine
 Unit/Name/SlowTicklerMarineTestHd=Slow Tickler Marine
-Unit/Name/SpawnFlagHd=Spawn Flag
 Unit/Name/SpawnFlagPlacementTestHd=Spawn Flag Placement Test
 Unit/Name/SpineCrawlerHd=Spine Crawler
 Unit/Name/SpineCrawlerWeaponHd=Spine Crawler
@@ -1049,7 +1049,7 @@ Weapon/Tip/PsionicShockwaveHd=Attack upgrades by <c val="00E35B">1</c><n/><c val
 Weapon/Tip/PunisherGrenadesHd=Attack upgrades by <c val="00E35B">2.5</c>
 Weapon/Tip/RedOrbHolePuncherHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/ScarabsReaverHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
-Weapon/Tip/ShrikeTurretBunkerHd=Attack upgrades by <c val="00E35B">2</c>
+Weapon/Tip/ShrikeTurretBunkerHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/SpinesLurkerHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/SubterraneanTentacleSunkenColonyHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/TalonsArmoredQueenEnemyHd=

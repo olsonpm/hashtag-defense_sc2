@@ -26,7 +26,6 @@
 <Sound id="Alert_TerranNeedMoreMinerals"/>
 <Sound id="Ultralisk_Death_Fall_Impact"/>
 <Terrain id="PurifierJungle"/>
-<Unit id="SpawnFlagHd"/>
 <Unit id="AttackDroneHd"/>
 <Unit id="WasplingHd"/>
 <Unit id="LiberatorAGHd"/>
@@ -45,6 +44,7 @@
 <Unit id="WasplingBurrowHd"/>
 <Unit id="PathTesterRadius05Hd"/>
 <Unit id="AttackDroneHubHd"/>
+<Unit id="HolePuncherHd"/>
 <Unit id="LightDroneEnemyHd"/>
 <Unit id="LightProbeEnemyHd"/>
 <Unit id="LightSCVEnemyHd"/>
@@ -63,4 +63,5 @@
 <Unit id="TopLeftHdDefendLocationBeacon"/>
 <Unit id="TopRightHdDefendLocationBeacon"/>
 <Unit id="ChooserHd"/>
+<Unit id="PurchasedUnitSpawnFlagHd"/>
 </Preload>

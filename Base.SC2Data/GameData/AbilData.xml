@@ -17,7 +17,7 @@
     <CAbilBuild id="BuildSpawnFlagHd">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <FlagArray index="PeonDisableCollision" value="1"/>
-        <InfoArray index="Build1" Unit="SpawnFlagHd">
+        <InfoArray index="Build1" Unit="PurchasedUnitSpawnFlagHd">
             <Button DefaultButtonFace="PlaceSpawnFlagHd"/>
             <ValidatorArray value="IsBuildableTerrainHd"/>
         </InfoArray>
