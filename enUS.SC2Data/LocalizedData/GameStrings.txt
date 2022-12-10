@@ -660,6 +660,7 @@ Param/Expression/8097C5D0=1 / 2 = ~a~<n/>3 / 2 = ~b~
 Param/Expression/AA03E1AD=Kick Test Player ~kick_player~ ?
 Param/Expression/B019B228=Players are voting whether to kick ~kick_player_name~...
 Param/Expression/CB02BB58=ghosts toggled to: ~ghosts_enabled~
+Param/Expression/DDFB2DB4=distance to destination: ~distance_to_dest~<n/>distance to opposite side of map: ~distance_to_opp~
 Param/Expression/E7D75A99=Player ~result~ kicked ! (~value~/~threshold~)
 Param/Expression/EE5F32E3=<c val="~color_calamity~">Extra lives left: ~extra_lives_left~</c>
 Param/Expression/F3CACBA2=autoskip toggled to: ~autoskip~

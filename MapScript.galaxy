@@ -1380,6 +1380,7 @@ int gv_startvotetokickplayerdibutton;
 int[9] gv_telelocationtoenemyspawnpathsegments;
 int[9] gv_telelocationtospawnclockwiselocation;
 int gv_testoverridegameattributedifficulty;
+int gv_testoverridegameattributeroundtimer;
 bool gv_testingmultiplayerlocally;
 string[9] gv_unitbeaconperlocation;
 point[9][9] gv_unitbeaconpoints;
@@ -1450,6 +1451,7 @@ void InitGlobals () {
     gv_startvotetokickplayerdialog = c_invalidDialogId;
     gv_startvotetokickplayerdibutton = c_invalidDialogControlId;
     gv_testoverridegameattributedifficulty = -1;
+    gv_testoverridegameattributeroundtimer = -1;
     gv_unitswithfullrefundavailable = UnitGroupEmpty();
 }
 
@@ -1534,9 +1536,9 @@ void gf_initunitbotleft (int lp_defenderlocation, int lp_race);
 void gf_initunitbot (int lp_defenderlocation, int lp_race);
 void gf_initunitleft (int lp_defenderlocation, int lp_p, int lp_race);
 void gf_initunitarea (int lp_defenderlocation, int lp_p);
+void gf_inittest ();
 bool gf_allactivepathsareclear ();
 bool gf_buildingiswall (unit lp_building);
-bool gf_buildingisattackingstructure (unit lp_building);
 void gf_refundplayer (int lp_p, unit lp_building);
 void gf_castkickvote (int lp_playerwhovoted, int lp_vote);
 void gf_reenablestartvotebutton (int lp_p);
@@ -1593,6 +1595,7 @@ trigger gt_choosespawnlocationbotleft;
 trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
 trigger gt_testinitrace;
+trigger gt_testinitresources;
 trigger gt_testpaths;
 trigger gt_showkickplayerlist;
 trigger gt_kickplayerlistcancel;
@@ -2673,20 +2676,25 @@ void gf_initgameattributevars () {
         else {
         }
     }
-    auto5C84F2C5_val = GameAttributeGameValue("1");
-    if (auto5C84F2C5_val == "0001") {
-        gv_gameattributeroundtimer = ge_gameattributeroundtimer_none;
-    }
-    else if (auto5C84F2C5_val == "0002") {
-        gv_gameattributeroundtimer = ge_gameattributeroundtimer_default;
-    }
-    else if (auto5C84F2C5_val == "0003") {
-        gv_gameattributeroundtimer = ge_gameattributeroundtimer_quick;
-    }
-    else if (auto5C84F2C5_val == "0004") {
-        gv_gameattributeroundtimer = ge_gameattributeroundtimer_nonstop;
+    if ((gv_testoverridegameattributeroundtimer > -1)) {
+        gv_gameattributeroundtimer = gv_testoverridegameattributeroundtimer;
     }
     else {
+        auto5C84F2C5_val = GameAttributeGameValue("1");
+        if (auto5C84F2C5_val == "0001") {
+            gv_gameattributeroundtimer = ge_gameattributeroundtimer_none;
+        }
+        else if (auto5C84F2C5_val == "0002") {
+            gv_gameattributeroundtimer = ge_gameattributeroundtimer_default;
+        }
+        else if (auto5C84F2C5_val == "0003") {
+            gv_gameattributeroundtimer = ge_gameattributeroundtimer_quick;
+        }
+        else if (auto5C84F2C5_val == "0004") {
+            gv_gameattributeroundtimer = ge_gameattributeroundtimer_nonstop;
+        }
+        else {
+        }
     }
     auto2DB5EFBA_val = GameAttributeGameValue("3");
     if (auto2DB5EFBA_val == "0002") {
@@ -3373,10 +3381,21 @@ void gf_initunitarea (int lp_defenderlocation, int lp_p) {
     }
 }
 
+void gf_inittest () {
+    // Automatic Variable Declarations
+    // Implementation
+    if (lib1_gf_istesting()) {
+        gv_testoverridegameattributeroundtimer = ge_gameattributeroundtimer_none;
+    }
+
+}
+
 bool gf_allactivepathsareclear () {
     // Variable Declarations
     int lv__pathtestsegmentidx;
+    bool lv__delme;
     int lv__distancetooppositesideofmap;
+    int lv__distancetodestination;
     unit lv__pathtestunit;
     point lv__destination;
 
@@ -3392,8 +3411,9 @@ bool gf_allactivepathsareclear () {
         if (lib1_gf_istrue(gv_pathtestsegments[lv__pathtestsegmentidx].lv_isactive)) {
             lv__pathtestunit = gv_pathtestsegments[lv__pathtestsegmentidx].lv_unit;
             lv__destination = gv_pathtestsegments[lv__pathtestsegmentidx].lv_destination;
+            lv__distancetodestination = AIPathingCostUnit(lv__pathtestunit, gv_pathtestsegments[lv__pathtestsegmentidx].lv_destination, c_includeAllBuildings);
             lv__distancetooppositesideofmap = AIPathingCostUnit(lv__pathtestunit, gv_pathtestsegments[lv__pathtestsegmentidx].lv_oppositesideofmap, c_includeAllBuildings);
-            if (lib1_gf_isfalse(UnitPathableToPoint(lv__pathtestunit, lv__destination, 0.0, lv__distancetooppositesideofmap))) {
+            if ((lv__distancetodestination > lv__distancetooppositesideofmap)) {
                 return false;
             }
 
@@ -3407,12 +3427,6 @@ bool gf_buildingiswall (unit lp_building) {
     // Automatic Variable Declarations
     // Implementation
     return lib1_gf_or3(lib1_gf_unitistype(lp_building, "WallProtossHd"), lib1_gf_unitistype(lp_building, "WallTerranHd"), lib1_gf_unitistype(lp_building, "WallZergHd"));
-}
-
-bool gf_buildingisattackingstructure (unit lp_building) {
-    // Automatic Variable Declarations
-    // Implementation
-    return lib1_gf_or3(lib1_gf_unitistype(lp_building, "PhotonCannonHd"), lib1_gf_unitistype(lp_building, "BunkerHd"), lib1_gf_unitistype(lp_building, "SpineCrawlerHd"));
 }
 
 void gf_refundplayer (int lp_p, unit lp_building) {
@@ -4465,6 +4479,7 @@ bool gt_initmap_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    gf_inittest();
     gf_initgameattributevars();
     gf_initattributebuffamounts();
     gf_initdefendlocationtoislandregion();
@@ -4819,6 +4834,34 @@ bool gt_testinitrace_Func (bool testConds, bool runActions) {
 void gt_testinitrace_Init () {
     gt_testinitrace = TriggerCreate("gt_testinitrace_Func");
     TriggerAddEventTimeElapsed(gt_testinitrace, 1.0, c_timeReal);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: test - init resources
+//--------------------------------------------------------------------------------------------------
+bool gt_testinitresources_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSetTo, 1000);
+    PlayerModifyPropertyInt(1, c_playerPropVespene, c_playerPropOperSetTo, 1000);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_testinitresources_Init () {
+    gt_testinitresources = TriggerCreate("gt_testinitresources_Func");
+    TriggerAddEventMapInit(gt_testinitresources);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -6924,6 +6967,7 @@ void InitTriggers () {
     gt_choosespawnlocationleft_Init();
     gt_choosespawnlocationtopleft_Init();
     gt_testinitrace_Init();
+    gt_testinitresources_Init();
     gt_testpaths_Init();
     gt_showkickplayerlist_Init();
     gt_kickplayerlistcancel_Init();
