@@ -831,6 +831,7 @@ Unit/Name/IncreasedSpeedModHd=Increased Speed
 Unit/Name/InfestedSiegeTankHd=Infested Siege Tank
 Unit/Name/InfestedSiegeTankUprootedHd=Infested Siege Tank
 Unit/Name/InfestedTerranHd=Infested Terran
+Unit/Name/InvisibleWaypointChooserHd=Invisible Waypoint Chooser
 Unit/Name/KillEverythingMarineTestHd=Kill Everything Marine
 Unit/Name/LeftHdDefendLocationBeacon=Left
 Unit/Name/LiberatorAGHd=Liberator

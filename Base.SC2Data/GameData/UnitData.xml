@@ -5496,7 +5496,6 @@
         <Collide index="Small" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="2.25"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46.0625"/>

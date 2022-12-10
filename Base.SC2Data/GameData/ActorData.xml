@@ -5573,7 +5573,6 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Archon.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-protoss-archon.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
         <SoundArray index="Birth" value=""/>
         <SoundArray index="Ready" value="Archon_Ready"/>
         <SoundArray index="Help" value="Archon_Help"/>
@@ -5782,7 +5781,6 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Colossus.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-protoss-colossus.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
         <SoundArray index="Ready" value="Colossus_Ready"/>
         <SoundArray index="What" value="Colossus_What"/>
         <SoundArray index="Yes" value="Colossus_Yes"/>
@@ -6489,7 +6487,6 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Immortal.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\BTN-Unit-Protoss-Immortal.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
         <SoundArray index="Ready" value="Immortal_Ready"/>
         <SoundArray index="Help" value="Immortal_Help"/>
         <SoundArray index="What" value="Immortal_What"/>
@@ -6954,7 +6951,6 @@
             <Image value="Assets\Textures\wireframe-protoss-reaver.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\BTN-Unit-Protoss-Immortal.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
         <SoundArray index="Ready" value="Reaver_Ready"/>
         <SoundArray index="Help" value="Reaver_Help"/>
         <SoundArray index="What" value="Reaver_What"/>
@@ -7147,7 +7143,6 @@
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-collection-adept-collectoredition.dds"/>
         </GroupIcon>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
         <SoundArray index="Ready" value="Adept_Ready"/>
         <SoundArray index="Help" value="Adept_Help"/>
         <SoundArray index="What" value="Adept_What"/>
@@ -7268,7 +7263,6 @@
             <Image value="Assets\Textures\Wireframe-Terran-firebat.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-terran-firebat.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
         <SoundArray index="Ready" value="Firebat_Ready"/>
         <SoundArray index="Help" value="Firebat_Help"/>
         <SoundArray index="What" value="Firebat_What"/>
@@ -7401,7 +7395,6 @@
             <Image value="Assets\Textures\Wireframe-Terran-Ghost.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
         <SelectAbilCmd value="EMP,Execute"/>
         <SoundArray index="Ready" value="Ghost_Ready"/>
         <SoundArray index="Help" value="Ghost_Help"/>
@@ -7551,7 +7544,6 @@
         <GroupIcon>
             <Image value="Assets\Textures\btn-ability-terran-liberator-aamode.dds"/>
         </GroupIcon>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds"/>
         <SoundArray index="Ready" value="TerranFlyer_Ready"/>
         <SoundArray index="Help" value="TerranFlyer_Help"/>
         <SoundArray index="What" value="TerranFlyer_What"/>
@@ -7611,7 +7603,6 @@
         <GroupIcon>
             <Image value="Assets\Textures\btn-ability-terran-liberator-agmode.dds"/>
         </GroupIcon>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds"/>
         <SoundArray index="Ready" value="TerranFlyer_Ready"/>
         <SoundArray index="Help" value="TerranFlyer_Help"/>
         <SoundArray index="What" value="TerranFlyer_What"/>
@@ -7772,7 +7763,6 @@
             <Image value="Assets\Textures\Wireframe-Terran-Marauder.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-terran-marauder.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
         <SoundArray index="Ready" value="Marauder_Ready"/>
         <SoundArray index="Help" value="Marauder_Help"/>
         <SoundArray index="What" value="Marauder_What"/>
@@ -7901,7 +7891,6 @@
             <Image value="Assets\Textures\Wireframe-Terran-Marine.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-terran-marine.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
         <SoundArray index="Ready" value="Marine_Ready"/>
         <SoundArray index="Help" value="Marine_Help"/>
         <SoundArray index="What" value="Marine_What"/>
@@ -8500,7 +8489,6 @@
             <Image value="Assets\Textures\Wireframe-Terran-SiegeTank-TankMode.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-terran-siegetank.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds"/>
         <SoundArray index="Ready" value="SiegeTank_Ready"/>
         <SoundArray index="Help" value="SiegeTank_Help"/>
         <SoundArray index="What" value="SiegeTank_What"/>
@@ -8608,7 +8596,6 @@
             <Image value="Assets\Textures\Wireframe-Terran-SiegeTank-SiegeMode.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-terran-siegetanksiegemode.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds"/>
         <SoundArray index="Ready" value="SiegeTank_Ready"/>
         <SoundArray index="Help" value="SiegeTank_Help"/>
         <SoundArray index="What" value="SiegeTank_What"/>
@@ -8873,7 +8860,6 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Stalker.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
         <SoundArray index="Ready" value="Stalker_Ready"/>
         <SoundArray index="Help" value="Stalker_Help"/>
         <SoundArray index="What" value="Stalker_What"/>
@@ -9027,7 +9013,6 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Tempest.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
         <NameOffset value="110"/>
         <SoundArray index="Ready" value="TempestVoid_Ready"/>
         <SoundArray index="Help" value="TempestVoid_Help"/>
@@ -9247,7 +9232,6 @@
             <Image value="Assets\Textures\Wireframe-Terran-Thor.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-terran-thor.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds"/>
         <NameOffset value="80"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-thor.dds"/>
         <Wireframe>
