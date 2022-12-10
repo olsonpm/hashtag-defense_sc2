@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CRequirementAnd id="AndEq2039748487CountBehaviorIsBurrowedHdCompleteOnly0Eq3880832019CountBehaviorIsSiegedHdCompleteOnly0">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="Eq2039748487CountBehaviorIsBurrowedHdCompleteOnly0"/>
+        <OperandArray value="Eq3880832019CountBehaviorIsSiegedHdCompleteOnly0"/>
+    </CRequirementAnd>
     <CRequirementCountBehavior id="CountBehaviorArmorpiercingModeCompleteOnlyAtUnit2">
         <Flags index="TechTreeCheat" value="0"/>
         <Tooltip value=""/>
@@ -8,6 +13,16 @@
     <CRequirementCountBehavior id="CountBehaviorFullRefundAvailableSalvageHdCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="FullRefundAvailableSalvageHd" State="CompleteOnly"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorIsBurrowedHdCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="IsBurrowedHd" State="CompleteOnly"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorIsSiegedHdCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="IsSiegedHd" State="CompleteOnly"/>
     </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
@@ -27,7 +42,6 @@
     </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorUpgradedSpineCrawlerHdInProgressOrBetterAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="UpgradedSpineCrawlerHd" State="InProgressOrBetterAtUnit"/>
     </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorUpgradedTurretBunkerHdInProgressOrBetterAtUnit">
@@ -56,15 +70,26 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeZergStructureDamageHdCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ZergStructureDamageHd" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementEq id="Eq2039748487CountBehaviorIsBurrowedHdCompleteOnly0">
+        <OperandArray index="0" value="CountBehaviorIsBurrowedHdCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq3880832019CountBehaviorIsSiegedHdCompleteOnly0">
+        <OperandArray index="0" value="CountBehaviorIsSiegedHdCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorIsBurrowedHdCompleteOnly0">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountBehaviorIsBurrowedHdCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
     <CRequirementEq id="EqCountBehaviorUpgradedPhotonCannonHdInProgressOrBetterAtUnit0">
         <OperandArray index="0" value="CountBehaviorUpgradedPhotonCannonHdInProgressOrBetterAtUnit"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountBehaviorUpgradedSpineCrawlerHdInProgressOrBetterAtUnit0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountBehaviorUpgradedSpineCrawlerHdInProgressOrBetterAtUnit"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
@@ -93,7 +118,6 @@
         <OperandArray index="1" value="100"/>
     </CRequirementLT>
     <CRequirementLT id="LTCountUpgradeZergStructureDamageHdCompleteOnly100">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeZergStructureDamageHdCompleteOnly"/>
         <OperandArray index="1" value="100"/>
     </CRequirementLT>

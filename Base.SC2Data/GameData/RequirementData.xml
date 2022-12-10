@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CRequirement id="CanUseBlinkHd">
+        <NodeArray index="Use" Link="AndEq2039748487CountBehaviorIsBurrowedHdCompleteOnly0Eq3880832019CountBehaviorIsSiegedHdCompleteOnly0"/>
+    </CRequirement>
     <CRequirement id="HasFullRefundAvailableSalvageHd">
         <NodeArray index="Use" Link="CountBehaviorFullRefundAvailableSalvageHdCompleteOnly"/>
         <NodeArray index="Show" Link="CountBehaviorFullRefundAvailableSalvageHdCompleteOnly"/>
@@ -15,6 +18,9 @@
     <CRequirement id="HasRefund10MineralsAvailableSalvageHd">
         <NodeArray index="Use" Link="CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnly"/>
         <NodeArray index="Show" Link="CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="IsNotBurrowedHd">
+        <NodeArray index="Use" Link="EqCountBehaviorIsBurrowedHdCompleteOnly0"/>
     </CRequirement>
     <CRequirement id="IsNotUpgradedBunkerHd">
         <NodeArray index="Use" Link="EqCountBehaviorUpgradedTurretBunkerHdInProgressOrBetterAtUnit0"/>

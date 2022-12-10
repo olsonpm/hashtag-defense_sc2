@@ -21,6 +21,12 @@
             <VitalMaxFractionArray index="Shields" value="-0.7"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="IsBurrowedHd">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IsSiegedHd">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="MissileTurretBunkerHd">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>

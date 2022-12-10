@@ -954,6 +954,8 @@ Behavior/EditorPrefix/IncreaseVsBossAttributeDamageHd=Hd - Attribute Damage -
 Behavior/EditorPrefix/IncreaseVsLightAttributeDamageHd=Hd - Attribute Damage -
 Behavior/EditorPrefix/IncreaseVsMechanicalAttributeDamageHd=Hd - Attribute Damage -
 Behavior/EditorPrefix/IncreasedHealthAndShieldHardDifficultyHd=Hd - Difficulty -
+Behavior/EditorPrefix/IsBurrowedHd=Hd -
+Behavior/EditorPrefix/IsSiegedHd=Hd -
 Behavior/EditorPrefix/LiberatorInitialMovableHd=Hd -
 Behavior/EditorPrefix/LiberatorTargetMorphAGAttackableHd=Hd -
 Behavior/EditorPrefix/LiberatorTargetMorphBehaviorHd=Hd -
@@ -2000,10 +2002,12 @@ Model/Name/WeaklingEnemyHd=Weakling
 Model/Name/YagdraDeathHd=Yagdra Death
 Mover/EditorPrefix/BileLauncherMissileHd=Hd -
 Mover/Name/BileLauncherMissileHd=Bile Launcher Missile
+Requirement/EditorPrefix/CanUseBlinkHd=Hd -
 Requirement/EditorPrefix/HasFullRefundAvailableSalvageHd=Hd - Salvage -
 Requirement/EditorPrefix/HasRefund10MineralsAvailableSalvageHd=Hd - Salvage -
 Requirement/EditorPrefix/HasRefund4MineralsAvailableSalvageHd=Hd - Salvage -
 Requirement/EditorPrefix/HasRefund8MineralsAvailableSalvageHd=Hd - Salvage -
+Requirement/EditorPrefix/IsNotBurrowedHd=Hd -
 Requirement/EditorPrefix/IsNotUpgradedBunkerHd=Hd - Bunker -
 Requirement/EditorPrefix/IsNotUpgradedPhotonCannonHd=Hd - Photon Cannon -
 Requirement/EditorPrefix/IsNotUpgradedSpineCrawlerHd=Hd - Spine Crawler -
@@ -2013,10 +2017,12 @@ Requirement/EditorPrefix/MaxSpineCrawlerDamageNotReachedHd=Hd -
 Requirement/EditorPrefix/MaxUnitDamageNotReachedProtossHd=Hd -
 Requirement/EditorPrefix/MaxUnitDamageNotReachedTerranHd=Hd -
 Requirement/EditorPrefix/MaxUnitDamageNotReachedZergHd=Hd -
+Requirement/Name/CanUseBlinkHd=Can Use Blink
 Requirement/Name/HasFullRefundAvailableSalvageHd=Has Full Refund Available
 Requirement/Name/HasRefund10MineralsAvailableSalvageHd=Has Refund 10 Minerals Available
 Requirement/Name/HasRefund4MineralsAvailableSalvageHd=Has Refund 4 Minerals Available
 Requirement/Name/HasRefund8MineralsAvailableSalvageHd=Has Refund 8 Minerals Available
+Requirement/Name/IsNotBurrowedHd=Is Not Burrowed
 Requirement/Name/IsNotUpgradedBunkerHd=Is Not Upgraded
 Requirement/Name/IsNotUpgradedPhotonCannonHd=Is Not Upgraded
 Requirement/Name/IsNotUpgradedSpineCrawlerHd=Is Not Upgraded
@@ -2026,8 +2032,11 @@ Requirement/Name/MaxSpineCrawlerDamageNotReachedHd=Max Spine Crawler Damage Not 
 Requirement/Name/MaxUnitDamageNotReachedProtossHd=Max Unit Damage Not Reached - Protoss
 Requirement/Name/MaxUnitDamageNotReachedTerranHd=Max Unit Damage Not Reached - Terran
 Requirement/Name/MaxUnitDamageNotReachedZergHd=Max Unit Damage Not Reached - Zerg
+RequirementNode/Name/AndEq2039748487CountBehaviorIsBurrowedHdCompleteOnly0Eq3880832019CountBehaviorIsSiegedHdCompleteOnly0=CountBehavior(IsBurrowedHd,CompleteOnly) == {Must be unburrowed}0 && CountBehavior(IsSiegedHd,CompleteOnly) == {Must be unsieged}0
 RequirementNode/Name/CountBehaviorArmorpiercingModeCompleteOnlyAtUnit2=CountBehavior(ArmorpiercingMode,CompleteOnlyAtUnit)
 RequirementNode/Name/CountBehaviorFullRefundAvailableSalvageHdCompleteOnly=CountBehavior(FullRefundAvailableSalvageHd,CompleteOnly)
+RequirementNode/Name/CountBehaviorIsBurrowedHdCompleteOnly=CountBehavior(IsBurrowedHd,CompleteOnly)
+RequirementNode/Name/CountBehaviorIsSiegedHdCompleteOnly=CountBehavior(IsSiegedHd,CompleteOnly)
 RequirementNode/Name/CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnly=CountBehavior(Refund10MineralsAvailableSalvageHd,CompleteOnly)
 RequirementNode/Name/CountBehaviorRefund4MineralsAvailableSalvageHdCompleteOnly=CountBehavior(Refund4MineralsAvailableSalvageHd,CompleteOnly)
 RequirementNode/Name/CountBehaviorRefund8MineralsAvailableSalvageHdCompleteOnly=CountBehavior(Refund8MineralsAvailableSalvageHd,CompleteOnly)
@@ -2040,6 +2049,9 @@ RequirementNode/Name/CountUpgradeUnitDamageProtossHdCompleteOnly=CountUpgrade(Un
 RequirementNode/Name/CountUpgradeUnitDamageTerranHdCompleteOnly=CountUpgrade(UnitDamageTerranHd,CompleteOnly)
 RequirementNode/Name/CountUpgradeUnitDamageZergHdCompleteOnly=CountUpgrade(UnitDamageZergHd,CompleteOnly)
 RequirementNode/Name/CountUpgradeZergStructureDamageHdCompleteOnly=CountUpgrade(ZergStructureDamageHd,CompleteOnly)
+RequirementNode/Name/Eq2039748487CountBehaviorIsBurrowedHdCompleteOnly0=CountBehavior(IsBurrowedHd,CompleteOnly) == {Must be unburrowed}0
+RequirementNode/Name/Eq3880832019CountBehaviorIsSiegedHdCompleteOnly0=CountBehavior(IsSiegedHd,CompleteOnly) == {Must be unsieged}0
+RequirementNode/Name/EqCountBehaviorIsBurrowedHdCompleteOnly0=CountBehavior(IsBurrowedHd,CompleteOnly) == 0
 RequirementNode/Name/EqCountBehaviorUpgradedPhotonCannonHdInProgressOrBetterAtUnit0=CountBehavior(UpgradedPhotonCannonHd,InProgressOrBetterAtUnit) == 0
 RequirementNode/Name/EqCountBehaviorUpgradedSpineCrawlerHdInProgressOrBetterAtUnit0=CountBehavior(UpgradedSpineCrawlerHd,InProgressOrBetterAtUnit) == 0
 RequirementNode/Name/EqCountBehaviorUpgradedTurretBunkerHdInProgressOrBetterAtUnit0=CountBehavior(UpgradedTurretBunkerHd,InProgressOrBetterAtUnit) == 0
