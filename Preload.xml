@@ -26,6 +26,7 @@
 <Sound id="Alert_TerranNeedMoreMinerals"/>
 <Sound id="Ultralisk_Death_Fall_Impact"/>
 <Terrain id="PurifierJungle"/>
+<Unit id="PurchasedUnitSpawnFlagHd"/>
 <Unit id="AttackDroneHd"/>
 <Unit id="WasplingHd"/>
 <Unit id="LiberatorAGHd"/>
@@ -63,5 +64,4 @@
 <Unit id="TopLeftHdDefendLocationBeacon"/>
 <Unit id="TopRightHdDefendLocationBeacon"/>
 <Unit id="ChooserHd"/>
-<Unit id="PurchasedUnitSpawnFlagHd"/>
 </Preload>

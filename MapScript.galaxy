@@ -147,6 +147,8 @@ void lib1_InitVariables () {
     }
     lib1_gv_colorcalamity = StringExternal("Param/Value/lib_1_4A35FBAD");
     lib1_gv_everysecond = TimerCreate();
+    lib1_gv_localdebug = true;
+    lib1_gv_test = true;
     for (init_i = 0; init_i <= 16; init_i += 1) {
         for (init_j = 0; init_j <= 16; init_j += 1) {
             lib1_gv_unitsingroupsofNperplayer[init_i][init_j] = UnitGroupEmpty();
@@ -1590,6 +1592,7 @@ trigger gt_choosespawnlocationbot;
 trigger gt_choosespawnlocationbotleft;
 trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
+trigger gt_testinitrace;
 trigger gt_testpaths;
 trigger gt_showkickplayerlist;
 trigger gt_kickplayerlistcancel;
@@ -4792,6 +4795,33 @@ void gt_choosespawnlocationtopleft_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: test - init race
+//--------------------------------------------------------------------------------------------------
+bool gt_testinitrace_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    PlayerSetRace(1, "Prot");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_testinitrace_Init () {
+    gt_testinitrace = TriggerCreate("gt_testinitrace_Func");
+    TriggerAddEventTimeElapsed(gt_testinitrace, 1.0, c_timeReal);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: test paths
 //--------------------------------------------------------------------------------------------------
 bool gt_testpaths_Func (bool testConds, bool runActions) {
@@ -6893,6 +6923,7 @@ void InitTriggers () {
     gt_choosespawnlocationbotleft_Init();
     gt_choosespawnlocationleft_Init();
     gt_choosespawnlocationtopleft_Init();
+    gt_testinitrace_Init();
     gt_testpaths_Init();
     gt_showkickplayerlist_Init();
     gt_kickplayerlistcancel_Init();

@@ -323,6 +323,7 @@
         </InfoArray>
         <Alert value="TrainComplete"/>
         <MaxCount value="1"/>
+        <Flags index="ShowStatus" value="0"/>
     </CAbilArmMagazine>
     <CAbilEffectInstant id="SalvageRefund1MineralHd" parent="Refund">
         <Name value="Abil/Name/SalvageRefund1MineralHd"/>
