@@ -230,7 +230,7 @@
             <Value Type="Param" Library="1" Id="3F581142"/>
         </Element>
         <Element Type="Param" Id="3F581142">
-            <Value>true</Value>
+            <Value>false</Value>
             <ValueType Type="bool"/>
         </Element>
         <Element Type="Variable" Id="F597FD37">
@@ -262,7 +262,7 @@
             <Value Type="Param" Library="1" Id="71C9A9BC"/>
         </Element>
         <Element Type="Param" Id="71C9A9BC">
-            <Value>true</Value>
+            <Value>false</Value>
             <ValueType Type="bool"/>
         </Element>
         <Element Type="Variable" Id="EADA8F3B">
@@ -29275,6 +29275,7 @@
         <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000003"/>
     </Element>
     <Element Type="Trigger" Id="C2408DF2">
+        <Disabled/>
         <Event Type="FunctionCall" Id="6C92B4DE"/>
         <Condition Type="FunctionCall" Id="D72191D6"/>
         <Action Type="FunctionCall" Id="731A3277"/>
@@ -29557,6 +29558,7 @@
         <ValueType Type="int"/>
     </Element>
     <Element Type="Trigger" Id="D6237889">
+        <Disabled/>
         <Event Type="FunctionCall" Id="78229163"/>
         <Action Type="FunctionCall" Id="5C37EEE3"/>
     </Element>
