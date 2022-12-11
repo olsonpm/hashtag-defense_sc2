@@ -880,7 +880,7 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Campaign"/>
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
     </CUnit>
-    <CUnit id="SpawnFlagPlacementTestHd">
+    <CUnit id="PurchaseFlagPlacementTestHd">
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
         <Mob value="Multiplayer"/>
@@ -927,7 +927,6 @@
             <LayoutButtons Face="MatrixOverload" Type="Passive" Requirements="HaveSOAMatrixOverload" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.3"/>
-        <MinimapRadius value="0.3"/>
         <SeparationRadius value="0.3"/>
         <InnerRadius value="0.3"/>
         <Footprint value="Footprint1x1Contour"/>
@@ -936,6 +935,7 @@
         <ScoreKill value="100"/>
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="2"/>
+        <MinimapRadius value="0.3"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
     </CUnit>
@@ -4354,19 +4354,17 @@
         <TauntDuration index="Cheer" value="5"/>
         <TauntDuration index="Dance" value="5"/>
     </CUnit>
-    <CUnit id="PurchasedUnitSpawnFlagHd">
+    <CUnit id="PurchaseFlagHd">
         <DeathRevealRadius value="3"/>
         <FlagArray index="CreateVisible" value="1"/>
         <FlagArray index="Uncommandable" value="1"/>
-        <FlagArray index="Unselectable" value="1"/>
         <FlagArray index="UseLineOfSight" value="1"/>
         <FlagArray index="Invulnerable" value="1"/>
         <FogVisibility value="Snapshot"/>
         <PlaneArray index="Ground" value="1"/>
         <Attributes index="Structure" value="1"/>
-        <LifeStart value="60"/>
-        <LifeMax value="60"/>
-        <LifeArmor value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
         <Sight value="3"/>
         <Footprint value="UnbuildableBricks"/>
         <PlacementFootprint value="UnbuildableBricks"/>

@@ -26,7 +26,7 @@
 <Sound id="Alert_TerranNeedMoreMinerals"/>
 <Sound id="Ultralisk_Death_Fall_Impact"/>
 <Terrain id="PurifierJungle"/>
-<Unit id="PurchasedUnitSpawnFlagHd"/>
+<Unit id="PurchaseFlagHd"/>
 <Unit id="AttackDroneHd"/>
 <Unit id="WasplingHd"/>
 <Unit id="LiberatorAGHd"/>

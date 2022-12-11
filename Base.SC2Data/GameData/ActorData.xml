@@ -359,6 +359,12 @@
         <HostSiteOps Ops="SOpAttachWeapon"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
+    <CActorModel id="PurchaseFlagSelectableHd" parent="ModelAddition">
+        <EditorCategories value=""/>
+        <Host Subject="PurchaseFlagHd"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Model value="HitTestSphere"/>
+    </CActorModel>
     <CActorRange id="SunkenColonyRangeHd">
         <On Terms="SelectionLocalUpdate.SunkenColonyHd.Start" Send="Create"/>
         <On Terms="SelectionLocalUpdate.SunkenColonyHd.StartEditorGround" Send="Create"/>
@@ -4091,7 +4097,7 @@
         <HostSiteOps Ops="SOpTipabilityFloorScope"/>
         <Model value="PlacementModel"/>
     </CActorModel>
-    <CActorUnit id="SpawnFlagPlacementTestHd" parent="ProtossBuildingEx" unitName="SpawnFlagPlacementTestHd">
+    <CActorUnit id="SpawnFlagPlacementTestHd" parent="ProtossBuildingEx" unitName="PurchaseFlagPlacementTestHd">
         <Aliases value="_UnitLarge"/>
         <On Terms="ActorCreation; PlayerHasReward PylonSkin" Send="StatusSet CE 1"/>
         <On Terms="StatusSet.*.CE; IsStatus CE 1; ModelName Pylon" Send="ModelSwap PylonXPR"/>
@@ -4153,6 +4159,8 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield02.dds"/>
             <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield03.dds"/>
         </WireframeShield>
+        <Model value="PurchageFlagPlacementTestHd"/>
+        <HighlightTooltip value="Unit/Name/SpawnFlagPlacementTestHd"/>
     </CActorUnit>
     <CActorUnit id="WallProtossHd" parent="ProtossBuilding" unitName="WallProtossHd">
         <On Terms="ActorCreation; ValidateUnit HasFullRefundAvailableHd" Send="HaloStart"/>
@@ -6132,7 +6140,8 @@
         <AcquisitionPitchHalfArc value="15.000000"/>
         <AccuracyHalfArc value="5.000000"/>
     </CActorAction>
-    <CActorUnit id="SpawnFlagHd" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PurchasedUnitSpawnFlagHd">
+    <CActorUnit id="PurchaseFlagHd" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PurchaseFlagHd">
+        <On Terms="ActorCreation" Send="Create PurchaseFlagSelectableHd"/>
         <On Terms="UnitDeathCustomize; ModelVariation 0" Send="DeathCustomize Variation0"/>
         <On Terms="UnitDeathCustomize; ModelVariation 1" Send="DeathCustomize Variation1"/>
         <On Terms="UnitDeathCustomize; ModelVariation 2" Send="DeathCustomize Variation2"/>
@@ -6141,19 +6150,18 @@
         <DeathCustoms ModelLink="KorhalFlagDeath00" Name="Variation0"/>
         <DeathCustoms ModelLink="KorhalFlagDeath01" Name="Variation1"/>
         <DeathCustoms ModelLink="KorhalFlagDeath02" Name="Variation2"/>
+        <PlacementActorModel value="SpawnFlagPlacementModelHd"/>
         <BarOffset value="22"/>
         <BarWidth value="45"/>
+        <HeroIcon value="Assets\Textures\btn-icon-dominion.dds"/>
+        <InfoText value="Unit/Info/PurchaseFlagHd"/>
         <StatusBarFlags index="Shields" value="0"/>
         <StatusBarFlags index="Life" value="0"/>
         <StatusBarFlags index="Energy" value="0"/>
         <StatusBarFlags index="Cargo" value="0"/>
         <StatusBarFlags index="Progress" value="0"/>
         <StatusBarFlags index="Duration" value="0"/>
-        <PlacementActorModel value="SpawnFlagPlacementModelHd"/>
-        <Model value="SpawnFlagHd"/>
-        <BuildModel value="SpawnFlagHd"/>
-        <PlacementModel value="SpawnFlagHd"/>
-        <HighlightTooltip value="Unit/Name/SpawnFlagHd"/>
+        <UnitIcon value="hashtag-defense\Assets\Textures\btn-icon-dominion.dds"/>
     </CActorUnit>
     <CActorUnit id="ResearchCenterZergHd" parent="ZergBuildingExNoArmorHd" unitName="ResearchCenterZergHd">
         <Aliases value="_UnitHuge"/>
@@ -8771,7 +8779,7 @@
     </CActorModel>
     <CActorModel id="SpawnFlagPlacementModelHd" parent="PlacementModel">
         <On Terms="ActorCreation" Send="SetOpacity 0.500000"/>
-        <Model value="SpawnFlagHd"/>
+        <Model value="PurchaseFlagHd"/>
     </CActorModel>
     <CActorRange id="SpineCrawlerProtectRangeHd" parent="RangeWeapon" weapon="ImpalerTentacleHd">
         <On Terms="SelectionLocalUpdate.SpineCrawlerHd.Start" Send="Create"/>

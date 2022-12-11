@@ -501,8 +501,8 @@
                 </Frame>
 
                 <Frame type="Label" name="Lbl_Author">
-                  <Anchor side="Top" relative="$parent/CopyDiscord" pos="Max" offset="130"/>
-                  <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
+                  <Anchor side="Top" relative="$parent/CopyDiscord" pos="Max" offset="140"/>
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="28"/>
 
                   <Style val="LoadingScreenMission"/>
                   <Text val="By: Nesbano0s"/>

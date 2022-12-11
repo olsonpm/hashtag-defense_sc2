@@ -278,7 +278,7 @@
         <SquibTypeDefault value="Metal"/>
     </CModel>
     <CModel id="WallProtossHdBuild" parent="ShieldBatteryBuildBase"/>
-    <CModel id="SpawnFlagPlacementTestHd" parent="PylonBase">
+    <CModel id="PurchageFlagPlacementTestHd" parent="PylonBase">
         <Model value="Assets\Buildings\Protoss\PylonEx2\PylonEx2.m3"/>
         <TextureDeclares Prefix="pylon_">
             <Adaptions TriggerOnSubstring="_Diffuse" Slot="campaign"/>
@@ -1641,8 +1641,8 @@
         <Model value="Assets\Effects\Terran\MarineWeaponLaunch\MarineWeaponLaunch.m3"/>
         <EditorCategories value="Race:Terran"/>
     </CModel>
-    <CModel id="SpawnFlagHd" parent="Doodad">
-        <Model value="Assets\Doodads\Korhal_FlagTattered\Korhal_FlagTattered.m3"/>
+    <CModel id="PurchaseFlagHd" parent="Doodad">
+        <Model value="hashtag-defense\Assets\Units\Purchase_Flag\Purchase_Flag.m3"/>
         <Variations Probability="1"/>
     </CModel>
     <CModel id="ResearchCenterZergHd" parent="EvolutionChamberBase">

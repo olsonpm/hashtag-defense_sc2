@@ -2,7 +2,7 @@
 <Catalog>
     <CLight id="PurifierJungle">
         <ToDInfoArray index="0">
-            <Id value="NoLight"/>
+            <Id value="PurifierJungle"/>
             <AmbientColor value="0.454902,0.509804,0.454902"/>
             <OperatorHDR value="4"/>
             <Colorize value="1"/>
@@ -29,7 +29,7 @@
                 <Color value="1.000000,0.992157,0.901961"/>
                 <ColorMultiplier value="1.020000"/>
                 <SpecColorMultiplier value="1.250000"/>
-                <Direction value="0.412953,-0.598833,-0.686199"/>
+                <Direction value="-0.264392,0.624080,-0.735269"/>
             </DirectionalLight>
             <DirectionalLight index="Fill" Color="0.403922,0.458824,0.792157" ColorMultiplier="0.730000" Direction="0.939778,-0.328921,-0.092892"/>
             <DirectionalLight index="Back" Color="0.137255,0.392157,0.694118" ColorMultiplier="1.060000" Direction="0.910194,0.309146,0.275637"/>

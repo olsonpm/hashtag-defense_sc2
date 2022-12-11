@@ -539,6 +539,7 @@ Trigger/Name/57AD354D=upgrade zerg unit damage
 Trigger/Name/5E4B3506=clear enemies
 Trigger/Name/67D7A13C=choose spawn location - top
 Trigger/Name/68C0975F=upgrade building - protoss - photon cannon
+Trigger/Name/68DE286F=change team color
 Trigger/Name/70D83FD6=upgrade building - protoss - hole puncher
 Trigger/Name/727FEFE6=vote timer expires
 Trigger/Name/752DA142=choose - bot right

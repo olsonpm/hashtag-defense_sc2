@@ -26569,7 +26569,7 @@
     </Element>
     <Element Type="Param" Id="962B55D8">
         <ParameterDef Type="ParamDef" Library="1" Id="376102D1"/>
-        <Value>PurchasedUnitSpawnFlagHd</Value>
+        <Value>PurchaseFlagHd</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Unit"/>
     </Element>
@@ -29429,6 +29429,7 @@
         <ValueId Id="271112602"/>
     </Element>
     <Element Type="Trigger" Id="0FDDBDB3">
+        <Disabled/>
         <Event Type="FunctionCall" Id="540B7E9F"/>
         <Condition Type="FunctionCall" Id="C8F00A2D"/>
         <Action Type="FunctionCall" Id="604F65F9"/>
@@ -37844,7 +37845,7 @@
     </Element>
     <Element Type="Param" Id="E2DE9112">
         <ParameterDef Type="ParamDef" Library="1" Id="D1F90C66"/>
-        <Value>PurchasedUnitSpawnFlagHd</Value>
+        <Value>PurchaseFlagHd</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Unit"/>
     </Element>
@@ -37874,7 +37875,7 @@
     </Element>
     <Element Type="Param" Id="EF10A911">
         <ParameterDef Type="ParamDef" Library="1" Id="376102D1"/>
-        <Value>PurchasedUnitSpawnFlagHd</Value>
+        <Value>PurchaseFlagHd</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Unit"/>
     </Element>
@@ -38630,6 +38631,7 @@
     </Element>
     <Element Type="Category" Id="16BCF9A3">
         <Item Type="Trigger" Id="DDC120F9"/>
+        <Item Type="Trigger" Id="68DE286F"/>
         <Item Type="Trigger" Id="C67983E9"/>
         <Item Type="Trigger" Id="04A0F669"/>
     </Element>
@@ -38811,6 +38813,189 @@
         <ValueType Type="int"/>
     </Element>
     <Element Type="Param" Id="C6D6931C">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="3ADD60A0"/>
+        <Value>Prot</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Race"/>
+    </Element>
+    <Element Type="Trigger" Id="68DE286F">
+        <Event Type="FunctionCall" Id="C7364A86"/>
+        <Event Type="FunctionCall" Id="F9D649E8"/>
+        <Event Type="FunctionCall" Id="A062CB42"/>
+        <Condition Type="FunctionCall" Id="49CF43B8"/>
+        <Condition Type="FunctionCall" Id="33FBB9AF"/>
+        <Action Type="FunctionCall" Id="A55B2331"/>
+        <Action Type="FunctionCall" Id="CFAD0C3A"/>
+    </Element>
+    <Element Type="FunctionCall" Id="C7364A86">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000121"/>
+        <Parameter Type="Param" Id="C3B65FD7"/>
+        <Parameter Type="Param" Id="85BB42B5"/>
+        <Parameter Type="Param" Id="FD21077A"/>
+    </Element>
+    <Element Type="Param" Id="C3B65FD7">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000191"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="2999701E"/>
+    </Element>
+    <Element Type="Param" Id="85BB42B5">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000193"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="00000073"/>
+    </Element>
+    <Element Type="Param" Id="FD21077A">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000192"/>
+        <Value>-change race to terran</Value>
+        <ValueType Type="string"/>
+    </Element>
+    <Element Type="FunctionCall" Id="F9D649E8">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000121"/>
+        <Parameter Type="Param" Id="02BFCDF4"/>
+        <Parameter Type="Param" Id="ED61313F"/>
+        <Parameter Type="Param" Id="6F32EEC6"/>
+    </Element>
+    <Element Type="Param" Id="02BFCDF4">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000191"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="2999701E"/>
+    </Element>
+    <Element Type="Param" Id="ED61313F">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000193"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="00000073"/>
+    </Element>
+    <Element Type="Param" Id="6F32EEC6">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000192"/>
+        <Value>-change race to zerg</Value>
+        <ValueType Type="string"/>
+    </Element>
+    <Element Type="FunctionCall" Id="A062CB42">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000121"/>
+        <Parameter Type="Param" Id="5FC06DB9"/>
+        <Parameter Type="Param" Id="54FB541B"/>
+        <Parameter Type="Param" Id="9EF6D163"/>
+    </Element>
+    <Element Type="Param" Id="5FC06DB9">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000191"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="2999701E"/>
+    </Element>
+    <Element Type="Param" Id="54FB541B">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000193"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="00000073"/>
+    </Element>
+    <Element Type="Param" Id="9EF6D163">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000192"/>
+        <Value>-change race to protoss</Value>
+        <ValueType Type="string"/>
+    </Element>
+    <Element Type="FunctionCall" Id="49CF43B8">
+        <FunctionDef Type="FunctionDef" Library="1" Id="46C4D4C8"/>
+    </Element>
+    <Element Type="FunctionCall" Id="33FBB9AF">
+        <FunctionDef Type="FunctionDef" Library="1" Id="AC7EB56E"/>
+    </Element>
+    <Element Type="FunctionCall" Id="A55B2331">
+        <FunctionDef Type="FunctionDef" Library="1" Id="62DDC02D"/>
+        <Parameter Type="Param" Id="7333F03A"/>
+    </Element>
+    <Element Type="Param" Id="7333F03A">
+        <ParameterDef Type="ParamDef" Library="1" Id="8770E2FF"/>
+        <ValueType Type="text"/>
+    </Element>
+    <Element Type="FunctionCall" Id="CFAD0C3A">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="91C49196"/>
+        <Parameter Type="Param" Id="D2818BCB"/>
+        <FunctionCall Type="FunctionCall" Id="79450691"/>
+        <FunctionCall Type="FunctionCall" Id="B254A60D"/>
+        <FunctionCall Type="FunctionCall" Id="81F3687D"/>
+    </Element>
+    <Element Type="Param" Id="D2818BCB">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="B4ACF12A"/>
+        <FunctionCall Type="FunctionCall" Id="F4F4FB84"/>
+    </Element>
+    <Element Type="FunctionCall" Id="F4F4FB84">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000122"/>
+        <Parameter Type="Param" Id="71CA9949"/>
+    </Element>
+    <Element Type="Param" Id="71CA9949">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000194"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="00000076"/>
+    </Element>
+    <Element Type="FunctionCall" Id="79450691">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="3A1227AB"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="AD43BC93"/>
+        <Parameter Type="Param" Id="2C98FB7B"/>
+        <FunctionCall Type="FunctionCall" Id="BB0AB86F"/>
+    </Element>
+    <Element Type="Param" Id="2C98FB7B">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="9A8F1093"/>
+        <Value>-change race to terran</Value>
+        <ValueType Type="string"/>
+    </Element>
+    <Element Type="FunctionCall" Id="BB0AB86F">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="63385694"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="363CE97C"/>
+        <Parameter Type="Param" Id="D667A8B3"/>
+        <Parameter Type="Param" Id="CF72F867"/>
+    </Element>
+    <Element Type="Param" Id="D667A8B3">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="A66AF510"/>
+        <Value>1</Value>
+        <ValueType Type="int"/>
+    </Element>
+    <Element Type="Param" Id="CF72F867">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="3ADD60A0"/>
+        <Value>Terr</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Race"/>
+    </Element>
+    <Element Type="FunctionCall" Id="B254A60D">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="3A1227AB"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="AD43BC93"/>
+        <Parameter Type="Param" Id="E09CD5C0"/>
+        <FunctionCall Type="FunctionCall" Id="BBA5629C"/>
+    </Element>
+    <Element Type="Param" Id="E09CD5C0">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="9A8F1093"/>
+        <Value>-change race to zerg</Value>
+        <ValueType Type="string"/>
+    </Element>
+    <Element Type="FunctionCall" Id="BBA5629C">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="63385694"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="363CE97C"/>
+        <Parameter Type="Param" Id="B384B399"/>
+        <Parameter Type="Param" Id="477768E1"/>
+    </Element>
+    <Element Type="Param" Id="B384B399">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="A66AF510"/>
+        <Value>1</Value>
+        <ValueType Type="int"/>
+    </Element>
+    <Element Type="Param" Id="477768E1">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="3ADD60A0"/>
+        <Value>Zerg</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Race"/>
+    </Element>
+    <Element Type="FunctionCall" Id="81F3687D">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="3A1227AB"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="AD43BC93"/>
+        <Parameter Type="Param" Id="32C4CE1B"/>
+        <FunctionCall Type="FunctionCall" Id="27FCE794"/>
+    </Element>
+    <Element Type="Param" Id="32C4CE1B">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="9A8F1093"/>
+        <Value>-change race to protoss</Value>
+        <ValueType Type="string"/>
+    </Element>
+    <Element Type="FunctionCall" Id="27FCE794">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="63385694"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="363CE97C"/>
+        <Parameter Type="Param" Id="88235B91"/>
+        <Parameter Type="Param" Id="B60CD155"/>
+    </Element>
+    <Element Type="Param" Id="88235B91">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="A66AF510"/>
+        <Value>1</Value>
+        <ValueType Type="int"/>
+    </Element>
+    <Element Type="Param" Id="B60CD155">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="3ADD60A0"/>
         <Value>Prot</Value>
         <ValueType Type="gamelink"/>

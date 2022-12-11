@@ -39,7 +39,7 @@
     <CValidatorLocationPlacement id="IsBuildableTerrainHd">
         <ResultFailed value="CantLandLocationInvalid,CantPlaceSpawnFlag"/>
         <Range value="0.1"/>
-        <Unit value="SpawnFlagPlacementTestHd"/>
+        <Unit value="PurchaseFlagPlacementTestHd"/>
     </CValidatorLocationPlacement>
     <CValidatorUnitCompareBehaviorCount id="BunkerIsUpgradedHd">
         <Value value="1"/>

@@ -1595,7 +1595,6 @@ trigger gt_choosespawnlocationbotleft;
 trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
 trigger gt_testinitrace;
-trigger gt_testinitresources;
 trigger gt_testpaths;
 trigger gt_showkickplayerlist;
 trigger gt_kickplayerlistcancel;
@@ -1629,6 +1628,7 @@ trigger gt_upgradebuildingzergwasplingburrow;
 trigger gt_clearrallyunitchooser;
 trigger gt_rallyunitchooser;
 trigger gt_changerace;
+trigger gt_changeteamcolor;
 trigger gt_kick;
 trigger gt_testcastkickvote;
 trigger gt_autoskip;
@@ -3146,7 +3146,7 @@ void gf_initspawnpoint (int lp_p, point lp_defendpoint) {
     lv__initialspawnpoint = PointWithOffset(lp_defendpoint, 2.0, 0.0);
     lv__playerspawnpoint = gv_spawnpointperplayer[lp_p];
     PointSet(lv__playerspawnpoint, lv__initialspawnpoint);
-    lib1_gf_createunitatpoint("PurchasedUnitSpawnFlagHd", lv__playerspawnpoint, lp_p, 0);
+    lib1_gf_createunitatpoint("PurchaseFlagHd", lv__playerspawnpoint, lp_p, 0);
 }
 
 void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser) {
@@ -4837,34 +4837,6 @@ void gt_testinitrace_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: test - init resources
-//--------------------------------------------------------------------------------------------------
-bool gt_testinitresources_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!(lib1_gf_istesting())) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSetTo, 1000);
-    PlayerModifyPropertyInt(1, c_playerPropVespene, c_playerPropOperSetTo, 1000);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_testinitresources_Init () {
-    gt_testinitresources = TriggerCreate("gt_testinitresources_Func");
-    TriggerAddEventMapInit(gt_testinitresources);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: test paths
 //--------------------------------------------------------------------------------------------------
 bool gt_testpaths_Func (bool testConds, bool runActions) {
@@ -5658,8 +5630,8 @@ bool gt_movespawnflag_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    lib1_gf_removeallunitsoftypeinregion("PurchasedUnitSpawnFlagHd", RegionEntireMap(), lv__p);
-    lib1_gf_createunitatpoint("PurchasedUnitSpawnFlagHd", lv__newspawnpoint, lv__p, c_unitCreateIgnorePlacement);
+    lib1_gf_removeallunitsoftypeinregion("PurchaseFlagHd", RegionEntireMap(), lv__p);
+    lib1_gf_createunitatpoint("PurchaseFlagHd", lv__newspawnpoint, lv__p, c_unitCreateIgnorePlacement);
     PointSet(lv__playerspawnpoint, lv__newspawnpoint);
     return true;
 }
@@ -5965,6 +5937,53 @@ void gt_changerace_Init () {
     TriggerAddEventChatMessage(gt_changerace, c_playerAny, "-change race to terran", true);
     TriggerAddEventChatMessage(gt_changerace, c_playerAny, "-change race to zerg", true);
     TriggerAddEventChatMessage(gt_changerace, c_playerAny, "-change race to protoss", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: change team color
+//--------------------------------------------------------------------------------------------------
+bool gt_changeteamcolor_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    string autoCFAD0C3A_val;
+
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_isdebugginglocally())) {
+            return false;
+        }
+
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib1_gf_displaydebugmessage(StringExternal("Param/Value/7333F03A"));
+    autoCFAD0C3A_val = EventChatMessage(false);
+    if (autoCFAD0C3A_val == "-change race to terran") {
+        PlayerSetRace(1, "Terr");
+    }
+    else if (autoCFAD0C3A_val == "-change race to zerg") {
+        PlayerSetRace(1, "Zerg");
+    }
+    else if (autoCFAD0C3A_val == "-change race to protoss") {
+        PlayerSetRace(1, "Prot");
+    }
+    else {
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_changeteamcolor_Init () {
+    gt_changeteamcolor = TriggerCreate("gt_changeteamcolor_Func");
+    TriggerAddEventChatMessage(gt_changeteamcolor, c_playerAny, "-change race to terran", true);
+    TriggerAddEventChatMessage(gt_changeteamcolor, c_playerAny, "-change race to zerg", true);
+    TriggerAddEventChatMessage(gt_changeteamcolor, c_playerAny, "-change race to protoss", true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -6967,7 +6986,6 @@ void InitTriggers () {
     gt_choosespawnlocationleft_Init();
     gt_choosespawnlocationtopleft_Init();
     gt_testinitrace_Init();
-    gt_testinitresources_Init();
     gt_testpaths_Init();
     gt_showkickplayerlist_Init();
     gt_kickplayerlistcancel_Init();
@@ -7001,6 +7019,7 @@ void InitTriggers () {
     gt_clearrallyunitchooser_Init();
     gt_rallyunitchooser_Init();
     gt_changerace_Init();
+    gt_changeteamcolor_Init();
     gt_kick_Init();
     gt_testcastkickvote_Init();
     gt_autoskip_Init();
