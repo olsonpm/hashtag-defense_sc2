@@ -483,7 +483,7 @@
 
                 <Frame type="Frame" name="CopyDiscord" template="LoadingScreen/CopyButtonTemplate">
                   <Anchor side="Top" relative="$parent/Lbl_Body" pos="Max" offset="20"/>
-                  <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="22"/>
 
                   <Frame type="CopyClipboardButton" name="ClipBoardBtn">
                     <ClipboardText val="#CopyLink"/>

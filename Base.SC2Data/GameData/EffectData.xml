@@ -331,6 +331,9 @@
         <EditorCategories value="Race:Zerg"/>
         <Amount value="30"/>
     </CEffectDamage>
+    <CEffectCreatePersistent id="OneFireworkHd">
+        <EditorCategories value=""/>
+    </CEffectCreatePersistent>
     <CEffectDamage id="WasplingDamageHd" parent="DU_WEAP">
         <EditorCategories value="Race:Zerg"/>
         <Kind value="Ranged"/>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+  <Constant name="CopyLink" val="https://discord.gg/6ZfDWNF3jU"/>
+  <Constant name="CopyText" val="Click to copy the discord link !"/>
+  <Constant name="CloseBtn" val="hashtag-defense/Assets/Textures/close-btn.png" />
+  <Constant name="CloseBtnHover" val="hashtag-defense/Assets/Textures/close-btn_hover.png" />
+
+  <Frame type="Button" name="CloseBtnTpl">
+    <Width val="30"/>
+    <Height val="30"/>
+
+    <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+    <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+
+    <NormalImage val="NormalImage"/>
+    <HoverImage val="HoverImage"/>
+
+    <Frame type="Image" name="NormalImage">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+
+      <Texture val="hashtag-defense\Assets\Textures\close-btn.png"/>
+    </Frame>
+
+    <Frame type="Image" name="HoverImage">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+
+      <Texture val="hashtag-defense\Assets\Textures\close-btn_hover.png"/>
+    </Frame>
+  </Frame>
+
+  <Frame type="Frame" name="CopyButtonTemplate">
+    <Width val="288"/>
+    <Height val="76"/>
+
+    <Frame type="CopyClipboardButton" name="ClipBoardBtn">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+
+      <ClipboardText val="#CopyLink"/>
+      <DisplayType val="ImageLayer"/>
+      <ClickSound val="@UI_ActionButtonSelect"/>
+      <HoverSound val="@UI_HoverTick"/>
+      <Width val="288"/>
+      <Height val="76"/>
+
+      <Frame type="Image" name="NormalImage">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+        <StateCount val="1"/>
+        <LayerCount val="4"/>
+        <Texture val="@UI/Glues_Battlenet_StandardButton_Normal" layer="0"/>
+        <Texture val="@UI/Glues_Battlenet_StandardButton_Down" layer="1"/>
+        <Texture val="@UI/Glues_Battlenet_StandardButton_Selected" layer="2"/>
+        <Texture val="@UI/Glues_Battlenet_StandardButton_Disabled" layer="3"/>
+        <TextureType val="EndCap" layer="0"/>
+        <TextureType val="EndCap" layer="1"/>
+        <TextureType val="EndCap" layer="2"/>
+        <TextureType val="EndCap" layer="3"/>
+        <Tiled val="true"/>
+        <DesaturateOnDisable val="false"/>
+      </Frame>
+
+      <Frame type="Image" name="HoverImage">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+        <StateCount val="1"/>
+        <LayerCount val="4"/>
+        <Texture val="@UI/Glues_Battlenet_StandardButton_Hover" layer="0"/>
+        <Texture val="@UI/Glues_Battlenet_StandardButton_Down" layer="1"/>
+        <Texture val="@UI/Glues_Battlenet_StandardButton_Selected" layer="2"/>
+        <Texture val="@UI/Glues_Battlenet_StandardButton_Disabled" layer="3"/>
+        <TextureType val="EndCap" layer="0"/>
+        <TextureType val="EndCap" layer="1"/>
+        <TextureType val="EndCap" layer="2"/>
+        <TextureType val="EndCap" layer="3"/>
+        <Tiled val="true"/>
+        <DesaturateOnDisable val="false"/>
+      </Frame>
+
+      <Frame type="Label" name="Label">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="3"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="-20"/>
+        <Style val="BattlenetStandardButton"/>
+        <Text val="#CopyText"/>
+      </Frame>
+
+      <Frame type="Frame" name="HitTestFrame">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+      </Frame>
+
+      <Animation name="Hide">
+        <Event event="OnClick" action="Reset,Play" frame="$parent/ClipBoardBtn"/>
+
+        <Controller type="Fade" end="Pause">
+          <Key type="Curve" time="0" value="255" in="Slow"/>
+          <Key type="Curve" time="0.5" value="0" in="Slow"/>
+          <Key type="Curve" time="4.5" value="0" in="Slow"/>
+          <Key type="Curve" time="5" value="255" in="Slow"/>
+        </Controller>
+      </Animation>
+    </Frame>
+
+    <Frame type="Frame" name="Popup">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+      <Width val="288"/>
+      <Height val="76"/>
+      <Alpha val="0"/>
+
+      <Frame type="Image" name="GameplayBackground">
+        <Anchor relative="$parent"/>
+        <TextureType val="Nineslice"/>
+        <Texture val="@UI/SC2_UI_Coop_Loading_GameplayBg"/>
+      </Frame>
+
+      <Frame type="Label" name="Header">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+        <Style val="BattlenetAlternateButton"/>
+        <Text val="Link copied to clipboard!"/>
+      </Frame>
+
+      <Animation name="Show">
+        <Event event="OnClick" action="Reset,Play" frame="$parent/ClipBoardBtn"/>
+
+        <Controller type="Fade" end="Pause">
+          <Key type="Curve" time="0" value="0" in="Slow"/>
+          <Key type="Curve" time="0.5" value="0" in="Slow"/>
+          <Key type="Curve" time="1" value="255" in="Slow"/>
+          <Key type="Curve" time="4" value="255" in="Slow"/>
+          <Key type="Curve" time="4.5" value="0" in="Slow"/>
+        </Controller>
+      </Animation>
+    </Frame>
+  </Frame>
+
+  <Frame type="Frame" name="GameUI/UIContainer" file="GameUI">
+    <Frame type="Frame" name="CopyDiscordLinkPanel">
+      <Visible val="False"/>
+      <Height val="350"/>
+      <Width val="650"/>
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="-300"/>
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="-325"/>
+
+      <Frame type="Image" name="Background1">
+        <Anchor relative="$parent"/>
+        <TextureType val="Nineslice"/>
+        <Texture val="Assets/Textures/ui_observer_custom_map_container.dds"/>
+        <Alpha val="200"/>
+      </Frame>
+
+      <Frame type="Image" name="Background2">
+        <Anchor relative="$parent"/>
+        <TextureType val="Nineslice"/>
+        <Texture val="Assets/Textures/ui_battlenet_glues_achievement_fanfare_achievementcontainer_prot.dds"/>
+      </Frame>
+
+      <Frame type="Button" name="ClosePanel" template="CopyDiscordLink/CloseBtnTpl" />
+
+      <Frame type="Label" name="Lbl_Title">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="30"/>
+        <Style val="BattlenetTitle"/>
+        <Text val="Thanks For Playing"/>
+        <Height val="90"/>
+      </Frame>
+
+      <Frame type="Label" name="Lbl_Body">
+        <Anchor side="Top" relative="$parent/Lbl_Title" pos="Max" offset="10"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="30"/>
+        <Width val="800"/>
+
+        <Style val="LoadingScreenMission"/>
+        <Text val="Hope you enjoyed it.&lt;n/&gt;&lt;n/&gt;Feel free to leave feedback in our discord server."/>
+      </Frame>
+
+      <Frame type="Frame" name="CopyDiscord" template="CopyDiscordLink/CopyButtonTemplate">
+        <Anchor side="Top" relative="$parent/Lbl_Body" pos="Max" offset="40"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="27"/>
+        <Frame type="CopyClipboardButton" name="ClipBoardBtn">
+          <ClipboardText val="#CopyLink"/>
+
+          <Frame type="Label" name="Label">
+            <Text val="#CopyText"/>
+          </Frame>
+        </Frame>
+
+        <Frame type="Frame" name="Popup">
+          <Frame type="Label" name="Header">
+            <Text val="Link copied to clipboard!"/>
+          </Frame>
+        </Frame>
+      </Frame>
+    </Frame>
+  </Frame>
+</Desc>

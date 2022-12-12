@@ -146,6 +146,12 @@
         </Cost>
         <CmdButtonArray index="Execute" Requirements="HasRefund10MineralsAvailableSalvageHd"/>
     </CAbilEffectInstant>
+    <CAbilEffectTarget id="TestFireworkHd">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="OneFireworkHd"/>
+        <AINotifyEffect value="OneFireworkHd"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TestFireworkHd"/>
+    </CAbilEffectTarget>
     <CAbilMorph id="UnburrowLurkerHd">
         <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="BurrowUp"/>

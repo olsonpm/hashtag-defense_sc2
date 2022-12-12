@@ -18,6 +18,7 @@ Button/Hotkey/SalvageRefund4MineralsHd=V
 Button/Hotkey/SalvageRefund8MineralsHd=V
 Button/Hotkey/SpineCrawlerRootHd=R
 Button/Hotkey/SpineCrawlerUprootHd=R
+Button/Hotkey/TestFireworkHd=F
 Button/Hotkey/UpgradeBunkerTurretDamageHd=Q
 Button/Hotkey/UpgradeProtossStructureDamageHd=Q
 Button/Hotkey/UpgradeToArtilleryTurretBunkerHd=W

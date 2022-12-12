@@ -725,6 +725,7 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="Stimpack"/>
+        <AbilArray Link="TestFireworkHd"/>
         <WeaponArray Link="C14GaussRifleSlowTicklerMarineTestHd"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -733,6 +734,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Stim" Type="AbilCmd" AbilCmd="Stimpack,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="TestFireworkHd" Type="AbilCmd" AbilCmd="TestFireworkHd,Execute" Row="2" Column="2"/>
         </CardLayouts>
         <CargoSize value="1"/>
         <ScoreMake value="50"/>
@@ -5978,7 +5980,7 @@
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="SalvageRefund1MineralHd" Type="AbilCmd" AbilCmd="SalvageRefund1MineralHd,255" Row="2" Column="3"/>
+            <LayoutButtons Face="SalvageRefund1MineralHd" Type="AbilCmd" AbilCmd="SalvageRefund1MineralHd,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.875"/>

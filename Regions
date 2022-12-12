@@ -270,4 +270,19 @@
             <quad value="36,166,76,186"/>
         </shape>
     </region>
+    <region id="46">
+        <name value="nukes and fireworks"/>
+        <shape type="rect">
+            <quad value="36,135.0002,164,165"/>
+        </shape>
+        <shape type="rect">
+            <quad value="36,37,76,135"/>
+        </shape>
+        <shape type="rect">
+            <quad value="76,37,164,65"/>
+        </shape>
+        <shape type="rect">
+            <quad value="124,65,164,135"/>
+        </shape>
+    </region>
 </Regions>

@@ -179,6 +179,35 @@
         </Events>
         <AnimBlendTime value="0.000000"/>
     </CModel>
+    <CModel id="OneFireworkHd" parent="OneShotSpellFX">
+        <Model value="Assets\Doodads\Fireworks\Fireworks.m3"/>
+        <EditorCategories value=""/>
+        <VariationCount value="3"/>
+        <Events>
+            <Variation value="0"/>
+            <Anim value="Stand,00"/>
+            <Name value="UniFireworks"/>
+            <Type value="Sound"/>
+            <Time value="0.340000"/>
+            <Payload value="Uni_Fireworks"/>
+        </Events>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Stand,00"/>
+            <Name value="UniFireworks"/>
+            <Type value="Sound"/>
+            <Time value="2.820000"/>
+            <Payload value="Uni_Fireworks"/>
+        </Events>
+        <Events>
+            <Variation value="2"/>
+            <Anim value="Stand,00"/>
+            <Name value="UniFireworks"/>
+            <Type value="Sound"/>
+            <Time value="4.850000"/>
+            <Payload value="Uni_Fireworks"/>
+        </Events>
+    </CModel>
     <CModel id="PathTesterRadius05Hd" parent="SCVBase">
         <Model value="Assets\Units\Terran\SCV\SCV.m3"/>
     </CModel>

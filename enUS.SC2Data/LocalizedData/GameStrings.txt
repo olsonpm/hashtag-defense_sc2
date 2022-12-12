@@ -24,6 +24,7 @@ Abil/Name/SalvageRefund1MineralHd=Salvage - Refund 1 Mineral
 Abil/Name/SalvageRefund4MineralsHd=Salvage - Refund 4 Minerals
 Abil/Name/SalvageRefund8MineralsHd=Salvage - Refund 8 Minerals
 Abil/Name/SiegeModeHd=Siege
+Abil/Name/TestFireworkHd=Test Firework
 Abil/Name/UnburrowLurkerHd=Unburrow Lurker
 Abil/Name/UnsiegeHd=Unsiege
 Abil/Name/UpgradeBunkerTurretDamageResearchCenterHd=Upgrade Bunker Turret Damage
@@ -99,6 +100,7 @@ Button/Name/SalvageRefund4MineralsHd=Salvage - Refund 4 Minerals
 Button/Name/SalvageRefund8MineralsHd=Salvage - Refund 8 Minerals
 Button/Name/SpineCrawlerRootHd=Root
 Button/Name/SpineCrawlerUprootHd=Uproot
+Button/Name/TestFireworkHd=Test Firework
 Button/Name/UpgradeBunkerTurretDamageHd=Upgrade Bunker Turret Damage
 Button/Name/UpgradeProtossStructureDamageHd=Upgrade Protoss Structure Damage
 Button/Name/UpgradeToArtilleryTurretBunkerHd=Upgrade To Artillery Turret
@@ -229,6 +231,7 @@ Button/Tooltip/SpineCrawlerRootHd=Roots the Spine Crawler. A rooted Spine Crawle
 Button/Tooltip/SpineCrawlerUprootHd=Uproots the Spine Crawler. An uprooted Spine Crawler has the ability to move but cannot attack. Moves much faster on creep.
 Button/Tooltip/StalkerHd=Ranged attack strider. Can use Blink.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/TempestHd=Purifier Faction<n/>Siege artillery craft. Attacks from long range. Can use Disintegration.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/TestFireworkHd=Launches a firework at the chosen location
 Button/Tooltip/TestWeaklingEnemyHd=Fast melee creature. Can morph into a Baneling.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/ThorHd=Heavy assault mech.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/TicklerMarineTestHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -563,6 +566,7 @@ Effect/Name/NeedleSpinesImpactSwitchHd=Needle Spines Impact Switch
 Effect/Name/NeedleSpinesImpactSwitchHd2=Needle Spines Impact Switch
 Effect/Name/NeedleSpinesLMBiologicalHydraliskEnemyHd=Needle Spines LM
 Effect/Name/NeedleSpinesLaunchMissileHd=Needle Spines
+Effect/Name/OneFireworkHd=One Firework
 Effect/Name/P38ScytheGuassPistolCPLightReaperEnemyHd=P-38 Scythe Guass Pistol CP
 Effect/Name/P38ScytheGuassPistolDamageLightReaperEnemyHd=P-38 Scythe Guass Pistol (Damage)
 Effect/Name/ParticleBeamLightProbeEnemyHd=Particle Beam (Damage)
@@ -654,13 +658,13 @@ MapInfo/Player08/Name=Player 8
 MapInfo/Player09/Name=Hostile
 MapInfo/Player10/Name=Hostile
 Param/Expression/1E71C629=Test Player ~kick_player~
+Param/Expression/1F0DEDF6=<c val="~color_success~">You won !<n/><n/>Woooooooooooo !</c>
 Param/Expression/27B4B0E7=Kick ~kick_player_name~ ?
 Param/Expression/32293807=Players are voting whether to kick Test Player ~kick_player~...
-Param/Expression/8097C5D0=1 / 2 = ~a~<n/>3 / 2 = ~b~
 Param/Expression/AA03E1AD=Kick Test Player ~kick_player~ ?
 Param/Expression/B019B228=Players are voting whether to kick ~kick_player_name~...
 Param/Expression/CB02BB58=ghosts toggled to: ~ghosts_enabled~
-Param/Expression/DDFB2DB4=distance to destination: ~distance_to_dest~<n/>distance to opposite side of map: ~distance_to_opp~
+Param/Expression/E1FF0345=<c val="~color_calamity~">Ahhhh this guy took the team's last life !</c>
 Param/Expression/E7D75A99=Player ~result~ kicked ! (~value~/~threshold~)
 Param/Expression/EE5F32E3=<c val="~color_calamity~">Extra lives left: ~extra_lives_left~</c>
 Param/Expression/F3CACBA2=autoskip toggled to: ~autoskip~
@@ -681,10 +685,12 @@ Param/Value/8D95612D=
 Param/Value/AF3855F5=-autoskip<n/>automatically clicks the skip button for you each round<n/><n/>-toggle ghosts<n/>toggles the ghost spawn before each round
 Param/Value/BC73E655=Vote was cast
 Param/Value/C3978B7F=Choose where to defend
+Param/Value/C9A91F44=start
 Param/Value/CB176063=
 Param/Value/D022AFAA=Here's a worker to start you off.<n/><n/><c val="F1FF71">Don't be afraid of the ghosts.  They show you the path the enemy will take.  Use that info to build your defenses.</c>
 Param/Value/D6EDA166=You start with 5 choosers to spend on minerals, upgrades and units.  You'll get more as the team kills enemies !<n/><n/>I'll show you where you'll be defending in a bit.
 Param/Value/DCD029C6=race changed
+Param/Value/E1D59E25=end
 Param/Value/E444493B=testing multiplayer locally
 Param/Value/E58B56EB=Skip
 Param/Value/ED031DF0=Ready
@@ -694,6 +700,7 @@ Param/Value/F7CAD5E6=Meh (0)
 Param/Value/lib_1_0D4B38C5=Generic6 - Complete
 Param/Value/lib_1_0DDB8C11=<error: stage not found>
 Param/Value/lib_1_1660F597=Build7 - Collide
+Param/Value/lib_1_1BE6C03F=00e35b
 Param/Value/lib_1_222792E0=Harvest3 - Harvest
 Param/Value/lib_1_28EC086C=<error: race not found>
 Param/Value/lib_1_2C79D0B3=Effect3 - Cast

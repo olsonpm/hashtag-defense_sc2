@@ -35,6 +35,7 @@ struct lib1_gs_debouncedmessage {
 unit[17][3] lib1_gv_selectedunits;
 lib1_gs_debouncedmessage[101] lib1_gv_debouncedmessages;
 text lib1_gv_colorcalamity;
+text lib1_gv_colorsuccess;
 timer lib1_gv_everysecond;
 bool lib1_gv_localdebug;
 int[17] lib1_gv_randomindices;
@@ -90,6 +91,7 @@ void lib1_gf_debouncedmessageaddorset (structref<lib1_gs_debouncedmessage> lp_de
 void lib1_gf_debouncedmessageremove (string lp_id);
 void lib1_gf_debouncedmessageset (structref<lib1_gs_debouncedmessage> lp_debouncedmessage, int lp_i);
 void lib1_gf_displaydebugmessage (text lp_msg);
+void lib1_gf_endgameforplayergroup (playergroup lp_pg, int lp_gameovertype);
 void lib1_gf_initeverysecondtimer ();
 void lib1_gf_initlocaldebuggingstate ();
 void lib1_gf_issueordertoallunitsinregion (order lp_o, region lp_r, int lp_p, int lp_orderqueue);
@@ -99,6 +101,8 @@ void lib1_gf_messageallusers (text lp_msg);
 void lib1_gf_messageallusersdebounced (text lp_msg, string lp_debounceid, int lp_secondstodebounce);
 void lib1_gf_modifyplayergroupintproperty (playergroup lp_pg, int lp_prop, int lp_modify, int lp_int);
 void lib1_gf_pancameratopointforplayer (int lp_player, point lp_point);
+void lib1_gf_pancameratopointforplayerasync (int lp_player, point lp_point);
+void lib1_gf_pancameratopointforplayergroup (playergroup lp_pg, point lp_point);
 void lib1_gf_playsoundatpoint (soundlink lp_s, point lp_p);
 void lib1_gf_playsoundforallplayers (soundlink lp_s);
 void lib1_gf_playsoundforplayer (soundlink lp_s, int lp_p);
@@ -146,6 +150,7 @@ void lib1_InitVariables () {
         lib1_gv_debouncedmessages[init_i].lv_id = "";
     }
     lib1_gv_colorcalamity = StringExternal("Param/Value/lib_1_4A35FBAD");
+    lib1_gv_colorsuccess = StringExternal("Param/Value/lib_1_1BE6C03F");
     lib1_gv_everysecond = TimerCreate();
     lib1_gv_localdebug = true;
     lib1_gv_test = true;
@@ -764,6 +769,25 @@ void lib1_gf_displaydebugmessage (text lp_msg) {
 
 }
 
+void lib1_gf_endgameforplayergroup (playergroup lp_pg, int lp_gameovertype) {
+    // Variable Declarations
+    int lv__p;
+
+    // Automatic Variable Declarations
+    playergroup auto0AC03774_g;
+
+    // Variable Initialization
+
+    // Implementation
+    auto0AC03774_g = lp_pg;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(auto0AC03774_g, lv__p);
+        if (lv__p < 0) { break; }
+        GameOver(lv__p, lp_gameovertype, true, true);
+    }
+}
+
 void lib1_gf_initeverysecondtimer () {
     // Automatic Variable Declarations
     // Implementation
@@ -848,6 +872,51 @@ void lib1_gf_pancameratopointforplayer (int lp_player, point lp_point) {
     // Automatic Variable Declarations
     // Implementation
     CameraPan(lp_player, lp_point, 1.0, -1, 10.0, false);
+}
+
+trigger auto_lib1_gf_pancameratopointforplayerasync_Trigger = null;
+int auto_lib1_gf_pancameratopointforplayerasync_lp_player;
+point auto_lib1_gf_pancameratopointforplayerasync_lp_point;
+
+void lib1_gf_pancameratopointforplayerasync (int lp_player, point lp_point) {
+    auto_lib1_gf_pancameratopointforplayerasync_lp_player = lp_player;
+    auto_lib1_gf_pancameratopointforplayerasync_lp_point = lp_point;
+
+    if (auto_lib1_gf_pancameratopointforplayerasync_Trigger == null) {
+        auto_lib1_gf_pancameratopointforplayerasync_Trigger = TriggerCreate("auto_lib1_gf_pancameratopointforplayerasync_TriggerFunc");
+    }
+
+    TriggerExecute(auto_lib1_gf_pancameratopointforplayerasync_Trigger, false, false);
+}
+
+bool auto_lib1_gf_pancameratopointforplayerasync_TriggerFunc (bool testConds, bool runActions) {
+    int lp_player = auto_lib1_gf_pancameratopointforplayerasync_lp_player;
+    point lp_point = auto_lib1_gf_pancameratopointforplayerasync_lp_point;
+
+    // Automatic Variable Declarations
+    // Implementation
+    CameraPan(lp_player, lp_point, 1.0, -1, 10.0, false);
+    return true;
+}
+
+void lib1_gf_pancameratopointforplayergroup (playergroup lp_pg, point lp_point) {
+    // Variable Declarations
+    int lv__p;
+
+    // Automatic Variable Declarations
+    playergroup autoE7EECA02_g;
+
+    // Variable Initialization
+
+    // Implementation
+    autoE7EECA02_g = lp_pg;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(autoE7EECA02_g, lv__p);
+        if (lv__p < 0) { break; }
+        lib1_gf_pancameratopointforplayerasync(lv__p, lp_point);
+    }
+    Wait(1.0, c_timeReal);
 }
 
 void lib1_gf_playsoundatpoint (soundlink lp_s, point lp_p) {
@@ -1283,10 +1352,14 @@ bool gv_unitchooserlock;
 bool[10] gv_unitchooserlockbyplayer;
 int gv_currentextralife;
 int gv_currentround;
+int gv_endgamepanel;
+int gv_endgamepanelclosebtn;
 int gv_enemieskilled;
 int gv_enemieskilledperchooserforsingleplayer;
 int gv_enemiesperround;
+bool gv_firstroundhasstarted;
 fixed gv_initialsecondsbetweenenemies;
+bool gv_gameisover;
 bool gv_isspawningenemies;
 bool gv_lockclearenemies;
 bool gv_lockenemieskilled;
@@ -1297,6 +1370,8 @@ timer gv_roundtimer;
 int gv_secondsbeforefirstround;
 int gv_secondsbetweenghostspawn;
 int gv_secondsbetweenrounds;
+bool gv_setofffireworks;
+bool gv_setoffnukes;
 bool[9] gv_activedefenderlocations;
 playergroup gv_activedefenders;
 playergroup gv_activedefendersplusallycomp;
@@ -1394,6 +1469,8 @@ void InitGlobals () {
     int init_i;
     int init_j;
 
+    gv_endgamepanel = c_invalidDialogControlId;
+    gv_endgamepanelclosebtn = c_invalidDialogControlId;
     gv_enemieskilledperchooserforsingleplayer = 4;
     gv_enemiesperround = 10;
     gv_initialsecondsbetweenenemies = 0.8;
@@ -1564,13 +1641,19 @@ void gf_upgradebuilding (string lp_buildingtypetocreate);
 void gf_skipforplayeriftimerisactive (int lp_p);
 void gf_spawnunit (int lp_unitlocation, int lp_p);
 void gf_chooseunit (int lp_numchoosers, int lp_location, int lp_p, region lp_region, int lp_choicetype);
+bool gf_gameisnotover ();
 bool gf_isboss ();
 bool gf_isenemyghost (unit lp_u);
 bool gf_shouldpingchooser (int lp_p);
+bool gf_canspawnghosts ();
 int gf_getcurrentmodtype ();
 string gf_getcurrentenemyunittypetospawn ();
-void gf_endgame (int lp_gameovertype);
-void gf_enemyreachedend ();
+void gf_endgameshowpanel ();
+void gf_endgamedefeat (unit lp_unitcausingdefeat);
+void gf_endgamesetoff200fireworkssecond ();
+void gf_endgamesetoff10nukessecond ();
+void gf_endgamevictory ();
+void gf_enemyreachedend (unit lp_unitwhoreachedend);
 void gf_incrementenemieskilled ();
 void gf_removeenemy (unit lp_u);
 void gf_resetskipclicked ();
@@ -1627,10 +1710,10 @@ trigger gt_upgradebuildingzergsunkencolony;
 trigger gt_upgradebuildingzergwasplingburrow;
 trigger gt_clearrallyunitchooser;
 trigger gt_rallyunitchooser;
-trigger gt_changerace;
-trigger gt_changeteamcolor;
-trigger gt_kick;
-trigger gt_testcastkickvote;
+trigger gt_typingcommandstestchangerace;
+trigger gt_typingcommandstestchangeteamcolor;
+trigger gt_typingcommandstestkick;
+trigger gt_typingcommandstestcastkickvote;
 trigger gt_autoskip;
 trigger gt_commands;
 trigger gt_toggleghosts;
@@ -1644,6 +1727,7 @@ trigger gt_chooseleft;
 trigger gt_choosetopleft;
 trigger gt_allenemiesgone;
 trigger gt_clearenemies;
+trigger gt_closeendgamepanel;
 trigger gt_everysecondupdatedialogtimervalue;
 trigger gt_gainchoosers;
 trigger gt_runround;
@@ -4043,6 +4127,12 @@ void gf_chooseunit (int lp_numchoosers, int lp_location, int lp_p, region lp_reg
     gv_unitchooserlockbyplayer[lp_p] = false;
 }
 
+bool gf_gameisnotover () {
+    // Automatic Variable Declarations
+    // Implementation
+    return !(gv_gameisover);
+}
+
 bool gf_isboss () {
     // Automatic Variable Declarations
     // Implementation
@@ -4076,6 +4166,12 @@ bool gf_shouldpingchooser (int lp_p) {
     }
 }
 
+bool gf_canspawnghosts () {
+    // Automatic Variable Declarations
+    // Implementation
+    return (gv_roundfinished || !(gv_firstroundhasstarted));
+}
+
 int gf_getcurrentmodtype () {
     // Automatic Variable Declarations
     // Implementation
@@ -4088,26 +4184,133 @@ string gf_getcurrentenemyunittypetospawn () {
     return gv_enemyperround[gv_currentround];
 }
 
-void gf_endgame (int lp_gameovertype) {
+void gf_endgameshowpanel () {
+    // Automatic Variable Declarations
+    // Implementation
+    DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer\\CopyDiscordLinkPanel");
+    gv_endgamepanel = DialogControlLastCreated();
+    DialogControlSetVisible(gv_endgamepanel, PlayerGroupAll(), true);
+    DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer\\CopyDiscordLinkPanel\\ClosePanel");
+    gv_endgamepanelclosebtn = DialogControlLastCreated();
+}
+
+void gf_endgamedefeat (unit lp_unitcausingdefeat) {
     // Variable Declarations
+    unitgroup lv__allunits;
+    point lv__locationofgameoverunit;
     int lv__p;
+    unit lv__u;
 
     // Automatic Variable Declarations
-    playergroup autoA9135E83_g;
+    // Variable Initialization
+    lv__allunits = UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter(0, 0, 0, 0), 0);
+    lv__locationofgameoverunit = UnitGetPosition(lp_unitcausingdefeat);
+
+    // Implementation
+    gv_gameisover = true;
+    lib1_gf_debouncedmessageremove("extra lives remaining");
+    UnitGroupPauseAll(lv__allunits, true);
+    lib1_gf_pancameratopointforplayergroup(gv_activedefenders, lv__locationofgameoverunit);
+    TextExpressionSetToken("Param/Expression/E1FF0345", "color_calamity", lib1_gv_colorcalamity);
+    lib1_gf_messageallusers(TextExpressionAssemble("Param/Expression/E1FF0345"));
+    PlayerCreateEffectPoint(gv_allycompplayer, "PingPanelBeaconAttack", lv__locationofgameoverunit);
+    Wait(3.0, c_timeReal);
+    gf_endgamesetoff10nukessecond();
+    gf_endgamesetoff10nukessecond();
+    gf_endgamesetoff10nukessecond();
+    Wait(3.0, c_timeReal);
+    gf_endgameshowpanel();
+    Wait(20.0, c_timeReal);
+    gv_setoffnukes = false;
+    lib1_gf_endgameforplayergroup(gv_activedefenders, c_gameOverDefeat);
+}
+
+trigger auto_gf_endgamesetoff200fireworkssecond_Trigger = null;
+
+void gf_endgamesetoff200fireworkssecond () {
+    if (auto_gf_endgamesetoff200fireworkssecond_Trigger == null) {
+        auto_gf_endgamesetoff200fireworkssecond_Trigger = TriggerCreate("auto_gf_endgamesetoff200fireworkssecond_TriggerFunc");
+    }
+
+    TriggerExecute(auto_gf_endgamesetoff200fireworkssecond_Trigger, false, false);
+}
+
+bool auto_gf_endgamesetoff200fireworkssecond_TriggerFunc (bool testConds, bool runActions) {
+    // Variable Declarations
+    point lv__randompoint;
+    int lv__i;
+
+    // Automatic Variable Declarations
+    const int auto1A8112F4_ae = 19;
+    const int auto1A8112F4_ai = 1;
 
     // Variable Initialization
 
     // Implementation
-    autoA9135E83_g = gv_activedefenders;
-    lv__p = -1;
-    while (true) {
-        lv__p = PlayerGroupNextPlayer(autoA9135E83_g, lv__p);
-        if (lv__p < 0) { break; }
-        GameOver(lv__p, lp_gameovertype, true, true);
+    gv_setofffireworks = true;
+    while (lib1_gf_istrue(gv_setofffireworks)) {
+        lv__i = 0;
+        for ( ; ( (auto1A8112F4_ai >= 0 && lv__i <= auto1A8112F4_ae) || (auto1A8112F4_ai < 0 && lv__i >= auto1A8112F4_ae) ) ; lv__i += auto1A8112F4_ai ) {
+            lv__randompoint = RegionRandomPoint(RegionFromId(46));
+            PlayerCreateEffectPoint(1, "OneFireworkHd", lv__randompoint);
+        }
+        Wait(0.1, c_timeReal);
     }
+    return true;
 }
 
-void gf_enemyreachedend () {
+trigger auto_gf_endgamesetoff10nukessecond_Trigger = null;
+
+void gf_endgamesetoff10nukessecond () {
+    if (auto_gf_endgamesetoff10nukessecond_Trigger == null) {
+        auto_gf_endgamesetoff10nukessecond_Trigger = TriggerCreate("auto_gf_endgamesetoff10nukessecond_TriggerFunc");
+    }
+
+    TriggerExecute(auto_gf_endgamesetoff10nukessecond_Trigger, false, false);
+}
+
+bool auto_gf_endgamesetoff10nukessecond_TriggerFunc (bool testConds, bool runActions) {
+    // Variable Declarations
+    point lv__randompoint;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    gv_setoffnukes = true;
+    while (lib1_gf_istrue(gv_setoffnukes)) {
+        lv__randompoint = RegionRandomPoint(RegionFromId(46));
+        PlayerCreateEffectPoint(gv_enemyplayer, "NukeDetonate", lv__randompoint);
+        Wait(0.1, c_timeReal);
+    }
+    return true;
+}
+
+void gf_endgamevictory () {
+    // Variable Declarations
+    unitgroup lv__allunits;
+    int lv__p;
+    unit lv__u;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__allunits = UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter(0, 0, 0, 0), 0);
+
+    // Implementation
+    gv_gameisover = true;
+    lib1_gf_debouncedmessageremove("extra lives remaining");
+    gf_endgamesetoff200fireworkssecond();
+    gf_endgamesetoff200fireworkssecond();
+    TextExpressionSetToken("Param/Expression/1F0DEDF6", "color_success", lib1_gv_colorsuccess);
+    lib1_gf_messageallusers(TextExpressionAssemble("Param/Expression/1F0DEDF6"));
+    Wait(3.0, c_timeReal);
+    gf_endgameshowpanel();
+    Wait(16.0, c_timeReal);
+    gv_setofffireworks = false;
+    lib1_gf_endgameforplayergroup(gv_activedefenders, c_gameOverVictory);
+}
+
+void gf_enemyreachedend (unit lp_unitwhoreachedend) {
     // Variable Declarations
     int lv__numenemiesperlife;
 
@@ -4127,7 +4330,7 @@ void gf_enemyreachedend () {
             lib1_gf_messageallusersdebounced(TextExpressionAssemble("Param/Expression/EE5F32E3"), "extra lives remaining", 3);
         }
         else {
-            gf_endgame(c_gameOverDefeat);
+            gf_endgamedefeat(lp_unitwhoreachedend);
         }
     }
 
@@ -4208,6 +4411,7 @@ void gf_runround () {
     gf_resetskipclicked();
     gf_removefullrefund();
     gv_roundfinished = false;
+    gv_firstroundhasstarted = true;
     gf_spawnenemies();
 }
 
@@ -5893,9 +6097,9 @@ void gt_rallyunitchooser_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: change race
+// Trigger: typing commands - test - change race
 //--------------------------------------------------------------------------------------------------
-bool gt_changerace_Func (bool testConds, bool runActions) {
+bool gt_typingcommandstestchangerace_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     string autoAD020825_val;
 
@@ -5932,17 +6136,17 @@ bool gt_changerace_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_changerace_Init () {
-    gt_changerace = TriggerCreate("gt_changerace_Func");
-    TriggerAddEventChatMessage(gt_changerace, c_playerAny, "-change race to terran", true);
-    TriggerAddEventChatMessage(gt_changerace, c_playerAny, "-change race to zerg", true);
-    TriggerAddEventChatMessage(gt_changerace, c_playerAny, "-change race to protoss", true);
+void gt_typingcommandstestchangerace_Init () {
+    gt_typingcommandstestchangerace = TriggerCreate("gt_typingcommandstestchangerace_Func");
+    TriggerAddEventChatMessage(gt_typingcommandstestchangerace, c_playerAny, "-change race to terran", true);
+    TriggerAddEventChatMessage(gt_typingcommandstestchangerace, c_playerAny, "-change race to zerg", true);
+    TriggerAddEventChatMessage(gt_typingcommandstestchangerace, c_playerAny, "-change race to protoss", true);
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: change team color
+// Trigger: typing commands - test - change team color
 //--------------------------------------------------------------------------------------------------
-bool gt_changeteamcolor_Func (bool testConds, bool runActions) {
+bool gt_typingcommandstestchangeteamcolor_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     string autoCFAD0C3A_val;
 
@@ -5979,17 +6183,17 @@ bool gt_changeteamcolor_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_changeteamcolor_Init () {
-    gt_changeteamcolor = TriggerCreate("gt_changeteamcolor_Func");
-    TriggerAddEventChatMessage(gt_changeteamcolor, c_playerAny, "-change race to terran", true);
-    TriggerAddEventChatMessage(gt_changeteamcolor, c_playerAny, "-change race to zerg", true);
-    TriggerAddEventChatMessage(gt_changeteamcolor, c_playerAny, "-change race to protoss", true);
+void gt_typingcommandstestchangeteamcolor_Init () {
+    gt_typingcommandstestchangeteamcolor = TriggerCreate("gt_typingcommandstestchangeteamcolor_Func");
+    TriggerAddEventChatMessage(gt_typingcommandstestchangeteamcolor, c_playerAny, "-change race to terran", true);
+    TriggerAddEventChatMessage(gt_typingcommandstestchangeteamcolor, c_playerAny, "-change race to zerg", true);
+    TriggerAddEventChatMessage(gt_typingcommandstestchangeteamcolor, c_playerAny, "-change race to protoss", true);
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: kick
+// Trigger: typing commands - test - kick
 //--------------------------------------------------------------------------------------------------
-bool gt_kick_Func (bool testConds, bool runActions) {
+bool gt_typingcommandstestkick_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     string auto200ECF1E_val;
 
@@ -6033,17 +6237,17 @@ bool gt_kick_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_kick_Init () {
-    gt_kick = TriggerCreate("gt_kick_Func");
-    TriggerAddEventChatMessage(gt_kick, c_playerAny, "-kick p2", true);
-    TriggerAddEventChatMessage(gt_kick, c_playerAny, "-kick p3", true);
-    TriggerAddEventChatMessage(gt_kick, c_playerAny, "-kick p4", true);
+void gt_typingcommandstestkick_Init () {
+    gt_typingcommandstestkick = TriggerCreate("gt_typingcommandstestkick_Func");
+    TriggerAddEventChatMessage(gt_typingcommandstestkick, c_playerAny, "-kick p2", true);
+    TriggerAddEventChatMessage(gt_typingcommandstestkick, c_playerAny, "-kick p3", true);
+    TriggerAddEventChatMessage(gt_typingcommandstestkick, c_playerAny, "-kick p4", true);
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: test cast kick vote
+// Trigger: typing commands - test - cast kick vote
 //--------------------------------------------------------------------------------------------------
-bool gt_testcastkickvote_Func (bool testConds, bool runActions) {
+bool gt_typingcommandstestcastkickvote_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     string autoA7D742DB_val;
 
@@ -6093,14 +6297,14 @@ bool gt_testcastkickvote_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_testcastkickvote_Init () {
-    gt_testcastkickvote = TriggerCreate("gt_testcastkickvote_Func");
-    TriggerAddEventChatMessage(gt_testcastkickvote, c_playerAny, "-vote yes p2", true);
-    TriggerAddEventChatMessage(gt_testcastkickvote, c_playerAny, "-vote meh p2", true);
-    TriggerAddEventChatMessage(gt_testcastkickvote, c_playerAny, "-vote no p2", true);
-    TriggerAddEventChatMessage(gt_testcastkickvote, c_playerAny, "-vote yes p3", true);
-    TriggerAddEventChatMessage(gt_testcastkickvote, c_playerAny, "-vote meh p3", true);
-    TriggerAddEventChatMessage(gt_testcastkickvote, c_playerAny, "-vote no p3", true);
+void gt_typingcommandstestcastkickvote_Init () {
+    gt_typingcommandstestcastkickvote = TriggerCreate("gt_typingcommandstestcastkickvote_Func");
+    TriggerAddEventChatMessage(gt_typingcommandstestcastkickvote, c_playerAny, "-vote yes p2", true);
+    TriggerAddEventChatMessage(gt_typingcommandstestcastkickvote, c_playerAny, "-vote meh p2", true);
+    TriggerAddEventChatMessage(gt_typingcommandstestcastkickvote, c_playerAny, "-vote no p2", true);
+    TriggerAddEventChatMessage(gt_typingcommandstestcastkickvote, c_playerAny, "-vote yes p3", true);
+    TriggerAddEventChatMessage(gt_typingcommandstestcastkickvote, c_playerAny, "-vote meh p3", true);
+    TriggerAddEventChatMessage(gt_typingcommandstestcastkickvote, c_playerAny, "-vote no p3", true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -6565,6 +6769,10 @@ bool gt_allenemiesgone_Func (bool testConds, bool runActions) {
 
     // Conditions
     if (testConds) {
+        if (!(gf_gameisnotover())) {
+            return false;
+        }
+
         if (!(lib1_gf_isfalse(gv_isspawningenemies))) {
             return false;
         }
@@ -6598,7 +6806,7 @@ bool gt_allenemiesgone_Func (bool testConds, bool runActions) {
         gv_roundfinished = true;
         libNtve_gf_KillModel(gv_currentenemyindicator);
         if ((gv_currentround == gv_numrounds)) {
-            gf_endgame(c_gameOverVictory);
+            gf_endgamevictory();
         }
         else {
             libNtve_gf_CreateModelAtPoint("CurrentEnemyIndicatorHd", gv_enemyshowcasepoints[gv_currentround]);
@@ -6640,6 +6848,13 @@ bool gt_clearenemies_Func (bool testConds, bool runActions) {
 
     // Variable Initialization
 
+    // Conditions
+    if (testConds) {
+        if (!(gf_gameisnotover())) {
+            return false;
+        }
+    }
+
     // Actions
     if (!runActions) {
         return true;
@@ -6661,10 +6876,13 @@ bool gt_clearenemies_Func (bool testConds, bool runActions) {
             if (lv__u == null) { break; }
             if (lib1_gf_istrue(UnitHasBehavior2(lv__u, lv__spawnbehavior))) {
                 if (lib1_gf_isfalse(gf_isenemyghost(lv__u))) {
-                    gf_removeenemy(lv__u);
-                    gf_enemyreachedend();
+                    gf_enemyreachedend(lv__u);
                     if (gf_isboss()) {
-                        gf_enemyreachedend();
+                        gf_enemyreachedend(lv__u);
+                    }
+
+                    if (gf_gameisnotover()) {
+                        gf_removeenemy(lv__u);
                     }
 
                 }
@@ -6694,6 +6912,37 @@ void gt_clearenemies_Init () {
     TriggerAddEventUnitRegion(gt_clearenemies, null, RegionFromId(18), true);
     TriggerAddEventUnitRegion(gt_clearenemies, null, RegionFromId(19), true);
     TriggerAddEventUnitRegion(gt_clearenemies, null, RegionFromId(20), true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: close end game panel
+//--------------------------------------------------------------------------------------------------
+bool gt_closeendgamepanel_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((EventDialogControl() == gv_endgamepanelclosebtn))) {
+            return false;
+        }
+
+        if (!((EventDialogControlEventType() == c_triggerControlEventTypeClick))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogControlSetVisible(gv_endgamepanel, PlayerGroupSingle(EventPlayer()), false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_closeendgamepanel_Init () {
+    gt_closeendgamepanel = TriggerCreate("gt_closeendgamepanel_Func");
+    TriggerAddEventDialogControl(gt_closeendgamepanel, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -6731,6 +6980,10 @@ bool gt_gainchoosers_Func (bool testConds, bool runActions) {
 
     // Conditions
     if (testConds) {
+        if (!(gf_gameisnotover())) {
+            return false;
+        }
+
         if (!(lib1_gf_triggeringunitbelongstoplayer(gv_enemyplayer))) {
             return false;
         }
@@ -6861,6 +7114,13 @@ void gt_skiproundtimer_Init () {
 bool gt_spawnenemyghosts_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     timer auto7CD6736A_val;
+
+    // Conditions
+    if (testConds) {
+        if (!(gf_canspawnghosts())) {
+            return false;
+        }
+    }
 
     // Actions
     if (!runActions) {
@@ -7018,10 +7278,10 @@ void InitTriggers () {
     gt_upgradebuildingzergwasplingburrow_Init();
     gt_clearrallyunitchooser_Init();
     gt_rallyunitchooser_Init();
-    gt_changerace_Init();
-    gt_changeteamcolor_Init();
-    gt_kick_Init();
-    gt_testcastkickvote_Init();
+    gt_typingcommandstestchangerace_Init();
+    gt_typingcommandstestchangeteamcolor_Init();
+    gt_typingcommandstestkick_Init();
+    gt_typingcommandstestcastkickvote_Init();
     gt_autoskip_Init();
     gt_commands_Init();
     gt_toggleghosts_Init();
@@ -7035,6 +7295,7 @@ void InitTriggers () {
     gt_choosetopleft_Init();
     gt_allenemiesgone_Init();
     gt_clearenemies_Init();
+    gt_closeendgamepanel_Init();
     gt_everysecondupdatedialogtimervalue_Init();
     gt_gainchoosers_Init();
     gt_runround_Init();

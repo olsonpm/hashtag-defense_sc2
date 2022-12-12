@@ -359,6 +359,10 @@
         <HostSiteOps Ops="SOpAttachWeapon"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
+    <CActorModel id="OneFireworkHd" parent="ModelAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.OneFireworkHd.Stop" Send="Create"/>
+    </CActorModel>
     <CActorModel id="PurchaseFlagSelectableHd" parent="ModelAddition">
         <EditorCategories value=""/>
         <Host Subject="PurchaseFlagHd"/>

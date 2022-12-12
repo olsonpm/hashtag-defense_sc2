@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="TestFireworkHd">
+        <Icon value="Assets\Textures\lunarnewyearfirework_coop.dds"/>
+    </CButton>
     <CButton id="UpgradeToPhotonCannonHd">
         <Icon value="Assets\Textures\btn-building-protoss-photoncannon.dds"/>
         <EditorCategories value="Race:Protoss"/>
