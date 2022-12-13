@@ -17,8 +17,8 @@
 <Behavior id="UpgradedTurretBunkerHd"/>
 <Effect id="NukeDetonate"/>
 <Effect id="PingPanelBeaconAttack"/>
-<Effect id="ExitEffectHd"/>
 <Effect id="OneFireworkHd"/>
+<Effect id="ExitEffectHd"/>
 <Model id="CurrentEnemyIndicatorHd"/>
 <Race id="Terr"/>
 <Race id="Zerg"/>
