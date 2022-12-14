@@ -16,8 +16,6 @@ yellow side-note
 
 # todo
 
- - make the increased unit graphics a clickable unit so people can click it and
-   understand what it does
  - unit balance
  - heroes
  - unique bosses

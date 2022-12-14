@@ -317,6 +317,16 @@
         <ScaleMax value="0.750000,0.750000,0.750000"/>
         <ScaleMin value="0.750000,0.750000,0.750000"/>
     </CModel>
+    <CModel id="PlusSixModHd">
+        <Model value="hashtag-defense\Assets\Units\PlusSix\PlusSix.m3"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+    </CModel>
+    <CModel id="PlusTwelveModHd">
+        <Model value="hashtag-defense\Assets\Units\PlusTwelve\PlusTwelve.m3"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+    </CModel>
     <CModel id="SlowTicklerMarineAttackImpactTestHd" parent="LaunchFX">
         <Model value="Assets\Effects\Terran\MarineWeaponImpact\MarineWeaponImpact.m3"/>
         <EditorCategories value="Race:Terran"/>
@@ -2275,7 +2285,7 @@
         <Lighting value="UI_Screen_Numbers_04"/>
     </CModel>
     <CModel id="UIScreenNumber6Hd" parent="UIScreenParentHd">
-        <Model value="Assets\UI\Glues\UI_Screen_Numbers\UI_Screen_Numbers_06.m3"/>
+        <Model value="Assets\UI\Glues\UI_Screen_Numbers\UI_Screen_Numbers_30.m3"/>
         <Lighting value="UI_Screen_Numbers_04"/>
     </CModel>
     <CModel id="UIScreenNumber7Hd" parent="UIScreenParentHd">

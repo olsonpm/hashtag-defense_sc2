@@ -252,6 +252,14 @@
         <Race value="Zerg"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="PlusSixModHd">
+        <EditorCategories value=""/>
+        <FlagArray index="Invulnerable" value="1"/>
+    </CUnit>
+    <CUnit id="PlusTwelveModHd">
+        <EditorCategories value=""/>
+        <FlagArray index="Invulnerable" value="1"/>
+    </CUnit>
     <CUnit id="SunkenColonyHd">
         <KillDisplay value="Always"/>
         <RankDisplay value="Never"/>

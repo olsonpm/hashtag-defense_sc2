@@ -2,11 +2,8 @@
 <Preload>
 <Actor id="SYSTEM_ActorConfig"/>
 <Actor id="HallucinationDeathHd"/>
-<Actor id="UIScreenNumber1Hd"/>
-<Actor id="UIScreenNumber2Hd"/>
-<Actor id="UIScreenNumber6Hd"/>
-<Actor id="UIScreenPlusHd"/>
 <Behavior id="AddedShieldsModHd"/>
+<Behavior id="PerfectSpecimenModHd"/>
 <Behavior id="MissileTurretBunkerHd"/>
 <Behavior id="EnemyGhostHd"/>
 <Behavior id="FullRefundAvailableSalvageHd"/>
@@ -18,7 +15,6 @@
 <Behavior id="PushHd"/>
 <Behavior id="HeavyTurretBunkerHd"/>
 <Behavior id="UpgradedTurretBunkerHd"/>
-<Behavior id="PerfectSpecimenModHd"/>
 <Effect id="NukeDetonate"/>
 <Effect id="PingPanelBeaconAttack"/>
 <Effect id="OneFireworkHd"/>

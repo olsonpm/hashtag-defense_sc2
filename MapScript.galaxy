@@ -1333,6 +1333,8 @@ const int ge_modtypes_increasespeed = 2;
 const int ge_modtypes_addarmor = 3;
 const int ge_modtypes_addshields = 4;
 const int ge_modtypes_perfectspecimen = 5;
+const int ge_modtypes_plussix = 6;
+const int ge_modtypes_plustwelve = 7;
 const int ge_pathtestsegments_verticalleft = 0;
 const int ge_pathtestsegments_verticaltop = 1;
 const int ge_pathtestsegments_verticalright = 2;
@@ -1425,7 +1427,7 @@ int[9][3] gv_locationandsublocationtoenemypathlocation;
 int[9] gv_locationtoplayer;
 int[16] gv_modtypedice;
 int gv_modtypedicelastindex;
-string[6] gv_modtypetomodunittype;
+string[8] gv_modtypetomodunittype;
 string[6] gv_modtypetobuff;
 int gv_numenemieswhoreachedtheend;
 gs_pathtestsegmentinfo[9] gv_pathtestsegments;
@@ -2453,15 +2455,12 @@ void gf_initenemymods () {
     // Variable Initialization
 
     // Implementation
-    libNtve_gf_CreateActorAtPoint("UIScreenPlusHd", PointWithOffset(gv_enemymodpoints[2], -0.6, 0.0));
-    libNtve_gf_CreateActorAtPoint("UIScreenNumber6Hd", PointWithOffset(gv_enemymodpoints[2], 0.1, 0.0));
     gv_enemymods[2][0] = ge_modtypes_increaseenemycount;
     gv_enemymods[2][1] = 3;
-    libNtve_gf_CreateActorAtPoint("UIScreenPlusHd", PointWithOffset(gv_enemymodpoints[3], -0.6, 0.0));
-    libNtve_gf_CreateActorAtPoint("UIScreenNumber1Hd", PointWithOffset(gv_enemymodpoints[3], -0.1, 0.0));
-    libNtve_gf_CreateActorAtPoint("UIScreenNumber2Hd", PointWithOffset(gv_enemymodpoints[3], 0.5, 0.0));
+    lib1_gf_createunitatpoint(gv_modtypetomodunittype[ge_modtypes_plussix], gv_enemymodpoints[2], gv_allycompplayer, 0);
     gv_enemymods[3][0] = ge_modtypes_increaseenemycount;
     gv_enemymods[3][1] = 6;
+    lib1_gf_createunitatpoint(gv_modtypetomodunittype[ge_modtypes_plustwelve], gv_enemymodpoints[3], gv_allycompplayer, 0);
     lv__round = 4;
     for ( ; ( (autoAAA51887_ai >= 0 && lv__round <= autoAAA51887_ae) || (autoAAA51887_ai < 0 && lv__round >= autoAAA51887_ae) ) ; lv__round += autoAAA51887_ai ) {
         lv__modtype = gf_rollmodtypedice();
@@ -2880,6 +2879,8 @@ void gf_initmodtypetomodunit () {
     gv_modtypetomodunittype[ge_modtypes_increasespeed] = "IncreasedSpeedModHd";
     gv_modtypetomodunittype[ge_modtypes_addarmor] = "AddedArmorModHd";
     gv_modtypetomodunittype[ge_modtypes_perfectspecimen] = "PerfectSpecimenModHd";
+    gv_modtypetomodunittype[ge_modtypes_plussix] = "PlusSixModHd";
+    gv_modtypetomodunittype[ge_modtypes_plustwelve] = "PlusTwelveModHd";
 }
 
 void gf_initpathtesters () {

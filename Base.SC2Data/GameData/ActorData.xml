@@ -386,6 +386,12 @@
         <HostSiteOps Ops="SOpAttachCenter AddedArmorIndicatorRotatorModHd"/>
         <AutoScaleFactor value="1.000000"/>
     </CActorModel>
+    <CActorModel id="PlusSixSelectableModHd" parent="ModelAddition">
+        <EditorCategories value=""/>
+        <Host Subject="MechanicalMilitarizedTransportEnemyHd"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Model value="HitTestSphere"/>
+    </CActorModel>
     <CActorModel id="PerfectSpecimenIndicatorModHd" parent="ModelAnimationStyleContinuous">
         <EditorCategories value=""/>
         <On index="0" Terms="ActorCreation" Send="$Stand PlayForever"/>
@@ -399,6 +405,26 @@
         <EditorCategories value=""/>
         <On Terms="Effect.OneFireworkHd.Stop" Send="Create"/>
     </CActorModel>
+    <CActorUnit id="PlusSixModHd" parent="GenericUnitStandard" unitName="PlusSixModHd">
+        <On Terms="ActorCreation" Send="Create PlusSixSelectableModHd"/>
+        <EditorCategories value=""/>
+        <HostSiteOps Ops="NumberFacingModHd"/>
+        <InfoText value="Unit/Info/PlusSixModHd"/>
+        <UnitIcon value="hashtag-defense\Assets\Textures\btn-plus-six.dds"/>
+    </CActorUnit>
+    <CActorModel id="PlusTwelveSelectableModHd" parent="ModelAddition">
+        <EditorCategories value=""/>
+        <Host Subject="PlusTwelveModHd"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Model value="HitTestSphere"/>
+    </CActorModel>
+    <CActorUnit id="PlusTwelveModHd" parent="GenericUnitStandard" unitName="PlusTwelveModHd">
+        <On Terms="ActorCreation" Send="Create PlusTwelveSelectableModHd"/>
+        <EditorCategories value=""/>
+        <HostSiteOps Ops="NumberFacingModHd"/>
+        <InfoText value="Unit/Info/PlusTwelveModHd"/>
+        <UnitIcon value="hashtag-defense\Assets\Textures\btn-plus-twelve.dds"/>
+    </CActorUnit>
     <CActorModel id="PurchaseFlagSelectableHd" parent="ModelAddition">
         <EditorCategories value=""/>
         <Host Subject="PurchaseFlagHd"/>
@@ -419,6 +445,9 @@
         <On Terms="SelectionLocalUpdate.BileLauncherHd.Stop" Send="Destroy"/>
         <Weapon value="BileBombBileLauncherHd"/>
     </CActorRange>
+    <CActorSiteOpRotationExplicit id="NumberFacingModHd">
+        <Forward value="0.000000,-1.000000,0.000000"/>
+    </CActorSiteOpRotationExplicit>
     <CActorRange id="WasplingBurrowRangeHd">
         <On Terms="SelectionLocalUpdate.WasplingBurrowHd.Start" Send="Create"/>
         <On Terms="SelectionLocalUpdate.WasplingBurrowHd.StartEditorGround" Send="Create"/>

@@ -16404,15 +16404,12 @@
         <FlagAction/>
         <Variable Type="Variable" Id="52BA271A"/>
         <Variable Type="Variable" Id="33752728"/>
-        <FunctionCall Type="FunctionCall" Id="938E2A8E"/>
-        <FunctionCall Type="FunctionCall" Id="A63FECEE"/>
         <FunctionCall Type="FunctionCall" Id="610B6567"/>
         <FunctionCall Type="FunctionCall" Id="E8C62C49"/>
-        <FunctionCall Type="FunctionCall" Id="662D361D"/>
-        <FunctionCall Type="FunctionCall" Id="EF939B18"/>
-        <FunctionCall Type="FunctionCall" Id="04E3DA6F"/>
+        <FunctionCall Type="FunctionCall" Id="D4717524"/>
         <FunctionCall Type="FunctionCall" Id="7E9838D9"/>
         <FunctionCall Type="FunctionCall" Id="744AA10F"/>
+        <FunctionCall Type="FunctionCall" Id="95C29CB3"/>
         <FunctionCall Type="FunctionCall" Id="AAA51887"/>
     </Element>
     <Element Type="Variable" Id="52BA271A">
@@ -16433,86 +16430,6 @@
     </Element>
     <Element Type="Param" Id="5F88B88A">
         <Value>0</Value>
-        <ValueType Type="int"/>
-    </Element>
-    <Element Type="FunctionCall" Id="938E2A8E">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="6A72FDF0"/>
-        <Parameter Type="Param" Id="600D250B"/>
-        <Parameter Type="Param" Id="50485F21"/>
-    </Element>
-    <Element Type="Param" Id="600D250B">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="A0E0A756"/>
-        <Value>UIScreenPlusHd</Value>
-        <ValueType Type="gamelink"/>
-        <ValueGameType Type="Actor"/>
-    </Element>
-    <Element Type="Param" Id="50485F21">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="9B32F396"/>
-        <FunctionCall Type="FunctionCall" Id="31CDB03F"/>
-    </Element>
-    <Element Type="FunctionCall" Id="31CDB03F">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000023"/>
-        <Parameter Type="Param" Id="07FFD8A8"/>
-        <Parameter Type="Param" Id="9EB1DF1B"/>
-        <Parameter Type="Param" Id="10868235"/>
-    </Element>
-    <Element Type="Param" Id="07FFD8A8">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000037"/>
-        <Value>-0.6</Value>
-        <ValueType Type="fixed"/>
-    </Element>
-    <Element Type="Param" Id="9EB1DF1B">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000038"/>
-        <Value>0</Value>
-        <ValueType Type="fixed"/>
-    </Element>
-    <Element Type="Param" Id="10868235">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000036"/>
-        <Variable Type="Variable" Id="4DA2B9C6"/>
-        <Array Type="Param" Id="6DECC73D"/>
-    </Element>
-    <Element Type="Param" Id="6DECC73D">
-        <Value>2</Value>
-        <ValueType Type="int"/>
-    </Element>
-    <Element Type="FunctionCall" Id="A63FECEE">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="6A72FDF0"/>
-        <Parameter Type="Param" Id="EF3189DB"/>
-        <Parameter Type="Param" Id="E5CF3A43"/>
-    </Element>
-    <Element Type="Param" Id="EF3189DB">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="A0E0A756"/>
-        <Value>UIScreenNumber6Hd</Value>
-        <ValueType Type="gamelink"/>
-        <ValueGameType Type="Actor"/>
-    </Element>
-    <Element Type="Param" Id="E5CF3A43">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="9B32F396"/>
-        <FunctionCall Type="FunctionCall" Id="F4D12CB6"/>
-    </Element>
-    <Element Type="FunctionCall" Id="F4D12CB6">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000023"/>
-        <Parameter Type="Param" Id="38C7CC9F"/>
-        <Parameter Type="Param" Id="4F3930D6"/>
-        <Parameter Type="Param" Id="8FC33E06"/>
-    </Element>
-    <Element Type="Param" Id="38C7CC9F">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000037"/>
-        <Value>0.1</Value>
-        <ValueType Type="fixed"/>
-    </Element>
-    <Element Type="Param" Id="4F3930D6">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000038"/>
-        <Value>0</Value>
-        <ValueType Type="fixed"/>
-    </Element>
-    <Element Type="Param" Id="8FC33E06">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000036"/>
-        <Variable Type="Variable" Id="4DA2B9C6"/>
-        <Array Type="Param" Id="05CD609E"/>
-    </Element>
-    <Element Type="Param" Id="05CD609E">
-        <Value>2</Value>
         <ValueType Type="int"/>
     </Element>
     <Element Type="FunctionCall" Id="610B6567">
@@ -16562,125 +16479,38 @@
         <Value>3</Value>
         <ValueType Type="int"/>
     </Element>
-    <Element Type="FunctionCall" Id="662D361D">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="6A72FDF0"/>
-        <Parameter Type="Param" Id="131EFF93"/>
-        <Parameter Type="Param" Id="A608CF8B"/>
+    <Element Type="FunctionCall" Id="D4717524">
+        <FunctionDef Type="FunctionDef" Library="1" Id="AF670B3C"/>
+        <Parameter Type="Param" Id="3B8E0CEE"/>
+        <Parameter Type="Param" Id="4E7492AE"/>
+        <Parameter Type="Param" Id="1E2B02FC"/>
+        <Parameter Type="Param" Id="2BE653D8"/>
     </Element>
-    <Element Type="Param" Id="131EFF93">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="A0E0A756"/>
-        <Value>UIScreenPlusHd</Value>
-        <ValueType Type="gamelink"/>
-        <ValueGameType Type="Actor"/>
+    <Element Type="Param" Id="3B8E0CEE">
+        <ParameterDef Type="ParamDef" Library="1" Id="15FE257B"/>
+        <ValueType Type="preset"/>
+        <ValueElement Type="Preset" Library="Ntve" Id="E85564CA"/>
     </Element>
-    <Element Type="Param" Id="A608CF8B">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="9B32F396"/>
-        <FunctionCall Type="FunctionCall" Id="B21EC85A"/>
+    <Element Type="Param" Id="4E7492AE">
+        <ParameterDef Type="ParamDef" Library="1" Id="376102D1"/>
+        <Variable Type="Variable" Id="956028CE"/>
+        <Array Type="Param" Id="C5C9C461"/>
     </Element>
-    <Element Type="FunctionCall" Id="B21EC85A">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000023"/>
-        <Parameter Type="Param" Id="BC40CCAB"/>
-        <Parameter Type="Param" Id="D0894809"/>
-        <Parameter Type="Param" Id="50439175"/>
+    <Element Type="Param" Id="C5C9C461">
+        <Preset Type="PresetValue" Id="08EFBC0D"/>
     </Element>
-    <Element Type="Param" Id="BC40CCAB">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000037"/>
-        <Value>-0.6</Value>
-        <ValueType Type="fixed"/>
-    </Element>
-    <Element Type="Param" Id="D0894809">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000038"/>
-        <Value>0</Value>
-        <ValueType Type="fixed"/>
-    </Element>
-    <Element Type="Param" Id="50439175">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000036"/>
+    <Element Type="Param" Id="1E2B02FC">
+        <ParameterDef Type="ParamDef" Library="1" Id="91032621"/>
         <Variable Type="Variable" Id="4DA2B9C6"/>
-        <Array Type="Param" Id="3C3283A7"/>
+        <Array Type="Param" Id="12A24A10"/>
     </Element>
-    <Element Type="Param" Id="3C3283A7">
-        <Value>3</Value>
+    <Element Type="Param" Id="12A24A10">
+        <Value>2</Value>
         <ValueType Type="int"/>
     </Element>
-    <Element Type="FunctionCall" Id="EF939B18">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="6A72FDF0"/>
-        <Parameter Type="Param" Id="AFC1BDEA"/>
-        <Parameter Type="Param" Id="84E1F239"/>
-    </Element>
-    <Element Type="Param" Id="AFC1BDEA">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="A0E0A756"/>
-        <Value>UIScreenNumber1Hd</Value>
-        <ValueType Type="gamelink"/>
-        <ValueGameType Type="Actor"/>
-    </Element>
-    <Element Type="Param" Id="84E1F239">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="9B32F396"/>
-        <FunctionCall Type="FunctionCall" Id="F105B6BE"/>
-    </Element>
-    <Element Type="FunctionCall" Id="F105B6BE">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000023"/>
-        <Parameter Type="Param" Id="176CA05A"/>
-        <Parameter Type="Param" Id="556F5697"/>
-        <Parameter Type="Param" Id="5FDB2F72"/>
-    </Element>
-    <Element Type="Param" Id="176CA05A">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000037"/>
-        <Value>-0.1</Value>
-        <ValueType Type="fixed"/>
-    </Element>
-    <Element Type="Param" Id="556F5697">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000038"/>
-        <Value>0</Value>
-        <ValueType Type="fixed"/>
-    </Element>
-    <Element Type="Param" Id="5FDB2F72">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000036"/>
-        <Variable Type="Variable" Id="4DA2B9C6"/>
-        <Array Type="Param" Id="597C9CFB"/>
-    </Element>
-    <Element Type="Param" Id="597C9CFB">
-        <Value>3</Value>
-        <ValueType Type="int"/>
-    </Element>
-    <Element Type="FunctionCall" Id="04E3DA6F">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="6A72FDF0"/>
-        <Parameter Type="Param" Id="BABBA0B2"/>
-        <Parameter Type="Param" Id="1EC0AB97"/>
-    </Element>
-    <Element Type="Param" Id="BABBA0B2">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="A0E0A756"/>
-        <Value>UIScreenNumber2Hd</Value>
-        <ValueType Type="gamelink"/>
-        <ValueGameType Type="Actor"/>
-    </Element>
-    <Element Type="Param" Id="1EC0AB97">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="9B32F396"/>
-        <FunctionCall Type="FunctionCall" Id="B4488895"/>
-    </Element>
-    <Element Type="FunctionCall" Id="B4488895">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000023"/>
-        <Parameter Type="Param" Id="2B590448"/>
-        <Parameter Type="Param" Id="86FD2733"/>
-        <Parameter Type="Param" Id="8C39CF91"/>
-    </Element>
-    <Element Type="Param" Id="2B590448">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000037"/>
-        <Value>0.5</Value>
-        <ValueType Type="fixed"/>
-    </Element>
-    <Element Type="Param" Id="86FD2733">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000038"/>
-        <Value>0</Value>
-        <ValueType Type="fixed"/>
-    </Element>
-    <Element Type="Param" Id="8C39CF91">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000036"/>
-        <Variable Type="Variable" Id="4DA2B9C6"/>
-        <Array Type="Param" Id="14F82661"/>
-    </Element>
-    <Element Type="Param" Id="14F82661">
-        <Value>3</Value>
-        <ValueType Type="int"/>
+    <Element Type="Param" Id="2BE653D8">
+        <ParameterDef Type="ParamDef" Library="1" Id="B8371DCA"/>
+        <Variable Type="Variable" Id="648386B7"/>
     </Element>
     <Element Type="FunctionCall" Id="7E9838D9">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
@@ -16728,6 +16558,39 @@
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
         <Value>6</Value>
         <ValueType Type="int"/>
+    </Element>
+    <Element Type="FunctionCall" Id="95C29CB3">
+        <FunctionDef Type="FunctionDef" Library="1" Id="AF670B3C"/>
+        <Parameter Type="Param" Id="22C6C721"/>
+        <Parameter Type="Param" Id="89F3F8BD"/>
+        <Parameter Type="Param" Id="9B235D70"/>
+        <Parameter Type="Param" Id="1F6A2B46"/>
+    </Element>
+    <Element Type="Param" Id="22C6C721">
+        <ParameterDef Type="ParamDef" Library="1" Id="15FE257B"/>
+        <ValueType Type="preset"/>
+        <ValueElement Type="Preset" Library="Ntve" Id="E85564CA"/>
+    </Element>
+    <Element Type="Param" Id="89F3F8BD">
+        <ParameterDef Type="ParamDef" Library="1" Id="376102D1"/>
+        <Variable Type="Variable" Id="956028CE"/>
+        <Array Type="Param" Id="F9F7A268"/>
+    </Element>
+    <Element Type="Param" Id="F9F7A268">
+        <Preset Type="PresetValue" Id="9DD678AC"/>
+    </Element>
+    <Element Type="Param" Id="9B235D70">
+        <ParameterDef Type="ParamDef" Library="1" Id="91032621"/>
+        <Variable Type="Variable" Id="4DA2B9C6"/>
+        <Array Type="Param" Id="05EDB495"/>
+    </Element>
+    <Element Type="Param" Id="05EDB495">
+        <Value>3</Value>
+        <ValueType Type="int"/>
+    </Element>
+    <Element Type="Param" Id="1F6A2B46">
+        <ParameterDef Type="ParamDef" Library="1" Id="B8371DCA"/>
+        <Variable Type="Variable" Id="648386B7"/>
     </Element>
     <Element Type="FunctionCall" Id="AAA51887">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="66474248"/>
@@ -21432,6 +21295,8 @@
         <FunctionCall Type="FunctionCall" Id="CB909058"/>
         <FunctionCall Type="FunctionCall" Id="D092CBC8"/>
         <FunctionCall Type="FunctionCall" Id="0DD96FC1"/>
+        <FunctionCall Type="FunctionCall" Id="7025F9CA"/>
+        <FunctionCall Type="FunctionCall" Id="16E9CEE6"/>
     </Element>
     <Element Type="FunctionCall" Id="2D6D835A">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
@@ -21506,6 +21371,44 @@
     <Element Type="Param" Id="C30DDB64">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
         <Value>PerfectSpecimenModHd</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Unit"/>
+    </Element>
+    <Element Type="FunctionCall" Id="7025F9CA">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
+        <Parameter Type="Param" Id="ABB91678"/>
+        <Parameter Type="Param" Id="C4574D69"/>
+    </Element>
+    <Element Type="Param" Id="ABB91678">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000219"/>
+        <Variable Type="Variable" Id="956028CE"/>
+        <Array Type="Param" Id="B15BDF77"/>
+    </Element>
+    <Element Type="Param" Id="B15BDF77">
+        <Preset Type="PresetValue" Id="08EFBC0D"/>
+    </Element>
+    <Element Type="Param" Id="C4574D69">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
+        <Value>PlusSixModHd</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Unit"/>
+    </Element>
+    <Element Type="FunctionCall" Id="16E9CEE6">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
+        <Parameter Type="Param" Id="B610F660"/>
+        <Parameter Type="Param" Id="1FBC6AD4"/>
+    </Element>
+    <Element Type="Param" Id="B610F660">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000219"/>
+        <Variable Type="Variable" Id="956028CE"/>
+        <Array Type="Param" Id="8A24CBF5"/>
+    </Element>
+    <Element Type="Param" Id="8A24CBF5">
+        <Preset Type="PresetValue" Id="9DD678AC"/>
+    </Element>
+    <Element Type="Param" Id="1FBC6AD4">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
+        <Value>PlusTwelveModHd</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Unit"/>
     </Element>
@@ -34843,7 +34746,6 @@
     </Element>
     <Element Type="Comment" Id="34AFFBFB">
         <Comment>
-            
             The perfect specimen buff must come first since the indicators for the other buffs check whether
             the unit is a perfect specimen before appearing.  i.e. we want perfect specimen to have a single indicator rather than 3
              
@@ -49847,6 +49749,8 @@
         <Item Type="PresetValue" Id="7402D621"/>
         <Item Type="PresetValue" Id="795D85E4"/>
         <Item Type="PresetValue" Id="04F1D30C"/>
+        <Item Type="PresetValue" Id="08EFBC0D"/>
+        <Item Type="PresetValue" Id="9DD678AC"/>
     </Element>
     <Element Type="PresetValue" Id="4A4B2CEF">
     </Element>
@@ -49859,6 +49763,10 @@
     <Element Type="PresetValue" Id="795D85E4">
     </Element>
     <Element Type="PresetValue" Id="04F1D30C">
+    </Element>
+    <Element Type="PresetValue" Id="08EFBC0D">
+    </Element>
+    <Element Type="PresetValue" Id="9DD678AC">
     </Element>
     <Element Type="Preset" Id="33E50B7A">
         <PresetInteger/>
@@ -50558,7 +50466,7 @@
         <VariableType>
             <Type Value="gamelink"/>
             <GameType Value="Unit"/>
-            <ArraySize Dim="0" Value="5"/>
+            <ArraySize Dim="0" Value="7"/>
         </VariableType>
         <Value Type="Param" Id="DD5894BD"/>
     </Element>
