@@ -21448,7 +21448,7 @@
     </Element>
     <Element Type="Param" Id="191CE9CB">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
-        <Value>AddedShieldsStandardModHd</Value>
+        <Value>AddedShieldsModHd</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Behavior"/>
     </Element>
@@ -21467,7 +21467,7 @@
     </Element>
     <Element Type="Param" Id="CCF22B70">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
-        <Value>AddedArmorStandardModHd</Value>
+        <Value>AddedArmorModHd</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Behavior"/>
     </Element>
@@ -21486,7 +21486,7 @@
     </Element>
     <Element Type="Param" Id="9E8514D0">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
-        <Value>IncreaseSpeedStandardModHd</Value>
+        <Value>IncreasedSpeedModHd</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Behavior"/>
     </Element>
@@ -29567,7 +29567,7 @@
     </Element>
     <Element Type="Param" Id="CC4EA858">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
-        <Preset Type="PresetValue" Id="B5BD97F8"/>
+        <Preset Type="PresetValue" Id="795D85E4"/>
     </Element>
     <Element Type="FunctionCall" Id="028E0CFB">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>

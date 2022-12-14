@@ -361,10 +361,21 @@
     </CActorModel>
     <CActorModel id="IncreasedSpeedIndicatorModHd" parent="ModelAnimationStyleContinuous">
         <EditorCategories value=""/>
-        <On Terms="Behavior.IncreaseSpeedStandardModHd.On" Send="Create"/>
-        <On Terms="Behavior.IncreaseSpeedStandardModHd.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.IncreasedSpeedModHd.On" Send="Create"/>
+        <On Terms="Behavior.IncreasedSpeedModHd.Off" Send="AnimBracketStop BSD"/>
         <AutoScaleFactor value="1.000000"/>
         <Host Subject="_Selectable"/>
+    </CActorModel>
+    <CActorModel id="AddedShieldsIndicatorModHd" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On index="0" Terms="ActorCreation" Send="$Stand PlayForever"/>
+        <On index="2" Terms="Behavior.AddedShieldsModHd.On" Send="Create"/>
+        <On Terms="Behavior.AddedShieldsModHd.Off" Send="Destroy"/>
+        <On Terms="ActorDestruction" Send="AnimClear Stand"/>
+        <On Terms="UnitDamaged; ValidateUnit noShields" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
     </CActorModel>
     <CActorModel id="OneFireworkHd" parent="ModelAnimationStyleOneShot">
         <EditorCategories value=""/>

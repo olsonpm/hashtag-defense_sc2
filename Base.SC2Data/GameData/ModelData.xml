@@ -122,6 +122,31 @@
         <Lighting value="KhaydarinMonolithPowerUpModel"/>
         <RadiusLoose value="1.000000"/>
     </CModel>
+    <CModel id="AddedShieldsIndicatorModHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\SentryShieldBubble_Ex2\SentryShieldBubble_Ex2.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="SoundStart"/>
+            <Type value="Custom"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,01"/>
+            <Name value="SoundLoopStart"/>
+            <Type value="Custom"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="SoundLoopEnd"/>
+            <Type value="Custom"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Lighting value="GuardianShield"/>
+        <ScaleMax value="0.200000,0.200000,0.200000"/>
+        <ScaleMin value="0.200000,0.200000,0.200000"/>
+    </CModel>
     <CModel id="IncreasedSpeedIndicatorModHd" parent="PersistentSpellFX">
         <Model value="Assets\Doodads\GenericFire_Medium\GenericFire_Medium.m3"/>
         <EditorCategories value="Race:Neutral"/>
@@ -1429,7 +1454,7 @@
             <Time value="0.448000"/>
             <Payload value="SnowBeast_Caged"/>
         </Events>
-        <Radius value="0.800000"/>
+        <Radius value="0.600000"/>
         <ScaleMax value="0.900000,0.900000,0.900000"/>
         <ScaleMin value="0.900000,0.900000,0.900000"/>
         <SelectionRadius value="1.000000"/>

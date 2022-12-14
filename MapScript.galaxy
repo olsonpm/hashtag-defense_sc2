@@ -2877,9 +2877,9 @@ void gf_initmodtypedice () {
 void gf_initmodtypetobuff () {
     // Automatic Variable Declarations
     // Implementation
-    gv_modtypetobuff[ge_modtypes_addshields] = "AddedShieldsStandardModHd";
-    gv_modtypetobuff[ge_modtypes_addarmor] = "AddedArmorStandardModHd";
-    gv_modtypetobuff[ge_modtypes_increasespeed] = "IncreaseSpeedStandardModHd";
+    gv_modtypetobuff[ge_modtypes_addshields] = "AddedShieldsModHd";
+    gv_modtypetobuff[ge_modtypes_addarmor] = "AddedArmorModHd";
+    gv_modtypetobuff[ge_modtypes_increasespeed] = "IncreasedSpeedModHd";
 }
 
 void gf_initmodtypetomodunit () {
@@ -3472,7 +3472,7 @@ void gf_inittest () {
     // Implementation
     if (lib1_gf_istesting()) {
         gv_testoverridemodtypediceisoverridden = true;
-        gv_modtypedice[0] = ge_modtypes_increasespeed;
+        gv_modtypedice[0] = ge_modtypes_addshields;
         gv_modtypedicelastindex = 0;
     }
 

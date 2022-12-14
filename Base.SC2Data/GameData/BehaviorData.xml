@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CBehaviorBuff id="AddedShieldsStandardModHd">
+    <CBehaviorBuff id="AddedShieldsModHd">
         <InfoIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel0.dds"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Modification>
@@ -141,14 +141,14 @@
             <WeaponDisableArray value="JavelinMissileLaunchers"/>
         </Modification>
     </CBehaviorBuff>
-    <CBehaviorBuff id="IncreaseSpeedStandardModHd">
+    <CBehaviorBuff id="IncreasedSpeedModHd">
         <InfoIcon value="Assets\Textures\speedfreaks_coop.dds"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Modification>
             <AdditiveMoveSpeedFactor value="0.2"/>
         </Modification>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AddedArmorStandardModHd">
+    <CBehaviorBuff id="AddedArmorModHd">
         <InfoIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Modification LifeArmorMultiplier="1.2" ShieldArmorBonus="2" ShieldArmorMultiplier="1.2">
