@@ -33,7 +33,6 @@ FunctionDef/Name/1FF0B22C=init extra lives
 FunctionDef/Name/2102B356=update active path tests
 FunctionDef/Name/21BE0EF0=game is not over
 FunctionDef/Name/237F08F6=init unit beacon points - bot right
-FunctionDef/Name/24052517=init mod type to buff
 FunctionDef/Name/29531500=init enemy spawn points per location
 FunctionDef/Name/298E00BC=remove enemy
 FunctionDef/Name/2ABB4C2C=all active paths are clear

@@ -7619,7 +7619,6 @@
         <Item Type="FunctionDef" Id="9BAA93D4"/>
         <Item Type="FunctionDef" Id="91D64428"/>
         <Item Type="FunctionDef" Id="169D206B"/>
-        <Item Type="FunctionDef" Id="24052517"/>
         <Item Type="FunctionDef" Id="D1D9342F"/>
         <Item Type="FunctionDef" Id="7A6A9084"/>
         <Item Type="FunctionDef" Id="74CCA2A3"/>
@@ -21427,69 +21426,6 @@
         <ParameterDef Type="ParamDef" Library="1" Id="50BDEFBD"/>
         <Variable Type="Variable" Id="69D06661"/>
     </Element>
-    <Element Type="FunctionDef" Id="24052517">
-        <FlagAction/>
-        <FunctionCall Type="FunctionCall" Id="08F7A34E"/>
-        <FunctionCall Type="FunctionCall" Id="B8265486"/>
-        <FunctionCall Type="FunctionCall" Id="12BA5CF6"/>
-    </Element>
-    <Element Type="FunctionCall" Id="08F7A34E">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
-        <Parameter Type="Param" Id="6065224A"/>
-        <Parameter Type="Param" Id="191CE9CB"/>
-    </Element>
-    <Element Type="Param" Id="6065224A">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000219"/>
-        <Variable Type="Variable" Id="B1037983"/>
-        <Array Type="Param" Id="57A8C733"/>
-    </Element>
-    <Element Type="Param" Id="57A8C733">
-        <Preset Type="PresetValue" Id="795D85E4"/>
-    </Element>
-    <Element Type="Param" Id="191CE9CB">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
-        <Value>AddedShieldsModHd</Value>
-        <ValueType Type="gamelink"/>
-        <ValueGameType Type="Behavior"/>
-    </Element>
-    <Element Type="FunctionCall" Id="B8265486">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
-        <Parameter Type="Param" Id="ACE0D1A3"/>
-        <Parameter Type="Param" Id="CCF22B70"/>
-    </Element>
-    <Element Type="Param" Id="ACE0D1A3">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000219"/>
-        <Variable Type="Variable" Id="B1037983"/>
-        <Array Type="Param" Id="F1A382F6"/>
-    </Element>
-    <Element Type="Param" Id="F1A382F6">
-        <Preset Type="PresetValue" Id="7402D621"/>
-    </Element>
-    <Element Type="Param" Id="CCF22B70">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
-        <Value>AddedArmorModHd</Value>
-        <ValueType Type="gamelink"/>
-        <ValueGameType Type="Behavior"/>
-    </Element>
-    <Element Type="FunctionCall" Id="12BA5CF6">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
-        <Parameter Type="Param" Id="EDBCD524"/>
-        <Parameter Type="Param" Id="9E8514D0"/>
-    </Element>
-    <Element Type="Param" Id="EDBCD524">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000219"/>
-        <Variable Type="Variable" Id="B1037983"/>
-        <Array Type="Param" Id="7D90049A"/>
-    </Element>
-    <Element Type="Param" Id="7D90049A">
-        <Preset Type="PresetValue" Id="B5BD97F8"/>
-    </Element>
-    <Element Type="Param" Id="9E8514D0">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
-        <Value>IncreasedSpeedModHd</Value>
-        <ValueType Type="gamelink"/>
-        <ValueGameType Type="Behavior"/>
-    </Element>
     <Element Type="FunctionDef" Id="D1D9342F">
         <FlagAction/>
         <FunctionCall Type="FunctionCall" Id="2D6D835A"/>
@@ -26473,7 +26409,6 @@
         <Action Type="FunctionCall" Id="8C84F170"/>
         <Action Type="FunctionCall" Id="A620382F"/>
         <Action Type="FunctionCall" Id="23096C74"/>
-        <Action Type="FunctionCall" Id="DEE21701"/>
         <Action Type="FunctionCall" Id="AF4F2259"/>
         <Action Type="FunctionCall" Id="F9A1613C"/>
         <Action Type="FunctionCall" Id="47F42F5D"/>
@@ -26551,9 +26486,6 @@
     </Element>
     <Element Type="FunctionCall" Id="23096C74">
         <FunctionDef Type="FunctionDef" Id="8122E6FF"/>
-    </Element>
-    <Element Type="FunctionCall" Id="DEE21701">
-        <FunctionDef Type="FunctionDef" Id="24052517"/>
     </Element>
     <Element Type="FunctionCall" Id="AF4F2259">
         <FunctionDef Type="FunctionDef" Id="D82CACF3"/>
@@ -34727,11 +34659,9 @@
     </Element>
     <Element Type="Param" Id="85EADF14">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="9A6B09E3"/>
-        <Variable Type="Variable" Id="B1037983"/>
-        <Array Type="Param" Id="C5C4E13E"/>
-    </Element>
-    <Element Type="Param" Id="C5C4E13E">
-        <Parameter Type="ParamDef" Id="BAA5DA13"/>
+        <Value>IncreasedSpeedModHd</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Behavior"/>
     </Element>
     <Element Type="Param" Id="C0BCAB61">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="2E722704"/>
@@ -34794,11 +34724,9 @@
     </Element>
     <Element Type="Param" Id="892DA38A">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="9A6B09E3"/>
-        <Variable Type="Variable" Id="B1037983"/>
-        <Array Type="Param" Id="8B98006D"/>
-    </Element>
-    <Element Type="Param" Id="8B98006D">
-        <Parameter Type="ParamDef" Id="BAA5DA13"/>
+        <Value>AddedArmorModHd</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Behavior"/>
     </Element>
     <Element Type="Param" Id="D3408D78">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="2E722704"/>
@@ -34887,11 +34815,9 @@
     </Element>
     <Element Type="Param" Id="2FB3F250">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="9A6B09E3"/>
-        <Variable Type="Variable" Id="B1037983"/>
-        <Array Type="Param" Id="7FF8B0D4"/>
-    </Element>
-    <Element Type="Param" Id="7FF8B0D4">
-        <Parameter Type="ParamDef" Id="BAA5DA13"/>
+        <Value>AddedShieldsModHd</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Behavior"/>
     </Element>
     <Element Type="Param" Id="1D62AB7A">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="2E722704"/>
@@ -34905,98 +34831,120 @@
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="3A1227AB"/>
         <SubFunctionType Type="SubFuncType" Library="Ntve" Id="AD43BC93"/>
         <Parameter Type="Param" Id="BF2734B0"/>
-        <FunctionCall Type="FunctionCall" Id="7A7FE2BA"/>
-        <FunctionCall Type="FunctionCall" Id="E1510C0C"/>
-        <FunctionCall Type="FunctionCall" Id="608ADE3B"/>
+        <FunctionCall Type="FunctionCall" Id="FFCDDC48"/>
+        <FunctionCall Type="FunctionCall" Id="52FCF2DE"/>
+        <FunctionCall Type="FunctionCall" Id="67D55979"/>
+        <FunctionCall Type="FunctionCall" Id="5F17F36B"/>
     </Element>
     <Element Type="Param" Id="BF2734B0">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="9A8F1093"/>
         <Preset Type="PresetValue" Id="04F1D30C"/>
     </Element>
-    <Element Type="FunctionCall" Id="7A7FE2BA">
+    <Element Type="FunctionCall" Id="FFCDDC48">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="C47C0524"/>
         <SubFunctionType Type="SubFuncType" Library="Ntve" Id="363CE97C"/>
-        <Parameter Type="Param" Id="5C055499"/>
-        <Parameter Type="Param" Id="830930E5"/>
-        <Parameter Type="Param" Id="880BDA09"/>
-        <Parameter Type="Param" Id="9E69A7D0"/>
+        <Parameter Type="Param" Id="30A1F67B"/>
+        <Parameter Type="Param" Id="FE0574BF"/>
+        <Parameter Type="Param" Id="16737242"/>
+        <Parameter Type="Param" Id="D32EF2FE"/>
     </Element>
-    <Element Type="Param" Id="5C055499">
+    <Element Type="Param" Id="30A1F67B">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="6F19F7ED"/>
         <Value>1</Value>
         <ValueType Type="int"/>
     </Element>
-    <Element Type="Param" Id="830930E5">
+    <Element Type="Param" Id="FE0574BF">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="9A6B09E3"/>
-        <Variable Type="Variable" Id="B1037983"/>
-        <Array Type="Param" Id="06F46C73"/>
+        <Value>IncreasedSpeedModHd</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Behavior"/>
     </Element>
-    <Element Type="Param" Id="06F46C73">
-        <Preset Type="PresetValue" Id="795D85E4"/>
-    </Element>
-    <Element Type="Param" Id="880BDA09">
+    <Element Type="Param" Id="16737242">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="2E722704"/>
         <Parameter Type="ParamDef" Id="08EE3F5D"/>
     </Element>
-    <Element Type="Param" Id="9E69A7D0">
+    <Element Type="Param" Id="D32EF2FE">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="02BBDCC1"/>
         <Parameter Type="ParamDef" Id="08EE3F5D"/>
     </Element>
-    <Element Type="FunctionCall" Id="E1510C0C">
+    <Element Type="FunctionCall" Id="52FCF2DE">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="C47C0524"/>
         <SubFunctionType Type="SubFuncType" Library="Ntve" Id="363CE97C"/>
-        <Parameter Type="Param" Id="140DA321"/>
-        <Parameter Type="Param" Id="5B1E381D"/>
-        <Parameter Type="Param" Id="E22A876A"/>
-        <Parameter Type="Param" Id="EB0AEA68"/>
+        <Parameter Type="Param" Id="CC987731"/>
+        <Parameter Type="Param" Id="F397F9B8"/>
+        <Parameter Type="Param" Id="20A8CA5C"/>
+        <Parameter Type="Param" Id="AFCA81E4"/>
     </Element>
-    <Element Type="Param" Id="140DA321">
+    <Element Type="Param" Id="CC987731">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="6F19F7ED"/>
         <Value>1</Value>
         <ValueType Type="int"/>
     </Element>
-    <Element Type="Param" Id="5B1E381D">
+    <Element Type="Param" Id="F397F9B8">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="9A6B09E3"/>
-        <Variable Type="Variable" Id="B1037983"/>
-        <Array Type="Param" Id="09B60BB7"/>
+        <Value>AddedArmorModHd</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Behavior"/>
     </Element>
-    <Element Type="Param" Id="09B60BB7">
-        <Preset Type="PresetValue" Id="B5BD97F8"/>
-    </Element>
-    <Element Type="Param" Id="E22A876A">
+    <Element Type="Param" Id="20A8CA5C">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="2E722704"/>
         <Parameter Type="ParamDef" Id="08EE3F5D"/>
     </Element>
-    <Element Type="Param" Id="EB0AEA68">
+    <Element Type="Param" Id="AFCA81E4">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="02BBDCC1"/>
         <Parameter Type="ParamDef" Id="08EE3F5D"/>
     </Element>
-    <Element Type="FunctionCall" Id="608ADE3B">
+    <Element Type="FunctionCall" Id="67D55979">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="C47C0524"/>
         <SubFunctionType Type="SubFuncType" Library="Ntve" Id="363CE97C"/>
-        <Parameter Type="Param" Id="34197C4C"/>
-        <Parameter Type="Param" Id="01CC8700"/>
-        <Parameter Type="Param" Id="E36CC0CE"/>
-        <Parameter Type="Param" Id="DE0445CA"/>
+        <Parameter Type="Param" Id="16DB46DF"/>
+        <Parameter Type="Param" Id="EE8C93C3"/>
+        <Parameter Type="Param" Id="0998314B"/>
+        <Parameter Type="Param" Id="1D2FB89F"/>
     </Element>
-    <Element Type="Param" Id="34197C4C">
+    <Element Type="Param" Id="16DB46DF">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="6F19F7ED"/>
         <Value>1</Value>
         <ValueType Type="int"/>
     </Element>
-    <Element Type="Param" Id="01CC8700">
+    <Element Type="Param" Id="EE8C93C3">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="9A6B09E3"/>
-        <Variable Type="Variable" Id="B1037983"/>
-        <Array Type="Param" Id="A7D32A5C"/>
+        <Value>AddedShieldsModHd</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Behavior"/>
     </Element>
-    <Element Type="Param" Id="A7D32A5C">
-        <Preset Type="PresetValue" Id="7402D621"/>
-    </Element>
-    <Element Type="Param" Id="E36CC0CE">
+    <Element Type="Param" Id="0998314B">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="2E722704"/>
         <Parameter Type="ParamDef" Id="08EE3F5D"/>
     </Element>
-    <Element Type="Param" Id="DE0445CA">
+    <Element Type="Param" Id="1D2FB89F">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="02BBDCC1"/>
+        <Parameter Type="ParamDef" Id="08EE3F5D"/>
+    </Element>
+    <Element Type="FunctionCall" Id="5F17F36B">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="C47C0524"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="363CE97C"/>
+        <Parameter Type="Param" Id="0919806B"/>
+        <Parameter Type="Param" Id="E2F9C861"/>
+        <Parameter Type="Param" Id="0CC51290"/>
+        <Parameter Type="Param" Id="4D2747E3"/>
+    </Element>
+    <Element Type="Param" Id="0919806B">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="6F19F7ED"/>
+        <Value>1</Value>
+        <ValueType Type="int"/>
+    </Element>
+    <Element Type="Param" Id="E2F9C861">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="9A6B09E3"/>
+        <Value>PerfectSpecimenModHd</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Behavior"/>
+    </Element>
+    <Element Type="Param" Id="0CC51290">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="2E722704"/>
+        <Parameter Type="ParamDef" Id="08EE3F5D"/>
+    </Element>
+    <Element Type="Param" Id="4D2747E3">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="02BBDCC1"/>
         <Parameter Type="ParamDef" Id="08EE3F5D"/>
     </Element>
@@ -46771,7 +46719,6 @@
     </Element>
     <Element Type="Comment" Id="FB4348EE">
         <Comment>
-            
             Ghosts were being spawned after the round started due to the above wait.
             This is why we need to check whether we can spawn ghosts here
              

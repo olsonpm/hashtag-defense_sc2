@@ -1591,7 +1591,6 @@ void gf_initlocationchoosers ();
 void gf_initmisc ();
 void gf_initmodbuffamounts ();
 void gf_initmodtypedice ();
-void gf_initmodtypetobuff ();
 void gf_initmodtypetomodunit ();
 void gf_initpathtesters ();
 void gf_initplayergroups ();
@@ -2874,14 +2873,6 @@ void gf_initmodtypedice () {
 
 }
 
-void gf_initmodtypetobuff () {
-    // Automatic Variable Declarations
-    // Implementation
-    gv_modtypetobuff[ge_modtypes_addshields] = "AddedShieldsModHd";
-    gv_modtypetobuff[ge_modtypes_addarmor] = "AddedArmorModHd";
-    gv_modtypetobuff[ge_modtypes_increasespeed] = "IncreasedSpeedModHd";
-}
-
 void gf_initmodtypetomodunit () {
     // Automatic Variable Declarations
     // Implementation
@@ -3799,20 +3790,21 @@ void gf_applymodtounit (unit lp_u, int lp_modtype) {
     // Implementation
     auto1BF00943_val = lp_modtype;
     if (auto1BF00943_val == ge_modtypes_increasespeed) {
-        UnitBehaviorAdd(lp_u, gv_modtypetobuff[lp_modtype], lp_u, 1);
+        UnitBehaviorAdd(lp_u, "IncreasedSpeedModHd", lp_u, 1);
         UnitBehaviorAdd(lp_u, "RemoveShieldsHd", lp_u, 1);
     }
     else if (auto1BF00943_val == ge_modtypes_addarmor) {
-        UnitBehaviorAdd(lp_u, gv_modtypetobuff[lp_modtype], lp_u, 1);
+        UnitBehaviorAdd(lp_u, "AddedArmorModHd", lp_u, 1);
         UnitBehaviorAdd(lp_u, "RemoveShieldsHd", lp_u, 1);
     }
     else if (auto1BF00943_val == ge_modtypes_addshields) {
-        UnitBehaviorAdd(lp_u, gv_modtypetobuff[lp_modtype], lp_u, 1);
+        UnitBehaviorAdd(lp_u, "AddedShieldsModHd", lp_u, 1);
     }
     else if (auto1BF00943_val == ge_modtypes_perfectspecimen) {
-        UnitBehaviorAdd(lp_u, gv_modtypetobuff[ge_modtypes_addshields], lp_u, 1);
-        UnitBehaviorAdd(lp_u, gv_modtypetobuff[ge_modtypes_increasespeed], lp_u, 1);
-        UnitBehaviorAdd(lp_u, gv_modtypetobuff[ge_modtypes_addarmor], lp_u, 1);
+        UnitBehaviorAdd(lp_u, "IncreasedSpeedModHd", lp_u, 1);
+        UnitBehaviorAdd(lp_u, "AddedArmorModHd", lp_u, 1);
+        UnitBehaviorAdd(lp_u, "AddedShieldsModHd", lp_u, 1);
+        UnitBehaviorAdd(lp_u, "PerfectSpecimenModHd", lp_u, 1);
     }
     else {
         UnitBehaviorAdd(lp_u, "RemoveShieldsHd", lp_u, 1);
@@ -4692,7 +4684,6 @@ bool gt_initmap_Func (bool testConds, bool runActions) {
     gf_initmisc();
     gf_initenemyids();
     gf_initenemymaxhealthandshield();
-    gf_initmodtypetobuff();
     gf_initroundtimer();
     gf_initunitpoints();
     gf_initunitperlocation();

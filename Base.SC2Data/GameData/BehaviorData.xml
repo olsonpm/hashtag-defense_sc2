@@ -8,6 +8,10 @@
             <VitalMaxFractionArray index="Shields" value="-0.8"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="PerfectSpecimenModHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="IsBurrowedHd">
         <EditorCategories value="AbilityorEffectType:Units"/>
     </CBehaviorBuff>
