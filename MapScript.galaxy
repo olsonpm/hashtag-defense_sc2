@@ -1456,6 +1456,7 @@ int[9] gv_telelocationtoenemyspawnpathsegments;
 int[9] gv_telelocationtospawnclockwiselocation;
 int gv_testoverridegameattributedifficulty;
 int gv_testoverridegameattributeroundtimer;
+bool gv_testoverridemodtypediceisoverridden;
 bool gv_testingmultiplayerlocally;
 string[9] gv_unitbeaconperlocation;
 point[9][9] gv_unitbeaconpoints;
@@ -2848,26 +2849,29 @@ void gf_initmodbuffamounts () {
 void gf_initmodtypedice () {
     // Automatic Variable Declarations
     // Implementation
-    gv_modtypedice[0] = ge_modtypes_increasespeed;
-    gv_modtypedice[1] = ge_modtypes_increasespeed;
-    gv_modtypedice[2] = ge_modtypes_increasespeed;
-    gv_modtypedice[3] = ge_modtypes_addarmor;
-    gv_modtypedice[4] = ge_modtypes_addarmor;
-    gv_modtypedice[5] = ge_modtypes_addarmor;
-    gv_modtypedice[6] = ge_modtypes_addshields;
-    gv_modtypedice[7] = ge_modtypes_addshields;
-    gv_modtypedice[8] = ge_modtypes_addshields;
-    gv_modtypedice[9] = ge_modtypes_perfectspecimen;
-    if ((gv_gameattributeaddmodstoallrounds == ge_gameattributeaddmodstoallrounds_no)) {
-        gv_modtypedice[10] = ge_modtypes_none;
-        gv_modtypedice[11] = ge_modtypes_none;
-        gv_modtypedice[12] = ge_modtypes_none;
-        gv_modtypedice[13] = ge_modtypes_none;
-        gv_modtypedice[14] = ge_modtypes_none;
+    if (lib1_gf_isfalse(gv_testoverridemodtypediceisoverridden)) {
+        gv_modtypedice[0] = ge_modtypes_increasespeed;
+        gv_modtypedice[1] = ge_modtypes_increasespeed;
+        gv_modtypedice[2] = ge_modtypes_increasespeed;
+        gv_modtypedice[3] = ge_modtypes_addarmor;
+        gv_modtypedice[4] = ge_modtypes_addarmor;
+        gv_modtypedice[5] = ge_modtypes_addarmor;
+        gv_modtypedice[6] = ge_modtypes_addshields;
+        gv_modtypedice[7] = ge_modtypes_addshields;
+        gv_modtypedice[8] = ge_modtypes_addshields;
+        gv_modtypedice[9] = ge_modtypes_perfectspecimen;
+        if ((gv_gameattributeaddmodstoallrounds == ge_gameattributeaddmodstoallrounds_no)) {
+            gv_modtypedice[10] = ge_modtypes_none;
+            gv_modtypedice[11] = ge_modtypes_none;
+            gv_modtypedice[12] = ge_modtypes_none;
+            gv_modtypedice[13] = ge_modtypes_none;
+            gv_modtypedice[14] = ge_modtypes_none;
+        }
+        else {
+            gv_modtypedicelastindex = 9;
+        }
     }
-    else {
-        gv_modtypedicelastindex = 9;
-    }
+
 }
 
 void gf_initmodtypetobuff () {
@@ -3467,7 +3471,9 @@ void gf_inittest () {
     // Automatic Variable Declarations
     // Implementation
     if (lib1_gf_istesting()) {
-        gv_testoverridegameattributeroundtimer = ge_gameattributeroundtimer_none;
+        gv_testoverridemodtypediceisoverridden = true;
+        gv_modtypedice[0] = ge_modtypes_increasespeed;
+        gv_modtypedicelastindex = 0;
     }
 
 }

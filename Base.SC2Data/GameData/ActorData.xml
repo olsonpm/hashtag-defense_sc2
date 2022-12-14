@@ -359,6 +359,13 @@
         <HostSiteOps Ops="SOpAttachWeapon"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
+    <CActorModel id="IncreasedSpeedIndicatorModHd" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.IncreaseSpeedStandardModHd.On" Send="Create"/>
+        <On Terms="Behavior.IncreaseSpeedStandardModHd.Off" Send="AnimBracketStop BSD"/>
+        <AutoScaleFactor value="1.000000"/>
+        <Host Subject="_Selectable"/>
+    </CActorModel>
     <CActorModel id="OneFireworkHd" parent="ModelAnimationStyleOneShot">
         <EditorCategories value=""/>
         <On Terms="Effect.OneFireworkHd.Stop" Send="Create"/>
