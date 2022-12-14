@@ -4,6 +4,7 @@
         <InfoIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel0.dds"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Modification>
+            <VitalMaxArray index="Shields" value="1"/>
             <VitalMaxFractionArray index="Shields" value="-0.8"/>
         </Modification>
     </CBehaviorBuff>

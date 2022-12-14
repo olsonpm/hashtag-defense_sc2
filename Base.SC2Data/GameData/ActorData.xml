@@ -377,6 +377,15 @@
         <HostSiteOps Ops="SOpAttachCenter"/>
         <AutoScaleFactor value="1.000000"/>
     </CActorModel>
+    <CActorModel id="AddedArmorIndicatorModHd" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On index="0" Terms="ActorCreation" Send="$Stand PlayForever"/>
+        <On index="2" Terms="Behavior.AddedArmorModHd.On" Send="Create"/>
+        <On Terms="Behavior.AddedArmorModHd.Off" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter AddedArmorIndicatorRotatorModHd"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
     <CActorModel id="OneFireworkHd" parent="ModelAnimationStyleOneShot">
         <EditorCategories value=""/>
         <On Terms="Effect.OneFireworkHd.Stop" Send="Create"/>
@@ -1016,6 +1025,10 @@
         <Model value="TalDarimStormSphereAttachment"/>
         <Scale value="0.700000"/>
     </CActorModel>
+    <CActorSiteOpRotator id="AddedArmorIndicatorRotatorModHd">
+        <LocalAxis value="0.000000,0.000000,1.000000"/>
+        <Rate value="100.000000"/>
+    </CActorSiteOpRotator>
     <!-- Normally I try to copy rather than modify existing libs,  -->
     <!-- however copying this would have taken me a while and I'm  -->
     <!-- not imaginging much downside to such a small modification -->

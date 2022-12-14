@@ -101,6 +101,13 @@
         <ScaleMax value="0.660000,0.660000,0.660000"/>
         <ScaleMin value="0.660000,0.660000,0.660000"/>
     </CModel>
+    <CModel id="AddedArmorIndicatorModHd" parent="PersistentSpellFX">
+        <Model value="hashtag-defense\Assets\Units\AddedArmorIndicatorModHd\AddedArmorIndicatorModHd.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="CommandCenterReactor"/>
+        <ScaleMax value="0.350000,0.350000,0.350000"/>
+        <ScaleMin value="0.350000,0.350000,0.350000"/>
+    </CModel>
     <CModel id="ExitEffectHd" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\DarkArchon_MindControl_Beam\DarkArchon_MindControl_Beam.m3"/>
         <EditorCategories value="Race:Protoss"/>
