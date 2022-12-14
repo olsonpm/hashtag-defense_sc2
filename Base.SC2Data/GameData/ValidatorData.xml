@@ -15,6 +15,12 @@
         <Value value="1"/>
         <Behavior value="HeavyTurretBunkerHd"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitType id="IsBossArchonHd">
+        <Value value="SimpleBossArchonEnemyHd"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="IsNotPerfectSpecimenModHd">
+        <Behavior value="PerfectSpecimenModHd"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="PhotonCannonIsNotUpgradedHd">
         <Behavior value="UpgradedPhotonCannonHd"/>
     </CValidatorUnitCompareBehaviorCount>

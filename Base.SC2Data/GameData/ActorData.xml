@@ -361,15 +361,15 @@
     </CActorModel>
     <CActorModel id="IncreasedSpeedIndicatorModHd" parent="ModelAnimationStyleContinuous">
         <EditorCategories value=""/>
-        <On Terms="Behavior.IncreasedSpeedModHd.On" Send="Create"/>
-        <On Terms="Behavior.IncreasedSpeedModHd.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.IncreasedSpeedModHd.On; ValidateUnit IsNotPerfectSpecimenModHd" Send="Create"/>
+        <On Terms="Behavior.IncreasedSpeedModHd.Off" Send="Destroy"/>
         <AutoScaleFactor value="1.000000"/>
         <Host Subject="_Selectable"/>
     </CActorModel>
     <CActorModel id="AddedShieldsIndicatorModHd" parent="ModelAnimationStyleContinuous">
         <EditorCategories value=""/>
         <On index="0" Terms="ActorCreation" Send="$Stand PlayForever"/>
-        <On index="2" Terms="Behavior.AddedShieldsModHd.On" Send="Create"/>
+        <On index="2" Terms="Behavior.AddedShieldsModHd.On; ValidateUnit IsNotPerfectSpecimenModHd" Send="Create"/>
         <On Terms="Behavior.AddedShieldsModHd.Off" Send="Destroy"/>
         <On Terms="ActorDestruction" Send="AnimClear Stand"/>
         <On Terms="UnitDamaged; ValidateUnit noShields" Send="Destroy"/>
@@ -380,10 +380,19 @@
     <CActorModel id="AddedArmorIndicatorModHd" parent="ModelAnimationStyleContinuous">
         <EditorCategories value=""/>
         <On index="0" Terms="ActorCreation" Send="$Stand PlayForever"/>
-        <On index="2" Terms="Behavior.AddedArmorModHd.On" Send="Create"/>
+        <On index="2" Terms="Behavior.AddedArmorModHd.On; ValidateUnit IsNotPerfectSpecimenModHd" Send="Create"/>
         <On Terms="Behavior.AddedArmorModHd.Off" Send="Destroy"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachCenter AddedArmorIndicatorRotatorModHd"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="PerfectSpecimenIndicatorModHd" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On index="0" Terms="ActorCreation" Send="$Stand PlayForever"/>
+        <On index="2" Terms="Behavior.PerfectSpecimenModHd.On" Send="Create"/>
+        <On Terms="Behavior.PerfectSpecimenModHd.Off" Send="Destroy"/>
+        <On Terms="ActorCreation; ValidateUnitType IsBossArchonHd" Send="SetScale 1.400000"/>
+        <Host Subject="_Selectable"/>
         <AutoScaleFactor value="1.000000"/>
     </CActorModel>
     <CActorModel id="OneFireworkHd" parent="ModelAnimationStyleOneShot">

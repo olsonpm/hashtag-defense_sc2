@@ -21,7 +21,6 @@ yellow side-note
  - unit balance
  - heroes
  - unique bosses
- - add obvious visual effects for units with mods
  - add true ending
 
 

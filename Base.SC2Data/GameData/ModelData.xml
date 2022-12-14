@@ -108,6 +108,12 @@
         <ScaleMax value="0.350000,0.350000,0.350000"/>
         <ScaleMin value="0.350000,0.350000,0.350000"/>
     </CModel>
+    <CModel id="PerfectSpecimenIndicatorModHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Other\HighYieldActiveCrystals\HighYieldActiveCrystals.m3"/>
+        <Lighting value="CelestialBeamShadowTendrilImpact"/>
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+    </CModel>
     <CModel id="ExitEffectHd" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\DarkArchon_MindControl_Beam\DarkArchon_MindControl_Beam.m3"/>
         <EditorCategories value="Race:Protoss"/>
@@ -151,8 +157,8 @@
             <Time value="0.010000"/>
         </Events>
         <Lighting value="GuardianShield"/>
-        <ScaleMax value="0.200000,0.200000,0.200000"/>
-        <ScaleMin value="0.200000,0.200000,0.200000"/>
+        <ScaleMax value="0.180000,0.180000,0.180000"/>
+        <ScaleMin value="0.180000,0.180000,0.180000"/>
     </CModel>
     <CModel id="IncreasedSpeedIndicatorModHd" parent="PersistentSpellFX">
         <Model value="Assets\Doodads\GenericFire_Medium\GenericFire_Medium.m3"/>

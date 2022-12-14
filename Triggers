@@ -29500,7 +29500,7 @@
     </Element>
     <Element Type="Param" Id="CC4EA858">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
-        <Preset Type="PresetValue" Id="7402D621"/>
+        <Preset Type="PresetValue" Id="04F1D30C"/>
     </Element>
     <Element Type="FunctionCall" Id="028E0CFB">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
@@ -34831,14 +34831,51 @@
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="3A1227AB"/>
         <SubFunctionType Type="SubFuncType" Library="Ntve" Id="AD43BC93"/>
         <Parameter Type="Param" Id="BF2734B0"/>
+        <FunctionCall Type="Comment" Id="34AFFBFB"/>
+        <FunctionCall Type="FunctionCall" Id="5F17F36B"/>
         <FunctionCall Type="FunctionCall" Id="FFCDDC48"/>
         <FunctionCall Type="FunctionCall" Id="52FCF2DE"/>
         <FunctionCall Type="FunctionCall" Id="67D55979"/>
-        <FunctionCall Type="FunctionCall" Id="5F17F36B"/>
     </Element>
     <Element Type="Param" Id="BF2734B0">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="9A8F1093"/>
         <Preset Type="PresetValue" Id="04F1D30C"/>
+    </Element>
+    <Element Type="Comment" Id="34AFFBFB">
+        <Comment>
+            
+            The perfect specimen buff must come first since the indicators for the other buffs check whether
+            the unit is a perfect specimen before appearing.  i.e. we want perfect specimen to have a single indicator rather than 3
+             
+        </Comment>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="363CE97C"/>
+    </Element>
+    <Element Type="FunctionCall" Id="5F17F36B">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="C47C0524"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="363CE97C"/>
+        <Parameter Type="Param" Id="0919806B"/>
+        <Parameter Type="Param" Id="E2F9C861"/>
+        <Parameter Type="Param" Id="0CC51290"/>
+        <Parameter Type="Param" Id="4D2747E3"/>
+    </Element>
+    <Element Type="Param" Id="0919806B">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="6F19F7ED"/>
+        <Value>1</Value>
+        <ValueType Type="int"/>
+    </Element>
+    <Element Type="Param" Id="E2F9C861">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="9A6B09E3"/>
+        <Value>PerfectSpecimenModHd</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Behavior"/>
+    </Element>
+    <Element Type="Param" Id="0CC51290">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="2E722704"/>
+        <Parameter Type="ParamDef" Id="08EE3F5D"/>
+    </Element>
+    <Element Type="Param" Id="4D2747E3">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="02BBDCC1"/>
+        <Parameter Type="ParamDef" Id="08EE3F5D"/>
     </Element>
     <Element Type="FunctionCall" Id="FFCDDC48">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="C47C0524"/>
@@ -34918,33 +34955,6 @@
         <Parameter Type="ParamDef" Id="08EE3F5D"/>
     </Element>
     <Element Type="Param" Id="1D2FB89F">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="02BBDCC1"/>
-        <Parameter Type="ParamDef" Id="08EE3F5D"/>
-    </Element>
-    <Element Type="FunctionCall" Id="5F17F36B">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="C47C0524"/>
-        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="363CE97C"/>
-        <Parameter Type="Param" Id="0919806B"/>
-        <Parameter Type="Param" Id="E2F9C861"/>
-        <Parameter Type="Param" Id="0CC51290"/>
-        <Parameter Type="Param" Id="4D2747E3"/>
-    </Element>
-    <Element Type="Param" Id="0919806B">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="6F19F7ED"/>
-        <Value>1</Value>
-        <ValueType Type="int"/>
-    </Element>
-    <Element Type="Param" Id="E2F9C861">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="9A6B09E3"/>
-        <Value>PerfectSpecimenModHd</Value>
-        <ValueType Type="gamelink"/>
-        <ValueGameType Type="Behavior"/>
-    </Element>
-    <Element Type="Param" Id="0CC51290">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="2E722704"/>
-        <Parameter Type="ParamDef" Id="08EE3F5D"/>
-    </Element>
-    <Element Type="Param" Id="4D2747E3">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="02BBDCC1"/>
         <Parameter Type="ParamDef" Id="08EE3F5D"/>
     </Element>
