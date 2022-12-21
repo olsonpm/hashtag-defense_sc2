@@ -2,6 +2,8 @@
 <Catalog>
     <CEffectTeleport id="BlinkHd">
         <ValidatorArray value="CasterNotFungalGrowthed"/>
+        <ValidatorArray value="IsBurrowedHd"/>
+        <ValidatorArray value="IsNotSiegedHd"/>
         <EditorCategories value="Race:Protoss"/>
         <WhichUnit Value="Caster"/>
         <ClearQueuedOrders value="0"/>

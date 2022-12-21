@@ -18,6 +18,16 @@
     <CValidatorUnitType id="IsBossArchonHd">
         <Value value="SimpleBossArchonEnemyHd"/>
     </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="IsBurrowedHd">
+        <ResultFailed value="Error,Validator/IsNotBurrowedHd"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="IsBurrowedHd"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="IsNotSiegedHd">
+        <ResultFailed value="Error,Validator/IsNotSiegedHd"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="IsSiegedHd"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="IsNotPerfectSpecimenModHd">
         <Behavior value="PerfectSpecimenModHd"/>
     </CValidatorUnitCompareBehaviorCount>

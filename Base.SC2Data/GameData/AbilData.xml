@@ -10,7 +10,7 @@
         </Cost>
         <Range value="500"/>
         <Arc value="360"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink" State="Restricted" Requirements="CanUseBlinkHd">
+        <CmdButtonArray index="Execute" DefaultButtonFace="Blink" State="Restricted">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
     </CAbilEffectTarget>

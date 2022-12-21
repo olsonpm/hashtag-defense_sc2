@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CRequirement id="CanUseBlinkHd">
-        <NodeArray index="Use" Link="AndEq2039748487CountBehaviorIsBurrowedHdCompleteOnly0Eq3880832019CountBehaviorIsSiegedHdCompleteOnly0"/>
-    </CRequirement>
     <CRequirement id="HasFullRefundAvailableSalvageHd">
         <NodeArray index="Use" Link="CountBehaviorFullRefundAvailableSalvageHdCompleteOnly"/>
         <NodeArray index="Show" Link="CountBehaviorFullRefundAvailableSalvageHdCompleteOnly"/>

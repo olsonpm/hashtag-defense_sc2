@@ -2038,7 +2038,6 @@ Model/Name/WeaklingEnemyHd=Weakling
 Model/Name/YagdraDeathHd=Yagdra Death
 Mover/EditorPrefix/BileLauncherMissileHd=Hd -
 Mover/Name/BileLauncherMissileHd=Bile Launcher Missile
-Requirement/EditorPrefix/CanUseBlinkHd=Hd -
 Requirement/EditorPrefix/HasFullRefundAvailableSalvageHd=Hd - Salvage -
 Requirement/EditorPrefix/HasRefund10MineralsAvailableSalvageHd=Hd - Salvage -
 Requirement/EditorPrefix/HasRefund4MineralsAvailableSalvageHd=Hd - Salvage -
@@ -2053,7 +2052,6 @@ Requirement/EditorPrefix/MaxSpineCrawlerDamageNotReachedHd=Hd -
 Requirement/EditorPrefix/MaxUnitDamageNotReachedProtossHd=Hd -
 Requirement/EditorPrefix/MaxUnitDamageNotReachedTerranHd=Hd -
 Requirement/EditorPrefix/MaxUnitDamageNotReachedZergHd=Hd -
-Requirement/Name/CanUseBlinkHd=Can Use Blink
 Requirement/Name/HasFullRefundAvailableSalvageHd=Has Full Refund Available
 Requirement/Name/HasRefund10MineralsAvailableSalvageHd=Has Refund 10 Minerals Available
 Requirement/Name/HasRefund4MineralsAvailableSalvageHd=Has Refund 4 Minerals Available
@@ -2068,11 +2066,9 @@ Requirement/Name/MaxSpineCrawlerDamageNotReachedHd=Max Spine Crawler Damage Not 
 Requirement/Name/MaxUnitDamageNotReachedProtossHd=Max Unit Damage Not Reached - Protoss
 Requirement/Name/MaxUnitDamageNotReachedTerranHd=Max Unit Damage Not Reached - Terran
 Requirement/Name/MaxUnitDamageNotReachedZergHd=Max Unit Damage Not Reached - Zerg
-RequirementNode/Name/AndEq2039748487CountBehaviorIsBurrowedHdCompleteOnly0Eq3880832019CountBehaviorIsSiegedHdCompleteOnly0=CountBehavior(IsBurrowedHd,CompleteOnly) == {Must be unburrowed}0 && CountBehavior(IsSiegedHd,CompleteOnly) == {Must be unsieged}0
 RequirementNode/Name/CountBehaviorArmorpiercingModeCompleteOnlyAtUnit2=CountBehavior(ArmorpiercingMode,CompleteOnlyAtUnit)
 RequirementNode/Name/CountBehaviorFullRefundAvailableSalvageHdCompleteOnly=CountBehavior(FullRefundAvailableSalvageHd,CompleteOnly)
 RequirementNode/Name/CountBehaviorIsBurrowedHdCompleteOnly=CountBehavior(IsBurrowedHd,CompleteOnly)
-RequirementNode/Name/CountBehaviorIsSiegedHdCompleteOnly=CountBehavior(IsSiegedHd,CompleteOnly)
 RequirementNode/Name/CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnly=CountBehavior(Refund10MineralsAvailableSalvageHd,CompleteOnly)
 RequirementNode/Name/CountBehaviorRefund4MineralsAvailableSalvageHdCompleteOnly=CountBehavior(Refund4MineralsAvailableSalvageHd,CompleteOnly)
 RequirementNode/Name/CountBehaviorRefund8MineralsAvailableSalvageHdCompleteOnly=CountBehavior(Refund8MineralsAvailableSalvageHd,CompleteOnly)
@@ -2085,8 +2081,6 @@ RequirementNode/Name/CountUpgradeUnitDamageProtossHdCompleteOnly=CountUpgrade(Un
 RequirementNode/Name/CountUpgradeUnitDamageTerranHdCompleteOnly=CountUpgrade(UnitDamageTerranHd,CompleteOnly)
 RequirementNode/Name/CountUpgradeUnitDamageZergHdCompleteOnly=CountUpgrade(UnitDamageZergHd,CompleteOnly)
 RequirementNode/Name/CountUpgradeZergStructureDamageHdCompleteOnly=CountUpgrade(ZergStructureDamageHd,CompleteOnly)
-RequirementNode/Name/Eq2039748487CountBehaviorIsBurrowedHdCompleteOnly0=CountBehavior(IsBurrowedHd,CompleteOnly) == {Must be unburrowed}0
-RequirementNode/Name/Eq3880832019CountBehaviorIsSiegedHdCompleteOnly0=CountBehavior(IsSiegedHd,CompleteOnly) == {Must be unsieged}0
 RequirementNode/Name/EqCountBehaviorIsBurrowedHdCompleteOnly0=CountBehavior(IsBurrowedHd,CompleteOnly) == 0
 RequirementNode/Name/EqCountBehaviorUpgradedPhotonCannonHdInProgressOrBetterAtUnit0=CountBehavior(UpgradedPhotonCannonHd,InProgressOrBetterAtUnit) == 0
 RequirementNode/Name/EqCountBehaviorUpgradedSpineCrawlerHdInProgressOrBetterAtUnit0=CountBehavior(UpgradedSpineCrawlerHd,InProgressOrBetterAtUnit) == 0
@@ -2372,7 +2366,9 @@ Validator/EditorPrefix/HasLiberatorMorphBehaviorHd=Hd -
 Validator/EditorPrefix/HasNoLiberatorYoinkHd=Hd -
 Validator/EditorPrefix/IsBossArchonHd=Hd -
 Validator/EditorPrefix/IsBuildableTerrainHd=Hd -
+Validator/EditorPrefix/IsBurrowedHd=Hd -
 Validator/EditorPrefix/IsNotPerfectSpecimenModHd=Hd - Mod -
+Validator/EditorPrefix/IsNotSiegedHd=Hd -
 Validator/EditorPrefix/LiberatorAGNotOutOfRangeHd=Hd -
 Validator/EditorPrefix/LiberatorAGTargetsHd=Hd -
 Validator/EditorPrefix/LiberatorMorphValidatorCombineHd=Hd -
@@ -2393,7 +2389,9 @@ Validator/Name/HasLiberatorMorphBehaviorHd=Has Liberator Morph Behavior
 Validator/Name/HasNoLiberatorYoinkHd=Has No Liberator Yoink
 Validator/Name/IsBossArchonHd=Is Boss Archon
 Validator/Name/IsBuildableTerrainHd=Is Buildable Terrain
+Validator/Name/IsBurrowedHd=Is Not Burrowed
 Validator/Name/IsNotPerfectSpecimenModHd=Is Not Perfect Specimen
+Validator/Name/IsNotSiegedHd=Is Not Sieged
 Validator/Name/LiberatorAGNotOutOfRangeHd=Liberator AG Not Out Of Range
 Validator/Name/LiberatorAGTargetsHd=Liberator AG Targets
 Validator/Name/LiberatorMorphValidatorCombineHd=Liberator Morph Validator Combine

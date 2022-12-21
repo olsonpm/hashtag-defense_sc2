@@ -152,6 +152,8 @@ void lib1_InitVariables () {
     lib1_gv_colorcalamity = StringExternal("Param/Value/lib_1_4A35FBAD");
     lib1_gv_colorsuccess = StringExternal("Param/Value/lib_1_1BE6C03F");
     lib1_gv_everysecond = TimerCreate();
+    lib1_gv_localdebug = true;
+    lib1_gv_test = true;
     for (init_i = 0; init_i <= 16; init_i += 1) {
         for (init_j = 0; init_j <= 16; init_j += 1) {
             lib1_gv_unitsingroupsofNperplayer[init_i][init_j] = UnitGroupEmpty();
