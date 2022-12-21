@@ -2347,6 +2347,7 @@ Unit/EditorSuffix/ResearchCenterZergHd=- Zerg
 Unit/EditorSuffix/ScarabHd=- Reaver - Ammo unit
 Unit/EditorSuffix/SiegeTankHd=(Tank Mode)
 Unit/EditorSuffix/SiegeTankSiegedHd=(Siege Mode)
+Unit/Name/InvisibleWaypointChooserHd=Invisible Waypoint Chooser
 Upgrade/EditorPrefix/BunkerTurretDamageHd=Hd -
 Upgrade/EditorPrefix/ProtossStructureDamageHd=Hd -
 Upgrade/EditorPrefix/UnitDamageHd=Hd -

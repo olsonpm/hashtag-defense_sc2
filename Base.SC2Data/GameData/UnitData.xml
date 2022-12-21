@@ -1803,15 +1803,12 @@
             <LayoutButtons Face="BurrowLurkerMP" Type="AbilCmd" AbilCmd="BurrowLurkerHd,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
-        <Radius value="0.9375"/>
-        <SeparationRadius value="0.75"/>
-        <InnerRadius value="0.5"/>
+        <InnerRadius value="0.375"/>
         <CargoSize value="4"/>
         <ScoreMake value="450"/>
         <ScoreKill value="900"/>
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="80"/>
-        <MinimapRadius value="0.75"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="LurkerMP"/>
         <EquipmentArray Weapon="SpinesLurkerHd"/>
@@ -4134,14 +4131,11 @@
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
             <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
-        <Radius value="1"/>
-        <SeparationRadius value="0.75"/>
-        <InnerRadius value="0.75"/>
+        <InnerRadius value="0.375"/>
         <CargoSize value="4"/>
         <ScoreKill value="450"/>
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="8"/>
-        <MinimapRadius value="0.75"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
     </CUnit>
@@ -4610,7 +4604,6 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
-        <Radius value="0.625"/>
         <InnerRadius value="0.375"/>
         <CargoSize value="2"/>
         <ScoreMake value="150"/>
@@ -4730,10 +4723,7 @@
     <CUnit id="InfestedSiegeTankHd">
         <RankDisplay value="Never"/>
         <KillDisplay value="Always"/>
-        <Radius value="0.7"/>
-        <SeparationRadius value="0.7"/>
-        <MinimapRadius value="0.7"/>
-        <InnerRadius value="0.7"/>
+        <InnerRadius value="0.375"/>
         <DeathRevealRadius value="3"/>
         <Facing value="45"/>
         <Race value="Zerg"/>
@@ -4856,6 +4846,7 @@
             <ChanceArray index="Idle" value="33"/>
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
+        <InnerRadius value="0.375"/>
     </CUnit>
     <CUnit id="ResearchCenterProtossHd">
         <DeathRevealRadius value="3"/>
@@ -4955,15 +4946,12 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
-        <Radius value="0.75"/>
-        <SeparationRadius value="0.625"/>
-        <InnerRadius value="0.5"/>
+        <InnerRadius value="0.375"/>
         <CargoSize value="4"/>
         <ScoreMake value="350"/>
         <ScoreKill value="350"/>
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="8"/>
-        <MinimapRadius value="0.625"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
         <Fidget>
@@ -5099,15 +5087,12 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
-        <Radius value="1"/>
-        <SeparationRadius value="1"/>
         <InnerRadius value="0.375"/>
         <CargoSize value="4"/>
         <ScoreMake value="600"/>
         <ScoreKill value="600"/>
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="9"/>
-        <MinimapRadius value="1"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
         <Mass value="0.6"/>
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
@@ -5470,7 +5455,6 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
-        <Radius value="0.5625"/>
         <InnerRadius value="0.375"/>
         <CargoSize value="2"/>
         <ScoreMake value="125"/>
@@ -5667,7 +5651,7 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
-        <InnerRadius value="0.625"/>
+        <InnerRadius value="0.375"/>
         <CargoSize value="2"/>
         <ScoreMake value="100"/>
         <ScoreKill value="100"/>
@@ -5797,10 +5781,7 @@
     <CUnit id="SiegeTankHd">
         <RankDisplay value="Never"/>
         <KillDisplay value="Always"/>
-        <Radius value="0.7"/>
-        <SeparationRadius value="0.7"/>
-        <MinimapRadius value="0.7"/>
-        <InnerRadius value="0.7"/>
+        <InnerRadius value="0.375"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -5867,10 +5848,7 @@
     <CUnit id="SiegeTankSiegedHd">
         <RankDisplay value="Never"/>
         <KillDisplay value="Always"/>
-        <Radius value="0.7"/>
-        <SeparationRadius value="0.7"/>
-        <MinimapRadius value="0.7"/>
-        <InnerRadius value="0.7"/>
+        <InnerRadius value="0.375"/>
         <Name value="Unit/Name/SiegeTank"/>
         <DeathRevealRadius value="3"/>
         <Facing value="45"/>
@@ -6061,15 +6039,12 @@
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
             <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
-        <Radius value="0.625"/>
-        <SeparationRadius value="0.625"/>
-        <InnerRadius value="0.5"/>
+        <InnerRadius value="0.375"/>
         <CargoSize value="2"/>
         <ScoreMake value="175"/>
         <ScoreKill value="175"/>
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="40"/>
-        <MinimapRadius value="0.625"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Stalker"/>
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
@@ -6153,10 +6128,7 @@
     <CUnit id="ThorHd">
         <RankDisplay value="Never"/>
         <KillDisplay value="Always"/>
-        <Radius value="0.7"/>
-        <SeparationRadius value="0.7"/>
-        <MinimapRadius value="0.7"/>
-        <InnerRadius value="0.7"/>
+        <InnerRadius value="0.375"/>
         <DeathRevealRadius value="3"/>
         <Facing value="135"/>
         <Race value="Terr"/>
