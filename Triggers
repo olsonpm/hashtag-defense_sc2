@@ -44270,7 +44270,7 @@
     </Element>
     <Element Type="Param" Id="F7804CB2">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000419"/>
-        <Value>20.0</Value>
+        <Value>10.0</Value>
         <ValueType Type="fixed"/>
     </Element>
     <Element Type="Param" Id="1D0FC90F">
@@ -44696,7 +44696,7 @@
     </Element>
     <Element Type="Param" Id="24B0E19B">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000419"/>
-        <Value>16.0</Value>
+        <Value>10.0</Value>
         <ValueType Type="fixed"/>
     </Element>
     <Element Type="Param" Id="2C63DB62">

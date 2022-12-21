@@ -4211,7 +4211,7 @@ void gf_endgamedefeat (unit lp_unitcausingdefeat) {
     gf_endgamesetoff10nukessecond();
     Wait(3.0, c_timeReal);
     gf_endgameshowpanel();
-    Wait(20.0, c_timeReal);
+    Wait(10.0, c_timeReal);
     gv_setoffnukes = false;
     lib1_gf_endgameforplayergroup(gv_activedefenders, c_gameOverDefeat);
 }
@@ -4296,7 +4296,7 @@ void gf_endgamevictory () {
     lib1_gf_messageallusers(TextExpressionAssemble("Param/Expression/1F0DEDF6"));
     Wait(3.0, c_timeReal);
     gf_endgameshowpanel();
-    Wait(16.0, c_timeReal);
+    Wait(10.0, c_timeReal);
     gv_setofffireworks = false;
     lib1_gf_endgameforplayergroup(gv_activedefenders, c_gameOverVictory);
 }
