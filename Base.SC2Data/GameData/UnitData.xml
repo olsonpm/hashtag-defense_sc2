@@ -873,7 +873,7 @@
         <AbilArray Link="SalvageFullRefundHd"/>
         <AbilArray Link="UpgradeToPhotonCannonHd"/>
         <CardLayouts>
-            <LayoutButtons Face="UpgradeToPhotonCannonHd" Type="AbilCmd" AbilCmd="UpgradeToPhotonCannonHd,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="UpgradeToPhotonCannonHd" Type="AbilCmd" AbilCmd="UpgradeToPhotonCannonHd,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="SalvageNoRefundHd" Type="AbilCmd" AbilCmd="SalvageNoRefundHd,Execute" Row="2" Column="3"/>
         </CardLayouts>
@@ -981,7 +981,7 @@
         <AbilArray Link="SalvageFullRefundHd"/>
         <AbilArray Link="UpgradeToBunkerHd"/>
         <CardLayouts>
-            <LayoutButtons Face="UpgradeToBunkerHd" Type="AbilCmd" AbilCmd="UpgradeToBunkerHd,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="UpgradeToBunkerHd" Type="AbilCmd" AbilCmd="UpgradeToBunkerHd,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="SalvageNoRefundHd" Type="AbilCmd" AbilCmd="SalvageNoRefundHd,Execute" Row="2" Column="3"/>
         </CardLayouts>
@@ -1615,18 +1615,16 @@
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="SetBunkerRallyPoint" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
-            <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="LoadUnloadBunkerHd,Load" Row="2" Column="1"/>
-            <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="LoadUnloadBunkerHd,UnloadAll" Row="2" Column="2"/>
-            <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="SalvageRefund10MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund10MineralsHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="SalvageRefund8MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund8MineralsHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="SalvageRefund4MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund4MineralsHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="SalvageRefund1MineralHd" Type="AbilCmd" AbilCmd="SalvageRefund1MineralHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SalvageShared,Off" Row="2" Column="4"/>
-            <LayoutButtons Face="UpgradeToHeavyTurretBunkerHd" Type="AbilCmd" AbilCmd="UpgradeToHeavyTurretBunkerHd,Execute" Row="0" Column="0"/>
-            <LayoutButtons Face="UpgradeToArtilleryTurretBunkerHd" Type="AbilCmd" AbilCmd="UpgradeToArtilleryTurretBunkerHd,Execute" Row="0" Column="1"/>
-            <LayoutButtons Face="UpgradeToMissileTurretBunkerHd" Type="AbilCmd" AbilCmd="UpgradeToMissileTurretBunkerHd,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="LoadUnloadBunkerHd,Load" Row="1" Column="2"/>
+            <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="LoadUnloadBunkerHd,UnloadAll" Row="1" Column="3"/>
+            <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="SalvageRefund10MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund10MineralsHd,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="SalvageRefund8MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund8MineralsHd,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="SalvageRefund4MineralsHd" Type="AbilCmd" AbilCmd="SalvageRefund4MineralsHd,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="SalvageRefund1MineralHd" Type="AbilCmd" AbilCmd="SalvageRefund1MineralHd,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="UpgradeToHeavyTurretBunkerHd" Type="AbilCmd" AbilCmd="UpgradeToHeavyTurretBunkerHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="UpgradeToArtilleryTurretBunkerHd" Type="AbilCmd" AbilCmd="UpgradeToArtilleryTurretBunkerHd,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="UpgradeToMissileTurretBunkerHd" Type="AbilCmd" AbilCmd="UpgradeToMissileTurretBunkerHd,Execute" Row="2" Column="2"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -1918,7 +1916,7 @@
         <AbilArray Link="SalvageFullRefundHd"/>
         <AbilArray Link="UpgradeToSpineCrawlerHd"/>
         <CardLayouts>
-            <LayoutButtons Face="UpgradeToSpineCrawlerHd" Type="AbilCmd" AbilCmd="UpgradeToSpineCrawlerHd,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="UpgradeToSpineCrawlerHd" Type="AbilCmd" AbilCmd="UpgradeToSpineCrawlerHd,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
@@ -5005,14 +5003,13 @@
         <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="PhotonCannonHd" Turret="PhotonCannonHd"/>
         <CardLayouts>
-            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="SalvageRefund1MineralHd" Type="AbilCmd" AbilCmd="SalvageRefund1MineralHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="UpgradeToAttackDroneHubPhotonCannonHd" Type="AbilCmd" AbilCmd="UpgradeToAttackDroneHubPhotonCannonHd,Execute" Row="0" Column="0"/>
-            <LayoutButtons Face="UpgradeToBigBoyCannonPhotonCannonHd" Type="AbilCmd" AbilCmd="UpgradeToBigBoyCannonPhotonCannonHd,Execute" Row="0" Column="1"/>
-            <LayoutButtons Face="UpgradeToHolePuncherPhotonCannonHd" Type="AbilCmd" AbilCmd="UpgradeToHolePuncherPhotonCannonHd,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="SalvageRefund1MineralHd" Type="AbilCmd" AbilCmd="SalvageRefund1MineralHd,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="UpgradeToAttackDroneHubPhotonCannonHd" Type="AbilCmd" AbilCmd="UpgradeToAttackDroneHubPhotonCannonHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="UpgradeToBigBoyCannonPhotonCannonHd" Type="AbilCmd" AbilCmd="UpgradeToBigBoyCannonPhotonCannonHd,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="UpgradeToHolePuncherPhotonCannonHd" Type="AbilCmd" AbilCmd="UpgradeToHolePuncherPhotonCannonHd,Execute" Row="2" Column="2"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>
@@ -5960,14 +5957,13 @@
         <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="ImpalerTentacleHd" Turret="SpineCrawlerHd"/>
         <CardLayouts>
-            <LayoutButtons Face="UpgradeToWasplingBurrowSpineCrawlerHd" Type="AbilCmd" AbilCmd="UpgradeToWasplingBurrowSpineCrawlerHd,Execute" Row="0" Column="0"/>
-            <LayoutButtons Face="UpgradeToBileLauncherSpineCrawlerHd" Type="AbilCmd" AbilCmd="UpgradeToBileLauncherSpineCrawlerHd,Execute" Row="0" Column="1"/>
-            <LayoutButtons Face="UpgradeToSunkenColonySpineCrawlerHd" Type="AbilCmd" AbilCmd="UpgradeToSunkenColonySpineCrawlerHd,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="UpgradeToWasplingBurrowSpineCrawlerHd" Type="AbilCmd" AbilCmd="UpgradeToWasplingBurrowSpineCrawlerHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="UpgradeToBileLauncherSpineCrawlerHd" Type="AbilCmd" AbilCmd="UpgradeToBileLauncherSpineCrawlerHd,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="UpgradeToSunkenColonySpineCrawlerHd" Type="AbilCmd" AbilCmd="UpgradeToSunkenColonySpineCrawlerHd,Execute" Row="2" Column="2"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="SalvageRefund1MineralHd" Type="AbilCmd" AbilCmd="SalvageRefund1MineralHd,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="SalvageFullRefundHd" Type="AbilCmd" AbilCmd="SalvageFullRefundHd,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="SalvageRefund1MineralHd" Type="AbilCmd" AbilCmd="SalvageRefund1MineralHd,Execute" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.875"/>
         <SeparationRadius value="0.875"/>
