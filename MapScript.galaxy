@@ -3485,9 +3485,7 @@ bool gf_allactivepathsareclear () {
         if (lib1_gf_istrue(gv_pathtestsegments[lv__pathtestsegmentidx].lv_isactive)) {
             lv__pathtestunit = gv_pathtestsegments[lv__pathtestsegmentidx].lv_unit;
             lv__destination = gv_pathtestsegments[lv__pathtestsegmentidx].lv_destination;
-            lv__distancetodestination = AIPathingCostUnit(lv__pathtestunit, gv_pathtestsegments[lv__pathtestsegmentidx].lv_destination, c_includeAllBuildings);
-            lv__distancetooppositesideofmap = AIPathingCostUnit(lv__pathtestunit, gv_pathtestsegments[lv__pathtestsegmentidx].lv_oppositesideofmap, c_includeAllBuildings);
-            if ((lv__distancetodestination > lv__distancetooppositesideofmap)) {
+            if (lib1_gf_isfalse(UnitPathableToPoint(lv__pathtestunit, lv__destination, 0.0, 0.0))) {
                 return false;
             }
 
