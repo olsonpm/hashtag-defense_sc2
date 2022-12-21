@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PlacedObjects Version="27">
+    <ObjectPoint Id="1938004010" Position="21.5,101.5,0" Scale="1,1,1" Type="Normal" Name="hero - left - bot - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="2108856136" Position="125.5,24,0" Scale="1,1,1" Type="Normal" Name="hero - br - left - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="1606398488" Position="54.5,176,0" Scale="1,1,1" Type="Normal" Name="hero - tl - right - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="954993193" Position="118,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 22" Color="0,0,0,0"/>
-    <ObjectPoint Id="1547170258" Position="147,24,0" Scale="1,1,1" Type="Normal" Name="unit - br - left - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1887658787" Position="90,17,0" Scale="1,1,1" Type="Normal" Name="hero - bot - bot - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1689872590" Position="90,24,0" Scale="1,1,1" Type="Normal" Name="hero chooser spawn - bot" Color="0,0,0,0"/>
     <ObjectPoint Id="67347418" Position="61.5,171.5,0" Scale="1,1,1" Type="Normal" Name="unit - tl - bl - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1547170258" Position="147,24,0" Scale="1,1,1" Type="Normal" Name="unit - br - left - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="2036360010" Position="125.5,176,0" Scale="1,1,1" Type="Normal" Name="hero - tr - left - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="659023028" Position="160,182,0" Scale="1,1,1" Type="Normal" Name="unit - tr - tr - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1437345411" Position="110,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 18" Color="0,0,0,0"/>
-    <ObjectPoint Id="69581309" Position="61.5,28.5,0" Scale="1,1,1" Type="Normal" Name="unit - bl - tl - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="674318201" Position="53.5,112,0" Scale="1,1,1" Type="Normal" Name="test point 2" Color="0,0,0,0"/>
     <ObjectPoint Id="1196786689" Position="114.5,19.5,0" Scale="1,1,1" Type="Normal" Name="unit - bot - br - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
-    <ObjectPoint Id="674318201" Position="53.5,112,0" Scale="1,1,1" Type="Normal" Name="test point 2" Color="0,0,0,0"/>
+    <ObjectPoint Id="69581309" Position="61.5,28.5,0" Scale="1,1,1" Type="Normal" Name="unit - bl - tl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1682812790" Position="170,96,0" Scale="1,1,1" Type="Normal" Name="unit - right - tl - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1957282182" Position="80,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 3" Color="0,0,0,0"/>
+    <ObjectPoint Id="1474288339" Position="15.5,110,0" Scale="1,1,1" Type="Normal" Name="hero - left - left - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="1823593300" Position="110,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 18" Color="0,0,0,0"/>
     <ObjectPoint Id="1300210222" Position="161,24,0" Scale="1,1,1" Type="Normal" Name="unit - br - right - beacon" Color="0,0,0,0"/>
-    <ObjectPoint Id="1868421660" Position="63.5,15.5,0" Scale="1,1,1" Type="Normal" Name="unit - bl - bot - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="2115418223" Position="134,169,0" Scale="1,1,1" Type="Normal" Name="hero - tr - bot - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="788559252" Position="107.5,15.5,0" Scale="1,1,1" Type="Normal" Name="unit - bot - bot - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1868421660" Position="63.5,15.5,0" Scale="1,1,1" Type="Normal" Name="unit - bl - bot - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1854003578" Position="106,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 16" Color="0,0,0,0"/>
     <ObjectPoint Id="2090537115" Position="61.5,19.5,0" Scale="1,1,1" Type="Normal" Name="unit - bl - bl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="703327367" Position="86,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 6" Color="0,0,0,0"/>
@@ -24,25 +32,27 @@
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
     <ObjectPoint Id="1981237702" Position="103,24,0" Scale="1,1,1" Type="Normal" Name="unit - bot - left - beacon" Color="0,0,0,0"/>
-    <ObjectPoint Id="1065999850" Position="96,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 11" Color="0,0,0,0"/>
     <ObjectPoint Id="1792849818" Position="56,56,0" Scale="1,1,1" Type="Normal" Name="defend - bottom left" Color="0,0,0,0"/>
+    <ObjectPoint Id="1065999850" Position="96,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 11" Color="0,0,0,0"/>
+    <ObjectPoint Id="149735289" Position="87.5,15.5,0" Scale="1,1,1" Type="Normal" Name="hero - bot - bot - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="193140767" Position="183,90,0" Scale="1,1,1" Type="Normal" Name="unit - right - right - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1061491136" Position="105.5,180.5,0" Scale="1,1,1" Type="Normal" Name="unit - top - tl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="422207204" Position="116,170,0" Scale="1,1,1" Type="Normal" Name="unit - top - br - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="2068411702" Position="96,40,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - bot - left" Color="0,0,0,0"/>
-    <ObjectPoint Id="1821003453" Position="97,130,0" Scale="1,1,1" Type="Normal" Name="spawn - p3" Color="0,0,0,0"/>
     <ObjectPoint Id="402597549" Position="80,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 3" Color="0,0,0,0"/>
+    <ObjectPoint Id="1821003453" Position="97,130,0" Scale="1,1,1" Type="Normal" Name="spawn - p3" Color="0,0,0,0"/>
+    <ObjectPoint Id="1645618103" Position="24,103,0" Scale="1,1,1" Type="Normal" Name="hero - left - bot - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="794956139" Position="162.5,176,0" Scale="1,1,1" Type="Normal" Name="unit - tr - right - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="625743367" Position="158.5,28.5,0" Scale="1,1,1" Type="Normal" Name="unit - br - tr - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="326660069" Position="78,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 2" Color="0,0,0,0"/>
     <ObjectPoint Id="1861549316" Position="112,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 19" Color="0,0,0,0"/>
-    <ObjectPoint Id="1155927436" Position="56,100,0" Scale="1,1,1" Type="Normal" Name="defend - left" Color="0,0,0,0"/>
     <ObjectPoint Id="837803804" Position="158.5,180.5,0" Scale="1,1,1" Type="Normal" Name="unit - tr - tr - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1155927436" Position="56,100,0" Scale="1,1,1" Type="Normal" Name="defend - left" Color="0,0,0,0"/>
     <ObjectPoint Id="1705605065" Position="160,144,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - tr - right" Color="0,0,0,0"/>
-    <ObjectPoint Id="1105510248" Position="101.0825,93.087,0" Scale="1,1,1" Type="StartLoc" Name="start location - p4" Color="0,0,0,0">
+    <ObjectPoint Id="2067720479" Position="110,17,0" Scale="1,1,1" Type="Normal" Name="unit - bot - bot - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
-    <ObjectPoint Id="2067720479" Position="110,17,0" Scale="1,1,1" Type="Normal" Name="unit - bot - bot - beacon" Color="0,0,0,0">
+    <ObjectPoint Id="1105510248" Position="101.0825,93.087,0" Scale="1,1,1" Type="StartLoc" Name="start location - p4" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
     <ObjectPoint Id="198101556" Position="160,18,0" Scale="1,1,1" Type="Normal" Name="unit - br - br - unit" Color="0,0,0,0"/>
@@ -51,34 +61,43 @@
     <ObjectPoint Id="97662259" Position="74,104,0" Scale="1,1,1" Type="Normal" Name="enemy rally - left - top" Color="0,0,0,0"/>
     <ObjectPoint Id="1763479768" Position="84,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 5" Color="0,0,0,0"/>
     <ObjectPoint Id="2098394809" Position="60,170,0" Scale="1,1,1" Type="Normal" Name="unit - tl - bl - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="1249720996" Position="110,176,0" Scale="1,1,1" Type="Normal" Name="chooser spawn - top" Color="0,0,0,0"/>
+    <ObjectPoint Id="1249720996" Position="110,176,0" Scale="1,1,1" Type="Normal" Name="unit chooser spawn - top" Color="0,0,0,0"/>
+    <ObjectPoint Id="286863082" Position="127,176,0" Scale="1,1,1" Type="Normal" Name="hero - tr - left - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="102755595" Position="86,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 6" Color="0,0,0,0"/>
     <ObjectPoint Id="1399802117" Position="104,160,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - top - right" Color="0,0,0,0"/>
-    <ObjectPoint Id="793152166" Position="82,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 4" Color="0,0,0,0"/>
-    <ObjectPoint Id="1182702197" Position="100,144,0" Scale="1,1,1" Type="Normal" Name="defend - top" Color="0,0,0,0"/>
     <ObjectPoint Id="519794972" Position="66,184.5,0" Scale="1,1,1" Type="Normal" Name="unit - tl - top - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1182702197" Position="100,144,0" Scale="1,1,1" Type="Normal" Name="defend - top" Color="0,0,0,0"/>
+    <ObjectPoint Id="793152166" Position="82,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 4" Color="0,0,0,0"/>
+    <ObjectPoint Id="1946010796" Position="131.5,167.5,0" Scale="1,1,1" Type="Normal" Name="hero - tr - bot - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="447192689" Position="102,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 14" Color="0,0,0,0"/>
-    <ObjectPoint Id="1518508160" Position="101,130,0" Scale="1,1,1" Type="Normal" Name="spawn - p5" Color="0,0,0,0"/>
+    <ObjectPoint Id="738362511" Position="90,32.5,0" Scale="1,1,1" Type="Normal" Name="hero - bot - top - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="954527596" Position="141,176,0" Scale="1,1,1" Type="Normal" Name="hero - tr - right - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="255162384" Position="82,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 4" Color="0,0,0,0"/>
+    <ObjectPoint Id="1518508160" Position="101,130,0" Scale="1,1,1" Type="Normal" Name="spawn - p5" Color="0,0,0,0"/>
+    <ObjectPoint Id="1528326248" Position="46,184.5,0" Scale="1,1,1" Type="Normal" Name="hero - tl - top - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="192448764" Position="100,56,0" Scale="1,1,1" Type="Normal" Name="defend - bottom" Color="0,0,0,0"/>
     <ObjectPoint Id="258428790" Position="144,144,0" Scale="1,1,1" Type="Normal" Name="defend - top right" Color="0,0,0,0"/>
+    <ObjectPoint Id="1832629482" Position="37.5,176,0" Scale="1,1,1" Type="Normal" Name="hero - tl - left - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="1400000593" Position="96,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 11" Color="0,0,0,0"/>
     <ObjectPoint Id="1226552727" Position="74.5,24,0" Scale="1,1,1" Type="Normal" Name="unit - bl - right - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1881461128" Position="106,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 16" Color="0,0,0,0"/>
-    <ObjectPoint Id="2016825575" Position="112,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 19" Color="0,0,0,0"/>
-    <ObjectPoint Id="74825652" Position="80,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 3" Color="0,0,0,0"/>
     <ObjectPoint Id="1661550969" Position="104,40,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - bot - right" Color="0,0,0,0"/>
+    <ObjectPoint Id="74825652" Position="80,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 3" Color="0,0,0,0"/>
+    <ObjectPoint Id="2016825575" Position="112,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 19" Color="0,0,0,0"/>
     <ObjectPoint Id="457179216" Position="63.5,167.5,0" Scale="1,1,1" Type="Normal" Name="unit - tl - bot - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="557071858" Position="110,31,0" Scale="1,1,1" Type="Normal" Name="unit - bot - top - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1456086433" Position="114.5,180.5,0" Scale="1,1,1" Type="Normal" Name="unit - top - tr - beacon" Color="0,0,0,0"/>
-    <ObjectPoint Id="123965885" Position="66,183,0" Scale="1,1,1" Type="Normal" Name="unit - tl - top - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="557071858" Position="110,31,0" Scale="1,1,1" Type="Normal" Name="unit - bot - top - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1415428594" Position="40,96,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - left - bot" Color="0,0,0,0"/>
+    <ObjectPoint Id="123965885" Position="66,183,0" Scale="1,1,1" Type="Normal" Name="unit - tl - top - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="770917793" Position="81.5,24,0" Scale="1,1,1" Type="Normal" Name="hero - bot - left - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="1816800172" Position="43.5,167.5,0" Scale="1,1,1" Type="Normal" Name="hero - tl - bot - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="978262974" Position="73,24,0" Scale="1,1,1" Type="Normal" Name="unit - bl - right - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1022084214" Position="21.5,81.5,0" Scale="1,1,1" Type="Normal" Name="unit - left - bot - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="987381297" Position="104,182,0" Scale="1,1,1" Type="Normal" Name="unit - top - tl - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="628985728" Position="117,176,0" Scale="1,1,1" Type="Normal" Name="unit - top - right - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="651751040" Position="28.5,94.5,0" Scale="1,1,1" Type="Normal" Name="unit - left - tr - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1939579920" Position="151.5,167.5,0" Scale="1,1,1" Type="Normal" Name="unit - tr - bot - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="777071673" Position="90,176,0" Scale="1,1,1" Type="Normal" Name="hero chooser spawn - top" Color="0,0,0,0"/>
     <ObjectPoint Id="1494526224" Position="86,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 6" Color="0,0,0,0"/>
     <ObjectPoint Id="196851831" Position="61.5,180.5,0" Scale="1,1,1" Type="Normal" Name="unit - tl - tl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1274440154" Position="78,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 2" Color="0,0,0,0"/>
@@ -89,70 +108,90 @@
     <ObjectPoint Id="708940160" Position="104,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 15" Color="0,0,0,0"/>
     <ObjectPoint Id="376396905" Position="110,184.5,0" Scale="1,1,1" Type="Normal" Name="unit - top - top - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="69372940" Position="154,31,0" Scale="1,1,1" Type="Normal" Name="unit - br - top - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1065355866" Position="141,24,0" Scale="1,1,1" Type="Normal" Name="hero - br - right - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1440360483" Position="106,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 16" Color="0,0,0,0"/>
     <ObjectPoint Id="910872851" Position="66.018,17,0" Scale="1,1,1" Type="Normal" Name="unit - bl - bot - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
     <ObjectPoint Id="901900746" Position="88,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 7" Color="0,0,0,0"/>
     <ObjectPoint Id="1428756895" Position="31,90,0" Scale="1,1,1" Type="Normal" Name="unit - left - right - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="819715404" Position="142.5,24,0" Scale="1,1,1" Type="Normal" Name="hero - br - right - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="214035542" Position="53,176,0" Scale="1,1,1" Type="Normal" Name="hero - tl - right - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1525815052" Position="60,30,0" Scale="1,1,1" Type="Normal" Name="unit - bl - tl - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="1116069586" Position="148,18,0" Scale="1,1,1" Type="Normal" Name="unit - br - bl - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="52267179" Position="175.9643,83.0825,0" Scale="1,1,1" Type="Normal" Name="unit - right - bot - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
+    <ObjectPoint Id="1116069586" Position="148,18,0" Scale="1,1,1" Type="Normal" Name="unit - br - bl - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="2106538829" Position="84,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 5" Color="0,0,0,0"/>
     <ObjectPoint Id="1591476509" Position="24,97,0" Scale="1,1,1" Type="Normal" Name="unit - left - top - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="670619802" Position="46,32.5,0" Scale="1,1,1" Type="Normal" Name="hero - bl - top - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="846440" Position="153.9902,168.9584,0" Scale="1,1,1" Type="Normal" Name="unit - tr - bot - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
+    <ObjectPoint Id="76779934" Position="176,110,0" Scale="1,1,1" Type="Normal" Name="hero chooser spawn - right" Color="0,0,0,0"/>
     <ObjectPoint Id="1467090862" Position="95,130,0" Scale="1,1,1" Type="Normal" Name="spawn - p2" Color="0,0,0,0"/>
-    <ObjectPoint Id="1084233623" Position="149.5,28.5,0" Scale="1,1,1" Type="Normal" Name="unit - br - tl - beacon" Color="0,0,0,0"/>
-    <ObjectPoint Id="767370489" Position="173.5,81.5,0" Scale="1,1,1" Type="Normal" Name="unit - right - bot - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1965461556" Position="96,160,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - top - left" Color="0,0,0,0"/>
-    <ObjectPoint Id="1260458794" Position="162.5,24,0" Scale="1,1,1" Type="Normal" Name="unit - br - right - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="767370489" Position="173.5,81.5,0" Scale="1,1,1" Type="Normal" Name="unit - right - bot - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1084233623" Position="149.5,28.5,0" Scale="1,1,1" Type="Normal" Name="unit - br - tl - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1813936949" Position="134,183,0" Scale="1,1,1" Type="Normal" Name="hero - tr - top - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="979865320" Position="134,31,0" Scale="1,1,1" Type="Normal" Name="hero - br - top - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1110478098" Position="94,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 10" Color="0,0,0,0"/>
+    <ObjectPoint Id="1260458794" Position="162.5,24,0" Scale="1,1,1" Type="Normal" Name="unit - br - right - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1764278175" Position="149.5,171.5,0" Scale="1,1,1" Type="Normal" Name="unit - tr - bl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="940904467" Position="108,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 17" Color="0,0,0,0"/>
-    <ObjectPoint Id="132146153" Position="104,126,0" Scale="1,1,1" Type="Normal" Name="enemy rally - top - right" Color="0,0,0,0"/>
+    <ObjectPoint Id="143680038" Position="17,110,0" Scale="1,1,1" Type="Normal" Name="hero - left - left - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="878650329" Position="98,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 12" Color="0,0,0,0"/>
+    <ObjectPoint Id="132146153" Position="104,126,0" Scale="1,1,1" Type="Normal" Name="enemy rally - top - right" Color="0,0,0,0"/>
     <ObjectPoint Id="1943289383" Position="160,56,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - br - right" Color="0,0,0,0"/>
+    <ObjectPoint Id="269277540" Position="134,17,0" Scale="1,1,1" Type="Normal" Name="hero - br - bot - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="2050116918" Position="78,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 2" Color="0,0,0,0"/>
+    <ObjectPoint Id="264919746" Position="46,31,0" Scale="1,1,1" Type="Normal" Name="hero - bl - top - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1277692723" Position="144,160,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - tr - top" Color="0,0,0,0"/>
+    <ObjectPoint Id="90928454" Position="46,176,0" Scale="1,1,1" Type="Normal" Name="hero chooser spawn - top left" Color="0,0,0,0"/>
     <ObjectPoint Id="696014296" Position="114,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 20" Color="0,0,0,0"/>
-    <ObjectPoint Id="1007667371" Position="102,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 14" Color="0,0,0,0"/>
     <ObjectPoint Id="1341808720" Position="84,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 5" Color="0,0,0,0"/>
+    <ObjectPoint Id="1007667371" Position="102,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 14" Color="0,0,0,0"/>
     <ObjectPoint Id="1326281752" Position="74,96,0" Scale="1,1,1" Type="Normal" Name="enemy rally - left - bot" Color="0,0,0,0"/>
-    <ObjectPoint Id="271112602" Position="55,111.5,0" Scale="1,1,1" Type="Normal" Name="test - starting camera" Color="0,0,0,0"/>
     <ObjectPoint Id="714222838" Position="116,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 21" Color="0,0,0,0"/>
-    <ObjectPoint Id="1154409010" Position="147,176,0" Scale="1,1,1" Type="Normal" Name="unit - tr - left - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="271112602" Position="55,111.5,0" Scale="1,1,1" Type="Normal" Name="test - starting camera" Color="0,0,0,0"/>
     <ObjectPoint Id="1975593203" Position="104,132,0" Scale="1,1,1" Type="Normal" Name="enemy tele spawn - top - right" Color="0,0,0,0"/>
+    <ObjectPoint Id="1154409010" Position="147,176,0" Scale="1,1,1" Type="Normal" Name="unit - tr - left - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1356907216" Position="46,17,0" Scale="1,1,1" Type="Normal" Name="hero - bl - bot - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1158879975" Position="70.5,28.5,0" Scale="1,1,1" Type="Normal" Name="unit - bl - tr - beacon" Color="0,0,0,0"/>
-    <ObjectPoint Id="2101619351" Position="24,90,0" Scale="1,1,1" Type="Normal" Name="chooser spawn - left" Color="0,0,0,0"/>
+    <ObjectPoint Id="2101619351" Position="24,90,0" Scale="1,1,1" Type="Normal" Name="unit chooser spawn - left" Color="0,0,0,0"/>
     <ObjectPoint Id="1894531084" Position="110,32.5,0" Scale="1,1,1" Type="Normal" Name="unit - bot - top - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="1009361086" Position="100,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 13" Color="0,0,0,0"/>
     <ObjectPoint Id="1776792780" Position="28.2822,85.57,0" Scale="1,1,1" Type="Normal" Name="unit - left - br - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
+    <ObjectPoint Id="1009361086" Position="100,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 13" Color="0,0,0,0"/>
     <ObjectPoint Id="627035749" Position="124,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 25" Color="0,0,0,0"/>
     <ObjectPoint Id="63749661" Position="32.5,90,0" Scale="1,1,1" Type="Normal" Name="unit - left - right - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="211316770" Position="98,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 12" Color="0,0,0,0"/>
+    <ObjectPoint Id="1234411684" Position="134,184.5,0" Scale="1,1,1" Type="Normal" Name="hero - tr - top - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="1526956294" Position="97,176,0" Scale="1,1,1" Type="Normal" Name="hero - top - right - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="481871533" Position="112,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 19" Color="0,0,0,0"/>
+    <ObjectPoint Id="487290198" Position="53,24,0" Scale="1,1,1" Type="Normal" Name="hero - bl - right - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1097815533" Position="176,98.5,0" Scale="1,1,1" Type="Normal" Name="unit - right - top - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="98756316" Position="182,96,0" Scale="1,1,1" Type="Normal" Name="unit - right - tr - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1578482275" Position="88,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 7" Color="0,0,0,0"/>
+    <ObjectPoint Id="837168851" Position="127,24,0" Scale="1,1,1" Type="Normal" Name="hero - br - left - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="691494978" Position="161,176,0" Scale="1,1,1" Type="Normal" Name="unit - tr - right - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="878532559" Position="72,182,0" Scale="1,1,1" Type="Normal" Name="unit - tl - tr - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="454562883" Position="126,104,0" Scale="1,1,1" Type="Normal" Name="enemy rally - right - top" Color="0,0,0,0"/>
     <ObjectPoint Id="1062813203" Position="104,30,0" Scale="1,1,1" Type="Normal" Name="unit - bot - tl - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="2128376073" Position="142.5,176,0" Scale="1,1,1" Type="Normal" Name="hero - tr - right - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="1361127356" Position="169,110,0" Scale="1,1,1" Type="Normal" Name="hero - right - left - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="615964535" Position="148,30,0" Scale="1,1,1" Type="Normal" Name="unit - br - tl - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="440567055" Position="122,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 24" Color="0,0,0,0"/>
     <ObjectPoint Id="1750397661" Position="59,24,0" Scale="1,1,1" Type="Normal" Name="unit - bl - left - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="440567055" Position="122,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 24" Color="0,0,0,0"/>
+    <ObjectPoint Id="1099485671" Position="90,31,0" Scale="1,1,1" Type="Normal" Name="hero - bot - top - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1227103801" Position="116,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 21" Color="0,0,0,0"/>
     <ObjectPoint Id="282270595" Position="40,104,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - left - top" Color="0,0,0,0"/>
     <ObjectPoint Id="1954757564" Position="154,17,0" Scale="1,1,1" Type="Normal" Name="unit - br - bot - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
     <ObjectPoint Id="1253100643" Position="96,132,0" Scale="1,1,1" Type="Normal" Name="enemy tele spawn - top - left" Color="0,0,0,0"/>
+    <ObjectPoint Id="960406987" Position="81.5,176,0" Scale="1,1,1" Type="Normal" Name="hero - top - left - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="1372148664" Position="68,104,0" Scale="1,1,1" Type="Normal" Name="enemy tele spawn - left - top" Color="0,0,0,0"/>
     <ObjectPoint Id="1025773052" Position="109.972,168.9465,0" Scale="1,1,1" Type="Normal" Name="unit - top - bot - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
@@ -161,51 +200,55 @@
     <ObjectPoint Id="653850317" Position="101.0825,93.087,0" Scale="1,1,1" Type="StartLoc" Name="start location - p3" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
-    <ObjectPoint Id="493029576" Position="66,176,0" Scale="1,1,1" Type="Normal" Name="chooser spawn - top left" Color="0,0,0,0"/>
     <ObjectPoint Id="533997263" Position="154,183,0" Scale="1,1,1" Type="Normal" Name="unit - tr - top - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="493029576" Position="66,176,0" Scale="1,1,1" Type="Normal" Name="unit chooser spawn - top left" Color="0,0,0,0"/>
     <ObjectPoint Id="1939567621" Position="149.5,180.5,0" Scale="1,1,1" Type="Normal" Name="unit - tr - tl - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1035597697" Position="160,96,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - right - bot" Color="0,0,0,0"/>
     <ObjectPoint Id="690209118" Position="101.0825,93.087,0" Scale="1,1,1" Type="StartLoc" Name="start location - p1" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
-    <ObjectPoint Id="1035597697" Position="160,96,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - right - bot" Color="0,0,0,0"/>
     <ObjectPoint Id="1928273146" Position="104,68,0" Scale="1,1,1" Type="Normal" Name="enemy tele spawn - bot - right" Color="0,0,0,0"/>
-    <ObjectPoint Id="6064204" Position="144,40,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - br - bot" Color="0,0,0,0"/>
     <ObjectPoint Id="331529152" Position="40,144,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - tl - left" Color="0,0,0,0"/>
+    <ObjectPoint Id="6064204" Position="144,40,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - br - bot" Color="0,0,0,0"/>
+    <ObjectPoint Id="1983099440" Position="154,176,0" Scale="1,1,1" Type="Normal" Name="unit chooser spawn - top right" Color="0,0,0,0"/>
     <ObjectPoint Id="478318677" Position="108,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 17" Color="0,0,0,0"/>
-    <ObjectPoint Id="1983099440" Position="154,176,0" Scale="1,1,1" Type="Normal" Name="chooser spawn - top right" Color="0,0,0,0"/>
-    <ObjectPoint Id="1171033856" Position="158.3205,19.368,0" Scale="1,1,1" Type="Normal" Name="unit - br - br - beacon" Color="0,0,0,0">
-        <Flag Index="ForcePlacement" Value="1"/>
-    </ObjectPoint>
+    <ObjectPoint Id="827689108" Position="176,103,0" Scale="1,1,1" Type="Normal" Name="hero - right - bot - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="2104189875" Position="56,40,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - bl - bot" Color="0,0,0,0"/>
     <ObjectPoint Id="530488048" Position="57,176,0" Scale="1,1,1" Type="Normal" Name="unit - tl - left - unit" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
-    <ObjectPoint Id="2104189875" Position="56,40,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - bl - bot" Color="0,0,0,0"/>
+    <ObjectPoint Id="1171033856" Position="158.3205,19.368,0" Scale="1,1,1" Type="Normal" Name="unit - br - br - beacon" Color="0,0,0,0">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectPoint>
     <ObjectPoint Id="1712027486" Position="114,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 20" Color="0,0,0,0"/>
+    <ObjectPoint Id="174842506" Position="87.5,167.5,0" Scale="1,1,1" Type="Normal" Name="hero - top - bot - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="548881166" Position="134,32.5,0" Scale="1,1,1" Type="Normal" Name="hero - br - top - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="94086420" Position="160,104,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - right - top" Color="0,0,0,0"/>
     <ObjectPoint Id="2057706776" Position="176,97,0" Scale="1,1,1" Type="Normal" Name="unit - right - top - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="560919080" Position="101,24,0" Scale="1,1,1" Type="Normal" Name="unit - bot - left - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="1971071716" Position="176,90,0" Scale="1,1,1" Type="Normal" Name="chooser spawn - right" Color="0,0,0,0"/>
-    <ObjectPoint Id="1861422191" Position="60,182,0" Scale="1,1,1" Type="Normal" Name="unit - tl - tl - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="481180406" Position="24,110,0" Scale="1,1,1" Type="Normal" Name="hero chooser spawn - left" Color="0,0,0,0"/>
     <ObjectPoint Id="1755457878" Position="40,56,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - bl - left" Color="0,0,0,0"/>
+    <ObjectPoint Id="1861422191" Position="60,182,0" Scale="1,1,1" Type="Normal" Name="unit - tl - tl - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1971071716" Position="176,90,0" Scale="1,1,1" Type="Normal" Name="unit chooser spawn - right" Color="0,0,0,0"/>
     <ObjectPoint Id="1795181988" Position="117,24,0" Scale="1,1,1" Type="Normal" Name="unit - bot - right - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1397814327" Position="56.5,112,0" Scale="1,1,1" Type="Normal" Name="test point 1" Color="0,0,0,0"/>
+    <ObjectPoint Id="1068911899" Position="99,130,0" Scale="1,1,1" Type="Normal" Name="spawn - p4" Color="0,0,0,0"/>
+    <ObjectPoint Id="578198274" Position="170,84,0" Scale="1,1,1" Type="Normal" Name="unit - right - bl - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="373604690" Position="101.0825,93.087,0" Scale="1,1,1" Type="StartLoc" Name="start location - p5" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
-    <ObjectPoint Id="578198274" Position="170,84,0" Scale="1,1,1" Type="Normal" Name="unit - right - bl - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="1068911899" Position="99,130,0" Scale="1,1,1" Type="Normal" Name="spawn - p4" Color="0,0,0,0"/>
-    <ObjectPoint Id="1397814327" Position="56.5,112,0" Scale="1,1,1" Type="Normal" Name="test point 1" Color="0,0,0,0"/>
     <ObjectPoint Id="387223695" Position="101.0825,93.087,0" Scale="1,1,1" Type="StartLoc" Name="start location - p6" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
     <ObjectPoint Id="118426019" Position="72,170,0" Scale="1,1,1" Type="Normal" Name="unit - tl - br - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1036612316" Position="118.5,24,0" Scale="1,1,1" Type="Normal" Name="unit - bot - right - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="1758466144" Position="116,182,0" Scale="1,1,1" Type="Normal" Name="unit - top - tr - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1564379658" Position="114,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 20" Color="0,0,0,0"/>
-    <ObjectPoint Id="1208114324" Position="105.5,19.5,0" Scale="1,1,1" Type="Normal" Name="unit - bot - bl - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1758466144" Position="116,182,0" Scale="1,1,1" Type="Normal" Name="unit - top - tr - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1417306797" Position="18,84,0" Scale="1,1,1" Type="Normal" Name="unit - left - bl - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1208114324" Position="105.5,19.5,0" Scale="1,1,1" Type="Normal" Name="unit - bot - bl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="465736553" Position="100,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 13" Color="0,0,0,0"/>
-    <ObjectPoint Id="2132272403" Position="110,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 18" Color="0,0,0,0"/>
     <ObjectPoint Id="1358293436" Position="122,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 24" Color="0,0,0,0"/>
+    <ObjectPoint Id="2132272403" Position="110,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 18" Color="0,0,0,0"/>
     <ObjectPoint Id="373153880" Position="101.0825,93.087,0" Scale="1,1,1" Type="Normal" Name="location-chooser-spawn" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
@@ -213,71 +256,93 @@
     <ObjectPoint Id="1890298303" Position="120,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 23" Color="0,0,0,0"/>
     <ObjectPoint Id="704189669" Position="66,31,0" Scale="1,1,1" Type="Normal" Name="unit - bl - top - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="244062886" Position="59,176,0" Scale="1,1,1" Type="Normal" Name="unit - tl - left - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="830643813" Position="24,117,0" Scale="1,1,1" Type="Normal" Name="hero - left - top - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1482196987" Position="124,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 25" Color="0,0,0,0"/>
-    <ObjectPoint Id="151315752" Position="171.5,85.5,0" Scale="1,1,1" Type="Normal" Name="unit - right - bl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="162877926" Position="103,130,0" Scale="1,1,1" Type="Normal" Name="spawn - p6" Color="0,0,0,0"/>
+    <ObjectPoint Id="151315752" Position="171.5,85.5,0" Scale="1,1,1" Type="Normal" Name="unit - right - bl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1788391928" Position="116,18,0" Scale="1,1,1" Type="Normal" Name="unit - bot - br - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="791315511" Position="116,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 21" Color="0,0,0,0"/>
     <ObjectPoint Id="723559936" Position="124,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 25" Color="0,0,0,0"/>
+    <ObjectPoint Id="1371237091" Position="39,24,0" Scale="1,1,1" Type="Normal" Name="hero - bl - left - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="549913239" Position="134,24,0" Scale="1,1,1" Type="Normal" Name="hero chooser spawn - bot right" Color="0,0,0,0"/>
     <ObjectPoint Id="931327287" Position="92,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 9" Color="0,0,0,0"/>
-    <ObjectPoint Id="1599385838" Position="105.5,28.5,0" Scale="1,1,1" Type="Normal" Name="unit - bot - tl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="628955827" Position="116,30,0" Scale="1,1,1" Type="Normal" Name="unit - bot - tr - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1599385838" Position="105.5,28.5,0" Scale="1,1,1" Type="Normal" Name="unit - bot - tl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="571005906" Position="70.4313,171.3977,0" Scale="1,1,1" Type="Normal" Name="unit - tl - br - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
-    <ObjectPoint Id="1950869005" Position="90,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 8" Color="0,0,0,0"/>
-    <ObjectPoint Id="3552434" Position="66,24,0" Scale="1,1,1" Type="Normal" Name="chooser spawn - bot left" Color="0,0,0,0"/>
     <ObjectPoint Id="2020993581" Position="101.0825,93.087,0" Scale="1,1,1" Type="StartLoc" Name="start location - p7" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
+    <ObjectPoint Id="3552434" Position="66,24,0" Scale="1,1,1" Type="Normal" Name="unit chooser spawn - bot left" Color="0,0,0,0"/>
+    <ObjectPoint Id="1950869005" Position="90,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 8" Color="0,0,0,0"/>
+    <ObjectPoint Id="1240581174" Position="24,118.5,0" Scale="1,1,1" Type="Normal" Name="hero - left - top - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="302479416" Position="37.5,24,0" Scale="1,1,1" Type="Normal" Name="hero - bl - left - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="1710644402" Position="118,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 22" Color="0,0,0,0"/>
     <ObjectPoint Id="333386379" Position="30,84,0" Scale="1,1,1" Type="Normal" Name="unit - left - br - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1716956187" Position="92,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 9" Color="0,0,0,0"/>
     <ObjectPoint Id="629813046" Position="132,104,0" Scale="1,1,1" Type="Normal" Name="enemy tele spawn - right - top" Color="0,0,0,0"/>
     <ObjectPoint Id="1138646104" Position="126,96,0" Scale="1,1,1" Type="Normal" Name="enemy rally - right - bot" Color="0,0,0,0"/>
+    <ObjectPoint Id="2075095700" Position="134,176,0" Scale="1,1,1" Type="Normal" Name="hero chooser spawn - top right" Color="0,0,0,0"/>
+    <ObjectPoint Id="784073299" Position="46,24,0" Scale="1,1,1" Type="Normal" Name="hero chooser spawn - bot left" Color="0,0,0,0"/>
     <ObjectPoint Id="1499815599" Position="92,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 9" Color="0,0,0,0"/>
     <ObjectPoint Id="1981765748" Position="24,83,0" Scale="1,1,1" Type="Normal" Name="unit - left - bot - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
+    <ObjectPoint Id="1494016593" Position="176,118.5,0" Scale="1,1,1" Type="Normal" Name="hero - right - top - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="1614463141" Position="167,90,0" Scale="1,1,1" Type="Normal" Name="unit - right - left - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="1046620012" Position="68,96,0" Scale="1,1,1" Type="Normal" Name="enemy tele spawn - left - bot" Color="0,0,0,0"/>
     <ObjectPoint Id="910641272" Position="100,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 13" Color="0,0,0,0"/>
+    <ObjectPoint Id="1046620012" Position="68,96,0" Scale="1,1,1" Type="Normal" Name="enemy tele spawn - left - bot" Color="0,0,0,0"/>
+    <ObjectPoint Id="281116043" Position="43.5,15.5,0" Scale="1,1,1" Type="Normal" Name="hero - bl - bot - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="194816851" Position="70.5346,19.5,0" Scale="1,1,1" Type="Normal" Name="unit - bl - br - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
-    <ObjectPoint Id="1345536700" Position="149.5,19.5,0" Scale="1,1,1" Type="Normal" Name="unit - br - bl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="701278092" Position="154,32.5,0" Scale="1,1,1" Type="Normal" Name="unit - br - top - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1345536700" Position="149.5,19.5,0" Scale="1,1,1" Type="Normal" Name="unit - br - bl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1163241296" Position="93,130,0" Scale="1,1,1" Type="Normal" Name="spawn - p1" Color="0,0,0,0"/>
+    <ObjectPoint Id="596942342" Position="31,110,0" Scale="1,1,1" Type="Normal" Name="hero - left - right - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="721115528" Position="167.5,110,0" Scale="1,1,1" Type="Normal" Name="hero - right - left - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="1576426122" Position="74.5,176,0" Scale="1,1,1" Type="Normal" Name="unit - tl - right - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="2092551207" Position="46,183,0" Scale="1,1,1" Type="Normal" Name="hero - tl - top - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="725873656" Position="122,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 24" Color="0,0,0,0"/>
     <ObjectPoint Id="472756372" Position="145,176,0" Scale="1,1,1" Type="Normal" Name="unit - tr - left - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1920538099" Position="90,184.5,0" Scale="1,1,1" Type="Normal" Name="hero - top - top - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="141681900" Position="54.5,24,0" Scale="1,1,1" Type="Normal" Name="hero - bl - right - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="274238423" Position="60,18,0" Scale="1,1,1" Type="Normal" Name="unit - bl - bl - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="1552399524" Position="171.5,94.5,0" Scale="1,1,1" Type="Normal" Name="unit - right - tl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="227691283" Position="107,130,0" Scale="1,1,1" Type="Normal" Name="spawn - p8" Color="0,0,0,0"/>
+    <ObjectPoint Id="1552399524" Position="171.5,94.5,0" Scale="1,1,1" Type="Normal" Name="unit - right - tl - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="94172866" Position="72,18,0" Scale="1,1,1" Type="Normal" Name="unit - bl - br - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="890760943" Position="114.5,28.5,0" Scale="1,1,1" Type="Normal" Name="unit - bot - tr - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1205849681" Position="83,24,0" Scale="1,1,1" Type="Normal" Name="hero - bot - left - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="55034273" Position="104,18,0" Scale="1,1,1" Type="Normal" Name="unit - bot - bl - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1177448052" Position="118.5,176,0" Scale="1,1,1" Type="Normal" Name="unit - top - right - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="122615890" Position="144,100,0" Scale="1,1,1" Type="Normal" Name="defend - right" Color="0,0,0,0"/>
-    <ObjectPoint Id="1429236056" Position="17,90,0" Scale="1,1,1" Type="Normal" Name="unit - left - left - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1047972182" Position="98,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 12" Color="0,0,0,0"/>
+    <ObjectPoint Id="1429236056" Position="17,90,0" Scale="1,1,1" Type="Normal" Name="unit - left - left - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1116849083" Position="176,117,0" Scale="1,1,1" Type="Normal" Name="hero - right - top - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="714740905" Position="145,24,0" Scale="1,1,1" Type="Normal" Name="unit - br - left - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1437515541" Position="90,169,0" Scale="1,1,1" Type="Normal" Name="hero - top - bot - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="2131765764" Position="96,68,0" Scale="1,1,1" Type="Normal" Name="enemy tele spawn - bot - left" Color="0,0,0,0"/>
-    <ObjectPoint Id="409578078" Position="110,24,0" Scale="1,1,1" Type="Normal" Name="chooser spawn - bot" Color="0,0,0,0"/>
+    <ObjectPoint Id="409578078" Position="110,24,0" Scale="1,1,1" Type="Normal" Name="unit chooser spawn - bot" Color="0,0,0,0"/>
     <ObjectPoint Id="473520878" Position="90,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 8" Color="0,0,0,0"/>
     <ObjectPoint Id="1963387459" Position="94,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 10" Color="0,0,0,0"/>
     <ObjectPoint Id="63201720" Position="96,74,0" Scale="1,1,1" Type="Normal" Name="enemy rally - bot - left" Color="0,0,0,0"/>
-    <ObjectPoint Id="1387029668" Position="184.5,90,0" Scale="1,1,1" Type="Normal" Name="unit - right - right - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1309141538" Position="148,170,0" Scale="1,1,1" Type="Normal" Name="unit - tr - bl - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="945050972" Position="104,170,0" Scale="1,1,1" Type="Normal" Name="unit - top - bl - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1387029668" Position="184.5,90,0" Scale="1,1,1" Type="Normal" Name="unit - right - right - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1258371669" Position="46,169,0" Scale="1,1,1" Type="Normal" Name="hero - tl - bot - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="160563527" Position="82,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 4" Color="0,0,0,0"/>
+    <ObjectPoint Id="945050972" Position="104,170,0" Scale="1,1,1" Type="Normal" Name="unit - top - bl - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1016863586" Position="103,176,0" Scale="1,1,1" Type="Normal" Name="unit - top - left - beacon" Color="0,0,0,0"/>
-    <ObjectPoint Id="607903274" Position="57,24,0" Scale="1,1,1" Type="Normal" Name="unit - bl - left - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1212478299" Position="18,96,0" Scale="1,1,1" Type="Normal" Name="unit - left - tl - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="1639441590" Position="73,176,0" Scale="1,1,1" Type="Normal" Name="unit - tl - right - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="607903274" Position="57,24,0" Scale="1,1,1" Type="Normal" Name="unit - bl - left - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="936536584" Position="94,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 10" Color="0,0,0,0"/>
+    <ObjectPoint Id="1639441590" Position="73,176,0" Scale="1,1,1" Type="Normal" Name="unit - tl - right - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="992499488" Position="108,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 17" Color="0,0,0,0"/>
+    <ObjectPoint Id="2129021403" Position="90,183,0" Scale="1,1,1" Type="Normal" Name="hero - top - top - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1262358024" Position="131.5,15.5,0" Scale="1,1,1" Type="Normal" Name="hero - br - bot - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="2116441393" Position="70.5,180.5,0" Scale="1,1,1" Type="Normal" Name="unit - tl - tr - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1734044784" Position="98.5,176,0" Scale="1,1,1" Type="Normal" Name="hero - top - right - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="6112043" Position="98.5,24,0" Scale="1,1,1" Type="Normal" Name="hero - bot - right - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="1536260855" Position="182,84,0" Scale="1,1,1" Type="Normal" Name="unit - right - br - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="1404681884" Position="154,184.5,0" Scale="1,1,1" Type="Normal" Name="unit - tr - top - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="970550996" Position="105.5,171.5,0" Scale="1,1,1" Type="Normal" Name="unit - top - bl - beacon" Color="0,0,0,0"/>
@@ -286,49 +351,56 @@
     <ObjectPoint Id="484494922" Position="101.0825,93.087,0" Scale="1,1,1" Type="StartLoc" Name="start location - p2" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
-    <ObjectPoint Id="1436792943" Position="104,74,0" Scale="1,1,1" Type="Normal" Name="enemy rally - bot - right" Color="0,0,0,0"/>
     <ObjectPoint Id="1432147502" Position="104,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 15" Color="0,0,0,0"/>
+    <ObjectPoint Id="1436792943" Position="104,74,0" Scale="1,1,1" Type="Normal" Name="enemy rally - bot - right" Color="0,0,0,0"/>
+    <ObjectPoint Id="1183740721" Position="184.5,110,0" Scale="1,1,1" Type="Normal" Name="hero - right - right - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="1257445680" Position="183,110,0" Scale="1,1,1" Type="Normal" Name="hero - right - right - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1855421778" Position="132,96,0" Scale="1,1,1" Type="Normal" Name="enemy tele spawn - right - bot" Color="0,0,0,0"/>
-    <ObjectPoint Id="4326746" Position="169,90,0" Scale="1,1,1" Type="Normal" Name="unit - right - left - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="685785975" Position="104,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 15" Color="0,0,0,0"/>
-    <ObjectPoint Id="745720542" Position="154,24,0" Scale="1,1,1" Type="Normal" Name="chooser spawn - bot right" Color="0,0,0,0"/>
+    <ObjectPoint Id="4326746" Position="169,90,0" Scale="1,1,1" Type="Normal" Name="unit - right - left - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="2019735321" Position="96,126,0" Scale="1,1,1" Type="Normal" Name="enemy rally - top - left" Color="0,0,0,0"/>
+    <ObjectPoint Id="745720542" Position="154,24,0" Scale="1,1,1" Type="Normal" Name="unit chooser spawn - bot right" Color="0,0,0,0"/>
     <ObjectPoint Id="617484639" Position="160,170,0" Scale="1,1,1" Type="Normal" Name="unit - tr - br - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="78753967" Position="110,183,0" Scale="1,1,1" Type="Normal" Name="unit - top - top - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="376748213" Position="90,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 8" Color="0,0,0,0"/>
+    <ObjectPoint Id="78753967" Position="110,183,0" Scale="1,1,1" Type="Normal" Name="unit - top - top - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="2107120323" Position="30,96,0" Scale="1,1,1" Type="Normal" Name="unit - left - tr - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="56910441" Position="15,90,0" Scale="1,1,1" Type="Normal" Name="unit - left - left - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="779640431" Position="107.5,167.5,0" Scale="1,1,1" Type="Normal" Name="unit - top - bot - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="56910441" Position="15,90,0" Scale="1,1,1" Type="Normal" Name="unit - left - left - unit" Color="0,0,0,0"/>
     <ObjectPoint Id="328039401" Position="144,56,0" Scale="1,1,1" Type="Normal" Name="defend - bottom right" Color="0,0,0,0"/>
     <ObjectPoint Id="852033013" Position="114.4885,171.4465,0" Scale="1,1,1" Type="Normal" Name="unit - top - br - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
-    <ObjectPoint Id="1980337140" Position="76,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 1" Color="0,0,0,0"/>
     <ObjectPoint Id="488609416" Position="19.5,85.5,0" Scale="1,1,1" Type="Normal" Name="unit - left - bl - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1980337140" Position="76,120,0" Scale="1,1,1" Type="Normal" Name="enemy mod - 1" Color="0,0,0,0"/>
     <ObjectPoint Id="777797571" Position="66,32.5,0" Scale="1,1,1" Type="Normal" Name="unit - bl - top - unit" Color="0,0,0,0"/>
-    <ObjectPoint Id="1251994820" Position="180.5,94.5,0" Scale="1,1,1" Type="Normal" Name="unit - right - tr - beacon" Color="0,0,0,0"/>
+    <ObjectPoint Id="1830656202" Position="97,24,0" Scale="1,1,1" Type="Normal" Name="hero - bot - right - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="107806898" Position="24,98.5,0" Scale="1,1,1" Type="Normal" Name="unit - left - top - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1251994820" Position="180.5,94.5,0" Scale="1,1,1" Type="Normal" Name="unit - right - tr - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="551137157" Position="158.5068,171.4584,0" Scale="1,1,1" Type="Normal" Name="unit - tr - br - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
     <ObjectPoint Id="686929610" Position="105,130,0" Scale="1,1,1" Type="Normal" Name="spawn - p7" Color="0,0,0,0"/>
+    <ObjectPoint Id="192965553" Position="83,176,0" Scale="1,1,1" Type="Normal" Name="hero - top - left - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="312025157" Position="56,160,0" Scale="1,1,1" Type="Normal" Name="enemy spawn - tl - top" Color="0,0,0,0"/>
+    <ObjectPoint Id="28408665" Position="39,176,0" Scale="1,1,1" Type="Normal" Name="hero - tl - left - beacon" Color="0,0,0,0"/>
     <ObjectPoint Id="1159692749" Position="76,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 1" Color="0,0,0,0"/>
+    <ObjectPoint Id="1619923588" Position="32.5,110,0" Scale="1,1,1" Type="Normal" Name="hero - left - right - hero" Color="0,0,0,0"/>
+    <ObjectPoint Id="1168824471" Position="173.5,101.5,0" Scale="1,1,1" Type="Normal" Name="hero - right - bot - hero" Color="0,0,0,0"/>
     <ObjectPoint Id="1774992185" Position="72,30,0" Scale="1,1,1" Type="Normal" Name="unit - bl - tr - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="1162214087" Position="96,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 11" Color="0,0,0,0"/>
+    <ObjectPoint Id="1112023811" Position="88,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 7" Color="0,0,0,0"/>
     <ObjectPoint Id="1621754594" Position="66,169,0" Scale="1,1,1" Type="Normal" Name="unit - tl - bot - beacon" Color="0,0,0,0">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectPoint>
-    <ObjectPoint Id="1112023811" Position="88,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 7" Color="0,0,0,0"/>
-    <ObjectPoint Id="1162214087" Position="96,116,0" Scale="1,1,1" Type="Normal" Name="enemy showcase - 11" Color="0,0,0,0"/>
     <ObjectPoint Id="1686196947" Position="76,112,0" Scale="1,1,1" Type="Normal" Name="extra life - 1" Color="0,0,0,0"/>
-    <ObjectPoint Id="830891366" Position="56,144,0" Scale="1,1,1" Type="Normal" Name="defend - top left" Color="0,0,0,0"/>
     <ObjectPoint Id="437634046" Position="148,182,0" Scale="1,1,1" Type="Normal" Name="unit - tr - tl - unit" Color="0,0,0,0"/>
+    <ObjectPoint Id="830891366" Position="56,144,0" Scale="1,1,1" Type="Normal" Name="defend - top left" Color="0,0,0,0"/>
     <ObjectUnit Id="376238765" Position="107,87,0" Scale="1,1,1" UnitType="BottomRightHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="169646577" Position="107,99,0" Scale="1,1,1" UnitType="TopRightHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="1976925429" Position="108.5,93,0" Scale="1,1,1" UnitType="RightHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="1243337835" Position="95,99,0" Scale="1,1,1" UnitType="TopLeftHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="220038668" Position="101,85.5,0" Scale="1,1,1" UnitType="BottomHdDefendLocationBeacon" Player="9"/>
-    <ObjectUnit Id="209261321" Position="101,100.5,0" Scale="1,1,1" UnitType="TopHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="302000048" Position="93.5,93,0" Scale="1,1,1" UnitType="LeftHdDefendLocationBeacon" Player="9"/>
+    <ObjectUnit Id="209261321" Position="101,100.5,0" Scale="1,1,1" UnitType="TopHdDefendLocationBeacon" Player="9"/>
     <ObjectUnit Id="469124253" Position="95,87,0" Scale="1,1,1" UnitType="BottomLeftHdDefendLocationBeacon" Player="9"/>
 </PlacedObjects>
