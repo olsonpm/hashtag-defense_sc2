@@ -266,6 +266,26 @@
         <Model value="UIScreenParentHd"/>
         <HostSiteOps Ops="SOpUpdateUIScreenPosHd"/>
     </CActorModel>
+    <CActorForceCylinder default="1" id="ApocalypseShockwaveBaseKerriganHd">
+        <On Terms="ActorCreation" Send="TimerSet 0.200000 PhasePause"/>
+        <On Terms="TimerExpired; TimerName PhasePause" Send="ForceSetRadius 1.500000"/>
+        <On Terms="TimerExpired; TimerName PhasePause" Send="ForceSetRadius 8.000000 2.100000"/>
+        <On Terms="TimerExpired; TimerName PhasePause" Send="ForceSetMagnitude 65.000000 1.150000"/>
+        <On Terms="TimerExpired; TimerName PhasePause" Send="TimerSet 2.100000 PhaseGrow"/>
+        <On Terms="TimerExpired; TimerName PhaseGrow" Send="ForceSetMagnitude 0.000000 1.700000"/>
+        <Field value="Radial"/>
+        <Duration value="4.000000"/>
+        <Magnitude value="35.000000,10.000000"/>
+        <HostEndSiteOps Ops="SOpMoveUpBy2"/>
+    </CActorForceCylinder>
+    <CActorForceCylinder id="ApocalypseShockwaveKerriganHd" parent="ApocalypseShockwaveBaseKerriganHd">
+        <On Terms="Effect.ApocalypseSAKerriganHd.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create ApocalypseShockwave0KerriganHd"/>
+        <On Terms="ActorCreation" Send="Create ApocalypseShockwave1KerriganHd"/>
+        <On Terms="ActorCreation" Send="Create ApocalypseShockwave2KerriganHd"/>
+        <On Terms="ActorCreation" Send="Create ApocalypseShockwave3KerriganHd"/>
+        <HostSiteOps Ops="SOpTargetPoint SOpShadow SOpMoveUpBy6"/>
+    </CActorForceCylinder>
     <CActorModel id="ArtilleryTurretAttackLaunchRightBunkerHd" parent="ModelAnimationStyleOneShot">
         <Flags index="SuppressCreationErrors" value="1"/>
         <Host Subject="ArtilleryTurretModelBunkerHd" ReachAcrossEffectTrees="1"/>
@@ -359,6 +379,100 @@
         <HostSiteOps Ops="SOpAttachWeapon"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
+    <CActorSite id="ChainReaction2ImpactSiteKerriganHd" parent="GenericAttackImpactSite"/>
+    <CActorAction id="ChainReaction2AttackKerriganHd" parent="GenericAttack" effectAttack="ChainReaction2DamageKerriganHd">
+        <LaunchRequest Subject="ChainReaction1ImpactSite" Actor="Find"/>
+        <Beam value="ChainReaction2AttackBeamKerriganHd"/>
+        <BeamScope value="Caster"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
+        <ImpactSite value="ChainReaction2ImpactSiteKerriganHd"/>
+        <ImpactMap index="None" Sound="Kerrigan_BeamSecondary_AttackImpact"/>
+    </CActorAction>
+    <CActorBeamSimple id="ChainReaction2AttackBeamKerriganHd">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Model value="KerriganEnergyBlastHd"/>
+    </CActorBeamSimple>
+    <CActorSite id="ChainReaction3ImpactSiteKerriganHd" parent="GenericAttackImpactSite"/>
+    <CActorAction id="ChainReaction3AttackKerriganHd" parent="GenericAttack" effectAttack="ChainReaction3DamageKerriganHd">
+        <LaunchRequest Subject="ChainReaction2ImpactSite" Actor="Find"/>
+        <Beam value="ChainReaction3AttackBeamKerriganHd"/>
+        <BeamScope value="Caster"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
+        <ImpactSite value="ChainReaction3ImpactSiteKerriganHd"/>
+        <ImpactMap index="None" Sound="Kerrigan_BeamSecondary_AttackImpact"/>
+    </CActorAction>
+    <CActorBeamSimple id="ChainReaction3AttackBeamKerriganHd">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Model value="KerriganEnergyBlastHd"/>
+    </CActorBeamSimple>
+    <CActorSite id="ChainReaction4ImpactSiteKerriganHd" parent="GenericAttackImpactSite"/>
+    <CActorAction id="ChainReaction4AttackKerriganHd" parent="GenericAttack" effectAttack="ChainReaction4DamageKerriganHd">
+        <LaunchRequest Subject="ChainReaction3ImpactSite" Actor="Find"/>
+        <Beam value="ChainReaction4AttackBeamKerriganHd"/>
+        <BeamScope value="Caster"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
+        <ImpactSite value="ChainReaction4ImpactSiteKerriganHd"/>
+        <ImpactMap index="None" Sound="Kerrigan_BeamSecondary_AttackImpact"/>
+    </CActorAction>
+    <CActorBeamSimple id="ChainReaction4AttackBeamKerriganHd">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Model value="KerriganEnergyBlastHd"/>
+    </CActorBeamSimple>
+    <CActorSite id="ChainReaction5ImpactSiteKerriganHd" parent="GenericAttackImpactSite"/>
+    <CActorAction id="ChainReaction5AttackKerriganHd" parent="GenericAttack" effectAttack="ChainReaction5DamageKerriganHd">
+        <LaunchRequest Subject="ChainReaction4ImpactSite" Actor="Find"/>
+        <Beam value="ChainReaction5AttackBeamKerriganHd"/>
+        <BeamScope value="Caster"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
+        <ImpactSite value="ChainReaction5ImpactSiteKerriganHd"/>
+        <ImpactMap index="None" Sound="Kerrigan_BeamSecondary_AttackImpact"/>
+    </CActorAction>
+    <CActorBeamSimple id="ChainReaction5AttackBeamKerriganHd">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Model value="KerriganEnergyBlastHd"/>
+    </CActorBeamSimple>
+    <CActorAction id="ChainReactionAttackKerriganHd" parent="GenericAttack" effectAttack="ChainReaction1DamageKerriganHd">
+        <LaunchSiteOps Ops="SOpAttachWeapon"/>
+        <Beam value="ChainReactionAttackBeamKerriganHd"/>
+        <BeamScope value="Caster"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance"/>
+        <ImpactSite value="ChainReaction1ImpactSiteKerriganHd"/>
+        <ImpactPhysics Name="ChainReactionAttackForce" MatchKeys="Basic" Physics="ChainReactionAttackForce"/>
+    </CActorAction>
+    <CActorBeamSimple id="ChainReactionAttackBeamKerriganHd" parent="BeamSimpleAnimationStyleOneShot">
+        <Model value="KerriganEnergyBlastHd"/>
+    </CActorBeamSimple>
+    <CActorForceSphere id="ChainReactionAttackForceKerriganHd">
+        <On Terms="Effect.ChainReaction1DamageKerriganHd.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create ChainReactionAttackUpForce"/>
+        <Host Subject="_ImpactGuide"/>
+        <HostSiteOps Ops="SOpRandomPointInSphereDot15"/>
+        <Duration value="0.150000"/>
+        <Magnitude value="27.500000,8.000000"/>
+        <Radius value="1.100000,0.150000"/>
+    </CActorForceSphere>
+    <CActorSound id="ChainReactionLaunchSoundKerriganHd" parent="SoundOneShot">
+        <On Terms="Effect.ChainReaction1DamageKerriganHd.Start" Send="Create"/>
+        <Sound value="Kerrigan_BeamInitial_AttackLaunch"/>
+    </CActorSound>
+    <CActorAction id="CorrosiveBlastAttackStukovHd" parent="GenericAttack" effectImpact="CorrosiveBlastSetStukovHd" effectLaunch="CorrosiveBlastLMStukovHd">
+        <LaunchAttachQuery Methods="Weapon"/>
+        <LaunchAssets Sound="Spell_CorrosiveBlast_Launch"/>
+        <Missile value="CorrosiveBlastAttackMissileStukovHd"/>
+        <ImpactMap index="None" Model="CorrosiveBlastAttackImpactStukovHd" Sound="Spell_CorrosiveBlast_Impact"/>
+        <ShieldFlashType value="Full"/>
+    </CActorAction>
+    <CActorMissile id="CorrosiveBlastAttackMissileStukovHd" parent="GenericAttackMissile" unitName="DevastatingShotWeaponStukovHd">
+        <Model value="CorrosiveBlastWeaponStukovHd"/>
+    </CActorMissile>
     <CActorModel id="IncreasedSpeedIndicatorModHd" parent="ModelAnimationStyleContinuous">
         <EditorCategories value=""/>
         <On Terms="Behavior.IncreasedSpeedModHd.On; ValidateUnit IsNotPerfectSpecimenModHd" Send="Create"/>
@@ -386,6 +500,148 @@
         <HostSiteOps Ops="SOpAttachCenter AddedArmorIndicatorRotatorModHd"/>
         <AutoScaleFactor value="1.000000"/>
     </CActorModel>
+    <CActorModel id="ApocalypseExplosionKerriganHd" parent="ModelAnimationStyleOneShot">
+        <FogVisibility value="Visible"/>
+        <On Terms="Effect.ApocalypseSAKerriganHd.Start; At Effect" Send="Create"/>
+        <HostSiteOps Ops="SOpTargetPointStationary SOpShadow"/>
+        <Model value="KerriganApocalypseExplosion"/>
+    </CActorModel>
+    <CActorSound id="ApocalypseChargeSoundKerriganHd" parent="SoundContinuous">
+        <On Terms="ActorCreation" Send="SoundSetPitch Linear -12.000000@0.000000,18.000000@4000.000000"/>
+        <On Terms="Abil.ApocalypseKerriganHd.TargetPrepStart" Send="Create"/>
+        <On Terms="Abil.ApocalypseKerriganHd.TargetPrepStop" Send="Destroy"/>
+        <Sound value="KerriganApocalypseChargeSound"/>
+    </CActorSound>
+    <CActorSound id="ApocalypseExplodeSoundKerriganHd" parent="SoundOneShot">
+        <On Terms="Effect.ApocalypseSAKerriganHd.Start" Send="Create"/>
+        <Sound value="KerriganApocalypseExplodeSound"/>
+    </CActorSound>
+    <CActorSound id="ApocalypseLaunchSoundKerriganHd" parent="SoundOneShot">
+        <On Terms="Abil.ApocalypseKerriganHd.TargetPrepStart" Send="Create"/>
+        <Sound value="KerriganApocalypseLaunchSound"/>
+    </CActorSound>
+    <CActorMissile id="KerriganHd" parent="GenericUnitBase" unitName="KerriganHd">
+        <Aliases value="_MissileHybrids"/>
+        <Macros value="KerriganSpells"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergSmallBurrowEffects"/>
+        <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On Terms="ActorCreation" Send="StatusSet SoundRank 2"/>
+        <On Terms="WeaponStart.EnergyBlastKerriganHd.AttackStart" Send="AnimBracketStart Attack Spell,D"/>
+        <On Terms="WeaponStop.EnergyBlastKerriganHd.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="AnimBracketClear Jump"/>
+        <On Terms="UnitBirth.KerriganHd" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="UnitDeathCustomize" Send="Create KerriganX1_Death_Primal"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="AnimClear Birth"/>
+        <On Terms="UnitDeathCustomize; IsStatus InAir 1" Send="DeathCustomize Flying"/>
+        <AnimBlendTime value="0.250000"/>
+        <EventDataSound Name="KerriganAttackLaunch" Actor="UnitSound" Sound="QueenOfBladesAttackLaunch"/>
+        <EventDataSound Name="KerriganAttackImpact" Actor="UnitSound" Sound="QueenOfBladesAttackImpact"/>
+        <DeathCustoms ModelLink="ZergLargeUnitDeathLow" Name="Flying"/>
+        <PlacementModel value="KerriganGhost"/>
+        <PortraitActor value="KerriganPrimalPortrait"/>
+        <PortraitModel value="KerriganPrimalPortrait"/>
+        <TerrainSquibs>
+            <GroupName value="RippleStandard"/>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleLarge"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="1.1992"/>
+        <BarOffset value="60"/>
+        <BarWidth value="78"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-zerg-kerrigan.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-kerriganinfested.dds"/>
+        <SoundArray index="Ready" value="KerriganVoid_Ready"/>
+        <SoundArray index="Help" value="KerriganVoid_Help"/>
+        <SoundArray index="What" value="KerriganVoid_What"/>
+        <SoundArray index="Yes" value="KerriganVoid_Yes"/>
+        <SoundArray index="Attack" value="KerriganVoid_Attack"/>
+        <SoundArray index="Pissed" value="KerriganVoid_Pissed_ALT"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-kerriganinfested.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-zerg-kerrigan.dds"/>
+        </Wireframe>
+    </CActorMissile>
+    <CActorBeamSimple id="ApocalypseBeamKerriganHd" parent="BeamSimpleAnimationStyleOneShot">
+        <Macros value="GlobalLoopMacro"/>
+        <Inherits index="Scale" value="1"/>
+        <HostLaunch Subject="::global.Kerrigan"/>
+        <HostLaunchSiteOps Ops="SOpAttachWeapon"/>
+        <HostImpact Subject="::Creator"/>
+    </CActorBeamSimple>
+    <CActorModel id="ApocalypseChannelKerriganHd" parent="ModelAnimationStyleContinuous">
+        <FogVisibility value="Visible"/>
+        <On Terms="Abil.ApocalypseKerriganHd.TargetPrepStart" Send="Create"/>
+        <On Terms="Abil.ApocalypseKerriganHd.TargetPrepStart" Send="Create ApocalypseBeamKerriganHd"/>
+        <On Terms="Abil.ApocalypseKerriganHd.TargetPrepStop" Target="ApocalypseBeamKerriganHd" Send="Destroy"/>
+        <On Terms="Abil.ApocalypseKerriganHd.TargetPrepStop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <ScopeBearingsTracking value="ForceOff"/>
+        <Model value="KerriganApocalypseChannel"/>
+    </CActorModel>
+    <CActorSplat id="ApocalypseCursorSplatkerriganHd" parent="ZergCursorSplat" abil="ApocalypseKerriganHd">
+        <Model value="KerriganApocalypseCursorSplat"/>
+    </CActorSplat>
+    <CActorForceCylinder id="ApocalypseShockwave0KerriganHd" parent="ApocalypseShockwaveBaseKerriganHd">
+        <HostSiteOps Ops="SOpTargetPoint SOpShadow SOpMoveDownBy2"/>
+    </CActorForceCylinder>
+    <CActorForceCylinder id="ApocalypseShockwave1KerriganHd" parent="ApocalypseShockwaveBaseKerriganHd">
+        <HostSiteOps Ops="SOpTargetPoint SOpShadow"/>
+    </CActorForceCylinder>
+    <CActorForceCylinder id="ApocalypseShockwave2KerriganHd" parent="ApocalypseShockwaveBaseKerriganHd">
+        <HostSiteOps Ops="SOpTargetPoint SOpShadow SOpMoveUpBy2"/>
+    </CActorForceCylinder>
+    <CActorForceCylinder id="ApocalypseShockwave3KerriganHd" parent="ApocalypseShockwaveBaseKerriganHd">
+        <HostSiteOps Ops="SOpTargetPoint SOpShadow SOpMoveUpBy4"/>
+    </CActorForceCylinder>
+    <CActorSite id="ChainReaction1ImpactSiteKerriganHd" parent="GenericAttackImpactSite"/>
+    <CActorUnit id="StukovHd" parent="GenericUnitStandard" unitName="StukovHd">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="UnloadDropAnim"/>
+        <On Terms="ActorCreation" Send="Create StukovHeroGlow"/>
+        <On Terms="ActorCreation" Send="RefSet ::global.Stukov ::Self"/>
+        <On Terms="Abil.CorrosiveBlastStukovHd.SourceCastStart" Send="AnimPlay Spell Attack"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Spell" Send="AnimClear Spell"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="AnimClear Birth"/>
+        <On Terms="UnitDeathCustomize" Target="StukovHeroGlow" Send="Destroy"/>
+        <DeathArray index="Normal" SoundLink="Stukov_Death_SFX" VoiceLink="Stukov_Death"/>
+        <PortraitActor value="InfestedStukovPortrait"/>
+        <PortraitModel value="InfestedStukovPortrait"/>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <BarOffset value="35"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-InfestedStukov.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-Stukov.dds"/>
+        <SoundArray index="Ready" value="Stukov_Ready"/>
+        <SoundArray index="Help" value="Stukov_Help"/>
+        <SoundArray index="What" value="Stukov_What"/>
+        <SoundArray index="Yes" value="Stukov_Yes"/>
+        <SoundArray index="Attack" value="Stukov_Attack"/>
+        <SoundArray index="Pissed" value="Stukov_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-Stukov.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-InfestedStukov.dds"/>
+        </Wireframe>
+        <WireframeShieldColor value="255,0,128,0"/>
+    </CActorUnit>
+    <CActorAction id="StukovAttackHd" parent="GenericAttack" effectImpact="StukovWeaponDamageHd" effectLaunch="StukovWeaponLMHd">
+        <LaunchAssets Sound="Stukov_Acid_Launch"/>
+        <Missile value="StukovAttackMissileHd"/>
+        <ImpactMap index="None" Model="StukovWeaponAttackImpactHd" Sound="SporeCrawler_AttackImpact"/>
+        <ImpactPhysics Name="InfestedStukovAttackImpact" MatchKeys="Basic" Physics="InfestedStukovAttackDeathForce"/>
+    </CActorAction>
+    <CActorMissile id="StukovAttackMissileHd" parent="GenericAttackMissile" unitName="StukovWeaponHd">
+        <On Terms="ActorCreation" Send="SetTintColor 128,255,128"/>
+    </CActorMissile>
     <CActorModel id="PlusSixSelectableModHd" parent="ModelAddition">
         <EditorCategories value=""/>
         <Host Subject="MechanicalMilitarizedTransportEnemyHd"/>
@@ -430,6 +686,14 @@
         <Host Subject="PurchaseFlagHd"/>
         <HostSiteOps Ops="SOpAttachOrigin"/>
         <Model value="HitTestSphere"/>
+    </CActorModel>
+    <CActorModel id="CorrosiveBlastModelStukovHd" parent="ModelAddition">
+        <On Terms="Behavior.CorrosiveBlastStukovHd.On" Send="Create"/>
+        <On Terms="Behavior.CorrosiveBlastStukovHd.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation" Send="SetScale 1.400000 0.400000"/>
+        <On Terms="UnitDeath" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="0.850000"/>
     </CActorModel>
     <CActorRange id="SunkenColonyRangeHd">
         <On Terms="SelectionLocalUpdate.SunkenColonyHd.Start" Send="Create"/>

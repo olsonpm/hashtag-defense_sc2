@@ -48,6 +48,7 @@
 <Unit id="WasplingBurrowHd"/>
 <Unit id="PathTesterRadius05Hd"/>
 <Unit id="AttackDroneHubHd"/>
+<Unit id="SlowTicklerMarineTestHd"/>
 <Unit id="HolePuncherHd"/>
 <Unit id="LightDroneEnemyHd"/>
 <Unit id="LightProbeEnemyHd"/>
@@ -67,4 +68,6 @@
 <Unit id="TopLeftHdDefendLocationBeacon"/>
 <Unit id="TopRightHdDefendLocationBeacon"/>
 <Unit id="ChooserHd"/>
+<Unit id="StukovHd"/>
+<Unit id="KerriganHd"/>
 </Preload>

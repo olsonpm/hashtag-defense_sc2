@@ -5,6 +5,7 @@ Button/Hotkey/BuildWallTerranHd=W
 Button/Hotkey/BuildWallZergHd=W
 Button/Hotkey/BurrowLurkerMPHd=R
 Button/Hotkey/ClearUnitChooserRallyHd=Escape
+Button/Hotkey/CorrosiveBlastStukovHd=Q
 Button/Hotkey/InfestedSiegeTankRootHd=R
 Button/Hotkey/InfestedSiegeTankUprootHd=R
 Button/Hotkey/PhotonCannonHd=C

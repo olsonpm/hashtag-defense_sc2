@@ -8,6 +8,18 @@
             <VitalMaxFractionArray index="Shields" value="-0.8"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="ChainReactionMarkerKerriganHd">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Duration value="0.7"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CorrosiveBlastStukovHd">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-corrosiveblast.dds"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Duration value="10"/>
+        <Modification LifeArmorMultiplier="0.5"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="PerfectSpecimenModHd">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -30,6 +42,7 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Modification>
             <DamageDealtAttributeMultiplier index="Mechanical" value="-0.2"/>
+            <DamageDealtAttributeUnscaled index="Mechanical" value="-1"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="DecreaseVsLightAttributeDamageHd">
@@ -37,6 +50,7 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Modification>
             <DamageDealtAttributeMultiplier index="Light" value="-0.2"/>
+            <DamageDealtAttributeUnscaled index="Light" value="-1"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="DecreaseVsBiologicalAttributeDamageHd">
@@ -44,6 +58,7 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Modification>
             <DamageDealtAttributeMultiplier index="Biological" value="-0.2"/>
+            <DamageDealtAttributeUnscaled index="Biological" value="-1"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="DecreaseVsBossAttributeDamageHd">
@@ -51,6 +66,7 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Modification>
             <DamageDealtAttributeMultiplier index="Heroic" value="-0.2"/>
+            <DamageDealtAttributeUnscaled index="Heroic" value="-1"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="EnemyGhostHd">
@@ -82,6 +98,7 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Modification>
             <DamageDealtAttributeMultiplier index="Armored" value="-0.2"/>
+            <DamageDealtAttributeUnscaled index="Armored" value="-1"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="IncreaseVsLightAttributeDamageHd">
@@ -209,10 +226,6 @@
         <Period value="0.0625"/>
         <InitialEffect value="PushSAHd"/>
         <PeriodicEffect value="PushSAHd"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="ShrikeTurret">
-        <InfoFlags index="Hidden" value="0"/>
-        <Requirements value=""/>
     </CBehaviorBuff>
     <CBehaviorBuff id="ShrikeTurretBunkerHd">
         <InfoFlags index="Hidden" value="1"/>

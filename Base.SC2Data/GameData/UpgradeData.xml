@@ -57,6 +57,16 @@
         <EffectArray Reference="Weapon,CrucioShockCannonInfestedSiegeTankHd,Level" Value="1"/>
         <EffectArray Reference="Effect,AcidSporesDamageGuardianHd,Amount" Value="4"/>
         <EffectArray Reference="Weapon,AcidSporesGuardianHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,CorrosiveBlastDamageStukovHd,Amount" Value="6"/>
+        <EffectArray Reference="Effect,StukovWeaponDamageHd,Amount" Value="5"/>
+        <EffectArray Reference="Weapon,StukovWeaponHd,Level" Value="1"/>
+        <EffectArray Reference="Effect,ChainReaction1DamageKerriganHd,Amount" Value="2.5"/>
+        <EffectArray Reference="Effect,ChainReaction2DamageKerriganHd,Amount" Value="2.5"/>
+        <EffectArray Reference="Effect,ChainReaction3DamageKerriganHd,Amount" Value="2.5"/>
+        <EffectArray Reference="Effect,ChainReaction4DamageKerriganHd,Amount" Value="2.5"/>
+        <EffectArray Reference="Effect,ChainReaction5DamageKerriganHd,Amount" Value="2.5"/>
+        <EffectArray Reference="Effect,ApocalypseDamageKerriganHd,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,EnergyBlastKerriganHd,Level" Value="1"/>
         <AffectedUnitArray value="InfestedTerranHd"/>
         <AffectedUnitArray value="RoachHd"/>
         <AffectedUnitArray value="LurkerHd"/>

@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CEffectEnumArea id="ApocalypseSAKerriganHd">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="8" Effect="ApocalypseSetKerriganHd"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="ApocalypseDamageKerriganHd" parent="DU_WEAP">
+        <EditorCategories value="Race:Zerg"/>
+        <Kind value="Splash"/>
+        <KindSplash value="Splash"/>
+        <Amount value="50"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectSet id="ApocalypseInitialSetKerriganHd">
+        <EffectArray value="ApocalypseSAKerriganHd"/>
+        <EffectArray value="KerriganAbilityEfficiency"/>
+        <TargetLocationType value="UnitOrPoint"/>
+    </CEffectSet>
+    <CEffectSet id="ApocalypseSetKerriganHd">
+        <EffectArray value="K5InfestBroodlings"/>
+        <EffectArray value="ApocalypseDamageKerriganHd"/>
+    </CEffectSet>
     <CEffectTeleport id="BlinkHd">
         <ValidatorArray value="CasterNotFungalGrowthed"/>
         <ValidatorArray value="IsBurrowedHd"/>
@@ -28,6 +50,141 @@
         <SearchFilters value="Ground;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <SearchFlags index="OffsetByUnitRadius" value="0"/>
     </CEffectDamage>
+    <CEffectSet id="ChainReaction1KerriganHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction">
+            <MatchFlags index="Link" value="1"/>
+        </Marker>
+        <EffectArray value="ChainReaction1DelayKerriganHd"/>
+        <EffectArray value="ChainReaction1DamageKerriganHd"/>
+        <EffectArray value="ChainReactionMarkerKerriganHd"/>
+    </CEffectSet>
+    <CEffectDamage id="ChainReaction1DamageKerriganHd" parent="DU_WEAP">
+        <Marker Link="ChainReaction"/>
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="ChainReaction1DelayKerriganHd">
+        <ValidatorArray value="HasK5ChainLightningUpgrade"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.125"/>
+        <FinalEffect value="ChainReaction1SearchForNewTargetKerriganHd"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="ChainReaction1SearchForNewTargetKerriganHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction"/>
+        <ImpactLocation Effect="ChainReaction1Delay" Value="TargetPoint"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetSorts>
+            <SortArray value="TSDistanceToTarget"/>
+        </TargetSorts>
+        <AreaArray MaxCount="1" Radius="5" Effect="ChainReaction2KerriganHd"/>
+    </CEffectEnumArea>
+    <CEffectSet id="ChainReaction2KerriganHd">
+        <ValidatorArray value="NotHaveChainReactionMarker"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction"/>
+        <EffectArray value="ChainReaction2DelayKerriganHd"/>
+        <EffectArray value="ChainReaction2DamageKerriganHd"/>
+        <EffectArray value="ChainReactionMarkerKerriganHd"/>
+    </CEffectSet>
+    <CEffectDamage id="ChainReaction2DamageKerriganHd" parent="DU_WEAP">
+        <Marker Link="ChainReaction"/>
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="ChainReaction2DelayKerriganHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.125"/>
+        <FinalEffect value="ChainReaction2SearchForNewTargetKerriganHd"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="ChainReaction2SearchForNewTargetKerriganHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction"/>
+        <ImpactLocation Effect="ChainReaction2Delay" Value="TargetPoint"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetSorts>
+            <SortArray value="TSDistanceToTarget"/>
+        </TargetSorts>
+        <AreaArray MaxCount="1" Radius="5" Effect="ChainReaction3KerriganHd"/>
+    </CEffectEnumArea>
+    <CEffectSet id="ChainReaction3KerriganHd">
+        <ValidatorArray value="NotHaveChainReactionMarker"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction"/>
+        <EffectArray value="ChainReaction3DelayKerriganHd"/>
+        <EffectArray value="ChainReaction3DamageKerriganHd"/>
+        <EffectArray value="ChainReactionMarkerKerriganHd"/>
+    </CEffectSet>
+    <CEffectDamage id="ChainReaction3DamageKerriganHd" parent="DU_WEAP">
+        <Marker Link="ChainReaction"/>
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="ChainReaction3DelayKerriganHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.125"/>
+        <FinalEffect value="ChainReaction3SearchForNewTargetKerriganHd"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="ChainReaction3SearchForNewTargetKerriganHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction"/>
+        <ImpactLocation Effect="ChainReaction3Delay" Value="TargetPoint"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetSorts>
+            <SortArray value="TSDistanceToTarget"/>
+        </TargetSorts>
+        <AreaArray MaxCount="1" Radius="5" Effect="ChainReaction4KerriganHd"/>
+    </CEffectEnumArea>
+    <CEffectSet id="ChainReaction4KerriganHd">
+        <ValidatorArray value="NotHaveChainReactionMarker"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction"/>
+        <EffectArray value="ChainReaction4DelayKerriganHd"/>
+        <EffectArray value="ChainReaction4DamageKerriganHd"/>
+        <EffectArray value="ChainReactionMarkerKerriganHd"/>
+    </CEffectSet>
+    <CEffectDamage id="ChainReaction4DamageKerriganHd" parent="DU_WEAP">
+        <Marker Link="ChainReaction"/>
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="ChainReaction4DelayKerriganHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.125"/>
+        <FinalEffect value="ChainReaction4SearchForNewTargetKerriganHd"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="ChainReaction4SearchForNewTargetKerriganHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction"/>
+        <ImpactLocation Effect="ChainReaction4Delay" Value="TargetPoint"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetSorts>
+            <SortArray value="TSDistanceToTarget"/>
+        </TargetSorts>
+        <AreaArray MaxCount="1" Radius="5" Effect="ChainReaction5KerriganHd"/>
+    </CEffectEnumArea>
+    <CEffectSet id="ChainReaction5KerriganHd">
+        <ValidatorArray value="NotHaveChainReactionMarker"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="ChainReaction"/>
+        <EffectArray value="ChainReaction5DamageKerriganHd"/>
+    </CEffectSet>
+    <CEffectDamage id="ChainReaction5DamageKerriganHd" parent="DU_WEAP">
+        <Marker Link="ChainReaction"/>
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="ChainReactionMarkerKerriganHd">
+        <EditorCategories value="Race:Zerg"/>
+    </CEffectApplyBehavior>
     <CEffectApplyBehavior id="DecreaseVsArmoredABHd">
         <Behavior value="DecreaseVsArmoredAttributeDamageHd"/>
     </CEffectApplyBehavior>
@@ -49,6 +206,24 @@
     <CEffectApplyBehavior id="DecreaseVsBossABHd">
         <Behavior value="DecreaseVsBossAttributeDamageHd"/>
     </CEffectApplyBehavior>
+    <CEffectLaunchMissile id="CorrosiveBlastLMStukovHd">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="CorrosiveBlastSetStukovHd"/>
+        <AmmoUnit value="DevastatingShotWeaponStukovHd"/>
+    </CEffectLaunchMissile>
+    <CEffectApplyBehavior id="CorrosiveBlastABStukovHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Behavior value="CorrosiveBlastStukovHd"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="CorrosiveBlastDamageStukovHd" parent="DU_WEAP">
+        <EditorCategories value="Race:Zerg"/>
+        <Kind value="Ranged"/>
+        <Amount value="100"/>
+    </CEffectDamage>
+    <CEffectSet id="CorrosiveBlastSetStukovHd">
+        <EffectArray value="CorrosiveBlastDamageStukovHd"/>
+        <EffectArray value="CorrosiveBlastABStukovHd"/>
+    </CEffectSet>
     <CEffectCreatePersistent id="ExitEffectHd">
         <EditorCategories value=""/>
         <InitialDelay value="1"/>
@@ -329,6 +504,22 @@
         <ImpactEffect value="BileLauncherDamageHd"/>
         <AmmoUnit value="BileLauncherMissileHd"/>
     </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="StukovWeaponLMHd">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="StukovWeaponDamageHd"/>
+        <AmmoUnit value="StukovWeaponHd"/>
+        <Movers Link="MissileDefault"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="StukovWeaponDamageHd">
+        <EditorCategories value="Race:Terran"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Visibility value="Visible"/>
+        <Flags index="Notification" value="1"/>
+        <Amount value="40"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <ArmorReduction value="1"/>
+    </CEffectDamage>
     <CEffectDamage id="SunkenColonyDamageHd" parent="DU_WEAP">
         <EditorCategories value="Race:Zerg"/>
         <Amount value="30"/>
@@ -561,6 +752,7 @@
         <Kind value="Ranged"/>
         <Amount value="30"/>
         <SearchFlags index="CallForHelp" value="1"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="HolePuncherLMHd">
         <EditorCategories value="Race:Protoss"/>
@@ -1532,6 +1724,7 @@
         <Kind value="Ranged"/>
         <Amount value="40"/>
         <SearchFlags index="CallForHelp" value="1"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="TempestLaunchMissileGroundHd">
         <EditorCategories value="Race:Protoss"/>

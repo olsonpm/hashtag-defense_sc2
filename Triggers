@@ -29350,10 +29350,10 @@
     <Element Type="Category" Id="0F8934C9">
         <Item Type="FunctionDef" Id="86C1AF0D"/>
         <Item Type="Trigger" Id="C2408DF2"/>
-        <Item Type="Trigger" Id="D6237889"/>
-        <Item Type="Trigger" Id="5479D409"/>
         <Item Type="Trigger" Id="398C4732"/>
         <Item Type="Trigger" Id="0FDDBDB3"/>
+        <Item Type="Trigger" Id="D6237889"/>
+        <Item Type="Trigger" Id="5479D409"/>
         <Item Type="Trigger" Id="46DE3DE3"/>
         <Item Type="Trigger" Id="7FA78350"/>
     </Element>
@@ -29492,6 +29492,94 @@
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Race"/>
     </Element>
+    <Element Type="Trigger" Id="398C4732">
+        <Event Type="FunctionCall" Id="C5638C1C"/>
+        <Condition Type="FunctionCall" Id="74A933D0"/>
+        <Action Type="FunctionCall" Id="1A71199E"/>
+    </Element>
+    <Element Type="FunctionCall" Id="C5638C1C">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000120"/>
+    </Element>
+    <Element Type="FunctionCall" Id="74A933D0">
+        <FunctionDef Type="FunctionDef" Library="1" Id="AC7EB56E"/>
+    </Element>
+    <Element Type="FunctionCall" Id="1A71199E">
+        <FunctionDef Type="FunctionDef" Library="1" Id="96D4BE94"/>
+        <Parameter Type="Param" Id="0D8D6BDE"/>
+        <Parameter Type="Param" Id="FCE9CD54"/>
+    </Element>
+    <Element Type="Param" Id="0D8D6BDE">
+        <ParameterDef Type="ParamDef" Library="1" Id="64E4CC70"/>
+        <Value>1</Value>
+        <ValueType Type="int"/>
+    </Element>
+    <Element Type="Param" Id="FCE9CD54">
+        <ParameterDef Type="ParamDef" Library="1" Id="B7B64FD7"/>
+        <ValueType Type="point"/>
+        <ValueId Id="271112602"/>
+    </Element>
+    <Element Type="Trigger" Id="0FDDBDB3">
+        <Event Type="FunctionCall" Id="540B7E9F"/>
+        <Condition Type="FunctionCall" Id="C8F00A2D"/>
+        <Action Type="FunctionCall" Id="604F65F9"/>
+        <Action Type="FunctionCall" Id="578F493A"/>
+    </Element>
+    <Element Type="FunctionCall" Id="540B7E9F">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000120"/>
+    </Element>
+    <Element Type="FunctionCall" Id="C8F00A2D">
+        <FunctionDef Type="FunctionDef" Library="1" Id="AC7EB56E"/>
+    </Element>
+    <Element Type="FunctionCall" Id="604F65F9">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="943DF2F7"/>
+        <Parameter Type="Param" Id="D4A9F409"/>
+        <Parameter Type="Param" Id="A014C674"/>
+        <Parameter Type="Param" Id="B32062AF"/>
+        <Parameter Type="Param" Id="7BE7FCBA"/>
+    </Element>
+    <Element Type="Param" Id="D4A9F409">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="75FC31CB"/>
+        <Value>1</Value>
+        <ValueType Type="int"/>
+    </Element>
+    <Element Type="Param" Id="A014C674">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="4AA9487D"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="0794D450"/>
+    </Element>
+    <Element Type="Param" Id="B32062AF">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="C93A9DCB"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="D6715A64"/>
+    </Element>
+    <Element Type="Param" Id="7BE7FCBA">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="EEF303AC"/>
+        <Value>1000</Value>
+        <ValueType Type="int"/>
+    </Element>
+    <Element Type="FunctionCall" Id="578F493A">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="943DF2F7"/>
+        <Parameter Type="Param" Id="70AC7DDD"/>
+        <Parameter Type="Param" Id="05472922"/>
+        <Parameter Type="Param" Id="6A82ED78"/>
+        <Parameter Type="Param" Id="B945DD5F"/>
+    </Element>
+    <Element Type="Param" Id="70AC7DDD">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="75FC31CB"/>
+        <Value>1</Value>
+        <ValueType Type="int"/>
+    </Element>
+    <Element Type="Param" Id="05472922">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="4AA9487D"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="D41E85DA"/>
+    </Element>
+    <Element Type="Param" Id="6A82ED78">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="C93A9DCB"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="D6715A64"/>
+    </Element>
+    <Element Type="Param" Id="B945DD5F">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="EEF303AC"/>
+        <Value>1000</Value>
+        <ValueType Type="int"/>
+    </Element>
     <Element Type="Trigger" Id="D6237889">
         <Disabled/>
         <Event Type="FunctionCall" Id="78229163"/>
@@ -29588,96 +29676,6 @@
     <Element Type="Param" Id="7AC0AF0F">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="D8219C9F"/>
         <Preset Type="PresetValue" Library="Ntve" Id="2D7D4A59"/>
-    </Element>
-    <Element Type="Trigger" Id="398C4732">
-        <Disabled/>
-        <Event Type="FunctionCall" Id="C5638C1C"/>
-        <Condition Type="FunctionCall" Id="74A933D0"/>
-        <Action Type="FunctionCall" Id="1A71199E"/>
-    </Element>
-    <Element Type="FunctionCall" Id="C5638C1C">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000120"/>
-    </Element>
-    <Element Type="FunctionCall" Id="74A933D0">
-        <FunctionDef Type="FunctionDef" Library="1" Id="AC7EB56E"/>
-    </Element>
-    <Element Type="FunctionCall" Id="1A71199E">
-        <FunctionDef Type="FunctionDef" Library="1" Id="96D4BE94"/>
-        <Parameter Type="Param" Id="0D8D6BDE"/>
-        <Parameter Type="Param" Id="FCE9CD54"/>
-    </Element>
-    <Element Type="Param" Id="0D8D6BDE">
-        <ParameterDef Type="ParamDef" Library="1" Id="64E4CC70"/>
-        <Value>1</Value>
-        <ValueType Type="int"/>
-    </Element>
-    <Element Type="Param" Id="FCE9CD54">
-        <ParameterDef Type="ParamDef" Library="1" Id="B7B64FD7"/>
-        <ValueType Type="point"/>
-        <ValueId Id="271112602"/>
-    </Element>
-    <Element Type="Trigger" Id="0FDDBDB3">
-        <Disabled/>
-        <Event Type="FunctionCall" Id="540B7E9F"/>
-        <Condition Type="FunctionCall" Id="C8F00A2D"/>
-        <Action Type="FunctionCall" Id="604F65F9"/>
-        <Action Type="FunctionCall" Id="578F493A"/>
-    </Element>
-    <Element Type="FunctionCall" Id="540B7E9F">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000120"/>
-    </Element>
-    <Element Type="FunctionCall" Id="C8F00A2D">
-        <FunctionDef Type="FunctionDef" Library="1" Id="AC7EB56E"/>
-    </Element>
-    <Element Type="FunctionCall" Id="604F65F9">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="943DF2F7"/>
-        <Parameter Type="Param" Id="D4A9F409"/>
-        <Parameter Type="Param" Id="A014C674"/>
-        <Parameter Type="Param" Id="B32062AF"/>
-        <Parameter Type="Param" Id="7BE7FCBA"/>
-    </Element>
-    <Element Type="Param" Id="D4A9F409">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="75FC31CB"/>
-        <Value>1</Value>
-        <ValueType Type="int"/>
-    </Element>
-    <Element Type="Param" Id="A014C674">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="4AA9487D"/>
-        <Preset Type="PresetValue" Library="Ntve" Id="0794D450"/>
-    </Element>
-    <Element Type="Param" Id="B32062AF">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="C93A9DCB"/>
-        <Preset Type="PresetValue" Library="Ntve" Id="D6715A64"/>
-    </Element>
-    <Element Type="Param" Id="7BE7FCBA">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="EEF303AC"/>
-        <Value>1000</Value>
-        <ValueType Type="int"/>
-    </Element>
-    <Element Type="FunctionCall" Id="578F493A">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="943DF2F7"/>
-        <Parameter Type="Param" Id="70AC7DDD"/>
-        <Parameter Type="Param" Id="05472922"/>
-        <Parameter Type="Param" Id="6A82ED78"/>
-        <Parameter Type="Param" Id="B945DD5F"/>
-    </Element>
-    <Element Type="Param" Id="70AC7DDD">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="75FC31CB"/>
-        <Value>1</Value>
-        <ValueType Type="int"/>
-    </Element>
-    <Element Type="Param" Id="05472922">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="4AA9487D"/>
-        <Preset Type="PresetValue" Library="Ntve" Id="D41E85DA"/>
-    </Element>
-    <Element Type="Param" Id="6A82ED78">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="C93A9DCB"/>
-        <Preset Type="PresetValue" Library="Ntve" Id="D6715A64"/>
-    </Element>
-    <Element Type="Param" Id="B945DD5F">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="EEF303AC"/>
-        <Value>1000</Value>
-        <ValueType Type="int"/>
     </Element>
     <Element Type="Trigger" Id="46DE3DE3">
         <Disabled/>
@@ -29891,7 +29889,6 @@
     </Element>
     <Element Type="Comment" Id="3BFA6735">
         <Comment>
-            
             Previously we tested for cheese by comparing the distance to the destination and
             the distance to the opposite side of the map.  However this produced false
             positives.  So for now I&apos;m omitting the cheese check and we can revisit if

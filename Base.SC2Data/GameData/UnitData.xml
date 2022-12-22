@@ -252,6 +252,133 @@
         <Race value="Zerg"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="DevastatingShotWeaponStukovHd" parent="MISSILE">
+        <Race value="Zerg"/>
+        <Mover value="DevastatingShotWeapon"/>
+        <EditorCategories value="ObjectFamily:Campaign,ObjectType:Projectile"/>
+    </CUnit>
+    <CUnit id="KerriganHd">
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Colossus" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Small" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <Speed value="2.9492"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <Sight value="13"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="30"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="ApocalypseKerriganHd"/>
+        <AbilArray Link="BlinkHd"/>
+        <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
+        <WeaponArray Link="EnergyBlastKerriganHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="ApocalypseKerriganHd" Type="AbilCmd" AbilCmd="ApocalypseKerriganHd,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="500"/>
+        <ScoreKill value="1000"/>
+        <SubgroupPriority value="99"/>
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+        <TechAliasArray value="Alias_Kerrigan"/>
+        <GlossaryCategory value="Unit/Category/ZergCharacter"/>
+        <HotkeyCategory value="Unit/Category/ZergStory"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <AlliedPushPriority value="11"/>
+    </CUnit>
+    <CUnit id="StukovHd">
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <Speed value="2.25"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="13"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="15"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="CorrosiveBlastStukovHd"/>
+        <AbilArray Link="BlinkHd"/>
+        <BehaviorArray Link="IncreaseVsBossAttributeDamageHd"/>
+        <WeaponArray Link="StukovWeaponHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="CorrosiveBlastStukovHd" Type="AbilCmd" AbilCmd="CorrosiveBlastStukovHd,Execute" Row="2" Column="1"/>
+        </CardLayouts>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="75"/>
+        <ScoreKill value="150"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="98"/>
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+        <GlossaryCategory value="Unit/Category/ZergCharacter"/>
+        <GlossaryStrongArray value="HybridReaver"/>
+        <GlossaryWeakArray value="Immortal"/>
+        <HotkeyCategory value="Unit/Category/ZergStory"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <AlliedPushPriority value="11"/>
+    </CUnit>
+    <CUnit id="StukovWeaponHd" parent="MISSILE_INVULNERABLE">
+        <Race value="Zerg"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="PlusSixModHd">
         <EditorCategories value=""/>
         <FlagArray index="Invulnerable" value="1"/>
@@ -698,6 +825,7 @@
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
     </CUnit>
     <CUnit id="SlowTicklerMarineTestHd">
+        <Attributes index="Heroic" value="1"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -710,8 +838,6 @@
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
         <InnerRadius value="0.5"/>
-        <Attributes index="Light" value="1"/>
-        <Attributes index="Biological" value="1"/>
         <LifeStart value="10000"/>
         <LifeMax value="10000"/>
         <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
@@ -1524,7 +1650,6 @@
         <Radius value="0.2"/>
         <SeparationRadius value="0.2"/>
         <InnerRadius value="0.2"/>
-        <Subtitle value="UnitSubtitle/BossDehakaEnemyHd"/>
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
         <Mob value="Multiplayer"/>

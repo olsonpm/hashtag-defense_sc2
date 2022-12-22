@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CAbilEffectTarget id="ApocalypseKerriganHd">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="ApocalypseInitialSetKerriganHd"/>
+        <Cost>
+            <Cooldown Link="ApocalypseKerriganHd" TimeUse="20"/>
+        </Cost>
+        <Range value="12"/>
+        <PrepTime value="0.5"/>
+        <CursorEffect value="Apocalypse"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Apocalypse"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="BlinkHd">
         <AbilSetId value="Blnk"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -23,6 +36,19 @@
         </InfoArray>
         <ConstructionMover value="Construction"/>
     </CAbilBuild>
+    <CAbilEffectTarget id="CorrosiveBlastStukovHd">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Effect index="0" value="CorrosiveBlastLMStukovHd"/>
+        <Cost>
+            <Cooldown TimeUse="20"/>
+        </Cost>
+        <TargetFilters value="Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="12"/>
+        <Arc value="360"/>
+        <AINotifyEffect value="CorrosiveBlastLMStukovHd"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="DevastatingShot"/>
+    </CAbilEffectTarget>
     <CAbilTransport id="LoadUnloadBunkerHd">
         <AbilSetId value="ULdS"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>

@@ -1,4 +1,5 @@
-﻿Abil/Name/AttackEnemyHd=Attack Enemy
+﻿Abil/Name/ApocalypseKerriganHd=Apocalypse
+Abil/Name/AttackEnemyHd=Attack Enemy
 Abil/Name/BlinkHd=Blink
 Abil/Name/BuildProtossHd=Build
 Abil/Name/BuildSpawnFlagHd=Build Spawn Flag
@@ -6,6 +7,7 @@ Abil/Name/BuildTerranHd=Build
 Abil/Name/BuildZergHd=Build
 Abil/Name/BurrowLurkerHd=Burrow Lurker
 Abil/Name/ClearUnitChooserRallyHd=Clear Unit Chooser Rally
+Abil/Name/CorrosiveBlastStukovHd=Corrosive Blast
 Abil/Name/InfestedSiegeTankRootHd=Root
 Abil/Name/InfestedSiegeTankUprootHd=Uproot
 Abil/Name/LiberatorAATargetHd=AA Target
@@ -73,10 +75,13 @@ Attribute003/Value001/Name=No
 Attribute003/Value002/Name=Yes
 Behavior/Name/AddedArmorModHd=Added Armor
 Behavior/Name/AddedShieldsModHd=Added Shields
+Behavior/Name/CorrosiveBlastStukovHd=Corrosive Blast
 Behavior/Name/FullRefundAvailableSalvageHd=Full Refund Available
 Behavior/Name/IncreasedSpeedModHd=Increased Speed
 Behavior/Name/IsBurrowedHd=Is Burrowed
 Behavior/Name/IsSiegedHd=Is Sieged
+Behavior/Tooltip/CorrosiveBlastStukovHd=Armor cut in half.
+Button/Name/ApocalypseKerriganHd=Apocalypse
 Button/Name/BuildBunkerHd=Build Bunker
 Button/Name/BuildSpineCrawlerZergHd=Build Spine Crawler
 Button/Name/BuildWallProtossHd=Build Wall
@@ -84,6 +89,7 @@ Button/Name/BuildWallTerranHd=Build Wall
 Button/Name/BuildWallZergHd=Build Wall
 Button/Name/BurrowLurkerMPHd=Burrow
 Button/Name/ClearUnitChooserRallyHd=Clear Unit Chooser Rally
+Button/Name/CorrosiveBlastStukovHd=Corrosive Blast
 Button/Name/InfestedSiegeTankRootHd=Root
 Button/Name/InfestedSiegeTankUprootHd=Uproot
 Button/Name/PhotonCannonHd=Photon Cannon
@@ -117,6 +123,7 @@ Button/Name/UpgradeUnitDamageTerranHd=Upgrade Unit Damage
 Button/Name/UpgradeUnitDamageZergHd=Upgrade Unit Damage
 Button/Name/UpgradeZergStructureDamageHd=Upgrade Zerg Structure Damage
 Button/Tooltip/AddedArmorModHd=Experimental space/time manipulator. Grants the ability to slow units in a target area.
+Button/Tooltip/ApocalypseKerriganHd=Deals <c val="00E35B"><d ref="Effect,ApocalypseDamageKerriganHd,Amount"/></c> damage to enemies (only <c val="00E35B"><d ref="Effect,ApocalypseDamageKerriganHd,Amount * 0.8" precision="1"/></c> to bosses).<n/><n/>Damage upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
 Button/Tooltip/ArchonHd=Powerful psionic attacker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/ArmoredCutieEnemyHd=A native insectoid species of the planet Nelyth.
 Button/Tooltip/ArmoredCycloneEnemyHd=Mobile assault drone. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -158,6 +165,7 @@ Button/Tooltip/BurrowLurkerMPHd=Buries the Lurker underground. Burrowed Lurkers 
 Button/Tooltip/ChooserHd=Male Civilian.
 Button/Tooltip/ClearUnitChooserRallyHd=Clears the rally for your unit choosers
 Button/Tooltip/ColossusHd=Powerful battle strider. Can walk up and down cliffs. Attacks incinerate multiple enemies at once.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/CorrosiveBlastStukovHd=Deals <c val="00E35B"><d ref="Effect,CorrosiveBlastDamageStukovHd,Amount"/></c> damage to target enemy(<c val="00E35B"><d ref="Effect,CorrosiveBlastDamageStukovHd,Amount * 1.2" precision="1"/></c> to bosses). Also reduces the enemy's armor by half for 10 seconds.<n/><n/><n/>Damage upgrades by <c val="00E35B">6</c>
 Button/Tooltip/DroneHd=Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/FirebatHd=Specialized anti-infantry attacker.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/GhostHd=Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -171,6 +179,7 @@ Button/Tooltip/InfestedSiegeTankRootHd=Roots the Infested Siege Tank. A rooted I
 Button/Tooltip/InfestedSiegeTankUprootHd=Uproots the Infested Siege Tank. An uprooted Infested Siege Tank has the ability to move but cannot attack. Moves much faster on creep.
 Button/Tooltip/InfestedSiegeTankUprootedHd=Infested heavy tank. Can move when uprooted, but cannot attack. Must plant itself in creep to attack.
 Button/Tooltip/InfestedTerranHd=An Infested Terran does moderate damage and lasts for <d ref="Behavior,InfestedTerranTimedLife,Duration"/> seconds.<n/><n/><c val="FFFF8A">Can attack ground and air units.</c>
+Button/Tooltip/KerriganHd=Queen of Blades and leader of the Swarm. Powerful psionic ranged attacker.
 Button/Tooltip/KillEverythingMarineTestHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/LiberatorAGHd=Immobile defender. Deals heavy single target damage to ground units. Can switch into Fighter mode to provide air support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/LiberatorHd=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
@@ -227,6 +236,7 @@ Button/Tooltip/SpineCrawlerHd=Anti-ground defensive structure. <n/><n/><c val="f
 Button/Tooltip/SpineCrawlerRootHd=Roots the Spine Crawler. A rooted Spine Crawler has the ability to attack ground units but is unable to move.
 Button/Tooltip/SpineCrawlerUprootHd=Uproots the Spine Crawler. An uprooted Spine Crawler has the ability to move but cannot attack. Moves much faster on creep.
 Button/Tooltip/StalkerHd=Ranged attack strider. Can use Blink.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/StukovHd=Once a vice admiral of the UED, Stukov is now infested and commands other Infested Terrans.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/TempestHd=Purifier Faction<n/>Siege artillery craft. Attacks from long range. Can use Disintegration.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/TestFireworkHd=Launches a firework at the chosen location
 Button/Tooltip/TestWeaklingEnemyHd=Fast melee creature. Can morph into a Baneling.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
@@ -416,6 +426,10 @@ Effect/Name/AcidSporesDamageGuardianHd=Acid Spores
 Effect/Name/AcidSporesLMGuardianHd=Acid Spores LM
 Effect/Name/AdeptDamageHd=Damage
 Effect/Name/AdeptLMHd=LM
+Effect/Name/ApocalypseDamageKerriganHd=Apocalypse Damage
+Effect/Name/ApocalypseInitialSetKerriganHd=Apocalypse Initial Set
+Effect/Name/ApocalypseSAKerriganHd=Apocalypse SA
+Effect/Name/ApocalypseSetKerriganHd=Apocalypse Set
 Effect/Name/ArcliteCannonDamageMechanicalSiegeTankTankModeEnemyHd=Arclite Cannon (Damage)
 Effect/Name/ArmoredCutieDamageEnemyHd=Armored Cutie (Damage)
 Effect/Name/ArmoredCutieLMEnemyHd=Armored Cutie LM
@@ -460,7 +474,30 @@ Effect/Name/BossYagdraFirebreathStopIssueOrderEnemyHd=Boss Yagdra Firebreath Sto
 Effect/Name/BossYagdraFirebreathWaitCPEnemyHd=Boss Yagdra Firebreath Wait CP
 Effect/Name/C10CanisterRifleDamageGhostHd=C-10 Canister Rifle (Damage)
 Effect/Name/C10CanisterRifleDamageLightGhostEnemyHd=C-10 Canister Rifle (Damage)
+Effect/Name/ChainReaction1DamageKerriganHd=Chain Reaction 1 Damage
+Effect/Name/ChainReaction1DelayKerriganHd=Chain Reaction 1 Delay
+Effect/Name/ChainReaction1KerriganHd=Chain Reaction 1
+Effect/Name/ChainReaction1SearchForNewTargetKerriganHd=Chain Reaction 1 Search For New Target
+Effect/Name/ChainReaction2DamageKerriganHd=Chain Reaction 2 Damage
+Effect/Name/ChainReaction2DelayKerriganHd=Chain Reaction 2 Delay
+Effect/Name/ChainReaction2KerriganHd=Chain Reaction 2
+Effect/Name/ChainReaction2SearchForNewTargetKerriganHd=Chain Reaction 2 Search For New Target
+Effect/Name/ChainReaction3DamageKerriganHd=Chain Reaction 3 Damage
+Effect/Name/ChainReaction3DelayKerriganHd=Chain Reaction 3 Delay
+Effect/Name/ChainReaction3KerriganHd=Chain Reaction 3
+Effect/Name/ChainReaction3SearchForNewTargetKerriganHd=Chain Reaction 3 Search For New Target
+Effect/Name/ChainReaction4DamageKerriganHd=Chain Reaction 4 Damage
+Effect/Name/ChainReaction4DelayKerriganHd=Chain Reaction 4 Delay
+Effect/Name/ChainReaction4KerriganHd=Chain Reaction 4
+Effect/Name/ChainReaction4SearchForNewTargetKerriganHd=Chain Reaction 4 Search For New Target
+Effect/Name/ChainReaction5DamageKerriganHd=Chain Reaction 5 Damage
+Effect/Name/ChainReaction5KerriganHd=Chain Reaction 5
+Effect/Name/ChainReactionMarkerKerriganHd=Chain Reaction Marker
 Effect/Name/ClawsBiologicalUrsadonEnemyHd=Claws
+Effect/Name/CorrosiveBlastABStukovHd=Corrosive Blast AB
+Effect/Name/CorrosiveBlastDamageStukovHd=Corrosive Blast Damage
+Effect/Name/CorrosiveBlastLMStukovHd=Corrosive Blast LM
+Effect/Name/CorrosiveBlastSetStukovHd=Corrosive Blast Set
 Effect/Name/CrucioShockCannonBlastDamageSiegeTankHd=Crucio Shock Cannon Blast (Damage)
 Effect/Name/CrucioShockCannonBlastInfestedSiegeTankHd=Crucio Shock Cannon Blast
 Effect/Name/CrucioShockCannonDirectedDamageSiegeTankHd=Crucio Shock Cannon Directed (Damage)
@@ -633,6 +670,8 @@ Effect/Name/ScarabUseMagazineHd=Scarab (Use Magazine)
 Effect/Name/ShrikeTurretDamageBunkerHd=Shrike Turret (Damage)
 Effect/Name/SiegeTankSiegedSetHd=Siege Tank - Sieged Set
 Effect/Name/SpinesLightDroneEnemyHd=Spines (Damage)
+Effect/Name/StukovWeaponDamageHd=Stukov Weapon Damage
+Effect/Name/StukovWeaponLMHd=Stukov Weapon LM
 Effect/Name/SunkenColonyDamageHd=Sunken Colony Damage
 Effect/Name/Talons=Talons Missile (Damage)
 Effect/Name/TalonsCPArmoredQueenEnemyHd=Talons CP
@@ -845,6 +884,7 @@ Unit/Name/BottomRightHdDefendLocationBeacon=Bottom Right
 Unit/Name/BunkerHd=Bunker
 Unit/Name/ChooserHd=Chooser
 Unit/Name/ColossusHd=Colossus
+Unit/Name/DevastatingShotWeaponStukovHd=Devastating Shot Weapon
 Unit/Name/DroneHd=Drone
 Unit/Name/DutchWeaponBossGiantRorySwannEnemyHd=Dutch Weapon
 Unit/Name/ExtraLifeHd=Extra Life
@@ -860,6 +900,7 @@ Unit/Name/IncreasedSpeedModHd=Increased Speed
 Unit/Name/InfestedSiegeTankHd=Infested Siege Tank
 Unit/Name/InfestedSiegeTankUprootedHd=Infested Siege Tank
 Unit/Name/InfestedTerranHd=Infested Terran
+Unit/Name/KerriganHd=Kerrigan
 Unit/Name/KillEverythingMarineTestHd=Kill Everything Marine
 Unit/Name/LeftHdDefendLocationBeacon=Left
 Unit/Name/LiberatorAGHd=Liberator
@@ -931,6 +972,8 @@ Unit/Name/SpineCrawlerHd=Spine Crawler
 Unit/Name/SpineCrawlerWeaponHd=Spine Crawler
 Unit/Name/StalkerHd=Stalker
 Unit/Name/StalkerWeaponHd=Stalker
+Unit/Name/StukovHd=Stukov
+Unit/Name/StukovWeaponHd=Stukov Weapon
 Unit/Name/SunkenColonyHd=Sunken Colony
 Unit/Name/TalonsMissileWeaponArmoredQueenEnemyHd=Talons Missile Weapon
 Unit/Name/TempestHd=Tempest
@@ -954,6 +997,7 @@ Unit/Name/WeaklingEnemyHd=Weakling
 Unit/ShieldArmorName/ShieldArmor=Shield Armor
 UnitKillRank/BossDehakaEnemyHd=Primal Pack Leader
 UnitSubtitle/BossDehakaEnemyHd=Primal Pack Leader
+UnitSubtitle/StukovHd=Infested Terran
 Upgrade/Name/BunkerTurretDamageHd=Bunker Turret Damage
 Upgrade/Name/ProtossStructureDamageHd=Protoss Structure Damage
 Upgrade/Name/UnitDamageProtossHd=Unit Damage
@@ -990,6 +1034,7 @@ Weapon/Name/ClawsLightDroneEnemyHd=Claws
 Weapon/Name/CrucioShockCannonInfestedSiegeTankHd=Crucio Shock Cannon
 Weapon/Name/CrucioShockCannonSiegeTankHd=Crucio Shock Cannon
 Weapon/Name/DutchBossGiantRorySwannEnemyHd=Dutch
+Weapon/Name/EnergyBlastKerriganHd=Energy Blast
 Weapon/Name/EyeBeamsGroundBossStoneZealotEnemyHd=Eye Beams Ground
 Weapon/Name/FirebatHd=Perdition Flamethrower
 Weapon/Name/FirebreathBossYagdraEnemyHd=Firebreath
@@ -1050,6 +1095,7 @@ Weapon/Name/ScarabsReaverHd=Scarabs
 Weapon/Name/ShrikeTurretBunkerHd=Shrike Turret
 Weapon/Name/SpinesLurkerHd=Spines
 Weapon/Name/SpinesWasplingHd=Spines
+Weapon/Name/StukovWeaponHd=Stukov Weapon
 Weapon/Name/SubterraneanTentacleSunkenColonyHd=Subterranean Tentacle
 Weapon/Name/TalonsArmoredQueenEnemyHd=Talons
 Weapon/Name/TalonsMissileArmoredQueenEnemyHd=Talons Missile
@@ -1074,6 +1120,7 @@ Weapon/Tip/BileBombBileLauncherHd=Attack upgrades by <c val="00E35B">2</c><n/><c
 Weapon/Tip/C10CanisterRifleHd=Attack upgrades by <c val="00E35B">3</c>
 Weapon/Tip/CrucioShockCannonInfestedSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/CrucioShockCannonSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
+Weapon/Tip/EnergyBlastKerriganHd=Attack upgrades by <c val="00E35B">2.5</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
 Weapon/Tip/FirebatHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/GlaiveWurmHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/GuassRifleHd=Attack upgrades by <c val="00E35B">1</c>
@@ -1092,6 +1139,7 @@ Weapon/Tip/RedOrbHolePuncherHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/ScarabsReaverHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/ShrikeTurretBunkerHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/SpinesLurkerHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
+Weapon/Tip/StukovWeaponHd=Attack upgrades by <c val="00E35B">5</c>
 Weapon/Tip/SubterraneanTentacleSunkenColonyHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/TalonsArmoredQueenEnemyHd=
 Weapon/Tip/TempestGroundHd=Attack upgrades by <c val="00E35B">4</c>

@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="ApocalypseKerriganHd">
+        <Icon value="Assets\Textures\btn-ability-kerrigan-apocalypse.dds"/>
+        <Hotkey value="Button/Hotkey/K5Leviathan"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="K5Leviathan"/>
+    </CButton>
+    <CButton id="CorrosiveBlastStukovHd">
+        <Icon value="Assets\Textures\btn-ability-zerg-corrosiveblast.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-corrosiveblast.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
     <CButton id="TestFireworkHd">
         <Icon value="Assets\Textures\lunarnewyearfirework_coop.dds"/>
     </CButton>

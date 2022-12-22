@@ -108,6 +108,120 @@
         <ScaleMax value="0.350000,0.350000,0.350000"/>
         <ScaleMin value="0.350000,0.350000,0.350000"/>
     </CModel>
+    <CModel id="CorrosiveBlastModelStukovHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Zerg\KerriganCorrosiveSpores\KerriganCorrosiveSpores.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+        <SelectionRadius value="5.000000"/>
+        <ShadowRadius value="5.000000"/>
+    </CModel>
+    <CModel id="CorrosiveBlastAttackImpactStukovHd" parent="Unit" Race="Zerg">
+        <Model value="Assets\Effects\Zerg\StukovCorrosiveBlastMissileImpact\StukovCorrosiveBlastMissileImpact.m3"/>
+    </CModel>
+    <CModel id="CorrosiveBlastWeaponStukovHd" parent="MissileFX">
+        <Model value="Assets\Effects\Zerg\StukovCorrosiveBlastMissile\StukovCorrosiveBlastMissile.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CModel id="ApocalypseBeamKerriganHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Zerg\KerriganApocalypseBeam\KerriganApocalypseBeam.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CModel id="KerriganEnergyBlastHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Zerg\KerriganEnergyAttack\KerriganEnergyAttack.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CModel id="KerriganHd" parent="Unit" Race="Zerg">
+        <Model value="Assets\Units\Zerg\KerriganInfested\KerriganInfested.m3"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganInfested_Death_KneeDown"/>
+            <Type value="Sound"/>
+            <Time value="1.900000"/>
+            <Payload value="KerriganInfested_Death_KneeDown"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganInfested_Death_WingFoley"/>
+            <Type value="Sound"/>
+            <Time value="2.017000"/>
+            <Payload value="KerriganInfested_Death_WingFoley"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganInfested_Death_Bodyfall"/>
+            <Type value="Sound"/>
+            <Time value="3.180000"/>
+            <Payload value="KerriganInfested_Death_Bodyfall"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganInfested_Death_WingStabGround"/>
+            <Type value="Sound"/>
+            <Time value="3.674000"/>
+            <Payload value="KerriganInfested_Death_WingStabGround"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="KerriganAttackLaunch"/>
+            <Type value="Sound"/>
+            <Time value="0.200000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="KerriganAttackLaunch"/>
+            <Type value="Sound"/>
+            <Time value="0.480000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="KerriganAttackImpact"/>
+            <Type value="Sound"/>
+            <Time value="0.250000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="KerriganAttackImpact"/>
+            <Type value="Sound"/>
+            <Time value="0.530000"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraMid05"/>
+        <Radius value="0.375000"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+        <SelectionRadius value="0.531200"/>
+        <ShadowRadius value="0.531200"/>
+        <TechPurchaseCamera value="Star2CameraMid05"/>
+        <UnitGlossaryCamera value="Star2CameraMid05"/>
+    </CModel>
+    <CModel id="StukovHd" parent="Unit" Race="Zerg">
+        <Model value="Assets\Units\Zerg\InfestedStukov\InfestedStukov.m3"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Stukov_Death_FallToKnees"/>
+            <Type value="Sound"/>
+            <Time value="1.450000"/>
+            <Payload value="Stukov_Death_FallToKnees"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Stukov_Death_BodyFall"/>
+            <Type value="Sound"/>
+            <Time value="3.100000"/>
+            <Payload value="Stukov_Death_BodyFall"/>
+        </Events>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraHigh04"/>
+        <SquibTypeDefault value="Flesh"/>
+        <TechPurchaseCamera value="Star2CameraHigh04"/>
+        <UnitGlossaryCamera value="Star2CameraHigh04"/>
+    </CModel>
+    <CModel id="StukovWeaponAttackImpactHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Zerg\StukovMissileImpact\StukovMissileImpact.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CModel id="StukovWeaponHd" parent="MissileFX">
+        <Model value="Assets\Effects\Zerg\StukovMissile\StukovMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
     <CModel id="PerfectSpecimenIndicatorModHd" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Other\HighYieldActiveCrystals\HighYieldActiveCrystals.m3"/>
         <Lighting value="CelestialBeamShadowTendrilImpact"/>

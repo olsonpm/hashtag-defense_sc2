@@ -53,6 +53,29 @@
         <Backswing value="0"/>
         <Effect value="BileLauncherLMHd"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="EnergyBlastKerriganHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <DisplayEffect value="ChainReaction1DamageKerriganHd"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="8"/>
+        <Range value="6"/>
+        <Marker Link="ChainReaction">
+            <MatchFlags index="Link" value="1"/>
+            <MismatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="2"/>
+        <Effect value="ChainReaction1KerriganHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="StukovWeaponHd">
+        <EditorCategories value="Race:Zerg"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <DisplayEffect value="StukovWeaponDamageHd"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Period value="2"/>
+        <Effect value="StukovWeaponLMHd"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="SubterraneanTentacleSunkenColonyHd">
         <EditorCategories value="Race:Zerg"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-seismicspines.dds"/>

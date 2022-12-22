@@ -1681,6 +1681,8 @@ trigger gt_choosespawnlocationbotleft;
 trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
 trigger gt_testinitrace;
+trigger gt_testinitcam;
+trigger gt_testinitresources;
 trigger gt_testpaths;
 trigger gt_showkickplayerlist;
 trigger gt_kickplayerlistcancel;
@@ -5032,6 +5034,61 @@ void gt_testinitrace_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: test - init cam
+//--------------------------------------------------------------------------------------------------
+bool gt_testinitcam_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib1_gf_setcameratopointforplayer(1, PointFromId(271112602));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_testinitcam_Init () {
+    gt_testinitcam = TriggerCreate("gt_testinitcam_Func");
+    TriggerAddEventMapInit(gt_testinitcam);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: test - init resources
+//--------------------------------------------------------------------------------------------------
+bool gt_testinitresources_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSetTo, 1000);
+    PlayerModifyPropertyInt(1, c_playerPropVespene, c_playerPropOperSetTo, 1000);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_testinitresources_Init () {
+    gt_testinitresources = TriggerCreate("gt_testinitresources_Func");
+    TriggerAddEventMapInit(gt_testinitresources);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: test paths
 //--------------------------------------------------------------------------------------------------
 bool gt_testpaths_Func (bool testConds, bool runActions) {
@@ -7233,6 +7290,8 @@ void InitTriggers () {
     gt_choosespawnlocationleft_Init();
     gt_choosespawnlocationtopleft_Init();
     gt_testinitrace_Init();
+    gt_testinitcam_Init();
+    gt_testinitresources_Init();
     gt_testpaths_Init();
     gt_showkickplayerlist_Init();
     gt_kickplayerlistcancel_Init();
