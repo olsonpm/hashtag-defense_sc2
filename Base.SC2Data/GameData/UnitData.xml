@@ -252,6 +252,102 @@
         <Race value="Zerg"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="WormyHd">
+        <DeathRevealRadius value="3"/>
+        <Facing value="29.9707"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="10"/>
+        <Food value="-2"/>
+        <CostCategory value="Technology"/>
+        <CostResource index="Minerals" value="10"/>
+        <AttackTargetPriority value="11"/>
+        <AbilArray Link="BuildinProgressNydusCanal"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <BehaviorArray Link="MakeCreepNydusAttacker"/>
+        <BehaviorArray Link="NydusDestroyerInvulnerability"/>
+        <WeaponArray Link="WormySpitHd" Turret="WormyHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <MinimapRadius value="1"/>
+        <Footprint value="Footprint2x2IgnoreCreepContour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="2"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="WormySpitHd" parent="MISSILE">
+        <Race value="Zerg"/>
+        <Mover value="MissileDefault"/>
+        <EditorCategories value="ObjectFamily:Melee,ObjectType:Projectile"/>
+    </CUnit>
+    <CUnit id="ShackledUltraliskHd">
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="30000"/>
+        <LifeMax value="30000"/>
+        <!--
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        -->
+        <Sight value="10"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="AttackEnemyHd"/>
+        <AbilArray Link="SalvageRefund8MineralsHd"/>
+        <AbilArray Link="SalvageFullRefundHd"/>
+        <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
+        <WeaponArray Link="SummonBoulderShackledUltraliskHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="0.875"/>
+        <MinimapRadius value="0.875"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
+        <LeaderAlias value=""/>
+    </CUnit>
     <CUnit id="DevastatingShotWeaponStukovHd" parent="MISSILE">
         <Race value="Zerg"/>
         <Mover value="DevastatingShotWeapon"/>
@@ -840,6 +936,7 @@
         <InnerRadius value="0.5"/>
         <LifeStart value="10000"/>
         <LifeMax value="10000"/>
+        <LifeRegenRate value="200"/>
         <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="10"/>
         <Acceleration value="1000"/>
@@ -885,6 +982,7 @@
         </Fidget>
         <TauntDuration index="Cheer" value="5"/>
         <TauntDuration index="Dance" value="5"/>
+        <LifeRegenDelay value="1"/>
     </CUnit>
     <CUnit id="HolePuncherHd">
         <KillDisplay value="Always"/>

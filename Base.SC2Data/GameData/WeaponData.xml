@@ -67,6 +67,26 @@
         <Period value="2"/>
         <Effect value="ChainReaction1KerriganHd"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="WormySpitHd">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
+        <DisplayEffect value="WormySpitDamageHd"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Period value="2"/>
+        <Effect value="WormySpitLMHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SummonBoulderShackledUltraliskHd">
+        <EditorCategories value="Race:Zerg"/>
+        <DisplayEffect value="SummonBoulderDamageShackledUltraliskHd"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <ArcSlop value="0"/>
+        <Period value="2"/>
+        <Effect value="SummonBoulderCPShackledUltraliskHd"/>
+        <LegacyOptions index="KeepChanneling" value="1"/>
+        <Arc value="360"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="StukovWeaponHd">
         <EditorCategories value="Race:Zerg"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
@@ -137,6 +157,7 @@
         <DamagePoint value="0.05"/>
         <Backswing value="0.75"/>
         <Effect value="GuassRifleSlowTicklerMarineTestHd"/>
+        <Range value="12"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="ClawsBossDehakaEnemyHd">
         <EditorCategories value="Race:Zerg"/>
@@ -1132,7 +1153,6 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="FirebreathBossYagdraEnemyHd">
         <EditorCategories value="Race:Zerg"/>
-        <Options index="Hidden" value="1"/>
         <DisplayEffect value="BossYagdraFirebreathDamageEnemyHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="20"/>

@@ -50,6 +50,33 @@
         <SearchFilters value="Ground;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <SearchFlags index="OffsetByUnitRadius" value="0"/>
     </CEffectDamage>
+    <CEffectDamage id="WormySpitDamageHd" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Protoss"/>
+        <Amount value="10"/>
+        <Death value="Disintegrate"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="WormySpitLMHd">
+        <ValidatorArray index="0" value="NydusCanalAttackerTargetFilters"/>
+        <ValidatorArray value=""/>
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="WormySpitDamageHd"/>
+        <AmmoUnit value="WormySpitHd"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="SummonBoulderCPShackledUltraliskHd">
+        <EditorCategories value=""/>
+        <InitialDelay value="0.3"/>
+        <InitialEffect value="SummonBoulderDamageShackledUltraliskHd"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="SummonBoulderDamageShackledUltraliskHd">
+        <EditorCategories value="Race:Zerg"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <Amount value="10"/>
+        <Death value="Impact"/>
+        <AreaArray Radius="3.5" Fraction="1"/>
+        <SearchFilters value="Ground;Self,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
     <CEffectSet id="ChainReaction1KerriganHd">
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="ChainReaction">

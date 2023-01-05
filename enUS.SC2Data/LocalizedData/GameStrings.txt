@@ -225,6 +225,7 @@ Button/Tooltip/SalvageRefund10MineralsHd=Salvages the structure, removing it and
 Button/Tooltip/SalvageRefund1MineralHd=Salvages the structure, removing it and refunding 1 mineral.
 Button/Tooltip/SalvageRefund4MineralsHd=Salvages the structure, removing it and refunding 4 minerals.
 Button/Tooltip/SalvageRefund8MineralsHd=Salvages the structure, removing it and refunding 8 minerals.
+Button/Tooltip/ShackledUltraliskHd=Lab specimen U-23A.
 Button/Tooltip/SiegeTankHd=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/SiegeTankSiegedHd=Heavy tank. Can switch into Tank Mode to provide mobile tank support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/SimpleArmoredZealotHd=Powerful melee warrior. Can use Charge.<n/><n/><c val="ffff8a">Can attack ground units.</c>
@@ -268,6 +269,7 @@ Button/Tooltip/WarpInAdeptHd=Purifier Faction<n/>Ranged specialist. Can use Psio
 Button/Tooltip/WarpInLightAdeptEnemyHd=Purifier Faction<n/>Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/WasplingBurrowHd=Friendly ground units can use the Nydus Network to instantly travel to any other Nydus Network or Nydus Worm owned by the player.<n/><n/><c val="ffff8a">Enables:</c><n/>- Nydus Worm
 Button/Tooltip/WeaklingEnemyHd=Fast melee creature. Can morph into a Baneling.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
+Button/Tooltip/WormyHd=Nydus Destroyer has a ranged attack that can attack air and ground structures.<n/><n/><c val="#ColorAttackInfo">Attacks structures only.</c>
 CantPlaceSpawnFlag=The Spawn Flag Can't Be Placed There
 DocInfo/DescLong=A polished take on a classic tower defense.<n/><n/>- All three races supported<n/>- 5 unit types with counters e.g. light/armored<n/>- 25 rounds with random enemies<n/>- Games should last between 15-30 minutes<n/>- Random "mods" per round e.g. enemies with additional armor
 DocInfo/DescShort=1-8
@@ -672,6 +674,8 @@ Effect/Name/SiegeTankSiegedSetHd=Siege Tank - Sieged Set
 Effect/Name/SpinesLightDroneEnemyHd=Spines (Damage)
 Effect/Name/StukovWeaponDamageHd=Stukov Weapon Damage
 Effect/Name/StukovWeaponLMHd=Stukov Weapon LM
+Effect/Name/SummonBoulderCPShackledUltraliskHd=Summon Boulder CP
+Effect/Name/SummonBoulderDamageShackledUltraliskHd=Summon Boulder Damage
 Effect/Name/SunkenColonyDamageHd=Sunken Colony Damage
 Effect/Name/Talons=Talons Missile (Damage)
 Effect/Name/TalonsCPArmoredQueenEnemyHd=Talons CP
@@ -703,6 +707,8 @@ Effect/Name/WasplingDamageDummyHd=Waspling Damage Dummy
 Effect/Name/WasplingDamageHd=Waspling Damage
 Effect/Name/WasplingLMHd=Waspling LM
 Effect/Name/WeaklingClawsHd=Weakling Claws (Damage)
+Effect/Name/WormySpitDamageHd=Wormy Spit Damage
+Effect/Name/WormySpitLMHd=Wormy Spit LM
 LoadingScreen/Tip= 
 MapInfo/Player00/Name=Neutral
 MapInfo/Player01/Name=Player 1
@@ -900,6 +906,7 @@ Unit/Name/IncreasedSpeedModHd=Increased Speed
 Unit/Name/InfestedSiegeTankHd=Infested Siege Tank
 Unit/Name/InfestedSiegeTankUprootedHd=Infested Siege Tank
 Unit/Name/InfestedTerranHd=Infested Terran
+Unit/Name/InvisibleWaypointChooserHd=Invisible Waypoint Chooser
 Unit/Name/KerriganHd=Kerrigan
 Unit/Name/KillEverythingMarineTestHd=Kill Everything Marine
 Unit/Name/LeftHdDefendLocationBeacon=Left
@@ -961,6 +968,7 @@ Unit/Name/RoachHd=Roach
 Unit/Name/SCVHd=SCV
 Unit/Name/ScarabHd=Scarab
 Unit/Name/ScarabWeaponHd=Scarab Weapon
+Unit/Name/ShackledUltraliskHd=Shackled Ultralisk
 Unit/Name/SiegeTankHd=Siege Tank
 Unit/Name/SiegeTankSiegedHd=Siege Tank
 Unit/Name/SimpleArmoredZealotHd=Simple Armored Zealot
@@ -994,6 +1002,8 @@ Unit/Name/WasplingBurrowHd=Waspling Burrow
 Unit/Name/WasplingHd=Waspling
 Unit/Name/WasplingWeaponHd=Waspling Weapon
 Unit/Name/WeaklingEnemyHd=Weakling
+Unit/Name/WormyHd=Wormy
+Unit/Name/WormySpitHd=Wormy Spit
 Unit/ShieldArmorName/ShieldArmor=Shield Armor
 UnitKillRank/BossDehakaEnemyHd=Primal Pack Leader
 UnitSubtitle/BossDehakaEnemyHd=Primal Pack Leader
@@ -1097,6 +1107,7 @@ Weapon/Name/SpinesLurkerHd=Spines
 Weapon/Name/SpinesWasplingHd=Spines
 Weapon/Name/StukovWeaponHd=Stukov Weapon
 Weapon/Name/SubterraneanTentacleSunkenColonyHd=Subterranean Tentacle
+Weapon/Name/SummonBoulderShackledUltraliskHd=Summon Boulder
 Weapon/Name/TalonsArmoredQueenEnemyHd=Talons
 Weapon/Name/TalonsMissileArmoredQueenEnemyHd=Talons Missile
 Weapon/Name/TempestGroundHd=Resonance Coil
@@ -1107,6 +1118,7 @@ Weapon/Name/TyphoonMissilePodArmoredCycloneEnemyHd=Typhoon Missile Pod
 Weapon/Name/VolatileProjectionBiologicalRavasaurEnemyHd=Volatile Projection
 Weapon/Name/WasplingHd=Waspling
 Weapon/Name/WeaklingClawsHd=Weakling Claws
+Weapon/Name/WormySpitHd=Wormy Spit
 Weapon/Tip/90mmCannonsHd=Attack upgrades by <c val="00E35B">3</c>
 Weapon/Tip/AcidSalivaRoachHd=Attack upgrades by <c val="00E35B">2.5</c>
 Weapon/Tip/AcidSpinesArmoredQueenEnemyHd=

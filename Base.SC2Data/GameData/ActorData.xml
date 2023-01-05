@@ -379,6 +379,98 @@
         <HostSiteOps Ops="SOpAttachWeapon"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
+    <CActorModel id="WormyBaseHd" parent="ModelAddition">
+        <On index="0" Terms="ActorOrphan" Send="ModelSwap WormyBaseDeathHd"/>
+        <On index="1" Terms="ModelSwapped.WormyBaseHd" Send="$Death"/>
+        <On index="2" Terms="AnimDone; AnimName Death" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart Attach Stand,D,Start Stand"/>
+        <InheritType value="None"/>
+        <AcceptedTransfers index="Rotation" value="0"/>
+        <HostSiteOps Ops="SOpFaceDownHd"/>
+        <Host Subject="WormyHd"/>
+    </CActorModel>
+    <CActorTurret id="WormyTurretHd">
+        <On Terms="TurretEnable.WormyHd" Send="Create"/>
+    </CActorTurret>
+    <CActorModel id="WormyRumbleHd" parent="ModelAddition">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.WormyHd.Start" Send="Create"/>
+        <On Terms="UnitConstruction.WormyHd.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.WormyHd.Cancel" Send="Destroy"/>
+    </CActorModel>
+    <CActorUnit id="WormyHd" parent="GenericUnitMorph" unitName="WormyHd">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="BuildingFlattenTerrainMacro"/>
+        <On Terms="UnitBirth" Send="AnimPlay Birth Unburrow 0 0.000000"/>
+        <On Terms="UnitBirth" Send="Create WormyBaseHd"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart AttackSuperior Attack,Superior"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart AttackInferior Attack,Inferior"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop AttackSuperior"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop AttackInferior"/>
+        <BuildModel value="WormyRumbleHd"/>
+        <DeathArray index="Normal" ModelLink="NydusCanalAttackerDeath" SoundLink="Zerg_ExplosionLarge"/>
+        <DeathArray index="Disintegrate" ModelLink="NydusCanalAttackerDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Fire" ModelLink="NydusCanalAttackerDeathFire" SoundLink="Uni_DeathFXFireLarge"/>
+        <DeathArray index="UnderConstruction" ModelLink="ZergBuildingDeath" SoundLink="Zerg_ExplosionLarge"/>
+        <PlacementModel value="WormyPlacementHd"/>
+        <PlacementSound value="Zerg_BuildingPlacement"/>
+        <PortraitModel value="ZergBuildingEx2_Portrait"/>
+        <BarOffset value="180"/>
+        <BarWidth value="85"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-NydusDestroyer.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\Wireframe-Zerg-NydusDestroyer.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-armor-zerg-building.dds"/>
+        <NameOffset value="70"/>
+        <SoundArray index="Birth" value=""/>
+        <SoundArray index="Ready" value=""/>
+        <SoundArray index="What" value="NydusDestroyer_What"/>
+        <SoundArray index="Yes" value="NydusDestroyer_What"/>
+        <SoundArray index="Attack" value="NydusDestroyer_Attack"/>
+        <SoundArray index="Construction" value="Zerg_RockBuildingMorph_What"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-nydusdestroyer.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-NydusDestroyer.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorAction id="WormySpitHd" parent="GenericAttack" effectImpact="WormySpitDamageHd" effectLaunch="WormySpitLMHd">
+        <LaunchAttachQuery Methods="Weapon"/>
+        <LaunchAssets Sound="NydusDestroyer_AttackLaunch"/>
+        <Missile value="WormySpitMissileHd"/>
+        <ImpactMap index="None" Model="WormySpitImpactHd" Sound="NydusDestroyer_AttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <AcquisitionYawHalfArc value="7.500000"/>
+        <AcquisitionPitchHalfArc value="15.000000"/>
+        <AccuracyHalfArc value="10.000000"/>
+    </CActorAction>
+    <CActorMissile id="WormySpitMissileHd" parent="GenericAttackMissile" unitName="WormySpitHd"/>
+    <CActorModel id="SummonBoulderShackledUltraliskHd" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.SummonBoulderCPShackledUltraliskHd.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpRotationRandomFull"/>
+    </CActorModel>
+    <CActorSiteOpRotationExplicit id="SOpFaceLeftHd">
+        <Forward value="-1.000000,0.000000,0.000000"/>
+    </CActorSiteOpRotationExplicit>
+    <CActorUnit id="ShackledUltraliskHd" parent="GenericUnitBaseNoShieldArmorIconHd" unitName="ShackledUltraliskHd">
+        <HostSiteOps Ops="SOpFaceLeftHd" HoldRotation="1"/>
+        <Scale value="0.450000"/>
+        <DeathArray index="Normal" ModelLink="CastanarUltraliskShackledDeath" SoundLink="CastanarUltraliskShackled_Death" VoiceLink=""/>
+        <DeathActorModel value="UnitDeathModelPersistent"/>
+        <DeathActorModelLow value="UnitDeathModelPersistent"/>
+        <PortraitModel value="UltraliskPortrait"/>
+        <BarOffset value="30"/>
+        <BarWidth value="130"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-Ultralisk.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-omegalisk.dds"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-omegalisk.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-Ultralisk.dds"/>
+        </Wireframe>
+    </CActorUnit>
     <CActorSite id="ChainReaction2ImpactSiteKerriganHd" parent="GenericAttackImpactSite"/>
     <CActorAction id="ChainReaction2AttackKerriganHd" parent="GenericAttack" effectAttack="ChainReaction2DamageKerriganHd">
         <LaunchRequest Subject="ChainReaction1ImpactSite" Actor="Find"/>
@@ -4541,7 +4633,7 @@
             <Image value="Assets\Textures\Wireframe-Protoss-ShieldBattery-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
-    <CActorSiteOpRotationExplicit id="WallFacingDownTerranHd">
+    <CActorSiteOpRotationExplicit id="SOpFaceDownHd">
         <Forward value="0.000000,-1.000000,0.000000"/>
     </CActorSiteOpRotationExplicit>
     <CActorUnit id="WallTerranHd" parent="TerranBuildingExNoArmorHd" unitName="WallTerranHd">
@@ -4571,7 +4663,7 @@
         <WireframeVariations Number="1">
             <Image value="Assets\Textures\Wireframe-Terran-fauxcore01.dds"/>
         </WireframeVariations>
-        <HostSiteOps Ops="WallFacingDownTerranHd" HoldRotation="1"/>
+        <HostSiteOps Ops="SOpFaceDownHd" HoldRotation="1"/>
         <PlacementModel value="WallTerranHd"/>
         <PortraitModel value="BunkerPortrait"/>
         <Macros index="0" removed="1"/>

@@ -108,6 +108,133 @@
         <ScaleMax value="0.350000,0.350000,0.350000"/>
         <ScaleMin value="0.350000,0.350000,0.350000"/>
     </CModel>
+    <CModel id="WormyBaseDeathHd" parent="SpawningPoolDeathBase">
+        <Model value="Assets\Buildings\Zerg\SpawningPoolDeathEx1\SpawningPoolDeathEx1.m3"/>
+        <Lighting value="SpawningPoolDeath"/>
+        <ScaleMax value="0.660000,0.660000,0.660000"/>
+        <ScaleMin value="0.660000,0.660000,0.660000"/>
+    </CModel>
+    <CModel id="WormyBaseHd" parent="SpawningPoolBase">
+        <Model value="Assets\Buildings\Zerg\SpawningPoolEx1\SpawningPoolEx1.m3"/>
+        <Lighting value="SpawningPool"/>
+        <ScaleMax value="0.660000,0.660000,0.660000"/>
+        <ScaleMin value="0.660000,0.660000,0.660000"/>
+    </CModel>
+    <CModel id="WormyRumbleHd" parent="OneShotSpellFX">
+        <Model value="Assets\Units\Zerg\NydusRumbleEX1\NydusRumbleEX1.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="Nydus_ConstructionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Nydus_ConstructionSmall"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="Nydus_ConstructionPeek"/>
+            <Type value="Sound"/>
+            <Time value="1.600000"/>
+            <Payload value="Nydus_ConstructionPeek"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,01"/>
+            <Name value="Nydus_ConstructionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Nydus_ConstructionSmall"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,01"/>
+            <Name value="Nydus_ConstructionSmall"/>
+            <Type value="Sound"/>
+            <Time value="2.200000"/>
+            <Payload value="Nydus_ConstructionSmall"/>
+        </Events>
+        <Radius value="1.200000"/>
+        <ScaleMax value="0.350000,0.350000,0.350000"/>
+        <ScaleMin value="0.350000,0.350000,0.350000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+    </CModel>
+    <CModel id="WormyHd" parent="Building" Race="Zerg">
+        <Model value="Assets\Buildings\Zerg\ZergNydusAttacker\ZergNydusAttacker.m3"/>
+        <AttachProps Id="Ref_TurretZ">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <Events>
+            <Anim value="Unburrow,00"/>
+            <Name value="GroundBurst"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="NydusDestroyer_Unburrow"/>
+        </Events>
+        <Events>
+            <Anim value="Unburrow,00"/>
+            <Name value="Roar"/>
+            <Type value="Sound"/>
+            <Time value="1.050000"/>
+            <Payload value="NydusDestroyer_Ready"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraHigher20"/>
+        <Radius value="1.200000"/>
+        <ScaleMax value="0.350000,0.350000,0.350000"/>
+        <ScaleMin value="0.350000,0.350000,0.350000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+        <SquibTypeDefault value="Flesh"/>
+        <TechPurchaseCamera value="Star2CameraHigher20"/>
+        <UnitGlossaryCamera value="Star2CameraHigher20"/>
+    </CModel>
+    <CModel id="WormySpitImpactHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Zerg\ZergNydusAttackerMissileDeath\ZergNydusAttackerMissileDeath.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+        <ScaleMax value="0.550000,0.550000,0.550000"/>
+        <ScaleMin value="0.550000,0.550000,0.550000"/>
+    </CModel>
+    <CModel id="WormyPlacementHd" parent="Placement" Race="Zerg">
+        <Model value="Assets\Buildings\Zerg\ZergNydusAttackerPlacement\ZergNydusAttackerPlacement.m3"/>
+        <Lighting value="NydusCanal"/>
+        <Radius value="2.000000"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+    </CModel>
+    <CModel id="WormySpitHd" parent="MissileFX">
+        <Model value="Assets\Effects\Zerg\ZergNydusAttackerMissile\ZergNydusAttackerMissile.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+        <ScaleMax value="0.550000,0.550000,0.550000"/>
+        <ScaleMin value="0.550000,0.550000,0.550000"/>
+    </CModel>
+    <CModel id="ShackledUltraliskHd" parent="Building">
+        <Model value="Assets\Doodads\CastanarUltraliskShackled\CastanarUltraliskShackled.m3"/>
+        <Events>
+            <Anim value="Stand,01"/>
+            <Name value="CastanarUltraliskShackled_Stand01"/>
+            <Type value="Sound"/>
+            <Attachment value="Ref_Origin"/>
+            <Payload value="CastanarUltraliskShackled_Stand01"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,02"/>
+            <Name value="CastanarUltraliskShackled_Stand02"/>
+            <Type value="Sound"/>
+            <Attachment value="Ref_Origin"/>
+            <Payload value="CastanarUltraliskShackled_Stand02"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,03"/>
+            <Name value="CastanarUltraliskShackled_Stand03"/>
+            <Type value="Sound"/>
+            <Attachment value="Ref_Origin"/>
+            <Payload value="CastanarUltraliskShackled_Stand03"/>
+        </Events>
+        <SelectionRadius value="2.500000"/>
+    </CModel>
     <CModel id="CorrosiveBlastModelStukovHd" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Zerg\KerriganCorrosiveSpores\KerriganCorrosiveSpores.m3"/>
         <EditorCategories value="Race:Zerg"/>
@@ -2670,5 +2797,11 @@
         <SelectionRadius value="2.000000"/>
         <ShadowRadius value="2.000000"/>
         <SquibTypeDefault value="Flesh"/>
+    </CModel>
+    <CModel id="SummonBoulderShackledUltraliskHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Zerg\ZerusFallingRock\ZerusFallingRock.m3"/>
+        <Lighting value=""/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
     </CModel>
 </Catalog>
