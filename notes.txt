@@ -70,60 +70,60 @@ yellow side-note
 * armored and mechanical bumps to 10 armor
 
 10. prisoner / queen
-  : 440 hp
+  : 490 hp
 11. adept / hellbat
-  : 460 hp
+  : 510 hp
 12. reaper / dragoon / hydralisk
-  : 480 hp
-  : hydra @ 600hp
+  : 530 hp
+  : hydra @ 650hp
 13. infested terran / quilly / goliath
-  : 500 hp
+  : 550 hp
 14. eradicator / hybrid dominator
-  : 1500 hp
+  : 1560 hp
   : eradicator @ 30 armor & 2 speed
   : hybrid dominator @ 20 armor & 3 speed
 
-* hp bumps to 800
-* biological hp bumps to 1000
+* hp bumps to 840
+* biological hp bumps to 1050
 * light bumps to 12 armor
 * biological bumps to 16 armor
 * armored and mechanical bump to 20
 
 15. ravager / viking (assault mode)
-  : 800 hp
-  : ravager @ 1000 hp
+  : 840 hp
+  : ravager @ 1050 hp
 16. ghost / cyclone
-  : 850 hp
+  : 890 hp
 17. ravasaur / shikoto coupe
-  : 900 hp
-  : ravasaur @ 1100 hp
+  : 940 hp
+  : ravasaur @ 1150 hp
 18. locust / immortal / ursadon
-  : 950 hp
+  : 990 hp
+  : ursadon @ 1250 hp
 19. kerrigan / giant rory swann
-  : 3000 hp
+  : 3080 hp
   : kerrigan @ 30 armor & 3 speed
   : giant rory swann @ 40 armor & 2 speed
 
-* hp bumps to 1400
-* biological hp bumps to 1700
+* hp bumps to 1450
+* biological hp bumps to 1750
 * light bumps to 20 armor
 * biological bumps to 25 armor
 * armored and mechanical bumps to 30 armor
 
 20. kerrigan / siege tank (tank mode)
-  : 1400 hp
-  : kerrigan @ 1700 hp
+  : 1450 hp
+  : kerrigan @ 1750 hp
 21. high templar / pygalisk
-  : 1500 hp
+  : 1550 hp
 22. ultralisk / warhound
-  : 1600 hp
-  : ultralisk @ 1900 hp
+  : 1650 hp
+  : ultralisk @ 2000 hp
 23. war pig / herc / militarized transport
-  : 1700 hp
+  : 1800 hp
 24. yagdra / stone zealot
-  : 5000 hp
-  : yagdra @ 40 armor & 3 speed
-  : stone zealot @ 60 armor & 2 speed
+  : yagdra @ 5200 hp, 40 armor & 3 speed
+  : stone zealot @ 4600 hp, 60 armor & 2 speed
 
 
 # units by attribute

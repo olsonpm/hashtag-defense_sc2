@@ -1,5 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CSound id="FrackingCloudHd" parent="Spell">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Queen\Queen_SwarmInfestationLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Queen\Queen_SwarmInfestationLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Queen\Queen_SwarmInfestationLaunch2.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Queen\Queen_SwarmInfestationLaunch3.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Queen\Queen_SwarmInfestationLaunch4.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Queen\Queen_SwarmInfestationLaunch5.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Queen\Queen_SwarmInfestationLaunch6.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Queen\Queen_SwarmInfestationLaunch7.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Queen\Queen_SwarmInfestationLaunch8.wav"/>
+    </CSound>
+    <CSound id="SJPirateCapitalShip_AttackImpact2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Uni_ImpactExplosions_00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Uni_ImpactExplosions_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Uni_ImpactExplosions_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Uni_ImpactExplosions_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Uni_ImpactExplosions_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Uni_ImpactExplosions_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Uni_ImpactExplosions_06.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Uni_ImpactExplosions_07.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Uni_ImpactExplosions_08.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Uni_ImpactExplosions_09.wav" FacialGroup=""/>
+        <DupeDestroyCount value="3"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="1"/>
+        <Volume value="-18.000000,-15.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="SJPirateCapitalShip_AttackLaunch2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_06.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_07.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_08.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_09.wav" FacialGroup=""/>
+        <DupeDestroyCount value="4"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="3"/>
+        <OverlapTimeDelta value="100"/>
+        <Pitch value="-6.000000,-5.000000"/>
+        <SustainFade index="1" Time="100"/>
+        <Volume value="-9.000000,-7.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="KorhalPalaceTurretAttackImpactHd" parent="Terran_ExplosionMedium">
+        <Volume value="-4.000000,-2.000000"/>
+    </CSound>
+    <CSound id="BoulderImpactShackledUltraliskHd" parent="Spell">
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge4.wav"/>
+        <Flags index="Download" value="0"/>
+        <Flags index="Purgable" value="0"/>
+        <Category value="Doodad"/>
+        <DupeDestroyCount value="32"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <ResourcePriority value="16"/>
+        <SustainFade index="1" Time="1000"/>
+    </CSound>
+    <CSound id="AnnounceWaveHd" parent="UI">
+        <AssetArray File="Assets\Sounds\Uni\UI\UI_CampaignNPCSelect.wav"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="NewHeroChooserSoundHd" parent="UI">
+        <AssetArray File="Assets\Sounds\Uni\UI\UI_CampaignHintNotify.wav"/>
+        <ReverbBalance Room="-1000"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
     <CSound id="Yagdra_BloodPoolHd" parent="Death">
         <EditorCategories value="Race:Zerg"/>
         <AssetArray File="Assets\Sounds\Yagdra_BloodPool.wav" FacialGroup=""/>

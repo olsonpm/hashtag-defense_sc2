@@ -1,6 +1,9 @@
 ﻿Abil/Name/ApocalypseKerriganHd=Apocalypse
 Abil/Name/AttackEnemyHd=Attack Enemy
 Abil/Name/BlinkHd=Blink
+Abil/Name/BuildHeroProtossHd=Build Hero
+Abil/Name/BuildHeroTerranHd=Build Hero
+Abil/Name/BuildHeroZergHd=Build Hero
 Abil/Name/BuildProtossHd=Build
 Abil/Name/BuildSpawnFlagHd=Build Spawn Flag
 Abil/Name/BuildTerranHd=Build
@@ -8,15 +11,19 @@ Abil/Name/BuildZergHd=Build
 Abil/Name/BurrowLurkerHd=Burrow Lurker
 Abil/Name/ClearUnitChooserRallyHd=Clear Unit Chooser Rally
 Abil/Name/CorrosiveBlastStukovHd=Corrosive Blast
+Abil/Name/HangarSelendisHd=Hangar
 Abil/Name/InfestedSiegeTankRootHd=Root
 Abil/Name/InfestedSiegeTankUprootHd=Uproot
 Abil/Name/LiberatorAATargetHd=AA Target
 Abil/Name/LiberatorAGTargetHd=AG Target
 Abil/Name/LiberatorMorphToAAHd=Morph to AA
 Abil/Name/LiberatorMorphToAGHd=Morph to AG
+Abil/Name/LightGrenadeDaymanHd=Light Grenade
+Abil/Name/LightningStormSelendisHd=Lightning Storm
 Abil/Name/LoadUnloadBunkerHd=Load-Unload
 Abil/Name/MakeAttackDroneHd=Make Attack Drone
 Abil/Name/MakeWasplingHd=Make Waspling
+Abil/Name/NuclearStrikePirateCapitalShipHd=Nuclear Strike
 Abil/Name/RallyUnitChoosersHereHd=Rally Unit Choosers Here
 Abil/Name/ReaverHangarHd=Reaver Hangar
 Abil/Name/SalvageFullRefundHd=Salvage - Full Refund
@@ -25,8 +32,12 @@ Abil/Name/SalvageRefund10MineralsHd=Salvage - Refund 10 Minerals
 Abil/Name/SalvageRefund1MineralHd=Salvage - Refund 1 Mineral
 Abil/Name/SalvageRefund4MineralsHd=Salvage - Refund 4 Minerals
 Abil/Name/SalvageRefund8MineralsHd=Salvage - Refund 8 Minerals
+Abil/Name/SeekerMissileNightmanHd=Seeker Missile
 Abil/Name/SiegeModeHd=Siege
 Abil/Name/TestFireworkHd=Test Firework
+Abil/Name/TurnBackIntoBuilderProtossHd=Turn Back Into Builder
+Abil/Name/TurnBackIntoBuilderTerranHd=Turn Back Into Builder
+Abil/Name/TurnBackIntoBuilderZergHd=Turn Back Into Builder
 Abil/Name/UnburrowLurkerHd=Unburrow Lurker
 Abil/Name/UnsiegeHd=Unsiege
 Abil/Name/UpgradeBunkerTurretDamageResearchCenterHd=Upgrade Bunker Turret Damage
@@ -75,23 +86,39 @@ Attribute003/Value001/Name=No
 Attribute003/Value002/Name=Yes
 Behavior/Name/AddedArmorModHd=Added Armor
 Behavior/Name/AddedShieldsModHd=Added Shields
+Behavior/Name/BatteredAndBruisedNightmanHd=Battered And Bruised
 Behavior/Name/CorrosiveBlastStukovHd=Corrosive Blast
 Behavior/Name/FullRefundAvailableSalvageHd=Full Refund Available
 Behavior/Name/IncreasedSpeedModHd=Increased Speed
-Behavior/Name/IsBurrowedHd=Is Burrowed
-Behavior/Name/IsSiegedHd=Is Sieged
+Behavior/Name/LightningStormSelendisHd=Lightning Storm
+Behavior/Name/SearedArmorDaymanHd=Seared Armor
+Behavior/Name/SeekerMissileTimeoutNightmanHd=Seeker Missile Timeout
+Behavior/Name/SeekerMissileTintNightmanHd=Seeker Missile Tint
+Behavior/Tooltip/BatteredAndBruisedNightmanHd=Armor cut in half.
 Behavior/Tooltip/CorrosiveBlastStukovHd=Armor cut in half.
+Behavior/Tooltip/LightningStormSelendisHd=This unit is disabled.
+Behavior/Tooltip/SearedArmorDaymanHd=Armor cut in half.
+Behavior/Tooltip/SeekerMissileTintNightmanHd=This unit is being targeted by a Seeker Missile.
 Button/Name/ApocalypseKerriganHd=Apocalypse
+Button/Name/BlinkHd=Blink
+Button/Name/BuildAtomicStormBreweryHd=Build Atomic Storm Brewery
 Button/Name/BuildBunkerHd=Build Bunker
+Button/Name/BuildFrackerHd=Build Fracker
+Button/Name/BuildKorhalPalaceTurretHd=Build Korhal Palace Turret
+Button/Name/BuildShackledUltraliskHd=Build Shackled Ultralisk
+Button/Name/BuildShrineOfTheGodsHd=Build Shrine of the Gods
 Button/Name/BuildSpineCrawlerZergHd=Build Spine Crawler
 Button/Name/BuildWallProtossHd=Build Wall
 Button/Name/BuildWallTerranHd=Build Wall
 Button/Name/BuildWallZergHd=Build Wall
+Button/Name/BuildWormyHd=Build Wormy
 Button/Name/BurrowLurkerMPHd=Burrow
 Button/Name/ClearUnitChooserRallyHd=Clear Unit Chooser Rally
 Button/Name/CorrosiveBlastStukovHd=Corrosive Blast
 Button/Name/InfestedSiegeTankRootHd=Root
 Button/Name/InfestedSiegeTankUprootHd=Uproot
+Button/Name/LightningStormSelendisHd=Lightning Storm
+Button/Name/NuclearStrikePirateCapitalShipHd=Nuclear Strike
 Button/Name/PhotonCannonHd=Photon Cannon
 Button/Name/PlaceSpawnFlagHd=Place Purchase Flag
 Button/Name/RallyChoosersHereHd=Rally Choosers Here
@@ -101,9 +128,14 @@ Button/Name/SalvageRefund10MineralsHd=Salvage - Refund 10 Minerals
 Button/Name/SalvageRefund1MineralHd=Salvage - Refund 1 Mineral
 Button/Name/SalvageRefund4MineralsHd=Salvage - Refund 4 Minerals
 Button/Name/SalvageRefund8MineralsHd=Salvage - Refund 8 Minerals
+Button/Name/SeekerMissileNightmanHd=Seeker Missile
 Button/Name/SpineCrawlerRootHd=Root
 Button/Name/SpineCrawlerUprootHd=Uproot
 Button/Name/TestFireworkHd=Test Firework
+Button/Name/ThrowLightGrenadeDaymanHd=Throw Light Grenade
+Button/Name/TurnBackIntoBuilderProtossHd=Turn Back Into Builder
+Button/Name/TurnBackIntoBuilderTerranHd=Turn Back Into Builder
+Button/Name/TurnBackIntoBuilderZergHd=Turn Back Into Builder
 Button/Name/UpgradeBunkerTurretDamageHd=Upgrade Bunker Turret Damage
 Button/Name/UpgradeProtossStructureDamageHd=Upgrade Protoss Structure Damage
 Button/Name/UpgradeToArtilleryTurretBunkerHd=Upgrade To Artillery Turret
@@ -123,7 +155,7 @@ Button/Name/UpgradeUnitDamageTerranHd=Upgrade Unit Damage
 Button/Name/UpgradeUnitDamageZergHd=Upgrade Unit Damage
 Button/Name/UpgradeZergStructureDamageHd=Upgrade Zerg Structure Damage
 Button/Tooltip/AddedArmorModHd=Experimental space/time manipulator. Grants the ability to slow units in a target area.
-Button/Tooltip/ApocalypseKerriganHd=Deals <c val="00E35B"><d ref="Effect,ApocalypseDamageKerriganHd,Amount"/></c> damage to enemies (only <c val="00E35B"><d ref="Effect,ApocalypseDamageKerriganHd,Amount * 0.8" precision="1"/></c> to bosses).<n/><n/>Damage upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
+Button/Tooltip/ApocalypseKerriganHd=Deals <c val="00E35B"><d ref="Effect,ApocalypseDamageKerriganHd,Amount"/></c> damage to enemies in a large radius.<n/><n/>Damage upgrades by <c val="00E35B">3</c>
 Button/Tooltip/ArchonHd=Powerful psionic attacker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/ArmoredCutieEnemyHd=A native insectoid species of the planet Nelyth.
 Button/Tooltip/ArmoredCycloneEnemyHd=Mobile assault drone. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -148,6 +180,7 @@ Button/Tooltip/BiologicalRavagerEnemyHd=Ranged artillery. Can use Corrosive Bile
 Button/Tooltip/BiologicalRavasaurEnemyHd=Ranged unit. Shoots large globs of acid at long range.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/BiologicalUltraliskEnemyHd=Heavy assault beast. Has an area-damage attack.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/BiologicalUrsadonEnemyHd=Native Ursadon subspecies.
+Button/Tooltip/BlinkHd=Teleports the unit to a nearby target location. Ability can only be used once every <d ref="Abil,BlinkHd,Cost[0].Cooldown.TimeUse"/> seconds.
 Button/Tooltip/BossAlarakEnemyHd=Highlord of the Tal'darim. Powerful Psionic Warrior.
 Button/Tooltip/BossDehakaEnemyHd=A Primal Pack Leader. A skilled fighter who is immune to the effects of the Psi Destroyer Field.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/BossEradicatorEnemyHd=Large warbot built to pacify uncontrolled Zerg experiments.
@@ -165,11 +198,15 @@ Button/Tooltip/BurrowLurkerMPHd=Buries the Lurker underground. Burrowed Lurkers 
 Button/Tooltip/ChooserHd=Male Civilian.
 Button/Tooltip/ClearUnitChooserRallyHd=Clears the rally for your unit choosers
 Button/Tooltip/ColossusHd=Powerful battle strider. Can walk up and down cliffs. Attacks incinerate multiple enemies at once.<n/><n/><c val="ffff8a">Can attack ground units.</c>
-Button/Tooltip/CorrosiveBlastStukovHd=Deals <c val="00E35B"><d ref="Effect,CorrosiveBlastDamageStukovHd,Amount"/></c> damage to target enemy(<c val="00E35B"><d ref="Effect,CorrosiveBlastDamageStukovHd,Amount * 1.2" precision="1"/></c> to bosses). Also reduces the enemy's armor by half for 10 seconds.<n/><n/><n/>Damage upgrades by <c val="00E35B">6</c>
+Button/Tooltip/CorrosiveBlastStukovHd=Deals <c val="00E35B"><d ref="Effect,CorrosiveBlastDamageStukovHd,Amount"/></c> damage to target enemy. Also reduces the enemy's armor by half for 10 seconds.<n/><n/>Damage upgrades by <c val="00E35B">6</c>
+Button/Tooltip/DaymanHd=Hierarch of the Daelaam. Powerful psionic and melee warrior.
 Button/Tooltip/DroneHd=Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/FirebatHd=Specialized anti-infantry attacker.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/FrackerHd=Coolant Tower for the Fusion Reactors deep inside the platform. Destroy all Coolant Towers on a platform, and the platform will explode.
 Button/Tooltip/GhostHd=Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/GuardianHd=Long-range anti-ground flyer. <n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/HeroBuilderTerranHd=Prototype harvesting unit. Gathers minerals more quickly than regular SCVs. MULEs last <d time="90"/> before their systems fail.
+Button/Tooltip/HeroBuilderZergHd=Changelings cannot attack. When a Changeling first encounters an enemy unit, it will match that unit's color and change into a Zealot, Marine, or Zergling, depending on the enemy race. Dies after <d time="150"/>.
 Button/Tooltip/HolePuncherHd=Enables warp in of Protoss air units.
 Button/Tooltip/HydraliskHd=Ranged attacker. Can morph into a Lurker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/ImmortalHd=Assault strider. Can use Barrier to absorb damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
@@ -181,6 +218,7 @@ Button/Tooltip/InfestedSiegeTankUprootedHd=Infested heavy tank. Can move when up
 Button/Tooltip/InfestedTerranHd=An Infested Terran does moderate damage and lasts for <d ref="Behavior,InfestedTerranTimedLife,Duration"/> seconds.<n/><n/><c val="FFFF8A">Can attack ground and air units.</c>
 Button/Tooltip/KerriganHd=Queen of Blades and leader of the Swarm. Powerful psionic ranged attacker.
 Button/Tooltip/KillEverythingMarineTestHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/KorhalPalaceTurretHd=Extremely powerful turrets that cannot be attacked. Breaking down the Palace Gate is the only way to victory.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/LiberatorAGHd=Immobile defender. Deals heavy single target damage to ground units. Can switch into Fighter mode to provide air support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/LiberatorHd=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
 Button/Tooltip/LightDroneEnemyHd=Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
@@ -193,6 +231,7 @@ Button/Tooltip/LightProbeEnemyHd=Basic worker unit. Can gather resources and war
 Button/Tooltip/LightReaperEnemyHd=Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use D8 Charge.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/LightSCVEnemyHd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/LightWarPigEnemyHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/LightningStormSelendisHd=Deals <c val="00E35B"><d ref="Effect,LightningStormDamageSelendisHd,Amount"/></c> damage to enemies in a large radius.<n/><n/>Damage upgrades by <c val="00E35B">3</c>
 Button/Tooltip/LurkerHd=Anti-ground ambusher. Has a spine attack that damages all enemy units in its line of fire.<n/><n/><c val="ffff8a">Can attack ground units.<n/>Must burrow to attack.</c>
 Button/Tooltip/MarauderHd=Heavy assault infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/MarineHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -204,10 +243,13 @@ Button/Tooltip/MechanicalVikingAssaultModeEnemyHd=Durable support unit. Can swit
 Button/Tooltip/MechanicalWarHoundEnemyHd=Anti-vehicle mech. Haywire missiles do bonus damage to mechanical units. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/MissileTurretHd=Anti-air defensive structure.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c><n/><c val="FFE303">Detector</c>
 Button/Tooltip/MutaliskHd=Air unit. Bounces its shot to strike multiple targets.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/NightmanHd=Raynor can hit several units in a straight line with his Commando Rifle. <n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c><n/>
+Button/Tooltip/NuclearStrikePirateCapitalShipHd=Deals <c val="00E35B"><d ref="Effect,NuclearStrikeDamagePirateCapitalShipHd,Amount"/></c> damage to enemies in a large radius.<n/><n/>Damage upgrades by <c val="00E35B">3</c>
 Button/Tooltip/PathTesterRadius02Hd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/PathTesterRadius05Hd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/PerfectSpecimenModHd=Greater Essence
 Button/Tooltip/PhotonCannonHd=
+Button/Tooltip/PirateCapitalShipHd=A powerful warship with cloaking technology and an electric field that can disable enemy craft.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/PlaceSpawnFlagHd=Your purchased units will spawn here
 Button/Tooltip/ProbeHd=Basic worker unit. Can gather resources and warp in Protoss structures.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/PurchaseFlagHd=The planetary flag of Korhal, homeworld of Emperor Mengsk.
@@ -225,7 +267,10 @@ Button/Tooltip/SalvageRefund10MineralsHd=Salvages the structure, removing it and
 Button/Tooltip/SalvageRefund1MineralHd=Salvages the structure, removing it and refunding 1 mineral.
 Button/Tooltip/SalvageRefund4MineralsHd=Salvages the structure, removing it and refunding 4 minerals.
 Button/Tooltip/SalvageRefund8MineralsHd=Salvages the structure, removing it and refunding 8 minerals.
+Button/Tooltip/SeekerMissileNightmanHd=Deals <c val="00E35B"><d ref="Effect,SeekerMissileDamageNightmanHd,Amount"/></c> damage to target enemy. Also reduces the enemy's armor by half for 10 seconds.<n/><n/>Damage upgrades by <c val="00E35B">6</c>
+Button/Tooltip/SelendisHd=Capital ship. Can build and launch Interceptors to make attacks.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/ShackledUltraliskHd=Lab specimen U-23A.
+Button/Tooltip/ShrineOfTheGodsHd=Amplification tower that allows distant colonies to communicate with Shakuras through the Khala.
 Button/Tooltip/SiegeTankHd=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/SiegeTankSiegedHd=Heavy tank. Can switch into Tank Mode to provide mobile tank support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/SimpleArmoredZealotHd=Powerful melee warrior. Can use Charge.<n/><n/><c val="ffff8a">Can attack ground units.</c>
@@ -242,6 +287,7 @@ Button/Tooltip/TempestHd=Purifier Faction<n/>Siege artillery craft. Attacks from
 Button/Tooltip/TestFireworkHd=Launches a firework at the chosen location
 Button/Tooltip/TestWeaklingEnemyHd=Fast melee creature. Can morph into a Baneling.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/ThorHd=Heavy assault mech.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/ThrowLightGrenadeDaymanHd=Deals <c val="00E35B"><d ref="Effect,LightGrenadeDamageDaymanHd,Amount"/></c> damage to target enemy. Also reduces the enemy's armor by half for 10 seconds.<n/><n/>Damage upgrades by <c val="00E35B">6</c>
 Button/Tooltip/TicklerMarineTestHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/UnitHasShieldsModHd=Ancient Protoss Relic. Collect it with a ground unit to gain a Protoss research point. 
 Button/Tooltip/UpgradeBunkerTurretDamageHd=Upgrades the damage done by all bunker turrets<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
@@ -451,6 +497,10 @@ Effect/Name/ArmoredPygaliskEnemyHd=Armored Pygalisk
 Effect/Name/ArmoredQuillyDamageEnemyHd=Armored Quilly (Damage)
 Effect/Name/ArmoredQuillyLMEnemyHd=Armored Quilly LM
 Effect/Name/ArtilleryTurretDamageBunkerHd=Artillery Turret (Damage)
+Effect/Name/AtomicStormCPHd=Atomic Storm CP
+Effect/Name/AtomicStormDamageHd=Atomic Storm Damage
+Effect/Name/AtomicStormSAHd=Atomic Storm SA
+Effect/Name/AtomicStormSetHd=Atomic Storm Set
 Effect/Name/AttackDroneDamageDummyHd=Attack Drone Damage Dummy
 Effect/Name/AttackDroneDamageHd=Attack Drone Damage
 Effect/Name/BigBoyCannonDamageHd=Big Boy Cannon Damage
@@ -489,11 +539,7 @@ Effect/Name/ChainReaction3DelayKerriganHd=Chain Reaction 3 Delay
 Effect/Name/ChainReaction3KerriganHd=Chain Reaction 3
 Effect/Name/ChainReaction3SearchForNewTargetKerriganHd=Chain Reaction 3 Search For New Target
 Effect/Name/ChainReaction4DamageKerriganHd=Chain Reaction 4 Damage
-Effect/Name/ChainReaction4DelayKerriganHd=Chain Reaction 4 Delay
 Effect/Name/ChainReaction4KerriganHd=Chain Reaction 4
-Effect/Name/ChainReaction4SearchForNewTargetKerriganHd=Chain Reaction 4 Search For New Target
-Effect/Name/ChainReaction5DamageKerriganHd=Chain Reaction 5 Damage
-Effect/Name/ChainReaction5KerriganHd=Chain Reaction 5
 Effect/Name/ChainReactionMarkerKerriganHd=Chain Reaction Marker
 Effect/Name/ClawsBiologicalUrsadonEnemyHd=Claws
 Effect/Name/CorrosiveBlastABStukovHd=Corrosive Blast AB
@@ -536,6 +582,10 @@ Effect/Name/FlameThrowerDamageSetHd=Flame Thrower (Damage Set)
 Effect/Name/FlameThrowerEnumAreaFirebatHd=Flame Thrower (Enum Area)
 Effect/Name/FlameThrowerSetFirebatHd=Flame Thrower Set
 Effect/Name/FlameThrowerViralPlasmaDoTDamageHd=Flame Thrower (Viral Plasma DoT Damage)
+Effect/Name/FrackingCloudCPHd=Fracking Cloud CP
+Effect/Name/FrackingCloudDamageHd=Fracking Cloud Damage
+Effect/Name/FrackingCloudSAHd=Fracking Cloud SA
+Effect/Name/FrackingCloudSetHd=Fracking Cloud Set
 Effect/Name/FusionCutterLightSCVEnemyHd=Fusion Cutter (Damage)
 Effect/Name/GatlingCannonDamageMechanicalVikingAssaultModeEnemyHd=Gatling Cannon (Damage)
 Effect/Name/GlaiveWurmImpact1DamageHd=Glaive Wurm Impact 1 Damage
@@ -556,6 +606,7 @@ Effect/Name/GuassRifleLightWarPigEnemyHd=Gauss Rifle (Damage)
 Effect/Name/GuassRifleSimpleQuickMarineEnemyHd=Guass Rifle
 Effect/Name/GuassRifleSlowTicklerMarineTestHd=Guass Rifle (Damage)
 Effect/Name/GuassRifleTicklerMarineTestHd=Guass Rifle (Damage)
+Effect/Name/HeavensAttackDamageShrineOfTheGodsHd=Heaven's Attack Damage
 Effect/Name/HeavyTurretDamageBunkerHd=Heavy Turret (Damage)
 Effect/Name/HolePuncherDamageHd=Hole Puncher Damage
 Effect/Name/HolePuncherLMHd=Hole Puncher LM
@@ -571,6 +622,14 @@ Effect/Name/InfestedSiegeTankSiegedSetHd=Infested SiegeTank - Sieged Set
 Effect/Name/JavelinMissileLaunchersDamageHd=Anti Air (Damage)
 Effect/Name/JavelinMissileLaunchersLM2=Anti Air (Launch Missile)
 Effect/Name/KaiserBladesDamageBiologicalUltraliskEnemyHd=Kaiser Blades (Damage)
+Effect/Name/KorhalPalaceTurretHd=Korhal Palace Turret
+Effect/Name/LMCPPirateCapitalShipHd=LM CP
+Effect/Name/LeftDamagePirateCapitalShipHd=Left Damage
+Effect/Name/LeftDummyDamagePirateCapitalShipHd=Left Dummy Damage
+Effect/Name/LeftDummyLMPirateCapitalShipHd=Left Dummy LM
+Effect/Name/LeftLMCPPirateCapitalShipHd=Left LM CP
+Effect/Name/LeftLMPirateCapitalShipHd=Left LM
+Effect/Name/LeftRandomLMPirateCapitalShipHd=Left Random LM
 Effect/Name/LiberatorAGDamageHd=Liberator AG (Damage)
 Effect/Name/LiberatorAGMissileLMHd=Liberator AG Missile LM
 Effect/Name/LiberatorInterruptedMorphDelayPersistentHd=Liberator Interrupted Morph Delay Persistent
@@ -586,12 +645,25 @@ Effect/Name/LiberatorTargetMorphSearchABHd=Liberator Target Morph Search AB
 Effect/Name/LiberatorTargetMorphSearchAreaHd=Liberator Target Morph Search Area
 Effect/Name/LightAdeptDamageEnemyHd=Light Adept (Damage)
 Effect/Name/LightAdeptLMEnemyHd=Light Adept LM
+Effect/Name/LightGrenade1LMDaymanHd=Light Grenade 1 LM
+Effect/Name/LightGrenade2DummyLMDaymanHd=Light Grenade 2 Dummy LM
+Effect/Name/LightGrenade2LMDaymanHd=Light Grenade 2 LM
+Effect/Name/LightGrenadeCPDaymanHd=Light Grenade CP
+Effect/Name/LightGrenadeDamageDaymanHd=Light Grenade Damage
+Effect/Name/LightGrenadeDummyDamageDaymanHd=Light Grenade Dummy Damage
+Effect/Name/LightGrenadeImpactSetDaymanHd=Light Grenade Impact Set
+Effect/Name/LightGrenadeSearedArmorABDaymanHd=Light Grenade Seared Armor AB
 Effect/Name/LightHighTemplarWeaponDamageEnemyHd=Light High Templar Weapon (Damage)
 Effect/Name/LightHighTemplarWeaponLMEnemyHd=Light High Templar Weapon LM
 Effect/Name/LightLocustLMEnemyHd=Light Locust LM
 Effect/Name/LightLocustMeleeDamageEnemyHd=Light Locust Melee (Damage)
 Effect/Name/LightLocustRangedDamageEnemyHd=Light Locust Ranged (Damage)
 Effect/Name/LightPrisonerDamageEnemyHd=Light Prisoner (Damage)
+Effect/Name/LightningStormABSelendisHd=Lightning Storm AB
+Effect/Name/LightningStormCPSelendisHd=Lightning Storm CP
+Effect/Name/LightningStormDamageSelendisHd=Lightning Storm Damage
+Effect/Name/LightningStormSASelendisHd=Lightning Storm SA
+Effect/Name/LightningStormSetSelendisHd=Lightning Storm Set
 Effect/Name/LocustDamage=Locust Melee (Damage)
 Effect/Name/LongboltMissileBlankDamageBunkerHd=Longbolt Missile Blank Damage
 Effect/Name/LongboltMissileBlankLMBunkerHd=Longbolt Missile Blank LM
@@ -624,6 +696,11 @@ Effect/Name/NeedleSpinesImpactSwitchHd=Needle Spines Impact Switch
 Effect/Name/NeedleSpinesImpactSwitchHd2=Needle Spines Impact Switch
 Effect/Name/NeedleSpinesLMBiologicalHydraliskEnemyHd=Needle Spines LM
 Effect/Name/NeedleSpinesLaunchMissileHd=Needle Spines
+Effect/Name/NightmanDamageHd=Nightman Damage
+Effect/Name/NuclearStrikeCPPirateCapitalShipHd=Nuclear Strike CP
+Effect/Name/NuclearStrikeCalldownPirateCapitalShipHd=Nuclear Strike Calldown
+Effect/Name/NuclearStrikeDamagePirateCapitalShipHd=Nuclear Strike Damage
+Effect/Name/NuclearStrikeDetonateCPPirateCapitalShipHd=Nuclear Strike Detonate CP
 Effect/Name/OneFireworkHd=One Firework
 Effect/Name/P38ScytheGuassPistolCPLightReaperEnemyHd=P-38 Scythe Guass Pistol CP
 Effect/Name/P38ScytheGuassPistolDamageLightReaperEnemyHd=P-38 Scythe Guass Pistol (Damage)
@@ -640,7 +717,9 @@ Effect/Name/PsiBladesDamageArmoredZealotEnemyHd=Psi Blades (Damage)
 Effect/Name/PsiBladesDamageSimpleArmoredZealotEnemyHd=Psi Blades (Damage)
 Effect/Name/PsiBlastDamageBossHybridDominatorEnemyHd=Psi Blast (Damage)
 Effect/Name/PsiBlastDamageBossKerriganEnemyHd=Psi Blast (Damage)
+Effect/Name/PsiBlastDamageDaymanHd=Psi Blast Damage
 Effect/Name/PsiBlastLMBossKerriganEnemyHd=Psi Blast LM
+Effect/Name/PsiBlastLMDaymanHd=Psi Blast LM
 Effect/Name/PsionicShockwave2CPHd=Psionic Shockwave 2 CP
 Effect/Name/PsionicShockwave2DamageHd=Psionic Shockwave 2 (Damage)
 Effect/Name/PsionicShockwave2SAHd=Psionic Shockwave 2 SA
@@ -660,6 +739,12 @@ Effect/Name/Refund10MineralsAvailableABSalvageHd=Refund 10 Minerals Available AB
 Effect/Name/Refund4MineralsAvailableABSalvageHd=Refund 4 Minerals Available AB
 Effect/Name/Refund8MineralsAvailableABSalvageHd=Refund 8 Minerals Available AB
 Effect/Name/RemoveShrikeTurretRBBunkerHd=Remove Shrike Turret RB
+Effect/Name/RightDamagePirateCapitalShipHd=Right Damage
+Effect/Name/RightDummyDamagePirateCapitalShipHd=Right Dummy Damage
+Effect/Name/RightDummyLMPirateCapitalShipHd=Right Dummy LM
+Effect/Name/RightLMCPPirateCapitalShipHd=Right LM CP
+Effect/Name/RightLMPirateCapitalShipHd=Right LM
+Effect/Name/RightRandomLMPirateCapitalShipHd=Right Random LM
 Effect/Name/ScarabApplyRevealHd=Scarab Apply Reveal
 Effect/Name/ScarabExplodeDamageHd=Scarab Explode (Damage)
 Effect/Name/ScarabExplodeSetHd=Scarab Explode Set
@@ -669,6 +754,19 @@ Effect/Name/ScarabLaunchPersistentInitialHd=Scarab Launch Persistent Initial
 Effect/Name/ScarabLaunchSetHd=Scarab Launch Set
 Effect/Name/ScarabTimedLifeHd=Scarab Timed Life
 Effect/Name/ScarabUseMagazineHd=Scarab (Use Magazine)
+Effect/Name/SeekerMissileBatteredAndBruisedABNightmanHd=Seeker Missile Battered And Bruised AB
+Effect/Name/SeekerMissileDamageNightmanHd=Seeker Missile Damage
+Effect/Name/SeekerMissileImpactSetNightmanHd=Seeker Missile Impact Set
+Effect/Name/SeekerMissileLMNightmanHd=Seeker Missile LM
+Effect/Name/SeekerMissileLaunchCPNightmanHd=Seeker Missile Launch CP
+Effect/Name/SeekerMissileLaunchSetNightmanHd=Seeker Missile Launch Set
+Effect/Name/SeekerMissileLaunchTintCPNightmanHd=Seeker Missile Launch Tint CP
+Effect/Name/SeekerMissileSuicideNightmanHd=Seeker Missile Suicide
+Effect/Name/SeekerMissileSuicideSetNightmanHd=Seeker Missile Suicide Set
+Effect/Name/SeekerMissileTintABNightmanHd=Seeker Missile Tint AB
+Effect/Name/SelendisInterceptorBeamCPHd=Selendis Interceptor Beam CP
+Effect/Name/SelendisInterceptorDamageHd=Selendis Interceptor Damage
+Effect/Name/SelendisInterceptorHd=Selendis Interceptor
 Effect/Name/ShrikeTurretDamageBunkerHd=Shrike Turret (Damage)
 Effect/Name/SiegeTankSiegedSetHd=Siege Tank - Sieged Set
 Effect/Name/SpinesLightDroneEnemyHd=Spines (Damage)
@@ -676,6 +774,8 @@ Effect/Name/StukovWeaponDamageHd=Stukov Weapon Damage
 Effect/Name/StukovWeaponLMHd=Stukov Weapon LM
 Effect/Name/SummonBoulderCPShackledUltraliskHd=Summon Boulder CP
 Effect/Name/SummonBoulderDamageShackledUltraliskHd=Summon Boulder Damage
+Effect/Name/SummonBoulderSAShackledUltraliskHd=Summon Boulder SA
+Effect/Name/SummonBoulderSetShackledUltraliskHd=Summon Boulder Set
 Effect/Name/SunkenColonyDamageHd=Sunken Colony Damage
 Effect/Name/Talons=Talons Missile (Damage)
 Effect/Name/TalonsCPArmoredQueenEnemyHd=Talons CP
@@ -693,6 +793,7 @@ Effect/Name/ThermalLancesSearchForwardHd=Thermal Lances Search Forward
 Effect/Name/ThermalLancesSetHd=Thermal Lances Set
 Effect/Name/ThorsHammerCPHd=Thor's Hammer CP
 Effect/Name/ThorsHammerDamageHd=Thor's Hammer (Damage)
+Effect/Name/TurnBackIntoBuilderHd=Turn Back Into Builder
 Effect/Name/TwinAutocannonsMechanicalGoliathEnemyHd=Twin Autocannons (Damage)
 Effect/Name/UpgradeToArtilleryTurretABBunkerHd=Upgrade To Artillery Turret AB
 Effect/Name/UpgradeToArtilleryTurretSetBunkerHd=Upgrade To Artillery Turret Set
@@ -725,17 +826,22 @@ Param/Expression/1E71C629=Test Player ~kick_player~
 Param/Expression/1F0DEDF6=<c val="~color_success~">You won !<n/><n/>Woooooooooooo !</c>
 Param/Expression/27B4B0E7=Kick ~kick_player_name~ ?
 Param/Expression/32293807=Players are voting whether to kick Test Player ~kick_player~...
+Param/Expression/53FA7A41=<c val="F1FF71">Everyone Receives One Hero Chooser</c></n>
+Param/Expression/571B7AF2=<c val="F1FF71">Starting Wave #~wave~</c>
 Param/Expression/AA03E1AD=Kick Test Player ~kick_player~ ?
 Param/Expression/B019B228=Players are voting whether to kick ~kick_player_name~...
+Param/Expression/B1198A92=Unexpected cl4 int ~cl4~
 Param/Expression/CB02BB58=ghosts toggled to: ~ghosts_enabled~
 Param/Expression/E1FF0345=<c val="~color_calamity~">Ahhhh this guy took the team's last life !</c>
 Param/Expression/E7D75A99=Player ~result~ kicked ! (~value~/~threshold~)
 Param/Expression/EE5F32E3=<c val="~color_calamity~">Extra lives left: ~extra_lives_left~</c>
 Param/Expression/F3CACBA2=autoskip toggled to: ~autoskip~
 Param/Expression/lib_1_0137C127=Unexpected race returned for player ~p~
+Param/Expression/lib_1_063C9B82=Unexpected race returned for player ~p~
 Param/Expression/lib_1_307E16AC=stage: ~ability_stage~
 Param/Value/01C984EA=Vote to kick player
-Param/Value/06E6A6BE=That building would block the enemies.<n/><n/>You've been fully refunded.
+Param/Value/06E6A6BE=<c val="F1FF71">That building would block the enemies.<n/><n/>You've been fully refunded.</c>
+Param/Value/26532054=<c val="F1FF71">That building would block the enemies.<n/><n/>Your hero worker has respawned (he might be behind the ruins :) ).</c>
 Param/Value/3C656979=Close
 Param/Value/4B1CE14A=No (-1)
 Param/Value/503B0A62=Yes (+1)
@@ -792,6 +898,7 @@ Param/Value/lib_1_7923C72E=Build3 - Construct
 Param/Value/lib_1_79353442=Generic8 - Unpause
 Param/Value/lib_1_7E513C70=Attack1 - Approach
 Param/Value/lib_1_82D59DD9=Morph01 - Approach
+Param/Value/lib_1_86E4D322= 
 Param/Value/lib_1_875ED7AF=Morph12 - Unit End
 Param/Value/lib_1_8845F40E=Morph10 - Facing End
 Param/Value/lib_1_89DBB633=Harvest2 - Wait at Resource
@@ -803,6 +910,7 @@ Param/Value/lib_1_96D523DB=Morph07 - Collision Start
 Param/Value/lib_1_9AF529AD=Morph06 - Stats End
 Param/Value/lib_1_9BA4458C=Morph09 - Facing Start
 Param/Value/lib_1_A3DCFA2F=Effect2 - Prep
+Param/Value/lib_1_A4D10BC7= 
 Param/Value/lib_1_AC409659=Effect6 - Bail
 Param/Value/lib_1_ACFCE4F5=Generic5 - Preempt
 Param/Value/lib_1_AE6CBCB1=Morph15 - Mover Start
@@ -822,19 +930,21 @@ Param/Value/lib_1_EE7F86C0=On
 Param/Value/lib_1_F40CAC62=Build5 - Resume
 Param/Value/lib_1_F8914108=Effect5 - Finish
 Param/Value/lib_1_FF091B5E=Harvest4 - Wait to Return
+RequirementNode/Tooltip/LT3990822897CountUnitSelendisInterceptorHdQueuedOrBetterAtUnit5=Selendis must have fewer than 8 Interceptors
 Unit/Info/PlusSixModHd=Six additional enemies will spawn this round
 Unit/Info/PlusTwelveModHd=Twelve additional enemies will spawn this round
 Unit/Info/PurchaseFlagHd=Your purchased units will spawn here
 Unit/InfoText/PerfectSpecimenModHd=Adds shields, armor and speed
 Unit/LifeArmorName/LifeAndShieldArmor=Life And Shield Armor
 Unit/LifeArmorName/LifeArmor=Life And Shield Armor
-Unit/Name/1ChooserBeaconHd=1 Chooser
-Unit/Name/2ChooserBeaconHd=2 Choosers
+Unit/Name/1ChooserHeroBeaconHd=1 Chooser
+Unit/Name/1ChooserUnitBeaconHd=1 Chooser
+Unit/Name/2ChooserUnitBeaconHd=2 Choosers
 Unit/Name/2MineralsHd=2 Minerals
-Unit/Name/3ChooserBeaconHd=3 Choosers
-Unit/Name/4ChooserBeaconHd=4 Choosers
-Unit/Name/5ChooserBeaconHd=5 Choosers
-Unit/Name/6ChooserBeaconHd=6 Choosers
+Unit/Name/3ChooserUnitBeaconHd=3 Choosers
+Unit/Name/4ChooserUnitBeaconHd=4 Choosers
+Unit/Name/5ChooserUnitBeaconHd=5 Choosers
+Unit/Name/6ChooserUnitBeaconHd=6 Choosers
 Unit/Name/AcidSalivaWeaponRoachHd=Acid Saliva Weapon
 Unit/Name/AcidSalivaWeaponSimpleBeefyRoachEnemyHd=Acid Saliva Weapon
 Unit/Name/AcidSpinesWeaponArmoredQueenEnemyHd=Acid Spines Weapon
@@ -860,6 +970,7 @@ Unit/Name/ArmoredQuillyWeaponEnemyHd=Armored Quilly Weapon
 Unit/Name/ArmoredStalkerEnemyHd=Armored Stalker
 Unit/Name/ArmoredStalkerWeaponEnemyHd=Armored Stalker
 Unit/Name/ArmoredZealotEnemyHd=Armored Zealot
+Unit/Name/AtomicStormBreweryHd=Atomic Storm Brewery
 Unit/Name/AttackDroneHd=Attack Drone
 Unit/Name/AttackDroneHubHd=Attack Drone Hub
 Unit/Name/BeaconParentHd=Beacon Parent
@@ -890,14 +1001,21 @@ Unit/Name/BottomRightHdDefendLocationBeacon=Bottom Right
 Unit/Name/BunkerHd=Bunker
 Unit/Name/ChooserHd=Chooser
 Unit/Name/ColossusHd=Colossus
+Unit/Name/DaymanHd=Dayman
+Unit/Name/DaymanPsiBlastHd=Dayman Psi Blast
 Unit/Name/DevastatingShotWeaponStukovHd=Devastating Shot Weapon
 Unit/Name/DroneHd=Drone
 Unit/Name/DutchWeaponBossGiantRorySwannEnemyHd=Dutch Weapon
 Unit/Name/ExtraLifeHd=Extra Life
 Unit/Name/FirebatHd=Firebat
+Unit/Name/FrackerHd=Fracker
 Unit/Name/GhostHd=Ghost
 Unit/Name/GlaiveWurmWeaponHd=Glave Wurm
 Unit/Name/GuardianHd=Guardian
+Unit/Name/HeroBeaconParentHd=Hero Beacon Parent
+Unit/Name/HeroBuilderProtossHd=Hero Builder
+Unit/Name/HeroBuilderTerranHd=Hero Builder
+Unit/Name/HeroBuilderZergHd=Hero Builder
 Unit/Name/HolePuncherHd=Hole Puncher
 Unit/Name/HydraliskGroundWeapon=Needle Spines
 Unit/Name/HydraliskHd=Hydralisk
@@ -906,9 +1024,9 @@ Unit/Name/IncreasedSpeedModHd=Increased Speed
 Unit/Name/InfestedSiegeTankHd=Infested Siege Tank
 Unit/Name/InfestedSiegeTankUprootedHd=Infested Siege Tank
 Unit/Name/InfestedTerranHd=Infested Terran
-Unit/Name/InvisibleWaypointChooserHd=Invisible Waypoint Chooser
 Unit/Name/KerriganHd=Kerrigan
 Unit/Name/KillEverythingMarineTestHd=Kill Everything Marine
+Unit/Name/KorhalPalaceTurretHd=Korhal Palace Turret
 Unit/Name/LeftHdDefendLocationBeacon=Left
 Unit/Name/LiberatorAGHd=Liberator
 Unit/Name/LiberatorAGMissileHd=Liberator AG Missile
@@ -920,8 +1038,10 @@ Unit/Name/LightAdeptWeaponEnemyHd=Light Adept
 Unit/Name/LightBroodlingEnemyHd=Light Broodling
 Unit/Name/LightDroneEnemyHd=Light Drone
 Unit/Name/LightGhostEnemyHd=Light Ghost
+Unit/Name/LightGrenade1DaymanHd=Light Grenade 1
+Unit/Name/LightGrenade2DaymanHd=Light Grenade 2
 Unit/Name/LightHighTemplarEnemyHd=Light High Templar
-Unit/Name/LightHighTemplarWeaponEnemyHd=Light High Templar Weapon
+Unit/Name/LightHighTemplarPsiBlastEnemyHd=Light High Templar Psi Blast
 Unit/Name/LightInfestedTerranEnemyHd=Light Infested Terran
 Unit/Name/LightLocustEnemyHd=Light Locust
 Unit/Name/LightLocustWeaponEnemyHd=Light Locust - Weapon
@@ -945,11 +1065,15 @@ Unit/Name/MechanicalWarHoundEnemyHd=Mechanical Warhound
 Unit/Name/MechanicalWarhoundWeaponEnemyHd=Mechanical Warhound Weapon
 Unit/Name/MissileTurretHd=Missile Turret
 Unit/Name/MutaliskHd=Mutalisk
+Unit/Name/NightmanHd=Nightman
 Unit/Name/PathTesterRadius02Hd=Path Tester Radius 0.2
 Unit/Name/PathTesterRadius05Hd=Path Tester Radius 0.5
 Unit/Name/PerfectSpecimenModHd=Perfect Specimen
 Unit/Name/PhotonCannonHd=Photon Cannon
 Unit/Name/PhotonCannonWeaponHd=Photon Cannon Weapon
+Unit/Name/PirateCapitalShipHd=Pirate Capital Ship
+Unit/Name/PirateCapitalShipLeftLMWeaponHd=Pirate Capital Ship Left LM Weapon
+Unit/Name/PirateCapitalShipRightLMWeaponHd=Pirate Capital Ship Right LM Weapon
 Unit/Name/PlusSixModHd=Plus Six
 Unit/Name/PlusTwelveModHd=Plus Twelve
 Unit/Name/ProbeHd=Probe
@@ -968,7 +1092,11 @@ Unit/Name/RoachHd=Roach
 Unit/Name/SCVHd=SCV
 Unit/Name/ScarabHd=Scarab
 Unit/Name/ScarabWeaponHd=Scarab Weapon
+Unit/Name/SeekerMissileNightmanHd=Seeker Missile
+Unit/Name/SelendisHd=Selendis
+Unit/Name/SelendisInterceptorHd=Selendis Interceptor
 Unit/Name/ShackledUltraliskHd=Shackled Ultralisk
+Unit/Name/ShrineOfTheGodsHd=Shrine of the Gods
 Unit/Name/SiegeTankHd=Siege Tank
 Unit/Name/SiegeTankSiegedHd=Siege Tank
 Unit/Name/SimpleArmoredZealotHd=Simple Armored Zealot
@@ -1006,6 +1134,7 @@ Unit/Name/WormyHd=Wormy
 Unit/Name/WormySpitHd=Wormy Spit
 Unit/ShieldArmorName/ShieldArmor=Shield Armor
 UnitKillRank/BossDehakaEnemyHd=Primal Pack Leader
+UnitKillRank/SelendisHd=High Executor
 UnitSubtitle/BossDehakaEnemyHd=Primal Pack Leader
 UnitSubtitle/StukovHd=Infested Terran
 Upgrade/Name/BunkerTurretDamageHd=Bunker Turret Damage
@@ -1027,6 +1156,7 @@ Weapon/Name/ArmoredCutieWeaponEnemyHd=Armored Cutie Weapon
 Weapon/Name/ArmoredQuillyMeleeEnemyHd=Armored Quilly Melee
 Weapon/Name/ArmoredQuillyRangedEnemyHd=Armored Quilly Ranged
 Weapon/Name/ArtilleryTurretBunkerHd=Artillery Turret
+Weapon/Name/AtomicStormHd=Atomic Storm
 Weapon/Name/AttackDroneBeamHd=Attack Drone Beam
 Weapon/Name/AttackDroneHd=Attack Drone
 Weapon/Name/BaneBladesBossAlarakEnemyHd=Bane Blades
@@ -1041,6 +1171,7 @@ Weapon/Name/C20ACanisterRifleBiologicalKerriganEnemyHd=C-20A Canister Rifle
 Weapon/Name/ClawsBiologicalUrsadonEnemyHd=Claws
 Weapon/Name/ClawsBossDehakaEnemyHd=Claws
 Weapon/Name/ClawsLightDroneEnemyHd=Claws
+Weapon/Name/ClusterRocketsPirateCapitalShipHd=Cluster Rockets
 Weapon/Name/CrucioShockCannonInfestedSiegeTankHd=Crucio Shock Cannon
 Weapon/Name/CrucioShockCannonSiegeTankHd=Crucio Shock Cannon
 Weapon/Name/DutchBossGiantRorySwannEnemyHd=Dutch
@@ -1049,6 +1180,7 @@ Weapon/Name/EyeBeamsGroundBossStoneZealotEnemyHd=Eye Beams Ground
 Weapon/Name/FirebatHd=Perdition Flamethrower
 Weapon/Name/FirebreathBossYagdraEnemyHd=Firebreath
 Weapon/Name/FistBossGiantRorySwannEnemyHd=Fist
+Weapon/Name/FrackingCloudHd=Fracking Cloud
 Weapon/Name/FusionCutterLightSCVEnemyHd=Fusion Cutter
 Weapon/Name/GatlingCannonMechanicalVikingAssaultModeEnemyHd=Gatling Cannon
 Weapon/Name/GaussRifleMechanicalShikotoCoupeEnemyHd=Gauss Rifle
@@ -1059,10 +1191,12 @@ Weapon/Name/GuassRifleLightInfestedTerranEnemyHd=Gauss Rifle
 Weapon/Name/GuassRifleMechanicalMilitarizedTransportEnemyHd=Gauss Rifle
 Weapon/Name/GuassRifleSimpleQuickMarineEnemyHd=Gauss Rifle
 Weapon/Name/H1FlashWelderArmoredHercEnemyHd=H1 Flash Welder
+Weapon/Name/HeavensStrikeShrineOfTheGodsHd=Heaven's Strike
 Weapon/Name/HeavyTurretBunkerHd=Heavy Turret
 Weapon/Name/ImpalerTentacleHd=Impaler Tentacle
 Weapon/Name/KaiserBladesArmoredPygaliskEnemyHd=Kaiser Blades
 Weapon/Name/KaiserBladesBiologicalUltraliskEnemyHd=Kaiser Blades
+Weapon/Name/KorhalPalaceTurretHd=Korhal Palace Turret
 Weapon/Name/LiberatorAGWeaponHd=Concord Cannon
 Weapon/Name/LightLocustMeleeEnemyHd=Light Locust Melee
 Weapon/Name/LightLocustRangedEnemyHd=Light Locust Ranged
@@ -1077,6 +1211,7 @@ Weapon/Name/NapalmSprayArmoredHellbatEnemyHd=Napalm Spray
 Weapon/Name/NeedleClawsLightBroodlingEnemyHd=Needle Claws
 Weapon/Name/NeedleSpinesBiologicalHydraliskEnemyHd=Needle Spines
 Weapon/Name/NeedleSpinesHydraliskHd=Needle Spines
+Weapon/Name/NightmanCannonHd=Nightman Cannon
 Weapon/Name/P38GuassPistolLightReaperEnemyHd=P-38 Gauss Pistol
 Weapon/Name/ParticleBeamLightProbeEnemyHd=Particle Beam
 Weapon/Name/ParticleDisruptorsArmoredStalkerEnemyHd=Particle Disruptors
@@ -1102,6 +1237,9 @@ Weapon/Name/RavagerWeaponBiologicalRavagerEnemyHd=Plasma Discharge
 Weapon/Name/RazorTalonsBossKerriganEnemyHd=Razor Talons
 Weapon/Name/RedOrbHolePuncherHd=Red Orb
 Weapon/Name/ScarabsReaverHd=Scarabs
+Weapon/Name/SelendisInterceptorBeamHd=Selendis Interceptor Beam
+Weapon/Name/SelendisInterceptorsHd=Selendis Interceptors
+Weapon/Name/SelendisWeaponHd=Selendis Weapon
 Weapon/Name/ShrikeTurretBunkerHd=Shrike Turret
 Weapon/Name/SpinesLurkerHd=Spines
 Weapon/Name/SpinesWasplingHd=Spines
@@ -1125,37 +1263,47 @@ Weapon/Tip/AcidSpinesArmoredQueenEnemyHd=
 Weapon/Tip/AcidSporesGuardianHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/AdeptHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/ArtilleryTurretBunkerHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
+Weapon/Tip/AtomicStormHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Attack hits up to 4 enemies</c>
 Weapon/Tip/AttackDroneBeamHd=
 Weapon/Tip/AttackDroneHd=Attack upgrades by <c val="00E35B">2.5</c>
 Weapon/Tip/BigBoyCannonBeamHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
 Weapon/Tip/BileBombBileLauncherHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
 Weapon/Tip/C10CanisterRifleHd=Attack upgrades by <c val="00E35B">3</c>
+Weapon/Tip/ClusterRocketsPirateCapitalShipHd=Attack upgrades by <c val="00E35B">2.5</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
 Weapon/Tip/CrucioShockCannonInfestedSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/CrucioShockCannonSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/EnergyBlastKerriganHd=Attack upgrades by <c val="00E35B">2.5</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
 Weapon/Tip/FirebatHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
+Weapon/Tip/FrackingCloudHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Attack hits up to 4 enemies</c>
 Weapon/Tip/GlaiveWurmHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/GuassRifleHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/GuassRifleInfestedTerranHd=Attack upgrades by <c val="00E35B">1</c>
+Weapon/Tip/HeavensStrikeShrineOfTheGodsHd=Attack upgrades by <c val="00E35B">6</c>
 Weapon/Tip/HeavyTurretBunkerHd=Attack upgrades by <c val="00E35B">2.5</c>
 Weapon/Tip/ImpalerTentacleHd=Attack upgrades by <c val="00E35B">1</c>
+Weapon/Tip/KorhalPalaceTurretHd=Attack upgrades by <c val="00E35B">6</c>
 Weapon/Tip/LiberatorAGWeaponHd=Attack upgrades by <c val="00E35B">5</c>
 Weapon/Tip/MissileTurretBunkerHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/NeedleSpinesHydraliskHd=Attack upgrades by <c val="00E35B">2</c>
+Weapon/Tip/NightmanCannonHd=Attack upgrades by <c val="00E35B">5</c>
 Weapon/Tip/ParticleDisruptorsHd=Attack upgrades by <c val="00E35B">2</c>
 Weapon/Tip/PhaseDisruptorsHd=Attack upgrades by <c val="00E35B">3</c>
 Weapon/Tip/PhotonCannonHd=Attack upgrades by <c val="00E35B">1</c>
+Weapon/Tip/PsiBlastDaymanHd=Attack upgrades by <c val="00E35B">5</c>
 Weapon/Tip/PsionicShockwaveHd=Attack upgrades by <c val="00E35B">1</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/PunisherGrenadesHd=Attack upgrades by <c val="00E35B">2.5</c>
 Weapon/Tip/RedOrbHolePuncherHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/ScarabsReaverHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
+Weapon/Tip/SelendisInterceptorsHd=Attack upgrades by <c val="00E35B">2.5</c>
 Weapon/Tip/ShrikeTurretBunkerHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/SpinesLurkerHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/StukovWeaponHd=Attack upgrades by <c val="00E35B">5</c>
 Weapon/Tip/SubterraneanTentacleSunkenColonyHd=Attack upgrades by <c val="00E35B">4</c>
+Weapon/Tip/SummonBoulderShackledUltraliskHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Attack hits up to 4 enemies</c>
 Weapon/Tip/TalonsArmoredQueenEnemyHd=
 Weapon/Tip/TempestGroundHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/ThermalLancesHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/ThorsHammerHd=Attack upgrades by <c val="00E35B">3</c>
 Weapon/Tip/WasplingHd=Attack upgrades by <c val="00E35B">2.5</c>
+Weapon/Tip/WormySpitHd=Attack upgrades by <c val="00E35B">6</c>
 testing=testing

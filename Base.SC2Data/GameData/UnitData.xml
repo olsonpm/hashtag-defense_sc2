@@ -1,5 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUnit id="HeroBuilderZergHd">
+        <KillDisplay value="Never"/>
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Worker" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <DefaultAcquireLevel value="None"/>
+        <Response value="Flee"/>
+        <LifeStart value="40"/>
+        <LifeMax value="40"/>
+        <Mover value="Fly"/>
+        <Speed value="20"/>
+        <Acceleration value="100"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="8"/>
+        <AttackTargetPriority value="20"/>
+        <AIOverideTargetPriority value="10"/>
+        <BehaviorArray Link="IsBuilderHd"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="BuildHeroZergHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="BuildWormyHd" Type="AbilCmd" AbilCmd="BuildHeroZergHd,Build1" Row="2" Column="0"/>
+            <LayoutButtons Face="BuildShackledUltraliskHd" Type="AbilCmd" AbilCmd="BuildHeroZergHd,Build2" Row="2" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <SubgroupPriority value="5"/>
+        <MinimapRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <HotkeyCategory value="Unit/Category/ZergUnits"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="DaymanHd">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AlwaysThreatens" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="AIThreatAir" value="1"/>
+        <FlagArray index="AISplash" value="1"/>
+        <FlagArray index="AIHighPrioTarget" value="1"/>
+        <FlagArray index="AICaster" value="1"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <Speed value="2.9492"/>
+        <Acceleration value="1000"/>
+        <Deceleration value="1000"/>
+        <LateralAcceleration value="46"/>
+        <Sight value="7"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="100"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="Warpable"/>
+        <AbilArray Link="ProgressRally"/>
+        <AbilArray Link="LightGrenadeDaymanHd"/>
+        <AbilArray Link="BlinkHd"/>
+        <WeaponArray Link="PsiBlastDaymanHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="ThrowLightGrenadeDaymanHd" Type="AbilCmd" AbilCmd="LightGrenadeDaymanHd,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+        <InnerRadius value="0.5"/>
+        <CargoSize value="2"/>
+        <ScoreMake value="200"/>
+        <ScoreKill value="200"/>
+        <SubgroupPriority value="60"/>
+        <MinimapRadius value="0.625"/>
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+        <AIEvalFactor value="1.8"/>
+        <GlossaryCategory value="Unit/Category/ProtossStory"/>
+        <GlossaryPriority value="80"/>
+        <HotkeyCategory value="Unit/Category/ProtossStory"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Never"/>
+        <TauntDuration index="Cheer" value="5"/>
+        <TauntDuration index="Dance" value="5"/>
+        <AlliedPushPriority value="11"/>
+    </CUnit>
     <CUnit id="BeefySCVTestHd">
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
@@ -252,11 +367,59 @@
         <Race value="Zerg"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
     </CUnit>
-    <CUnit id="WormyHd">
+    <CUnit id="DaymanPsiBlastHd" parent="MISSILE_INVULNERABLE">
+        <Race value="Prot"/>
+        <Mover value="HighTemplarWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="HeroBuilderProtossHd">
+        <KillDisplay value="Never"/>
+        <RankDisplay value="Never"/>
+        <Race value="Prot"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="Worker" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <DefaultAcquireLevel value="None"/>
+        <Response value="Flee"/>
+        <LifeStart value="40"/>
+        <LifeMax value="40"/>
+        <Mover value="Fly"/>
+        <Speed value="20"/>
+        <Acceleration value="100"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="8"/>
+        <AttackTargetPriority value="20"/>
+        <AIOverideTargetPriority value="10"/>
+        <BehaviorArray Link="IsBuilderHd"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="BuildHeroProtossHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="BuildShrineOfTheGodsHd" Type="AbilCmd" AbilCmd="BuildHeroProtossHd,Build1" Row="2" Column="0"/>
+            <LayoutButtons Face="BuildAtomicStormBreweryHd" Type="AbilCmd" AbilCmd="BuildHeroProtossHd,Build2" Row="2" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <SubgroupPriority value="4"/>
+        <MinimapRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
+    </CUnit>
+    <CUnit id="KorhalPalaceTurretHd">
+        <RankDisplay value="Never"/>
         <DeathRevealRadius value="3"/>
-        <Facing value="29.9707"/>
-        <Race value="Zerg"/>
-        <Mob value="Multiplayer"/>
+        <Race value="Terr"/>
         <FlagArray index="Turnable" value="0"/>
         <FlagArray index="PreventDefeat" value="1"/>
         <FlagArray index="PreventDestroy" value="1"/>
@@ -266,6 +429,458 @@
         <FlagArray index="NoPortraitTalk" value="1"/>
         <FlagArray index="AIDefense" value="1"/>
         <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Small" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <Sight value="9"/>
+        <AttackTargetPriority value="19"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="TurnBackIntoBuilderTerranHd"/>
+        <WeaponArray Link="KorhalPalaceTurretHd" Turret="KorhalPalaceTurretHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="TurnBackIntoBuilderTerranHd" Type="AbilCmd" AbilCmd="TurnBackIntoBuilderTerranHd,Execute" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="150"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="HeroBuilderTerranHd">
+        <KillDisplay value="Never"/>
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Worker" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <DefaultAcquireLevel value="None"/>
+        <Response value="Flee"/>
+        <LifeStart value="40"/>
+        <LifeMax value="40"/>
+        <Mover value="Fly"/>
+        <Speed value="20"/>
+        <Acceleration value="100"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="8"/>
+        <AttackTargetPriority value="20"/>
+        <AIOverideTargetPriority value="10"/>
+        <BehaviorArray Link="IsBuilderHd"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="BuildHeroTerranHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="BuildKorhalPalaceTurretHd" Type="AbilCmd" AbilCmd="BuildHeroTerranHd,Build1" Row="2" Column="0"/>
+            <LayoutButtons Face="BuildFrackerHd" Type="AbilCmd" AbilCmd="BuildHeroTerranHd,Build2" Row="2" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <SubgroupPriority value="5"/>
+        <MinimapRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <HotkeyCategory value="Unit/Category/TerranUnits"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="PirateCapitalShipHd">
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AIFleeDamageDisabled" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <Mover value="Fly"/>
+        <Speed value="1.4062"/>
+        <Acceleration value="1"/>
+        <Sight value="7"/>
+        <Height value="4.25"/>
+        <VisionHeight value="4"/>
+        <Food value="-6"/>
+        <CostCategory value="Army"/>
+        <RepairTime value="90"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="NuclearStrikePirateCapitalShipHd"/>
+        <WeaponArray Link="ClusterRocketsPirateCapitalShipHd" Turret="PirateCapitalShipHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="NuclearStrikePirateCapitalShipHd" Type="AbilCmd" AbilCmd="NuclearStrikePirateCapitalShipHd,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="1200"/>
+        <ScoreKill value="2400"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="16"/>
+        <MinimapRadius value="1.25"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkBattleCruiser"/>
+        <AIEvalFactor value="0.9"/>
+        <Mass value="0.6"/>
+        <TechAliasArray value="Alias_BattlecruiserClass"/>
+        <GlossaryCategory value="Unit/Category/TerranUnits"/>
+        <GlossaryPriority value="200"/>
+        <GlossaryStrongArray value="SJHyperion"/>
+        <GlossaryWeakArray value="SJFighter1"/>
+    </CUnit>
+    <CUnit id="PirateCapitalShipLeftLMWeaponHd" parent="MISSILE">
+        <Race value="Terr"/>
+        <Mover value="SJPirateCapitalShipLeftLMWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="PirateCapitalShipRightLMWeaponHd" parent="MISSILE">
+        <Race value="Terr"/>
+        <Mover value="SJPirateCapitalShipRightLMWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="FrackerHd">
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="Destructible" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="Small" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <Sight value="9"/>
+        <AttackTargetPriority value="11"/>
+        <WeaponArray Link="FrackingCloudHd"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="TurnBackIntoBuilderTerranHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="TurnBackIntoBuilderTerranHd" Type="AbilCmd" AbilCmd="TurnBackIntoBuilderTerranHd,Execute" Row="2" Column="4"/>
+        </CardLayouts>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <SubgroupPriority value="10"/>
+        <MinimapRadius value="1"/>
+        <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="AtomicStormBreweryHd">
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Small" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <Sight value="9"/>
+        <WeaponArray Link="AtomicStormHd"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="TurnBackIntoBuilderProtossHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="TurnBackIntoBuilderProtossHd" Type="AbilCmd" AbilCmd="TurnBackIntoBuilderProtossHd,Execute" Row="2" Column="4"/>
+        </CardLayouts>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="ShrineOfTheGodsHd">
+        <RankDisplay value="Never"/>
+        <DeathTime value="8"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Small" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <Sight value="9"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="TurnBackIntoBuilderProtossHd"/>
+        <WeaponArray Link="HeavensStrikeShrineOfTheGodsHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="TurnBackIntoBuilderProtossHd" Type="AbilCmd" AbilCmd="TurnBackIntoBuilderProtossHd,Execute" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="1.5"/>
+        <SeparationRadius value="1.5"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <DeadFootprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="1.5"/>
+        <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="SeekerMissileNightmanHd" parent="MISSILE_INVULNERABLE">
+        <Race value="Terr"/>
+        <LifeStart value="5"/>
+        <LifeMax value="5"/>
+        <BehaviorArray Link="SeekerMissileTimeoutNightmanHd"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="NightmanHd">
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <Speed value="2.25"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="719.2968"/>
+        <TurningRate value="719.2968"/>
+        <Sight value="7"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="20"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="15"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="SeekerMissileNightmanHd"/>
+        <AbilArray Link="BlinkHd"/>
+        <WeaponArray Link="NightmanCannonHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="SeekerMissileNightmanHd" Type="AbilCmd" AbilCmd="SeekerMissileNightmanHd,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+        <InnerRadius value="0.5"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="50"/>
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+        <HotkeyAlias value="Raynor01"/>
+        <GlossaryCategory value="Unit/Category/TerranUnits"/>
+        <GlossaryPriority value="300"/>
+        <HotkeyCategory value="Unit/Category/TerranStory"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="SelendisHd">
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <Mover value="Fly"/>
+        <Speed value="1.875"/>
+        <Acceleration value="1.0625"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="359.4726"/>
+        <TurningRate value="359.4726"/>
+        <Sight value="7"/>
+        <Height value="4.25"/>
+        <VisionHeight value="4"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="19"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="120"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="HangarSelendisHd"/>
+        <AbilArray Link="HangarQueue5"/>
+        <AbilArray Link="Warpable"/>
+        <AbilArray Link="ProgressRally"/>
+        <AbilArray Link="LightningStormSelendisHd"/>
+        <WeaponArray Link="SelendisWeaponHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="LightningStormSelendisHd" Type="AbilCmd" AbilCmd="LightningStormSelendisHd,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.375"/>
+        <SeparationRadius value="1.375"/>
+        <ScoreMake value="1000"/>
+        <ScoreKill value="2000"/>
+        <SubgroupPriority value="14"/>
+        <MinimapRadius value="1.375"/>
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+        <Mass value="0.6"/>
+        <SelectAlias value="Carrier"/>
+        <EquipmentArray Weapon="SelendisInterceptorsHd"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="330"/>
+        <GlossaryStrongArray value="Mutalisk"/>
+        <GlossaryWeakArray value="Corruptor"/>
+    </CUnit>
+    <CUnit id="SelendisInterceptorHd">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <EditorFlags index="NoPlacement" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <DefaultAcquireLevel value="None"/>
+        <Response value="Nothing"/>
+        <LifeStart value="50"/>
+        <LifeMax value="50"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
+        <ShieldsStart value="30"/>
+        <ShieldsMax value="30"/>
+        <ShieldRegenRate value="3"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Mover value="Fly"/>
+        <Speed value="7.5"/>
+        <Acceleration value="1000"/>
+        <Sight value="7"/>
+        <Height value="3.25"/>
+        <VisionHeight value="4"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="5"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <WeaponArray Link="SelendisInterceptorBeamHd"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+        </CardLayouts>
+        <Radius value="0.25"/>
+        <SeparationRadius value="0.25"/>
+        <SubgroupPriority value="57"/>
+        <MinimapRadius value="0.25"/>
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+        <Mass value="0.2"/>
+        <LeaderAlias value="Interceptor"/>
+    </CUnit>
+    <CUnit id="LightGrenade2DaymanHd" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="PhaseMineBlastSecondary"/>
+        <Height value="1.5"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="LightGrenade1DaymanHd" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="PhaseMineBlast"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="WormyHd">
+        <RankDisplay value="Never"/>
+        <DeathRevealRadius value="3"/>
+        <Facing value="29.9707"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
         <FogVisibility value="Snapshot"/>
         <PlaneArray index="Ground" value="1"/>
         <Collide index="Burrow" value="1"/>
@@ -279,21 +894,18 @@
         <LifeMax value="30"/>
         <StationaryTurningRate value="719.4726"/>
         <TurningRate value="719.4726"/>
-        <Sight value="10"/>
-        <Food value="-2"/>
-        <CostCategory value="Technology"/>
-        <CostResource index="Minerals" value="10"/>
+        <Sight value="9"/>
         <AttackTargetPriority value="11"/>
-        <AbilArray Link="BuildinProgressNydusCanal"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
-        <BehaviorArray Link="MakeCreepNydusAttacker"/>
-        <BehaviorArray Link="NydusDestroyerInvulnerability"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="TurnBackIntoBuilderZergHd"/>
         <WeaponArray Link="WormySpitHd" Turret="WormyHd"/>
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="TurnBackIntoBuilderZergHd" Type="AbilCmd" AbilCmd="TurnBackIntoBuilderZergHd,Execute" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>
@@ -310,6 +922,7 @@
         <EditorCategories value="ObjectFamily:Melee,ObjectType:Projectile"/>
     </CUnit>
     <CUnit id="ShackledUltraliskHd">
+        <RankDisplay value="Never"/>
         <Race value="Zerg"/>
         <Mob value="Multiplayer"/>
         <FlagArray index="Turnable" value="0"/>
@@ -322,23 +935,19 @@
         <Collide index="Structure" value="1"/>
         <Collide index="Small" value="1"/>
         <Attributes index="Structure" value="1"/>
-        <LifeStart value="30000"/>
-        <LifeMax value="30000"/>
-        <!--
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        -->
-        <Sight value="10"/>
+        <Sight value="9"/>
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="AttackEnemyHd"/>
-        <AbilArray Link="SalvageRefund8MineralsHd"/>
-        <AbilArray Link="SalvageFullRefundHd"/>
+        <AbilArray Link="TurnBackIntoBuilderZergHd"/>
         <BehaviorArray Link="DecreaseVsBossAttributeDamageHd"/>
         <WeaponArray Link="SummonBoulderShackledUltraliskHd"/>
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="TurnBackIntoBuilderZergHd" Type="AbilCmd" AbilCmd="TurnBackIntoBuilderZergHd,Execute" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.875"/>
         <SeparationRadius value="0.875"/>
@@ -347,6 +956,7 @@
         <PlacementFootprint value="Footprint2x2"/>
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
         <LeaderAlias value=""/>
+        <DeathTime value="10"/>
     </CUnit>
     <CUnit id="DevastatingShotWeaponStukovHd" parent="MISSILE">
         <Race value="Zerg"/>
@@ -371,7 +981,7 @@
         <Speed value="2.9492"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46.0625"/>
-        <Sight value="13"/>
+        <Sight value="7"/>
         <CostCategory value="Army"/>
         <AttackTargetPriority value="20"/>
         <DamageDealtXP value="1"/>
@@ -390,7 +1000,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="ApocalypseKerriganHd" Type="AbilCmd" AbilCmd="ApocalypseKerriganHd,Execute" Row="2" Column="2"/>
         </CardLayouts>
         <Radius value="0.375"/>
@@ -431,7 +1041,7 @@
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
-        <Sight value="13"/>
+        <Sight value="7"/>
         <CostCategory value="Army"/>
         <AttackTargetPriority value="20"/>
         <DamageDealtXP value="1"/>
@@ -450,8 +1060,8 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="CorrosiveBlastStukovHd" Type="AbilCmd" AbilCmd="CorrosiveBlastStukovHd,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="CorrosiveBlastStukovHd" Type="AbilCmd" AbilCmd="CorrosiveBlastStukovHd,Execute" Row="2" Column="2"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="1"/>
@@ -636,8 +1246,6 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <Attributes index="Armored" value="1"/>
-        <Attributes index="Mechanical" value="1"/>
         <Attributes index="Structure" value="1"/>
         <LifeStart value="250"/>
         <LifeMax value="250"/>
@@ -879,7 +1487,6 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <Attributes index="Armored" value="1"/>
         <Attributes index="Structure" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
@@ -936,7 +1543,10 @@
         <InnerRadius value="0.5"/>
         <LifeStart value="10000"/>
         <LifeMax value="10000"/>
+        <LifeArmor value="20"/>
+        <!--
         <LifeRegenRate value="200"/>
+        -->
         <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
         <Speed value="10"/>
         <Acceleration value="1000"/>
@@ -1129,7 +1739,6 @@
         <FogVisibility value="Snapshot"/>
         <PlaneArray index="Ground" value="1"/>
         <Collide index="Structure" value="1"/>
-        <Attributes index="Armored" value="1"/>
         <Attributes index="Structure" value="1"/>
         <LifeStart value="200"/>
         <LifeMax value="200"/>
@@ -1284,10 +1893,10 @@
     </CUnit>
     <CUnit id="ArmoredDragoonEnemyHd">
         <Attributes index="Armored" value="1"/>
-        <LifeMax value="480"/>
-        <LifeStart value="480"/>
-        <ShieldsStart value="480"/>
-        <ShieldsMax value="480"/>
+        <LifeMax value="530"/>
+        <LifeStart value="530"/>
+        <ShieldsStart value="530"/>
+        <ShieldsMax value="530"/>
         <LifeArmor value="10"/>
         <ShieldArmor value="10"/>
         <Speed value="2.5"/>
@@ -1354,10 +1963,10 @@
     </CUnit>
     <CUnit id="ArmoredHercEnemyHd">
         <Attributes index="Armored" value="1"/>
-        <LifeStart value="1700"/>
-        <LifeMax value="1700"/>
-        <ShieldsStart value="1700"/>
-        <ShieldsMax value="1700"/>
+        <LifeStart value="1800"/>
+        <LifeMax value="1800"/>
+        <ShieldsStart value="1800"/>
+        <ShieldsMax value="1800"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="2.5"/>
@@ -1410,10 +2019,10 @@
     </CUnit>
     <CUnit id="ArmoredHellbatEnemyHd">
         <Attributes index="Armored" value="1"/>
-        <LifeMax value="460"/>
-        <LifeStart value="460"/>
-        <ShieldsStart value="460"/>
-        <ShieldsMax value="460"/>
+        <LifeMax value="510"/>
+        <LifeStart value="510"/>
+        <ShieldsStart value="510"/>
+        <ShieldsMax value="510"/>
         <LifeArmor value="10"/>
         <ShieldArmor value="10"/>
         <Speed value="2.5"/>
@@ -1473,10 +2082,10 @@
     </CUnit>
     <CUnit id="ArmoredCycloneEnemyHd">
         <Attributes index="Armored" value="1"/>
-        <LifeMax value="850"/>
-        <LifeStart value="850"/>
-        <ShieldsStart value="850"/>
-        <ShieldsMax value="850"/>
+        <LifeMax value="890"/>
+        <LifeStart value="890"/>
+        <ShieldsStart value="890"/>
+        <ShieldsMax value="890"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="2.5"/>
@@ -1546,10 +2155,10 @@
     </CUnit>
     <CUnit id="ArmoredImmortalEnemyHd">
         <Attributes index="Armored" value="1"/>
-        <LifeMax value="950"/>
-        <LifeStart value="950"/>
-        <ShieldsStart value="950"/>
-        <ShieldsMax value="950"/>
+        <LifeMax value="990"/>
+        <LifeStart value="990"/>
+        <ShieldsStart value="990"/>
+        <ShieldsMax value="990"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="2.5"/>
@@ -1673,10 +2282,10 @@
     </CUnit>
     <CUnit id="BiologicalKerriganEnemyHd">
         <Attributes index="Biological" value="1"/>
-        <LifeStart value="1700"/>
-        <LifeMax value="1700"/>
-        <ShieldsStart value="1700"/>
-        <ShieldsMax value="1700"/>
+        <LifeStart value="1750"/>
+        <LifeMax value="1750"/>
+        <ShieldsStart value="1750"/>
+        <ShieldsMax value="1750"/>
         <LifeArmor value="25"/>
         <ShieldArmor value="25"/>
         <Speed value="3"/>
@@ -1866,10 +2475,10 @@
     </CUnit>
     <CUnit id="BossKerriganEnemyHd">
         <Attributes index="Heroic" value="1"/>
-        <LifeMax value="4500"/>
-        <LifeStart value="4500"/>
-        <ShieldsStart value="4500"/>
-        <ShieldsMax value="4500"/>
+        <LifeMax value="3080"/>
+        <LifeStart value="3080"/>
+        <ShieldsStart value="3080"/>
+        <ShieldsMax value="3080"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="3"/>
@@ -1925,10 +2534,10 @@
     </CUnit>
     <CUnit id="BossHybridDominatorEnemyHd">
         <Attributes index="Heroic" value="1"/>
-        <LifeMax value="1500"/>
-        <LifeStart value="1500"/>
-        <ShieldsStart value="1500"/>
-        <ShieldsMax value="1500"/>
+        <LifeMax value="1560"/>
+        <LifeStart value="1560"/>
+        <ShieldsStart value="1560"/>
+        <ShieldsMax value="1560"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="3"/>
@@ -2022,7 +2631,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowLurkerMP" Type="AbilCmd" AbilCmd="BurrowLurkerHd,Execute" Row="2" Column="4"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="4"/>
@@ -2086,7 +2695,7 @@
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="LurkerHoldFire" Type="AbilCmd" AbilCmd="LurkerHoldFire,Execute" Row="1" Column="2"/>
             <LayoutButtons Face="LurkerCancelHoldFire" Type="AbilCmd" AbilCmd="LurkerRemoveHoldFire,Execute" Row="1" Column="3"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="LurkerBurrowUp" Type="AbilCmd" AbilCmd="UnburrowLurkerHd,Execute" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.75"/>
@@ -2292,10 +2901,10 @@
     </CUnit>
     <CUnit id="MechanicalShikotoCoupeEnemyHd">
         <Attributes index="Mechanical" value="1"/>
-        <LifeMax value="900"/>
-        <LifeStart value="900"/>
-        <ShieldsStart value="900"/>
-        <ShieldsMax value="900"/>
+        <LifeMax value="940"/>
+        <LifeStart value="940"/>
+        <ShieldsStart value="940"/>
+        <ShieldsMax value="940"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="3"/>
@@ -2344,10 +2953,10 @@
     </CUnit>
     <CUnit id="MechanicalGoliathEnemyHd">
         <Attributes index="Mechanical" value="1"/>
-        <LifeMax value="500"/>
-        <LifeStart value="500"/>
-        <ShieldsStart value="500"/>
-        <ShieldsMax value="500"/>
+        <LifeMax value="550"/>
+        <LifeStart value="550"/>
+        <ShieldsStart value="550"/>
+        <ShieldsMax value="550"/>
         <LifeArmor value="10"/>
         <ShieldArmor value="10"/>
         <Speed value="3"/>
@@ -2407,10 +3016,10 @@
     </CUnit>
     <CUnit id="LightGhostEnemyHd">
         <Attributes index="Light" value="1"/>
-        <LifeMax value="850"/>
-        <LifeStart value="850"/>
-        <ShieldsStart value="850"/>
-        <ShieldsMax value="850"/>
+        <LifeMax value="890"/>
+        <LifeStart value="890"/>
+        <ShieldsStart value="890"/>
+        <ShieldsMax value="890"/>
         <LifeArmor value="12"/>
         <ShieldArmor value="12"/>
         <Speed value="3.5976"/>
@@ -2480,10 +3089,10 @@
     </CUnit>
     <CUnit id="LightHighTemplarEnemyHd">
         <Attributes index="Light" value="1"/>
-        <LifeStart value="1500"/>
-        <LifeMax value="1500"/>
-        <ShieldsStart value="1500"/>
-        <ShieldsMax value="1500"/>
+        <LifeStart value="1550"/>
+        <LifeMax value="1550"/>
+        <ShieldsStart value="1550"/>
+        <ShieldsMax value="1550"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="3.5976"/>
@@ -2554,7 +3163,7 @@
         <TauntDuration index="Cheer" value="5"/>
         <TauntDuration index="Dance" value="5"/>
     </CUnit>
-    <CUnit id="LightHighTemplarWeaponEnemyHd" parent="MISSILE_INVULNERABLE">
+    <CUnit id="LightHighTemplarPsiBlastEnemyHd" parent="MISSILE_INVULNERABLE">
         <Race value="Prot"/>
         <Mover value="HighTemplarWeapon"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
@@ -2624,10 +3233,10 @@
     </CUnit>
     <CUnit id="LightInfestedTerranEnemyHd">
         <Attributes index="Light" value="1"/>
-        <LifeMax value="500"/>
-        <LifeStart value="500"/>
-        <ShieldsStart value="500"/>
-        <ShieldsMax value="500"/>
+        <LifeMax value="550"/>
+        <LifeStart value="550"/>
+        <ShieldsStart value="550"/>
+        <ShieldsMax value="550"/>
         <LifeArmor value="6"/>
         <ShieldArmor value="6"/>
         <Speed value="3.5976"/>
@@ -2735,10 +3344,10 @@
     </CUnit>
     <CUnit id="LightAdeptEnemyHd">
         <Attributes index="Light" value="1"/>
-        <LifeMax value="460"/>
-        <LifeStart value="460"/>
-        <ShieldsStart value="460"/>
-        <ShieldsMax value="460"/>
+        <LifeMax value="510"/>
+        <LifeStart value="510"/>
+        <ShieldsStart value="510"/>
+        <ShieldsMax value="510"/>
         <LifeArmor value="6"/>
         <ShieldArmor value="6"/>
         <Speed value="3.5976"/>
@@ -2805,10 +3414,10 @@
     </CUnit>
     <CUnit id="BiologicalHydraliskEnemyHd">
         <Attributes index="Biological" value="1"/>
-        <LifeMax value="600"/>
-        <LifeStart value="600"/>
-        <ShieldsStart value="600"/>
-        <ShieldsMax value="600"/>
+        <LifeMax value="650"/>
+        <LifeStart value="650"/>
+        <ShieldsStart value="650"/>
+        <ShieldsMax value="650"/>
         <LifeArmor value="8"/>
         <ShieldArmor value="8"/>
         <Speed value="3"/>
@@ -2951,10 +3560,10 @@
     </CUnit>
     <CUnit id="LightLocustEnemyHd">
         <Attributes index="Light" value="1"/>
-        <LifeMax value="950"/>
-        <LifeStart value="950"/>
-        <ShieldsStart value="950"/>
-        <ShieldsMax value="950"/>
+        <LifeMax value="990"/>
+        <LifeStart value="990"/>
+        <ShieldsStart value="990"/>
+        <ShieldsMax value="990"/>
         <LifeArmor value="12"/>
         <ShieldArmor value="12"/>
         <Speed value="3.5976"/>
@@ -3062,10 +3671,10 @@
     </CUnit>
     <CUnit id="MechanicalMilitarizedTransportEnemyHd">
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="1700"/>
-        <LifeMax value="1700"/>
-        <ShieldsStart value="1700"/>
-        <ShieldsMax value="1700"/>
+        <LifeStart value="1800"/>
+        <LifeMax value="1800"/>
+        <ShieldsStart value="1800"/>
+        <ShieldsMax value="1800"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="3"/>
@@ -3358,10 +3967,10 @@
     </CUnit>
     <CUnit id="LightReaperEnemyHd">
         <Attributes index="Light" value="1"/>
-        <LifeMax value="480"/>
-        <LifeStart value="480"/>
-        <ShieldsStart value="480"/>
-        <ShieldsMax value="480"/>
+        <LifeMax value="530"/>
+        <LifeStart value="530"/>
+        <ShieldsStart value="530"/>
+        <ShieldsMax value="530"/>
         <LifeArmor value="6"/>
         <ShieldArmor value="6"/>
         <Speed value="3.5976"/>
@@ -3427,10 +4036,10 @@
     </CUnit>
     <CUnit id="ArmoredPygaliskEnemyHd">
         <Attributes index="Armored" value="1"/>
-        <LifeStart value="1500"/>
-        <LifeMax value="1500"/>
-        <ShieldsStart value="1500"/>
-        <ShieldsMax value="1500"/>
+        <LifeStart value="1550"/>
+        <LifeMax value="1550"/>
+        <ShieldsStart value="1550"/>
+        <ShieldsMax value="1550"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="2.5"/>
@@ -3491,10 +4100,10 @@
     </CUnit>
     <CUnit id="ArmoredQuillyEnemyHd">
         <Attributes index="Armored" value="1"/>
-        <LifeMax value="500"/>
-        <LifeStart value="500"/>
-        <ShieldsStart value="500"/>
-        <ShieldsMax value="500"/>
+        <LifeMax value="550"/>
+        <LifeStart value="550"/>
+        <ShieldsStart value="550"/>
+        <ShieldsMax value="550"/>
         <LifeArmor value="10"/>
         <ShieldArmor value="10"/>
         <Speed value="2.5"/>
@@ -3530,10 +4139,10 @@
     </CUnit>
     <CUnit id="LightPrisonerEnemyHd">
         <Attributes index="Light" value="1"/>
-        <LifeMax value="440"/>
-        <LifeStart value="440"/>
-        <ShieldsStart value="440"/>
-        <ShieldsMax value="440"/>
+        <LifeMax value="490"/>
+        <LifeStart value="490"/>
+        <ShieldsStart value="490"/>
+        <ShieldsMax value="490"/>
         <LifeArmor value="6"/>
         <ShieldArmor value="6"/>
         <Speed value="3.5976"/>
@@ -3578,10 +4187,10 @@
     </CUnit>
     <CUnit id="ArmoredQueenEnemyHd">
         <Attributes index="Armored" value="1"/>
-        <LifeMax value="440"/>
-        <LifeStart value="440"/>
-        <ShieldsStart value="440"/>
-        <ShieldsMax value="440"/>
+        <LifeMax value="490"/>
+        <LifeStart value="490"/>
+        <ShieldsStart value="490"/>
+        <ShieldsMax value="490"/>
         <LifeArmor value="10"/>
         <ShieldArmor value="10"/>
         <Speed value="2.5"/>
@@ -3651,10 +4260,10 @@
     </CUnit>
     <CUnit id="BiologicalRavagerEnemyHd">
         <Attributes index="Biological" value="1"/>
-        <LifeMax value="1000"/>
-        <LifeStart value="1000"/>
-        <ShieldsStart value="1000"/>
-        <ShieldsMax value="1000"/>
+        <LifeMax value="1050"/>
+        <LifeStart value="1050"/>
+        <ShieldsStart value="1050"/>
+        <ShieldsMax value="1050"/>
         <LifeArmor value="16"/>
         <ShieldArmor value="16"/>
         <Speed value="3"/>
@@ -3712,10 +4321,10 @@
     </CUnit>
     <CUnit id="BiologicalRavasaurEnemyHd">
         <Attributes index="Biological" value="1"/>
-        <LifeMax value="1100"/>
-        <LifeStart value="1100"/>
-        <ShieldsStart value="1100"/>
-        <ShieldsMax value="1100"/>
+        <LifeMax value="1150"/>
+        <LifeStart value="1150"/>
+        <ShieldsStart value="1150"/>
+        <ShieldsMax value="1150"/>
         <LifeArmor value="16"/>
         <ShieldArmor value="16"/>
         <Speed value="3"/>
@@ -3764,10 +4373,10 @@
     </CUnit>
     <CUnit id="MechanicalSiegeTankTankModeEnemyHd">
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="1400"/>
-        <LifeMax value="1400"/>
-        <ShieldsStart value="1400"/>
-        <ShieldsMax value="1400"/>
+        <LifeStart value="1450"/>
+        <LifeMax value="1450"/>
+        <ShieldsStart value="1450"/>
+        <ShieldsMax value="1450"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="3"/>
@@ -3833,10 +4442,10 @@
     </CUnit>
     <CUnit id="BossStoneZealotEnemyHd">
         <Attributes index="Heroic" value="1"/>
-        <LifeMax value="4500"/>
-        <LifeStart value="4500"/>
-        <ShieldsStart value="4500"/>
-        <ShieldsMax value="4500"/>
+        <LifeMax value="4600"/>
+        <LifeStart value="4600"/>
+        <ShieldsStart value="4600"/>
+        <ShieldsMax value="4600"/>
         <LifeArmor value="60"/>
         <ShieldArmor value="60"/>
         <Speed value="2"/>
@@ -3894,10 +4503,10 @@
     </CUnit>
     <CUnit id="BossGiantRorySwannEnemyHd">
         <Attributes index="Heroic" value="1"/>
-        <LifeMax value="3000"/>
-        <LifeStart value="3000"/>
-        <ShieldsStart value="3000"/>
-        <ShieldsMax value="3000"/>
+        <LifeMax value="3080"/>
+        <LifeStart value="3080"/>
+        <ShieldsStart value="3080"/>
+        <ShieldsMax value="3080"/>
         <LifeArmor value="40"/>
         <ShieldArmor value="40"/>
         <Speed value="2"/>
@@ -3963,10 +4572,10 @@
     </CUnit>
     <CUnit id="BiologicalUltraliskEnemyHd">
         <Attributes index="Biological" value="1"/>
-        <LifeStart value="1900"/>
-        <LifeMax value="1900"/>
-        <ShieldsStart value="1900"/>
-        <ShieldsMax value="1900"/>
+        <LifeStart value="2000"/>
+        <LifeMax value="2000"/>
+        <ShieldsStart value="2000"/>
+        <ShieldsMax value="2000"/>
         <LifeArmor value="25"/>
         <ShieldArmor value="25"/>
         <Speed value="3"/>
@@ -4030,10 +4639,10 @@
     </CUnit>
     <CUnit id="BossEradicatorEnemyHd">
         <Attributes index="Heroic" value="1"/>
-        <LifeMax value="1500"/>
-        <LifeStart value="1500"/>
-        <ShieldsStart value="1500"/>
-        <ShieldsMax value="1500"/>
+        <LifeMax value="1560"/>
+        <LifeStart value="1560"/>
+        <ShieldsStart value="1560"/>
+        <ShieldsMax value="1560"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="2"/>
@@ -4164,8 +4773,6 @@
         <FlagArray index="UseLineOfSight" value="1"/>
         <PlaneArray index="Ground" value="1"/>
         <PushPriority value="5"/>
-        <Attributes index="Light" value="1"/>
-        <Attributes index="Biological" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
         <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
@@ -4284,7 +4891,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="2"/>
@@ -4350,7 +4957,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="4"/>
@@ -4433,7 +5040,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <CardLayouts>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
@@ -4607,12 +5214,11 @@
         <FlagArray index="UseLineOfSight" value="1"/>
         <FlagArray index="Invulnerable" value="1"/>
         <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
         <DefaultAcquireLevel value="None"/>
         <Response value="Flee"/>
         <LifeStart value="40"/>
         <LifeMax value="40"/>
-        <LifeArmorName value="Unit/LifeArmorName/LifeArmor"/>
-        <ShieldArmorName value="Unit/ShieldArmorName/ShieldArmor"/>
         <Mover value="Fly"/>
         <Speed value="20"/>
         <Acceleration value="100"/>
@@ -4620,13 +5226,9 @@
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
         <Sight value="8"/>
-        <CostCategory value="Economy"/>
-        <CostResource index="Minerals" value="50"/>
         <AttackTargetPriority value="20"/>
         <AIOverideTargetPriority value="10"/>
-        <DamageDealtXP value="1"/>
-        <DamageTakenXP value="1"/>
-        <KillXP value="10"/>
+        <BehaviorArray Link="IsBuilderHd"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="BuildZergHd"/>
@@ -4644,15 +5246,11 @@
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
         <CargoSize value="1"/>
-        <ScoreMake value="50"/>
-        <ScoreKill value="50"/>
-        <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="4"/>
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Drone"/>
         <HotkeyCategory value="Unit/Category/ZergUnits"/>
-        <Collide index="Flying" value="1"/>
     </CUnit>
     <CUnit id="ResearchCenterZergHd">
         <DeathRevealRadius value="3"/>
@@ -4823,7 +5421,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="2"/>
@@ -4880,7 +5478,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <InnerRadius value="0.375"/>
@@ -4985,7 +5583,7 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="InfestedSiegeTankUprootHd" Type="AbilCmd" AbilCmd="InfestedSiegeTankUprootHd,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="2"/>
         </CardLayouts>
         <CargoSize value="8"/>
         <ScoreKill value="275"/>
@@ -5046,7 +5644,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
             <LayoutButtons Face="InfestedSiegeTankRootHd" Type="AbilCmd" AbilCmd="InfestedSiegeTankRootHd,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="2"/>
         </CardLayouts>
         <CargoSize value="4"/>
         <ScoreMake value="275"/>
@@ -5165,7 +5763,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="4"/>
@@ -5305,7 +5903,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="4"/>
@@ -5413,7 +6011,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.4375"/>
         <CargoSize value="2"/>
@@ -5473,7 +6071,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="AttackGhost" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
@@ -5673,7 +6271,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="2"/>
@@ -5735,7 +6333,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
@@ -5792,6 +6390,7 @@
         <DamageDealtXP value="1"/>
         <DamageTakenXP value="1"/>
         <KillXP value="10"/>
+        <BehaviorArray Link="IsBuilderHd"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="BuildProtossHd"/>
@@ -5869,7 +6468,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="2"/>
@@ -5910,6 +6509,7 @@
         <DamageDealtXP value="1"/>
         <DamageTakenXP value="1"/>
         <KillXP value="10"/>
+        <BehaviorArray Link="IsBuilderHd"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="BuildTerranHd"/>
@@ -6047,7 +6647,7 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="SiegeMode" Type="AbilCmd" AbilCmd="SiegeModeHd,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="2"/>
         </CardLayouts>
         <CargoSize value="4"/>
         <ScoreMake value="275"/>
@@ -6112,7 +6712,7 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Unsiege" Type="AbilCmd" AbilCmd="UnsiegeHd,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="2"/>
         </CardLayouts>
         <ScoreKill value="275"/>
         <SubgroupPriority value="13"/>
@@ -6256,7 +6856,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="2"/>
@@ -6391,7 +6991,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="AttackEnemyHd,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="ThorAPMode,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="Blink" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BlinkHd" Type="AbilCmd" AbilCmd="BlinkHd,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <CargoSize value="8"/>
         <ScoreMake value="500"/>
@@ -6418,23 +7018,23 @@
     <CUnit id="TopRightHdDefendLocationBeacon" parent="BeaconParentHd">
         <Name value="Unit/Name/TopRightHdDefendLocationBeacon"/>
     </CUnit>
-    <CUnit id="1ChooserBeaconHd" parent="UnitBeaconParentHd">
-        <Name value="Unit/Name/1ChooserBeaconHd"/>
+    <CUnit id="1ChooserUnitBeaconHd" parent="UnitBeaconParentHd">
+        <Name value="Unit/Name/1ChooserUnitBeaconHd"/>
     </CUnit>
-    <CUnit id="2ChooserBeaconHd" parent="UnitBeaconParentHd">
-        <Name value="Unit/Name/2ChooserBeaconHd"/>
+    <CUnit id="2ChooserUnitBeaconHd" parent="UnitBeaconParentHd">
+        <Name value="Unit/Name/2ChooserUnitBeaconHd"/>
     </CUnit>
-    <CUnit id="3ChooserBeaconHd" parent="UnitBeaconParentHd">
-        <Name value="Unit/Name/3ChooserBeaconHd"/>
+    <CUnit id="3ChooserUnitBeaconHd" parent="UnitBeaconParentHd">
+        <Name value="Unit/Name/3ChooserUnitBeaconHd"/>
     </CUnit>
-    <CUnit id="4ChooserBeaconHd" parent="UnitBeaconParentHd">
-        <Name value="Unit/Name/4ChooserBeaconHd"/>
+    <CUnit id="4ChooserUnitBeaconHd" parent="UnitBeaconParentHd">
+        <Name value="Unit/Name/4ChooserUnitBeaconHd"/>
     </CUnit>
-    <CUnit id="5ChooserBeaconHd" parent="UnitBeaconParentHd">
-        <Name value="Unit/Name/5ChooserBeaconHd"/>
+    <CUnit id="5ChooserUnitBeaconHd" parent="UnitBeaconParentHd">
+        <Name value="Unit/Name/5ChooserUnitBeaconHd"/>
     </CUnit>
-    <CUnit id="6ChooserBeaconHd" parent="UnitBeaconParentHd">
-        <Name value="Unit/Name/6ChooserBeaconHd"/>
+    <CUnit id="6ChooserUnitBeaconHd" parent="UnitBeaconParentHd">
+        <Name value="Unit/Name/6ChooserUnitBeaconHd"/>
     </CUnit>
     <CUnit id="ChooserHd" parent="Civilian">
         <Name value="Unit/Name/ChooserHd"/>
@@ -6443,10 +7043,10 @@
     </CUnit>
     <CUnit id="LightWarPigEnemyHd">
         <Attributes index="Light" value="1"/>
-        <LifeStart value="1700"/>
-        <LifeMax value="1700"/>
-        <ShieldsStart value="1700"/>
-        <ShieldsMax value="1700"/>
+        <LifeStart value="1800"/>
+        <LifeMax value="1800"/>
+        <ShieldsStart value="1800"/>
+        <ShieldsMax value="1800"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="3.5976"/>
@@ -6506,10 +7106,10 @@
     </CUnit>
     <CUnit id="MechanicalVikingAssaultModeEnemyHd">
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="800"/>
-        <LifeMax value="800"/>
-        <ShieldsStart value="800"/>
-        <ShieldsMax value="800"/>
+        <LifeStart value="840"/>
+        <LifeMax value="840"/>
+        <ShieldsStart value="840"/>
+        <ShieldsMax value="840"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="3"/>
@@ -6577,10 +7177,10 @@
     </CUnit>
     <CUnit id="MechanicalWarHoundEnemyHd">
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="1600"/>
-        <LifeMax value="1600"/>
-        <ShieldsStart value="1600"/>
-        <ShieldsMax value="1600"/>
+        <LifeStart value="1650"/>
+        <LifeMax value="1650"/>
+        <ShieldsStart value="1650"/>
+        <ShieldsMax value="1650"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="3"/>
@@ -6637,6 +7237,13 @@
         <Race value="Terr"/>
         <Mover value="WarHoundWeapon"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="HeroBeaconParentHd" parent="BeaconParentHd">
+        <Name value="Unit/Name/HeroBeaconParentHd"/>
+        <FlagArray index="Uncommandable" value="0"/>
+    </CUnit>
+    <CUnit id="1ChooserHeroBeaconHd" parent="HeroBeaconParentHd">
+        <Name value="Unit/Name/1ChooserHeroBeaconHd"/>
     </CUnit>
     <CUnit id="UrsadonTestHd">
         <RankDisplay value="Never"/>
@@ -6923,10 +7530,10 @@
     </CUnit>
     <CUnit id="BiologicalUrsadonEnemyHd">
         <Attributes index="Biological" value="1"/>
-        <LifeMax value="1150"/>
-        <LifeStart value="1150"/>
-        <ShieldsStart value="1150"/>
-        <ShieldsMax value="1150"/>
+        <LifeMax value="1250"/>
+        <LifeStart value="1250"/>
+        <ShieldsStart value="1250"/>
+        <ShieldsMax value="1250"/>
         <LifeArmor value="16"/>
         <ShieldArmor value="16"/>
         <Speed value="3"/>
@@ -6984,10 +7591,10 @@
     </CUnit>
     <CUnit id="BossYagdraEnemyHd">
         <Attributes index="Heroic" value="1"/>
-        <LifeMax value="5000"/>
-        <LifeStart value="5000"/>
-        <ShieldsStart value="5000"/>
-        <ShieldsMax value="5000"/>
+        <LifeMax value="5200"/>
+        <LifeStart value="5200"/>
+        <ShieldsStart value="5200"/>
+        <ShieldsMax value="5200"/>
         <LifeArmor value="40"/>
         <ShieldArmor value="40"/>
         <Speed value="3"/>

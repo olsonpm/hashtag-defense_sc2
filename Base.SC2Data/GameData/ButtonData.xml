@@ -6,13 +6,77 @@
         <EditorCategories value="Race:Zerg"/>
         <HotkeyAlias value="K5Leviathan"/>
     </CButton>
+    <CButton id="BlinkHd">
+        <Icon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HotkeyAlias value="Blink"/>
+    </CButton>
+    <CButton id="BuildFrackerHd">
+        <Icon value="Assets\Textures\btn-building-nova-fusioncore.dds"/>
+        <HotkeyAlias value="BuildShackledUltraliskHd"/>
+    </CButton>
+    <CButton id="BuildKorhalPalaceTurretHd">
+        <Icon value="Assets\Textures\btn-building-hornerhan-engineeringbay.dds"/>
+        <HotkeyAlias value="BuildShackledUltraliskHd"/>
+    </CButton>
+    <CButton id="BuildShackledUltraliskHd">
+        <Icon value="Assets\Textures\btn-ability-zerg-frenzied-color.dds"/>
+    </CButton>
+    <CButton id="BuildShrineOfTheGodsHd">
+        <Icon value="Assets\Textures\btn-ability-protoss-massrecall.dds"/>
+        <HotkeyAlias value="BuildShackledUltraliskHd"/>
+    </CButton>
+    <CButton id="BuildAtomicStormBreweryHd">
+        <Icon value="Assets\Textures\btn-ability-protoss-astralwind.dds"/>
+        <HotkeyAlias value="BuildShackledUltraliskHd"/>
+    </CButton>
+    <CButton id="BuildWormyHd">
+        <Icon value="Assets\Textures\btn-ability-kerrigan-wildmutation.dds"/>
+    </CButton>
     <CButton id="CorrosiveBlastStukovHd">
         <Icon value="Assets\Textures\btn-ability-zerg-corrosiveblast.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-zerg-corrosiveblast.dds"/>
         <EditorCategories value="Race:Zerg"/>
     </CButton>
+    <CButton id="LightningStormSelendisHd">
+        <Icon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="NuclearStrikePirateCapitalShipHd">
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+        <Icon value="Assets\Textures\btn-ability-terran-nuclearstrike-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-nuclearstrike-color.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HotkeyAlias value="OdinNukeCalldown"/>
+    </CButton>
+    <CButton id="ThrowLightGrenadeDaymanHd">
+        <Icon value="Assets\Textures\BTN-Ability-Terran-EMP-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="SeekerMissileNightmanHd">
+        <Icon value="Assets\Textures\BTN-Ability-Terran-HunterMissile-color.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Terran-HunterMissile-color.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="TestFireworkHd">
         <Icon value="Assets\Textures\lunarnewyearfirework_coop.dds"/>
+    </CButton>
+    <CButton id="TurnBackIntoBuilderTerranHd">
+        <Icon value="Assets\Textures\btn-unit-terran-mule.dds"/>
+        <HotkeyAlias value="TurnBackIntoBuilderZergHd"/>
+    </CButton>
+    <CButton id="TurnBackIntoBuilderZergHd">
+        <Icon value="Assets\Textures\btn-unit-zerg-changeling.dds"/>
+    </CButton>
+    <CButton id="TurnBackIntoBuilderProtossHd">
+        <Icon value="Assets\Textures\btn-unit-collection-purifier-probe.dds"/>
+        <HotkeyAlias value="TurnBackIntoBuilderZergHd"/>
     </CButton>
     <CButton id="UpgradeToPhotonCannonHd">
         <Icon value="Assets\Textures\btn-building-protoss-photoncannon.dds"/>

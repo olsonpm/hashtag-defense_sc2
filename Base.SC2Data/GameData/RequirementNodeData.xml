@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CRequirementConst id="15"/>
+    <CRequirementAllowUnit id="AllowUnitAtomicStormBreweryHd">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Link value="AtomicStormBreweryHd"/>
+    </CRequirementAllowUnit>
+    <CRequirementAllowUnit id="AllowUnitFrackerHd">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Link value="FrackerHd"/>
+    </CRequirementAllowUnit>
+    <CRequirementAllowUnit id="AllowUnitKorhalPalaceTurretHd">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Link value="KorhalPalaceTurretHd"/>
+    </CRequirementAllowUnit>
+    <CRequirementAllowUnit id="AllowUnitShackledUltraliskHd">
+        <Link value="ShackledUltraliskHd"/>
+    </CRequirementAllowUnit>
+    <CRequirementAllowUnit id="AllowUnitShrineOfTheGodsHd">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Link value="ShrineOfTheGodsHd"/>
+    </CRequirementAllowUnit>
+    <CRequirementAllowUnit id="AllowUnitWormyHd">
+        <Link value="WormyHd"/>
+    </CRequirementAllowUnit>
     <CRequirementCountBehavior id="CountBehaviorArmorpiercingModeCompleteOnlyAtUnit2">
         <Flags index="TechTreeCheat" value="0"/>
         <Tooltip value=""/>
@@ -37,6 +60,10 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="UpgradedTurretBunkerHd" State="InProgressOrBetterAtUnit"/>
     </CRequirementCountBehavior>
+    <CRequirementCountUnit id="CountUnitSelendisInterceptorHdQueuedOrBetterAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="SelendisInterceptorHd" State="QueuedOrBetterAtUnit"/>
+    </CRequirementCountUnit>
     <CRequirementCountUpgrade id="CountUpgradeBunkerTurretDamageHdCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="BunkerTurretDamageHd" State="CompleteOnly"/>
@@ -77,6 +104,10 @@
         <OperandArray index="0" value="CountBehaviorUpgradedTurretBunkerHdInProgressOrBetterAtUnit"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
+    <CRequirementLT id="LT3990822897CountUnitSelendisInterceptorHdQueuedOrBetterAtUnit5">
+        <OperandArray index="0" value="CountUnitSelendisInterceptorHdQueuedOrBetterAtUnit"/>
+        <OperandArray index="1" value="5"/>
+    </CRequirementLT>
     <CRequirementLT id="LTCountUpgradeBunkerTurretDamageHdCompleteOnly100">
         <OperandArray index="0" value="CountUpgradeBunkerTurretDamageHdCompleteOnly"/>
         <OperandArray index="1" value="100"/>

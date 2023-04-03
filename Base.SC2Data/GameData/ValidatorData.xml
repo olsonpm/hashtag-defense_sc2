@@ -31,6 +31,9 @@
     <CValidatorUnitCompareBehaviorCount id="IsNotPerfectSpecimenModHd">
         <Behavior value="PerfectSpecimenModHd"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="NotHaveLightningStormPirateCapitalShipHd">
+        <Behavior value="LightningStormSelendisHd"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="PhotonCannonIsNotUpgradedHd">
         <Behavior value="UpgradedPhotonCannonHd"/>
     </CValidatorUnitCompareBehaviorCount>
@@ -96,6 +99,16 @@
         <Value value="SCVHd"/>
         <Find value="0"/>
     </CValidatorUnitType>
+    <CValidatorLocationCompareRange id="SeekerMissileMaxLaunchRangeNightmanHd">
+        <WhichLocation Effect="SeekerMissileLMNightmanHd"/>
+        <Compare value="GE"/>
+        <Range value="13"/>
+        <Value Value="SourceUnit"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="SeekerMissileValidatorsNightmanHd">
+        <Type value="And"/>
+        <CombineArray value="SeekerMissileMaxLaunchRangeNightmanHd"/>
+    </CValidatorCombine>
     <CValidatorUnitType id="SpineCrawlerHd">
         <Value value="SpineCrawler"/>
     </CValidatorUnitType>

@@ -75,6 +75,7 @@ text lib1_gf_getabililtystageastext (int lp_stage);
 int lib1_gf_getcurrenttimeint ();
 text lib1_gf_getplayerraceastext (int lp_p);
 int lib1_gf_getraceintegerfromplayer (int lp_p);
+int lib1_gf_getracepresetfromplayer (int lp_p);
 int lib1_gf_numberofstructuresinregion (region lp_r, int lp_p);
 int lib1_gf_numberofunitsinregion (region lp_r, int lp_p);
 int lib1_gf_numberofunitsoftypeinregion (region lp_r, int lp_p, string lp_t);
@@ -85,6 +86,8 @@ unit lib1_gf_previousselectedunit (int lp_p);
 unit lib1_gf_unitatpoint (point lp_p, int lp_player, string lp_ut);
 void lib1_gf_alertplayernotenoughminerals (int lp_p);
 void lib1_gf_alertplayererror (int lp_p, text lp_err);
+void lib1_gf_cleartextmessageareaforallusers (int lp_messagearea);
+void lib1_gf_cleartextmessageareaforuser (int lp_p, int lp_messagearea);
 void lib1_gf_createunitatpoint (string lp_ut, point lp_point, int lp_player, int lp_opts);
 void lib1_gf_createNunitsatpoint (int lp_n, string lp_ut, point lp_point, int lp_player);
 void lib1_gf_debouncedmessageaddorset (structref<lib1_gs_debouncedmessage> lp_debouncedmessage);
@@ -585,6 +588,33 @@ int lib1_gf_getraceintegerfromplayer (int lp_p) {
     }
 }
 
+int lib1_gf_getracepresetfromplayer (int lp_p) {
+    // Variable Declarations
+    int lv__race;
+
+    // Automatic Variable Declarations
+    string auto5DB55850_val;
+
+    // Variable Initialization
+
+    // Implementation
+    auto5DB55850_val = PlayerRace(lp_p);
+    if (auto5DB55850_val == "Prot") {
+        return lib1_ge_race_protoss;
+    }
+    else if (auto5DB55850_val == "Terr") {
+        return lib1_ge_race_terran;
+    }
+    else if (auto5DB55850_val == "Zerg") {
+        return lib1_ge_race_zerg;
+    }
+    else {
+        TextExpressionSetToken("Param/Expression/lib_1_063C9B82", "p", IntToText(lp_p));
+        lib1_gf_displaydebugmessage(TextExpressionAssemble("Param/Expression/lib_1_063C9B82"));
+        return -1;
+    }
+}
+
 int lib1_gf_numberofstructuresinregion (region lp_r, int lp_p) {
     // Automatic Variable Declarations
     // Implementation
@@ -659,6 +689,40 @@ void lib1_gf_alertplayererror (int lp_p, text lp_err) {
     }
     else {
         UIDisplayMessage(PlayerGroupSingle(lp_p), c_messageAreaError, lp_err);
+    }
+}
+
+void lib1_gf_cleartextmessageareaforallusers (int lp_messagearea) {
+    // Variable Declarations
+    int lv_i;
+
+    // Automatic Variable Declarations
+    const int auto6CEBE01C_ae = 20;
+    const int auto6CEBE01C_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_i = 1;
+    for ( ; ( (auto6CEBE01C_ai >= 0 && lv_i <= auto6CEBE01C_ae) || (auto6CEBE01C_ai < 0 && lv_i >= auto6CEBE01C_ae) ) ; lv_i += auto6CEBE01C_ai ) {
+        UIDisplayMessage(PlayerGroupAll(), lp_messagearea, StringExternal("Param/Value/lib_1_A4D10BC7"));
+    }
+}
+
+void lib1_gf_cleartextmessageareaforuser (int lp_p, int lp_messagearea) {
+    // Variable Declarations
+    int lv_i;
+
+    // Automatic Variable Declarations
+    const int auto1CD5B932_ae = 20;
+    const int auto1CD5B932_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_i = 1;
+    for ( ; ( (auto1CD5B932_ai >= 0 && lv_i <= auto1CD5B932_ae) || (auto1CD5B932_ai < 0 && lv_i >= auto1CD5B932_ae) ) ; lv_i += auto1CD5B932_ai ) {
+        UIDisplayMessage(PlayerGroupSingle(lp_p), lp_messagearea, StringExternal("Param/Value/lib_1_86E4D322"));
     }
 }
 
@@ -1280,14 +1344,18 @@ struct gs_unitandcurrentdestinationpoint {
 //--------------------------------------------------------------------------------------------------
 const int ge_choicetype_unit = 0;
 const int ge_choicetype_minerals = 1;
-const int ge_clockwiselocation_top = 0;
-const int ge_clockwiselocation_topright = 1;
-const int ge_clockwiselocation_right = 2;
-const int ge_clockwiselocation_botright = 3;
-const int ge_clockwiselocation_bot = 4;
-const int ge_clockwiselocation_botleft = 5;
-const int ge_clockwiselocation_left = 6;
-const int ge_clockwiselocation_topleft = 7;
+const int ge_clockwiselocation8_cl8top = 0;
+const int ge_clockwiselocation8_cl8topright = 1;
+const int ge_clockwiselocation8_cl8right = 2;
+const int ge_clockwiselocation8_cl8botright = 3;
+const int ge_clockwiselocation8_cl8bot = 4;
+const int ge_clockwiselocation8_cl8botleft = 5;
+const int ge_clockwiselocation8_cl8left = 6;
+const int ge_clockwiselocation8_cl8topleft = 7;
+const int ge_clockwiselocation4_cl4top = 0;
+const int ge_clockwiselocation4_cl4right = 1;
+const int ge_clockwiselocation4_cl4bot = 2;
+const int ge_clockwiselocation4_cl4left = 3;
 const int ge_clockwiseenemypathlocation_enemypathtop = 0;
 const int ge_clockwiseenemypathlocation_enemypathtoprighttop = 1;
 const int ge_clockwiseenemypathlocation_enemypathtoprightright = 2;
@@ -1350,6 +1418,8 @@ const int ge_pathtestsegments_horizontalbot = 7;
 bool gv_testpathlock;
 bool[10] gv_autoupgradelockperplayer;
 bool gv_lockkeepspawnclearofunits;
+bool gv_herochooserlock;
+bool[10] gv_herochooserlockbyplayer;
 bool gv_unitchooserlock;
 bool[10] gv_unitchooserlockbyplayer;
 int gv_currentextralife;
@@ -1383,7 +1453,8 @@ fixed gv_chooserradius;
 fixed gv_chooserradiusbig;
 actor gv_currentenemyindicator;
 unit[9] gv_defendlocationbeaconperlocation;
-point[9] gv_defendlocationtochooserspawnpoint;
+point[9] gv_defendlocationtoherochooserspawnpoint;
+point[9] gv_defendlocationtounitchooserspawnpoint;
 region[9] gv_defendlocationtoislandsregion;
 int[9][3] gv_defendlocationtopathtestsegments;
 point[9] gv_defendpointperlocation;
@@ -1407,6 +1478,10 @@ point[26] gv_extralifepoints;
 int gv_gameattributeaddmodstoallrounds;
 int gv_gameattributedifficulty;
 int gv_gameattributeroundtimer;
+point[9][5] gv_herobeaconpoints;
+string[5][4] gv_heroperlocationandrace;
+point[9][5] gv_heropoints;
+unit[10] gv_invisiblewaypointchooserperplayer;
 int[10] gv_kickplayerlistdicancel;
 int[10][10] gv_kickplayerlistdiplayer;
 int[10] gv_kickplayerlistdialog;
@@ -1422,7 +1497,6 @@ timer gv_kickplayervotetimer;
 timer[10] gv_kickplayervotespamtimer;
 int gv_kickplayervotevalue;
 bool[10] gv_kickplayervotewascast;
-unit[10] gv_invisiblewaypointchooserperplayer;
 int[9][3] gv_locationandsublocationtoenemypathlocation;
 int[9] gv_locationtoplayer;
 int[16] gv_modtypedice;
@@ -1438,6 +1512,7 @@ bank[9] gv_playerbanks;
 int gv_playerbeingvotedontokick;
 int[10] gv_playertodefenderlocation;
 bool[10] gv_playertoghostsenabled;
+int[9][5] gv_playertoherobuildinglocationavailableusages;
 int[10] gv_playertonumchoosersspent;
 bool[10] gv_playertoskipclicked;
 int gv_playerwhoinitiatedvote;
@@ -1538,6 +1613,28 @@ void InitGlobals () {
 //--------------------------------------------------------------------------------------------------
 // Global Function Declarations
 //--------------------------------------------------------------------------------------------------
+void gf_initheropointstop ();
+void gf_initheropointstopright ();
+void gf_initheropointsright ();
+void gf_initheropointsbotright ();
+void gf_initheropointsbot ();
+void gf_initheropointsbotleft ();
+void gf_initheropointsleft ();
+void gf_initheropointstopleft ();
+void gf_initheroperlocationprotoss ();
+void gf_initheroperlocationterran ();
+void gf_initheroperlocationzerg ();
+void gf_initheropoints ();
+void gf_initheroperlocation ();
+void gf_initherobeaconpointstop ();
+void gf_initherobeaconpointstopright ();
+void gf_initherobeaconpointsright ();
+void gf_initherobeaconpointsbotright ();
+void gf_initherobeaconpointsbot ();
+void gf_initherobeaconpointsbotleft ();
+void gf_initherobeaconpointsleft ();
+void gf_initherobeaconpointstopleft ();
+void gf_initherobeaconpoints ();
 void gf_initunitpointstop ();
 void gf_initunitpointstopright ();
 void gf_initunitpointsright ();
@@ -1564,10 +1661,11 @@ void gf_initunitbeaconpointsperlocation ();
 void gf_initalliance ();
 void gf_initattributebuffamounts ();
 void gf_initbanks ();
-void gf_initchooserspawnpoints ();
 void gf_initdefendlocationbeaconperlocation ();
+void gf_initdefendlocationtoherochooserspawnpoints ();
 void gf_initdefendlocationtoislandregion ();
 void gf_initdefendlocationtopathtestsegments ();
+void gf_initdefendlocationtounitchooserspawnpoints ();
 void gf_initdefendpointperlocation ();
 void gf_initenemyclearregionperpathlocation ();
 void gf_initenemygroups ();
@@ -1588,6 +1686,7 @@ void gf_initenemytelespawns ();
 void gf_initextralifepoints ();
 void gf_initextralives ();
 void gf_initgameattributevars ();
+void gf_initherobuildingsdisabled ();
 void gf_initlocationandsublocationtospawnclockwiselocation ();
 void gf_initlocationchoosers ();
 void gf_initmisc ();
@@ -1609,6 +1708,8 @@ void gf_initspawnpoint (int lp_p, point lp_defendpoint);
 void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser);
 void gf_clearspawnlocationwhenempty ();
 void gf_createworkeratlocation (point lp_spawnpoint, int lp_p);
+void gf_inithero (int lp_defenderlocation, int lp_herolocation, int lp_race);
+void gf_initheroarea (int lp_defenderlocation, int lp_p);
 void gf_initunitsforlocation (int lp_defenderlocation, int lp_player);
 void gf_initunit (int lp_defenderlocation, int lp_unitlocation, int lp_race);
 void gf_initunitbotright (int lp_defenderlocation, int lp_race);
@@ -1629,10 +1730,12 @@ void gf_startkickvoteforplayer (int lp_initiatedbyplayer, int lp_kickplayer);
 void gf_showvoteresults ();
 int gf_getvotevaluethreshold ();
 bool gf_unitisbuilder (unit lp_u);
+int gf_convertcl4integertopreset (int lp_cl4int);
 int gf_rollmodtypedice ();
 void gf_applymodtounit (unit lp_u, int lp_modtype);
 void gf_createmoddedunitatpoint (string lp_ut, int lp_p, point lp_point, int lp_opts, int lp_modtype);
 void gf_createplayerunitatpoint (int lp_location, int lp_race, int lp_player, point lp_point, string lp_utoverride, int lp_opts);
+void gf_createplayerheroatpoint (int lp_location, int lp_race, int lp_player, point lp_point, int lp_opts);
 void gf_removefullrefund ();
 void gf_removeghost (unit lp_u);
 void gf_removeplayer (int lp_p);
@@ -1642,6 +1745,10 @@ void gf_stopandclearenemyghostspawn ();
 void gf_updateactivepathtests ();
 void gf_upgradebuilding (string lp_buildingtypetocreate);
 void gf_skipforplayeriftimerisactive (int lp_p);
+void gf_choosehero (int lp_location, int lp_p, region lp_region);
+void gf_enableherobuilding (int lp_location, int lp_p);
+void gf_spawnhero (int lp_unitlocation, int lp_p);
+void gf_turnherobuildingbackintobuilder (int lp_p, unit lp_u);
 void gf_spawnunit (int lp_unitlocation, int lp_p);
 void gf_chooseunit (int lp_numchoosers, int lp_location, int lp_p, region lp_region, int lp_choicetype);
 bool gf_gameisnotover ();
@@ -1651,6 +1758,7 @@ bool gf_shouldpingchooser (int lp_p);
 bool gf_canspawnghosts ();
 int gf_getcurrentmodtype ();
 string gf_getcurrentenemyunittypetospawn ();
+void gf_announcewave ();
 void gf_endgameshowpanel ();
 void gf_endgamedefeat (unit lp_unitcausingdefeat);
 void gf_endgamesetoff200fireworkssecond ();
@@ -1664,6 +1772,7 @@ void gf_runround ();
 void gf_skipifallclicked ();
 void gf_spawnenemies ();
 void gf_spawnenemyghostsatlocation (int lp_location);
+void gf_spawnherochoosers ();
 void gf_spawnsingleenemy (fixed lp_afterNseconds, int lp_currentmodtype, point lp_enemyrallypoint, point lp_enemyspawnpoint, string lp_enemyunittype, string lp_spawnbehavior, bool lp_isghost);
 void gf_startroundtimer (int lp_numseconds);
 void gf_updatedialogtimervalue ();
@@ -1681,9 +1790,10 @@ trigger gt_choosespawnlocationbotleft;
 trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
 trigger gt_testinitrace;
+trigger gt_testinitherochoosers;
 trigger gt_testinitcam;
-trigger gt_testinitresources;
-trigger gt_testpaths;
+trigger gt_testpathsuponbuildingregularbuildings;
+trigger gt_testpathsuponbuildingherobuildings;
 trigger gt_showkickplayerlist;
 trigger gt_kickplayerlistcancel;
 trigger gt_kickplayerlistchooseplayer;
@@ -1722,14 +1832,21 @@ trigger gt_typingcommandstestcastkickvote;
 trigger gt_autoskip;
 trigger gt_commands;
 trigger gt_toggleghosts;
-trigger gt_choosetop;
-trigger gt_choosetopright;
-trigger gt_chooseright;
-trigger gt_choosebotright;
-trigger gt_choosebot;
-trigger gt_choosebotleft;
-trigger gt_chooseleft;
-trigger gt_choosetopleft;
+trigger gt_chooseherotop;
+trigger gt_chooseheroright;
+trigger gt_chooseherobot;
+trigger gt_chooseheroleft;
+trigger gt_handleherobuildingusagecount;
+trigger gt_handleautoselectherobuildinguponbuild;
+trigger gt_turnherobuildingbackintobuilder;
+trigger gt_chooseunittop;
+trigger gt_chooseunittopright;
+trigger gt_chooseunitright;
+trigger gt_chooseunitbotright;
+trigger gt_chooseunitbot;
+trigger gt_chooseunitbotleft;
+trigger gt_chooseunitleft;
+trigger gt_chooseunittopleft;
 trigger gt_allenemiesgone;
 trigger gt_clearenemies;
 trigger gt_closeendgamepanel;
@@ -1748,147 +1865,352 @@ trigger gt_teleenemies;
 //--------------------------------------------------------------------------------------------------
 // Global Functions
 //--------------------------------------------------------------------------------------------------
+void gf_initheropointstop () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_heropoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation4_cl4top] = PointFromId(1920538099);
+    gv_heropoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation4_cl4right] = PointFromId(1734044784);
+    gv_heropoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation4_cl4bot] = PointFromId(174842506);
+    gv_heropoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation4_cl4left] = PointFromId(960406987);
+}
+
+void gf_initheropointstopright () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_heropoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation4_cl4top] = PointFromId(1234411684);
+    gv_heropoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation4_cl4right] = PointFromId(2128376073);
+    gv_heropoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation4_cl4bot] = PointFromId(1946010796);
+    gv_heropoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation4_cl4left] = PointFromId(2036360010);
+}
+
+void gf_initheropointsright () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_heropoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation4_cl4top] = PointFromId(1494016593);
+    gv_heropoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation4_cl4right] = PointFromId(1183740721);
+    gv_heropoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation4_cl4bot] = PointFromId(1168824471);
+    gv_heropoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation4_cl4left] = PointFromId(721115528);
+}
+
+void gf_initheropointsbotright () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_heropoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation4_cl4top] = PointFromId(548881166);
+    gv_heropoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation4_cl4right] = PointFromId(819715404);
+    gv_heropoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation4_cl4bot] = PointFromId(1262358024);
+    gv_heropoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation4_cl4left] = PointFromId(2108856136);
+}
+
+void gf_initheropointsbot () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_heropoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation4_cl4top] = PointFromId(738362511);
+    gv_heropoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation4_cl4right] = PointFromId(6112043);
+    gv_heropoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation4_cl4bot] = PointFromId(149735289);
+    gv_heropoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation4_cl4left] = PointFromId(770917793);
+}
+
+void gf_initheropointsbotleft () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_heropoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation4_cl4top] = PointFromId(670619802);
+    gv_heropoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation4_cl4right] = PointFromId(141681900);
+    gv_heropoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation4_cl4bot] = PointFromId(281116043);
+    gv_heropoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation4_cl4left] = PointFromId(302479416);
+}
+
+void gf_initheropointsleft () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_heropoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation4_cl4top] = PointFromId(1240581174);
+    gv_heropoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation4_cl4right] = PointFromId(1619923588);
+    gv_heropoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation4_cl4bot] = PointFromId(1938004010);
+    gv_heropoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation4_cl4left] = PointFromId(1474288339);
+}
+
+void gf_initheropointstopleft () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_heropoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation4_cl4top] = PointFromId(1528326248);
+    gv_heropoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation4_cl4right] = PointFromId(1606398488);
+    gv_heropoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation4_cl4bot] = PointFromId(1816800172);
+    gv_heropoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation4_cl4left] = PointFromId(1832629482);
+}
+
+void gf_initheroperlocationprotoss () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_heroperlocationandrace[ge_clockwiselocation4_cl4top][lib1_ge_race_protoss] = "DaymanHd";
+    gv_heroperlocationandrace[ge_clockwiselocation4_cl4right][lib1_ge_race_protoss] = "SelendisHd";
+    gv_heroperlocationandrace[ge_clockwiselocation4_cl4bot][lib1_ge_race_protoss] = "AtomicStormBreweryHd";
+    gv_heroperlocationandrace[ge_clockwiselocation4_cl4left][lib1_ge_race_protoss] = "ShrineOfTheGodsHd";
+}
+
+void gf_initheroperlocationterran () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_heroperlocationandrace[ge_clockwiselocation4_cl4top][lib1_ge_race_terran] = "NightmanHd";
+    gv_heroperlocationandrace[ge_clockwiselocation4_cl4right][lib1_ge_race_terran] = "PirateCapitalShipHd";
+    gv_heroperlocationandrace[ge_clockwiselocation4_cl4bot][lib1_ge_race_terran] = "FrackerHd";
+    gv_heroperlocationandrace[ge_clockwiselocation4_cl4left][lib1_ge_race_terran] = "KorhalPalaceTurretHd";
+}
+
+void gf_initheroperlocationzerg () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_heroperlocationandrace[ge_clockwiselocation4_cl4top][lib1_ge_race_zerg] = "StukovHd";
+    gv_heroperlocationandrace[ge_clockwiselocation4_cl4right][lib1_ge_race_zerg] = "KerriganHd";
+    gv_heroperlocationandrace[ge_clockwiselocation4_cl4bot][lib1_ge_race_zerg] = "ShackledUltraliskHd";
+    gv_heroperlocationandrace[ge_clockwiselocation4_cl4left][lib1_ge_race_zerg] = "WormyHd";
+}
+
+void gf_initheropoints () {
+    // Automatic Variable Declarations
+    // Implementation
+    gf_initheropointstop();
+    gf_initheropointstopright();
+    gf_initheropointsright();
+    gf_initheropointsbotright();
+    gf_initheropointsbot();
+    gf_initheropointsbotleft();
+    gf_initheropointsleft();
+    gf_initheropointstopleft();
+}
+
+void gf_initheroperlocation () {
+    // Automatic Variable Declarations
+    // Implementation
+    gf_initheroperlocationprotoss();
+    gf_initheroperlocationterran();
+    gf_initheroperlocationzerg();
+}
+
+void gf_initherobeaconpointstop () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation4_cl4top] = PointFromId(2129021403);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation4_cl4right] = PointFromId(1526956294);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation4_cl4bot] = PointFromId(1437515541);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation4_cl4left] = PointFromId(192965553);
+}
+
+void gf_initherobeaconpointstopright () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation4_cl4top] = PointFromId(1813936949);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation4_cl4right] = PointFromId(954527596);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation4_cl4bot] = PointFromId(2115418223);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation4_cl4left] = PointFromId(286863082);
+}
+
+void gf_initherobeaconpointsright () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation4_cl4top] = PointFromId(1116849083);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation4_cl4right] = PointFromId(1257445680);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation4_cl4bot] = PointFromId(827689108);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation4_cl4left] = PointFromId(1361127356);
+}
+
+void gf_initherobeaconpointsbotright () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation4_cl4top] = PointFromId(979865320);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation4_cl4right] = PointFromId(1065355866);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation4_cl4bot] = PointFromId(269277540);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation4_cl4left] = PointFromId(837168851);
+}
+
+void gf_initherobeaconpointsbot () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation4_cl4top] = PointFromId(1099485671);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation4_cl4right] = PointFromId(1830656202);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation4_cl4bot] = PointFromId(1887658787);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation4_cl4left] = PointFromId(1205849681);
+}
+
+void gf_initherobeaconpointsbotleft () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation4_cl4top] = PointFromId(264919746);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation4_cl4right] = PointFromId(487290198);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation4_cl4bot] = PointFromId(1356907216);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation4_cl4left] = PointFromId(1371237091);
+}
+
+void gf_initherobeaconpointsleft () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation4_cl4top] = PointFromId(830643813);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation4_cl4right] = PointFromId(596942342);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation4_cl4bot] = PointFromId(1645618103);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation4_cl4left] = PointFromId(143680038);
+}
+
+void gf_initherobeaconpointstopleft () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation4_cl4top] = PointFromId(2092551207);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation4_cl4right] = PointFromId(214035542);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation4_cl4bot] = PointFromId(1258371669);
+    gv_herobeaconpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation4_cl4left] = PointFromId(28408665);
+}
+
+void gf_initherobeaconpoints () {
+    // Automatic Variable Declarations
+    // Implementation
+    gf_initherobeaconpointstop();
+    gf_initherobeaconpointstopright();
+    gf_initherobeaconpointsright();
+    gf_initherobeaconpointsbotright();
+    gf_initherobeaconpointsbot();
+    gf_initherobeaconpointsbotleft();
+    gf_initherobeaconpointsleft();
+    gf_initherobeaconpointstopleft();
+}
+
 void gf_initunitpointstop () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitpoints[ge_clockwiselocation_top][ge_clockwiselocation_top] = PointFromId(376396905);
-    gv_unitpoints[ge_clockwiselocation_top][ge_clockwiselocation_topright] = PointFromId(1758466144);
-    gv_unitpoints[ge_clockwiselocation_top][ge_clockwiselocation_right] = PointFromId(1177448052);
-    gv_unitpoints[ge_clockwiselocation_top][ge_clockwiselocation_botright] = PointFromId(422207204);
-    gv_unitpoints[ge_clockwiselocation_top][ge_clockwiselocation_bot] = PointFromId(779640431);
-    gv_unitpoints[ge_clockwiselocation_top][ge_clockwiselocation_botleft] = PointFromId(945050972);
-    gv_unitpoints[ge_clockwiselocation_top][ge_clockwiselocation_left] = PointFromId(653242522);
-    gv_unitpoints[ge_clockwiselocation_top][ge_clockwiselocation_topleft] = PointFromId(987381297);
+    gv_unitpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8top] = PointFromId(376396905);
+    gv_unitpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8topright] = PointFromId(1758466144);
+    gv_unitpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8right] = PointFromId(1177448052);
+    gv_unitpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8botright] = PointFromId(422207204);
+    gv_unitpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8bot] = PointFromId(779640431);
+    gv_unitpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8botleft] = PointFromId(945050972);
+    gv_unitpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8left] = PointFromId(653242522);
+    gv_unitpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8topleft] = PointFromId(987381297);
 }
 
 void gf_initunitpointstopright () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitpoints[ge_clockwiselocation_topright][ge_clockwiselocation_top] = PointFromId(1404681884);
-    gv_unitpoints[ge_clockwiselocation_topright][ge_clockwiselocation_topright] = PointFromId(659023028);
-    gv_unitpoints[ge_clockwiselocation_topright][ge_clockwiselocation_right] = PointFromId(794956139);
-    gv_unitpoints[ge_clockwiselocation_topright][ge_clockwiselocation_botright] = PointFromId(617484639);
-    gv_unitpoints[ge_clockwiselocation_topright][ge_clockwiselocation_bot] = PointFromId(1939579920);
-    gv_unitpoints[ge_clockwiselocation_topright][ge_clockwiselocation_botleft] = PointFromId(1309141538);
-    gv_unitpoints[ge_clockwiselocation_topright][ge_clockwiselocation_left] = PointFromId(472756372);
-    gv_unitpoints[ge_clockwiselocation_topright][ge_clockwiselocation_topleft] = PointFromId(437634046);
+    gv_unitpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8top] = PointFromId(1404681884);
+    gv_unitpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8topright] = PointFromId(659023028);
+    gv_unitpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8right] = PointFromId(794956139);
+    gv_unitpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8botright] = PointFromId(617484639);
+    gv_unitpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8bot] = PointFromId(1939579920);
+    gv_unitpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8botleft] = PointFromId(1309141538);
+    gv_unitpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8left] = PointFromId(472756372);
+    gv_unitpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8topleft] = PointFromId(437634046);
 }
 
 void gf_initunitpointsright () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitpoints[ge_clockwiselocation_right][ge_clockwiselocation_top] = PointFromId(1097815533);
-    gv_unitpoints[ge_clockwiselocation_right][ge_clockwiselocation_topright] = PointFromId(98756316);
-    gv_unitpoints[ge_clockwiselocation_right][ge_clockwiselocation_right] = PointFromId(1387029668);
-    gv_unitpoints[ge_clockwiselocation_right][ge_clockwiselocation_botright] = PointFromId(1536260855);
-    gv_unitpoints[ge_clockwiselocation_right][ge_clockwiselocation_bot] = PointFromId(767370489);
-    gv_unitpoints[ge_clockwiselocation_right][ge_clockwiselocation_botleft] = PointFromId(578198274);
-    gv_unitpoints[ge_clockwiselocation_right][ge_clockwiselocation_left] = PointFromId(1614463141);
-    gv_unitpoints[ge_clockwiselocation_right][ge_clockwiselocation_topleft] = PointFromId(1682812790);
+    gv_unitpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8top] = PointFromId(1097815533);
+    gv_unitpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8topright] = PointFromId(98756316);
+    gv_unitpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8right] = PointFromId(1387029668);
+    gv_unitpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8botright] = PointFromId(1536260855);
+    gv_unitpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8bot] = PointFromId(767370489);
+    gv_unitpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8botleft] = PointFromId(578198274);
+    gv_unitpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8left] = PointFromId(1614463141);
+    gv_unitpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8topleft] = PointFromId(1682812790);
 }
 
 void gf_initunitpointsbotright () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitpoints[ge_clockwiselocation_botright][ge_clockwiselocation_top] = PointFromId(701278092);
-    gv_unitpoints[ge_clockwiselocation_botright][ge_clockwiselocation_topright] = PointFromId(1244855179);
-    gv_unitpoints[ge_clockwiselocation_botright][ge_clockwiselocation_right] = PointFromId(1260458794);
-    gv_unitpoints[ge_clockwiselocation_botright][ge_clockwiselocation_botright] = PointFromId(198101556);
-    gv_unitpoints[ge_clockwiselocation_botright][ge_clockwiselocation_bot] = PointFromId(1294072365);
-    gv_unitpoints[ge_clockwiselocation_botright][ge_clockwiselocation_botleft] = PointFromId(1116069586);
-    gv_unitpoints[ge_clockwiselocation_botright][ge_clockwiselocation_left] = PointFromId(714740905);
-    gv_unitpoints[ge_clockwiselocation_botright][ge_clockwiselocation_topleft] = PointFromId(615964535);
+    gv_unitpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8top] = PointFromId(701278092);
+    gv_unitpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8topright] = PointFromId(1244855179);
+    gv_unitpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8right] = PointFromId(1260458794);
+    gv_unitpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8botright] = PointFromId(198101556);
+    gv_unitpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8bot] = PointFromId(1294072365);
+    gv_unitpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8botleft] = PointFromId(1116069586);
+    gv_unitpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8left] = PointFromId(714740905);
+    gv_unitpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8topleft] = PointFromId(615964535);
 }
 
 void gf_initunitpointsbot () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitpoints[ge_clockwiselocation_bot][ge_clockwiselocation_top] = PointFromId(1894531084);
-    gv_unitpoints[ge_clockwiselocation_bot][ge_clockwiselocation_topright] = PointFromId(628955827);
-    gv_unitpoints[ge_clockwiselocation_bot][ge_clockwiselocation_right] = PointFromId(1036612316);
-    gv_unitpoints[ge_clockwiselocation_bot][ge_clockwiselocation_botright] = PointFromId(1788391928);
-    gv_unitpoints[ge_clockwiselocation_bot][ge_clockwiselocation_bot] = PointFromId(788559252);
-    gv_unitpoints[ge_clockwiselocation_bot][ge_clockwiselocation_botleft] = PointFromId(55034273);
-    gv_unitpoints[ge_clockwiselocation_bot][ge_clockwiselocation_left] = PointFromId(560919080);
-    gv_unitpoints[ge_clockwiselocation_bot][ge_clockwiselocation_topleft] = PointFromId(1062813203);
+    gv_unitpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8top] = PointFromId(1894531084);
+    gv_unitpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8topright] = PointFromId(628955827);
+    gv_unitpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8right] = PointFromId(1036612316);
+    gv_unitpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8botright] = PointFromId(1788391928);
+    gv_unitpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8bot] = PointFromId(788559252);
+    gv_unitpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8botleft] = PointFromId(55034273);
+    gv_unitpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8left] = PointFromId(560919080);
+    gv_unitpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8topleft] = PointFromId(1062813203);
 }
 
 void gf_initunitpointsbotleft () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_top] = PointFromId(777797571);
-    gv_unitpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_topright] = PointFromId(1774992185);
-    gv_unitpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_right] = PointFromId(1226552727);
-    gv_unitpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_botright] = PointFromId(94172866);
-    gv_unitpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_bot] = PointFromId(1868421660);
-    gv_unitpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_botleft] = PointFromId(274238423);
-    gv_unitpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_left] = PointFromId(607903274);
-    gv_unitpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_topleft] = PointFromId(1525815052);
+    gv_unitpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8top] = PointFromId(777797571);
+    gv_unitpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8topright] = PointFromId(1774992185);
+    gv_unitpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8right] = PointFromId(1226552727);
+    gv_unitpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8botright] = PointFromId(94172866);
+    gv_unitpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8bot] = PointFromId(1868421660);
+    gv_unitpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8botleft] = PointFromId(274238423);
+    gv_unitpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8left] = PointFromId(607903274);
+    gv_unitpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8topleft] = PointFromId(1525815052);
 }
 
 void gf_initunitpointsleft () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitpoints[ge_clockwiselocation_left][ge_clockwiselocation_top] = PointFromId(107806898);
-    gv_unitpoints[ge_clockwiselocation_left][ge_clockwiselocation_topright] = PointFromId(2107120323);
-    gv_unitpoints[ge_clockwiselocation_left][ge_clockwiselocation_right] = PointFromId(63749661);
-    gv_unitpoints[ge_clockwiselocation_left][ge_clockwiselocation_botright] = PointFromId(333386379);
-    gv_unitpoints[ge_clockwiselocation_left][ge_clockwiselocation_bot] = PointFromId(1022084214);
-    gv_unitpoints[ge_clockwiselocation_left][ge_clockwiselocation_botleft] = PointFromId(1417306797);
-    gv_unitpoints[ge_clockwiselocation_left][ge_clockwiselocation_left] = PointFromId(56910441);
-    gv_unitpoints[ge_clockwiselocation_left][ge_clockwiselocation_topleft] = PointFromId(1212478299);
+    gv_unitpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8top] = PointFromId(107806898);
+    gv_unitpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8topright] = PointFromId(2107120323);
+    gv_unitpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8right] = PointFromId(63749661);
+    gv_unitpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8botright] = PointFromId(333386379);
+    gv_unitpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8bot] = PointFromId(1022084214);
+    gv_unitpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8botleft] = PointFromId(1417306797);
+    gv_unitpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8left] = PointFromId(56910441);
+    gv_unitpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8topleft] = PointFromId(1212478299);
 }
 
 void gf_initunitpointstopleft () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_top] = PointFromId(519794972);
-    gv_unitpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_topright] = PointFromId(878532559);
-    gv_unitpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_right] = PointFromId(1576426122);
-    gv_unitpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_botright] = PointFromId(118426019);
-    gv_unitpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_bot] = PointFromId(457179216);
-    gv_unitpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_botleft] = PointFromId(2098394809);
-    gv_unitpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_left] = PointFromId(530488048);
-    gv_unitpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_topleft] = PointFromId(1861422191);
+    gv_unitpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8top] = PointFromId(519794972);
+    gv_unitpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8topright] = PointFromId(878532559);
+    gv_unitpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8right] = PointFromId(1576426122);
+    gv_unitpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8botright] = PointFromId(118426019);
+    gv_unitpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8bot] = PointFromId(457179216);
+    gv_unitpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8botleft] = PointFromId(2098394809);
+    gv_unitpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8left] = PointFromId(530488048);
+    gv_unitpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8topleft] = PointFromId(1861422191);
 }
 
 void gf_initunitperlocationprotoss () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_protoss] = "StalkerHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_protoss] = "ArchonHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_protoss] = "ImmortalHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_protoss] = "ReaverHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_protoss] = "ColossusHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_protoss] = "TempestHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_left][lib1_ge_race_protoss] = "ResearchCenterProtossHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_topleft][lib1_ge_race_protoss] = "AdeptHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8top][lib1_ge_race_protoss] = "StalkerHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8topright][lib1_ge_race_protoss] = "ArchonHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8right][lib1_ge_race_protoss] = "ImmortalHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8botright][lib1_ge_race_protoss] = "ReaverHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8bot][lib1_ge_race_protoss] = "ColossusHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8botleft][lib1_ge_race_protoss] = "TempestHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8left][lib1_ge_race_protoss] = "ResearchCenterProtossHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8topleft][lib1_ge_race_protoss] = "AdeptHd";
 }
 
 void gf_initunitperlocationterran () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_terran] = "MarauderHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_terran] = "FirebatHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_terran] = "GhostHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_terran] = "SiegeTankHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_terran] = "ThorHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_terran] = "LiberatorHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_left][lib1_ge_race_terran] = "ResearchCenterTerranHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_topleft][lib1_ge_race_terran] = "MarineHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8top][lib1_ge_race_terran] = "MarauderHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8topright][lib1_ge_race_terran] = "FirebatHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8right][lib1_ge_race_terran] = "GhostHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8botright][lib1_ge_race_terran] = "SiegeTankHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8bot][lib1_ge_race_terran] = "ThorHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8botleft][lib1_ge_race_terran] = "LiberatorHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8left][lib1_ge_race_terran] = "ResearchCenterTerranHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8topleft][lib1_ge_race_terran] = "MarineHd";
 }
 
 void gf_initunitperlocationzerg () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitperlocationandrace[ge_clockwiselocation_top][lib1_ge_race_zerg] = "RoachHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_topright][lib1_ge_race_zerg] = "LurkerHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_right][lib1_ge_race_zerg] = "HydraliskHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_botright][lib1_ge_race_zerg] = "MutaliskHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_bot][lib1_ge_race_zerg] = "InfestedSiegeTankUprootedHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_botleft][lib1_ge_race_zerg] = "GuardianHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_left][lib1_ge_race_zerg] = "ResearchCenterZergHd";
-    gv_unitperlocationandrace[ge_clockwiselocation_topleft][lib1_ge_race_zerg] = "InfestedTerranHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8top][lib1_ge_race_zerg] = "RoachHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8topright][lib1_ge_race_zerg] = "LurkerHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8right][lib1_ge_race_zerg] = "HydraliskHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8botright][lib1_ge_race_zerg] = "MutaliskHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8bot][lib1_ge_race_zerg] = "InfestedSiegeTankUprootedHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8botleft][lib1_ge_race_zerg] = "GuardianHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8left][lib1_ge_race_zerg] = "ResearchCenterZergHd";
+    gv_unitperlocationandrace[ge_clockwiselocation8_cl8topleft][lib1_ge_race_zerg] = "InfestedTerranHd";
 }
 
 void gf_initunitpoints () {
@@ -1915,105 +2237,105 @@ void gf_initunitperlocation () {
 void gf_initunitbeaconpointstop () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitbeaconpoints[ge_clockwiselocation_top][ge_clockwiselocation_top] = PointFromId(78753967);
-    gv_unitbeaconpoints[ge_clockwiselocation_top][ge_clockwiselocation_topright] = PointFromId(1456086433);
-    gv_unitbeaconpoints[ge_clockwiselocation_top][ge_clockwiselocation_right] = PointFromId(628985728);
-    gv_unitbeaconpoints[ge_clockwiselocation_top][ge_clockwiselocation_botright] = PointFromId(852033013);
-    gv_unitbeaconpoints[ge_clockwiselocation_top][ge_clockwiselocation_bot] = PointFromId(1025773052);
-    gv_unitbeaconpoints[ge_clockwiselocation_top][ge_clockwiselocation_botleft] = PointFromId(970550996);
-    gv_unitbeaconpoints[ge_clockwiselocation_top][ge_clockwiselocation_left] = PointFromId(1016863586);
-    gv_unitbeaconpoints[ge_clockwiselocation_top][ge_clockwiselocation_topleft] = PointFromId(1061491136);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8top] = PointFromId(78753967);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8topright] = PointFromId(1456086433);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8right] = PointFromId(628985728);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8botright] = PointFromId(852033013);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8bot] = PointFromId(1025773052);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8botleft] = PointFromId(970550996);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8left] = PointFromId(1016863586);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8top][ge_clockwiselocation8_cl8topleft] = PointFromId(1061491136);
 }
 
 void gf_initunitbeaconpointstopright () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitbeaconpoints[ge_clockwiselocation_topright][ge_clockwiselocation_top] = PointFromId(533997263);
-    gv_unitbeaconpoints[ge_clockwiselocation_topright][ge_clockwiselocation_topright] = PointFromId(837803804);
-    gv_unitbeaconpoints[ge_clockwiselocation_topright][ge_clockwiselocation_right] = PointFromId(691494978);
-    gv_unitbeaconpoints[ge_clockwiselocation_topright][ge_clockwiselocation_botright] = PointFromId(551137157);
-    gv_unitbeaconpoints[ge_clockwiselocation_topright][ge_clockwiselocation_bot] = PointFromId(846440);
-    gv_unitbeaconpoints[ge_clockwiselocation_topright][ge_clockwiselocation_botleft] = PointFromId(1764278175);
-    gv_unitbeaconpoints[ge_clockwiselocation_topright][ge_clockwiselocation_left] = PointFromId(1154409010);
-    gv_unitbeaconpoints[ge_clockwiselocation_topright][ge_clockwiselocation_topleft] = PointFromId(1939567621);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8top] = PointFromId(533997263);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8topright] = PointFromId(837803804);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8right] = PointFromId(691494978);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8botright] = PointFromId(551137157);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8bot] = PointFromId(846440);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8botleft] = PointFromId(1764278175);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8left] = PointFromId(1154409010);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topright][ge_clockwiselocation8_cl8topleft] = PointFromId(1939567621);
 }
 
 void gf_initunitbeaconpointsright () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitbeaconpoints[ge_clockwiselocation_right][ge_clockwiselocation_top] = PointFromId(2057706776);
-    gv_unitbeaconpoints[ge_clockwiselocation_right][ge_clockwiselocation_topright] = PointFromId(1251994820);
-    gv_unitbeaconpoints[ge_clockwiselocation_right][ge_clockwiselocation_right] = PointFromId(193140767);
-    gv_unitbeaconpoints[ge_clockwiselocation_right][ge_clockwiselocation_botright] = PointFromId(928879015);
-    gv_unitbeaconpoints[ge_clockwiselocation_right][ge_clockwiselocation_bot] = PointFromId(52267179);
-    gv_unitbeaconpoints[ge_clockwiselocation_right][ge_clockwiselocation_botleft] = PointFromId(151315752);
-    gv_unitbeaconpoints[ge_clockwiselocation_right][ge_clockwiselocation_left] = PointFromId(4326746);
-    gv_unitbeaconpoints[ge_clockwiselocation_right][ge_clockwiselocation_topleft] = PointFromId(1552399524);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8top] = PointFromId(2057706776);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8topright] = PointFromId(1251994820);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8right] = PointFromId(193140767);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8botright] = PointFromId(928879015);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8bot] = PointFromId(52267179);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8botleft] = PointFromId(151315752);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8left] = PointFromId(4326746);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8right][ge_clockwiselocation8_cl8topleft] = PointFromId(1552399524);
 }
 
 void gf_initunitbeaconpointsbotright () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitbeaconpoints[ge_clockwiselocation_botright][ge_clockwiselocation_top] = PointFromId(69372940);
-    gv_unitbeaconpoints[ge_clockwiselocation_botright][ge_clockwiselocation_topright] = PointFromId(625743367);
-    gv_unitbeaconpoints[ge_clockwiselocation_botright][ge_clockwiselocation_right] = PointFromId(1300210222);
-    gv_unitbeaconpoints[ge_clockwiselocation_botright][ge_clockwiselocation_botright] = PointFromId(1171033856);
-    gv_unitbeaconpoints[ge_clockwiselocation_botright][ge_clockwiselocation_bot] = PointFromId(1954757564);
-    gv_unitbeaconpoints[ge_clockwiselocation_botright][ge_clockwiselocation_botleft] = PointFromId(1345536700);
-    gv_unitbeaconpoints[ge_clockwiselocation_botright][ge_clockwiselocation_left] = PointFromId(1547170258);
-    gv_unitbeaconpoints[ge_clockwiselocation_botright][ge_clockwiselocation_topleft] = PointFromId(1084233623);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8top] = PointFromId(69372940);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8topright] = PointFromId(625743367);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8right] = PointFromId(1300210222);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8botright] = PointFromId(1171033856);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8bot] = PointFromId(1954757564);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8botleft] = PointFromId(1345536700);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8left] = PointFromId(1547170258);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botright][ge_clockwiselocation8_cl8topleft] = PointFromId(1084233623);
 }
 
 void gf_initunitbeaconpointsbot () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitbeaconpoints[ge_clockwiselocation_bot][ge_clockwiselocation_top] = PointFromId(557071858);
-    gv_unitbeaconpoints[ge_clockwiselocation_bot][ge_clockwiselocation_topright] = PointFromId(890760943);
-    gv_unitbeaconpoints[ge_clockwiselocation_bot][ge_clockwiselocation_right] = PointFromId(1795181988);
-    gv_unitbeaconpoints[ge_clockwiselocation_bot][ge_clockwiselocation_botright] = PointFromId(1196786689);
-    gv_unitbeaconpoints[ge_clockwiselocation_bot][ge_clockwiselocation_bot] = PointFromId(2067720479);
-    gv_unitbeaconpoints[ge_clockwiselocation_bot][ge_clockwiselocation_botleft] = PointFromId(1208114324);
-    gv_unitbeaconpoints[ge_clockwiselocation_bot][ge_clockwiselocation_left] = PointFromId(1981237702);
-    gv_unitbeaconpoints[ge_clockwiselocation_bot][ge_clockwiselocation_topleft] = PointFromId(1599385838);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8top] = PointFromId(557071858);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8topright] = PointFromId(890760943);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8right] = PointFromId(1795181988);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8botright] = PointFromId(1196786689);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8bot] = PointFromId(2067720479);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8botleft] = PointFromId(1208114324);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8left] = PointFromId(1981237702);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8bot][ge_clockwiselocation8_cl8topleft] = PointFromId(1599385838);
 }
 
 void gf_initunitbeaconpointsbotleft () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitbeaconpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_top] = PointFromId(704189669);
-    gv_unitbeaconpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_topright] = PointFromId(1158879975);
-    gv_unitbeaconpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_right] = PointFromId(978262974);
-    gv_unitbeaconpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_botright] = PointFromId(194816851);
-    gv_unitbeaconpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_bot] = PointFromId(910872851);
-    gv_unitbeaconpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_botleft] = PointFromId(2090537115);
-    gv_unitbeaconpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_left] = PointFromId(1750397661);
-    gv_unitbeaconpoints[ge_clockwiselocation_botleft][ge_clockwiselocation_topleft] = PointFromId(69581309);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8top] = PointFromId(704189669);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8topright] = PointFromId(1158879975);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8right] = PointFromId(978262974);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8botright] = PointFromId(194816851);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8bot] = PointFromId(910872851);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8botleft] = PointFromId(2090537115);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8left] = PointFromId(1750397661);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8botleft][ge_clockwiselocation8_cl8topleft] = PointFromId(69581309);
 }
 
 void gf_initunitbeaconpointsleft () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitbeaconpoints[ge_clockwiselocation_left][ge_clockwiselocation_top] = PointFromId(1591476509);
-    gv_unitbeaconpoints[ge_clockwiselocation_left][ge_clockwiselocation_topright] = PointFromId(651751040);
-    gv_unitbeaconpoints[ge_clockwiselocation_left][ge_clockwiselocation_right] = PointFromId(1428756895);
-    gv_unitbeaconpoints[ge_clockwiselocation_left][ge_clockwiselocation_botright] = PointFromId(1776792780);
-    gv_unitbeaconpoints[ge_clockwiselocation_left][ge_clockwiselocation_bot] = PointFromId(1981765748);
-    gv_unitbeaconpoints[ge_clockwiselocation_left][ge_clockwiselocation_botleft] = PointFromId(488609416);
-    gv_unitbeaconpoints[ge_clockwiselocation_left][ge_clockwiselocation_left] = PointFromId(1429236056);
-    gv_unitbeaconpoints[ge_clockwiselocation_left][ge_clockwiselocation_topleft] = PointFromId(659731607);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8top] = PointFromId(1591476509);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8topright] = PointFromId(651751040);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8right] = PointFromId(1428756895);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8botright] = PointFromId(1776792780);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8bot] = PointFromId(1981765748);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8botleft] = PointFromId(488609416);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8left] = PointFromId(1429236056);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8left][ge_clockwiselocation8_cl8topleft] = PointFromId(659731607);
 }
 
 void gf_initunitbeaconpointstopleft () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitbeaconpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_top] = PointFromId(123965885);
-    gv_unitbeaconpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_topright] = PointFromId(2116441393);
-    gv_unitbeaconpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_right] = PointFromId(1639441590);
-    gv_unitbeaconpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_botright] = PointFromId(571005906);
-    gv_unitbeaconpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_bot] = PointFromId(1621754594);
-    gv_unitbeaconpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_botleft] = PointFromId(67347418);
-    gv_unitbeaconpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_left] = PointFromId(244062886);
-    gv_unitbeaconpoints[ge_clockwiselocation_topleft][ge_clockwiselocation_topleft] = PointFromId(196851831);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8top] = PointFromId(123965885);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8topright] = PointFromId(2116441393);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8right] = PointFromId(1639441590);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8botright] = PointFromId(571005906);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8bot] = PointFromId(1621754594);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8botleft] = PointFromId(67347418);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8left] = PointFromId(244062886);
+    gv_unitbeaconpoints[ge_clockwiselocation8_cl8topleft][ge_clockwiselocation8_cl8topleft] = PointFromId(196851831);
 }
 
 void gf_initunitbeaconpoints () {
@@ -2032,14 +2354,14 @@ void gf_initunitbeaconpoints () {
 void gf_initunitbeaconpointsperlocation () {
     // Automatic Variable Declarations
     // Implementation
-    gv_unitbeaconperlocation[ge_clockwiselocation_top] = "2ChooserBeaconHd";
-    gv_unitbeaconperlocation[ge_clockwiselocation_topright] = "2ChooserBeaconHd";
-    gv_unitbeaconperlocation[ge_clockwiselocation_right] = "3ChooserBeaconHd";
-    gv_unitbeaconperlocation[ge_clockwiselocation_botright] = "4ChooserBeaconHd";
-    gv_unitbeaconperlocation[ge_clockwiselocation_bot] = "5ChooserBeaconHd";
-    gv_unitbeaconperlocation[ge_clockwiselocation_botleft] = "6ChooserBeaconHd";
-    gv_unitbeaconperlocation[ge_clockwiselocation_left] = "1ChooserBeaconHd";
-    gv_unitbeaconperlocation[ge_clockwiselocation_topleft] = "1ChooserBeaconHd";
+    gv_unitbeaconperlocation[ge_clockwiselocation8_cl8top] = "2ChooserUnitBeaconHd";
+    gv_unitbeaconperlocation[ge_clockwiselocation8_cl8topright] = "2ChooserUnitBeaconHd";
+    gv_unitbeaconperlocation[ge_clockwiselocation8_cl8right] = "3ChooserUnitBeaconHd";
+    gv_unitbeaconperlocation[ge_clockwiselocation8_cl8botright] = "4ChooserUnitBeaconHd";
+    gv_unitbeaconperlocation[ge_clockwiselocation8_cl8bot] = "5ChooserUnitBeaconHd";
+    gv_unitbeaconperlocation[ge_clockwiselocation8_cl8botleft] = "6ChooserUnitBeaconHd";
+    gv_unitbeaconperlocation[ge_clockwiselocation8_cl8left] = "1ChooserUnitBeaconHd";
+    gv_unitbeaconperlocation[ge_clockwiselocation8_cl8topleft] = "1ChooserUnitBeaconHd";
 }
 
 void gf_initalliance () {
@@ -2132,77 +2454,90 @@ void gf_initbanks () {
     }
 }
 
-void gf_initchooserspawnpoints () {
-    // Automatic Variable Declarations
-    // Implementation
-    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_top] = PointFromId(1249720996);
-    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_topright] = PointFromId(1983099440);
-    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_right] = PointFromId(1971071716);
-    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_botright] = PointFromId(745720542);
-    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_bot] = PointFromId(409578078);
-    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_botleft] = PointFromId(3552434);
-    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_left] = PointFromId(2101619351);
-    gv_defendlocationtochooserspawnpoint[ge_clockwiselocation_topleft] = PointFromId(493029576);
-}
-
 void gf_initdefendlocationbeaconperlocation () {
     // Automatic Variable Declarations
     // Implementation
-    gv_defendlocationbeaconperlocation[ge_clockwiselocation_top] = UnitFromId(209261321);
-    gv_defendlocationbeaconperlocation[ge_clockwiselocation_topright] = UnitFromId(169646577);
-    gv_defendlocationbeaconperlocation[ge_clockwiselocation_right] = UnitFromId(1976925429);
-    gv_defendlocationbeaconperlocation[ge_clockwiselocation_botright] = UnitFromId(376238765);
-    gv_defendlocationbeaconperlocation[ge_clockwiselocation_bot] = UnitFromId(220038668);
-    gv_defendlocationbeaconperlocation[ge_clockwiselocation_botleft] = UnitFromId(469124253);
-    gv_defendlocationbeaconperlocation[ge_clockwiselocation_left] = UnitFromId(302000048);
-    gv_defendlocationbeaconperlocation[ge_clockwiselocation_topleft] = UnitFromId(1243337835);
+    gv_defendlocationbeaconperlocation[ge_clockwiselocation8_cl8top] = UnitFromId(209261321);
+    gv_defendlocationbeaconperlocation[ge_clockwiselocation8_cl8topright] = UnitFromId(169646577);
+    gv_defendlocationbeaconperlocation[ge_clockwiselocation8_cl8right] = UnitFromId(1976925429);
+    gv_defendlocationbeaconperlocation[ge_clockwiselocation8_cl8botright] = UnitFromId(376238765);
+    gv_defendlocationbeaconperlocation[ge_clockwiselocation8_cl8bot] = UnitFromId(220038668);
+    gv_defendlocationbeaconperlocation[ge_clockwiselocation8_cl8botleft] = UnitFromId(469124253);
+    gv_defendlocationbeaconperlocation[ge_clockwiselocation8_cl8left] = UnitFromId(302000048);
+    gv_defendlocationbeaconperlocation[ge_clockwiselocation8_cl8topleft] = UnitFromId(1243337835);
+}
+
+void gf_initdefendlocationtoherochooserspawnpoints () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_defendlocationtoherochooserspawnpoint[ge_clockwiselocation8_cl8top] = PointFromId(777071673);
+    gv_defendlocationtoherochooserspawnpoint[ge_clockwiselocation8_cl8topright] = PointFromId(2075095700);
+    gv_defendlocationtoherochooserspawnpoint[ge_clockwiselocation8_cl8right] = PointFromId(76779934);
+    gv_defendlocationtoherochooserspawnpoint[ge_clockwiselocation8_cl8botright] = PointFromId(549913239);
+    gv_defendlocationtoherochooserspawnpoint[ge_clockwiselocation8_cl8bot] = PointFromId(1689872590);
+    gv_defendlocationtoherochooserspawnpoint[ge_clockwiselocation8_cl8botleft] = PointFromId(784073299);
+    gv_defendlocationtoherochooserspawnpoint[ge_clockwiselocation8_cl8left] = PointFromId(481180406);
+    gv_defendlocationtoherochooserspawnpoint[ge_clockwiselocation8_cl8topleft] = PointFromId(90928454);
 }
 
 void gf_initdefendlocationtoislandregion () {
     // Automatic Variable Declarations
     // Implementation
-    gv_defendlocationtoislandsregion[ge_clockwiselocation_top] = RegionFromId(44);
-    gv_defendlocationtoislandsregion[ge_clockwiselocation_topright] = RegionFromId(43);
-    gv_defendlocationtoislandsregion[ge_clockwiselocation_right] = RegionFromId(42);
-    gv_defendlocationtoislandsregion[ge_clockwiselocation_botright] = RegionFromId(41);
-    gv_defendlocationtoislandsregion[ge_clockwiselocation_bot] = RegionFromId(40);
-    gv_defendlocationtoislandsregion[ge_clockwiselocation_botleft] = RegionFromId(39);
-    gv_defendlocationtoislandsregion[ge_clockwiselocation_left] = RegionFromId(38);
-    gv_defendlocationtoislandsregion[ge_clockwiselocation_topleft] = RegionFromId(45);
+    gv_defendlocationtoislandsregion[ge_clockwiselocation8_cl8top] = RegionFromId(44);
+    gv_defendlocationtoislandsregion[ge_clockwiselocation8_cl8topright] = RegionFromId(43);
+    gv_defendlocationtoislandsregion[ge_clockwiselocation8_cl8right] = RegionFromId(42);
+    gv_defendlocationtoislandsregion[ge_clockwiselocation8_cl8botright] = RegionFromId(41);
+    gv_defendlocationtoislandsregion[ge_clockwiselocation8_cl8bot] = RegionFromId(40);
+    gv_defendlocationtoislandsregion[ge_clockwiselocation8_cl8botleft] = RegionFromId(39);
+    gv_defendlocationtoislandsregion[ge_clockwiselocation8_cl8left] = RegionFromId(38);
+    gv_defendlocationtoislandsregion[ge_clockwiselocation8_cl8topleft] = RegionFromId(45);
 }
 
 void gf_initdefendlocationtopathtestsegments () {
     // Automatic Variable Declarations
     // Implementation
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_top][0] = ge_pathtestsegments_verticaltop;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_top][1] = ge_pathtestsegments_verticalbot;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_topright][0] = ge_pathtestsegments_verticalright;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_topright][1] = ge_pathtestsegments_horizontaltop;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_right][0] = ge_pathtestsegments_horizontalright;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_right][1] = ge_pathtestsegments_horizontalleft;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_botright][0] = ge_pathtestsegments_verticalright;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_botright][1] = ge_pathtestsegments_horizontalbot;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_bot][0] = ge_pathtestsegments_verticalbot;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_bot][1] = ge_pathtestsegments_verticaltop;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_botleft][0] = ge_pathtestsegments_verticalleft;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_botleft][1] = ge_pathtestsegments_horizontalbot;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_left][0] = ge_pathtestsegments_horizontalleft;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_left][1] = ge_pathtestsegments_horizontalright;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_topleft][0] = ge_pathtestsegments_verticalleft;
-    gv_defendlocationtopathtestsegments[ge_clockwiselocation_topleft][1] = ge_pathtestsegments_horizontaltop;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8top][0] = ge_pathtestsegments_verticaltop;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8top][1] = ge_pathtestsegments_verticalbot;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8topright][0] = ge_pathtestsegments_verticalright;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8topright][1] = ge_pathtestsegments_horizontaltop;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8right][0] = ge_pathtestsegments_horizontalright;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8right][1] = ge_pathtestsegments_horizontalleft;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8botright][0] = ge_pathtestsegments_verticalright;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8botright][1] = ge_pathtestsegments_horizontalbot;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8bot][0] = ge_pathtestsegments_verticalbot;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8bot][1] = ge_pathtestsegments_verticaltop;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8botleft][0] = ge_pathtestsegments_verticalleft;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8botleft][1] = ge_pathtestsegments_horizontalbot;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8left][0] = ge_pathtestsegments_horizontalleft;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8left][1] = ge_pathtestsegments_horizontalright;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8topleft][0] = ge_pathtestsegments_verticalleft;
+    gv_defendlocationtopathtestsegments[ge_clockwiselocation8_cl8topleft][1] = ge_pathtestsegments_horizontaltop;
+}
+
+void gf_initdefendlocationtounitchooserspawnpoints () {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_defendlocationtounitchooserspawnpoint[ge_clockwiselocation8_cl8top] = PointFromId(1249720996);
+    gv_defendlocationtounitchooserspawnpoint[ge_clockwiselocation8_cl8topright] = PointFromId(1983099440);
+    gv_defendlocationtounitchooserspawnpoint[ge_clockwiselocation8_cl8right] = PointFromId(1971071716);
+    gv_defendlocationtounitchooserspawnpoint[ge_clockwiselocation8_cl8botright] = PointFromId(745720542);
+    gv_defendlocationtounitchooserspawnpoint[ge_clockwiselocation8_cl8bot] = PointFromId(409578078);
+    gv_defendlocationtounitchooserspawnpoint[ge_clockwiselocation8_cl8botleft] = PointFromId(3552434);
+    gv_defendlocationtounitchooserspawnpoint[ge_clockwiselocation8_cl8left] = PointFromId(2101619351);
+    gv_defendlocationtounitchooserspawnpoint[ge_clockwiselocation8_cl8topleft] = PointFromId(493029576);
 }
 
 void gf_initdefendpointperlocation () {
     // Automatic Variable Declarations
     // Implementation
-    gv_defendpointperlocation[ge_clockwiselocation_top] = PointFromId(1182702197);
-    gv_defendpointperlocation[ge_clockwiselocation_topright] = PointFromId(258428790);
-    gv_defendpointperlocation[ge_clockwiselocation_right] = PointFromId(122615890);
-    gv_defendpointperlocation[ge_clockwiselocation_botright] = PointFromId(328039401);
-    gv_defendpointperlocation[ge_clockwiselocation_bot] = PointFromId(192448764);
-    gv_defendpointperlocation[ge_clockwiselocation_botleft] = PointFromId(1792849818);
-    gv_defendpointperlocation[ge_clockwiselocation_left] = PointFromId(1155927436);
-    gv_defendpointperlocation[ge_clockwiselocation_topleft] = PointFromId(830891366);
+    gv_defendpointperlocation[ge_clockwiselocation8_cl8top] = PointFromId(1182702197);
+    gv_defendpointperlocation[ge_clockwiselocation8_cl8topright] = PointFromId(258428790);
+    gv_defendpointperlocation[ge_clockwiselocation8_cl8right] = PointFromId(122615890);
+    gv_defendpointperlocation[ge_clockwiselocation8_cl8botright] = PointFromId(328039401);
+    gv_defendpointperlocation[ge_clockwiselocation8_cl8bot] = PointFromId(192448764);
+    gv_defendpointperlocation[ge_clockwiselocation8_cl8botleft] = PointFromId(1792849818);
+    gv_defendpointperlocation[ge_clockwiselocation8_cl8left] = PointFromId(1155927436);
+    gv_defendpointperlocation[ge_clockwiselocation8_cl8topleft] = PointFromId(830891366);
 }
 
 void gf_initenemyclearregionperpathlocation () {
@@ -2536,22 +2871,22 @@ void gf_initenemyperroundrest () {
 void gf_initenemyrallypointsperlocation () {
     // Automatic Variable Declarations
     // Implementation
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_top][0] = PointFromId(2019735321);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_top][1] = PointFromId(132146153);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_topright][0] = PointFromId(6064204);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_topright][1] = PointFromId(331529152);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_right][0] = PointFromId(454562883);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_right][1] = PointFromId(1138646104);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_botright][0] = PointFromId(1755457878);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_botright][1] = PointFromId(1277692723);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_bot][0] = PointFromId(63201720);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_bot][1] = PointFromId(1436792943);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_botleft][0] = PointFromId(1943289383);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_botleft][1] = PointFromId(312025157);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_left][0] = PointFromId(97662259);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_left][1] = PointFromId(1326281752);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_topleft][0] = PointFromId(2104189875);
-    gv_enemyrallypointsperlocation[ge_clockwiselocation_topleft][1] = PointFromId(1705605065);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8top][0] = PointFromId(2019735321);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8top][1] = PointFromId(132146153);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8topright][0] = PointFromId(6064204);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8topright][1] = PointFromId(331529152);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8right][0] = PointFromId(454562883);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8right][1] = PointFromId(1138646104);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8botright][0] = PointFromId(1755457878);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8botright][1] = PointFromId(1277692723);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8bot][0] = PointFromId(63201720);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8bot][1] = PointFromId(1436792943);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8botleft][0] = PointFromId(1943289383);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8botleft][1] = PointFromId(312025157);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8left][0] = PointFromId(97662259);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8left][1] = PointFromId(1326281752);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8topleft][0] = PointFromId(2104189875);
+    gv_enemyrallypointsperlocation[ge_clockwiselocation8_cl8topleft][1] = PointFromId(1705605065);
 }
 
 void gf_initenemyrallypointspertelespawn () {
@@ -2622,22 +2957,22 @@ void gf_initenemyshowcasepoints () {
 void gf_initenemyspawnpointsperlocation () {
     // Automatic Variable Declarations
     // Implementation
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_top][0] = PointFromId(1965461556);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_top][1] = PointFromId(1399802117);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_topright][0] = PointFromId(1277692723);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_topright][1] = PointFromId(1705605065);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_right][0] = PointFromId(94086420);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_right][1] = PointFromId(1035597697);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_botright][0] = PointFromId(1943289383);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_botright][1] = PointFromId(6064204);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_bot][0] = PointFromId(2068411702);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_bot][1] = PointFromId(1661550969);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_botleft][0] = PointFromId(1755457878);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_botleft][1] = PointFromId(2104189875);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_left][0] = PointFromId(282270595);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_left][1] = PointFromId(1415428594);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_topleft][0] = PointFromId(312025157);
-    gv_enemyspawnpointsperlocation[ge_clockwiselocation_topleft][1] = PointFromId(331529152);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8top][0] = PointFromId(1965461556);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8top][1] = PointFromId(1399802117);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8topright][0] = PointFromId(1277692723);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8topright][1] = PointFromId(1705605065);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8right][0] = PointFromId(94086420);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8right][1] = PointFromId(1035597697);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8botright][0] = PointFromId(1943289383);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8botright][1] = PointFromId(6064204);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8bot][0] = PointFromId(2068411702);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8bot][1] = PointFromId(1661550969);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8botleft][0] = PointFromId(1755457878);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8botleft][1] = PointFromId(2104189875);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8left][0] = PointFromId(282270595);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8left][1] = PointFromId(1415428594);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8topleft][0] = PointFromId(312025157);
+    gv_enemyspawnpointsperlocation[ge_clockwiselocation8_cl8topleft][1] = PointFromId(331529152);
 }
 
 void gf_initenemyteleregions () {
@@ -2774,25 +3109,49 @@ void gf_initgameattributevars () {
     }
 }
 
+void gf_initherobuildingsdisabled () {
+    // Variable Declarations
+    int lv__p;
+
+    // Automatic Variable Declarations
+    playergroup auto2851454A_g;
+
+    // Variable Initialization
+
+    // Implementation
+    auto2851454A_g = gv_activedefenders;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(auto2851454A_g, lv__p);
+        if (lv__p < 0) { break; }
+        TechTreeUnitAllow(lv__p, "ShackledUltraliskHd", false);
+        TechTreeUnitAllow(lv__p, "WormyHd", false);
+        TechTreeUnitAllow(lv__p, "FrackerHd", false);
+        TechTreeUnitAllow(lv__p, "KorhalPalaceTurretHd", false);
+        TechTreeUnitAllow(lv__p, "AtomicStormBreweryHd", false);
+        TechTreeUnitAllow(lv__p, "ShrineOfTheGodsHd", false);
+    }
+}
+
 void gf_initlocationandsublocationtospawnclockwiselocation () {
     // Automatic Variable Declarations
     // Implementation
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_top][0] = ge_clockwiseenemypathlocation_enemypathtop;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_top][1] = ge_clockwiseenemypathlocation_enemypathtop;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_topright][0] = ge_clockwiseenemypathlocation_enemypathtoprighttop;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_topright][1] = ge_clockwiseenemypathlocation_enemypathtoprightright;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_right][0] = ge_clockwiseenemypathlocation_enemypathright;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_right][1] = ge_clockwiseenemypathlocation_enemypathright;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_botright][0] = ge_clockwiseenemypathlocation_enemypathbotrightright;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_botright][1] = ge_clockwiseenemypathlocation_enemypathbotrightbot;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_bot][0] = ge_clockwiseenemypathlocation_enemypathbot;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_bot][1] = ge_clockwiseenemypathlocation_enemypathbot;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_botleft][0] = ge_clockwiseenemypathlocation_enemypathbotleftleft;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_botleft][1] = ge_clockwiseenemypathlocation_enemypathbotleftbot;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_left][0] = ge_clockwiseenemypathlocation_enemypathleft;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_left][1] = ge_clockwiseenemypathlocation_enemypathleft;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_topleft][0] = ge_clockwiseenemypathlocation_enemypathtoplefttop;
-    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation_topleft][1] = ge_clockwiseenemypathlocation_enemypathtopleftleft;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8top][0] = ge_clockwiseenemypathlocation_enemypathtop;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8top][1] = ge_clockwiseenemypathlocation_enemypathtop;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8topright][0] = ge_clockwiseenemypathlocation_enemypathtoprighttop;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8topright][1] = ge_clockwiseenemypathlocation_enemypathtoprightright;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8right][0] = ge_clockwiseenemypathlocation_enemypathright;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8right][1] = ge_clockwiseenemypathlocation_enemypathright;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8botright][0] = ge_clockwiseenemypathlocation_enemypathbotrightright;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8botright][1] = ge_clockwiseenemypathlocation_enemypathbotrightbot;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8bot][0] = ge_clockwiseenemypathlocation_enemypathbot;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8bot][1] = ge_clockwiseenemypathlocation_enemypathbot;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8botleft][0] = ge_clockwiseenemypathlocation_enemypathbotleftleft;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8botleft][1] = ge_clockwiseenemypathlocation_enemypathbotleftbot;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8left][0] = ge_clockwiseenemypathlocation_enemypathleft;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8left][1] = ge_clockwiseenemypathlocation_enemypathleft;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8topleft][0] = ge_clockwiseenemypathlocation_enemypathtoplefttop;
+    gv_locationandsublocationtoenemypathlocation[ge_clockwiselocation8_cl8topleft][1] = ge_clockwiseenemypathlocation_enemypathtopleftleft;
 }
 
 void gf_initlocationchoosers () {
@@ -3246,10 +3605,11 @@ void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser)
     gv_playertodefenderlocation[lp_p] = lp_defenderlocation;
     gv_locationtoplayer[lp_defenderlocation] = lp_p;
     gv_activedefenderlocations[lp_defenderlocation] = true;
-    UIClearMessages(PlayerGroupSingle(lp_p), c_messageAreaAll);
+    lib1_gf_cleartextmessageareaforuser(lp_p, c_messageAreaDirective);
     UnitRemove(gv_defendlocationbeaconperlocation[lp_defenderlocation]);
     UnitRemove(lp_chooser);
     gf_initunitarea(lp_defenderlocation, lp_p);
+    gf_initheroarea(lp_defenderlocation, lp_p);
     gf_clearspawnlocationwhenempty();
     gf_initspawnpoint(lp_p, lv__defendpoint);
     lv__i = 0;
@@ -3263,7 +3623,7 @@ void gf_choosespawnlocation (int lp_defenderlocation, int lp_p, unit lp_chooser)
         gf_startenemyghostspawnatlocation(lp_defenderlocation);
     }
     else {
-        lib1_gf_pancameratopointforplayer(lp_p, gv_defendlocationtochooserspawnpoint[lp_defenderlocation]);
+        lib1_gf_pancameratopointforplayer(lp_p, gv_defendlocationtounitchooserspawnpoint[lp_defenderlocation]);
         lib1_gf_messageuser(StringExternal("Param/Value/D6EDA166"), lp_p);
         Wait(15.0, c_timeReal);
         if (lib1_gf_playerisingroup(lp_p, gv_activedefenders)) {
@@ -3314,6 +3674,48 @@ void gf_createworkeratlocation (point lp_spawnpoint, int lp_p) {
     UnitControlGroupAddUnit(lp_p, 1, UnitLastCreated());
 }
 
+void gf_inithero (int lp_defenderlocation, int lp_herolocation, int lp_race) {
+    // Variable Declarations
+    point lv__heropoint;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__heropoint = gv_heropoints[lp_defenderlocation][lp_herolocation];
+
+    // Implementation
+    gf_createplayerheroatpoint(lp_herolocation, lp_race, gv_allycompplayer, lv__heropoint, c_unitCreateIgnorePlacement);
+}
+
+void gf_initheroarea (int lp_defenderlocation, int lp_p) {
+    // Variable Declarations
+    int lv__cl4int;
+    point lv__chooserspawnpoint;
+    int lv__beaconlocation;
+    int lv__herolocation;
+    int lv__playerrace;
+
+    // Automatic Variable Declarations
+    const int autoDB98D7BD_ae = 3;
+    const int autoDB98D7BD_ai = 1;
+    const int auto196AC4C5_ae = 3;
+    const int auto196AC4C5_ai = 1;
+
+    // Variable Initialization
+    lv__chooserspawnpoint = gv_defendlocationtoherochooserspawnpoint[lp_defenderlocation];
+    lv__playerrace = lib1_gf_getracepresetfromplayer(lp_p);
+
+    // Implementation
+    lv__cl4int = 0;
+    for ( ; ( (autoDB98D7BD_ai >= 0 && lv__cl4int <= autoDB98D7BD_ae) || (autoDB98D7BD_ai < 0 && lv__cl4int >= autoDB98D7BD_ae) ) ; lv__cl4int += autoDB98D7BD_ai ) {
+        lv__herolocation = gf_convertcl4integertopreset(lv__cl4int);
+        gf_inithero(lp_defenderlocation, lv__herolocation, lv__playerrace);
+    }
+    lv__beaconlocation = 0;
+    for ( ; ( (auto196AC4C5_ai >= 0 && lv__beaconlocation <= auto196AC4C5_ae) || (auto196AC4C5_ai < 0 && lv__beaconlocation >= auto196AC4C5_ae) ) ; lv__beaconlocation += auto196AC4C5_ai ) {
+        lib1_gf_createunitatpoint("1ChooserHeroBeaconHd", gv_herobeaconpoints[lp_defenderlocation][lv__beaconlocation], lp_p, c_unitCreateIgnorePlacement);
+    }
+}
+
 void gf_initunitsforlocation (int lp_defenderlocation, int lp_player) {
     // Variable Declarations
     int lv__race;
@@ -3331,16 +3733,16 @@ void gf_initunitsforlocation (int lp_defenderlocation, int lp_player) {
     lv__unitlocation = 0;
     for ( ; ( (auto2DC0790A_ai >= 0 && lv__unitlocation <= auto2DC0790A_ae) || (auto2DC0790A_ai < 0 && lv__unitlocation >= auto2DC0790A_ae) ) ; lv__unitlocation += auto2DC0790A_ai ) {
         auto8234B7E9_val = lv__unitlocation;
-        if (auto8234B7E9_val == ge_clockwiselocation_botright) {
+        if (auto8234B7E9_val == ge_clockwiselocation8_cl8botright) {
             gf_initunitbotright(lp_defenderlocation, lv__race);
         }
-        else if (auto8234B7E9_val == ge_clockwiselocation_bot) {
+        else if (auto8234B7E9_val == ge_clockwiselocation8_cl8bot) {
             gf_initunitbot(lp_defenderlocation, lv__race);
         }
-        else if (auto8234B7E9_val == ge_clockwiselocation_botleft) {
+        else if (auto8234B7E9_val == ge_clockwiselocation8_cl8botleft) {
             gf_initunitbotleft(lp_defenderlocation, lv__race);
         }
-        else if (auto8234B7E9_val == ge_clockwiselocation_left) {
+        else if (auto8234B7E9_val == ge_clockwiselocation8_cl8left) {
             gf_initunitleft(lp_defenderlocation, lp_player, lv__race);
         }
         else {
@@ -3368,7 +3770,7 @@ void gf_initunitbotright (int lp_defenderlocation, int lp_race) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv__location = ge_clockwiselocation_botright;
+    lv__location = ge_clockwiselocation8_cl8botright;
     lv__point = gv_unitpoints[lp_defenderlocation][lv__location];
 
     // Implementation
@@ -3388,7 +3790,7 @@ void gf_initunitbotleft (int lp_defenderlocation, int lp_race) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv__location = ge_clockwiselocation_botleft;
+    lv__location = ge_clockwiselocation8_cl8botleft;
 
     // Implementation
     lv__point = gv_unitpoints[lp_defenderlocation][lv__location];
@@ -3408,7 +3810,7 @@ void gf_initunitbot (int lp_defenderlocation, int lp_race) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv__location = ge_clockwiselocation_bot;
+    lv__location = ge_clockwiselocation8_cl8bot;
 
     // Implementation
     lv__point = gv_unitpoints[lp_defenderlocation][lv__location];
@@ -3428,7 +3830,7 @@ void gf_initunitleft (int lp_defenderlocation, int lp_p, int lp_race) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv__location = ge_clockwiselocation_left;
+    lv__location = ge_clockwiselocation8_cl8left;
 
     // Implementation
     lv__unit = gv_unitperlocationandrace[lv__location][lp_race];
@@ -3448,7 +3850,7 @@ void gf_initunitarea (int lp_defenderlocation, int lp_p) {
     const int auto307CE687_ai = 1;
 
     // Variable Initialization
-    lv__chooserspawnpoint = gv_defendlocationtochooserspawnpoint[lp_defenderlocation];
+    lv__chooserspawnpoint = gv_defendlocationtounitchooserspawnpoint[lp_defenderlocation];
 
     // Implementation
     gf_initunitsforlocation(lp_defenderlocation, lp_p);
@@ -3775,7 +4177,32 @@ int gf_getvotevaluethreshold () {
 bool gf_unitisbuilder (unit lp_u) {
     // Automatic Variable Declarations
     // Implementation
-    return lib1_gf_or3(lib1_gf_unitistype(lp_u, "SCVHd"), lib1_gf_unitistype(lp_u, "DroneHd"), lib1_gf_unitistype(lp_u, "ProbeHd"));
+    return lib1_gf_unithasbuff(lp_u, "IsBuilderHd");
+}
+
+int gf_convertcl4integertopreset (int lp_cl4int) {
+    // Automatic Variable Declarations
+    int autoF35190AC_val;
+
+    // Implementation
+    autoF35190AC_val = lp_cl4int;
+    if (autoF35190AC_val == 0) {
+        return ge_clockwiselocation4_cl4bot;
+    }
+    else if (autoF35190AC_val == 1) {
+        return ge_clockwiselocation4_cl4left;
+    }
+    else if (autoF35190AC_val == 2) {
+        return ge_clockwiselocation4_cl4right;
+    }
+    else if (autoF35190AC_val == 3) {
+        return ge_clockwiselocation4_cl4top;
+    }
+    else {
+        TextExpressionSetToken("Param/Expression/B1198A92", "cl4", IntToText(lp_cl4int));
+        lib1_gf_displaydebugmessage(TextExpressionAssemble("Param/Expression/B1198A92"));
+        return ge_clockwiselocation4_cl4bot;
+    }
 }
 
 int gf_rollmodtypedice () {
@@ -3839,6 +4266,18 @@ void gf_createplayerunitatpoint (int lp_location, int lp_race, int lp_player, po
         lv__ut = lp_utoverride;
     }
 
+    lib1_gf_createunitatpoint(lv__ut, lp_point, lp_player, lp_opts);
+}
+
+void gf_createplayerheroatpoint (int lp_location, int lp_race, int lp_player, point lp_point, int lp_opts) {
+    // Variable Declarations
+    string lv__ut;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__ut = gv_heroperlocationandrace[(lp_location)][lp_race];
+
+    // Implementation
     lib1_gf_createunitatpoint(lv__ut, lp_point, lp_player, lp_opts);
 }
 
@@ -4056,6 +4495,135 @@ void gf_skipforplayeriftimerisactive (int lp_p) {
 
 }
 
+void gf_choosehero (int lp_location, int lp_p, region lp_region) {
+    // Variable Declarations
+    unit lv__u;
+
+    // Automatic Variable Declarations
+    unitgroup auto5AAC7042_g;
+    int auto5AAC7042_u;
+
+    // Variable Initialization
+
+    // Implementation
+    while (gv_herochooserlockbyplayer[lp_p]) {
+        Wait(1.0, c_timeGame);
+    }
+    gv_herochooserlockbyplayer[lp_p] = true;
+    auto5AAC7042_g = UnitGroup("ChooserHd", lp_p, lp_region, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto5AAC7042_u = UnitGroupCount(auto5AAC7042_g, c_unitCountAll);
+    for (;; auto5AAC7042_u -= 1) {
+        lv__u = UnitGroupUnitFromEnd(auto5AAC7042_g, auto5AAC7042_u);
+        if (lv__u == null) { break; }
+        if (((lp_location == ge_clockwiselocation4_cl4bot) || (lp_location == ge_clockwiselocation4_cl4left))) {
+            gf_enableherobuilding(lp_location, lp_p);
+        }
+        else {
+            gf_spawnhero(lp_location, lp_p);
+        }
+        UnitKill(lv__u);
+    }
+    gv_herochooserlockbyplayer[lp_p] = false;
+}
+
+void gf_enableherobuilding (int lp_location, int lp_p) {
+    // Variable Declarations
+    int lv__race;
+    point lv__spawnpoint;
+    string lv__herobuilder;
+
+    // Automatic Variable Declarations
+    int autoB82E306A_val;
+    int auto54E9B91A_val;
+
+    // Variable Initialization
+    lv__race = lib1_gf_getracepresetfromplayer(lp_p);
+    lv__spawnpoint = gv_spawnpointperplayer[lp_p];
+
+    // Implementation
+    gv_playertoherobuildinglocationavailableusages[lp_p][(lp_location)] += 1;
+    autoB82E306A_val = lv__race;
+    if (autoB82E306A_val == lib1_ge_race_protoss) {
+        lv__herobuilder = "HeroBuilderProtossHd";
+    }
+    else if (autoB82E306A_val == lib1_ge_race_terran) {
+        lv__herobuilder = "HeroBuilderTerranHd";
+    }
+    else if (autoB82E306A_val == lib1_ge_race_zerg) {
+        lv__herobuilder = "HeroBuilderZergHd";
+    }
+    else {
+    }
+    lib1_gf_createunitatpoint(lv__herobuilder, PointWithOffset(lv__spawnpoint, 0.0, -1.0), lp_p, 0);
+    auto54E9B91A_val = lp_location;
+    if (auto54E9B91A_val == ge_clockwiselocation4_cl4bot) {
+        TechTreeUnitAllow(lp_p, "AtomicStormBreweryHd", true);
+        TechTreeUnitAllow(lp_p, "FrackerHd", true);
+        TechTreeUnitAllow(lp_p, "ShackledUltraliskHd", true);
+    }
+    else if (auto54E9B91A_val == ge_clockwiselocation4_cl4left) {
+        TechTreeUnitAllow(lp_p, "WormyHd", true);
+        TechTreeUnitAllow(lp_p, "KorhalPalaceTurretHd", true);
+        TechTreeUnitAllow(lp_p, "ShrineOfTheGodsHd", true);
+    }
+    else {
+    }
+}
+
+void gf_spawnhero (int lp_unitlocation, int lp_p) {
+    // Variable Declarations
+    point lv__spawnpoint;
+    int lv__race;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__spawnpoint = gv_spawnpointperplayer[lp_p];
+    lv__race = lib1_gf_getracepresetfromplayer(lp_p);
+
+    // Implementation
+    gf_createplayerheroatpoint(lp_unitlocation, lv__race, lp_p, PointWithOffset(lv__spawnpoint, 0.0, -1.0), 0);
+}
+
+void gf_turnherobuildingbackintobuilder (int lp_p, unit lp_u) {
+    // Variable Declarations
+    int lv__race;
+    string lv__ut;
+    point lv__spawnpoint;
+    string lv__herobuilder;
+
+    // Automatic Variable Declarations
+    int auto6742CE2B_val;
+
+    // Variable Initialization
+    lv__race = lib1_gf_getracepresetfromplayer(lp_p);
+    lv__ut = UnitGetType(lp_u);
+    lv__spawnpoint = UnitGetPosition(lp_u);
+
+    // Implementation
+    TechTreeUnitAllow(lp_p, lv__ut, true);
+    if (((lv__ut == "ShackledUltraliskHd") || (lv__ut == "FrackerHd") || (lv__ut == "AtomicStormBreweryHd"))) {
+        gv_playertoherobuildinglocationavailableusages[lp_p][ge_clockwiselocation4_cl4bot] += 1;
+    }
+    else {
+        gv_playertoherobuildinglocationavailableusages[lp_p][ge_clockwiselocation4_cl4left] += 1;
+    }
+    auto6742CE2B_val = lv__race;
+    if (auto6742CE2B_val == lib1_ge_race_protoss) {
+        lv__herobuilder = "HeroBuilderProtossHd";
+    }
+    else if (auto6742CE2B_val == lib1_ge_race_terran) {
+        lv__herobuilder = "HeroBuilderTerranHd";
+    }
+    else if (auto6742CE2B_val == lib1_ge_race_zerg) {
+        lv__herobuilder = "HeroBuilderZergHd";
+    }
+    else {
+    }
+    lib1_gf_createunitatpoint(lv__herobuilder, PointWithOffset(lv__spawnpoint, 0.0, -2.0), lp_p, 0);
+    UnitSelect(UnitLastCreated(), lp_p, true);
+    UnitKill(lp_u);
+}
+
 void gf_spawnunit (int lp_unitlocation, int lp_p) {
     // Variable Declarations
     point lv__spawnpoint;
@@ -4067,7 +4635,7 @@ void gf_spawnunit (int lp_unitlocation, int lp_p) {
     lv__race = lib1_gf_getraceintegerfromplayer(lp_p);
 
     // Implementation
-    gf_createplayerunitatpoint(lp_unitlocation, lv__race, lp_p, lv__spawnpoint, lib1_gv_nogamelinkunittype, 0);
+    gf_createplayerunitatpoint(lp_unitlocation, lv__race, lp_p, PointWithOffset(lv__spawnpoint, 0.0, -1.0), lib1_gv_nogamelinkunittype, 0);
 }
 
 void gf_chooseunit (int lp_numchoosers, int lp_location, int lp_p, region lp_region, int lp_choicetype) {
@@ -4152,7 +4720,7 @@ bool gf_shouldpingchooser (int lp_p) {
         return false;
     }
     else {
-        lv__chooserspawnpoint = gv_defendlocationtochooserspawnpoint[lv__defenderlocation];
+        lv__chooserspawnpoint = gv_defendlocationtounitchooserspawnpoint[lv__defenderlocation];
         return (lib1_gf_isfalse(gv_playerbankvars[lp_p].lv_hasplayed) && (gv_playertonumchoosersspent[lp_p] < lv__numchoosersspenttilwefiguretheplayergetsit) && (lib1_gf_numberofunitsoftypeinregion(RegionCircle(lv__chooserspawnpoint, 10.0), lp_p, "ChooserHd") > 6));
     }
 }
@@ -4173,6 +4741,27 @@ string gf_getcurrentenemyunittypetospawn () {
     // Automatic Variable Declarations
     // Implementation
     return gv_enemyperround[gv_currentround];
+}
+
+trigger auto_gf_announcewave_Trigger = null;
+
+void gf_announcewave () {
+    if (auto_gf_announcewave_Trigger == null) {
+        auto_gf_announcewave_Trigger = TriggerCreate("auto_gf_announcewave_TriggerFunc");
+    }
+
+    TriggerExecute(auto_gf_announcewave_Trigger, false, false);
+}
+
+bool auto_gf_announcewave_TriggerFunc (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Implementation
+    lib1_gf_playsoundforallplayers(SoundLink("AnnounceWaveHd", -1));
+    TextExpressionSetToken("Param/Expression/571B7AF2", "wave", IntToText((gv_currentround + 1)));
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, TextExpressionAssemble("Param/Expression/571B7AF2"));
+    Wait(8.0, c_timeReal);
+    lib1_gf_cleartextmessageareaforallusers(c_messageAreaDirective);
+    return true;
 }
 
 void gf_endgameshowpanel () {
@@ -4348,7 +4937,7 @@ void gf_incrementenemieskilled () {
         while (true) {
             lv__p = PlayerGroupNextPlayer(auto1F3675BB_g, lv__p);
             if (lv__p < 0) { break; }
-            lv__chooserspawnpoint = gv_defendlocationtochooserspawnpoint[gv_playertodefenderlocation[lv__p]];
+            lv__chooserspawnpoint = gv_defendlocationtounitchooserspawnpoint[gv_playertodefenderlocation[lv__p]];
             lib1_gf_createunitatpoint("ChooserHd", lv__chooserspawnpoint, lv__p, 0);
             if (lib1_gf_istrue(gv_unitchooserpathexistsperplayer[lv__p])) {
                 lv__chooser = UnitLastCreated();
@@ -4403,6 +4992,7 @@ void gf_runround () {
     gf_removefullrefund();
     gv_roundfinished = false;
     gv_firstroundhasstarted = true;
+    gf_announcewave();
     gf_spawnenemies();
 }
 
@@ -4543,6 +5133,39 @@ void gf_spawnenemyghostsatlocation (int lp_location) {
         }
     }
 
+}
+
+trigger auto_gf_spawnherochoosers_Trigger = null;
+
+void gf_spawnherochoosers () {
+    if (auto_gf_spawnherochoosers_Trigger == null) {
+        auto_gf_spawnherochoosers_Trigger = TriggerCreate("auto_gf_spawnherochoosers_TriggerFunc");
+    }
+
+    TriggerExecute(auto_gf_spawnherochoosers_Trigger, false, false);
+}
+
+bool auto_gf_spawnherochoosers_TriggerFunc (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+
+    // Automatic Variable Declarations
+    playergroup auto347FC53F_g;
+
+    // Variable Initialization
+
+    // Implementation
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaDirective, TextExpressionAssemble("Param/Expression/53FA7A41"));
+    auto347FC53F_g = gv_activedefenders;
+    lv__p = -1;
+    while (true) {
+        lv__p = PlayerGroupNextPlayer(auto347FC53F_g, lv__p);
+        if (lv__p < 0) { break; }
+        lib1_gf_createunitatpoint("ChooserHd", gv_defendlocationtoherochooserspawnpoint[gv_playertodefenderlocation[lv__p]], lv__p, 0);
+    }
+    Wait(8.0, c_timeReal);
+    lib1_gf_cleartextmessageareaforallusers(c_messageAreaDirective);
+    return true;
 }
 
 trigger auto_gf_spawnsingleenemy_Trigger = null;
@@ -4687,8 +5310,11 @@ bool gt_initmap_Func (bool testConds, bool runActions) {
     gf_initenemymaxhealthandshield();
     gf_initroundtimer();
     gf_initunitpoints();
+    gf_initheropoints();
     gf_initunitperlocation();
+    gf_initheroperlocation();
     gf_initunitbeaconpoints();
+    gf_initherobeaconpoints();
     gf_initunitbeaconpointsperlocation();
     gf_initmodtypedice();
     gf_initmodtypetomodunit();
@@ -4717,7 +5343,8 @@ bool gt_initmap_Func (bool testConds, bool runActions) {
     gf_initenemyshowcasepoints();
     gf_initextralifepoints();
     gf_initextralives();
-    gf_initchooserspawnpoints();
+    gf_initdefendlocationtounitchooserspawnpoints();
+    gf_initdefendlocationtoherochooserspawnpoints();
     gf_initenemymodpoints();
     gf_initpossibleenemyunitsperround();
     gf_initenemyperroundrest();
@@ -4725,6 +5352,7 @@ bool gt_initmap_Func (bool testConds, bool runActions) {
     gf_initenemyshowcase();
     gf_initpathtesters();
     gf_initvotetokickplayerdialogs();
+    gf_initherobuildingsdisabled();
     return true;
 }
 
@@ -4743,7 +5371,7 @@ bool gt_choosespawnlocationtop_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_defenderlocation = ge_clockwiselocation_top;
+    lv_defenderlocation = ge_clockwiselocation8_cl8top;
 
     // Conditions
     if (testConds) {
@@ -4777,7 +5405,7 @@ bool gt_choosespawnlocationtopright_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_defenderlocation = ge_clockwiselocation_topright;
+    lv_defenderlocation = ge_clockwiselocation8_cl8topright;
 
     // Conditions
     if (testConds) {
@@ -4811,7 +5439,7 @@ bool gt_choosespawnlocationright_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_defenderlocation = ge_clockwiselocation_right;
+    lv_defenderlocation = ge_clockwiselocation8_cl8right;
 
     // Conditions
     if (testConds) {
@@ -4845,7 +5473,7 @@ bool gt_choosespawnlocationbotright_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_defenderlocation = ge_clockwiselocation_botright;
+    lv_defenderlocation = ge_clockwiselocation8_cl8botright;
 
     // Conditions
     if (testConds) {
@@ -4879,7 +5507,7 @@ bool gt_choosespawnlocationbot_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_defenderlocation = ge_clockwiselocation_bot;
+    lv_defenderlocation = ge_clockwiselocation8_cl8bot;
 
     // Conditions
     if (testConds) {
@@ -4913,7 +5541,7 @@ bool gt_choosespawnlocationbotleft_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_defenderlocation = ge_clockwiselocation_botleft;
+    lv_defenderlocation = ge_clockwiselocation8_cl8botleft;
 
     // Conditions
     if (testConds) {
@@ -4947,7 +5575,7 @@ bool gt_choosespawnlocationleft_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_defenderlocation = ge_clockwiselocation_left;
+    lv_defenderlocation = ge_clockwiselocation8_cl8left;
 
     // Conditions
     if (testConds) {
@@ -4981,7 +5609,7 @@ bool gt_choosespawnlocationtopleft_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_defenderlocation = ge_clockwiselocation_topleft;
+    lv_defenderlocation = ge_clockwiselocation8_cl8topleft;
 
     // Conditions
     if (testConds) {
@@ -5023,7 +5651,7 @@ bool gt_testinitrace_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    PlayerSetRace(1, "Zerg");
+    PlayerSetRace(1, "Prot");
     return true;
 }
 
@@ -5031,6 +5659,40 @@ bool gt_testinitrace_Func (bool testConds, bool runActions) {
 void gt_testinitrace_Init () {
     gt_testinitrace = TriggerCreate("gt_testinitrace_Func");
     TriggerAddEventTimeElapsed(gt_testinitrace, 1.0, c_timeReal);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: test - init hero choosers
+//--------------------------------------------------------------------------------------------------
+bool gt_testinitherochoosers_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_istesting())) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(777071673), 1);
+    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(2075095700), 1);
+    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(76779934), 1);
+    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(549913239), 1);
+    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(1689872590), 1);
+    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(784073299), 1);
+    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(481180406), 1);
+    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(90928454), 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_testinitherochoosers_Init () {
+    gt_testinitherochoosers = TriggerCreate("gt_testinitherochoosers_Func");
+    TriggerAddEventMapInit(gt_testinitherochoosers);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -5061,37 +5723,9 @@ void gt_testinitcam_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: test - init resources
+// Trigger: test paths upon building regular buildings
 //--------------------------------------------------------------------------------------------------
-bool gt_testinitresources_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!(lib1_gf_istesting())) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSetTo, 1000);
-    PlayerModifyPropertyInt(1, c_playerPropVespene, c_playerPropOperSetTo, 1000);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_testinitresources_Init () {
-    gt_testinitresources = TriggerCreate("gt_testinitresources_Func");
-    TriggerAddEventMapInit(gt_testinitresources);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: test paths
-//--------------------------------------------------------------------------------------------------
-bool gt_testpaths_Func (bool testConds, bool runActions) {
+bool gt_testpathsuponbuildingregularbuildings_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv__p;
     unit lv__building;
@@ -5120,11 +5754,50 @@ bool gt_testpaths_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_testpaths_Init () {
-    gt_testpaths = TriggerCreate("gt_testpaths_Func");
-    TriggerAddEventUnitCreated(gt_testpaths, null, "BuildZergHd", null);
-    TriggerAddEventUnitCreated(gt_testpaths, null, "BuildTerranHd", null);
-    TriggerAddEventUnitCreated(gt_testpaths, null, "BuildProtossHd", null);
+void gt_testpathsuponbuildingregularbuildings_Init () {
+    gt_testpathsuponbuildingregularbuildings = TriggerCreate("gt_testpathsuponbuildingregularbuildings_Func");
+    TriggerAddEventUnitCreated(gt_testpathsuponbuildingregularbuildings, null, "BuildZergHd", null);
+    TriggerAddEventUnitCreated(gt_testpathsuponbuildingregularbuildings, null, "BuildTerranHd", null);
+    TriggerAddEventUnitCreated(gt_testpathsuponbuildingregularbuildings, null, "BuildProtossHd", null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: test paths upon building hero buildings
+//--------------------------------------------------------------------------------------------------
+bool gt_testpathsuponbuildingherobuildings_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+    unit lv__building;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__p = EventPlayer();
+    lv__building = EventUnitCreatedUnit();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    while (gv_testpathlock) {
+        Wait(1.0, c_timeGame);
+    }
+    gv_testpathlock = true;
+    if (lib1_gf_isfalse(gf_allactivepathsareclear())) {
+        lib1_gf_messageuser(StringExternal("Param/Value/26532054"), lv__p);
+        gf_turnherobuildingbackintobuilder(lv__p, lv__building);
+    }
+
+    gv_testpathlock = false;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_testpathsuponbuildingherobuildings_Init () {
+    gt_testpathsuponbuildingherobuildings = TriggerCreate("gt_testpathsuponbuildingherobuildings_Func");
+    TriggerAddEventUnitCreated(gt_testpathsuponbuildingherobuildings, null, "BuildHeroProtossHd", null);
+    TriggerAddEventUnitCreated(gt_testpathsuponbuildingherobuildings, null, "BuildHeroTerranHd", null);
+    TriggerAddEventUnitCreated(gt_testpathsuponbuildingherobuildings, null, "BuildHeroZergHd", null);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -5664,6 +6337,10 @@ bool gt_keepspawnclearofunits_Func (bool testConds, bool runActions) {
         }
 
         if (!(lib1_gf_isfalse(lib1_gf_unitistype(EventUnit(), "WasplingHd")))) {
+            return false;
+        }
+
+        if (!(lib1_gf_isfalse(lib1_gf_unitistype(EventUnit(), "SelendisInterceptorHd")))) {
             return false;
         }
 
@@ -6438,9 +7115,292 @@ void gt_toggleghosts_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: choose - top
+// Trigger: choose hero - top
 //--------------------------------------------------------------------------------------------------
-bool gt_choosetop_Func (bool testConds, bool runActions) {
+bool gt_chooseherotop_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__location;
+    region lv__r;
+    int lv__p;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__location = ge_clockwiselocation4_cl4top;
+    lv__r = EventUnitRegion();
+    lv__p = EventPlayer();
+
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_triggeringunitisoftype("ChooserHd"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_choosehero(lv__location, lv__p, lv__r);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_chooseherotop_Init () {
+    gt_chooseherotop = TriggerCreate("gt_chooseherotop_Func");
+    TriggerAddEventUnitRegion(gt_chooseherotop, null, RegionCircle(PointFromId(2129021403), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherotop, null, RegionCircle(PointFromId(1813936949), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherotop, null, RegionCircle(PointFromId(1116849083), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherotop, null, RegionCircle(PointFromId(979865320), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherotop, null, RegionCircle(PointFromId(1099485671), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherotop, null, RegionCircle(PointFromId(264919746), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherotop, null, RegionCircle(PointFromId(830643813), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherotop, null, RegionCircle(PointFromId(2092551207), gv_chooserradius), true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: choose hero - right
+//--------------------------------------------------------------------------------------------------
+bool gt_chooseheroright_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__location;
+    region lv__r;
+    int lv__p;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__location = ge_clockwiselocation4_cl4right;
+    lv__r = EventUnitRegion();
+    lv__p = EventPlayer();
+
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_triggeringunitisoftype("ChooserHd"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_choosehero(lv__location, lv__p, lv__r);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_chooseheroright_Init () {
+    gt_chooseheroright = TriggerCreate("gt_chooseheroright_Func");
+    TriggerAddEventUnitRegion(gt_chooseheroright, null, RegionCircle(PointFromId(1526956294), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroright, null, RegionCircle(PointFromId(954527596), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroright, null, RegionCircle(PointFromId(1257445680), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroright, null, RegionCircle(PointFromId(1065355866), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroright, null, RegionCircle(PointFromId(1830656202), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroright, null, RegionCircle(PointFromId(487290198), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroright, null, RegionCircle(PointFromId(596942342), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroright, null, RegionCircle(PointFromId(214035542), gv_chooserradius), true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: choose hero - bot
+//--------------------------------------------------------------------------------------------------
+bool gt_chooseherobot_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__location;
+    region lv__r;
+    int lv__p;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__location = ge_clockwiselocation4_cl4bot;
+    lv__r = EventUnitRegion();
+    lv__p = EventPlayer();
+
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_triggeringunitisoftype("ChooserHd"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_choosehero(lv__location, lv__p, lv__r);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_chooseherobot_Init () {
+    gt_chooseherobot = TriggerCreate("gt_chooseherobot_Func");
+    TriggerAddEventUnitRegion(gt_chooseherobot, null, RegionCircle(PointFromId(1437515541), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherobot, null, RegionCircle(PointFromId(2115418223), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherobot, null, RegionCircle(PointFromId(827689108), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherobot, null, RegionCircle(PointFromId(269277540), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherobot, null, RegionCircle(PointFromId(1887658787), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherobot, null, RegionCircle(PointFromId(1356907216), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherobot, null, RegionCircle(PointFromId(1645618103), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseherobot, null, RegionCircle(PointFromId(1258371669), gv_chooserradius), true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: choose hero - left
+//--------------------------------------------------------------------------------------------------
+bool gt_chooseheroleft_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__location;
+    region lv__r;
+    int lv__p;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__location = ge_clockwiselocation4_cl4left;
+    lv__r = EventUnitRegion();
+    lv__p = EventPlayer();
+
+    // Conditions
+    if (testConds) {
+        if (!(lib1_gf_triggeringunitisoftype("ChooserHd"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_choosehero(lv__location, lv__p, lv__r);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_chooseheroleft_Init () {
+    gt_chooseheroleft = TriggerCreate("gt_chooseheroleft_Func");
+    TriggerAddEventUnitRegion(gt_chooseheroleft, null, RegionCircle(PointFromId(192965553), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroleft, null, RegionCircle(PointFromId(286863082), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroleft, null, RegionCircle(PointFromId(1361127356), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroleft, null, RegionCircle(PointFromId(837168851), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroleft, null, RegionCircle(PointFromId(1205849681), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroleft, null, RegionCircle(PointFromId(1371237091), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroleft, null, RegionCircle(PointFromId(143680038), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseheroleft, null, RegionCircle(PointFromId(28408665), gv_chooserradius), true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: handle hero building usage count
+//--------------------------------------------------------------------------------------------------
+bool gt_handleherobuildingusagecount_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv__building;
+    int lv__p;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__building = EventUnitCreatedUnit();
+    lv__p = EventPlayer();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if (((UnitGetType(lv__building) == "ShackledUltraliskHd") || (UnitGetType(lv__building) == "FrackerHd") || (UnitGetType(lv__building) == "AtomicStormBreweryHd"))) {
+        gv_playertoherobuildinglocationavailableusages[lv__p][ge_clockwiselocation4_cl4bot] -= 1;
+        if ((gv_playertoherobuildinglocationavailableusages[lv__p][ge_clockwiselocation4_cl4bot] == 0)) {
+            TechTreeUnitAllow(lv__p, "ShackledUltraliskHd", false);
+            TechTreeUnitAllow(lv__p, "FrackerHd", false);
+            TechTreeUnitAllow(lv__p, "AtomicStormBreweryHd", false);
+        }
+
+    }
+    else {
+        gv_playertoherobuildinglocationavailableusages[lv__p][ge_clockwiselocation4_cl4left] -= 1;
+        if ((gv_playertoherobuildinglocationavailableusages[lv__p][ge_clockwiselocation4_cl4left] == 0)) {
+            TechTreeUnitAllow(lv__p, "WormyHd", false);
+            TechTreeUnitAllow(lv__p, "KorhalPalaceTurretHd", false);
+            TechTreeUnitAllow(lv__p, "ShrineOfTheGodsHd", false);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_handleherobuildingusagecount_Init () {
+    gt_handleherobuildingusagecount = TriggerCreate("gt_handleherobuildingusagecount_Func");
+    TriggerAddEventUnitCreated(gt_handleherobuildingusagecount, null, "BuildHeroZergHd", null);
+    TriggerAddEventUnitCreated(gt_handleherobuildingusagecount, null, "BuildHeroTerranHd", null);
+    TriggerAddEventUnitCreated(gt_handleherobuildingusagecount, null, "BuildHeroProtossHd", null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: handle auto select hero building upon build
+//--------------------------------------------------------------------------------------------------
+bool gt_handleautoselectherobuildinguponbuild_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv__building;
+    int lv__p;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__building = EventUnitCreatedUnit();
+    lv__p = EventPlayer();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitSelect(lv__building, lv__p, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_handleautoselectherobuildinguponbuild_Init () {
+    gt_handleautoselectherobuildinguponbuild = TriggerCreate("gt_handleautoselectherobuildinguponbuild_Func");
+    TriggerAddEventUnitCreated(gt_handleautoselectherobuildinguponbuild, null, "BuildHeroProtossHd", null);
+    TriggerAddEventUnitCreated(gt_handleautoselectherobuildinguponbuild, null, "BuildHeroTerranHd", null);
+    TriggerAddEventUnitCreated(gt_handleautoselectherobuildinguponbuild, null, "BuildHeroZergHd", null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: turn hero building back into builder
+//--------------------------------------------------------------------------------------------------
+bool gt_turnherobuildingbackintobuilder_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv__p;
+    unit lv__u;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv__p = EventPlayer();
+    lv__u = EventUnit();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_turnherobuildingbackintobuilder(lv__p, lv__u);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_turnherobuildingbackintobuilder_Init () {
+    gt_turnherobuildingbackintobuilder = TriggerCreate("gt_turnherobuildingbackintobuilder_Func");
+    TriggerAddEventUnitAbility(gt_turnherobuildingbackintobuilder, null, AbilityCommand("TurnBackIntoBuilderProtossHd", 0), c_unitAbilStageComplete, false);
+    TriggerAddEventUnitAbility(gt_turnherobuildingbackintobuilder, null, AbilityCommand("TurnBackIntoBuilderTerranHd", 0), c_unitAbilStageComplete, false);
+    TriggerAddEventUnitAbility(gt_turnherobuildingbackintobuilder, null, AbilityCommand("TurnBackIntoBuilderZergHd", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: choose unit - top
+//--------------------------------------------------------------------------------------------------
+bool gt_chooseunittop_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv__location;
     region lv__r;
@@ -6449,7 +7409,7 @@ bool gt_choosetop_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv__location = ge_clockwiselocation_top;
+    lv__location = ge_clockwiselocation8_cl8top;
     lv__r = EventUnitRegion();
     lv__p = EventPlayer();
     lv__choicetype = ge_choicetype_unit;
@@ -6471,22 +7431,22 @@ bool gt_choosetop_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_choosetop_Init () {
-    gt_choosetop = TriggerCreate("gt_choosetop_Func");
-    TriggerAddEventUnitRegion(gt_choosetop, null, RegionCircle(PointFromId(78753967), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetop, null, RegionCircle(PointFromId(533997263), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetop, null, RegionCircle(PointFromId(2057706776), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetop, null, RegionCircle(PointFromId(69372940), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetop, null, RegionCircle(PointFromId(557071858), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetop, null, RegionCircle(PointFromId(704189669), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetop, null, RegionCircle(PointFromId(1591476509), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetop, null, RegionCircle(PointFromId(123965885), gv_chooserradius), true);
+void gt_chooseunittop_Init () {
+    gt_chooseunittop = TriggerCreate("gt_chooseunittop_Func");
+    TriggerAddEventUnitRegion(gt_chooseunittop, null, RegionCircle(PointFromId(78753967), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittop, null, RegionCircle(PointFromId(533997263), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittop, null, RegionCircle(PointFromId(2057706776), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittop, null, RegionCircle(PointFromId(69372940), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittop, null, RegionCircle(PointFromId(557071858), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittop, null, RegionCircle(PointFromId(704189669), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittop, null, RegionCircle(PointFromId(1591476509), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittop, null, RegionCircle(PointFromId(123965885), gv_chooserradius), true);
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: choose - top right
+// Trigger: choose unit - top right
 //--------------------------------------------------------------------------------------------------
-bool gt_choosetopright_Func (bool testConds, bool runActions) {
+bool gt_chooseunittopright_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv__location;
     region lv__r;
@@ -6495,7 +7455,7 @@ bool gt_choosetopright_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv__location = ge_clockwiselocation_topright;
+    lv__location = ge_clockwiselocation8_cl8topright;
     lv__r = EventUnitRegion();
     lv__p = EventPlayer();
     lv__choicetype = ge_choicetype_unit;
@@ -6517,22 +7477,22 @@ bool gt_choosetopright_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_choosetopright_Init () {
-    gt_choosetopright = TriggerCreate("gt_choosetopright_Func");
-    TriggerAddEventUnitRegion(gt_choosetopright, null, RegionCircle(PointFromId(1456086433), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopright, null, RegionCircle(PointFromId(837803804), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopright, null, RegionCircle(PointFromId(1251994820), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopright, null, RegionCircle(PointFromId(625743367), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopright, null, RegionCircle(PointFromId(890760943), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopright, null, RegionCircle(PointFromId(1158879975), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopright, null, RegionCircle(PointFromId(651751040), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopright, null, RegionCircle(PointFromId(2116441393), gv_chooserradius), true);
+void gt_chooseunittopright_Init () {
+    gt_chooseunittopright = TriggerCreate("gt_chooseunittopright_Func");
+    TriggerAddEventUnitRegion(gt_chooseunittopright, null, RegionCircle(PointFromId(1456086433), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopright, null, RegionCircle(PointFromId(837803804), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopright, null, RegionCircle(PointFromId(1251994820), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopright, null, RegionCircle(PointFromId(625743367), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopright, null, RegionCircle(PointFromId(890760943), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopright, null, RegionCircle(PointFromId(1158879975), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopright, null, RegionCircle(PointFromId(651751040), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopright, null, RegionCircle(PointFromId(2116441393), gv_chooserradius), true);
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: choose - right
+// Trigger: choose unit - right
 //--------------------------------------------------------------------------------------------------
-bool gt_chooseright_Func (bool testConds, bool runActions) {
+bool gt_chooseunitright_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv__location;
     region lv__r;
@@ -6541,7 +7501,7 @@ bool gt_chooseright_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv__location = ge_clockwiselocation_right;
+    lv__location = ge_clockwiselocation8_cl8right;
     lv__r = EventUnitRegion();
     lv__p = EventPlayer();
     lv__choicetype = ge_choicetype_unit;
@@ -6563,22 +7523,22 @@ bool gt_chooseright_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_chooseright_Init () {
-    gt_chooseright = TriggerCreate("gt_chooseright_Func");
-    TriggerAddEventUnitRegion(gt_chooseright, null, RegionCircle(PointFromId(628985728), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseright, null, RegionCircle(PointFromId(691494978), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseright, null, RegionCircle(PointFromId(193140767), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseright, null, RegionCircle(PointFromId(1300210222), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseright, null, RegionCircle(PointFromId(1795181988), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseright, null, RegionCircle(PointFromId(978262974), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseright, null, RegionCircle(PointFromId(1428756895), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseright, null, RegionCircle(PointFromId(1639441590), gv_chooserradius), true);
+void gt_chooseunitright_Init () {
+    gt_chooseunitright = TriggerCreate("gt_chooseunitright_Func");
+    TriggerAddEventUnitRegion(gt_chooseunitright, null, RegionCircle(PointFromId(628985728), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitright, null, RegionCircle(PointFromId(691494978), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitright, null, RegionCircle(PointFromId(193140767), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitright, null, RegionCircle(PointFromId(1300210222), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitright, null, RegionCircle(PointFromId(1795181988), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitright, null, RegionCircle(PointFromId(978262974), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitright, null, RegionCircle(PointFromId(1428756895), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitright, null, RegionCircle(PointFromId(1639441590), gv_chooserradius), true);
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: choose - bot right
+// Trigger: choose unit - bot right
 //--------------------------------------------------------------------------------------------------
-bool gt_choosebotright_Func (bool testConds, bool runActions) {
+bool gt_chooseunitbotright_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv__location;
     region lv__r;
@@ -6587,7 +7547,7 @@ bool gt_choosebotright_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv__location = ge_clockwiselocation_botright;
+    lv__location = ge_clockwiselocation8_cl8botright;
     lv__r = EventUnitRegion();
     lv__p = EventPlayer();
     lv__choicetype = ge_choicetype_unit;
@@ -6609,22 +7569,22 @@ bool gt_choosebotright_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_choosebotright_Init () {
-    gt_choosebotright = TriggerCreate("gt_choosebotright_Func");
-    TriggerAddEventUnitRegion(gt_choosebotright, null, RegionCircle(PointFromId(852033013), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosebotright, null, RegionCircle(PointFromId(551137157), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosebotright, null, RegionCircle(PointFromId(928879015), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosebotright, null, RegionCircle(PointFromId(1171033856), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosebotright, null, RegionCircle(PointFromId(1196786689), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosebotright, null, RegionCircle(PointFromId(194816851), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosebotright, null, RegionCircle(PointFromId(1776792780), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosebotright, null, RegionCircle(PointFromId(571005906), gv_chooserradius), true);
+void gt_chooseunitbotright_Init () {
+    gt_chooseunitbotright = TriggerCreate("gt_chooseunitbotright_Func");
+    TriggerAddEventUnitRegion(gt_chooseunitbotright, null, RegionCircle(PointFromId(852033013), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotright, null, RegionCircle(PointFromId(551137157), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotright, null, RegionCircle(PointFromId(928879015), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotright, null, RegionCircle(PointFromId(1171033856), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotright, null, RegionCircle(PointFromId(1196786689), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotright, null, RegionCircle(PointFromId(194816851), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotright, null, RegionCircle(PointFromId(1776792780), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotright, null, RegionCircle(PointFromId(571005906), gv_chooserradius), true);
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: choose - bot
+// Trigger: choose unit - bot
 //--------------------------------------------------------------------------------------------------
-bool gt_choosebot_Func (bool testConds, bool runActions) {
+bool gt_chooseunitbot_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv__location;
     region lv__r;
@@ -6633,7 +7593,7 @@ bool gt_choosebot_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv__location = ge_clockwiselocation_bot;
+    lv__location = ge_clockwiselocation8_cl8bot;
     lv__r = EventUnitRegion();
     lv__p = EventPlayer();
     lv__choicetype = ge_choicetype_unit;
@@ -6655,22 +7615,22 @@ bool gt_choosebot_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_choosebot_Init () {
-    gt_choosebot = TriggerCreate("gt_choosebot_Func");
-    TriggerAddEventUnitRegion(gt_choosebot, null, RegionCircle(PointFromId(1025773052), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebot, null, RegionCircle(PointFromId(846440), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebot, null, RegionCircle(PointFromId(52267179), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebot, null, RegionCircle(PointFromId(1954757564), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebot, null, RegionCircle(PointFromId(2067720479), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebot, null, RegionCircle(PointFromId(910872851), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebot, null, RegionCircle(PointFromId(1981765748), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebot, null, RegionCircle(PointFromId(1621754594), gv_chooserradiusbig), true);
+void gt_chooseunitbot_Init () {
+    gt_chooseunitbot = TriggerCreate("gt_chooseunitbot_Func");
+    TriggerAddEventUnitRegion(gt_chooseunitbot, null, RegionCircle(PointFromId(1025773052), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbot, null, RegionCircle(PointFromId(846440), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbot, null, RegionCircle(PointFromId(52267179), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbot, null, RegionCircle(PointFromId(1954757564), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbot, null, RegionCircle(PointFromId(2067720479), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbot, null, RegionCircle(PointFromId(910872851), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbot, null, RegionCircle(PointFromId(1981765748), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbot, null, RegionCircle(PointFromId(1621754594), gv_chooserradiusbig), true);
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: choose - bot left
+// Trigger: choose unit - bot left
 //--------------------------------------------------------------------------------------------------
-bool gt_choosebotleft_Func (bool testConds, bool runActions) {
+bool gt_chooseunitbotleft_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv__location;
     region lv__r;
@@ -6679,7 +7639,7 @@ bool gt_choosebotleft_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv__location = ge_clockwiselocation_botleft;
+    lv__location = ge_clockwiselocation8_cl8botleft;
     lv__r = EventUnitRegion();
     lv__p = EventPlayer();
     lv__choicetype = ge_choicetype_unit;
@@ -6701,22 +7661,22 @@ bool gt_choosebotleft_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_choosebotleft_Init () {
-    gt_choosebotleft = TriggerCreate("gt_choosebotleft_Func");
-    TriggerAddEventUnitRegion(gt_choosebotleft, null, RegionCircle(PointFromId(970550996), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebotleft, null, RegionCircle(PointFromId(1764278175), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebotleft, null, RegionCircle(PointFromId(151315752), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebotleft, null, RegionCircle(PointFromId(1345536700), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebotleft, null, RegionCircle(PointFromId(1208114324), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebotleft, null, RegionCircle(PointFromId(2090537115), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebotleft, null, RegionCircle(PointFromId(488609416), gv_chooserradiusbig), true);
-    TriggerAddEventUnitRegion(gt_choosebotleft, null, RegionCircle(PointFromId(67347418), gv_chooserradiusbig), true);
+void gt_chooseunitbotleft_Init () {
+    gt_chooseunitbotleft = TriggerCreate("gt_chooseunitbotleft_Func");
+    TriggerAddEventUnitRegion(gt_chooseunitbotleft, null, RegionCircle(PointFromId(970550996), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotleft, null, RegionCircle(PointFromId(1764278175), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotleft, null, RegionCircle(PointFromId(151315752), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotleft, null, RegionCircle(PointFromId(1345536700), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotleft, null, RegionCircle(PointFromId(1208114324), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotleft, null, RegionCircle(PointFromId(2090537115), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotleft, null, RegionCircle(PointFromId(488609416), gv_chooserradiusbig), true);
+    TriggerAddEventUnitRegion(gt_chooseunitbotleft, null, RegionCircle(PointFromId(67347418), gv_chooserradiusbig), true);
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: choose - left
+// Trigger: choose unit - left
 //--------------------------------------------------------------------------------------------------
-bool gt_chooseleft_Func (bool testConds, bool runActions) {
+bool gt_chooseunitleft_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv__location;
     int lv__p;
@@ -6725,7 +7685,7 @@ bool gt_chooseleft_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv__location = ge_clockwiselocation_left;
+    lv__location = ge_clockwiselocation8_cl8left;
     lv__p = EventPlayer();
     lv__r = EventUnitRegion();
     lv__choicetype = ge_choicetype_minerals;
@@ -6747,22 +7707,22 @@ bool gt_chooseleft_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_chooseleft_Init () {
-    gt_chooseleft = TriggerCreate("gt_chooseleft_Func");
-    TriggerAddEventUnitRegion(gt_chooseleft, null, RegionCircle(PointFromId(1016863586), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseleft, null, RegionCircle(PointFromId(1154409010), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseleft, null, RegionCircle(PointFromId(4326746), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseleft, null, RegionCircle(PointFromId(1547170258), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseleft, null, RegionCircle(PointFromId(1981237702), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseleft, null, RegionCircle(PointFromId(1750397661), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseleft, null, RegionCircle(PointFromId(1429236056), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_chooseleft, null, RegionCircle(PointFromId(244062886), gv_chooserradius), true);
+void gt_chooseunitleft_Init () {
+    gt_chooseunitleft = TriggerCreate("gt_chooseunitleft_Func");
+    TriggerAddEventUnitRegion(gt_chooseunitleft, null, RegionCircle(PointFromId(1016863586), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitleft, null, RegionCircle(PointFromId(1154409010), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitleft, null, RegionCircle(PointFromId(4326746), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitleft, null, RegionCircle(PointFromId(1547170258), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitleft, null, RegionCircle(PointFromId(1981237702), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitleft, null, RegionCircle(PointFromId(1750397661), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitleft, null, RegionCircle(PointFromId(1429236056), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunitleft, null, RegionCircle(PointFromId(244062886), gv_chooserradius), true);
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: choose - top left
+// Trigger: choose unit - top left
 //--------------------------------------------------------------------------------------------------
-bool gt_choosetopleft_Func (bool testConds, bool runActions) {
+bool gt_chooseunittopleft_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv__location;
     int lv__p;
@@ -6771,7 +7731,7 @@ bool gt_choosetopleft_Func (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv__location = ge_clockwiselocation_topleft;
+    lv__location = ge_clockwiselocation8_cl8topleft;
     lv__p = EventPlayer();
     lv__r = EventUnitRegion();
     lv__choicetype = ge_choicetype_unit;
@@ -6793,16 +7753,16 @@ bool gt_choosetopleft_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_choosetopleft_Init () {
-    gt_choosetopleft = TriggerCreate("gt_choosetopleft_Func");
-    TriggerAddEventUnitRegion(gt_choosetopleft, null, RegionCircle(PointFromId(1061491136), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopleft, null, RegionCircle(PointFromId(1939567621), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopleft, null, RegionCircle(PointFromId(1552399524), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopleft, null, RegionCircle(PointFromId(1084233623), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopleft, null, RegionCircle(PointFromId(1599385838), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopleft, null, RegionCircle(PointFromId(69581309), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopleft, null, RegionCircle(PointFromId(659731607), gv_chooserradius), true);
-    TriggerAddEventUnitRegion(gt_choosetopleft, null, RegionCircle(PointFromId(196851831), gv_chooserradius), true);
+void gt_chooseunittopleft_Init () {
+    gt_chooseunittopleft = TriggerCreate("gt_chooseunittopleft_Func");
+    TriggerAddEventUnitRegion(gt_chooseunittopleft, null, RegionCircle(PointFromId(1061491136), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopleft, null, RegionCircle(PointFromId(1939567621), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopleft, null, RegionCircle(PointFromId(1552399524), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopleft, null, RegionCircle(PointFromId(1084233623), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopleft, null, RegionCircle(PointFromId(1599385838), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopleft, null, RegionCircle(PointFromId(69581309), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopleft, null, RegionCircle(PointFromId(659731607), gv_chooserradius), true);
+    TriggerAddEventUnitRegion(gt_chooseunittopleft, null, RegionCircle(PointFromId(196851831), gv_chooserradius), true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -6853,6 +7813,10 @@ bool gt_allenemiesgone_Func (bool testConds, bool runActions) {
         gv_currentround = gv_currentround + 1;
         gv_roundfinished = true;
         libNtve_gf_KillModel(gv_currentenemyindicator);
+        if ((ModI(gv_currentround, 10) == 0)) {
+            gf_spawnherochoosers();
+        }
+
         if ((gv_currentround == gv_numrounds)) {
             gf_endgamevictory();
         }
@@ -7106,7 +8070,7 @@ bool gt_pingchooserstonewusers_Func (bool testConds, bool runActions) {
         if (lv__p < 0) { break; }
         if (gf_shouldpingchooser(lv__p)) {
             lv__defenderlocation = gv_playertodefenderlocation[lv__p];
-            MinimapPing(PlayerGroupSingle(lv__p), gv_defendlocationtochooserspawnpoint[lv__defenderlocation], 2.0, Color(100.00, 0.00, 0.00));
+            MinimapPing(PlayerGroupSingle(lv__p), gv_defendlocationtounitchooserspawnpoint[lv__defenderlocation], 2.0, Color(100.00, 0.00, 0.00));
         }
 
     }
@@ -7290,9 +8254,10 @@ void InitTriggers () {
     gt_choosespawnlocationleft_Init();
     gt_choosespawnlocationtopleft_Init();
     gt_testinitrace_Init();
+    gt_testinitherochoosers_Init();
     gt_testinitcam_Init();
-    gt_testinitresources_Init();
-    gt_testpaths_Init();
+    gt_testpathsuponbuildingregularbuildings_Init();
+    gt_testpathsuponbuildingherobuildings_Init();
     gt_showkickplayerlist_Init();
     gt_kickplayerlistcancel_Init();
     gt_kickplayerlistchooseplayer_Init();
@@ -7331,14 +8296,21 @@ void InitTriggers () {
     gt_autoskip_Init();
     gt_commands_Init();
     gt_toggleghosts_Init();
-    gt_choosetop_Init();
-    gt_choosetopright_Init();
-    gt_chooseright_Init();
-    gt_choosebotright_Init();
-    gt_choosebot_Init();
-    gt_choosebotleft_Init();
-    gt_chooseleft_Init();
-    gt_choosetopleft_Init();
+    gt_chooseherotop_Init();
+    gt_chooseheroright_Init();
+    gt_chooseherobot_Init();
+    gt_chooseheroleft_Init();
+    gt_handleherobuildingusagecount_Init();
+    gt_handleautoselectherobuildinguponbuild_Init();
+    gt_turnherobuildingbackintobuilder_Init();
+    gt_chooseunittop_Init();
+    gt_chooseunittopright_Init();
+    gt_chooseunitright_Init();
+    gt_chooseunitbotright_Init();
+    gt_chooseunitbot_Init();
+    gt_chooseunitbotleft_Init();
+    gt_chooseunitleft_Init();
+    gt_chooseunittopleft_Init();
     gt_allenemiesgone_Init();
     gt_clearenemies_Init();
     gt_closeendgamepanel_Init();

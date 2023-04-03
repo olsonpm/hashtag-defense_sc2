@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CTurret id="KorhalPalaceTurretHd">
+        <Idle value="Spin"/>
+        <YawArc value="360"/>
+        <YawRate value="720"/>
+        <YawIdleRate value="45"/>
+        <Fidget DelayMax="30" DelayMin="10"/>
+    </CTurret>
+    <CTurret id="PirateCapitalShipHd">
+        <YawArc value="90"/>
+        <YawRate value="1999.8632"/>
+    </CTurret>
     <CTurret id="ColossusHd">
         <Idle value="FollowMovement"/>
         <YawArc value="360"/>

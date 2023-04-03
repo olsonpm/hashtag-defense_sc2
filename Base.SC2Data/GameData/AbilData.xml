@@ -5,7 +5,7 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Effect index="0" value="ApocalypseInitialSetKerriganHd"/>
         <Cost>
-            <Cooldown Link="ApocalypseKerriganHd" TimeUse="20"/>
+            <Cooldown TimeUse="60"/>
         </Cost>
         <Range value="12"/>
         <PrepTime value="0.5"/>
@@ -23,10 +23,37 @@
         </Cost>
         <Range value="500"/>
         <Arc value="360"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink" State="Restricted">
+        <CmdButtonArray index="Execute" DefaultButtonFace="BlinkHd" State="Restricted">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
     </CAbilEffectTarget>
+    <CAbilBuild id="BuildHeroProtossHd">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonKillFinish" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="ShrineOfTheGodsHd" Time="0.1">
+            <Button DefaultButtonFace="BuildShrineOfTheGodsHd" Requirements="CanBuildShrineOfTheGodsHd"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="AtomicStormBreweryHd" Time="0.1">
+            <Button DefaultButtonFace="BuildAtomicStormBreweryHd" Requirements="CanBuildAtomicStormBreweryHd"/>
+        </InfoArray>
+        <ConstructionMover value="Construction"/>
+    </CAbilBuild>
+    <CAbilBuild id="BuildHeroTerranHd">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <DataCollection value="BuildHeroProtossHd"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonKillFinish" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="KorhalPalaceTurretHd" Time="0.1">
+            <Button DefaultButtonFace="BuildKorhalPalaceTurretHd" Requirements="CanBuildKorhalPalaceTurretHd"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="FrackerHd" Time="0.1">
+            <Button DefaultButtonFace="BuildAtomicFrackerHd" Requirements="CanBuildFrackerHd"/>
+        </InfoArray>
+        <ConstructionMover value="Construction"/>
+    </CAbilBuild>
     <CAbilBuild id="BuildSpawnFlagHd">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <FlagArray index="PeonDisableCollision" value="1"/>
@@ -36,12 +63,26 @@
         </InfoArray>
         <ConstructionMover value="Construction"/>
     </CAbilBuild>
+    <CAbilBuild id="BuildHeroZergHd">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <DataCollection value="BuildZergHd"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonKillFinish" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="WormyHd" Time="0.1">
+            <Button DefaultButtonFace="BuildWormyHd" Requirements="CanBuildWormyHd"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="ShackledUltraliskHd" Time="0.1">
+            <Button DefaultButtonFace="BuildShackledUltraliskHd" Requirements="CanBuildShackledUltraliskHd"/>
+        </InfoArray>
+        <ConstructionMover value="Construction"/>
+    </CAbilBuild>
     <CAbilEffectTarget id="CorrosiveBlastStukovHd">
         <Alignment value="Negative"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <Effect index="0" value="CorrosiveBlastLMStukovHd"/>
         <Cost>
-            <Cooldown TimeUse="20"/>
+            <Cooldown TimeUse="60"/>
         </Cost>
         <TargetFilters value="Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="12"/>
@@ -148,8 +189,37 @@
         <ExternalAngle value="315"/>
         <MaxCount value="1"/>
     </CAbilArmMagazine>
+    <CAbilEffectInstant id="LightningStormSelendisHd">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="LightningStormCPSelendisHd"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="60"/>
+        </Cost>
+        <AINotifyEffect value="LightningStormCPSelendisHd"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LightningStormSelendisHd">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
     <CAbilEffectInstant id="SalvageFullRefundHd">
         <CmdButtonArray index="Execute" Requirements="HasFullRefundAvailableSalvageHd"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="TurnBackIntoBuilderTerranHd">
+        <Effect index="0" value="TurnBackIntoBuilderHd"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TurnBackIntoBuilderTerranHd"/>
+        <Cost>
+            <Cooldown Location="Player" TimeUse="300"/>
+        </Cost>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="TurnBackIntoBuilderZergHd">
+        <Effect index="0" value="TurnBackIntoBuilderHd"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TurnBackIntoBuilderZergHd"/>
+        <Cost>
+            <Cooldown Location="Player" TimeUse="300"/>
+        </Cost>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="SalvageRefund4MineralsHd" parent="Refund">
         <Name value="Abil/Name/SalvageRefund4MineralsHd"/>
@@ -172,12 +242,69 @@
         </Cost>
         <CmdButtonArray index="Execute" Requirements="HasRefund10MineralsAvailableSalvageHd"/>
     </CAbilEffectInstant>
+    <CAbilEffectTarget id="SeekerMissileNightmanHd">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoTooltipPriority value="1"/>
+        <Effect index="0" value="SeekerMissileLMNightmanHd"/>
+        <Flags index="AllowMovement" value="1"/>
+        <TargetFilters value="Visible;Self,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <Arc value="29.9926"/>
+        <ArcSlop value="0"/>
+        <Marker Link="Abil/HunterSeekerMissileNightmanHd"/>
+        <AINotifyEffect value="HunterSeekerMissile"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SeekerMissileNightmanHd"/>
+        <Cost>
+            <Cooldown TimeUse="60"/>
+        </Cost>
+    </CAbilEffectTarget>
+    <CAbilArmMagazine id="HangarSelendisHd">
+        <AbilSetId value="CarrierHanger"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Flags index="Retarget" value="1"/>
+        <Flags index="ShowStatus" value="0"/>
+        <Leash value="12"/>
+        <InfoArray index="Ammo1" CountStart="4" Manage="Recall" Unit="SelendisInterceptorHd">
+            <Charge HideCount="1" Link="CarrierInterceptor" Location="Unit"/>
+            <Button DefaultButtonFace="Interceptor">
+                <Flags index="ToSelection" value="1"/>
+            </Button>
+            <Flags index="AutoBuild" value="1"/>
+        </InfoArray>
+    </CAbilArmMagazine>
+    <CAbilEffectTarget id="NuclearStrikePirateCapitalShipHd">
+        <TechPlayer value="Owner"/>
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="NuclearStrikeCPPirateCapitalShipHd"/>
+        <Cost>
+            <Cooldown TimeUse="60"/>
+        </Cost>
+        <Range value="12"/>
+        <FinishTime value="2.5"/>
+        <CancelableArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <ValidatedArray index="Channel" value="0"/>
+        <AlertArray index="Cast" value="CalldownLaunch"/>
+        <CursorEffect value="NuclearStrikeDamagePirateCapitalShipHd"/>
+        <AINotifyEffect value="Nuke"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="NuclearStrikePirateCapitalShipHd"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="TestFireworkHd">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Effect index="0" value="OneFireworkHd"/>
         <AINotifyEffect value="OneFireworkHd"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="TestFireworkHd"/>
     </CAbilEffectTarget>
+    <CAbilEffectInstant id="TurnBackIntoBuilderProtossHd">
+        <Effect index="0" value="TurnBackIntoBuilderHd"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TurnBackIntoBuilderProtossHd"/>
+        <Cost>
+            <Cooldown Location="Player" TimeUse="300"/>
+        </Cost>
+    </CAbilEffectInstant>
     <CAbilMorph id="UnburrowLurkerHd">
         <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="BurrowUp"/>
@@ -574,4 +701,15 @@
         <MinAttackSpeedMultiplier value="0.25"/>
         <MaxAttackSpeedMultiplier value="128"/>
     </CAbilAttack>
+    <CAbilEffectTarget id="LightGrenadeDaymanHd">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="LightGrenade1LMDaymanHd"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="60"/>
+        </Cost>
+        <TargetFilters value="Ground,Visible;Player,Ally,Neutral,Missile,Stasis,Invulnerable"/>
+        <Range value="8"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ThrowLightGrenadeDaymanHd"/>
+    </CAbilEffectTarget>
 </Catalog>

@@ -96,6 +96,41 @@
         <SelectionRadius value="1.999700"/>
         <ShadowRadius value="1.666500"/>
     </CModel>
+    <CModel id="AtomicStormHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\PsiStorm\PsiStorm.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Lighting value="ArtanisVoidPsiStormModel"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+    </CModel>
+    <CModel id="HeroBuilderZergHd" parent="Unit">
+        <Model value="Assets\Units\Zerg\Changeling\Changeling.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraMid04"/>
+        <Radius value="0.450000"/>
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+        <SelectionRadius value="0.529000"/>
+        <ShadowRadius value="0.529000"/>
+        <SquibTypeDefault value="Flesh"/>
+        <TechPurchaseCamera value="Star2CameraMid04"/>
+        <Tipability value="0.750000"/>
+        <TipabilityLength value="0.400000"/>
+        <TipabilityWidth value="0.400000"/>
+        <UnitGlossaryCamera value="Star2CameraMid04"/>
+    </CModel>
+    <CModel id="DaymanHd" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Artanis\Artanis.m3"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraHigh05"/>
+        <Radius value="0.400000"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="LightArmor"/>
+        <TechPurchaseCamera value="Star2CameraHigh05"/>
+        <UnitGlossaryCamera value="Star2CameraHigh05"/>
+    </CModel>
     <CModel id="BunkerUpgradeHd" parent="BunkerBase">
         <Model value="Assets\Buildings\Terran\BunkerUpgradeEx1\BunkerUpgradeEx1.m3"/>
         <ScaleMax value="0.660000,0.660000,0.660000"/>
@@ -107,6 +142,358 @@
         <Lighting value="CommandCenterReactor"/>
         <ScaleMax value="0.350000,0.350000,0.350000"/>
         <ScaleMin value="0.350000,0.350000,0.350000"/>
+    </CModel>
+    <CModel id="DaymanAttackImpactHd" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\AdeptSoulMissileImpact\AdeptSoulMissileImpact.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="DaymanWeaponHd" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\AdeptSoulMissile\AdeptSoulMissile.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="HeroBuilderProtossHd" parent="Unit">
+        <Model value="Assets\Units\Protoss\Karax_Servitor_Probe_A\Karax_Servitor_Probe_A.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <ScaleMax value="1.400000,1.400000,1.400000"/>
+        <ScaleMin value="1.400000,1.400000,1.400000"/>
+        <SelectionRadius value="0.250000"/>
+    </CModel>
+    <CModel id="HitTestSphereSelectionLayer3Hd">
+        <Model value="Assets\Units\Test\HitTestSphere\HitTestSphere.m3"/>
+        <Lighting value="HitTestSphere"/>
+        <SelectionLayer value="3"/>
+    </CModel>
+    <CModel id="KorhalPalaceTurretAttackImpactHd" parent="ImpactFX">
+        <Model value="Assets\Doodads\DOM_Explosion_Med\DOM_Explosion_Med.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="KorhalPalaceTurretHd" parent="Building" Race="Terran">
+        <Model value="Assets\Doodads\MengskPalaceTurret\MengskPalaceTurret.m3"/>
+        <SelectionLayer value="2"/>
+        <SquibTypeDefault value="Metal"/>
+        <SelectionRadius value="1.000000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="FrackingCloudImpactHd" parent="Unit">
+        <Model value="Assets\Effects\Zerg\MiasmaliskPoisonCloud\MiasmaliskPoisonCloud.m3"/>
+        <Lighting value="NoxiousCloud"/>
+        <Radius value="3.000000"/>
+        <SelectionRadius value="3.000000"/>
+    </CModel>
+    <CModel id="AtomicStormImpactHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\HyperionEMPImpact\HyperionEMPImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="LightningStormImpactModelSelendisHd"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="HeroBuilderTerranHd" parent="Unit" Race="Terran">
+        <Model value="Assets\Units\Terran\MULE\MULE.m3"/>
+        <RequiredAnims value="Assets\Units\Terran\MULE_SwarmAnims\MULE_SwarmAnims.m3a"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraMid05"/>
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+        <SelectionRadius value="0.588100"/>
+        <ShadowRadius value="0.588100"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraMid05"/>
+        <UnitGlossaryCamera value="Star2CameraMid05"/>
+    </CModel>
+    <CModel id="NuclearStrikeCollateralFirePirateCapitalShipHd" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Terran\FireImpact\FireImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="NuclearStrikeDropPirateCapitalShipHd" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Terran\NukeFalling\NukeFalling.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="NuclearStrikeExplodePirateCapitalShipHd" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Terran\Nuke\Nuke.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="NuclearStrikeIndicatorPirateCapitalShipHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\GhostLaseTargetTactical\GhostLaseTargetTactical.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="NuclearStrikeLaunchPirateCapitalShipHd" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Terran\NukeRising\NukeRising.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="NuclearStrikeTargetPirateCapitalShipHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\GhostLaseTarget\GhostLaseTarget.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="LightGrenade2MissileDaymanHd" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\ZeratulMissileBeams\ZeratulMissileBeams.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="LightGrenade1MissileDaymanHd" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\ZeratulMissile\ZeratulMissile.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="PirateCapitalShipHd" parent="Unit" Race="Terran">
+        <Model value="Assets\Units\Terran\Cerberus\Cerberus.m3"/>
+        <AttachProps Id="Ref_Weapon">
+            <Keys index="SetC" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 01">
+            <Keys index="SetC" value="1"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 02">
+            <Keys index="SetC" value="2"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 03">
+            <Keys index="SetC" value="3"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 04">
+            <Keys index="SetC" value="4"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 05">
+            <Keys index="SetC" value="5"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 06">
+            <Keys index="SetB" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 07">
+            <Keys index="SetB" value="1"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 08">
+            <Keys index="SetB" value="2"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 09">
+            <Keys index="SetB" value="3"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 10">
+            <Keys index="SetB" value="4"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 11">
+            <Keys index="SetB" value="5"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 14">
+            <Keys index="SetA" value="2"/>
+        </AttachProps>
+        <Occlusion value="Show"/>
+        <Radius value="1.000000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.700000"/>
+        <SelectionRadius value="1.562500"/>
+        <ShadowRadius value="1.562500"/>
+        <SquibTypeDefault value="Metal"/>
+        <Tipability value="0.150000"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel id="LeftImpactPirateCapitalShipHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\VikingFighterMissileImpact\VikingFighterMissileImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <SelectionRadius value="0.250000"/>
+        <ShadowRadius value="0.250000"/>
+    </CModel>
+    <CModel id="LeftLMWeaponPirateCapitalShipHd" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\BansheeMissile\BansheeMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="FrackerHd" parent="Building" Race="Terran">
+        <Model value="Assets\Doodads\BraxisAlphaHeatExchanger\BraxisAlphaHeatExchanger.m3"/>
+        <Radius value="0.400000"/>
+        <ScaleMax value="0.280000,0.280000,0.280000"/>
+        <ScaleMin value="0.280000,0.280000,0.280000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="FrackerDeathHd" parent="UnitDeath" Race="Terran">
+        <Model value="Assets\Doodads\BraxisAlphaHeatExchangerDeath\BraxisAlphaHeatExchangerDeath.m3"/>
+        <LowQualityModel value="PlatformConnectorDeathLow"/>
+        <Radius value="0.400000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.570000"/>
+        <ShadowRadius value="0.570000"/>
+    </CModel>
+    <CModel id="FrackingCloudHd" parent="Unit">
+        <Model value="Assets\Effects\Terran\LabToxicGasCloud\LabToxicGasCloud.m3"/>
+        <Lighting value="PoisonGasCloud"/>
+    </CModel>
+    <CModel id="HeavensStrikeImpactShrineOfTheGodsHd" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\SOA_SolarBombardment_Beam\SOA_SolarBombardment_Beam.m3"/>
+        <Lighting value="SOAStrafeAttackBeam"/>
+    </CModel>
+    <CModel id="HeavensStrikeLaunchShrineOfTheGodsHd" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\SOA_Pickup_Beam\SOA_Pickup_Beam.m3"/>
+        <EditorCategories value=""/>
+        <Lighting value="SOARichMineralBeam"/>
+        <Priority value="24"/>
+        <AnimSpeed value="20.000000"/>
+    </CModel>
+    <CModel id="HeavensStrikeExplosionShrineOfTheGodsHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\SOA_OrbitalStrike_Impact\SOA_OrbitalStrike_Impact.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Lighting value="SOAOrbitalStrikeImpact"/>
+    </CModel>
+    <CModel id="AtomicStormBreweryHd" parent="Building" Race="Protoss">
+        <SelectionLayer value="2"/>
+        <Model value="Assets\Buildings\Protoss\ProtossBaseBioMassStorage\ProtossBaseBioMassStorage.m3"/>
+        <Radius value="1.300000"/>
+        <SelectionRadius value="2.300000"/>
+        <ShadowRadius value="1.300000"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="ShrineoftheGodsHd" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\ProtossRadioTower\ProtossRadioTower.m3"/>
+        <Events>
+            <Anim value="Stand,Work,Start,A,00"/>
+            <Name value="StandWorkStartAStart"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,A,00"/>
+            <Name value="StandWorkStartAEnd"/>
+            <Type value="Sound"/>
+            <Time value="9.900000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,B,00"/>
+            <Name value="StandWorkStartBStart"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,B,00"/>
+            <Name value="StandWorkStartBEnd"/>
+            <Type value="Sound"/>
+            <Time value="9.900000"/>
+        </Events>
+        <Radius value="2.000000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.500000"/>
+        <ShadowRadius value="2.500000"/>
+        <SquibTypeDefault value="Metal"/>
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+    </CModel>
+    <CModel id="ShrineoftheGodsDeathHd" parent="Unit">
+        <Model value="Assets\Buildings\Protoss\ProtossRadioTowerDeath\ProtossRadioTowerDeath.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Events>
+            <Anim value="Death"/>
+            <Name value="Protoss_PreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Protoss_PreExplosionSmall"/>
+        </Events>
+        <Events>
+            <Anim value="Death"/>
+            <Name value="Protoss_PreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.670000"/>
+            <Payload value="Protoss_PreExplosionSmall"/>
+        </Events>
+        <Events>
+            <Anim value="Death"/>
+            <Name value="Protoss_PreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.920000"/>
+            <Payload value="Protoss_PreExplosionSmall"/>
+        </Events>
+        <Events>
+            <Anim value="Death"/>
+            <Name value="Protoss_ExplosionLarge"/>
+            <Type value="Sound"/>
+            <Time value="1.500000"/>
+            <Payload value="Protoss_ExplosionLarge"/>
+        </Events>
+        <Events>
+            <Anim value="Death"/>
+            <Name value="Doodad_ProtossRadioTower_Dead_Fade"/>
+            <Type value="Sound"/>
+            <Time value="8.000000"/>
+            <Payload value="Doodad_ProtossRadioTower_Dead_Fade"/>
+        </Events>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="RightImpactPirateCapitalShipHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\VikingFighterMissileImpact\VikingFighterMissileImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <SelectionRadius value="0.250000"/>
+        <ShadowRadius value="0.250000"/>
+    </CModel>
+    <CModel id="RightLMWeaponPirateCapitalShipHd" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\BansheeMissile\BansheeMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="LightningStormImpactModelSelendisHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\HyperionEMPImpact\HyperionEMPImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.300000,0.300000,0.300000"/>
+        <ScaleMin value="0.300000,0.300000,0.300000"/>
+    </CModel>
+    <CModel id="SeekerMissileAttackImpactNightmanHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\HunterKillerMissileImpact\HunterKillerMissileImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="SeekerMissileWeaponNightmanHd" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\HunterKillerMissile\HunterKillerMissile.m3"/>
+        <LowQualityModel value="HunterSeekerWeaponLow"/>
+        <EditorCategories value="Race:Terran"/>
+        <PhysicsMaterialOverride value="MetalLight"/>
+    </CModel>
+    <CModel id="NightmanHd" parent="Unit" Race="Terran">
+        <Model value="Assets\Units\Terran\MarineRaynorHEV\MarineRaynorHEV.m3"/>
+        <Flags index="AutoUnload" value="1"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraMid04"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+        <SelectionRadius value="0.416500"/>
+        <ShadowRadius value="0.416500"/>
+        <SquibTypeDefault value="Flesh"/>
+        <TechPurchaseCamera value="Star2CameraMid04"/>
+        <UnitGlossaryCamera value="Star2CameraMid04"/>
+    </CModel>
+    <CModel id="NightmanAttackImpactHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\TankWeaponImpact\TankWeaponImpact.m3"/>
+        <LowQualityModel value="SiegeTankAttackImpactLow"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="NightmanAttackLaunchHd" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\TankWeaponLaunch\TankWeaponLaunch.m3"/>
+        <LowQualityModel value="SiegeTankAttackLaunchLow"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="SelendisHd" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\CarrierHero\CarrierHero.m3"/>
+        <Flags index="AutoUnload" value="1"/>
+        <Lighting value="Carrier"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraLow11"/>
+        <Radius value="1.375000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.800000"/>
+        <SelectionRadius value="1.375000"/>
+        <ShadowRadius value="1.375000"/>
+        <TechPurchaseCamera value="Star2CameraLow11"/>
+        <UnitGlossaryCamera value="Star2CameraLow11"/>
+    </CModel>
+    <CModel id="SelendisInterceptorHd" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Interceptor\Interceptor.m3"/>
+        <Lighting value="Interceptor"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.250000"/>
+        <SelectionRadius value="0.250000"/>
+        <ShadowRadius value="0.250000"/>
+    </CModel>
+    <CModel id="SelendisInterceptorAttackImpactHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\InterceptorMissileImpact\InterceptorMissileImpact.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Lighting value="InterceptorAttackImpact"/>
+    </CModel>
+    <CModel id="LightGrenadeSecondaryImpactDaymanHd" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\ZeratulMissileImpact\ZeratulMissileImpact.m3"/>
+        <EditorCategories value="Race:Protoss"/>
     </CModel>
     <CModel id="WormyBaseDeathHd" parent="SpawningPoolDeathBase">
         <Model value="Assets\Buildings\Zerg\SpawningPoolDeathEx1\SpawningPoolDeathEx1.m3"/>
@@ -233,7 +620,10 @@
             <Attachment value="Ref_Origin"/>
             <Payload value="CastanarUltraliskShackled_Stand03"/>
         </Events>
+        <SelectionLayer value="2"/>
         <SelectionRadius value="2.500000"/>
+        <ScaleMax value="0.450000,0.450000,0.450000"/>
+        <ScaleMin value="0.450000,0.450000,0.450000"/>
     </CModel>
     <CModel id="CorrosiveBlastModelStukovHd" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Zerg\KerriganCorrosiveSpores\KerriganCorrosiveSpores.m3"/>
@@ -1140,7 +1530,7 @@
             <Keys index="Shield" value="1"/>
         </AttachProps>
     </CModel>
-    <CModel id="HitTestSphere">
+    <CModel id="HitTestSphereHd">
         <Model value="Assets\Units\Test\HitTestSphere\HitTestSphere.m3"/>
     </CModel>
     <CModel id="MechanicalMilitarizedTransportAttackImpactEnemyHd" parent="LaunchFX">
@@ -1971,6 +2361,7 @@
     <CModel id="PurchaseFlagHd" parent="Doodad">
         <Model value="hashtag-defense\Assets\Units\Purchase_Flag\Purchase_Flag.m3"/>
         <Variations Probability="1"/>
+        <SelectionLayer value="3"/>
     </CModel>
     <CModel id="ResearchCenterZergHd" parent="EvolutionChamberBase">
         <Model value="Assets\Buildings\Zerg\EvolutionChamberEx1\EvolutionChamberEx1.m3"/>

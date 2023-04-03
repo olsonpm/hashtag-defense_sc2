@@ -3,6 +3,7 @@
 <Actor id="SYSTEM_ActorConfig"/>
 <Actor id="HallucinationDeathHd"/>
 <Behavior id="AddedShieldsModHd"/>
+<Behavior id="IsBuilderHd"/>
 <Behavior id="PerfectSpecimenModHd"/>
 <Behavior id="MissileTurretBunkerHd"/>
 <Behavior id="EnemyGhostHd"/>
@@ -28,10 +29,12 @@
 <Sound id="Probe_Explode"/>
 <Sound id="Alert_TerranNeedMoreMinerals"/>
 <Sound id="Ultralisk_Death_Fall_Impact"/>
+<Sound id="AnnounceWaveHd"/>
 <Terrain id="PurifierJungle"/>
 <Unit id="PurchaseFlagHd"/>
 <Unit id="AttackDroneHd"/>
 <Unit id="WasplingHd"/>
+<Unit id="SelendisInterceptorHd"/>
 <Unit id="LiberatorAGHd"/>
 <Unit id="InfestedSiegeTankHd"/>
 <Unit id="PhotonCannonHd"/>
@@ -48,9 +51,7 @@
 <Unit id="WasplingBurrowHd"/>
 <Unit id="PathTesterRadius05Hd"/>
 <Unit id="AttackDroneHubHd"/>
-<Unit id="SlowTicklerMarineTestHd"/>
 <Unit id="HolePuncherHd"/>
-<Unit id="KillEverythingMarineTestHd"/>
 <Unit id="LightDroneEnemyHd"/>
 <Unit id="LightProbeEnemyHd"/>
 <Unit id="LightSCVEnemyHd"/>
@@ -69,5 +70,5 @@
 <Unit id="TopLeftHdDefendLocationBeacon"/>
 <Unit id="TopRightHdDefendLocationBeacon"/>
 <Unit id="ChooserHd"/>
-<Unit id="WormyHd"/>
+<Unit id="1ChooserHeroBeaconHd"/>
 </Preload>

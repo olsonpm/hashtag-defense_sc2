@@ -1,5 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CEffectCreatePersistent id="FrackingCloudCPHd">
+        <EditorCategories value=""/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="FrackingCloudSetHd"/>
+        <PeriodicPeriodArray value="2"/>
+        <InitialEffect value="FrackingCloudSetHd"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="AtomicStormCPHd">
+        <EditorCategories value=""/>
+        <InitialEffect value="AtomicStormSetHd"/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="AtomicStormSetHd"/>
+        <PeriodicPeriodArray value="2"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="FrackingCloudDamageHd">
+        <EditorCategories value=""/>
+        <Amount value="12"/>
+        <ArmorReduction value="1"/>
+    </CEffectDamage>
+    <CEffectDamage id="AtomicStormDamageHd">
+        <EditorCategories value=""/>
+        <Amount value="12"/>
+        <ArmorReduction value="1"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="FrackingCloudSAHd">
+        <EditorCategories value=""/>
+        <SearchFilters value="-;Player,Ally,Neutral"/>
+        <AreaArray MaxCount="4" Radius="5" Effect="FrackingCloudDamageHd"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="AtomicStormSAHd">
+        <EditorCategories value=""/>
+        <SearchFilters value="-;Player,Ally,Neutral"/>
+        <AreaArray MaxCount="4" Radius="5" Effect="AtomicStormDamageHd"/>
+    </CEffectEnumArea>
+    <CEffectSet id="FrackingCloudSetHd">
+        <EditorCategories value=""/>
+        <EffectArray value="FrackingCloudSAHd"/>
+        <EffectArray value="FrackingCloudDamageHd"/>
+    </CEffectSet>
+    <CEffectSet id="AtomicStormSetHd">
+        <EditorCategories value=""/>
+        <EffectArray value="AtomicStormSAHd"/>
+        <EffectArray value="AtomicStormDamageHd"/>
+    </CEffectSet>
+    <CEffectDamage id="HeavensAttackDamageShrineOfTheGodsHd">
+        <Amount value="50"/>
+        <ArmorReduction value="1"/>
+    </CEffectDamage>
+    <CEffectDamage id="KorhalPalaceTurretHd">
+        <EditorCategories value="Race:Terran"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <Flags index="Notification" value="1"/>
+        <Amount value="50"/>
+        <ArmorReduction value="1"/>
+    </CEffectDamage>
+    <CEffectDamage id="LeftDummyDamagePirateCapitalShipHd" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <Visibility value="Visible"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="LightGrenade2LMDaymanHd">
+        <ValidatorArray index="0" value="LightGrenade2DummyLMDaymanHdTargetFilters"/>
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Effect="LightGrenade1LMDaymanHd"/>
+        <ImpactEffect value="LightGrenadeImpactSetDaymanHd"/>
+        <AmmoUnit value="LightGrenade2DaymanHd"/>
+        <ImpactRange value="0.25"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="LightGrenadeDamageDaymanHd">
+        <EditorCategories value="Race:Protoss"/>
+        <ArmorReduction value="1"/>
+        <Amount value="100"/>
+        <SearchFilters value="Ground,Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="RightDummyLMPirateCapitalShipHd">
+        <ValidatorArray index="0" value="LeftDummyLMPirateCapitalShipHdTargetFilters"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="RightDummyDamagePirateCapitalShipHd"/>
+        <AmmoUnit value="PirateCapitalShipRightLMWeaponHd"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="RightDummyDamagePirateCapitalShipHd" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <Visibility value="Visible"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="LeftLMCPPirateCapitalShipHd">
+        <EditorCategories value=""/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="LeftDummyLMPirateCapitalShipHd"/>
+        <PeriodicEffectArray value="LeftDummyLMPirateCapitalShipHd"/>
+        <PeriodicEffectArray value="LeftLMPirateCapitalShipHd"/>
+        <PeriodicEffectArray value="LeftDummyLMPirateCapitalShipHd"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.3"/>
+        <PeriodicPeriodArray value="0.3"/>
+        <PeriodicPeriodArray value="0.3"/>
+        <WhichLocation Value="TargetUnit"/>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="LeftDummyLMPirateCapitalShipHd">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="LeftDummyDamagePirateCapitalShipHd"/>
+        <AmmoUnit value="PirateCapitalShipLeftLMWeaponHd"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="RightLMCPPirateCapitalShipHd">
+        <EditorCategories value=""/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="RightDummyLMPirateCapitalShipHd"/>
+        <PeriodicEffectArray value="RightDummyLMPirateCapitalShipHd"/>
+        <PeriodicEffectArray value="RightLMPirateCapitalShipHd"/>
+        <PeriodicEffectArray value="RightDummyLMPirateCapitalShipHd"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.3"/>
+        <PeriodicPeriodArray value="0.3"/>
+        <PeriodicPeriodArray value="0.3"/>
+        <WhichLocation Value="TargetUnit"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="LightGrenadeImpactSetDaymanHd">
+        <EditorCategories value=""/>
+        <EffectArray value="LightGrenadeDamageDaymanHd"/>
+        <EffectArray value="LightGrenadeSearedArmorABDaymanHd"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="LightGrenadeSearedArmorABDaymanHd">
+        <Behavior value="SearedArmorDaymanHd"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="NightmanDamageHd" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <Kind value="Ranged"/>
+        <Amount value="40"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
     <CEffectEnumArea id="ApocalypseSAKerriganHd">
         <EditorCategories value="Race:Zerg"/>
         <ImpactLocation Value="TargetPoint"/>
@@ -50,9 +182,261 @@
         <SearchFilters value="Ground;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <SearchFlags index="OffsetByUnitRadius" value="0"/>
     </CEffectDamage>
+    <CEffectCreatePersistent id="LMCPPirateCapitalShipHd">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="RandomOffset" value="1"/>
+        <PeriodCount value="4"/>
+        <PeriodicValidator value="CasterNotDead"/>
+        <PeriodicEffectArray value="LeftRandomLMPirateCapitalShipHd"/>
+        <PeriodicEffectArray value="RightRandomLMPirateCapitalShipHd"/>
+        <PeriodicEffectArray value="LeftRandomLMPirateCapitalShipHd"/>
+        <PeriodicEffectArray value="RightRandomLMPirateCapitalShipHd"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.0625"/>
+        <PeriodicPeriodArray value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="LeftDamagePirateCapitalShipHd" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <Visibility value="Visible"/>
+        <Amount value="10"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="LeftLMPirateCapitalShipHd">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="LeftDamagePirateCapitalShipHd"/>
+        <AmmoUnit value="PirateCapitalShipLeftLMWeaponHd"/>
+    </CEffectLaunchMissile>
+    <CEffectEnumArea id="LeftRandomLMPirateCapitalShipHd">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="-;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetSorts>
+            <SortArray value="TSRandom"/>
+        </TargetSorts>
+        <AreaArray MaxCount="1" Radius="8" Effect="LeftLMCPPirateCapitalShipHd"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+    <CEffectUseCalldown id="NuclearStrikeCalldownPirateCapitalShipHd">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetPoint"/>
+        <CalldownCount value="1"/>
+        <CalldownEffect value="NuclearStrikeCPPirateCapitalShipHd"/>
+    </CEffectUseCalldown>
+    <CEffectDamage id="NuclearStrikeDamagePirateCapitalShipHd">
+        <EditorCategories value="Race:Terran"/>
+        <ArmorReduction value="1"/>
+        <Amount value="50"/>
+        <Death value="Fire"/>
+        <AreaArray Radius="8" Fraction="1"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="NuclearStrikeDetonateCPPirateCapitalShipHd">
+        <EditorCategories value="Race:Terran"/>
+        <InitialDelay value="1.2"/>
+        <InitialEffect value="NuclearStrikeDamagePirateCapitalShipHd"/>
+        <RevealRadius value="8"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="NuclearStrikeCPPirateCapitalShipHd">
+        <EditorCategories value="Race:Terran"/>
+        <Alert value="CalldownLaunchObserver"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialDelay value="2"/>
+        <ExpireDelay value="1"/>
+        <ExpireEffect value="NuclearStrikeDetonateCPPirateCapitalShipHd"/>
+        <AINotifyEffect value="NukeDamage"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="PsiBlastDamageDaymanHd" parent="DU_WEAP">
+        <EditorCategories value="Race:Protoss"/>
+        <Kind value="Ranged"/>
+        <Amount value="40"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="PsiBlastLMDaymanHd">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactEffect value="PsiBlastDamageDaymanHd"/>
+        <AmmoUnit value="DaymanPsiBlastHd"/>
+        <Movers Link="HighTemplarWeapon"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="RightDamagePirateCapitalShipHd" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <Visibility value="Visible"/>
+        <Amount value="10"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="RightLMPirateCapitalShipHd">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="RightDamagePirateCapitalShipHd"/>
+        <AmmoUnit value="PirateCapitalShipRightLMWeaponHd"/>
+    </CEffectLaunchMissile>
+    <CEffectEnumArea id="RightRandomLMPirateCapitalShipHd">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="-;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetSorts>
+            <SortArray value="TSRandom"/>
+        </TargetSorts>
+        <AreaArray MaxCount="1" Radius="8" Effect="RightLMCPPirateCapitalShipHd"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+    <CEffectCreatePersistent id="LightningStormCPSelendisHd">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <InitialDelay value="0.5"/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="LightningStormSASelendisHd"/>
+        <PeriodicPeriodArray value="0.15"/>
+        <InitialEffect value="LightningStormSASelendisHd"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="LightningStormABSelendisHd">
+        <Behavior value="LightningStormSelendisHd"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="LightningStormDamageSelendisHd" parent="DU_WEAP">
+        <EditorCategories value="Race:Zerg"/>
+        <Amount value="50"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="LightningStormSASelendisHd">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="4" RadiusBonus="1" Effect="LightningStormSetSelendisHd"/>
+    </CEffectEnumArea>
+    <CEffectSet id="LightningStormSetSelendisHd">
+        <ValidatorArray value="NotHaveLightningStormPirateCapitalShipHd"/>
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="LightningStormDamageSelendisHd"/>
+        <EffectArray value="LightningStormABSelendisHd"/>
+    </CEffectSet>
+    <CEffectSet id="SeekerMissileImpactSetNightmanHd">
+        <EditorCategories value=""/>
+        <EffectArray value="SeekerMissileDamageNightmanHd"/>
+        <EffectArray value="SeekerMissileBatteredAndBruisedABNightmanHd"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="SeekerMissileTintABNightmanHd">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Effect="SeekerMissileLMNightmanHd"/>
+        <Behavior value="SeekerMissileTintNightmanHd"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="SeekerMissileDamageNightmanHd">
+        <EditorCategories value="Race:Terran"/>
+        <Visibility value="Visible"/>
+        <Amount value="100"/>
+        <SearchFilters value="-;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="SameCliff" value="0"/>
+        <ArmorReduction value="1"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="SeekerMissileLaunchCPNightmanHd">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="SourceUnit"/>
+        <ExpireEffect value="SeekerMissileSuicideSetNightmanHd"/>
+        <PeriodCount value="1"/>
+        <PeriodicPeriodArray value="0.5"/>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="SeekerMissileLMNightmanHd">
+        <ValidatorArray index="0" value="HunterSeekerLaunchMissileTargetFilters"/>
+        <EditorCategories value="Race:Terran"/>
+        <LaunchEffect value="SeekerMissileLaunchSetNightmanHd"/>
+        <ImpactEffect value="SeekerMissileImpactSetNightmanHd"/>
+        <AmmoUnit value="SeekerMissileNightmanHd"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="SeekerMissileLaunchSetNightmanHd">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="SeekerMissileLaunchCPNightmanHd"/>
+        <EffectArray value="SeekerMissileLaunchTintCPNightmanHd"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="SeekerMissileLaunchTintCPNightmanHd">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="SourceUnit"/>
+        <PeriodCount value="250"/>
+        <PeriodicValidator value="SourceNotDead"/>
+        <PeriodicEffectArray value="SeekerMissileTintABNightmanHd"/>
+        <PeriodicPeriodArray value="0.1"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="SeekerMissileSuicideNightmanHd">
+        <ValidatorArray value="SeekerMissileValidatorsNightmanHd"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <Flags index="Kill" value="1"/>
+    </CEffectDamage>
+    <CEffectSet id="SeekerMissileSuicideSetNightmanHd">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="SeekerMissileSuicideNightmanHd"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="SeekerMissileBatteredAndBruisedABNightmanHd">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="BatteredAndBruisedABNightmanHd"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="SelendisInterceptorBeamCPHd">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <InitialEffect value="SelendisInterceptorDamageHd"/>
+    </CEffectCreatePersistent>
+    <CEffectUseMagazine id="SelendisInterceptorHd">
+        <EditorCategories value="Race:Protoss"/>
+    </CEffectUseMagazine>
+    <CEffectDamage id="SelendisInterceptorDamageHd" parent="DU_WEAP">
+        <EditorCategories value="Race:Protoss"/>
+        <Visibility value="Visible"/>
+        <Kind value="Ranged"/>
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectDamage id="LightGrenadeDummyDamageDaymanHd">
+        <EditorCategories value="Race:Protoss"/>
+        <ArmorReduction value="1"/>
+        <SearchFilters value="Ground,Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="LightGrenade1LMDaymanHd">
+        <EditorCategories value="Race:Protoss"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="LightGrenadeCPDaymanHd"/>
+        <AmmoUnit value="LightGrenade1DaymanHd"/>
+        <ImpactRange value="4.5"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="LightGrenade2DummyLMDaymanHd">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Effect="LightGrenade1LMDaymanHd"/>
+        <ImpactEffect value="LightGrenadeDummyDamageDaymanHd"/>
+        <AmmoUnit value="LightGrenade2DaymanHd"/>
+        <ImpactRange value="0.25"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="LightGrenadeCPDaymanHd">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="SourceUnit"/>
+        <PeriodCount value="10"/>
+        <PeriodicEffectArray value="LightGrenade2DummyLMDaymanHd"/>
+        <PeriodicEffectArray value="LightGrenade2DummyLMDaymanHd"/>
+        <PeriodicEffectArray value="LightGrenade2DummyLMDaymanHd"/>
+        <PeriodicEffectArray value="LightGrenade2DummyLMDaymanHd"/>
+        <PeriodicEffectArray value="LightGrenade2DummyLMDaymanHd"/>
+        <PeriodicEffectArray value="LightGrenade2DummyLMDaymanHd"/>
+        <PeriodicEffectArray value="LightGrenade2DummyLMDaymanHd"/>
+        <PeriodicEffectArray value="LightGrenade2DummyLMDaymanHd"/>
+        <PeriodicEffectArray value="LightGrenade2DummyLMDaymanHd"/>
+        <PeriodicEffectArray value="LightGrenade2LMDaymanHd"/>
+        <PeriodicPeriodArray value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="SummonBoulderSAShackledUltraliskHd">
+        <SearchFilters value="-;Player,Ally,Neutral"/>
+        <AreaArray MaxCount="4" Radius="5" Effect="SummonBoulderDamageShackledUltraliskHd"/>
+    </CEffectEnumArea>
+    <CEffectSet id="SummonBoulderSetShackledUltraliskHd">
+        <EditorCategories value=""/>
+        <EffectArray value="SummonBoulderSAShackledUltraliskHd"/>
+        <EffectArray value="SummonBoulderDamageShackledUltraliskHd"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="TurnBackIntoBuilderHd">
+        <EditorCategories value=""/>
+    </CEffectApplyBehavior>
     <CEffectDamage id="WormySpitDamageHd" parent="DU_WEAP_MISSILE">
         <EditorCategories value="Race:Protoss"/>
-        <Amount value="10"/>
+        <Amount value="50"/>
         <Death value="Disintegrate"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="WormySpitLMHd">
@@ -65,17 +449,14 @@
     <CEffectCreatePersistent id="SummonBoulderCPShackledUltraliskHd">
         <EditorCategories value=""/>
         <InitialDelay value="0.3"/>
-        <InitialEffect value="SummonBoulderDamageShackledUltraliskHd"/>
+        <InitialEffect value="SummonBoulderSetShackledUltraliskHd"/>
     </CEffectCreatePersistent>
     <CEffectDamage id="SummonBoulderDamageShackledUltraliskHd">
         <EditorCategories value="Race:Zerg"/>
-        <ResponseFlags index="Acquire" value="1"/>
-        <ResponseFlags index="Flee" value="1"/>
-        <ImpactLocation Value="TargetPoint"/>
-        <Amount value="10"/>
+        <Amount value="12"/>
         <Death value="Impact"/>
-        <AreaArray Radius="3.5" Fraction="1"/>
-        <SearchFilters value="Ground;Self,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectSet id="ChainReaction1KerriganHd">
         <EditorCategories value="Race:Zerg"/>
@@ -173,39 +554,9 @@
         <ValidatorArray value="NotHaveChainReactionMarker"/>
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="ChainReaction"/>
-        <EffectArray value="ChainReaction4DelayKerriganHd"/>
         <EffectArray value="ChainReaction4DamageKerriganHd"/>
-        <EffectArray value="ChainReactionMarkerKerriganHd"/>
     </CEffectSet>
     <CEffectDamage id="ChainReaction4DamageKerriganHd" parent="DU_WEAP">
-        <Marker Link="ChainReaction"/>
-        <Amount value="10"/>
-    </CEffectDamage>
-    <CEffectCreatePersistent id="ChainReaction4DelayKerriganHd">
-        <EditorCategories value="Race:Zerg"/>
-        <Marker Link="ChainReaction"/>
-        <WhichLocation Value="TargetUnit"/>
-        <ExpireDelay value="0.125"/>
-        <FinalEffect value="ChainReaction4SearchForNewTargetKerriganHd"/>
-    </CEffectCreatePersistent>
-    <CEffectEnumArea id="ChainReaction4SearchForNewTargetKerriganHd">
-        <EditorCategories value="Race:Zerg"/>
-        <Marker Link="ChainReaction"/>
-        <ImpactLocation Effect="ChainReaction4Delay" Value="TargetPoint"/>
-        <ExcludeArray Value="Target"/>
-        <SearchFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
-        <TargetSorts>
-            <SortArray value="TSDistanceToTarget"/>
-        </TargetSorts>
-        <AreaArray MaxCount="1" Radius="5" Effect="ChainReaction5KerriganHd"/>
-    </CEffectEnumArea>
-    <CEffectSet id="ChainReaction5KerriganHd">
-        <ValidatorArray value="NotHaveChainReactionMarker"/>
-        <EditorCategories value="Race:Zerg"/>
-        <Marker Link="ChainReaction"/>
-        <EffectArray value="ChainReaction5DamageKerriganHd"/>
-    </CEffectSet>
-    <CEffectDamage id="ChainReaction5DamageKerriganHd" parent="DU_WEAP">
         <Marker Link="ChainReaction"/>
         <Amount value="10"/>
     </CEffectDamage>
@@ -395,6 +746,7 @@
         <Death value="Blast"/>
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="DutchLMBossGiantRorySwannEnemyHd">
         <EditorCategories value="Race:Terran"/>
@@ -538,13 +890,8 @@
         <Movers Link="MissileDefault"/>
     </CEffectLaunchMissile>
     <CEffectDamage id="StukovWeaponDamageHd">
-        <EditorCategories value="Race:Terran"/>
-        <ResponseFlags index="Acquire" value="1"/>
-        <ResponseFlags index="Flee" value="1"/>
-        <Visibility value="Visible"/>
-        <Flags index="Notification" value="1"/>
+        <EditorCategories value="Race:Zerg"/>
         <Amount value="40"/>
-        <SearchFlags index="CallForHelp" value="1"/>
         <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="SunkenColonyDamageHd" parent="DU_WEAP">
@@ -698,6 +1045,7 @@
         <Death value="Blast"/>
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="FistCPBossGiantRorySwannEnemyHd">
         <EditorCategories value="Race:Terran"/>
@@ -806,6 +1154,7 @@
         <Amount value="8"/>
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="ArmoredHercWeaponDamageEnemyHd" parent="DU_WEAP_MISSILE">
         <KindSplash value="Splash"/>
@@ -832,6 +1181,7 @@
         <Amount value="10"/>
         <Death value="Fire"/>
         <SearchFlags index="CallForHelp" value="1"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectEnumArea id="ArmoredHellbatSAEnemyHd">
         <EditorCategories value="Race:Terran"/>
@@ -866,7 +1216,7 @@
     <CEffectLaunchMissile id="LightHighTemplarWeaponLMEnemyHd">
         <EditorCategories value="Race:Protoss"/>
         <ImpactEffect value="LightHighTemplarWeaponDamageEnemyHd"/>
-        <AmmoUnit value="LightHighTemplarWeaponEnemyHd"/>
+        <AmmoUnit value="LightHighTemplarPsiBlastEnemyHd"/>
         <Movers Link="HighTemplarWeapon"/>
     </CEffectLaunchMissile>
     <CEffectDamage id="LightAdeptDamageEnemyHd" parent="DU_WEAP">
@@ -891,6 +1241,7 @@
         <Death value="Disintegrate"/>
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="LightLocustLMEnemyHd">
         <EditorCategories value="Race:Zerg"/>
@@ -908,6 +1259,7 @@
         <Death value="Disintegrate"/>
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="ArmoredCutieDamageEnemyHd" parent="DU_WEAP">
         <EditorCategories value="Race:Zerg"/>
@@ -977,6 +1329,7 @@
         <Kind value="Ranged"/>
         <Amount value="30"/>
         <SearchFlags index="CallForHelp" value="1"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="PsiBladesDamageArmoredZealotEnemyHd" parent="DU_WEAP">
         <ValidatorArray value="NotHidden"/>
@@ -1151,6 +1504,7 @@
         <Flags index="Notification" value="1"/>
         <Amount value="10"/>
         <SearchFlags index="CallForHelp" value="1"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="LightPrisonerDamageEnemyHd">
         <EditorCategories value="Race:Terran"/>
@@ -1159,6 +1513,7 @@
         <ImpactLocation Value="TargetUnit"/>
         <Amount value="10"/>
         <SearchFlags index="CallForHelp" value="1"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="SpinesLightDroneEnemyHd" parent="DU_WEAP">
         <EditorCategories value="Race:Zerg"/>
@@ -1212,6 +1567,7 @@
         <ResponseFlags index="Flee" value="1"/>
         <Kind value="Ranged"/>
         <Amount value="23"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="MechanicalWarhoundLMEnemyHd">
         <EditorCategories value="Race:Terran"/>
@@ -1226,6 +1582,7 @@
         <ResponseFlags index="Flee" value="1"/>
         <Kind value="Melee"/>
         <Amount value="23"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="BossEradicatorDamageEnemyHd" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
@@ -1237,6 +1594,7 @@
         <Kind value="Ranged"/>
         <Amount value="30"/>
         <Death value="Eviscerate"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="PsiBlastLMBossKerriganEnemyHd">
         <ValidatorArray index="0" value="PsiDischargeLaunchMissileTargetFilters"/>
@@ -1249,6 +1607,7 @@
         <Kind value="Melee"/>
         <Amount value="30"/>
         <Death value="Eviscerate"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="IncreaseVsLightABHd">
         <Behavior value="IncreaseVsLightAttributeDamageHd"/>
@@ -1942,6 +2301,7 @@
         <Death value="Fire"/>
         <AreaArray Radius="0.5" Fraction="1"/>
         <SearchFilters value="Ground;Self,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectIssueOrder id="BossYagdraFirebreathStopIssueOrderEnemyHd">
         <EditorCategories value="Race:Zerg"/>

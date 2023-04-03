@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CWeaponLegacy id="FrackingCloudHd">
+        <EditorCategories value=""/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <ArcSlop value="360"/>
+        <Period value="10"/>
+        <Backswing value="0"/>
+        <Effect value="FrackingCloudCPHd"/>
+        <DisplayEffect value="FrackingCloudDamageHd"/>
+        <Options index="DisplayCooldown" value="1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AtomicStormHd">
+        <EditorCategories value=""/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <Options index="DisplayCooldown" value="1"/>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <ArcSlop value="360"/>
+        <Period value="10"/>
+        <Backswing value="0"/>
+        <Effect value="AtomicStormCPHd"/>
+        <DisplayEffect value="AtomicStormDamageHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeavensStrikeShrineOfTheGodsHd">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <EditorCategories value=""/>
+        <Options index="DisplayCooldown" value="1"/>
+        <DisplayEffect value="HeavensAttackDamageShrineOfTheGodsHd"/>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <ArcSlop value="360"/>
+        <Period value="2"/>
+        <Backswing value="0"/>
+        <Effect value="HeavensAttackDamageShrineOfTheGodsHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="KorhalPalaceTurretHd">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <TargetFilters value="Visible;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NightmanCannonHd">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <DisplayEffect value="NightmanDamageHd"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Period value="2"/>
+        <Effect value="NightmanDamageHd"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="ArcliteCannonMechanicalSiegeTankTankModeEnemyHd">
         <EditorCategories value="Race:Terran"/>
         <Options index="Hidden" value="1"/>
@@ -59,7 +113,7 @@
         <DisplayEffect value="ChainReaction1DamageKerriganHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <MinScanRange value="8"/>
-        <Range value="6"/>
+        <Range value="7"/>
         <Marker Link="ChainReaction">
             <MatchFlags index="Link" value="1"/>
             <MismatchFlags index="Id" value="1"/>
@@ -67,21 +121,82 @@
         <Period value="2"/>
         <Effect value="ChainReaction1KerriganHd"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="ClusterRocketsPirateCapitalShipHd">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <DisplayEffect value="RightDamagePirateCapitalShipHd"/>
+        <DisplayAttackCount value="4"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Effect value="LMCPPirateCapitalShipHd"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PsiBlastDaymanHd">
+        <Name value="Weapon/Name/PsiBlast"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="PsiBlastDamageDaymanHd"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Period value="2"/>
+        <Effect value="PsiBlastLMDaymanHd"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SelendisInterceptorsHd">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+        <DisplayEffect value="SelendisInterceptorDamageHd"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Visible;Player,Ally,Neutral,Enemy"/>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Effect value="SelendisInterceptorHd"/>
+    </CWeaponLegacy>
+    <CWeaponStrafe id="SelendisInterceptorBeamHd">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <DisplayEffect value="SelendisInterceptorDamageHd"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="2"/>
+        <Arc value="19.6875"/>
+        <Period value="2"/>
+        <Effect value="SelendisInterceptorBeamCPHd"/>
+    </CWeaponStrafe>
+    <CWeaponLegacy id="SelendisWeaponHd">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <Period value="0.25"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="SelendisInterceptorHd"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="WormySpitHd">
         <EditorCategories value="Race:Terran"/>
-        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
         <DisplayEffect value="WormySpitDamageHd"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Range value="7"/>
+        <Range value="9"/>
         <Period value="2"/>
         <Effect value="WormySpitLMHd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="SummonBoulderShackledUltraliskHd">
         <EditorCategories value="Race:Zerg"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
         <DisplayEffect value="SummonBoulderDamageShackledUltraliskHd"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Range value="10"/>
-        <ArcSlop value="0"/>
+        <Range value="9"/>
         <Period value="2"/>
         <Effect value="SummonBoulderCPShackledUltraliskHd"/>
         <LegacyOptions index="KeepChanneling" value="1"/>

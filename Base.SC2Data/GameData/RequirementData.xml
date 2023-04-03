@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CRequirement id="CanBuildFrackerHd">
+        <NodeArray index="Use" Link="AllowUnitFrackerHd"/>
+    </CRequirement>
+    <CRequirement id="CanBuildKorhalPalaceTurretHd">
+        <NodeArray index="Use" Link="AllowUnitKorhalPalaceTurretHd"/>
+    </CRequirement>
+    <CRequirement id="CanBuildShrineOfTheGodsHd">
+        <NodeArray index="Use" Link="AllowUnitShrineOfTheGodsHd"/>
+    </CRequirement>
+    <CRequirement id="CanBuildAtomicStormBreweryHd">
+        <NodeArray index="Use" Link="AllowUnitAtomicStormBreweryHd"/>
+    </CRequirement>
     <CRequirement id="HasFullRefundAvailableSalvageHd">
         <NodeArray index="Use" Link="CountBehaviorFullRefundAvailableSalvageHdCompleteOnly"/>
         <NodeArray index="Show" Link="CountBehaviorFullRefundAvailableSalvageHdCompleteOnly"/>
@@ -54,5 +66,15 @@
     <CRequirement id="MaxUnitDamageNotReachedProtossHd">
         <NodeArray index="Use" Link="LTCountUpgradeUnitDamageProtossHdCompleteOnly100"/>
         <NodeArray index="Show" Link="LTCountUpgradeUnitDamageProtossHdCompleteOnly100"/>
+    </CRequirement>
+    <CRequirement id="ArmInterceptorSelendisHd">
+        <EditorCategories value="Race:Protoss,TechType:Unit"/>
+        <NodeArray index="Use" Link="LT3990822897CountUnitSelendisInterceptorHdQueuedOrBetterAtUnit5"/>
+    </CRequirement>
+    <CRequirement id="CanBuildWormyHd">
+        <NodeArray index="Use" Link="AllowUnitWormyHd"/>
+    </CRequirement>
+    <CRequirement id="CanBuildShackledUltraliskHd">
+        <NodeArray index="Use" Link="AllowUnitShackledUltraliskHd"/>
     </CRequirement>
 </Catalog>
