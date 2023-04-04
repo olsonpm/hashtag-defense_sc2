@@ -1963,10 +1963,10 @@
     </CUnit>
     <CUnit id="ArmoredHercEnemyHd">
         <Attributes index="Armored" value="1"/>
-        <LifeStart value="1800"/>
-        <LifeMax value="1800"/>
-        <ShieldsStart value="1800"/>
-        <ShieldsMax value="1800"/>
+        <LifeStart value="2000"/>
+        <LifeMax value="2000"/>
+        <ShieldsStart value="2000"/>
+        <ShieldsMax value="2000"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="2.5"/>
@@ -2082,10 +2082,10 @@
     </CUnit>
     <CUnit id="ArmoredCycloneEnemyHd">
         <Attributes index="Armored" value="1"/>
-        <LifeMax value="890"/>
-        <LifeStart value="890"/>
-        <ShieldsStart value="890"/>
-        <ShieldsMax value="890"/>
+        <LifeMax value="910"/>
+        <LifeStart value="910"/>
+        <ShieldsStart value="910"/>
+        <ShieldsMax value="910"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="2.5"/>
@@ -2155,10 +2155,10 @@
     </CUnit>
     <CUnit id="ArmoredImmortalEnemyHd">
         <Attributes index="Armored" value="1"/>
-        <LifeMax value="990"/>
-        <LifeStart value="990"/>
-        <ShieldsStart value="990"/>
-        <ShieldsMax value="990"/>
+        <LifeMax value="1130"/>
+        <LifeStart value="1130"/>
+        <ShieldsStart value="1130"/>
+        <ShieldsMax value="1130"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="2.5"/>
@@ -2282,10 +2282,10 @@
     </CUnit>
     <CUnit id="BiologicalKerriganEnemyHd">
         <Attributes index="Biological" value="1"/>
-        <LifeStart value="1750"/>
-        <LifeMax value="1750"/>
-        <ShieldsStart value="1750"/>
-        <ShieldsMax value="1750"/>
+        <LifeStart value="1900"/>
+        <LifeMax value="1900"/>
+        <ShieldsStart value="1900"/>
+        <ShieldsMax value="1900"/>
         <LifeArmor value="25"/>
         <ShieldArmor value="25"/>
         <Speed value="3"/>
@@ -2475,10 +2475,10 @@
     </CUnit>
     <CUnit id="BossKerriganEnemyHd">
         <Attributes index="Heroic" value="1"/>
-        <LifeMax value="3080"/>
-        <LifeStart value="3080"/>
-        <ShieldsStart value="3080"/>
-        <ShieldsMax value="3080"/>
+        <LifeMax value="3300"/>
+        <LifeStart value="3300"/>
+        <ShieldsStart value="3300"/>
+        <ShieldsMax value="3300"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="3"/>
@@ -2901,10 +2901,10 @@
     </CUnit>
     <CUnit id="MechanicalShikotoCoupeEnemyHd">
         <Attributes index="Mechanical" value="1"/>
-        <LifeMax value="940"/>
-        <LifeStart value="940"/>
-        <ShieldsStart value="940"/>
-        <ShieldsMax value="940"/>
+        <LifeMax value="960"/>
+        <LifeStart value="960"/>
+        <ShieldsStart value="960"/>
+        <ShieldsMax value="960"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="3"/>
@@ -3016,10 +3016,10 @@
     </CUnit>
     <CUnit id="LightGhostEnemyHd">
         <Attributes index="Light" value="1"/>
-        <LifeMax value="890"/>
-        <LifeStart value="890"/>
-        <ShieldsStart value="890"/>
-        <ShieldsMax value="890"/>
+        <LifeMax value="910"/>
+        <LifeStart value="910"/>
+        <ShieldsStart value="910"/>
+        <ShieldsMax value="910"/>
         <LifeArmor value="12"/>
         <ShieldArmor value="12"/>
         <Speed value="3.5976"/>
@@ -3089,10 +3089,10 @@
     </CUnit>
     <CUnit id="LightHighTemplarEnemyHd">
         <Attributes index="Light" value="1"/>
-        <LifeStart value="1550"/>
-        <LifeMax value="1550"/>
-        <ShieldsStart value="1550"/>
-        <ShieldsMax value="1550"/>
+        <LifeStart value="1700"/>
+        <LifeMax value="1700"/>
+        <ShieldsStart value="1700"/>
+        <ShieldsMax value="1700"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="3.5976"/>
@@ -3560,10 +3560,10 @@
     </CUnit>
     <CUnit id="LightLocustEnemyHd">
         <Attributes index="Light" value="1"/>
-        <LifeMax value="990"/>
-        <LifeStart value="990"/>
-        <ShieldsStart value="990"/>
-        <ShieldsMax value="990"/>
+        <LifeMax value="1130"/>
+        <LifeStart value="1130"/>
+        <ShieldsStart value="1130"/>
+        <ShieldsMax value="1130"/>
         <LifeArmor value="12"/>
         <ShieldArmor value="12"/>
         <Speed value="3.5976"/>
@@ -3671,10 +3671,10 @@
     </CUnit>
     <CUnit id="MechanicalMilitarizedTransportEnemyHd">
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="1800"/>
-        <LifeMax value="1800"/>
-        <ShieldsStart value="1800"/>
-        <ShieldsMax value="1800"/>
+        <LifeStart value="2000"/>
+        <LifeMax value="2000"/>
+        <ShieldsStart value="2000"/>
+        <ShieldsMax value="2000"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="3"/>
@@ -4036,10 +4036,10 @@
     </CUnit>
     <CUnit id="ArmoredPygaliskEnemyHd">
         <Attributes index="Armored" value="1"/>
-        <LifeStart value="1550"/>
-        <LifeMax value="1550"/>
-        <ShieldsStart value="1550"/>
-        <ShieldsMax value="1550"/>
+        <LifeStart value="1700"/>
+        <LifeMax value="1700"/>
+        <ShieldsStart value="1700"/>
+        <ShieldsMax value="1700"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="2.5"/>
@@ -4260,10 +4260,10 @@
     </CUnit>
     <CUnit id="BiologicalRavagerEnemyHd">
         <Attributes index="Biological" value="1"/>
-        <LifeMax value="1050"/>
-        <LifeStart value="1050"/>
-        <ShieldsStart value="1050"/>
-        <ShieldsMax value="1050"/>
+        <LifeMax value="1100"/>
+        <LifeStart value="1100"/>
+        <ShieldsStart value="1100"/>
+        <ShieldsMax value="1100"/>
         <LifeArmor value="16"/>
         <ShieldArmor value="16"/>
         <Speed value="3"/>
@@ -4321,10 +4321,10 @@
     </CUnit>
     <CUnit id="BiologicalRavasaurEnemyHd">
         <Attributes index="Biological" value="1"/>
-        <LifeMax value="1150"/>
-        <LifeStart value="1150"/>
-        <ShieldsStart value="1150"/>
-        <ShieldsMax value="1150"/>
+        <LifeMax value="1200"/>
+        <LifeStart value="1200"/>
+        <ShieldsStart value="1200"/>
+        <ShieldsMax value="1200"/>
         <LifeArmor value="16"/>
         <ShieldArmor value="16"/>
         <Speed value="3"/>
@@ -4373,10 +4373,10 @@
     </CUnit>
     <CUnit id="MechanicalSiegeTankTankModeEnemyHd">
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="1450"/>
-        <LifeMax value="1450"/>
-        <ShieldsStart value="1450"/>
-        <ShieldsMax value="1450"/>
+        <LifeStart value="1600"/>
+        <LifeMax value="1600"/>
+        <ShieldsStart value="1600"/>
+        <ShieldsMax value="1600"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="3"/>
@@ -4442,10 +4442,10 @@
     </CUnit>
     <CUnit id="BossStoneZealotEnemyHd">
         <Attributes index="Heroic" value="1"/>
-        <LifeMax value="4600"/>
-        <LifeStart value="4600"/>
-        <ShieldsStart value="4600"/>
-        <ShieldsMax value="4600"/>
+        <LifeMax value="6000"/>
+        <LifeStart value="6000"/>
+        <ShieldsStart value="6000"/>
+        <ShieldsMax value="6000"/>
         <LifeArmor value="60"/>
         <ShieldArmor value="60"/>
         <Speed value="2"/>
@@ -4503,10 +4503,10 @@
     </CUnit>
     <CUnit id="BossGiantRorySwannEnemyHd">
         <Attributes index="Heroic" value="1"/>
-        <LifeMax value="3080"/>
-        <LifeStart value="3080"/>
-        <ShieldsStart value="3080"/>
-        <ShieldsMax value="3080"/>
+        <LifeMax value="3300"/>
+        <LifeStart value="3300"/>
+        <ShieldsStart value="3300"/>
+        <ShieldsMax value="3300"/>
         <LifeArmor value="40"/>
         <ShieldArmor value="40"/>
         <Speed value="2"/>
@@ -4572,10 +4572,10 @@
     </CUnit>
     <CUnit id="BiologicalUltraliskEnemyHd">
         <Attributes index="Biological" value="1"/>
-        <LifeStart value="2000"/>
-        <LifeMax value="2000"/>
-        <ShieldsStart value="2000"/>
-        <ShieldsMax value="2000"/>
+        <LifeStart value="2200"/>
+        <LifeMax value="2200"/>
+        <ShieldsStart value="2200"/>
+        <ShieldsMax value="2200"/>
         <LifeArmor value="25"/>
         <ShieldArmor value="25"/>
         <Speed value="3"/>
@@ -7043,10 +7043,10 @@
     </CUnit>
     <CUnit id="LightWarPigEnemyHd">
         <Attributes index="Light" value="1"/>
-        <LifeStart value="1800"/>
-        <LifeMax value="1800"/>
-        <ShieldsStart value="1800"/>
-        <ShieldsMax value="1800"/>
+        <LifeStart value="2000"/>
+        <LifeMax value="2000"/>
+        <ShieldsStart value="2000"/>
+        <ShieldsMax value="2000"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="3.5976"/>
@@ -7106,10 +7106,10 @@
     </CUnit>
     <CUnit id="MechanicalVikingAssaultModeEnemyHd">
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="840"/>
-        <LifeMax value="840"/>
-        <ShieldsStart value="840"/>
-        <ShieldsMax value="840"/>
+        <LifeStart value="860"/>
+        <LifeMax value="860"/>
+        <ShieldsStart value="860"/>
+        <ShieldsMax value="860"/>
         <LifeArmor value="20"/>
         <ShieldArmor value="20"/>
         <Speed value="3"/>
@@ -7177,10 +7177,10 @@
     </CUnit>
     <CUnit id="MechanicalWarHoundEnemyHd">
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="1650"/>
-        <LifeMax value="1650"/>
-        <ShieldsStart value="1650"/>
-        <ShieldsMax value="1650"/>
+        <LifeStart value="1800"/>
+        <LifeMax value="1800"/>
+        <ShieldsStart value="1800"/>
+        <ShieldsMax value="1800"/>
         <LifeArmor value="30"/>
         <ShieldArmor value="30"/>
         <Speed value="3"/>
@@ -7530,10 +7530,10 @@
     </CUnit>
     <CUnit id="BiologicalUrsadonEnemyHd">
         <Attributes index="Biological" value="1"/>
-        <LifeMax value="1250"/>
-        <LifeStart value="1250"/>
-        <ShieldsStart value="1250"/>
-        <ShieldsMax value="1250"/>
+        <LifeMax value="1400"/>
+        <LifeStart value="1400"/>
+        <ShieldsStart value="1400"/>
+        <ShieldsMax value="1400"/>
         <LifeArmor value="16"/>
         <ShieldArmor value="16"/>
         <Speed value="3"/>
@@ -7591,10 +7591,10 @@
     </CUnit>
     <CUnit id="BossYagdraEnemyHd">
         <Attributes index="Heroic" value="1"/>
-        <LifeMax value="5200"/>
-        <LifeStart value="5200"/>
-        <ShieldsStart value="5200"/>
-        <ShieldsMax value="5200"/>
+        <LifeMax value="6000"/>
+        <LifeStart value="6000"/>
+        <ShieldsStart value="6000"/>
+        <ShieldsMax value="6000"/>
         <LifeArmor value="40"/>
         <ShieldArmor value="40"/>
         <Speed value="3"/>

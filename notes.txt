@@ -83,47 +83,48 @@ yellow side-note
   : eradicator @ 30 armor & 2 speed
   : hybrid dominator @ 20 armor & 3 speed
 
-* hp bumps to 840
-* biological hp bumps to 1050
+* hp bumps to 860
+* biological hp bumps to 1100
 * light bumps to 12 armor
 * biological bumps to 16 armor
 * armored and mechanical bump to 20
 
 15. ravager / viking (assault mode)
-  : 840 hp
-  : ravager @ 1050 hp
+  : 860 hp
+  : ravager @ 1100 hp
 16. ghost / cyclone
-  : 890 hp
+  : 910 hp
 17. ravasaur / shikoto coupe
-  : 940 hp
-  : ravasaur @ 1150 hp
+  : 960 hp
+  : ravasaur @ 1200 hp
 18. locust / immortal / ursadon
-  : 990 hp
-  : ursadon @ 1250 hp
+  : 1130 hp
+  : ursadon @ 1400 hp
 19. kerrigan / giant rory swann
-  : 3080 hp
+  : 3300 hp
   : kerrigan @ 30 armor & 3 speed
   : giant rory swann @ 40 armor & 2 speed
 
-* hp bumps to 1450
-* biological hp bumps to 1750
+* hp bumps to 1600
+* biological hp bumps to 1900
 * light bumps to 20 armor
 * biological bumps to 25 armor
 * armored and mechanical bumps to 30 armor
 
 20. kerrigan / siege tank (tank mode)
-  : 1450 hp
+  : 1600 hp
   : kerrigan @ 1750 hp
 21. high templar / pygalisk
-  : 1550 hp
+  : 1700 hp
 22. ultralisk / warhound
-  : 1650 hp
-  : ultralisk @ 2000 hp
-23. war pig / herc / militarized transport
   : 1800 hp
+  : ultralisk @ 2200 hp
+23. war pig / herc / militarized transport
+  : 2000 hp
 24. yagdra / stone zealot
-  : yagdra @ 5200 hp, 40 armor & 3 speed
-  : stone zealot @ 4600 hp, 60 armor & 2 speed
+  : 6000 hp
+  : yagdra @ 40 armor & 3 speed
+  : stone zealot @ 60 armor & 2 speed
 
 
 # units by attribute
