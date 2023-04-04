@@ -155,7 +155,7 @@ Button/Name/UpgradeUnitDamageTerranHd=Upgrade Unit Damage
 Button/Name/UpgradeUnitDamageZergHd=Upgrade Unit Damage
 Button/Name/UpgradeZergStructureDamageHd=Upgrade Zerg Structure Damage
 Button/Tooltip/AddedArmorModHd=Experimental space/time manipulator. Grants the ability to slow units in a target area.
-Button/Tooltip/ApocalypseKerriganHd=Deals <c val="00E35B"><d ref="Effect,ApocalypseDamageKerriganHd,Amount"/></c> damage to enemies in a large radius.<n/><n/>Damage upgrades by <c val="00E35B">3</c>
+Button/Tooltip/ApocalypseKerriganHd=Deals <c val="00E35B"><d ref="Effect,ApocalypseDamageKerriganHd,Amount"/></c> damage to enemies in a large radius.<n/><n/>Damage upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Cooldown resets between rounds</c>
 Button/Tooltip/ArchonHd=Powerful psionic attacker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/ArmoredCutieEnemyHd=A native insectoid species of the planet Nelyth.
 Button/Tooltip/ArmoredCycloneEnemyHd=Mobile assault drone. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -198,7 +198,7 @@ Button/Tooltip/BurrowLurkerMPHd=Buries the Lurker underground. Burrowed Lurkers 
 Button/Tooltip/ChooserHd=Male Civilian.
 Button/Tooltip/ClearUnitChooserRallyHd=Clears the rally for your unit choosers
 Button/Tooltip/ColossusHd=Powerful battle strider. Can walk up and down cliffs. Attacks incinerate multiple enemies at once.<n/><n/><c val="ffff8a">Can attack ground units.</c>
-Button/Tooltip/CorrosiveBlastStukovHd=Deals <c val="00E35B"><d ref="Effect,CorrosiveBlastDamageStukovHd,Amount"/></c> damage to target enemy. Also reduces the enemy's armor by half for 10 seconds.<n/><n/>Damage upgrades by <c val="00E35B">6</c>
+Button/Tooltip/CorrosiveBlastStukovHd=Deals <c val="00E35B"><d ref="Effect,CorrosiveBlastDamageStukovHd,Amount"/></c> damage to target enemy. Also reduces the enemy's armor by half for 10 seconds.<n/><n/>Damage upgrades by <c val="00E35B">6</c><n/><c val="F1FF71">Cooldown resets between rounds</c>
 Button/Tooltip/DaymanHd=Hierarch of the Daelaam. Powerful psionic and melee warrior.
 Button/Tooltip/DroneHd=Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/FirebatHd=Specialized anti-infantry attacker.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
@@ -231,7 +231,7 @@ Button/Tooltip/LightProbeEnemyHd=Basic worker unit. Can gather resources and war
 Button/Tooltip/LightReaperEnemyHd=Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use D8 Charge.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/LightSCVEnemyHd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/LightWarPigEnemyHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
-Button/Tooltip/LightningStormSelendisHd=Deals <c val="00E35B"><d ref="Effect,LightningStormDamageSelendisHd,Amount"/></c> damage to enemies in a large radius.<n/><n/>Damage upgrades by <c val="00E35B">3</c>
+Button/Tooltip/LightningStormSelendisHd=Deals <c val="00E35B"><d ref="Effect,LightningStormDamageSelendisHd,Amount"/></c> damage to enemies in a large radius.<n/><n/>Damage upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Cooldown resets between rounds</c>
 Button/Tooltip/LurkerHd=Anti-ground ambusher. Has a spine attack that damages all enemy units in its line of fire.<n/><n/><c val="ffff8a">Can attack ground units.<n/>Must burrow to attack.</c>
 Button/Tooltip/MarauderHd=Heavy assault infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/MarineHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -244,7 +244,7 @@ Button/Tooltip/MechanicalWarHoundEnemyHd=Anti-vehicle mech. Haywire missiles do 
 Button/Tooltip/MissileTurretHd=Anti-air defensive structure.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c><n/><c val="FFE303">Detector</c>
 Button/Tooltip/MutaliskHd=Air unit. Bounces its shot to strike multiple targets.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/NightmanHd=Raynor can hit several units in a straight line with his Commando Rifle. <n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c><n/>
-Button/Tooltip/NuclearStrikePirateCapitalShipHd=Deals <c val="00E35B"><d ref="Effect,NuclearStrikeDamagePirateCapitalShipHd,Amount"/></c> damage to enemies in a large radius.<n/><n/>Damage upgrades by <c val="00E35B">3</c>
+Button/Tooltip/NuclearStrikePirateCapitalShipHd=Deals <c val="00E35B"><d ref="Effect,NuclearStrikeDamagePirateCapitalShipHd,Amount"/></c> damage to enemies in a large radius.<n/><n/>Damage upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Cooldown resets between rounds</c>
 Button/Tooltip/PathTesterRadius02Hd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/PathTesterRadius05Hd=Basic worker unit. Can gather resources, build Terran structures, and repair.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/PerfectSpecimenModHd=Greater Essence
@@ -267,7 +267,7 @@ Button/Tooltip/SalvageRefund10MineralsHd=Salvages the structure, removing it and
 Button/Tooltip/SalvageRefund1MineralHd=Salvages the structure, removing it and refunding 1 mineral.
 Button/Tooltip/SalvageRefund4MineralsHd=Salvages the structure, removing it and refunding 4 minerals.
 Button/Tooltip/SalvageRefund8MineralsHd=Salvages the structure, removing it and refunding 8 minerals.
-Button/Tooltip/SeekerMissileNightmanHd=Deals <c val="00E35B"><d ref="Effect,SeekerMissileDamageNightmanHd,Amount"/></c> damage to target enemy. Also reduces the enemy's armor by half for 10 seconds.<n/><n/>Damage upgrades by <c val="00E35B">6</c>
+Button/Tooltip/SeekerMissileNightmanHd=Deals <c val="00E35B"><d ref="Effect,SeekerMissileDamageNightmanHd,Amount"/></c> damage to target enemy. Also reduces the enemy's armor by half for 10 seconds.<n/><n/>Damage upgrades by <c val="00E35B">6</c><n/><c val="F1FF71">Cooldown resets between rounds</c>
 Button/Tooltip/SelendisHd=Capital ship. Can build and launch Interceptors to make attacks.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/ShackledUltraliskHd=Lab specimen U-23A.
 Button/Tooltip/ShrineOfTheGodsHd=Amplification tower that allows distant colonies to communicate with Shakuras through the Khala.
@@ -287,7 +287,7 @@ Button/Tooltip/TempestHd=Purifier Faction<n/>Siege artillery craft. Attacks from
 Button/Tooltip/TestFireworkHd=Launches a firework at the chosen location
 Button/Tooltip/TestWeaklingEnemyHd=Fast melee creature. Can morph into a Baneling.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/ThorHd=Heavy assault mech.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
-Button/Tooltip/ThrowLightGrenadeDaymanHd=Deals <c val="00E35B"><d ref="Effect,LightGrenadeDamageDaymanHd,Amount"/></c> damage to target enemy. Also reduces the enemy's armor by half for 10 seconds.<n/><n/>Damage upgrades by <c val="00E35B">6</c>
+Button/Tooltip/ThrowLightGrenadeDaymanHd=Deals <c val="00E35B"><d ref="Effect,LightGrenadeDamageDaymanHd,Amount"/></c> damage to target enemy. Also reduces the enemy's armor by half for 10 seconds.<n/><n/>Damage upgrades by <c val="00E35B">6</c><n/><c val="F1FF71">Cooldown resets between rounds</c>
 Button/Tooltip/TicklerMarineTestHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/UnitHasShieldsModHd=Ancient Protoss Relic. Collect it with a ground unit to gain a Protoss research point. 
 Button/Tooltip/UpgradeBunkerTurretDamageHd=Upgrades the damage done by all bunker turrets<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
@@ -1263,7 +1263,7 @@ Weapon/Tip/AcidSpinesArmoredQueenEnemyHd=
 Weapon/Tip/AcidSporesGuardianHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/AdeptHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/ArtilleryTurretBunkerHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
-Weapon/Tip/AtomicStormHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Attack hits up to 4 enemies</c>
+Weapon/Tip/AtomicStormHd=Attack upgrades by <c val="00E35B">3.5</c><n/><c val="F1FF71">Attack hits up to 4 enemies</c>
 Weapon/Tip/AttackDroneBeamHd=
 Weapon/Tip/AttackDroneHd=Attack upgrades by <c val="00E35B">2.5</c>
 Weapon/Tip/BigBoyCannonBeamHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
@@ -1274,14 +1274,14 @@ Weapon/Tip/CrucioShockCannonInfestedSiegeTankHd=Attack upgrades by <c val="00E35
 Weapon/Tip/CrucioShockCannonSiegeTankHd=Attack upgrades by <c val="00E35B">2</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/EnergyBlastKerriganHd=Attack upgrades by <c val="00E35B">2.5</c><n/><c val="F1FF71">Attack hits multiple enemies</c>
 Weapon/Tip/FirebatHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
-Weapon/Tip/FrackingCloudHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Attack hits up to 4 enemies</c>
+Weapon/Tip/FrackingCloudHd=Attack upgrades by <c val="00E35B">3.5</c><n/><c val="F1FF71">Attack hits up to 4 enemies</c>
 Weapon/Tip/GlaiveWurmHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/GuassRifleHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/GuassRifleInfestedTerranHd=Attack upgrades by <c val="00E35B">1</c>
-Weapon/Tip/HeavensStrikeShrineOfTheGodsHd=Attack upgrades by <c val="00E35B">6</c>
+Weapon/Tip/HeavensStrikeShrineOfTheGodsHd=Attack upgrades by <c val="00E35B">7</c>
 Weapon/Tip/HeavyTurretBunkerHd=Attack upgrades by <c val="00E35B">2.5</c>
 Weapon/Tip/ImpalerTentacleHd=Attack upgrades by <c val="00E35B">1</c>
-Weapon/Tip/KorhalPalaceTurretHd=Attack upgrades by <c val="00E35B">6</c>
+Weapon/Tip/KorhalPalaceTurretHd=Attack upgrades by <c val="00E35B">7</c>
 Weapon/Tip/LiberatorAGWeaponHd=Attack upgrades by <c val="00E35B">5</c>
 Weapon/Tip/MissileTurretBunkerHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/NeedleSpinesHydraliskHd=Attack upgrades by <c val="00E35B">2</c>
@@ -1299,11 +1299,11 @@ Weapon/Tip/ShrikeTurretBunkerHd=Attack upgrades by <c val="00E35B">1</c>
 Weapon/Tip/SpinesLurkerHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/StukovWeaponHd=Attack upgrades by <c val="00E35B">5</c>
 Weapon/Tip/SubterraneanTentacleSunkenColonyHd=Attack upgrades by <c val="00E35B">4</c>
-Weapon/Tip/SummonBoulderShackledUltraliskHd=Attack upgrades by <c val="00E35B">3</c><n/><c val="F1FF71">Attack hits up to 4 enemies</c>
+Weapon/Tip/SummonBoulderShackledUltraliskHd=Attack upgrades by <c val="00E35B">3.5</c><n/><c val="F1FF71">Attack hits up to 4 enemies</c>
 Weapon/Tip/TalonsArmoredQueenEnemyHd=
 Weapon/Tip/TempestGroundHd=Attack upgrades by <c val="00E35B">4</c>
 Weapon/Tip/ThermalLancesHd=Attack upgrades by <c val="00E35B">1.5</c><n/><c val="F1FF71">Hits multiple enemies</c>
 Weapon/Tip/ThorsHammerHd=Attack upgrades by <c val="00E35B">3</c>
 Weapon/Tip/WasplingHd=Attack upgrades by <c val="00E35B">2.5</c>
-Weapon/Tip/WormySpitHd=Attack upgrades by <c val="00E35B">6</c>
+Weapon/Tip/WormySpitHd=Attack upgrades by <c val="00E35B">7</c>
 testing=testing

@@ -10,9 +10,9 @@
         <EffectArray Reference="Weapon,HeavyTurretBunkerHd,Level" Value="1"/>
         <EffectArray Reference="Effect,LongboltMissileDamageBunkerHd,Amount" Value="4"/>
         <EffectArray Reference="Weapon,MissileTurretBunkerHd,Level" Value="1"/>
-        <EffectArray Reference="Effect,KorhalPalaceTurretHd,Amount" Value="6"/>
+        <EffectArray Reference="Effect,KorhalPalaceTurretHd,Amount" Value="7"/>
         <EffectArray Reference="Weapon,KorhalPalaceTurretHd,Level" Value="1"/>
-        <EffectArray Reference="Effect,FrackingCloudDamageHd,Amount" Value="3"/>
+        <EffectArray Reference="Effect,FrackingCloudDamageHd,Amount" Value="3.5"/>
         <EffectArray Reference="Weapon,FrackingCloudHd,Level" Value="1"/>
     </CUpgrade>
     <CUpgrade id="ProtossStructureDamageHd">
@@ -26,9 +26,9 @@
         <EffectArray Reference="Weapon,BigBoyCannonBeamHd,Level" Value="1"/>
         <EffectArray Reference="Effect,HolePuncherDamageHd,Amount" Value="4"/>
         <EffectArray Reference="Weapon,RedOrbHolePuncherHd,Level" Value="1"/>
-        <EffectArray Reference="Effect,HeavensAttackDamageShrineOfTheGodsHd,Amount" Value="6"/>
+        <EffectArray Reference="Effect,HeavensAttackDamageShrineOfTheGodsHd,Amount" Value="7"/>
         <EffectArray Reference="Weapon,HeavensStrikeShrineOfTheGodsHd,Level" Value="1"/>
-        <EffectArray Reference="Effect,AtomicStormDamageHd,Amount" Value="3"/>
+        <EffectArray Reference="Effect,AtomicStormDamageHd,Amount" Value="3.5"/>
         <EffectArray Reference="Weapon,AtomicStormHd,Level" Value="1"/>
         <LeaderAlias value=""/>
     </CUpgrade>
@@ -43,9 +43,9 @@
         <EffectArray Reference="Weapon,BileBombBileLauncherHd,Level" Value="1"/>
         <EffectArray Reference="Effect,SunkenColonyDamageHd,Amount" Value="4"/>
         <EffectArray Reference="Weapon,SubterraneanTentacleSunkenColonyHd,Level" Value="1"/>
-        <EffectArray Reference="Effect,WormySpitDamageHd,Amount" Value="6"/>
+        <EffectArray Reference="Effect,WormySpitDamageHd,Amount" Value="7"/>
         <EffectArray Reference="Weapon,WormySpitHd,Level" Value="1"/>
-        <EffectArray Reference="Effect,SummonBoulderDamageShackledUltraliskHd,Amount" Value="3"/>
+        <EffectArray Reference="Effect,SummonBoulderDamageShackledUltraliskHd,Amount" Value="3.5"/>
         <EffectArray Reference="Weapon,SummonBoulderShackledUltraliskHd,Level" Value="1"/>
         <LeaderAlias value=""/>
     </CUpgrade>

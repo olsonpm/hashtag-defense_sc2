@@ -5,7 +5,7 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Effect index="0" value="ApocalypseInitialSetKerriganHd"/>
         <Cost>
-            <Cooldown TimeUse="60"/>
+            <Cooldown TimeUse="30"/>
         </Cost>
         <Range value="12"/>
         <PrepTime value="0.5"/>
@@ -82,7 +82,7 @@
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <Effect index="0" value="CorrosiveBlastLMStukovHd"/>
         <Cost>
-            <Cooldown TimeUse="60"/>
+            <Cooldown TimeUse="30"/>
         </Cost>
         <TargetFilters value="Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="12"/>
@@ -197,7 +197,7 @@
         <Flags index="NoDeceleration" value="1"/>
         <Flags index="Transient" value="1"/>
         <Cost>
-            <Cooldown TimeUse="60"/>
+            <Cooldown TimeUse="30"/>
         </Cost>
         <AINotifyEffect value="LightningStormCPSelendisHd"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="LightningStormSelendisHd">
@@ -256,7 +256,7 @@
         <AINotifyEffect value="HunterSeekerMissile"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="SeekerMissileNightmanHd"/>
         <Cost>
-            <Cooldown TimeUse="60"/>
+            <Cooldown TimeUse="30"/>
         </Cost>
     </CAbilEffectTarget>
     <CAbilArmMagazine id="HangarSelendisHd">
@@ -279,7 +279,7 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Effect index="0" value="NuclearStrikeCPPirateCapitalShipHd"/>
         <Cost>
-            <Cooldown TimeUse="60"/>
+            <Cooldown TimeUse="30"/>
         </Cost>
         <Range value="12"/>
         <FinishTime value="2.5"/>
@@ -706,7 +706,7 @@
         <Effect index="0" value="LightGrenade1LMDaymanHd"/>
         <Flags index="AllowMovement" value="1"/>
         <Cost>
-            <Cooldown TimeUse="60"/>
+            <Cooldown TimeUse="30"/>
         </Cost>
         <TargetFilters value="Ground,Visible;Player,Ally,Neutral,Missile,Stasis,Invulnerable"/>
         <Range value="8"/>

@@ -1419,6 +1419,7 @@ bool gv_testpathlock;
 bool[10] gv_autoupgradelockperplayer;
 bool gv_lockkeepspawnclearofunits;
 bool gv_herochooserlock;
+unitgroup gv_allherounits;
 bool[10] gv_herochooserlockbyplayer;
 bool gv_unitchooserlock;
 bool[10] gv_unitchooserlockbyplayer;
@@ -1547,6 +1548,7 @@ void InitGlobals () {
     int init_i;
     int init_j;
 
+    gv_allherounits = UnitGroupEmpty();
     gv_endgamepanel = c_invalidDialogControlId;
     gv_endgamepanelclosebtn = c_invalidDialogControlId;
     gv_enemieskilledperchooserforsingleplayer = 4;
@@ -1767,6 +1769,7 @@ void gf_endgamevictory ();
 void gf_enemyreachedend (unit lp_unitwhoreachedend);
 void gf_incrementenemieskilled ();
 void gf_removeenemy (unit lp_u);
+void gf_resetherocooldowns ();
 void gf_resetskipclicked ();
 void gf_runround ();
 void gf_skipifallclicked ();
@@ -1791,7 +1794,6 @@ trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
 trigger gt_testinitrace;
 trigger gt_testinitherochoosers;
-trigger gt_testinitcam;
 trigger gt_testpathsuponbuildingregularbuildings;
 trigger gt_testpathsuponbuildingherobuildings;
 trigger gt_showkickplayerlist;
@@ -4582,6 +4584,7 @@ void gf_spawnhero (int lp_unitlocation, int lp_p) {
 
     // Implementation
     gf_createplayerheroatpoint(lp_unitlocation, lv__race, lp_p, PointWithOffset(lv__spawnpoint, 0.0, -1.0), 0);
+    UnitGroupAdd(gv_allherounits, UnitLastCreated());
 }
 
 void gf_turnherobuildingbackintobuilder (int lp_p, unit lp_u) {
@@ -4961,6 +4964,26 @@ void gf_removeenemy (unit lp_u) {
     UnitCreateEffectPoint(lp_u, "ExitEffectHd", lv__pos);
     SoundPlayAtPointForPlayer(SoundLink("Ultralisk_Death_Fall_Impact", -1), c_maxPlayers, PlayerGroupAll(), lv__pos, 0.0, 100.0, 0.0);
     UnitRemove(lp_u);
+}
+
+void gf_resetherocooldowns () {
+    // Variable Declarations
+    unit lv__u;
+
+    // Automatic Variable Declarations
+    unitgroup auto01B0905D_g;
+    int auto01B0905D_u;
+
+    // Variable Initialization
+
+    // Implementation
+    auto01B0905D_g = gv_allherounits;
+    auto01B0905D_u = UnitGroupCount(auto01B0905D_g, c_unitCountAll);
+    for (;; auto01B0905D_u -= 1) {
+        lv__u = UnitGroupUnitFromEnd(auto01B0905D_g, auto01B0905D_u);
+        if (lv__u == null) { break; }
+        UnitClearCooldowns(lv__u, true);
+    }
 }
 
 void gf_resetskipclicked () {
@@ -5693,33 +5716,6 @@ bool gt_testinitherochoosers_Func (bool testConds, bool runActions) {
 void gt_testinitherochoosers_Init () {
     gt_testinitherochoosers = TriggerCreate("gt_testinitherochoosers_Func");
     TriggerAddEventMapInit(gt_testinitherochoosers);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: test - init cam
-//--------------------------------------------------------------------------------------------------
-bool gt_testinitcam_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!(lib1_gf_istesting())) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lib1_gf_setcameratopointforplayer(1, PointFromId(271112602));
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_testinitcam_Init () {
-    gt_testinitcam = TriggerCreate("gt_testinitcam_Func");
-    TriggerAddEventMapInit(gt_testinitcam);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -7813,6 +7809,7 @@ bool gt_allenemiesgone_Func (bool testConds, bool runActions) {
         gv_currentround = gv_currentround + 1;
         gv_roundfinished = true;
         libNtve_gf_KillModel(gv_currentenemyindicator);
+        gf_resetherocooldowns();
         if ((ModI(gv_currentround, 10) == 0)) {
             gf_spawnherochoosers();
         }
@@ -8255,7 +8252,6 @@ void InitTriggers () {
     gt_choosespawnlocationtopleft_Init();
     gt_testinitrace_Init();
     gt_testinitherochoosers_Init();
-    gt_testinitcam_Init();
     gt_testpathsuponbuildingregularbuildings_Init();
     gt_testpathsuponbuildingherobuildings_Init();
     gt_showkickplayerlist_Init();
