@@ -45,6 +45,7 @@
             <Value>0.16</Value>
             <Value>0.17</Value>
             <Value>0.18</Value>
+            <Value>1.0</Value>
         </Version>
         <Date>
             <Value>11/11/2022</Value>
@@ -64,6 +65,7 @@
             <Value>12/15/2022</Value>
             <Value>4/4/2023</Value>
             <Value>4/4/2023</Value>
+            <Value>5/18/2023</Value>
         </Date>
         <Notes>
             <Value>1</Value>
@@ -83,6 +85,7 @@
             <Value>110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131</Value>
             <Value>132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160</Value>
             <Value>161</Value>
+            <Value>162,163,164,165</Value>
         </Notes>
     </PatchNote>
 </DocInfo>
