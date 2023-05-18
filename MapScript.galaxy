@@ -155,8 +155,6 @@ void lib1_InitVariables () {
     lib1_gv_colorcalamity = StringExternal("Param/Value/lib_1_4A35FBAD");
     lib1_gv_colorsuccess = StringExternal("Param/Value/lib_1_1BE6C03F");
     lib1_gv_everysecond = TimerCreate();
-    lib1_gv_localdebug = true;
-    lib1_gv_test = true;
     for (init_i = 0; init_i <= 16; init_i += 1) {
         for (init_j = 0; init_j <= 16; init_j += 1) {
             lib1_gv_unitsingroupsofNperplayer[init_i][init_j] = UnitGroupEmpty();
@@ -1792,8 +1790,6 @@ trigger gt_choosespawnlocationbot;
 trigger gt_choosespawnlocationbotleft;
 trigger gt_choosespawnlocationleft;
 trigger gt_choosespawnlocationtopleft;
-trigger gt_testinitrace;
-trigger gt_testinitherochoosers;
 trigger gt_testpathsuponbuildingregularbuildings;
 trigger gt_testpathsuponbuildingherobuildings;
 trigger gt_showkickplayerlist;
@@ -5658,67 +5654,6 @@ void gt_choosespawnlocationtopleft_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: test - init race
-//--------------------------------------------------------------------------------------------------
-bool gt_testinitrace_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!(lib1_gf_istesting())) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    PlayerSetRace(1, "Prot");
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_testinitrace_Init () {
-    gt_testinitrace = TriggerCreate("gt_testinitrace_Func");
-    TriggerAddEventTimeElapsed(gt_testinitrace, 1.0, c_timeReal);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: test - init hero choosers
-//--------------------------------------------------------------------------------------------------
-bool gt_testinitherochoosers_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!(lib1_gf_istesting())) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(777071673), 1);
-    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(2075095700), 1);
-    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(76779934), 1);
-    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(549913239), 1);
-    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(1689872590), 1);
-    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(784073299), 1);
-    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(481180406), 1);
-    lib1_gf_createNunitsatpoint(4, "ChooserHd", PointFromId(90928454), 1);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_testinitherochoosers_Init () {
-    gt_testinitherochoosers = TriggerCreate("gt_testinitherochoosers_Func");
-    TriggerAddEventMapInit(gt_testinitherochoosers);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: test paths upon building regular buildings
 //--------------------------------------------------------------------------------------------------
 bool gt_testpathsuponbuildingregularbuildings_Func (bool testConds, bool runActions) {
@@ -8250,8 +8185,6 @@ void InitTriggers () {
     gt_choosespawnlocationbotleft_Init();
     gt_choosespawnlocationleft_Init();
     gt_choosespawnlocationtopleft_Init();
-    gt_testinitrace_Init();
-    gt_testinitherochoosers_Init();
     gt_testpathsuponbuildingregularbuildings_Init();
     gt_testpathsuponbuildingherobuildings_Init();
     gt_showkickplayerlist_Init();

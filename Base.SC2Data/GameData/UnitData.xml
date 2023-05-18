@@ -4596,7 +4596,6 @@
         <FlagArray index="ArmySelect" value="1"/>
         <PlaneArray index="Ground" value="1"/>
         <Collide index="Ground" value="1"/>
-        <Collide index="Colossus" value="1"/>
         <Collide index="Small" value="1"/>
         <LifeArmorName value="Unit/LifeArmorName/LifeAndShieldArmor"/>
         <LateralAcceleration value="46.0625"/>
