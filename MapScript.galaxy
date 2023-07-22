@@ -4324,6 +4324,8 @@ void gf_removeplayer (int lp_p) {
     int autoF833A607_u;
     unitgroup auto4BA32B1F_g;
     int auto4BA32B1F_u;
+    unitgroup auto023AC125_g;
+    int auto023AC125_u;
 
     // Variable Initialization
 
@@ -4349,6 +4351,13 @@ void gf_removeplayer (int lp_p) {
     auto4BA32B1F_u = UnitGroupCount(auto4BA32B1F_g, c_unitCountAll);
     for (;; auto4BA32B1F_u -= 1) {
         lv__u = UnitGroupUnitFromEnd(auto4BA32B1F_g, auto4BA32B1F_u);
+        if (lv__u == null) { break; }
+        UnitKill(lv__u);
+    }
+    auto023AC125_g = UnitGroup(null, lp_p, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto023AC125_u = UnitGroupCount(auto023AC125_g, c_unitCountAll);
+    for (;; auto023AC125_u -= 1) {
+        lv__u = UnitGroupUnitFromEnd(auto023AC125_g, auto023AC125_u);
         if (lv__u == null) { break; }
         UnitKill(lv__u);
     }

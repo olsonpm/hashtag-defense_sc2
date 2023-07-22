@@ -664,7 +664,6 @@ Trigger/Name/C67983E9=typing commands - test - kick
 Trigger/Name/CAECD7D5=upgrade protoss unit damage
 Trigger/Name/D1754F75=choose spawn location - right
 Trigger/Name/D48254CC=choose spawn location - bot left
-Trigger/Name/D6237889=test - delme
 Trigger/Name/D6F0E387=choose spawn location - bot
 Trigger/Name/D87B37A7=choose unit - top
 Trigger/Name/D8E9D101=test - init alliance
