@@ -2,22 +2,18 @@
 <Catalog>
     <CRequirementConst id="15"/>
     <CRequirementAllowUnit id="AllowUnitAtomicStormBreweryHd">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Link value="AtomicStormBreweryHd"/>
     </CRequirementAllowUnit>
     <CRequirementAllowUnit id="AllowUnitFrackerHd">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Link value="FrackerHd"/>
     </CRequirementAllowUnit>
     <CRequirementAllowUnit id="AllowUnitKorhalPalaceTurretHd">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Link value="KorhalPalaceTurretHd"/>
     </CRequirementAllowUnit>
     <CRequirementAllowUnit id="AllowUnitShackledUltraliskHd">
         <Link value="ShackledUltraliskHd"/>
     </CRequirementAllowUnit>
     <CRequirementAllowUnit id="AllowUnitShrineOfTheGodsHd">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Link value="ShrineOfTheGodsHd"/>
     </CRequirementAllowUnit>
     <CRequirementAllowUnit id="AllowUnitWormyHd">
@@ -28,25 +24,29 @@
         <Tooltip value=""/>
         <Count Link="ArmorpiercingModeHd" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
-    <CRequirementCountBehavior id="CountBehaviorFullRefundAvailableSalvageHdCompleteOnly">
+    <CRequirementCountBehavior id="CountBehaviorFullRefundAvailableSalvageHdCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="FullRefundAvailableSalvageHd" State="CompleteOnly"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="FullRefundAvailableSalvageHd" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorIsBurrowedHdCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="IsBurrowedHd" State="CompleteOnly"/>
     </CRequirementCountBehavior>
-    <CRequirementCountBehavior id="CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnly">
+    <CRequirementCountBehavior id="CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="Refund10MineralsAvailableSalvageHd" State="CompleteOnly"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="Refund10MineralsAvailableSalvageHd" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
-    <CRequirementCountBehavior id="CountBehaviorRefund4MineralsAvailableSalvageHdCompleteOnly">
+    <CRequirementCountBehavior id="CountBehaviorRefund4MineralsAvailableSalvageHdCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="Refund4MineralsAvailableSalvageHd" State="CompleteOnly"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="Refund4MineralsAvailableSalvageHd" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
-    <CRequirementCountBehavior id="CountBehaviorRefund8MineralsAvailableSalvageHdCompleteOnly">
+    <CRequirementCountBehavior id="CountBehaviorRefund8MineralsAvailableSalvageHdCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="Refund8MineralsAvailableSalvageHd" State="CompleteOnly"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="Refund8MineralsAvailableSalvageHd" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorUpgradedPhotonCannonHdInProgressOrBetterAtUnit">
         <Flags index="TechTreeCheat" value="0"/>

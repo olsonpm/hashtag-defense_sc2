@@ -13,20 +13,20 @@
         <NodeArray index="Use" Link="AllowUnitAtomicStormBreweryHd"/>
     </CRequirement>
     <CRequirement id="HasFullRefundAvailableSalvageHd">
-        <NodeArray index="Use" Link="CountBehaviorFullRefundAvailableSalvageHdCompleteOnly"/>
-        <NodeArray index="Show" Link="CountBehaviorFullRefundAvailableSalvageHdCompleteOnly"/>
+        <NodeArray index="Use" Link="CountBehaviorFullRefundAvailableSalvageHdCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorFullRefundAvailableSalvageHdCompleteOnlyAtUnit"/>
     </CRequirement>
     <CRequirement id="HasRefund4MineralsAvailableSalvageHd">
-        <NodeArray index="Use" Link="CountBehaviorRefund4MineralsAvailableSalvageHdCompleteOnly"/>
-        <NodeArray index="Show" Link="CountBehaviorRefund4MineralsAvailableSalvageHdCompleteOnly"/>
+        <NodeArray index="Use" Link="CountBehaviorRefund4MineralsAvailableSalvageHdCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorRefund4MineralsAvailableSalvageHdCompleteOnlyAtUnit"/>
     </CRequirement>
     <CRequirement id="HasRefund8MineralsAvailableSalvageHd">
-        <NodeArray index="Use" Link="CountBehaviorRefund8MineralsAvailableSalvageHdCompleteOnly"/>
-        <NodeArray index="Show" Link="CountBehaviorRefund8MineralsAvailableSalvageHdCompleteOnly"/>
+        <NodeArray index="Use" Link="CountBehaviorRefund8MineralsAvailableSalvageHdCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorRefund8MineralsAvailableSalvageHdCompleteOnlyAtUnit"/>
     </CRequirement>
     <CRequirement id="HasRefund10MineralsAvailableSalvageHd">
-        <NodeArray index="Use" Link="CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnly"/>
-        <NodeArray index="Show" Link="CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnly"/>
+        <NodeArray index="Use" Link="CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorRefund10MineralsAvailableSalvageHdCompleteOnlyAtUnit"/>
     </CRequirement>
     <CRequirement id="IsNotBurrowedHd">
         <NodeArray index="Use" Link="EqCountBehaviorIsBurrowedHdCompleteOnly0"/>
