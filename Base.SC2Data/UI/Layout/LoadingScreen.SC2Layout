@@ -44,8 +44,15 @@
   <Constant name="Tab4Name" val="Patch Notes"/>
   <Constant name="Tab4On" val="True"/>
   <Constant name="Tab4Txt" val="
-    No patch notes yet.  I want this map in a more stable state &lt;n/&gt;
-    before I add these
+    v1.01 &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+    - fix bug where loaded bunkers would unload its units upon &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+      the player being dropped or kicked &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+    &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+    v1.02 &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+    - fix bug where bunker was refunding for 10 instead of 1 &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+    - fix bug where the game wouldn't start if the last person &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+      choosing a defender location was dropped or kicked &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+    - add missing button texts &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
   "/>
 
   <Constant name="CopyText" val="Click to copy the discord link !"/>
