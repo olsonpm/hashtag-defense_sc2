@@ -189,11 +189,17 @@ Button/Tooltip/BossHybridDominatorEnemyHd=Powerful psionic attacker.<n/><n/><c v
 Button/Tooltip/BossKerriganEnemyHd=Kerrigan is a class 12 psionic. She commands god-like powers and cannot be killed with conventional weapons.
 Button/Tooltip/BossStoneZealotEnemyHd=Ancient guardian. You must destroy it to liberate the Artifact.
 Button/Tooltip/BossYagdraEnemyHd=Vile and dangerous Pack Leader who breathes acid, tunnels through the ground, and lays eggs.
+Button/Tooltip/BuildAtomicStormBreweryHd=This creates a large storm damaging multiple enemies over time.
 Button/Tooltip/BuildBunkerHd=A defensive structure with a turret that automatically attacks enemies.  Infantry can load in.
+Button/Tooltip/BuildFrackerHd=The fracker emits toxic fumes in a large area, damaging many units over time.
+Button/Tooltip/BuildKorhalPalaceTurretHd=This turret packs a punch, doing high damage against single targets.
+Button/Tooltip/BuildShackledUltraliskHd=This is the only wizard ultralisk you'll ever see.  He summons large boulders, smashing many units below with the hope that one day he may be freed.
+Button/Tooltip/BuildShrineOfTheGodsHd=The shrine of the gods strikes enemies from the heavens, doing high damage against single targets.
 Button/Tooltip/BuildSpineCrawlerZergHd=A defensive structure that automatically attacks enemies.
 Button/Tooltip/BuildWallProtossHd=A cheap yet sturdy 2x2 wall
 Button/Tooltip/BuildWallTerranHd=A cheap yet sturdy 2x2 wall
 Button/Tooltip/BuildWallZergHd=A cheap yet sturdy 2x2 wall
+Button/Tooltip/BuildWormyHd=Wormy's spit is no joke, doing high damage against single targets.
 Button/Tooltip/BurrowLurkerMPHd=Buries the Lurker underground. Burrowed Lurkers are unable to move, but are able to attack. They cannot be seen without detection.
 Button/Tooltip/ChooserHd=Male Civilian.
 Button/Tooltip/ClearUnitChooserRallyHd=Clears the rally for your unit choosers
@@ -289,6 +295,9 @@ Button/Tooltip/TestWeaklingEnemyHd=Fast melee creature. Can morph into a Banelin
 Button/Tooltip/ThorHd=Heavy assault mech.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/ThrowLightGrenadeDaymanHd=Deals <c val="00E35B"><d ref="Effect,LightGrenadeDamageDaymanHd,Amount"/></c> damage to target enemy. Also reduces the enemy's armor by half for 10 seconds.<n/><n/>Damage upgrades by <c val="00E35B">6</c><n/><c val="F1FF71">Cooldown resets between rounds</c>
 Button/Tooltip/TicklerMarineTestHd=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/TurnBackIntoBuilderProtossHd=Turns this hero building back into a hero builder so you may place it elsewhere.
+Button/Tooltip/TurnBackIntoBuilderTerranHd=Turns this hero building back into a hero builder so you may place it elsewhere.
+Button/Tooltip/TurnBackIntoBuilderZergHd=Turns this hero building back into a hero builder so you may place it elsewhere.
 Button/Tooltip/UnitHasShieldsModHd=Ancient Protoss Relic. Collect it with a ground unit to gain a Protoss research point. 
 Button/Tooltip/UpgradeBunkerTurretDamageHd=Upgrades the damage done by all bunker turrets<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
 Button/Tooltip/UpgradeProtossStructureDamageHd=Upgrades the damage done by all protoss structures<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Right click to toggle auto-upgrade as minerals become available</c>
