@@ -1609,6 +1609,7 @@ void InitGlobals () {
     gv_startvotetokickplayerdibutton = c_invalidDialogControlId;
     gv_testoverridegameattributedifficulty = -1;
     gv_testoverridegameattributeroundtimer = -1;
+    gv_testingmultiplayerlocally = true;
     gv_unitswithfullrefundavailable = UnitGroupEmpty();
 }
 
@@ -4321,6 +4322,7 @@ void gf_removeplayer (int lp_p) {
     // Variable Declarations
     unit lv__u;
     int lv__defenderlocation;
+    bool lv__handlechoosedefenderlocation;
 
     // Automatic Variable Declarations
     unitgroup autoF833A607_g;
@@ -4350,6 +4352,10 @@ void gf_removeplayer (int lp_p) {
     PlayerModifyPropertyInt(lp_p, c_playerPropMinerals, c_playerPropOperSetTo, 0);
     PlayerGroupRemove(gv_activedefenders, lp_p);
     PlayerGroupRemove(gv_activedefendersplusallycomp, lp_p);
+    if (lib1_gf_atleastNunitsoftypeinregionforplayer(1, "ChooserHd", RegionFromId(21), lp_p)) {
+        lv__handlechoosedefenderlocation = true;
+    }
+
     auto4BA32B1F_g = UnitGroup(null, lp_p, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     auto4BA32B1F_u = UnitGroupCount(auto4BA32B1F_g, c_unitCountAll);
     for (;; auto4BA32B1F_u -= 1) {
@@ -4364,6 +4370,10 @@ void gf_removeplayer (int lp_p) {
         if (lv__u == null) { break; }
         UnitKill(lv__u);
     }
+    if (lib1_gf_istrue(lv__handlechoosedefenderlocation)) {
+        gf_clearspawnlocationwhenempty();
+    }
+
     gf_skipforplayeriftimerisactive(lp_p);
     gf_updateactivepathtests();
     if (lib1_gf_istrue(gv_kickplayervoteinprogress)) {
