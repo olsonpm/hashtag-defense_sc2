@@ -4,67 +4,62 @@
   <!-- Note: &lt;n/&gt; causes a new line in text. -->
   <Constant name="HDLoadingScreen_MapName" val=" #Defense " />
   <Constant name="HDLoadingScreen_bg" val="hashtag-defense/Assets/Textures/loading-screen.jpg" />
-  <Constant name="HDLoadingScreen_Tab1Name" val="Добро пожаловать"/>
+  <Constant name="HDLoadingScreen_Tab1Name" val="Welcome"/>
   <Constant name="HDLoadingScreen_Tab1On" val="True"/>
   <Constant name="HDLoadingScreen_Tab1Txt" val="
-    1. Выберите, где обороняться &lt;n/&gt;
-    2. Постройте лабиринт, по которому должны пройти ваши враги &lt;n/&gt;
-    3. Покупайте боевые единицы и улучшения, чтобы бить врагов &lt;n/&gt;
+    1. Choose where to defend &lt;n/&gt;
+    2. Build a maze for your enemies to walk through &lt;n/&gt;
+    3. Purchase units and upgrades to knock'em down &lt;n/&gt;
     &lt;n/&gt;
-    Сможете ли вы преодолеть все 25 волн?
+    Can you beat all 25 waves ?
     "/>
 
-  <Constant name="HDLoadingScreen_Tab2Name" val="Основная информация"/>
+  <Constant name="HDLoadingScreen_Tab2Name" val="Basic Info"/>
   <Constant name="HDLoadingScreen_Tab2On" val="True"/>
   <Constant name="HDLoadingScreen_Tab2Txt" val="
-    – Доход зависит от командных убийств. &lt;n/&gt;
-    – Враги и их полученные эффекты случайны. &lt;n/&gt;
-    – У большинства врагов есть тип, например, лёгкий/  &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      бронированный/органический и т.д. &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      Покупайте единицы, которые противостоят различным типам &lt;n/&gt;
-      врагов. &lt;n/&gt;
-    – В начале игры у вас 25 жизней. Жизни теряются, когда враги &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      достигают конца своего пути. Чем больше у вас игроков, тем больше &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      врагов должны дойти до конца, чтобы потерять жизнь. &lt;n/&gt;
-    – Обязательно улучшайте свои единицы в исследовательском &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      центре. &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      Броня противников увеличивается в последующих раундах, делая &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      ваши атаки менее эффективными.
+    - Income is based on team kills. &lt;n/&gt;
+    - Enemies and their buffs are random. &lt;n/&gt;
+    - Most enemies have a type e.g. light/armored/biological etc. &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+      Buy units which counter the enemy types. &lt;n/&gt;
+    - You start with 25 lives.  Lives are lost when enemies reach &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+      the end of their lane.  The more players you have, the more &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+      enemies will have to reach the end to lose a life. &lt;n/&gt;
+    - Make sure you upgrade your units at the Research Center. &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+      Enemy armor increases in further rounds making your &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+      attacks less impactful.
       &lt;n/&gt;
   "/>
 
-  <Constant name="HDLoadingScreen_Tab3Name" val="Подробное"/>
+  <Constant name="HDLoadingScreen_Tab3Name" val="More Info"/>
   <Constant name="HDLoadingScreen_Tab3On" val="True"/>
   <Constant name="HDLoadingScreen_Tab3Txt" val="
-    – Введите «-commands» для просмотра доступных команд. Напр., &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      «-autoskip» автоматически нажимает пропуск в каждом раунде. &lt;n/&gt;
-    – Выборщики могут автоматически идти к маякам, щёлкнув &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      левой кнопкой по маяку и нажав кнопку «Сбор». &lt;n/&gt;
-    – Вы также можете автоматически улучшать свои единицы по мере &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      появления минералов, нажав правой кнопкой по улучшению. &lt;n/&gt;
+    - Type '-commands' to view available commands.  For instance &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+      '-autoskip' automatically clicks the skip button for you each round &lt;n/&gt;
+    - Your choosers can be automatically rallied to beacons by left &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+      clicking a beacon and clicking the rally button. &lt;n/&gt;
+    - You can also automatically upgrade your units as minerals become &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+      available by right clicking the upgrade button. &lt;n/&gt;
   "/>
 
-  <Constant name="HDLoadingScreen_Tab4Name" val="Описания обновлений"/>
+  <Constant name="HDLoadingScreen_Tab4Name" val="Patch Notes"/>
   <Constant name="HDLoadingScreen_Tab4On" val="True"/>
   <Constant name="HDLoadingScreen_Tab4Txt" val="
-    вер. 1.01 &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-    – исправлена ошибка, из-за которой загруженные бункеры &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      выгружались при отключении или исключении игрока. &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+    v1.01 &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+    - fix bug where loaded bunkers would unload its units upon &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+      the player being dropped or kicked &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
     &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-    вер. 1.02 &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-    – исправлена ошибка, из-за которой бункер возвращал 10 ед. &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      вместо 1 ед. &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-    – исправлена ошибка, из-за которой игра не начиналась, если &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      последний игрок, выбиравший позицию обороны, был отключён &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      или исключён. &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-    – добавлены недостающие тексты кнопок. &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+    v1.02 &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+    - fix bug where bunker was refunding for 10 instead of 1 &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+    - fix bug where the game wouldn't start if the last person &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+      choosing a defender location was dropped or kicked &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
+    - add missing button texts &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
   "/>
-  <Constant name="HDLoadingScreen_AuthorNameBottom" val="Автор: Nesbano0s"/>
+  <Constant name="HDLoadingScreen_AuthorNameBottom" val="By: Nesbano0s"/>
   <!-- General (used in many places) -->
-  <Constant name="HDGeneral_CopyText" val="Копировать Discord-ссылку!"/>
-  <Constant name="HDGeneral_URLGet" val="Ссылка скопирована в буфер обмена!"/>
+  <Constant name="HDGeneral_CopyText" val="Click to copy the discord link !"/>
+  <Constant name="HDGeneral_URLGet" val="Link copied to clipboard!"/>
   <Constant name="HDGeneral_CopyLink" val="https://discord.gg/6ZfDWNF3jU"/>
   <!-- Ending Screen -->
-  <Constant name="HDRoundEnd_DialogTitle" val="Спасибо за игру"/>
-  <Constant name="HDRoundEnd_DialogTxt" val="Надеюсь, вам понравилось.&lt;n/&gt;&lt;n/&gt;Не стесняйтесь оставлять отзывы на нашем&lt;n/&gt;Discord-сервере."/>
+  <Constant name="HDRoundEnd_DialogTitle" val="Thanks For Playing"/>
+  <Constant name="HDRoundEnd_DialogTxt" val="Hope you enjoyed it.&lt;n/&gt;&lt;n/&gt;Feel free to leave feedback in our discord server."/>
 </Desc>
