@@ -92,7 +92,7 @@
         <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
         <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
         <Style val="BattlenetAlternateButton"/>
-		<Text val="#HDGeneral_URLGet"/>
+        <Text val="#HDGeneral_URLGet"/>
       </Frame>
 
       <Animation name="Show">
