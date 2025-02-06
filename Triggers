@@ -27196,7 +27196,7 @@
     </Element>
     <Element Type="Param" Id="73D5E1AA">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="6FA2B71B"/>
-        <Value>100</Value>
+        <Value>130</Value>
         <ValueType Type="int"/>
     </Element>
     <Element Type="Param" Id="CA15C617">

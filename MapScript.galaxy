@@ -3461,7 +3461,7 @@ void gf_initrounddialog () {
         gv_rounddialogitemlabel = DialogControlLastCreated();
         libNtve_gf_CreateDialogItemLabel(gv_rounddialog, 50, 50, c_anchorTopRight, 200, 50, StringToText(""), ColorWithAlpha(0,0,0,0), false, 2.0);
         gv_rounddialogitemtimervalue = DialogControlLastCreated();
-        libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 100, 50, c_anchorTopRight, 50, 36, StringToText(""), StringExternal("Param/Value/E58B56EB"), "");
+        libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 130, 50, c_anchorTopRight, 50, 36, StringToText(""), StringExternal("Param/Value/E58B56EB"), "");
         gv_rounddialogitemskip = DialogControlLastCreated();
     }
     else {

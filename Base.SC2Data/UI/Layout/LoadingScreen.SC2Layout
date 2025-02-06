@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Desc>
-<Include path="UI/Layout/LoadingScreenTextConstants.SC2Layout"/>
+<Include path="UI/Layout/TranslatableTextConstants.SC2Layout"/>
   <!-- Local Templates -->
   <Frame type="Frame" name="CopyButtonTemplate">
     <Width val="586"/>
