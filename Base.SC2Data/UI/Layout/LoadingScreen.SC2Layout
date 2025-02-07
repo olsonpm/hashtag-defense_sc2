@@ -1,63 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Desc>
-  <!-- Constants -->
-  <!-- Note: &lt;n/&gt; causes a new line in text. -->
-  <Constant name="MapName" val=" #Defense " />
-  <Constant name="bg" val="hashtag-defense/Assets/Textures/loading-screen.jpg" />
-  <Constant name="Tab1Name" val="Welcome"/>
-  <Constant name="Tab1On" val="True"/>
-  <Constant name="Tab1Txt" val="
-    1. Choose where to defend &lt;n/&gt;
-    2. Build a maze for your enemies to walk through &lt;n/&gt;
-    3. Purchase units and upgrades to knock'em down &lt;n/&gt;
-    &lt;n/&gt;
-    Can you beat all 25 waves ?
-    "/>
-
-  <Constant name="Tab2Name" val="Basic Info"/>
-  <Constant name="Tab2On" val="True"/>
-  <Constant name="Tab2Txt" val="
-    - Income is based on team kills. &lt;n/&gt;
-    - Enemies and their buffs are random. &lt;n/&gt;
-    - Most enemies have a type e.g. light/armored/biological etc. &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      Buy units which counter the enemy types. &lt;n/&gt;
-    - You start with 25 lives.  Lives are lost when enemies reach &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      the end of their lane.  The more players you have, the more &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      enemies will have to reach the end to lose a life. &lt;n/&gt;
-    - Make sure you upgrade your units at the Research Center. &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      Enemy armor increases in further rounds making your &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      attacks less impactful.
-      &lt;n/&gt;
-  "/>
-
-  <Constant name="Tab3Name" val="More Info"/>
-  <Constant name="Tab3On" val="True"/>
-  <Constant name="Tab3Txt" val="
-    - Type '-commands' to view available commands.  For instance &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      '-autoskip' automatically clicks the skip button for you each round &lt;n/&gt;
-    - Your choosers can be automatically rallied to beacons by left &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      clicking a beacon and clicking the rally button. &lt;n/&gt;
-    - You can also automatically upgrade your units as minerals become &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      available by right clicking the upgrade button. &lt;n/&gt;
-  "/>
-
-  <Constant name="Tab4Name" val="Patch Notes"/>
-  <Constant name="Tab4On" val="True"/>
-  <Constant name="Tab4Txt" val="
-    v1.01 &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-    - fix bug where loaded bunkers would unload its units upon &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      the player being dropped or kicked &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-    &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-    v1.02 &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-    - fix bug where bunker was refunding for 10 instead of 1 &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-    - fix bug where the game wouldn't start if the last person &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-      choosing a defender location was dropped or kicked &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-    - add missing button texts &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
-  "/>
-
-  <Constant name="CopyText" val="Click to copy the discord link !"/>
-  <Constant name="CopyLink" val="https://discord.gg/6ZfDWNF3jU"/>
-
+<Include path="UI/Layout/TranslatableTextConstants.SC2Layout"/>
   <!-- Local Templates -->
   <Frame type="Frame" name="CopyButtonTemplate">
     <Width val="586"/>
@@ -67,7 +10,7 @@
       <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
       <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
 
-      <ClipboardText val="#CopyLink"/>
+      <ClipboardText val="#HDGeneral_CopyLink"/>
       <DisplayType val="ImageLayer"/>
       <ClickSound val="@UI_ActionButtonSelect"/>
       <HoverSound val="@UI_HoverTick"/>
@@ -118,7 +61,7 @@
         <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
         <Anchor side="Right" relative="$parent" pos="Max" offset="-20"/>
         <Style val="BattlenetStandardButton"/>
-        <Text val="#CopyText"/>
+        <Text val="#HDGeneral_CopyText"/>
       </Frame>
 
       <Frame type="Frame" name="HitTestFrame">
@@ -149,7 +92,7 @@
         <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
         <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
         <Style val="BattlenetAlternateButton"/>
-        <Text val="Link copied to clipboard!"/>
+        <Text val="#HDGeneral_URLGet"/>
       </Frame>
 
       <Animation name="Show">
@@ -363,7 +306,7 @@
     <!-- The background image -->
     <Frame type="Image" name="LoadScreenImage">
       <Anchor relative="$parent"/>
-      <Texture val="#bg"/>
+      <Texture val="#HDLoadingScreen_bg"/>
     </Frame>
 
     <!-- Images that are not initially shown need to be preloaded or they will sometimes not appear -->
@@ -380,7 +323,7 @@
       <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
       <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
       <Style val="Coop_Loading_Title"/>
-      <Text val="#MapName"/>
+      <Text val="#HDLoadingScreen_MapName"/>
       <Width val="950"/>
       <Height val="90"/>
     </Frame>
@@ -417,10 +360,10 @@
           <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
           <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
           <Anchor side="Left" relative="$parent" pos="Min" offset="5"/>
-          <Visible val="#Tab1On"/>
+          <Visible val="#HDLoadingScreen_Tab1On"/>
 
           <Frame type="Label" name="Label">
-            <Text val="#Tab1Name"/>
+            <Text val="#HDLoadingScreen_Tab1Name"/>
           </Frame>
         </Frame>
         <!-- Tab1 END -->
@@ -430,10 +373,10 @@
           <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
           <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
           <Anchor side="Left" relative="$parent/Button01" pos="Max" offset="5"/>
-          <Visible val="#Tab2On"/>
+          <Visible val="#HDLoadingScreen_Tab2On"/>
 
           <Frame type="Label" name="Label">
-            <Text val="#Tab2Name"/>
+            <Text val="#HDLoadingScreen_Tab2Name"/>
           </Frame>
         </Frame>
         <!-- Tab2 END -->
@@ -443,10 +386,10 @@
           <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
           <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
           <Anchor side="Left" relative="$parent/Button02" pos="Max" offset="5"/>
-          <Visible val="#Tab3On"/>
+          <Visible val="#HDLoadingScreen_Tab3On"/>
 
           <Frame type="Label" name="Label">
-            <Text val="#Tab3Name"/>
+            <Text val="#HDLoadingScreen_Tab3Name"/>
           </Frame>
         </Frame>
         <!-- Tab3 END -->
@@ -456,10 +399,10 @@
           <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
           <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
           <Anchor side="Left" relative="$parent/Button03" pos="Max" offset="5"/>
-          <Visible val="#Tab4On"/>
+          <Visible val="#HDLoadingScreen_Tab4On"/>
 
           <Frame type="Label" name="Label">
-            <Text val="#Tab4Name"/>
+            <Text val="#HDLoadingScreen_Tab4Name"/>
           </Frame>
         </Frame>
         <!-- Tab4 END -->
@@ -485,7 +428,7 @@
                   <Width val="800"/>
 
                   <Style val="LoadingScreenMission"/>
-                  <Text val="#Tab1Txt"/>
+                  <Text val="#HDLoadingScreen_Tab1Txt"/>
                 </Frame>
 
                 <Frame type="Frame" name="CopyDiscord" template="LoadingScreen/CopyButtonTemplate">
@@ -493,16 +436,16 @@
                   <Anchor side="Left" relative="$parent" pos="Min" offset="14"/>
 
                   <Frame type="CopyClipboardButton" name="ClipBoardBtn">
-                    <ClipboardText val="#CopyLink"/>
+                    <ClipboardText val="#HDGeneral_CopyLink"/>
 
                     <Frame type="Label" name="Label">
-                      <Text val="#CopyText"/>
+                      <Text val="#HDGeneral_CopyText"/>
                     </Frame>
                   </Frame>
 
                   <Frame type="Frame" name="Popup">
                     <Frame type="Label" name="Header">
-                      <Text val="Link copied to clipboard!"/>
+                      <Text val="#HDGeneral_URLGet"/>
                     </Frame>
                   </Frame>
                 </Frame>
@@ -512,7 +455,7 @@
                   <Anchor side="Left" relative="$parent" pos="Min" offset="28"/>
 
                   <Style val="LoadingScreenMission"/>
-                  <Text val="By: Nesbano0s"/>
+                  <Text val="#HDLoadingScreen_AuthorNameBottom"/>
                 </Frame>
 
                 <Frame type="Frame" name="ContentsBottom">
@@ -536,7 +479,7 @@
                   <Width val="800"/>
 
                   <Style val="LoadingScreenMission"/>
-                  <Text val="#Tab2Txt"/>
+                  <Text val="#HDLoadingScreen_Tab2Txt"/>
                 </Frame>
 
                 <Frame type="Frame" name="ContentsBottom">
@@ -560,7 +503,7 @@
                   <Width val="800"/>
 
                   <Style val="LoadingScreenMission"/>
-                  <Text val="#Tab3Txt"/>
+                  <Text val="#HDLoadingScreen_Tab3Txt"/>
                 </Frame>
 
                 <Frame type="Frame" name="ContentsBottom">
@@ -584,7 +527,7 @@
                   <Width val="800"/>
 
                   <Style val="LoadingScreenMission"/>
-                  <Text val="#Tab4Txt"/>
+                  <Text val="#HDLoadingScreen_Tab4Txt"/>
                 </Frame>
 
                 <Frame type="Frame" name="ContentsBottom">

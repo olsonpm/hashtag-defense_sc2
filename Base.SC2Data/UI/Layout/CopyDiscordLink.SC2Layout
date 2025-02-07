@@ -42,7 +42,7 @@
       <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
       <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
 
-      <ClipboardText val="#CopyLink"/>
+      <ClipboardText val="#HDGeneral_CopyLink"/>
       <DisplayType val="ImageLayer"/>
       <ClickSound val="@UI_ActionButtonSelect"/>
       <HoverSound val="@UI_HoverTick"/>
@@ -93,7 +93,7 @@
         <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
         <Anchor side="Right" relative="$parent" pos="Max" offset="-20"/>
         <Style val="BattlenetStandardButton"/>
-        <Text val="#CopyText"/>
+        <Text val="#HDGeneral_CopyText"/>
       </Frame>
 
       <Frame type="Frame" name="HitTestFrame">
@@ -134,7 +134,7 @@
         <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
         <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
         <Style val="BattlenetAlternateButton"/>
-        <Text val="Link copied to clipboard!"/>
+        <Text val="#HDGeneral_URLGet"/>
       </Frame>
 
       <Animation name="Show">
@@ -178,7 +178,7 @@
         <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
         <Anchor side="Left" relative="$parent" pos="Min" offset="30"/>
         <Style val="BattlenetTitle"/>
-        <Text val="Thanks For Playing"/>
+        <Text val="#HDRoundEnd_DialogTitle"/>
         <Height val="90"/>
       </Frame>
 
@@ -188,23 +188,23 @@
         <Width val="800"/>
 
         <Style val="LoadingScreenMission"/>
-        <Text val="Hope you enjoyed it.&lt;n/&gt;&lt;n/&gt;Feel free to leave feedback in our discord server."/>
+        <Text val="#HDRoundEnd_DialogTxt"/>
       </Frame>
 
       <Frame type="Frame" name="CopyDiscord" template="CopyDiscordLink/CopyButtonTemplate">
         <Anchor side="Top" relative="$parent/Lbl_Body" pos="Max" offset="40"/>
         <Anchor side="Left" relative="$parent" pos="Min" offset="27"/>
         <Frame type="CopyClipboardButton" name="ClipBoardBtn">
-          <ClipboardText val="#CopyLink"/>
+          <ClipboardText val="#HDGeneral_CopyLink"/>
 
           <Frame type="Label" name="Label">
-            <Text val="#CopyText"/>
+            <Text val="#HDGeneral_CopyText"/>
           </Frame>
         </Frame>
 
         <Frame type="Frame" name="Popup">
           <Frame type="Label" name="Header">
-            <Text val="Link copied to clipboard!"/>
+            <Text val="#HDGeneral_URLGet"/>
           </Frame>
         </Frame>
       </Frame>

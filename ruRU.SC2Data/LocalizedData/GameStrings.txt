@@ -1,0 +1,1355 @@
+﻿Abil/Name/ApocalypseKerriganHd=Apocalypse
+Abil/Name/AttackEnemyHd=Attack Enemy
+Abil/Name/BlinkHd=Blink
+Abil/Name/BuildHeroProtossHd=Build Hero
+Abil/Name/BuildHeroTerranHd=Build Hero
+Abil/Name/BuildHeroZergHd=Build Hero
+Abil/Name/BuildProtossHd=Build
+Abil/Name/BuildSpawnFlagHd=Build Spawn Flag
+Abil/Name/BuildTerranHd=Build
+Abil/Name/BuildZergHd=Build
+Abil/Name/BurrowLurkerHd=Burrow Lurker
+Abil/Name/ClearUnitChooserRallyHd=Clear Unit Chooser Rally
+Abil/Name/CorrosiveBlastStukovHd=Corrosive Blast
+Abil/Name/HangarSelendisHd=Hangar
+Abil/Name/InfestedSiegeTankRootHd=Root
+Abil/Name/InfestedSiegeTankUprootHd=Uproot
+Abil/Name/LiberatorAATargetHd=AA Target
+Abil/Name/LiberatorAGTargetHd=AG Target
+Abil/Name/LiberatorMorphToAAHd=Morph to AA
+Abil/Name/LiberatorMorphToAGHd=Morph to AG
+Abil/Name/LightGrenadeDaymanHd=Light Grenade
+Abil/Name/LightningStormSelendisHd=Lightning Storm
+Abil/Name/LoadUnloadBunkerHd=Load-Unload
+Abil/Name/MakeAttackDroneHd=Make Attack Drone
+Abil/Name/MakeWasplingHd=Make Waspling
+Abil/Name/NuclearStrikePirateCapitalShipHd=Nuclear Strike
+Abil/Name/RallyUnitChoosersHereHd=Rally Unit Choosers Here
+Abil/Name/ReaverHangarHd=Reaver Hangar
+Abil/Name/SalvageFullRefundHd=Salvage - Full Refund
+Abil/Name/SalvageNoRefundHd=Salvage - No Refund
+Abil/Name/SalvageRefund10MineralsHd=Salvage - Refund 10 Minerals
+Abil/Name/SalvageRefund1MineralHd=Salvage - Refund 1 Mineral
+Abil/Name/SalvageRefund4MineralsHd=Salvage - Refund 4 Minerals
+Abil/Name/SalvageRefund8MineralsHd=Salvage - Refund 8 Minerals
+Abil/Name/SeekerMissileNightmanHd=Seeker Missile
+Abil/Name/SiegeModeHd=Siege
+Abil/Name/TestFireworkHd=Test Firework
+Abil/Name/TurnBackIntoBuilderProtossHd=Turn Back Into Builder
+Abil/Name/TurnBackIntoBuilderTerranHd=Turn Back Into Builder
+Abil/Name/TurnBackIntoBuilderZergHd=Turn Back Into Builder
+Abil/Name/UnburrowLurkerHd=Unburrow Lurker
+Abil/Name/UnsiegeHd=Unsiege
+Abil/Name/UpgradeBunkerTurretDamageResearchCenterHd=Upgrade Bunker Turret Damage
+Abil/Name/UpgradePhotonCannonDamageResearchCenterHd=Upgrade Photon Cannon Damage
+Abil/Name/UpgradeSpineCrawlerDamageResearchCenterHd=Upgrade Spine Crawler Damage
+Abil/Name/UpgradeToArtilleryTurretBunkerHd=Upgrade To Artillery Turret
+Abil/Name/UpgradeToAttackDroneHubPhotonCannonHd=Upgrade To Attack Drone Hub
+Abil/Name/UpgradeToBigBoyCannonPhotonCannonHd=Upgrade To Big Boy Cannon
+Abil/Name/UpgradeToBileLauncherSpineCrawlerHd=Upgrade To Bile Launcher
+Abil/Name/UpgradeToBunkerHd=Upgrade To Bunker
+Abil/Name/UpgradeToHeavyTurretBunkerHd=Upgrade To Heavy Turret
+Abil/Name/UpgradeToHolePuncherPhotonCannonHd=Upgrade To Hole Puncher
+Abil/Name/UpgradeToMissileTurretBunkerHd=Upgrade To Missile Turret
+Abil/Name/UpgradeToPhotonCannonHd=Upgrade To Photon Cannon
+Abil/Name/UpgradeToSpineCrawlerHd=Upgrade To Spine Crawler
+Abil/Name/UpgradeToSunkenColonySpineCrawlerHd=Upgrade To Sunken Colony
+Abil/Name/UpgradeToWasplingBurrowSpineCrawlerHd=Upgrade To Waspling Burrow
+Abil/Name/UpgradeUnitDamageProtossHd=Upgrade Unit Damage
+Abil/Name/UpgradeUnitDamageTerranHd=Upgrade Unit Damage
+Abil/Name/UpgradeUnitDamageZergHd=Upgrade Unit Damage
+Abil/TargetMessage/AttackEnemyHd=<IMG path="Assets\Textures\tutorialmouseleftbuttondown.dds" alignment="absolutemiddle"/>   To Attack<n/><IMG path="Assets\Textures\tutorialmouserightbuttondown.dds" alignment="absolutemiddle"/>   Cancel
+Attribute001/Desc=Указать, дать ли время в начале и между раундами.
+Attribute001/Name=Таймер раунда
+Attribute001/Value001/Desc=Для начала каждого раунда всем игрокам необходимо нажать кнопку «Готово». Рекомендуется для начинающих игроков.
+Attribute001/Value001/Name=Нет
+Attribute001/Value002/Desc=120 сек. в начале, 40 сек. между раундами. У игроков остаётся возможность пропустить таймер – если все игроки пропустят, то раунд начнётся.
+Attribute001/Value002/Name=По умолчанию
+Attribute001/Value003/Desc=60 сек. в начале, 20 сек. между раундами. У игроков остаётся возможность пропустить таймер – если все игроки пропустят, то раунд начнётся.
+Attribute001/Value003/Name=Быстрый
+Attribute001/Value004/Desc=40 сек. в начале, 0 сек. между раундами. У игроков остаётся возможность пропустить начальный таймер – если все игроки пропустят, то раунд начнётся.
+Attribute001/Value004/Name=Непрерывный
+Attribute002/Name=Сложность
+Attribute002/Value001/Desc=Именно так и задумывалась игра, которая в итоге оказалась довольно сложной.
+Attribute002/Value001/Name=У4 – стандарт
+Attribute002/Value002/Desc=У врагов 70% запаса здоровья и 50% брони.
+Attribute002/Value002/Name=У1 – новичок
+Attribute002/Value003/Desc=Эффект модификаторов усилен на 10%. Враги получают +10% к запасу здоровья. Положительный урон от атрибутов игрока (например, +урн по лёгким) увеличивается на 10%.
+Attribute002/Value003/Name=У5 – сложно
+Attribute002/Value004/Desc=У врагов 50% брони.
+Attribute002/Value004/Name=У2
+Attribute002/Value005/Desc=У врагов 75% брони.
+Attribute002/Value005/Name=У3
+Attribute003/Desc=Добавить модификаторы во все раунды после простого босса Архонта. По умолчанию каждый раунд имеет 66% шанс быть с модификатором.
+Attribute003/Name=Модиф. на всех раундах
+Attribute003/Value001/Name=Нет
+Attribute003/Value002/Name=Да
+Behavior/Name/AddedArmorModHd=Добавлена броня
+Behavior/Name/AddedShieldsModHd=Добавлены щиты
+Behavior/Name/BatteredAndBruisedNightmanHd=Сильное ранение
+Behavior/Name/CorrosiveBlastStukovHd=Коррозийный взрыв
+Behavior/Name/FullRefundAvailableSalvageHd=Возможен полный возврат
+Behavior/Name/IncreasedSpeedModHd=Увеличенная скорость
+Behavior/Name/LightningStormSelendisHd=Гроза
+Behavior/Name/SearedArmorDaymanHd=Обожжённая броня
+Behavior/Name/SeekerMissileTimeoutNightmanHd=Ракета «Гончая» – ограничение времени
+Behavior/Name/SeekerMissileTintNightmanHd=Ракета «Гончая» – оттенок
+Behavior/Tooltip/BatteredAndBruisedNightmanHd=Броня уменьшена вдвое.
+Behavior/Tooltip/CorrosiveBlastStukovHd=Броня уменьшена вдвое.
+Behavior/Tooltip/LightningStormSelendisHd=Единица выведена из строя.
+Behavior/Tooltip/SearedArmorDaymanHd=Броня уменьшена вдвое.
+Behavior/Tooltip/SeekerMissileTintNightmanHd=На единицу нацелена ракета «Гончая».
+Button/Name/ApocalypseKerriganHd=Апокалипсис
+Button/Name/BlinkHd=Скачок
+Button/Name/BuildAtomicStormBreweryHd=Построить варню атомных бурь
+Button/Name/BuildBunkerHd=Построить бункер
+Button/Name/BuildFrackerHd=Построить гидроразрывщик
+Button/Name/BuildKorhalPalaceTurretHd=Построить пушку корхальского дворца
+Button/Name/BuildShackledUltraliskHd=Построить закованного ультралиска
+Button/Name/BuildShrineOfTheGodsHd=Построить святилище Богов
+Button/Name/BuildSpineCrawlerZergHd=Мутировать в ползучего плёточника
+Button/Name/BuildWallProtossHd=Вызвать стену
+Button/Name/BuildWallTerranHd=Построить стену
+Button/Name/BuildWallZergHd=Мутировать в стену
+Button/Name/BuildWormyHd=Построить змею
+Button/Name/BurrowLurkerMPHd=Закопаться
+Button/Name/ClearUnitChooserRallyHd=Отменить точку сбора выборщика
+Button/Name/CorrosiveBlastStukovHd=Коррозийный взрыв
+Button/Name/InfestedSiegeTankRootHd=Закопаться
+Button/Name/InfestedSiegeTankUprootHd=Выкопаться
+Button/Name/LightningStormSelendisHd=Гроза
+Button/Name/NuclearStrikePirateCapitalShipHd=Ядерный удар
+Button/Name/PhotonCannonHd=Фотонная пушка
+Button/Name/PlaceSpawnFlagHd=Установить флаг покупок
+Button/Name/RallyChoosersHereHd=Сбор выборщиков здесь
+Button/Name/SalvageFullRefundHd=Демонтировать – полный возврат
+Button/Name/SalvageNoRefundHd=Демонтировать
+Button/Name/SalvageRefund10MineralsHd=Демонтировать – возврат 10 ед. минералов
+Button/Name/SalvageRefund1MineralHd=Демонтировать – возврат 1 ед. минералов
+Button/Name/SalvageRefund4MineralsHd=Демонтировать – возврат 4 ед. минералов
+Button/Name/SalvageRefund8MineralsHd=Демонтировать – возврат 8 ед. минералов
+Button/Name/SeekerMissileNightmanHd=Ракета «Гончая»
+Button/Name/SpineCrawlerRootHd=Закопаться
+Button/Name/SpineCrawlerUprootHd=Выкопаться
+Button/Name/TestFireworkHd=Испытать фейерверка
+Button/Name/ThrowLightGrenadeDaymanHd=Бросок гранаты Света
+Button/Name/TurnBackIntoBuilderProtossHd=Превратить в строителя
+Button/Name/TurnBackIntoBuilderTerranHd=Превратить в строителя
+Button/Name/TurnBackIntoBuilderZergHd=Превратить в строителя
+Button/Name/UpgradeBunkerTurretDamageHd=Улучшить урон турелей бункеров
+Button/Name/UpgradeProtossStructureDamageHd=Улучшить урон строений протоссов
+Button/Name/UpgradeToArtilleryTurretBunkerHd=Переоборудовать в артиллерийскую турель
+Button/Name/UpgradeToAttackDroneHubPhotonCannonHd=Преобразовать в центр боевых дронов
+Button/Name/UpgradeToBigBoyCannonPhotonCannonHd=Преобразовать в орудие «Крепыш»
+Button/Name/UpgradeToBileLauncherSpineCrawlerHd=Мутировать в споровое орудие
+Button/Name/UpgradeToBunkerHd=Переоборудовать в бункер
+Button/Name/UpgradeToHeavyTurretBunkerHd=Переоборудовать в тяжёлую турель
+Button/Name/UpgradeToHolePuncherPhotonCannonHd=Преобразовать в дырокол
+Button/Name/UpgradeToMissileTurretBunkerHd=Переоборудовать в ракетную турель
+Button/Name/UpgradeToPhotonCannonHd=Преобразовать в фотонную пушку
+Button/Name/UpgradeToSpineCrawlerHd=Мутировать в ползучего плёточника
+Button/Name/UpgradeToSunkenColonySpineCrawlerHd=Мутировать в подземную колонию
+Button/Name/UpgradeToWasplingBurrowSpineCrawlerHd=Мутировать в закопанный осинник
+Button/Name/UpgradeUnitDamageProtossHd=Улучшить урон единиц
+Button/Name/UpgradeUnitDamageTerranHd=Улучшить урон единиц
+Button/Name/UpgradeUnitDamageZergHd=Улучшить урон единиц
+Button/Name/UpgradeZergStructureDamageHd=Улучшить урон строений зергов
+Button/Tooltip/AddedArmorModHd=Экспериментальный манипулятор пространством и временем. Позволяет замедлять войска в указанной области.
+Button/Tooltip/ApocalypseKerriganHd=Наносит <c val="00E35B"><d ref="Effect,ApocalypseDamageKerriganHd,Amount"/></c> ед. урона в большом радиусе.<n/><n/>Улучшение повышает урон на <c val="00E35B">3</c> ед.<n/><c val="F1FF71">Время восстановления способности сбрасывается между раундами.</c>
+Button/Tooltip/ArchonHd=Мощный боец-псионик.<n/><n/><c val="ffff8a">Атакует воздушные и наземные цели.</c>
+Button/Tooltip/ArmoredCutieEnemyHd=Местный вид инсектоидов с планеты Нелит.
+Button/Tooltip/ArmoredCycloneEnemyHd=Мобильный штурмовой робот. Может использовать способность «Захват цели», чтобы вести огонь во время движения.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/ArmoredDragoonEnemyHd=Айур<n/>Штурмовой шагающий робот дальнего боя с увеличенным уроном и запасом прочности.<n/><n/><c val="ffff8a">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/ArmoredHellbatEnemyHd=Шагающая единица ближнего боя. Наносит урон всем противникам в секторе перед собой на небольшом расстоянии. Может трансформироваться в быструю моторизированную боевую единицу.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/ArmoredHercEnemyHd=Передовая пехотная единица. Может использовать способность «Кошка». <n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/ArmoredImmortalEnemyHd=Штурмовой шагающий робот. Может создавать барьер, поглощающий урон.<n/><n/><c val="FFFF8A">Атакует только наземные цели.</c>
+Button/Tooltip/ArmoredMarauderEnemyHd=Тяжёлая штурмовая пехота.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/ArmoredPygaliskEnemyHd=Новый вид зерга, выведенный учёными Доминиона.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/ArmoredQueenEnemyHd=Единица поддержки. Может создавать опухоли и использовать способность «Быстрое переливание».<n/><n/><c val="ffff8a">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/ArmoredQuillyEnemyHd=Всеядный жвачный изначальный зерг. Живёт небольшими стадами.
+Button/Tooltip/ArmoredStalkerEnemyHd=Шагающий робот дальнего боя. Может использовать способность «Скачок».<n/><n/><c val="ffff8a">Атакует воздушные и наземные цели.</c>
+Button/Tooltip/ArmoredZealotEnemyHd=Чистильщики<n/>Могучий воин ближнего боя. Может использовать способности «Рывок» и «Восстановление».<n/><n/><c val="ffff8a">Атакует только наземные цели.</c>
+Button/Tooltip/AttackDroneHubHd=Центр производства колоссов.
+Button/Tooltip/BeefySCVTestHd=Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/BigBoyCannonHd=Чрезвычайно мощное оборонительное строение с низкой скоростью атаки. Наносит огромный урон с большого расстояния, но требует много ресурсов.<n/><n/><c val="ffff8a">Атакует наземные и воздушные цели.
+Button/Tooltip/BileLauncherHd=Эти мощные споровые орудия — единственная надежда Роя уничтожить систему орбитальной защиты Корхала.
+Button/Tooltip/BiologicalAberrationEnemyHd=Аберрация – крайне выносливое существо, наносящее высокий урон.<n/><n/><c val="FFFF8A">Атакует только наземные цели.</c>
+Button/Tooltip/BiologicalHydraliskEnemyHd=Единица дальнего боя. Может мутировать в скрытня.<n/><n/><c val="ffff8a">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/BiologicalKerriganEnemyHd=Сара Керриган – элитный призрак. Она обладает большим запасом здоровья, владеет мощными атаками и разрушительными псионными способностями.
+Button/Tooltip/BiologicalRavagerEnemyHd=Дальнобойная артиллерия. Может использовать способность «Едкая желчь».<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/BiologicalRavasaurEnemyHd=Единица дальнего боя. Стреляет крупными каплями кислоты на большое расстояние.<n/><n/><c val="ffff8a">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/BiologicalUltraliskEnemyHd=Тяжёлобронированный зверь, наносящий урон всем противникам, находящимся перед ним.<n/><n/><c val="ffff8a">Атакует только наземные цели.</c>
+Button/Tooltip/BiologicalUrsadonEnemyHd=Подвид урсадонов.
+Button/Tooltip/BlinkHd=Телепортирует единицу на небольшое расстояние. Время восстановления: <d ref="Abil,BlinkHd,Cost[0].Cooldown.TimeUse"/> сек.
+Button/Tooltip/BossAlarakEnemyHd=Владыка талдаримов. Могущественный боец-псионик.
+Button/Tooltip/BossDehakaEnemyHd=Вожак стаи изначальных зергов. Опытный боец, невосприимчивый к воздействию пси-разрушителя.<n/><n/><c val="ffff8a">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/BossEradicatorEnemyHd=Крупный боевой робот, который предназначен для ликвидации зергов, вырывающихся в ходе экспериментов.
+Button/Tooltip/BossGiantRorySwannEnemyHd=Свонн может устанавливать огневые турели, которые он любовно называет «Огненными Бетти».<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c><n/>
+Button/Tooltip/BossHybridDominatorEnemyHd=Мощная псионная единица.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c><n/><c val="FFE303">Детектор</c>
+Button/Tooltip/BossKerriganEnemyHd=Керриган – псионик 12-го класса. Она неуязвима практически для всех видов оружия и наделена сверхъестественными способностями.
+Button/Tooltip/BossStoneZealotEnemyHd=Уничтожьте древнего стража, чтобы получить артефакт.
+Button/Tooltip/BossYagdraEnemyHd=Злобный и опасный глава стаи, изрыгающий кислоту, роющий подземные ходы и откладывающий яйца.
+Button/Tooltip/BuildAtomicStormBreweryHd=Создаёт сильную бурю, наносящую периодический урон нескольким врагам.
+Button/Tooltip/BuildBunkerHd=Оборонительное сооружение с турелью, которая автоматически атакует врагов. Пехоту можно загрузить внутрь.
+Button/Tooltip/BuildFrackerHd=Гидроразрывщик выбрасывает токсичные испарения на большой территории, нанося периодический урон многим целям.
+Button/Tooltip/BuildKorhalPalaceTurretHd=Эта турель наносит большой урон по одиночным целям.
+Button/Tooltip/BuildShackledUltraliskHd=Это единственный волшебник-ультралиск, которого вы когда-либо видели. Он призывает большие валуны, разбивая множество целей под ним в надежде, что однажды он сможет освободиться.
+Button/Tooltip/BuildShrineOfTheGodsHd=Святилище Богов поражает врагов с небес, нанося высокий урон по одиночным целям.
+Button/Tooltip/BuildSpineCrawlerZergHd=Оборонительное сооружение, которое автоматически атакует врагов.
+Button/Tooltip/BuildWallProtossHd=Дешёвая, но прочная стена 2х2.
+Button/Tooltip/BuildWallTerranHd=Дешёвая, но прочная стена 2х2.
+Button/Tooltip/BuildWallZergHd=Дешёвая, но прочная стена 2х2.
+Button/Tooltip/BuildWormyHd=Плевок змейки – это вам не шутки, он наносит большой урон одиночным целям.
+Button/Tooltip/BurrowLurkerMPHd=Приказать скрытню закопаться в землю. Cкрытни не могут передвигаться в закопанном состоянии, но могут атаковать, и их можно обнаружить только с помощью детекторов.
+Button/Tooltip/ChooserHd=Мирный житель.
+Button/Tooltip/ClearUnitChooserRallyHd=Отменить точку сбора для выборщиков.
+Button/Tooltip/ColossusHd=Мощный шагающий боевой робот. Может свободно преодолевать уступы. Воспламеняет участки земли, нанося урон сразу нескольким противникам.<n/><n/><c val="ffff8a">Атакует только наземные цели.</c>
+Button/Tooltip/CorrosiveBlastStukovHd=Наносит <c val="00E35B"><d ref="Effect,CorrosiveBlastDamageStukovHd,Amount"/></c> ед. урона цели. Также снижает броню противника наполовину на 10 секунд.<n/><n/>Улучшение повышает урон на <c val="00E35B">6</c> ед.<n/><c val="F1FF71">Время восстановления способности сбрасывается между раундами.</c>
+Button/Tooltip/DaymanHd=Иерарх дэлаамов. Могущественный воин, использующий оружие ближнего боя и пси-способности.
+Button/Tooltip/DroneHd=Базовая рабочая единица. Добывает минералы и веспен. Может мутировать в строения.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/FirebatHd=Специализируется на уничтожении пехоты противника.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/FrackerHd=Башни, обеспечивающие охлаждение термоядерных реакторов, находятся в центральной части платформ. После уничтожения башни платформа взорвётся.
+Button/Tooltip/GhostHd=Снайпер. Может использовать «Снайперский выстрел», ЭМИ-патроны и маскировку (после соответствующего улучшения). Указывает цели для ядерных ракет, производимых в академии призраков.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/GuardianHd=Воздушная единица дальнего боя, эффективная против наземных целей. <n/><n/><c val="ffff8a">Атакует только наземные цели.</c>
+Button/Tooltip/HeroBuilderTerranHd=Автоматический рабочий-прототип. Добывает минералы быстрее, чем КСМ. Из-за конструктивных недоработок время работы МУЛа ограничено и составляет <d time="90"/>
+Button/Tooltip/HeroBuilderZergHd=Мимикрид не может атаковать. При первом приближении к противнику он меняет свой цвет на цвет врага и превращается в зилота, морпеха или зерглинга в зависимости от расы противника. Время жизни: <d time="150"/>.
+Button/Tooltip/HolePuncherHd=Позволяют вызывать воздушные войска протоссов.
+Button/Tooltip/HydraliskHd=Единица дальнего боя. Может мутировать в скрытня.<n/><n/><c val="ffff8a">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/ImmortalHd=Штурмовой шагающий робот. Может создавать барьер, поглощающий урон.<n/><n/><c val="FFFF8A">Атакует только наземные цели.</c>
+Button/Tooltip/IncreasedSpeedModHd=Станция перезарядки. Восстанавливает энергию находящихся рядом дружественных войск.
+Button/Tooltip/InfestedSiegeTankHd=Заражённый тяжёлый танк. Может передвигаться, когда выходит из осадного режима.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/InfestedSiegeTankRootHd=Заражённый осадный танк окапывается. Окопавшийся танк может атаковать наземные цели, но не может передвигаться.
+Button/Tooltip/InfestedSiegeTankUprootHd=Заражённый осадный танк выкапывается. В выкопанном состоянии танк может только передвигаться, но не атаковать. Быстрее передвигается по слизи.
+Button/Tooltip/InfestedSiegeTankUprootedHd=Заражённый тяжёлый танк. Может передвигаться, когда выходит из осадного режима, но не атаковать. Чтобы атаковать, должен окопаться на слизи.
+Button/Tooltip/InfestedTerranHd=Наносит умеренный урон. Время жизни: <d ref="Behavior,InfestedTerranTimedLife,Duration"/> сек.<n/><n/><c val="FFFF8A">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/KerriganHd=Королева Клинков, предводительница Роя. Атакует противников псионной энергией на расстоянии.
+Button/Tooltip/KillEverythingMarineTestHd=Пехота общего назначения.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/KorhalPalaceTurretHd=Чрезвычайно мощные турели, которые нельзя атаковать. Единственный путь к победе — разрушить дворцовые ворота.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/LiberatorAGHd=Неподвижный оборонительный корабль. Наносит огромный урон единичным наземным целям. Может переходить в режим истребителя и атаковать воздушные цели.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/LiberatorHd=Артиллерийский корабль. Оснащен ракетами «воздух-воздух», наносящими урон по области. Может переходить в защитный режим и атаковать наземные цели.<n/><n/><c val="#ColorAttackInfo">Атакует только воздушные цели.</c>
+Button/Tooltip/LightDroneEnemyHd=Базовая рабочая единица. Добывает минералы и веспен. Может мутировать в строения.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/LightGhostEnemyHd=Снайпер. Может использовать «Снайперский выстрел», ЭМИ-патроны и маскировку (после соответствующего улучшения). Указывает цели для ядерных ракет, производимых в академии призраков.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/LightHighTemplarEnemyHd=Могущественный воин-псионик. Может использовать способности «Противодействие» и «Псионный шторм». Может слиться с другим тамплиером в архонта.<n/><n/><c val="ffff8a">Атакует только наземные цели.</c>
+Button/Tooltip/LightInfestedTerranEnemyHd=Наносит умеренный урон. Время жизни: <d ref="Behavior,InfestedTerranTimedLife,Duration"/> сек.<n/><n/><c val="FFFF8A">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/LightLocustEnemyHd=Порождение роевика. Время жизни саранчида: <d ref="Behavior,LocustTimedLife,Duration"/> сек.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/LightPrisonerEnemyHd=Пленный терран. Приговорён к пожизненному заключению на «Моросе».
+Button/Tooltip/LightProbeEnemyHd=Базовая рабочая единица протоссов. Добывает ресурсы и вызывает строения.<n/><n/><c val="ffff8a">Атакует только наземные цели.</c>
+Button/Tooltip/LightReaperEnemyHd=Налетчик. Может запрыгивать на уступы и спрыгивать с них. Быстро восстанавливает здоровье, когда находится вне боя. Использует взрывчатку.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/LightSCVEnemyHd=Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/LightWarPigEnemyHd=Пехота общего назначения.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/LightningStormSelendisHd=Наносит <c val="00E35B"><d ref="Effect,LightningStormDamageSelendisHd,Amount"/></c> ед. урона в большом радиусе.<n/><n/>Улучшение повышает урон на <c val="00E35B">3</c> ед.<n/><c val="F1FF71">Время восстановления способности сбрасывается между раундами.</c>
+Button/Tooltip/LurkerHd=Предназначен для неожиданных атак. Вооружён шипами, поражающими противников на линии огня.<n/><n/><c val="ffff8a">Атакует только наземные цели.<n/>Может атаковать только в закопанном состоянии.</c>
+Button/Tooltip/MarauderHd=Тяжёлая штурмовая пехота.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/MarineHd=Пехота общего назначения.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/MechanicalGoliathEnemyHd=Тяжёлая единица огневой поддержки.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/MechanicalMilitarizedTransportEnemyHd=Бронированный транспорт.
+Button/Tooltip/MechanicalShikotoCoupeEnemyHd=Городской автомобиль «Шикото». В надежности нет ничего скучного.
+Button/Tooltip/MechanicalSiegeTankTankModeEnemyHd=Тяжёлый танк. В режиме осады становится дальнобойной артиллерийской установкой.<n/><n/><c val="FFFF8A">Атакует наземные цели.</c>
+Button/Tooltip/MechanicalVikingAssaultModeEnemyHd=Единица огневой поддержки. Может переходить в режим истребителя для ведения боя с воздушными войсками.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/MechanicalWarHoundEnemyHd=Предназначен для уничтожения вражеской техники. Ракеты «Нокаут» наносят дополнительный урон механическим боевым единицам. <n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/MissileTurretHd=Средство противовоздушной обороны.<n/><n/><c val="#ColorAttackInfo">Атакует только воздушные цели.</c><n/><c val="FFE303">Детектор</c>
+Button/Tooltip/MutaliskHd=Воздушная боевая единица, чьи выстрелы поражают нескольких противников.<n/><n/><c val="ffff8a">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/NightmanHd=Выстрел из винтовки «Коммандос» наносит урон нескольким целям, расположенным на прямой.<n/><n/><c val="#ColorAttackInfo">Поражает наземные и воздушные цели.</c><n/>
+Button/Tooltip/NuclearStrikePirateCapitalShipHd=Наносит <c val="00E35B"><d ref="Effect,NuclearStrikeDamagePirateCapitalShipHd,Amount"/></c> ед. урона в большом радиусе.<n/><n/>Улучшение повышает урон на <c val="00E35B">3</c> ед.<n/><c val="F1FF71">Время восстановления способности сбрасывается между раундами.</c>
+Button/Tooltip/PathTesterRadius02Hd=Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/PathTesterRadius05Hd=Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/PerfectSpecimenModHd=Улучшенная эссенция
+Button/Tooltip/PhotonCannonHd=
+Button/Tooltip/PirateCapitalShipHd=Мощный боевой корабль, способный маскироваться в пространстве и создавать электрическое поле, которое обездвиживает корабль противника.<n/><n/><c val="ffff8a">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/PlaceSpawnFlagHd=Купленные вами боевые единицы будут появляться здесь.
+Button/Tooltip/ProbeHd=Базовая рабочая единица протоссов. Добывает ресурсы и вызывает строения.<n/><n/><c val="ffff8a">Атакует только наземные цели.</c>
+Button/Tooltip/PurchaseFlagHd=Флаг Корхала, родной планеты императора Менгска.
+Button/Tooltip/PurchaseFlagPlacementTestHd=Служит для хранения припасов.<n/>Количество пилонов определяет максимальный размер армии протоссов.<n/>Снабжает энергией соседние строения.
+Button/Tooltip/RallyChoosersHereHd=Посылает новых выборщиков на этот маяк.
+Button/Tooltip/ReaverHd=Айур<n/>Осадная боевая единица, наносящая урон по области. Создаёт и выпускает скарабеев, наносящих большой урон за короткий промежуток времени.<n/><n/><c val="ffff8a">Скарабеи атакуют только наземные цели.</c>
+Button/Tooltip/ResearchCenterProtossHd=Позволяет улучшать броню и оружие наземных войск, а также щиты всех боевых единиц и строений протоссов.<n/><n/><c val="ffff8a">Открывает возможности:</c><n/>– вызов фотонных пушек зондами
+Button/Tooltip/ResearchCenterTerranHd=Позволяет улучшать терранскую пехоту.<n/><n/><c val="ffff8a">Открывает возможности:</c><n/>– постройка ракетных турелей с помощью КСМ<n/>– постройка радарных вышек с помощью КСМ<n/>– переоборудование командного центра в планетарную крепость
+Button/Tooltip/ResearchCenterZergHd=Позволяет улучшать наземные войска зергов.<n/><n/><c val="ffff8a">Открывает возможности:</c><n/>– мутация личинок в аберрации в логове или улье
+Button/Tooltip/RoachHd=Штурмовая боевая единица. В закопанном состоянии быстро восстанавливает здоровье. Может мутировать в разорителя.<n/><n/><c val="ffff8a">Атакует только наземные цели.</c>
+Button/Tooltip/SCVHd=Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/SalvageFullRefundHd=Демонтировать строение, получив обратно 75% затраченных на его постройку ресурсов.
+Button/Tooltip/SalvageNoRefundHd=Разрушить строение без возврата затраченных на его постройку ресурсов.
+Button/Tooltip/SalvageRefund10MineralsHd=Демонтировать строение, получив обратно 10 ед. затраченных на его постройку минералов.
+Button/Tooltip/SalvageRefund1MineralHd=Демонтировать строение, получив обратно 1 ед. затраченных на его постройку минералов.
+Button/Tooltip/SalvageRefund4MineralsHd=Демонтировать строение, получив обратно 4 ед. затраченных на его постройку минералов.
+Button/Tooltip/SalvageRefund8MineralsHd=Демонтировать строение, получив обратно 8 ед. затраченных на его постройку минералов.
+Button/Tooltip/SeekerMissileNightmanHd=Наносит <c val="00E35B"><d ref="Effect,SeekerMissileDamageNightmanHd,Amount"/></c> ед. урона цели. Также снижает броню противника наполовину на 10 секунд.<n/><n/>Улучшение повышает урон на <c val="00E35B">6</c> ед.<n/><c val="F1FF71">Время восстановления способности сбрасывается между раундами.</c>
+Button/Tooltip/SelendisHd=Тяжёлый осадный корабль. Строит и запускает перехватчики, которые являются его ударной силой.<n/><n/><c val="ffff8a">Перехватчики атакуют наземные и воздушные цели.</c>
+Button/Tooltip/ShackledUltraliskHd=Лабораторный образец U-23A.
+Button/Tooltip/ShrineOfTheGodsHd=Усилитель, который позволяет удалённым колониям коммуницировать с Шакурасом при помощи кхалы.
+Button/Tooltip/SiegeTankHd=Тяжёлый танк. В режиме осады становится дальнобойной артиллерийской установкой.<n/><n/><c val="FFFF8A">Атакует наземные цели.</c>
+Button/Tooltip/SiegeTankSiegedHd=Тяжёлый танк. Может передвигаться и атаковать в режиме танка.<n/><n/><c val="#ColorAttackInfo">Атакует только наземные цели.</c>
+Button/Tooltip/SimpleArmoredZealotHd=Сильный воин ближнего боя. Может использовать способность «Рывок».<n/><n/><c val="ffff8a">Атакует только наземные цели.</c>
+Button/Tooltip/SimpleBeefyRoachEnemyHd=Штурмовая боевая единица. В закопанном состоянии быстро восстанавливает здоровье. Может мутировать в разорителя.<n/><n/><c val="ffff8a">Атакует только наземные цели.</c>
+Button/Tooltip/SimpleBossArchonEnemyHd=Мощный боец-псионик.<n/><n/><c val="ffff8a">Атакует воздушные и наземные цели.</c>
+Button/Tooltip/SimpleQuickMarineEnemyHd=Пехота общего назначения.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/SlowTicklerMarineTestHd=Пехота общего назначения.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/SpineCrawlerHd=Средство наземной обороны.<n/><n/><c val="ffff8a">Атакует только наземные цели.</c>
+Button/Tooltip/SpineCrawlerRootHd=Ползучий плёточник окапывается. Окопавшийся ползучий плёточник может атаковать наземные цели, но не может передвигаться.
+Button/Tooltip/SpineCrawlerUprootHd=Ползучий плеточник выкапывается. В выкопанном состоянии ползучий плёточник может передвигаться, но не может атаковать. Быстрее передвигается по слизи.
+Button/Tooltip/StalkerHd=Шагающий робот дальнего боя. Может использовать способность «Скачок».<n/><n/><c val="ffff8a">Атакует воздушные и наземные цели.</c>
+Button/Tooltip/StukovHd=Стуков, некогда являвшийся вице-адмиралом ОЗД, был заражён и теперь командует другими заражёнными терранами.<n/><n/><c val="ffff8a">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/TempestHd=Чистильщики<n/>Осадный боевой корабль. Большая дальность атаки. Может использовать способность «Дезинтеграция».<n/><n/><c val="ffff8a">Атакует воздушные и наземные цели.</c>
+Button/Tooltip/TestFireworkHd=Запускает фейерверк в выбранном месте.
+Button/Tooltip/TestWeaklingEnemyHd=Быстрая единица ближнего боя. Может мутировать в гиблинга.<n/><n/><c val="FFFF8A">Атакует только наземные цели.</c>
+Button/Tooltip/ThorHd=Тяжёлый осадный робот.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/ThrowLightGrenadeDaymanHd=Наносит <c val="00E35B"><d ref="Effect,LightGrenadeDamageDaymanHd,Amount"/></c> ед. урона цели. Также снижает броню противника наполовину на 10 секунд.<n/><n/>Улучшение повышает урон на <c val="00E35B">6</c> ед.<n/><c val="F1FF71">Время восстановления способности сбрасывается между раундами.</c>
+Button/Tooltip/TicklerMarineTestHd=Пехота общего назначения.<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/TurnBackIntoBuilderProtossHd=Превращает это строение-героя обратно в героя-строителя, чтобы вы могли разместить его в другом месте.
+Button/Tooltip/TurnBackIntoBuilderTerranHd=Превращает это строение-героя обратно в героя-строителя, чтобы вы могли разместить его в другом месте.
+Button/Tooltip/TurnBackIntoBuilderZergHd=Превращает это строение-героя обратно в героя-строителя, чтобы вы могли разместить его в другом месте.
+Button/Tooltip/UnitHasShieldsModHd=Древняя протосская реликвия. Подберите её с помощью наземной боевой единицы, чтобы получить 1 очко исследований протоссов.
+Button/Tooltip/UpgradeBunkerTurretDamageHd=Увеличение урона, наносимого всеми турелями бункеров.<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Щёлкните правой кнопкой, чтобы переключить автоулучшение по мере появления минералов.</c>
+Button/Tooltip/UpgradeProtossStructureDamageHd=Увеличение урона, наносимого всеми строениями протоссов.<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Щёлкните правой кнопкой, чтобы переключить автоулучшение по мере появления минералов.</c>
+Button/Tooltip/UpgradeToArtilleryTurretBunkerHd=Артиллерийская турель атакует область и специализируется против бронированных или механических целей.<n/>Базовый урон: <c val="00E35B">20</c><n/>Улучшается на: <c val="00E35B">2</c><n/>Дальность: <c val="00E35B">10</c><n/>Скорость атаки: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToAttackDroneHubPhotonCannonHd=Здесь размещены боевые дроны, которые наносят больше урона и хороши против лёгких врагов. Дроны не справляется против механических врагов.<n/>Базовый урон: <c val="00E35B">20</c><n/>Улучшается на: <c val="00E35B">2,5</c><n/>Дальность: <c val="00E35B">7</c><n/>Скорость атаки: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToBigBoyCannonPhotonCannonHd=Большое орудие, наносящее урон многим врагам за одно попадание. Хорошо противостоит бронированным и механическим целям.<n/>Базовый урон: <c val="00E35B">20</c><n/>Улучшается на: <c val="00E35B">2</c><n/>Дальность: <c val="00E35B">10</c><n/>Скорость атаки: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToBileLauncherSpineCrawlerHd=Страдая от хронического похмелья, эта башня блюёт на прохожих. Бронированные и механические враги, похоже, вызывают наибольшее раздражение.<n/>Базовый урон: <c val="00E35B">20</c><n/>Улучшается на: <c val="00E35B">2</c><n/>Дальность: <c val="00E35B">10</c><n/>Скорость атаки: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToBunkerHd=Переоборудование стены в бункер.
+Button/Tooltip/UpgradeToHeavyTurretBunkerHd=Тяжёлая турель атакует медленнее, но наносит больше урона. Она хорошо справляется с лёгкими врагами, но не справляется с органическими.<n/>Базовый урон: <c val="00E35B">20</c><n/>Улучшается на: <c val="00E35B">2,5</c><n/>Дальность: <c val="00E35B">7</c><n/>Скорость атаки: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToHolePuncherPhotonCannonHd=Большая пушка, пробивающая дыру в противнике. Отлично подходит для борьбы с органическими существами и боссами.<n/>Базовый урон: <c val="00E35B">30</c><n/>Улучшается на: <c val="00E35B">4</c><n/>Дальность: <c val="00E35B">10</c><n/>Скорость атаки: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToMissileTurretBunkerHd=Ракетная турель наносит мощные удары по отдельным целям, специализируясь против органических единиц и боссов.<n/>Базовый урон: <c val="00E35B">30</c><n/>Улучшается на: <c val="00E35B">4</c><n/>Дальность: <c val="00E35B">10</c><n/>Скорость атаки: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToPhotonCannonHd=Преобразование стены в фотонную пушку.
+Button/Tooltip/UpgradeToSpineCrawlerHd=Мутация стены в ползучего плёточника.
+Button/Tooltip/UpgradeToSunkenColonySpineCrawlerHd=«Олдскульная» башня. Наносит большой урон органическим врагам и боссам.<n/>Базовый урон: <c val="00E35B">30</c><n/>Улучшается на: <c val="00E35B">4</c><n/>Дальность: <c val="00E35B">10</c><n/>Скорость атаки: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeToWasplingBurrowSpineCrawlerHd=Здесь размещены осы, которые наносят больше урона и хороши против лёгких врагов. Против механических врагов они не справляются.<n/>Базовый урон: <c val="00E35B">20</c><n/>Улучшается на: <c val="00E35B">2,5</c><n/>Дальность: <c val="00E35B">7</c><n/>Скорость атаки: <c val="00E35B">2</c>
+Button/Tooltip/UpgradeUnitDamageProtossHd=Усиление атак всех боевых единиц.<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Щёлкните правой кнопкой, чтобы переключить автоулучшение по мере появления минералов.</c>
+Button/Tooltip/UpgradeUnitDamageTerranHd=Усиление атак всех боевых единиц.<n/><c val="00B6E3">2</c><img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Щёлкните правой кнопкой, чтобы переключить автоулучшение по мере появления минералов.</c>
+Button/Tooltip/UpgradeUnitDamageZergHd=Усиление атак всех боевых единиц.<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Щёлкните правой кнопкой, чтобы переключить автоулучшение по мере появления минералов.</c>
+Button/Tooltip/UpgradeZergStructureDamageHd=Увеличение урона, наносимого всеми строениями зергов.<n/><c val="00B6E3">2</c> <img path="hashtag-defense\Assets\Textures\icon-mineral-nobg-14x14.dds"/><n/><c val="F1FF71">Щёлкните правой кнопкой, чтобы переключить автоулучшение по мере появления минералов.</c>
+Button/Tooltip/WallProtossHd=Восстанавливает щиты находящимся рядом дружественным войскам и строениям.
+Button/Tooltip/WallTerranHd=Заброшенное строение.
+Button/Tooltip/WallZergHd=<c val="ffff8a">Открывает возможности:</c><n/>– мутация личинок в заразителей<n/>– мутация личинок в роевиков
+Button/Tooltip/WarpInAdeptHd=Чистильщики<n/>Воин дальнего боя. Может использовать способность «Псионный перенос».<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/WarpInLightAdeptEnemyHd=Чистильщики<n/>Воин дальнего боя. Может использовать способность «Псионный перенос».<n/><n/><c val="#ColorAttackInfo">Атакует наземные и воздушные цели.</c>
+Button/Tooltip/WasplingBurrowHd=Дружественные наземные войска могут использовать сеть нидуса для мгновенного перемещения к другой сети или одному из червей нидуса, принадлежащих одному игроку.<n/><n/><c val="ffff8a">Открывает возможности:</c><n/>– создание червя нидуса
+Button/Tooltip/WeaklingEnemyHd=Быстрая единица ближнего боя. Может мутировать в гиблинга.<n/><n/><c val="FFFF8A">Атакует только наземные цели.</c>
+Button/Tooltip/WormyHd=Разрушитель нидуса – боевая единица дальнего боя, которая может атаковать наземные и воздушные строения.<n/><n/><c val="#ColorAttackInfo">Атакует только строения.</c>
+CantPlaceSpawnFlag=Флаг появления невозможно разместить здесь.
+DocInfo/DescLong=Отполированный вариант классической игры в жанре башенной защиты.<n/><n/>– поддерживаются все три расы<n/>– 5 типов боевых единиц с счётчиками, например, лёгкие/бронированные<n/>– 25 раундов со случайными врагами<n/>– игры должны длиться 15-30 минут<n/>– случайные модификаторы каждый раунд, например, враги с дополнительной бронёй
+DocInfo/DescShort=1-8
+DocInfo/HowToPlayAdvanced00=Доход получается в команде.
+DocInfo/HowToPlayAdvanced01=Враги случайны и будут одного из 5 типов – покупайте боевые единицы, которые противостоят этим типам.
+DocInfo/HowToPlayAdvanced02=Играйте в команде, чтобы поймать ускользающих врагов друг друга.
+DocInfo/HowToPlayAdvanced03=Введите «-autoskip» для автоматической подготовки к каждому раунду.
+DocInfo/HowToPlayAdvanced04=Вы можете поставить точку сбора для новых выборщиков на маяки, выбрав маяк и нажав кнопку «Сбор».
+DocInfo/HowToPlayBasic00=Выберите место для защиты.
+DocInfo/HowToPlayBasic01=Постройте оборону, через которую врагам придётся долго пробираться.
+DocInfo/HowToPlayBasic02=Покупайте боевые единицы и улучшения, чтобы бить врагов.
+DocInfo/HowToPlayWinning00=Пройдите все 25 раундов, потеряв при этом не более 25 дополнительных жизней.
+DocInfo/Name=#Defense
+DocInfo/PatchNote001=Fix game variant options
+DocInfo/PatchNote002=Fix player one hardcoded race and hopefully fix team settings
+DocInfo/PatchNote003=fix player 8 team and use custom teams instead of 2 teams in hopes to simplify the settings
+DocInfo/PatchNote004=- add attack upgrade amounts to weapons
+DocInfo/PatchNote005=- fix some misc data such as removing the marauder attributes
+DocInfo/PatchNote006=- ensure all enemy life and shield armor icons are combined into one
+DocInfo/PatchNote007=- remove all weapon icons since that's unnecessary info
+DocInfo/PatchNote008=- fix a few bugs in enemy data e.g. wrong attributes
+DocInfo/PatchNote009=- fix shield color on most zerg units
+DocInfo/PatchNote010=- ensure shield attachment exists on all enemy models
+DocInfo/PatchNote011=- fix bug where bottom left and top left lanes don't spawn units that
+DocInfo/PatchNote012=  die at the ends of their lanes
+DocInfo/PatchNote013=- add button verbage and mineral amounts for upgrades
+DocInfo/PatchNote014=- add auto-upgrade verbage for upgrades to replace autocast verbage
+DocInfo/PatchNote015=- use the new yellow instead of blue to indicate multi-hit units
+DocInfo/PatchNote016=- prevent scv from loading into bunker
+DocInfo/PatchNote017=hide spawn behavior
+DocInfo/PatchNote018=make public for testing
+DocInfo/PatchNote019=- prevent players from blocking the enemy
+DocInfo/PatchNote020=- make enemies smaller in radius to prevent enemies from running into each other
+DocInfo/PatchNote021=- remove gas and supply from the ui
+DocInfo/PatchNote022=- fix enemy high templar damage
+DocInfo/PatchNote023=- increase archon and muta chain range
+DocInfo/PatchNote024=- give all ground units blink
+DocInfo/PatchNote025=- add bunker range indicator
+DocInfo/PatchNote026=- fix photon cannon actor wiring
+DocInfo/PatchNote027=- fix colossus head movement
+DocInfo/PatchNote028=- start full refund at start
+DocInfo/PatchNote029=- move race preset to utils
+DocInfo/PatchNote030=- implement local testing for second player
+DocInfo/PatchNote031=- prevent units from attacking own player and allies
+DocInfo/PatchNote032=- ensure bunker attack tells units inside to attack the same unit
+DocInfo/PatchNote033=- assign hotkey 1 to worker and 2 to research center
+DocInfo/PatchNote034=- fix lurker attack
+DocInfo/PatchNote035=- fix p1 hardcoded race
+DocInfo/PatchNote036=- disable resource sharing
+DocInfo/PatchNote037=- fix stalker damage
+DocInfo/PatchNote038=- give stalker the same blink as all other units.  This is more for balance
+DocInfo/PatchNote039=  purposes since I increased its damage to match the marauder & roach
+DocInfo/PatchNote040=- fix some enemies attacking wall right when they spawn
+DocInfo/PatchNote041=- prevent wall cheese
+DocInfo/PatchNote042=  : i.e. when people would force units to travel around the map to get to
+DocInfo/PatchNote043=    their destination
+DocInfo/PatchNote044=- move camera to unit area for first time players
+DocInfo/PatchNote045=- handle player drop
+DocInfo/PatchNote046=- add verbage for beginner difficulty
+DocInfo/PatchNote047=- fix liberator buff
+DocInfo/PatchNote048=- fix ghost spawn bug
+DocInfo/PatchNote049=  : ghosts were spawning even when auto skip should skip the ghost phase
+DocInfo/PatchNote050=- implement beginner difficulty
+DocInfo/PatchNote051=- update life logic
+DocInfo/PatchNote052=  : lives are now lost dependent on a number of enemies which reach their
+DocInfo/PatchNote053=    destination - dependent on the number of players.
+DocInfo/PatchNote054=    e.g.
+DocInfo/PatchNote055=    1 | 2 players = 1 enemy per life
+DocInfo/PatchNote056=    3 | 4 players = 2 enemies per life etc.
+DocInfo/PatchNote057=- implement kick voting
+DocInfo/PatchNote058=- remove stop buttons from bunker since they didn't do anything
+DocInfo/PatchNote059=- add "change race" test command
+DocInfo/PatchNote060=- refactor game attributes to use variables so I can more easily search where
+DocInfo/PatchNote061=  they are used in the code
+DocInfo/PatchNote062=- create a hallucination death upon killing an enemy ghost
+DocInfo/PatchNote063=- update the verbage for new users when showing them the choosers
+DocInfo/PatchNote064=- implement enemy ghosts
+DocInfo/PatchNote065=  : enemy ghosts now spawn before rounds to show players what path they'll take
+DocInfo/PatchNote066=    around their defense
+DocInfo/PatchNote067=- hide weapons for the weakling and initial simple enemies.  These were missed
+DocInfo/PatchNote068=  in a previous commit
+DocInfo/PatchNote069=- skip timer for dropped player if the timer is active
+DocInfo/PatchNote070=- add code to locally test player dropping
+DocInfo/PatchNote071=- add chooser ping for new players
+DocInfo/PatchNote072=  : when a player
+DocInfo/PatchNote073=    - hasn't played before
+DocInfo/PatchNote074=    - and they have more than 6 choosers available
+DocInfo/PatchNote075=    - and they've spent fewer than 20 choosers
+DocInfo/PatchNote076=    then ping the chooser area for the player
+DocInfo/PatchNote077=- remove all a dropped player's minerals
+DocInfo/PatchNote078=- create the spawn flag right as the defending location is chosen to fix bug
+DocInfo/PatchNote079=  where a chosen unit is moved to the initial spawn ponit
+DocInfo/PatchNote080=- don't create a worker after the 15 second wait period if that user left
+DocInfo/PatchNote081=- kill ally player units on the island for a player who leaves
+DocInfo/PatchNote082=- stop spawning enemies for player who left
+DocInfo/PatchNote083=- adjust the kills needed per chooser after player leaves
+DocInfo/PatchNote084=- remove hardcoded race for p1
+DocInfo/PatchNote085=- update default difficulty to standard
+DocInfo/PatchNote086=- implement upgrade'able turrets
+DocInfo/PatchNote087=- implement upgrade from wall to turret
+DocInfo/PatchNote088=- refactor attribute buffs to no longer require standard vs hard.
+DocInfo/PatchNote089=  Instead we now update the value of the buff via the catalog in
+DocInfo/PatchNote090=  triggers when in hard mode.
+DocInfo/PatchNote091=- refactor how the refunding worked to account for upgraded bunkers
+DocInfo/PatchNote092=- normalize weapon and upgrade icons for structures
+DocInfo/PatchNote093=- fix archon not giving boss income
+DocInfo/PatchNote094=- add '-commands' command
+DocInfo/PatchNote095=- fix error when keeping spawn clear
+DocInfo/PatchNote096=- add good loading screen
+DocInfo/PatchNote097=- enable cool pings
+DocInfo/PatchNote098=- add 2 more difficulties prior to standard
+DocInfo/PatchNote099=- add effect for units reaching end of lane
+DocInfo/PatchNote100=- make game attributes visible to all
+DocInfo/PatchNote101=- fix lib attacks
+DocInfo/PatchNote102=- update button tooltips
+DocInfo/PatchNote103=- fix yagdra ghost model
+DocInfo/PatchNote104=- implement '-toggle ghosts' command
+DocInfo/PatchNote105=- fix multiple spawn flag bug
+DocInfo/PatchNote106=- shrike turret weapon text shows upgrade by 1 instead of 2
+DocInfo/PatchNote107=- fix zerg research center typo "all protoss structures"
+DocInfo/PatchNote108=- fix hole puncher upgrade
+DocInfo/PatchNote109=- fix attack drone hub spawning 2 drones
+DocInfo/PatchNote110=- make the plus 6/12 mods selectable
+DocInfo/PatchNote111=  : add them as individual models to avoid the hackiness of placing and
+DocInfo/PatchNote112=    positioning the individual actors
+DocInfo/PatchNote113=  : add unit info text to explain what these mods do
+DocInfo/PatchNote114=- mod indicators on units
+DocInfo/PatchNote115=- add end-game sequences e.g. victory fireworks, defeat nukes and
+DocInfo/PatchNote116=  "thank you" modal
+DocInfo/PatchNote117=- make the spawn flag self explanatory
+DocInfo/PatchNote118=  : rename spawn flag to "purchase flag"
+DocInfo/PatchNote119=  : make the flag selectable
+DocInfo/PatchNote120=  : add unit icon and info to the flag
+DocInfo/PatchNote121=  : make the flag have team colors
+DocInfo/PatchNote122=- modify the map lighting so the flag doesn't look dull
+DocInfo/PatchNote123=- add note about ghosts for new players
+DocInfo/PatchNote124=- add author in loading screen
+DocInfo/PatchNote125=- normalize weapon icons for units/unit upgrades
+DocInfo/PatchNote126=- remove health & shield armor icons for units
+DocInfo/PatchNote127=- fix blink issue where lurkers and siege tanks wouldn't count down while
+DocInfo/PatchNote128=  burrowed or sieged.  So this adds blink to the burrowed and sieged versions of
+DocInfo/PatchNote129=  the units and adds a requirement to make sure blink can't be used in
+DocInfo/PatchNote130=  those states
+DocInfo/PatchNote131=- remove bar above reaver which indicated the scarab building time
+DocInfo/PatchNote132=main updates
+DocInfo/PatchNote133=- implement hero units and buildings
+DocInfo/PatchNote134=- buff enemy hp to account for additional damage from heroes
+DocInfo/PatchNote135=
+DocInfo/PatchNote136=misc updates
+DocInfo/PatchNote137=- update the blink button to have more sensible text
+DocInfo/PatchNote138=- set default difficulty to L2
+DocInfo/PatchNote139=- fix selection layer for purchase flag
+DocInfo/PatchNote140=  : this makes it so if you box select and it includes both units and
+DocInfo/PatchNote141=    the flag, units will be selected without the flag.
+DocInfo/PatchNote142=- hide burrowed and siegedd buff indicators
+DocInfo/PatchNote143=- ensure armor reduction is set to 1 in all damage effects
+DocInfo/PatchNote144=  : I think certain weapons were unaffected by armor
+DocInfo/PatchNote145=- remove unit attributes from all non-enemy units
+DocInfo/PatchNote146=  : these are things like 'biological' etc.  There's no need for them
+DocInfo/PatchNote147=    on player units
+DocInfo/PatchNote148=- move tower ability cards to the bottom left where players expect
+DocInfo/PatchNote149=  : apparently some players couldn't find where to upgrade their towers
+DocInfo/PatchNote150=- normalize player unit radii
+DocInfo/PatchNote151=  : this fixed an issue where certain units like the archon weren't
+DocInfo/PatchNote152=    able to fit through single tile gaps
+DocInfo/PatchNote153=- remove the cheese path check
+DocInfo/PatchNote154=  : the cheese check tried to make sure players wouldn't block an
+DocInfo/PatchNote155=    entire lane, causing enemy units to go the long way around the
+DocInfo/PatchNote156=	map to reach the other side.  This check produced false positives
+DocInfo/PatchNote157=	so I removed it.
+DocInfo/PatchNote158=- reduce the amount of time waited before the game officially endsd
+DocInfo/PatchNote159=- fix issue where units couldn't blink while another unit was burrowed
+DocInfo/PatchNote160=  or sieged.
+DocInfo/PatchNote161=- remove ultralisk collision with collosus
+DocInfo/PatchNote162=Bumping to 1.0
+DocInfo/PatchNote163=
+DocInfo/PatchNote164=I realized I'm happy with how the map is for now.  I've played it enough without finding bugs and adding heroes was the final feature I
+DocInfo/PatchNote165=wanted to implement  prior to making a 1.0 release.
+DocInfo/PatchNote166=Fix bug where units in bunkers would stay on the map after the player is removed via drop or kick.  This occurred due to killing all the
+DocInfo/PatchNote167=player's units once rather than twice.  The second time is necessary since units in bunkers are unloaded to the map after they die.
+DocInfo/PatchNote168=- fix bug where bunker was refunding for 10 instead of 1
+DocInfo/PatchNote169=- fix bug where the game wouldn't start if the last person choosing a defender location was dropped or kicked
+DocInfo/PatchNote170=- add missing button texts
+DocInfo/Screenshot01=Неудачная оборона терранов.
+DocInfo/Screenshot02=Модификаторы, враги и дополнительные жизни.
+DocInfo/Screenshot03=Боевые единицы терранов на выбор.
+DocInfo/Website=https://discord.gg/6ZfDWNF3jU
+Effect/Name/90mmCannonsDamageSiegeTankHd=90mm Cannons (Damage)
+Effect/Name/AcidSalivaDamageHd=Acid Saliva
+Effect/Name/AcidSalivaLMHd=Acid Saliva LM
+Effect/Name/AcidSalivaU=Ranged Acid Spines (Damage)
+Effect/Name/AcidSpinesDamageArmoredQueenEnemyHd=Acid Spines (Damage)
+Effect/Name/AcidSpinesLMArmoredQueenEnemyHd=Acid Spines LM
+Effect/Name/AcidSporesDamageGuardianHd=Acid Spores
+Effect/Name/AcidSporesLMGuardianHd=Acid Spores LM
+Effect/Name/AdeptDamageHd=Damage
+Effect/Name/AdeptLMHd=LM
+Effect/Name/ApocalypseDamageKerriganHd=Apocalypse Damage
+Effect/Name/ApocalypseInitialSetKerriganHd=Apocalypse Initial Set
+Effect/Name/ApocalypseSAKerriganHd=Apocalypse SA
+Effect/Name/ApocalypseSetKerriganHd=Apocalypse Set
+Effect/Name/ArcliteCannonDamageMechanicalSiegeTankTankModeEnemyHd=Arclite Cannon (Damage)
+Effect/Name/ArmoredCutieDamageEnemyHd=Armored Cutie (Damage)
+Effect/Name/ArmoredCutieLMEnemyHd=Armored Cutie LM
+Effect/Name/ArmoredCycloneAttackWeaponDamageEnemyHd=Armored Cyclone Attack Weapon Damage
+Effect/Name/ArmoredCycloneAttackWeaponLaunchMissileLeftEnemyHd=Armored Cyclone Attack Weapon Launch Missile Left
+Effect/Name/ArmoredCycloneAttackWeaponLaunchMissileLeftSetEnemyHd=Armored Cyclone Attack Weapon Launch Missile Left Set
+Effect/Name/ArmoredCycloneAttackWeaponLaunchMissileRightEnemyHd=Armored Cyclone Attack Weapon Launch Missile Right
+Effect/Name/ArmoredCycloneAttackWeaponLaunchMissileRightSetEnemyHd=Armored Cyclone Attack Weapon Launch Missile Right Set
+Effect/Name/ArmoredCycloneAttackWeaponLaunchMissileSwitchEnemyHd=Armored Cyclone Attack Weapon Launch Missile Switch
+Effect/Name/ArmoredDragoonDamageEnemyHd=Armored Dragoon (Damage)
+Effect/Name/ArmoredDragoonLMEnemyHd=Armored Dragoon LM
+Effect/Name/ArmoredHellbatDamageEnemyHd=Armored Hellbat (Damage)
+Effect/Name/ArmoredHellbatSAEnemyHd=Armored Hellbat SA
+Effect/Name/ArmoredHellbatSetEnemyHd=Armored Hellbat Set
+Effect/Name/ArmoredHercWeaponDamageEnemyHd=Armored Herc Weapon Damage
+Effect/Name/ArmoredPygaliskEnemyHd=Armored Pygalisk
+Effect/Name/ArmoredQuillyDamageEnemyHd=Armored Quilly (Damage)
+Effect/Name/ArmoredQuillyLMEnemyHd=Armored Quilly LM
+Effect/Name/ArtilleryTurretDamageBunkerHd=Artillery Turret (Damage)
+Effect/Name/AtomicStormCPHd=Atomic Storm CP
+Effect/Name/AtomicStormDamageHd=Atomic Storm Damage
+Effect/Name/AtomicStormSAHd=Atomic Storm SA
+Effect/Name/AtomicStormSetHd=Atomic Storm Set
+Effect/Name/AttackDroneDamageDummyHd=Attack Drone Damage Dummy
+Effect/Name/AttackDroneDamageHd=Attack Drone Damage
+Effect/Name/BigBoyCannonDamageHd=Big Boy Cannon Damage
+Effect/Name/BileLauncherDamageHd=Bile Launcher Damage
+Effect/Name/BileLauncherLMHd=Bile Launcher LM
+Effect/Name/BiologicalAberrationWeaponDamageEnemyHd=Biological Aberration Weapon (Damage)
+Effect/Name/BiologicalKerriganDamageEnemyHd=Biological Kerrigan (Damage)
+Effect/Name/BiologicalRavagerWeaponDamageEnemyHd=Biological Ravager Weapon (Damage)
+Effect/Name/BiologicalRavagerWeaponLMEnemyHd=Biological Ravager Weapon LM
+Effect/Name/BiologicalRavasaurDamageEnemyHd=Biological Ravasaur (Damage)
+Effect/Name/BiologicalRavasaurLMEnemyHd=Biological Ravasaur LM
+Effect/Name/BiologicalRavasaurSAEnemyHd=Biological Ravasaur SA
+Effect/Name/BlinkHd=Blink
+Effect/Name/BossAlarakBaneBladesCPEnemyHd=Boss Alarak Bane Blades CP
+Effect/Name/BossAlarakBaneBladesDamageEnemyHd=Boss Alarak Bane Blades (Damage)
+Effect/Name/BossDehakaDamageEnemyHd=Boss Dehaka (Damage)
+Effect/Name/BossEradicatorDamageEnemyHd=Boss Eradicator (Damage)
+Effect/Name/BossYagdraFirebreathDamageCPEnemyHd=Boss Yagdra Firebreath Damage CP
+Effect/Name/BossYagdraFirebreathDamageEnemyHd=Boss Yagdra Firebreath (Damage)
+Effect/Name/BossYagdraFirebreathGoverningCPEnemyHd=Boss Yagdra Firebreath Governing CP
+Effect/Name/BossYagdraFirebreathIssueOrderEnemyHd=Boss Yagdra Firebreath Attack (Issue Order)
+Effect/Name/BossYagdraFirebreathStopIssueOrderEnemyHd=Boss Yagdra Firebreath Stop (Issue Order)
+Effect/Name/BossYagdraFirebreathWaitCPEnemyHd=Boss Yagdra Firebreath Wait CP
+Effect/Name/C10CanisterRifleDamageGhostHd=C-10 Canister Rifle (Damage)
+Effect/Name/C10CanisterRifleDamageLightGhostEnemyHd=C-10 Canister Rifle (Damage)
+Effect/Name/ChainReaction1DamageKerriganHd=Chain Reaction 1 Damage
+Effect/Name/ChainReaction1DelayKerriganHd=Chain Reaction 1 Delay
+Effect/Name/ChainReaction1KerriganHd=Chain Reaction 1
+Effect/Name/ChainReaction1SearchForNewTargetKerriganHd=Chain Reaction 1 Search For New Target
+Effect/Name/ChainReaction2DamageKerriganHd=Chain Reaction 2 Damage
+Effect/Name/ChainReaction2DelayKerriganHd=Chain Reaction 2 Delay
+Effect/Name/ChainReaction2KerriganHd=Chain Reaction 2
+Effect/Name/ChainReaction2SearchForNewTargetKerriganHd=Chain Reaction 2 Search For New Target
+Effect/Name/ChainReaction3DamageKerriganHd=Chain Reaction 3 Damage
+Effect/Name/ChainReaction3DelayKerriganHd=Chain Reaction 3 Delay
+Effect/Name/ChainReaction3KerriganHd=Chain Reaction 3
+Effect/Name/ChainReaction3SearchForNewTargetKerriganHd=Chain Reaction 3 Search For New Target
+Effect/Name/ChainReaction4DamageKerriganHd=Chain Reaction 4 Damage
+Effect/Name/ChainReaction4KerriganHd=Chain Reaction 4
+Effect/Name/ChainReactionMarkerKerriganHd=Chain Reaction Marker
+Effect/Name/ClawsBiologicalUrsadonEnemyHd=Claws
+Effect/Name/CorrosiveBlastABStukovHd=Corrosive Blast AB
+Effect/Name/CorrosiveBlastDamageStukovHd=Corrosive Blast Damage
+Effect/Name/CorrosiveBlastLMStukovHd=Corrosive Blast LM
+Effect/Name/CorrosiveBlastSetStukovHd=Corrosive Blast Set
+Effect/Name/CrucioShockCannonBlastDamageSiegeTankHd=Crucio Shock Cannon Blast (Damage)
+Effect/Name/CrucioShockCannonBlastInfestedSiegeTankHd=Crucio Shock Cannon Blast
+Effect/Name/CrucioShockCannonDirectedDamageSiegeTankHd=Crucio Shock Cannon Directed (Damage)
+Effect/Name/CrucioShockCannonDirectedInfestedSiegeTankHd=Crucio Shock Cannon Directed
+Effect/Name/DecreaseVsArmoredABHd=Decrease Vs Armored AB
+Effect/Name/DecreaseVsArmoredRBHd=Decrease Vs Armored RB
+Effect/Name/DecreaseVsBiologicalABHd=Decrease Vs Biological AB
+Effect/Name/DecreaseVsBiologicalRBHd=Decrease Vs Biological RB
+Effect/Name/DecreaseVsBossABHd=Decrease Vs Boss AB
+Effect/Name/DecreaseVsBossRBHd=Decrease Vs Boss RB
+Effect/Name/DecreaseVsLightABHd=Decrease Vs Light AB
+Effect/Name/DecreaseVsLightRBHd=Decrease Vs Light RB
+Effect/Name/DecreaseVsMechanicalABHd=Decrease Vs Mechanical AB
+Effect/Name/DecreaseVsMechanicalRBHd=Decrease Vs Mechanical RB
+Effect/Name/DutchCPBossGiantRorySwannEnemyHd=Dutch CP
+Effect/Name/DutchConcussiveGrenadeDamage=Fist (Damage)
+Effect/Name/DutchDamageBossGiantRorySwannEnemyHd=Dutch (Damage)
+Effect/Name/DutchLMBossGiantRorySwannEnemyHd=Dutch LM
+Effect/Name/EntropyLanceDamageArmoredStalkerEnemyHd=Entropy Lance (Damage)
+Effect/Name/EntropyLanceLMArmoredStalkerEnemyHd=Entropy Lance (LM)
+Effect/Name/ExitEffectHd=Exit Effect
+Effect/Name/EyeBeamsGroundForwardPersistentBossStoneZealotEnemyHd=Eye Beams Ground Forward Persistent
+Effect/Name/EyeBeamsGroundLineDamageBossStoneZealotEnemyHd=Eye Beams Ground Line Damage
+Effect/Name/EyeBeamsGroundLineDamageDelayBossStoneZealotEnemyHd=Eye Beams Ground Line Damage Delay
+Effect/Name/EyeBeamsGroundLineSearchBossStoneZealotEnemyHd=Eye Beams Ground Line Search
+Effect/Name/EyeBeamsGroundLineSearchReverseBossStoneZealotEnemyHd=Eye Beams Ground Line Search Reverse
+Effect/Name/EyeBeamsGroundReversePersistentBossStoneZealotEnemyHd=Eye Beams Ground Reverse Persistent
+Effect/Name/EyeBeamsGroundSetBossStoneZealotEnemyHd=Eye Beams Ground (Set)
+Effect/Name/FistCPBossGiantRorySwannEnemyHd=Fist CP
+Effect/Name/FlameThrowerApplyDoTBehaviorHd=Flame Thrower (Apply DoT Behavior)
+Effect/Name/FlameThrowerCPFirebatHd=Flame Thrower CP
+Effect/Name/FlameThrowerDamageFirebatHd=Flame Thrower (Damage)
+Effect/Name/FlameThrowerDamageSetHd=Flame Thrower (Damage Set)
+Effect/Name/FlameThrowerEnumAreaFirebatHd=Flame Thrower (Enum Area)
+Effect/Name/FlameThrowerSetFirebatHd=Flame Thrower Set
+Effect/Name/FlameThrowerViralPlasmaDoTDamageHd=Flame Thrower (Viral Plasma DoT Damage)
+Effect/Name/FrackingCloudCPHd=Fracking Cloud CP
+Effect/Name/FrackingCloudDamageHd=Fracking Cloud Damage
+Effect/Name/FrackingCloudSAHd=Fracking Cloud SA
+Effect/Name/FrackingCloudSetHd=Fracking Cloud Set
+Effect/Name/FusionCutterLightSCVEnemyHd=Fusion Cutter (Damage)
+Effect/Name/GatlingCannonDamageMechanicalVikingAssaultModeEnemyHd=Gatling Cannon (Damage)
+Effect/Name/GlaiveWurmImpact1DamageHd=Glaive Wurm Impact 1 Damage
+Effect/Name/GlaiveWurmImpact1LMMutaliskHd=Glaive Wurm Impact 1 LM
+Effect/Name/GlaiveWurmImpact1SAMutaliskHd=Glaive Wurm Impact 1 SA
+Effect/Name/GlaiveWurmImpact1SetMutaliskHd=Glaive Wurm Impact 1 Set
+Effect/Name/GlaiveWurmImpact2DamageHd=Glaive Wurm Impact 2 Damage
+Effect/Name/GlaiveWurmImpact2LMMutaliskHd=Glaive Wurm Impact 2 LM
+Effect/Name/GlaiveWurmImpact2SAMutaliskHd=Glaive Wurm Impact 2 SA
+Effect/Name/GlaiveWurmImpact2SetMutaliskHd=Glaive Wurm Impact 2 Set
+Effect/Name/GlaiveWurmImpact3DamageHd=Glaive Wurm Impact 3 Damage
+Effect/Name/GlaiveWurmImpact3LMMutaliskHd=Glaive Wurm Impact 3 LM
+Effect/Name/GuassRifleDamageMarineHd=Guass Rifle Damage
+Effect/Name/GuassRifleInfestedTerranHd=Guass Rifle
+Effect/Name/GuassRifleKillEverythingMarineTestHd=Guass Rifle (Damage)
+Effect/Name/GuassRifleLightInfestedTerranEnemyHd=Guass Rifle
+Effect/Name/GuassRifleLightWarPigEnemyHd=Gauss Rifle (Damage)
+Effect/Name/GuassRifleSimpleQuickMarineEnemyHd=Guass Rifle
+Effect/Name/GuassRifleSlowTicklerMarineTestHd=Guass Rifle (Damage)
+Effect/Name/GuassRifleTicklerMarineTestHd=Guass Rifle (Damage)
+Effect/Name/HeavensAttackDamageShrineOfTheGodsHd=Heaven's Attack Damage
+Effect/Name/HeavyTurretDamageBunkerHd=Heavy Turret (Damage)
+Effect/Name/HolePuncherDamageHd=Hole Puncher Damage
+Effect/Name/HolePuncherLMHd=Hole Puncher LM
+Effect/Name/HydraliskMeleeSet2=Hydralisk Melee Set
+Effect/Name/ImpalerTentacleDamageHd=Spine Crawler (Damage)
+Effect/Name/ImpalerTentacleLMHd=Spine Crawler (Launch Missile)
+Effect/Name/IncreaseVsArmoredABHd=Increase Vs Armored AB
+Effect/Name/IncreaseVsBiologicalABHd=Increase Vs Biological AB
+Effect/Name/IncreaseVsBossABHd=Increase Vs Boss AB
+Effect/Name/IncreaseVsLightABHd=Increase Vs Light AB
+Effect/Name/IncreaseVsMechanicalABHd=Increase Vs Mechanical AB
+Effect/Name/InfestedSiegeTankSiegedSetHd=Infested SiegeTank - Sieged Set
+Effect/Name/JavelinMissileLaunchersDamageHd=Anti Air (Damage)
+Effect/Name/JavelinMissileLaunchersLM2=Anti Air (Launch Missile)
+Effect/Name/KaiserBladesDamageBiologicalUltraliskEnemyHd=Kaiser Blades (Damage)
+Effect/Name/KorhalPalaceTurretHd=Korhal Palace Turret
+Effect/Name/LMCPPirateCapitalShipHd=LM CP
+Effect/Name/LeftDamagePirateCapitalShipHd=Left Damage
+Effect/Name/LeftDummyDamagePirateCapitalShipHd=Left Dummy Damage
+Effect/Name/LeftDummyLMPirateCapitalShipHd=Left Dummy LM
+Effect/Name/LeftLMCPPirateCapitalShipHd=Left LM CP
+Effect/Name/LeftLMPirateCapitalShipHd=Left LM
+Effect/Name/LeftRandomLMPirateCapitalShipHd=Left Random LM
+Effect/Name/LiberatorAGDamageHd=Liberator AG (Damage)
+Effect/Name/LiberatorAGMissileLMHd=Liberator AG Missile LM
+Effect/Name/LiberatorInterruptedMorphDelayPersistentHd=Liberator Interrupted Morph Delay Persistent
+Effect/Name/LiberatorTargetAAMorphOrderHd=Liberator Target AA Morph Order
+Effect/Name/LiberatorTargetAAMorphOrderSetHd=Liberator Target AA Morph Order Set
+Effect/Name/LiberatorTargetAAMorphRBHd=Liberator Target AA Morph RB
+Effect/Name/LiberatorTargetMorphABHd=Liberator Target Morph AB
+Effect/Name/LiberatorTargetMorphAGOrderHd=Liberator Target Morph AG Order
+Effect/Name/LiberatorTargetMorphDelayPersistentHd=Liberator Target Morph Delay Persistent
+Effect/Name/LiberatorTargetMorphOrderInitialSetHd=Liberator Target Morph Order Initial Set
+Effect/Name/LiberatorTargetMorphPersistentHd=Liberator Target Morph Persistent
+Effect/Name/LiberatorTargetMorphSearchABHd=Liberator Target Morph Search AB
+Effect/Name/LiberatorTargetMorphSearchAreaHd=Liberator Target Morph Search Area
+Effect/Name/LightAdeptDamageEnemyHd=Light Adept (Damage)
+Effect/Name/LightAdeptLMEnemyHd=Light Adept LM
+Effect/Name/LightGrenade1LMDaymanHd=Light Grenade 1 LM
+Effect/Name/LightGrenade2DummyLMDaymanHd=Light Grenade 2 Dummy LM
+Effect/Name/LightGrenade2LMDaymanHd=Light Grenade 2 LM
+Effect/Name/LightGrenadeCPDaymanHd=Light Grenade CP
+Effect/Name/LightGrenadeDamageDaymanHd=Light Grenade Damage
+Effect/Name/LightGrenadeDummyDamageDaymanHd=Light Grenade Dummy Damage
+Effect/Name/LightGrenadeImpactSetDaymanHd=Light Grenade Impact Set
+Effect/Name/LightGrenadeSearedArmorABDaymanHd=Light Grenade Seared Armor AB
+Effect/Name/LightHighTemplarWeaponDamageEnemyHd=Light High Templar Weapon (Damage)
+Effect/Name/LightHighTemplarWeaponLMEnemyHd=Light High Templar Weapon LM
+Effect/Name/LightLocustLMEnemyHd=Light Locust LM
+Effect/Name/LightLocustMeleeDamageEnemyHd=Light Locust Melee (Damage)
+Effect/Name/LightLocustRangedDamageEnemyHd=Light Locust Ranged (Damage)
+Effect/Name/LightPrisonerDamageEnemyHd=Light Prisoner (Damage)
+Effect/Name/LightningStormABSelendisHd=Lightning Storm AB
+Effect/Name/LightningStormCPSelendisHd=Lightning Storm CP
+Effect/Name/LightningStormDamageSelendisHd=Lightning Storm Damage
+Effect/Name/LightningStormSASelendisHd=Lightning Storm SA
+Effect/Name/LightningStormSetSelendisHd=Lightning Storm Set
+Effect/Name/LocustDamage=Locust Melee (Damage)
+Effect/Name/LongboltMissileBlankDamageBunkerHd=Longbolt Missile Blank Damage
+Effect/Name/LongboltMissileBlankLMBunkerHd=Longbolt Missile Blank LM
+Effect/Name/LongboltMissileCPBunkerHd=Longbolt Missile CP
+Effect/Name/LongboltMissileCPMissileTurretHd=Longbolt Missile CP
+Effect/Name/LongboltMissileDamageBunkerHd=Longbolt Missile Damage
+Effect/Name/LongboltMissileDamageMissileTurretHd=Longbolt Missile Damage
+Effect/Name/LongboltMissileLMBunkerHd=Longbolt Missile LM
+Effect/Name/LongboltMissileLMMissileTurretHd=Longbolt Missile LM
+Effect/Name/LurkerCPHd=Lurker CP
+Effect/Name/LurkerDamageHd=Lurker Damage
+Effect/Name/LurkerSAHd=Lurker SA
+Effect/Name/MaelstromRounds2=Maelstrom Rounds
+Effect/Name/MaelstromRoundsHd=Maelstrom Rounds
+Effect/Name/MechanicalMilitarizedTransportDamageEnemyHd=Mechanical Militarized Transport (Damage)
+Effect/Name/MechanicalShikotoCoupeDamageEnemyHd=Mechanical Shikoto Coupe (Damage)
+Effect/Name/MechanicalWarhoundLMEnemyHd=Mechanical Warhound LM
+Effect/Name/MechanicalWarhoundRangedDamageEnemyHd=Mechanical Warhound Ranged (Damage)
+Effect/Name/MeleeBiologicalHydraliskEnemyHd=Melee
+Effect/Name/MeleeNeedleSpinesDamageSimpleBeefyRoachEnemyHd=Melee Needle Spines (Damage)
+Effect/Name/MeleeSetSimpleBeefyRoachEnemyHd=Melee Set
+Effect/Name/NeedleClawsDamageLightBroodlingEnemyHd=Needle Claws (Damage)
+Effect/Name/NeedleSpinesDamageBiologicalHydraliskEnemyHd=Needle Spines (Damage)
+Effect/Name/NeedleSpinesDamageHd=Needle Spines
+Effect/Name/NeedleSpinesImpactSetBiologicalHydraliskEnemyHd=Needle Spines Impact Set
+Effect/Name/NeedleSpinesImpactSetHd=Needle Spines Impact Set
+Effect/Name/NeedleSpinesImpactSetUpgradedHd=Needle Spines Impact Set Upgraded
+Effect/Name/NeedleSpinesImpactSetUpgradedHd2=Needle Spines Impact Set Upgraded
+Effect/Name/NeedleSpinesImpactSwitchHd=Needle Spines Impact Switch
+Effect/Name/NeedleSpinesImpactSwitchHd2=Needle Spines Impact Switch
+Effect/Name/NeedleSpinesLMBiologicalHydraliskEnemyHd=Needle Spines LM
+Effect/Name/NeedleSpinesLaunchMissileHd=Needle Spines
+Effect/Name/NightmanDamageHd=Nightman Damage
+Effect/Name/NuclearStrikeCPPirateCapitalShipHd=Nuclear Strike CP
+Effect/Name/NuclearStrikeCalldownPirateCapitalShipHd=Nuclear Strike Calldown
+Effect/Name/NuclearStrikeDamagePirateCapitalShipHd=Nuclear Strike Damage
+Effect/Name/NuclearStrikeDetonateCPPirateCapitalShipHd=Nuclear Strike Detonate CP
+Effect/Name/OneFireworkHd=One Firework
+Effect/Name/P38ScytheGuassPistolCPLightReaperEnemyHd=P-38 Scythe Guass Pistol CP
+Effect/Name/P38ScytheGuassPistolDamageLightReaperEnemyHd=P-38 Scythe Guass Pistol (Damage)
+Effect/Name/ParticleBeamLightProbeEnemyHd=Particle Beam (Damage)
+Effect/Name/ParticleDisruptorsDamageStalkerHd=Particle Disruptors (Damage)
+Effect/Name/ParticleDisruptorsLMStalkerHd=Particle Disruptors LM
+Effect/Name/PhaseDisruptorsArmoredImmortalEnemyHd=Phase Disruptors
+Effect/Name/PhaseDisruptorsDamageImmortalHd=Phase Disruptors
+Effect/Name/PhotonCannonDamageHd=Photon Cannon Damage
+Effect/Name/PhotonCannonLMHd=Photon Cannon LM
+Effect/Name/PsiBladesCPArmoredZealotEnemyHd=Psi Blades CP
+Effect/Name/PsiBladesCPSimpleArmoredZealotEnemyHd=Psi Blades CP
+Effect/Name/PsiBladesDamageArmoredZealotEnemyHd=Psi Blades (Damage)
+Effect/Name/PsiBladesDamageSimpleArmoredZealotEnemyHd=Psi Blades (Damage)
+Effect/Name/PsiBlastDamageBossHybridDominatorEnemyHd=Psi Blast (Damage)
+Effect/Name/PsiBlastDamageBossKerriganEnemyHd=Psi Blast (Damage)
+Effect/Name/PsiBlastDamageDaymanHd=Psi Blast Damage
+Effect/Name/PsiBlastLMBossKerriganEnemyHd=Psi Blast LM
+Effect/Name/PsiBlastLMDaymanHd=Psi Blast LM
+Effect/Name/PsionicShockwave2CPHd=Psionic Shockwave 2 CP
+Effect/Name/PsionicShockwave2DamageHd=Psionic Shockwave 2 (Damage)
+Effect/Name/PsionicShockwave2SAHd=Psionic Shockwave 2 SA
+Effect/Name/PsionicShockwave3DamageHd=Psionic Shockwave 3 (Damage)
+Effect/Name/PsionicShockwaveCPHd=Psionic Shockwave CP
+Effect/Name/PsionicShockwaveDamageHd=Psionic Shockwave (Damage)
+Effect/Name/PsionicShockwaveDamageSimpleBossArchonEnemyHd=Psionic Shockwave (Damage)
+Effect/Name/PsionicShockwaveSAHd=Psionic Shockwave SA
+Effect/Name/PunisherGrenadesDamageArmoredMarauderEnemyHd=Punisher Grenades (Damage)
+Effect/Name/PunisherGrenadesDamageHd=Punisher Grenades Damage
+Effect/Name/PunisherGrenadesLMArmoredMarauderEnemyHd=Punisher Grenades LM
+Effect/Name/PunisherGrenadesLMHd=Punisher Grenades LM
+Effect/Name/PushSAHd=Push SA
+Effect/Name/RangedAcidSalivaLMSimpleBeefyRoachEnemyHd=Ranged Acid Saliva LM
+Effect/Name/RazorTalonsDamageBossKerriganEnemyHd=Razor Talons (Damage)
+Effect/Name/Refund10MineralsAvailableABSalvageHd=Refund 10 Minerals Available AB
+Effect/Name/Refund4MineralsAvailableABSalvageHd=Refund 4 Minerals Available AB
+Effect/Name/Refund8MineralsAvailableABSalvageHd=Refund 8 Minerals Available AB
+Effect/Name/RemoveShrikeTurretRBBunkerHd=Remove Shrike Turret RB
+Effect/Name/RightDamagePirateCapitalShipHd=Right Damage
+Effect/Name/RightDummyDamagePirateCapitalShipHd=Right Dummy Damage
+Effect/Name/RightDummyLMPirateCapitalShipHd=Right Dummy LM
+Effect/Name/RightLMCPPirateCapitalShipHd=Right LM CP
+Effect/Name/RightLMPirateCapitalShipHd=Right LM
+Effect/Name/RightRandomLMPirateCapitalShipHd=Right Random LM
+Effect/Name/ScarabApplyRevealHd=Scarab Apply Reveal
+Effect/Name/ScarabExplodeDamageHd=Scarab Explode (Damage)
+Effect/Name/ScarabExplodeSetHd=Scarab Explode Set
+Effect/Name/ScarabLMHd=Scarab LM
+Effect/Name/ScarabLaunchPersistentHd=Scarab Launch Persistent
+Effect/Name/ScarabLaunchPersistentInitialHd=Scarab Launch Persistent Initial
+Effect/Name/ScarabLaunchSetHd=Scarab Launch Set
+Effect/Name/ScarabTimedLifeHd=Scarab Timed Life
+Effect/Name/ScarabUseMagazineHd=Scarab (Use Magazine)
+Effect/Name/SeekerMissileBatteredAndBruisedABNightmanHd=Seeker Missile Battered And Bruised AB
+Effect/Name/SeekerMissileDamageNightmanHd=Seeker Missile Damage
+Effect/Name/SeekerMissileImpactSetNightmanHd=Seeker Missile Impact Set
+Effect/Name/SeekerMissileLMNightmanHd=Seeker Missile LM
+Effect/Name/SeekerMissileLaunchCPNightmanHd=Seeker Missile Launch CP
+Effect/Name/SeekerMissileLaunchSetNightmanHd=Seeker Missile Launch Set
+Effect/Name/SeekerMissileLaunchTintCPNightmanHd=Seeker Missile Launch Tint CP
+Effect/Name/SeekerMissileSuicideNightmanHd=Seeker Missile Suicide
+Effect/Name/SeekerMissileSuicideSetNightmanHd=Seeker Missile Suicide Set
+Effect/Name/SeekerMissileTintABNightmanHd=Seeker Missile Tint AB
+Effect/Name/SelendisInterceptorBeamCPHd=Selendis Interceptor Beam CP
+Effect/Name/SelendisInterceptorDamageHd=Selendis Interceptor Damage
+Effect/Name/SelendisInterceptorHd=Selendis Interceptor
+Effect/Name/ShrikeTurretDamageBunkerHd=Shrike Turret (Damage)
+Effect/Name/SiegeTankSiegedSetHd=Siege Tank - Sieged Set
+Effect/Name/SpinesLightDroneEnemyHd=Spines (Damage)
+Effect/Name/StukovWeaponDamageHd=Stukov Weapon Damage
+Effect/Name/StukovWeaponLMHd=Stukov Weapon LM
+Effect/Name/SummonBoulderCPShackledUltraliskHd=Summon Boulder CP
+Effect/Name/SummonBoulderDamageShackledUltraliskHd=Summon Boulder Damage
+Effect/Name/SummonBoulderSAShackledUltraliskHd=Summon Boulder SA
+Effect/Name/SummonBoulderSetShackledUltraliskHd=Summon Boulder Set
+Effect/Name/SunkenColonyDamageHd=Sunken Colony Damage
+Effect/Name/Talons=Talons Missile (Damage)
+Effect/Name/TalonsCPArmoredQueenEnemyHd=Talons CP
+Effect/Name/TalonsDamageArmoredQueenEnemyHd=Talons (Damage)
+Effect/Name/TalonsLMArmoredQueenEnemyHd=Talons LM
+Effect/Name/TalonsMissileBurstArmoredQueenEnemyHd=Talons Missile Burst
+Effect/Name/TempestDamageGroundHd=Tempest Damage (Ground)
+Effect/Name/TempestLaunchMissileGroundHd=Tempest Launch Missile (Ground)
+Effect/Name/ThermalLancesBackwardCPHd=Thermal Lances Backward CP
+Effect/Name/ThermalLancesDamageDelayCPHd=Thermal Lances Damage Delay CP
+Effect/Name/ThermalLancesDamageHd=Thermal Lances (Damage)
+Effect/Name/ThermalLancesForwardCPHd=Thermal Lances Forward CP
+Effect/Name/ThermalLancesSearchBackwardHd=Thermal Lances Search Backward
+Effect/Name/ThermalLancesSearchForwardHd=Thermal Lances Search Forward
+Effect/Name/ThermalLancesSetHd=Thermal Lances Set
+Effect/Name/ThorsHammerCPHd=Thor's Hammer CP
+Effect/Name/ThorsHammerDamageHd=Thor's Hammer (Damage)
+Effect/Name/TurnBackIntoBuilderHd=Turn Back Into Builder
+Effect/Name/TwinAutocannonsMechanicalGoliathEnemyHd=Twin Autocannons (Damage)
+Effect/Name/UpgradeToArtilleryTurretABBunkerHd=Upgrade To Artillery Turret AB
+Effect/Name/UpgradeToArtilleryTurretSetBunkerHd=Upgrade To Artillery Turret Set
+Effect/Name/UpgradeToHeavyTurretABBunkerHd=Upgrade To Heavy Turret AB
+Effect/Name/UpgradeToHeavyTurretSetBunkerHd=Upgrade To Heavy Turret Set
+Effect/Name/UpgradeToMissileTurretABBunkerHd=Upgrade To Missile Turret AB
+Effect/Name/UpgradeToMissileTurretSetBunkerHd=Upgrade To Missile Turret Set
+Effect/Name/UpgradeTurretABBunkerHd=Upgrade Turret AB
+Effect/Name/UpgradeTurretSetBunkerHd=Upgrade Turret Set
+Effect/Name/WarHound=Mechanical Warhound Melee (Damage)
+Effect/Name/WasplingDamageDummyHd=Waspling Damage Dummy
+Effect/Name/WasplingDamageHd=Waspling Damage
+Effect/Name/WasplingLMHd=Waspling LM
+Effect/Name/WeaklingClawsHd=Weakling Claws (Damage)
+Effect/Name/WormySpitDamageHd=Wormy Spit Damage
+Effect/Name/WormySpitLMHd=Wormy Spit LM
+LoadingScreen/Tip= 
+MapInfo/Player00/Name=Нейтральный
+MapInfo/Player01/Name=Игрок 1
+MapInfo/Player02/Name=Игрок 2
+MapInfo/Player03/Name=Игрок 3
+MapInfo/Player04/Name=Игрок 4
+MapInfo/Player05/Name=Игрок 5
+MapInfo/Player06/Name=Игрок 6
+MapInfo/Player07/Name=Игрок 7
+MapInfo/Player08/Name=Игрок 8
+MapInfo/Player09/Name=Враждебный
+MapInfo/Player10/Name=Враждебный
+Param/Expression/1E71C629=Тестовый игрок ~kick_player~
+Param/Expression/1F0DEDF6=<c val="~color_success~">Вы победили!<n/><n/>Ух-ууууууууу!</c>
+Param/Expression/27B4B0E7=Выгнать ~kick_player_name~ ?
+Param/Expression/32293807=Игроки голосуют за исключение тестового игрока ~kick_player~...
+Param/Expression/53FA7A41=<c val="F1FF71">Все получили по одному герою-выборщику</c></n>
+Param/Expression/571B7AF2=<c val="F1FF71">Начинается волна № ~wave~</c>
+Param/Expression/AA03E1AD=Выгнать тестового игрока ~kick_player~ ?
+Param/Expression/B019B228=Игроки голосуют за исключение ~kick_player_name~...
+Param/Expression/B1198A92=Неожиданная cl4 int ~cl4~
+Param/Expression/CB02BB58=призраки переключены: ~ghosts_enabled~
+Param/Expression/E1FF0345=<c val="~color_calamity~">А-а-а, этот парень отнял у команды последнюю жизнь!</c>
+Param/Expression/E7D75A99=Игрок ~result~ исключён ! (~value~/~threshold~)
+Param/Expression/EE5F32E3=<c val="~color_calamity~">Осталось дополнительных жизней: ~extra_lives_left~</c>
+Param/Expression/F3CACBA2=автопропуск переключён: ~autoskip~
+Param/Expression/lib_1_0137C127=Неожиданная раса вернулась к игроку ~p~
+Param/Expression/lib_1_063C9B82=Неожиданная раса вернулась к игроку ~p~
+Param/Expression/lib_1_307E16AC=этап: ~ability_stage~
+Param/Value/01C984EA=Голосование за исключение игрока
+Param/Value/06E6A6BE=<c val="F1FF71">Это строение будет блокировать врагов.<n/><n/>Вы получили полную компенсацию.</c>
+Param/Value/26532054=<c val="F1FF71">Это строение будет блокировать врагов.<n/><n/>Ваш герой-строитель возрождён (он может быть за руинами :) ).</c>
+Param/Value/3C656979=Закрыть
+Param/Value/4B1CE14A=Нет (-1)
+Param/Value/503B0A62=Да (+1)
+Param/Value/51E8C133=–
+Param/Value/60E74339=Вы должны подождать, прежде чем начать другое голосование
+Param/Value/6B70F853=Враг появится, когда все будут готовы
+Param/Value/7333F03A=– раса сменена
+Param/Value/787F09A4=– игрок исключён
+Param/Value/85DFF2CE=Враг скоро появится
+Param/Value/8D95612D=
+Param/Value/AF3855F5=-autoskip<n/>автоматически нажимать кнопку пропуска за вас в каждом раунде<n/><n/>-toggle ghosts<n/>переключить появление призраков перед каждым раундом
+Param/Value/BC73E655=Голос отдан
+Param/Value/C3978B7F=Выберите, где обороняться
+Param/Value/CB176063=
+Param/Value/D022AFAA=Вот рабочий для начала.<n/><n/><c val="F1FF71">Не бойтесь призраков. Они показывают вам путь, по которому пойдёт враг. Используйте эту информацию, чтобы выстроить оборону.</c>
+Param/Value/D6EDA166=В начале игры у вас есть 5 выборщиков, которые вы можете потратить на минералы, улучшения и боевые единицы. Вы будете получать больше по мере того, как команда будет убивать врагов.
+Param/Value/DCD029C6=– раса сменена
+Param/Value/E444493B=тестирует сетевую игру локально
+Param/Value/E58B56EB=Пропуск
+Param/Value/ED031DF0=Готово
+Param/Value/EFD827C1=Отмена
+Param/Value/F4D146E3=–
+Param/Value/F7CAD5E6=Понятно (0)
+Param/Value/lib_1_0D4B38C5=Generic6 - Complete
+Param/Value/lib_1_0DDB8C11=<ошибка: этап не найден>
+Param/Value/lib_1_1660F597=Build7 - Collide
+Param/Value/lib_1_1BE6C03F=00e35b
+Param/Value/lib_1_222792E0=Harvest3 - Harvest
+Param/Value/lib_1_28EC086C=<ошибка: раса не найдена>
+Param/Value/lib_1_2C79D0B3=Effect3 - Cast
+Param/Value/lib_1_2E58CBA2=Build6 - Finish
+Param/Value/lib_1_3022E928=Morph03 - Actor Start
+Param/Value/lib_1_315E0491=Morph13 - Abilities Start
+Param/Value/lib_1_33A9FDCD=Откл.
+Param/Value/lib_1_367C28A1=Harvest1 - Approach Resource
+Param/Value/lib_1_36F8FDEE=Effect1 - Approach
+Param/Value/lib_1_411DDC33=Harvest5 - Wait for Drop Off
+Param/Value/lib_1_4134203F=Build1 - Approach
+Param/Value/lib_1_41418C08=Attack2 - Attack
+Param/Value/lib_1_45CC7D05=Зерги
+Param/Value/lib_1_48441561=Harvest7 - Drop Off
+Param/Value/lib_1_4A35FBAD=ff6166
+Param/Value/lib_1_4B0781BB=Протоссы
+Param/Value/lib_1_4F06080C=Недостаточно минералов.
+Param/Value/lib_1_5C203FFD=Generic2 - Queue
+Param/Value/lib_1_6546880C=Недостаточно минералов.
+Param/Value/lib_1_693AB5CA=Morph05 - Stats Start
+Param/Value/lib_1_6D6E5434=Behavior2 - Toggled
+Param/Value/lib_1_76371732=Morph11 - Unit Start
+Param/Value/lib_1_78B24B45=Behavior1 - Untoggled
+Param/Value/lib_1_7923C72E=Build3 - Construct
+Param/Value/lib_1_79353442=Generic8 - Unpause
+Param/Value/lib_1_7E513C70=Attack1 - Approach
+Param/Value/lib_1_82D59DD9=Morph01 - Approach
+Param/Value/lib_1_86E4D322= 
+Param/Value/lib_1_875ED7AF=Morph12 - Unit End
+Param/Value/lib_1_8845F40E=Morph10 - Facing End
+Param/Value/lib_1_89DBB633=Harvest2 - Wait at Resource
+Param/Value/lib_1_8FB28264=Generic7 - Pause
+Param/Value/lib_1_92C481D4=Morph02 - Wait
+Param/Value/lib_1_94141FDC=Morph14 - Abilities End
+Param/Value/lib_1_96CA8A61=Терраны
+Param/Value/lib_1_96D523DB=Morph07 - Collision Start
+Param/Value/lib_1_9AF529AD=Morph06 - Stats End
+Param/Value/lib_1_9BA4458C=Morph09 - Facing Start
+Param/Value/lib_1_A3DCFA2F=Effect2 - Prep
+Param/Value/lib_1_A4D10BC7= 
+Param/Value/lib_1_AC409659=Effect6 - Bail
+Param/Value/lib_1_ACFCE4F5=Generic5 - Preempt
+Param/Value/lib_1_AE6CBCB1=Morph15 - Mover Start
+Param/Value/lib_1_B1A9A0BE=Rally - Place
+Param/Value/lib_1_B515E506=Morph04 - Actor End
+Param/Value/lib_1_BF2D00E9=Harvest6 - Approach Drop Off
+Param/Value/lib_1_C0E52566=Morph16 - Mover End
+Param/Value/lib_1_C0FADEC6=Generic1 - Any
+Param/Value/lib_1_C807DFC8=Effect4 - Channel
+Param/Value/lib_1_CA9D1B07=Build2 - Wait
+Param/Value/lib_1_CEBB5E3B=Build4 - Pause
+Param/Value/lib_1_D41AC1FC=Generic4 - Cancel
+Param/Value/lib_1_DDF50FE4=Attack3 - Loiter
+Param/Value/lib_1_E19B5790=Generic3 - Execute
+Param/Value/lib_1_E222F185=Morph08 - Collision End
+Param/Value/lib_1_EE7F86C0=Вкл.
+Param/Value/lib_1_F40CAC62=Build5 - Resume
+Param/Value/lib_1_F8914108=Effect5 - Finish
+Param/Value/lib_1_FF091B5E=Harvest4 - Wait to Return
+RequirementNode/Tooltip/LT3990822897CountUnitSelendisInterceptorHdQueuedOrBetterAtUnit5=Наличие менее 8 перехватчиков у Селендис
+Unit/Info/PlusSixModHd=В этом раунде появятся ещё 6 врагов
+Unit/Info/PlusTwelveModHd=В этом раунде появятся ещё 12 врагов
+Unit/Info/PurchaseFlagHd=Купленные вами войска появятся здесь
+Unit/InfoText/PerfectSpecimenModHd=Добавляет щиты, броню и скорость
+Unit/LifeArmorName/LifeAndShieldArmor=Броня и броня щитов
+Unit/LifeArmorName/LifeArmor=Броня и броня щитов
+Unit/Name/1ChooserHeroBeaconHd=1 выборщик
+Unit/Name/1ChooserUnitBeaconHd=1 выборщик
+Unit/Name/2ChooserUnitBeaconHd=2 выборщика
+Unit/Name/2MineralsHd=2 ед. минерала
+Unit/Name/3ChooserUnitBeaconHd=3 выборщика
+Unit/Name/4ChooserUnitBeaconHd=4 выборщика
+Unit/Name/5ChooserUnitBeaconHd=5 выборщиков
+Unit/Name/6ChooserUnitBeaconHd=6 выборщиков
+Unit/Name/AcidSalivaWeaponRoachHd=Кислотная слюна – оружие
+Unit/Name/AcidSalivaWeaponSimpleBeefyRoachEnemyHd=Кислотная слюна – оружие
+Unit/Name/AcidSpinesWeaponArmoredQueenEnemyHd=Кислотные шипы – оружие
+Unit/Name/AcidSporesMissileHd=Кислотная спора
+Unit/Name/AddedArmorModHd=Добавленная броня
+Unit/Name/AdeptHd=Адепт
+Unit/Name/AdeptWeaponHd=Адепт
+Unit/Name/ArchonHd=Архонт
+Unit/Name/ArmoredCutieEnemyHd=Бронированная милашка
+Unit/Name/ArmoredCutieWeaponEnemyHd=Бронированная милашка – оружие
+Unit/Name/ArmoredCycloneEnemyHd=Бронированный «Циклон»
+Unit/Name/ArmoredCycloneMissileEnemyHd=Ракета бронированного «Циклона»
+Unit/Name/ArmoredDragoonEnemyHd=Бронированный драгун
+Unit/Name/ArmoredDragoonWeaponEnemyHd=Бронированный драгун – оружие
+Unit/Name/ArmoredHellbatEnemyHd=Бронированный «Геллитрон»
+Unit/Name/ArmoredHercEnemyHd=Бронированный МАРС
+Unit/Name/ArmoredImmortalEnemyHd=Бронированный бессмертный
+Unit/Name/ArmoredMarauderEnemyHd=Бронированный мародёр
+Unit/Name/ArmoredPygaliskEnemyHd=Бронированный пигалиск
+Unit/Name/ArmoredQueenEnemyHd=Бронированная королева
+Unit/Name/ArmoredQuillyEnemyHd=Бронированная Квилли
+Unit/Name/ArmoredQuillyWeaponEnemyHd=Бронированная Квилли – оружие
+Unit/Name/ArmoredStalkerEnemyHd=Бронированный сталкер
+Unit/Name/ArmoredStalkerWeaponEnemyHd=Бронированный сталкер
+Unit/Name/ArmoredZealotEnemyHd=Бронированный зилот
+Unit/Name/AtomicStormBreweryHd=Варня атомных бурь
+Unit/Name/AttackDroneHd=Боевой дрон
+Unit/Name/AttackDroneHubHd=Центр боевых дронов
+Unit/Name/BeaconParentHd=Исходный маяк
+Unit/Name/BeefySCVTestHd=Мясистый КСМ
+Unit/Name/BigBoyCannonHd=Орудие «Крепыш»
+Unit/Name/BileLauncherHd=Споровое орудие
+Unit/Name/BileLauncherMissileHd=Споровое орудие – снаряд
+Unit/Name/BiologicalAberrationEnemyHd=Органическая аберрация
+Unit/Name/BiologicalHydraliskEnemyHd=Органический гидралиск
+Unit/Name/BiologicalKerriganEnemyHd=Органическая Керриган
+Unit/Name/BiologicalRavagerEnemyHd=Органический разоритель
+Unit/Name/BiologicalRavagerWeaponMissileEnemyHd=Органический разоритель – снаряд оружия
+Unit/Name/BiologicalRavasaurEnemyHd=Органический равазавр
+Unit/Name/BiologicalRavasaurWeaponEnemyHd=Органический равазавр – оружие
+Unit/Name/BiologicalUltraliskEnemyHd=Органический ультралиск
+Unit/Name/BiologicalUrsadonEnemyHd=Органический урсадон
+Unit/Name/BossAlarakEnemyHd=Босс Аларак
+Unit/Name/BossDehakaEnemyHd=Босс Дехака
+Unit/Name/BossEradicatorEnemyHd=Босс «Искоренитель»
+Unit/Name/BossGiantRorySwannEnemyHd=Босс гигантский Рори Свонн
+Unit/Name/BossHybridDominatorEnemyHd=Босс гибрид-доминатор
+Unit/Name/BossKerriganEnemyHd=Босс Керриган
+Unit/Name/BossStoneZealotEnemyHd=Босс каменный зилот
+Unit/Name/BossYagdraEnemyHd=Босс Ягдра
+Unit/Name/BottomHdDefendLocationBeacon=Нижняя часть
+Unit/Name/BottomLeftHdDefendLocationBeacon=Левая нижняя часть
+Unit/Name/BottomRightHdDefendLocationBeacon=Правая нижняя часть
+Unit/Name/BunkerHd=Бункер
+Unit/Name/ChooserHd=Выборщик
+Unit/Name/ColossusHd=Колосс
+Unit/Name/DaymanHd=Деймэн
+Unit/Name/DaymanPsiBlastHd=Деймэн – пси-взрыв
+Unit/Name/DevastatingShotWeaponStukovHd=Разрушительный выстрел – оружие
+Unit/Name/DroneHd=Рабочий
+Unit/Name/DutchWeaponBossGiantRorySwannEnemyHd=Голландец – оружие
+Unit/Name/ExtraLifeHd=Дополнительная жизнь
+Unit/Name/FirebatHd=Огнемётчик
+Unit/Name/FrackerHd=Гидроразрывщик
+Unit/Name/GhostHd=Призрак
+Unit/Name/GlaiveWurmWeaponHd=Чакрум
+Unit/Name/GuardianHd=Страж
+Unit/Name/HeroBeaconParentHd=Исходный маяк героя
+Unit/Name/HeroBuilderProtossHd=Герой-строитель
+Unit/Name/HeroBuilderTerranHd=Герой-строитель
+Unit/Name/HeroBuilderZergHd=Герой-строитель
+Unit/Name/HolePuncherHd=Дырокол
+Unit/Name/HydraliskGroundWeapon=Костяные иглы
+Unit/Name/HydraliskHd=Гидралиск
+Unit/Name/ImmortalHd=Бессмертный
+Unit/Name/IncreasedSpeedModHd=Увеличенная скорость
+Unit/Name/InfestedSiegeTankHd=Заражённый осадный танк
+Unit/Name/InfestedSiegeTankUprootedHd=Заражённый осадный танк
+Unit/Name/InfestedTerranHd=Заражённый терран
+Unit/Name/KerriganHd=Керриган
+Unit/Name/KillEverythingMarineTestHd=Морпех убийства всего
+Unit/Name/KorhalPalaceTurretHd=Пушка корхальского дворца
+Unit/Name/LeftHdDefendLocationBeacon=Левая часть
+Unit/Name/LiberatorAGHd=«Освободитель»
+Unit/Name/LiberatorAGMissileHd=Ракета «воздух-земля»
+Unit/Name/LiberatorAGMorphModelHd=«Освободитель»
+Unit/Name/LiberatorHd=«Освободитель»
+Unit/Name/LiberatorMorphModelHd=«Освободитель»
+Unit/Name/LightAdeptEnemyHd=Лёгкий адепт
+Unit/Name/LightAdeptWeaponEnemyHd=Лёгкий адепт
+Unit/Name/LightBroodlingEnemyHd=Лёгкий симбионт
+Unit/Name/LightDroneEnemyHd=Лёгкий рабочий
+Unit/Name/LightGhostEnemyHd=Лёгкий призрак
+Unit/Name/LightGrenade1DaymanHd=Лёгкая граната 1
+Unit/Name/LightGrenade2DaymanHd=Лёгкая граната 2
+Unit/Name/LightHighTemplarEnemyHd=Лёгкий высший тамплиер
+Unit/Name/LightHighTemplarPsiBlastEnemyHd=Лёгкий высший тамплиер – пси-взрыв
+Unit/Name/LightInfestedTerranEnemyHd=Лёгкий заражённый терран
+Unit/Name/LightLocustEnemyHd=Лёгкий саранчид
+Unit/Name/LightLocustWeaponEnemyHd=Лёгкий саранчид – оружие
+Unit/Name/LightPrisonerEnemyHd=Лёгкий заключённый
+Unit/Name/LightProbeEnemyHd=Лёгкий зонд
+Unit/Name/LightReaperEnemyHd=Лёгкий головорез
+Unit/Name/LightSCVEnemyHd=Лёгкий КСМ
+Unit/Name/LightWarPigEnemyHd=Лёгкий наёмник из «Боевых кабанов»
+Unit/Name/LongboltMissileBunkerHd=Дальнобойные ракеты
+Unit/Name/LongboltMissileMissileTurretHd=Дальнобойные ракеты
+Unit/Name/LurkerHd=Скрытень
+Unit/Name/LurkerMP=Закопанный скрытень
+Unit/Name/MarauderHd=Мародёр
+Unit/Name/MarineHd=Морпех
+Unit/Name/MechanicalGoliathEnemyHd=Механический «Голиаф»
+Unit/Name/MechanicalMilitarizedTransportEnemyHd=Механический военный транспорт
+Unit/Name/MechanicalShikotoCoupeEnemyHd=Механический автомобиль «Шикото»
+Unit/Name/MechanicalSiegeTankTankModeEnemyHd=Механический осадный танк
+Unit/Name/MechanicalVikingAssaultModeEnemyHd=Механический «Викинг»
+Unit/Name/MechanicalWarHoundEnemyHd=Механический «Боевой пёс»
+Unit/Name/MechanicalWarhoundWeaponEnemyHd=Механический «Боевой пёс» – оружие
+Unit/Name/MissileTurretHd=Ракетная турель
+Unit/Name/MutaliskHd=Муталиск
+Unit/Name/NightmanHd=Найтмэн
+Unit/Name/PathTesterRadius02Hd=Проверка путей – радиус 0,2
+Unit/Name/PathTesterRadius05Hd=Проверка путей – радиус 0,5
+Unit/Name/PerfectSpecimenModHd=Совершенный образец
+Unit/Name/PhotonCannonHd=Фотонная пушка
+Unit/Name/PhotonCannonWeaponHd=Фотонная пушка – орудие
+Unit/Name/PirateCapitalShipHd=Флагманский корабль пиратов
+Unit/Name/PirateCapitalShipLeftLMWeaponHd=Флагманский корабль пиратов – левое орудие LM
+Unit/Name/PirateCapitalShipRightLMWeaponHd=Флагманский корабль пиратов – правое орудие LM
+Unit/Name/PlusSixModHd=Плюс шесть
+Unit/Name/PlusTwelveModHd=Плюс двенадцать
+Unit/Name/ProbeHd=Зонд
+Unit/Name/PunisherGrenadesLMWeaponEnemyHd=Гранаты «Каратель»
+Unit/Name/PunisherGrenadesLMWeaponHd=Гранаты «Каратель»
+Unit/Name/PurchaseFlagHd=Флаг покупок
+Unit/Name/PurchaseFlagPlacementTestHd=Флаг покупок – проверка размещения
+Unit/Name/RazorTalonsWeaponBossKerriganEnemyHd=Заточенные когти – оружие
+Unit/Name/ReaverHd=Опустошитель
+Unit/Name/RedOrbHolePuncherHd=Красная сфера
+Unit/Name/ResearchCenterProtossHd=Исследовательский центр
+Unit/Name/ResearchCenterTerranHd=Исследовательский центр
+Unit/Name/ResearchCenterZergHd=Исследовательский центр
+Unit/Name/RightHdDefendLocationBeacon=Правая часть
+Unit/Name/RoachHd=Таракан
+Unit/Name/SCVHd=КСМ
+Unit/Name/ScarabHd=Скарабей
+Unit/Name/ScarabWeaponHd=Скарабей – оружие
+Unit/Name/SeekerMissileNightmanHd=Ракета «Гончая»
+Unit/Name/SelendisHd=Селендис
+Unit/Name/SelendisInterceptorHd=Селендис – перехватчик
+Unit/Name/ShackledUltraliskHd=Закованный ультралиск
+Unit/Name/ShrineOfTheGodsHd=Святилище Богов
+Unit/Name/SiegeTankHd=Осадный танк
+Unit/Name/SiegeTankSiegedHd=Осадный танк
+Unit/Name/SimpleArmoredZealotHd=Простой бронированный зилот
+Unit/Name/SimpleBeefyRoachEnemyHd=Простой мясистый таракан
+Unit/Name/SimpleBossArchonEnemyHd=Простой босс архонт
+Unit/Name/SimpleQuickMarineEnemyHd=Простой быстрый морпех
+Unit/Name/SlowTicklerMarineTestHd=Медленный морпех-щекотун
+Unit/Name/SpineCrawlerHd=Ползучий плёточник
+Unit/Name/SpineCrawlerWeaponHd=Ползучий плёточник
+Unit/Name/StalkerHd=Сталкер
+Unit/Name/StalkerWeaponHd=Сталкер
+Unit/Name/StukovHd=Стуков
+Unit/Name/StukovWeaponHd=Стуков – оружие
+Unit/Name/SunkenColonyHd=Подземная колония
+Unit/Name/TalonsMissileWeaponArmoredQueenEnemyHd=Ракеты «Коготь»
+Unit/Name/TempestHd=«Ураган»
+Unit/Name/TempestWeaponGroundHd=Оружие «Урагана» (атака по земле)
+Unit/Name/ThorAAWeaponHd=ПВО «Тора»
+Unit/Name/ThorHd=«Тор»
+Unit/Name/TicklerMarineTestHd=Морпех-щекотун
+Unit/Name/TopHdDefendLocationBeacon=Верхняя часть
+Unit/Name/TopLeftHdDefendLocationBeacon=Левая верхняя часть
+Unit/Name/TopRightHdDefendLocationBeacon=Правая верхняя часть
+Unit/Name/UnitBeaconParentHd=Исходный маяк единицы
+Unit/Name/UnitHasShieldsModHd=Единица имеет щиты
+Unit/Name/UrsadonTestHd=Урсадон
+Unit/Name/WallProtossHd=Стена
+Unit/Name/WallTerranHd=Стена
+Unit/Name/WallZergHd=Стена
+Unit/Name/WasplingBurrowHd=Закопанный осинник
+Unit/Name/WasplingHd=Оса
+Unit/Name/WasplingWeaponHd=Оса – оружие
+Unit/Name/WeaklingEnemyHd=Слабое создание
+Unit/Name/WormyHd=Змея
+Unit/Name/WormySpitHd=Плевок змейки
+Unit/ShieldArmorName/ShieldArmor=Щит
+UnitKillRank/BossDehakaEnemyHd=вожак стаи изначальных зергов
+UnitKillRank/SelendisHd=верховный вершитель
+UnitSubtitle/BossDehakaEnemyHd=Вожак стаи изначальных зергов
+UnitSubtitle/StukovHd=Заражённый терран
+Upgrade/Name/BunkerTurretDamageHd=Урон турелей бункеров
+Upgrade/Name/ProtossStructureDamageHd=Урон строений протоссов
+Upgrade/Name/UnitDamageProtossHd=Урон единиц – протоссы
+Upgrade/Name/UnitDamageTerranHd=Урон единиц – терраны
+Upgrade/Name/UnitDamageZergHd=Урон единиц – зерги
+Upgrade/Name/ZergStructureDamageHd=Урон строений зергов
+Validator/IsNotBurrowedHd=Единица не может закопаться.
+Validator/IsNotSiegedHd=Единица не может перейти в режим осады.
+Variant001/Team/00=Защитники
+Weapon/Name/90mmCannonsHd=90-мм орудия
+Weapon/Name/AcidSalivaRoachHd=Кислотная слюна
+Weapon/Name/AcidSpinesArmoredQueenEnemyHd=Кислотные шипы
+Weapon/Name/AcidSporesGuardianHd=Кислотные споры
+Weapon/Name/AdeptHd=Энергетическая глефа чистильщиков
+Weapon/Name/ArcliteCannonMechanicalSiegeTankTankModeEnemyHd=Пушка «Радуга»
+Weapon/Name/ArmoredCutieWeaponEnemyHd=Оружие бронированной Квилли
+Weapon/Name/ArmoredQuillyMeleeEnemyHd=Ближний бой бронированной Квилли
+Weapon/Name/ArmoredQuillyRangedEnemyHd=Дальний бой бронированной Квилли
+Weapon/Name/ArtilleryTurretBunkerHd=Артиллерийская турель
+Weapon/Name/AtomicStormHd=Атомная буря
+Weapon/Name/AttackDroneBeamHd=Луч боевого дрона
+Weapon/Name/AttackDroneHd=Боевой дрон
+Weapon/Name/BaneBladesBossAlarakEnemyHd=Клинки погибели
+Weapon/Name/BigBoyCannonBeamHd=Луч орудия «Крепыш»
+Weapon/Name/BileBombBileLauncherHd=Споровая бомба
+Weapon/Name/C10CanisterRifleHd=Карабин C-10
+Weapon/Name/C10CanisterRifleLightGhostEnemyHd=Карабин C-10
+Weapon/Name/C14GaussRifleKillEverythingMarineTestHd=Винтовка Гаусса С-14
+Weapon/Name/C14GaussRifleSlowTicklerMarineTestHd=Винтовка Гаусса С-14
+Weapon/Name/C14GaussRifleTicklerMarineTestHd=Винтовка Гаусса С-14
+Weapon/Name/C20ACanisterRifleBiologicalKerriganEnemyHd=Карабин C-20A
+Weapon/Name/ClawsBiologicalUrsadonEnemyHd=Когти
+Weapon/Name/ClawsBossDehakaEnemyHd=Когти
+Weapon/Name/ClawsLightDroneEnemyHd=Когти
+Weapon/Name/ClusterRocketsPirateCapitalShipHd=Кассетные ракеты
+Weapon/Name/CrucioShockCannonInfestedSiegeTankHd=Осадная пушка «Круцио»
+Weapon/Name/CrucioShockCannonSiegeTankHd=Осадная пушка «Круцио»
+Weapon/Name/DutchBossGiantRorySwannEnemyHd=Голландец
+Weapon/Name/EnergyBlastKerriganHd=Энергетический удар
+Weapon/Name/EyeBeamsGroundBossStoneZealotEnemyHd=Лучи из глаз – наземная атака
+Weapon/Name/FirebatHd=Огнемёт «Погибель»
+Weapon/Name/FirebreathBossYagdraEnemyHd=Огненное дыхание
+Weapon/Name/FistBossGiantRorySwannEnemyHd=Кулак
+Weapon/Name/FrackingCloudHd=Облако гидроразрыва
+Weapon/Name/FusionCutterLightSCVEnemyHd=Терморезак
+Weapon/Name/GatlingCannonMechanicalVikingAssaultModeEnemyHd=Шестиствольный пулемёт
+Weapon/Name/GaussRifleMechanicalShikotoCoupeEnemyHd=Винтовка Гаусса
+Weapon/Name/GlaiveWurmHd=Чакрум
+Weapon/Name/GuassRifleHd=Винтовка Гаусса C-14
+Weapon/Name/GuassRifleInfestedTerranHd=Винтовка Гаусса
+Weapon/Name/GuassRifleLightInfestedTerranEnemyHd=Винтовка Гаусса
+Weapon/Name/GuassRifleMechanicalMilitarizedTransportEnemyHd=Винтовка Гаусса
+Weapon/Name/GuassRifleSimpleQuickMarineEnemyHd=Винтовка Гаусса
+Weapon/Name/H1FlashWelderArmoredHercEnemyHd=Сварочная установка H1
+Weapon/Name/HeavensStrikeShrineOfTheGodsHd=Удар небес
+Weapon/Name/HeavyTurretBunkerHd=Тяжёлая турель
+Weapon/Name/ImpalerTentacleHd=Бронебойное щупальце
+Weapon/Name/KaiserBladesArmoredPygaliskEnemyHd=Костяные клинки
+Weapon/Name/KaiserBladesBiologicalUltraliskEnemyHd=Костяные клинки
+Weapon/Name/KorhalPalaceTurretHd=Пушка корхальского дворца
+Weapon/Name/LiberatorAGWeaponHd=Орудие «Конкорд»
+Weapon/Name/LightLocustMeleeEnemyHd=Ближний бой лёгкого саранчида
+Weapon/Name/LightLocustRangedEnemyHd=Дальний бой лёгкого саранчида
+Weapon/Name/LightWarPigGaussRifleEnemyHd=Винтовка Гаусса
+Weapon/Name/LongboltMissileMissileTurretHd=Дальнобойные ракеты
+Weapon/Name/MeatyFistLightPrisonerEnemyHd=Мясистый кулак
+Weapon/Name/MechanicalWarhoundMeleeEnemyHd=Ближний бой механического «Боевого пса»
+Weapon/Name/MeleeBiologicalHydraliskEnemyHd=Ближний бой
+Weapon/Name/MeleeNeedleSpinesSimpleBeefyRoachEnemyHd=Костяные иглы ближнего боя
+Weapon/Name/MissileTurretBunkerHd=Ракетная турель
+Weapon/Name/NapalmSprayArmoredHellbatEnemyHd=Напалм
+Weapon/Name/NeedleClawsLightBroodlingEnemyHd=Острые когти
+Weapon/Name/NeedleSpinesBiologicalHydraliskEnemyHd=Костяные иглы
+Weapon/Name/NeedleSpinesHydraliskHd=Костяные иглы
+Weapon/Name/NightmanCannonHd=Пушка Найтмэна
+Weapon/Name/P38GuassPistolLightReaperEnemyHd=Пистолет Гаусса P-38
+Weapon/Name/ParticleBeamLightProbeEnemyHd=Нейтронный луч
+Weapon/Name/ParticleDisruptorsArmoredStalkerEnemyHd=Нейтронные расщепители
+Weapon/Name/ParticleDisruptorsHd=Нейтронные расщепители
+Weapon/Name/PeaceKeepersBossEradicatorEnemyHd=Хранители мира
+Weapon/Name/PhaseDisruptorArmoredDragoonEnemyHd=Фазовый расщепитель
+Weapon/Name/PhaseDisruptorsArmoredImmortalEnemyHd=Фазовый расщепитель
+Weapon/Name/PhaseDisruptorsHd=Фазовый расщепитель
+Weapon/Name/PhotonCannonHd=Фотонная пушка
+Weapon/Name/PsiBladesArmoredZealotEnemyHd=Пси-клинки
+Weapon/Name/PsiBladesSimpleArmoredZealotEnemyHd=Пси-клинки
+Weapon/Name/PsiBlastBossHybridDominatorEnemyHd=Пси-взрыв
+Weapon/Name/PsiBlastBossKerriganEnemyHd=Пси-взрыв
+Weapon/Name/PsionicShockwaveHd=Псионная ударная волна
+Weapon/Name/PsionicShockwaveSimpleBossArchonHd=Псионная ударная волна
+Weapon/Name/PunisherGrenadesArmoredMarauderEnemyHd=Гранаты «Каратель»
+Weapon/Name/PunisherGrenadesHd=Гранаты «Каратель»
+Weapon/Name/PurifierGlaiveCannonLightAdeptEnemyHd=Энергетическая глефа чистильщиков
+Weapon/Name/PustulantSmashBiologicalAberrationEnemyHd=Заражающий удар
+Weapon/Name/RailgunMechanicalWarhoundEnemyHd=Электромагнитная пушка
+Weapon/Name/RangedAcidSalivaSimpleBeefyRoachEnemyHd=Дальнобойная кислотная слюна
+Weapon/Name/RavagerWeaponBiologicalRavagerEnemyHd=Выброс плазмы
+Weapon/Name/RazorTalonsBossKerriganEnemyHd=Заточенные когти
+Weapon/Name/RedOrbHolePuncherHd=Красная сфера
+Weapon/Name/ScarabsReaverHd=Скарабеи
+Weapon/Name/SelendisInterceptorBeamHd=Луч перехватчика Селендис
+Weapon/Name/SelendisInterceptorsHd=Перехватчики Селендис
+Weapon/Name/SelendisWeaponHd=Селендис – оружие
+Weapon/Name/ShrikeTurretBunkerHd=Турель «Шрайк»
+Weapon/Name/SpinesLurkerHd=Шипы
+Weapon/Name/SpinesWasplingHd=Шипы
+Weapon/Name/StukovWeaponHd=Стуков – оружие
+Weapon/Name/SubterraneanTentacleSunkenColonyHd=Подземное щупальце
+Weapon/Name/SummonBoulderShackledUltraliskHd=Вызов валуна
+Weapon/Name/TalonsArmoredQueenEnemyHd=Когти
+Weapon/Name/TalonsMissileArmoredQueenEnemyHd=Ракеты «Коготь»
+Weapon/Name/TempestGroundHd=Резонансная петля
+Weapon/Name/ThermalLancesHd=Термальный луч
+Weapon/Name/ThorsHammerHd=«Молот Тора»
+Weapon/Name/TwinAutocannonsMechanicalGoliathEnemyHd=Спаренные автоматические пушки
+Weapon/Name/TyphoonMissilePodArmoredCycloneEnemyHd=Ракетный модуль «Тайфун»
+Weapon/Name/VolatileProjectionBiologicalRavasaurEnemyHd=Кислотный обстрел
+Weapon/Name/WasplingHd=Оса
+Weapon/Name/WeaklingClawsHd=Когти слабого создания
+Weapon/Name/WormySpitHd=Плевок змейки
+Weapon/Tip/90mmCannonsHd=Атака улучшается на <c val="00E35B">3</c> ед.
+Weapon/Tip/AcidSalivaRoachHd=Атака улучшается на <c val="00E35B">2,5</c> ед.
+Weapon/Tip/AcidSpinesArmoredQueenEnemyHd=
+Weapon/Tip/AcidSporesGuardianHd=Атака улучшается на <c val="00E35B">4</c> ед.
+Weapon/Tip/AdeptHd=Атака улучшается на <c val="00E35B">1</c> ед.
+Weapon/Tip/ArtilleryTurretBunkerHd=Атака улучшается на <c val="00E35B">2</c> ед.<n/><c val="F1FF71">Атака поражает несколько врагов.</c>
+Weapon/Tip/AtomicStormHd=Атака улучшается на <c val="00E35B">3,5</c> ед.<n/><c val="F1FF71">Атака поражает до 4 врагов.</c>
+Weapon/Tip/AttackDroneBeamHd=
+Weapon/Tip/AttackDroneHd=Атака улучшается на <c val="00E35B">2,5</c>
+Weapon/Tip/BigBoyCannonBeamHd=Атака улучшается на <c val="00E35B">2</c> ед.<n/><c val="F1FF71">Атака поражает несколько врагов.</c>
+Weapon/Tip/BileBombBileLauncherHd=Атака улучшается на <c val="00E35B">2</c> ед.<n/><c val="F1FF71">Атака поражает несколько врагов.</c>
+Weapon/Tip/C10CanisterRifleHd=Атака улучшается на <c val="00E35B">3</c> ед.
+Weapon/Tip/ClusterRocketsPirateCapitalShipHd=Атака улучшается на <c val="00E35B">2,5</c> ед.<n/><c val="F1FF71">Атака поражает несколько врагов.</c>
+Weapon/Tip/CrucioShockCannonInfestedSiegeTankHd=Атака улучшается на <c val="00E35B">2</c> ед.<n/><c val="F1FF71">Поражает несколько врагов.</c>
+Weapon/Tip/CrucioShockCannonSiegeTankHd=Атака улучшается на <c val="00E35B">2</c> ед.<n/><c val="F1FF71">Поражает несколько врагов.</c>
+Weapon/Tip/EnergyBlastKerriganHd=Атака улучшается на <c val="00E35B">2,5</c> ед.<n/><c val="F1FF71">Атака поражает несколько врагов.</c>
+Weapon/Tip/FirebatHd=Атака улучшается на <c val="00E35B">1,5</c> ед.<n/><c val="F1FF71">Поражает несколько врагов.</c>
+Weapon/Tip/FrackingCloudHd=Атака улучшается на <c val="00E35B">3,5</c> ед.<n/><c val="F1FF71">Атака поражает до 4 врагов.</c>
+Weapon/Tip/GlaiveWurmHd=Атака улучшается на <c val="00E35B">3</c> ед.<n/><c val="F1FF71">Поражает несколько врагов.</c>
+Weapon/Tip/GuassRifleHd=Атака улучшается на <c val="00E35B">1</c> ед.
+Weapon/Tip/GuassRifleInfestedTerranHd=Атака улучшается на <c val="00E35B">1</c> ед.
+Weapon/Tip/HeavensStrikeShrineOfTheGodsHd=Атака улучшается на <c val="00E35B">7</c> ед.
+Weapon/Tip/HeavyTurretBunkerHd=Атака улучшается на <c val="00E35B">2,5</c> ед.
+Weapon/Tip/ImpalerTentacleHd=Атака улучшается на <c val="00E35B">1</c> ед.
+Weapon/Tip/KorhalPalaceTurretHd=Атака улучшается на <c val="00E35B">7</c> ед.
+Weapon/Tip/LiberatorAGWeaponHd=Атака улучшается на <c val="00E35B">5</c> ед.
+Weapon/Tip/MissileTurretBunkerHd=Атака улучшается на <c val="00E35B">4</c> ед.
+Weapon/Tip/NeedleSpinesHydraliskHd=Атака улучшается на <c val="00E35B">2</c> ед.
+Weapon/Tip/NightmanCannonHd=Атака улучшается на <c val="00E35B">5</c> ед.
+Weapon/Tip/ParticleDisruptorsHd=Атака улучшается на <c val="00E35B">2</c> ед.
+Weapon/Tip/PhaseDisruptorsHd=Атака улучшается на <c val="00E35B">3</c> ед.
+Weapon/Tip/PhotonCannonHd=Атака улучшается на <c val="00E35B">1</c> ед.
+Weapon/Tip/PsiBlastDaymanHd=Атака улучшается на <c val="00E35B">5</c> ед.
+Weapon/Tip/PsionicShockwaveHd=Атака улучшается на <c val="00E35B">1</c> ед.<n/><c val="F1FF71">Поражает несколько врагов.</c>
+Weapon/Tip/PunisherGrenadesHd=Атака улучшается на <c val="00E35B">2,5</c> ед.
+Weapon/Tip/RedOrbHolePuncherHd=Атака улучшается на <c val="00E35B">4</c> ед.
+Weapon/Tip/ScarabsReaverHd=Атака улучшается на <c val="00E35B">2</c> ед.<n/><c val="F1FF71">Поражает несколько врагов.</c>
+Weapon/Tip/SelendisInterceptorsHd=Атака улучшается на <c val="00E35B">2,5</c> ед.
+Weapon/Tip/ShrikeTurretBunkerHd=Атака улучшается на <c val="00E35B">1</c> ед.
+Weapon/Tip/SpinesLurkerHd=Атака улучшается на <c val="00E35B">1,5</c> ед.<n/><c val="F1FF71">Поражает несколько врагов.</c>
+Weapon/Tip/StukovWeaponHd=Атака улучшается на <c val="00E35B">5</c> ед.
+Weapon/Tip/SubterraneanTentacleSunkenColonyHd=Атака улучшается на <c val="00E35B">4</c> ед.
+Weapon/Tip/SummonBoulderShackledUltraliskHd=Атака улучшается на <c val="00E35B">3,5</c> ед.<n/><c val="F1FF71">Атака поражает до 4 врагов.</c>
+Weapon/Tip/TalonsArmoredQueenEnemyHd=
+Weapon/Tip/TempestGroundHd=Атака улучшается на <c val="00E35B">4</c> ед.
+Weapon/Tip/ThermalLancesHd=Атака улучшается на <c val="00E35B">1,5</c> ед.<n/><c val="F1FF71">Поражает несколько врагов.</c>
+Weapon/Tip/ThorsHammerHd=Атака улучшается на <c val="00E35B">3</c> ед.
+Weapon/Tip/WasplingHd=Атака улучшается на <c val="00E35B">2,5</c> ед.
+Weapon/Tip/WormySpitHd=Атака улучшается на <c val="00E35B">7</c> ед.
+testing=тестирует
