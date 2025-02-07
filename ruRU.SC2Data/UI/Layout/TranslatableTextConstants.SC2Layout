@@ -60,6 +60,7 @@
     – добавлены недостающие тексты кнопок. &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
   "/>
   <Constant name="HDLoadingScreen_AuthorNameBottom" val="Автор: Nesbano0s"/>
+  <Constant name="HDLoadingScreen_RussianTranslationByBottom" val="Перевод на русский: Berry"/>
   <!-- General (used in many places) -->
   <Constant name="HDGeneral_CopyText" val="Копировать Discord-ссылку!"/>
   <Constant name="HDGeneral_URLGet" val="Ссылка скопирована в буфер обмена!"/>
