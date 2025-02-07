@@ -55,6 +55,7 @@
     - add missing button texts &lt;n/&gt;&lt;s/&gt;&lt;s/&gt;
   "/>
   <Constant name="HDLoadingScreen_AuthorNameBottom" val="By: Nesbano0s"/>
+  <Constant name="HDLoadingScreen_RussianTranslationByBottom" val="Russian translation by: Berry"/>
   <!-- General (used in many places) -->
   <Constant name="HDGeneral_CopyText" val="Click to copy the discord link !"/>
   <Constant name="HDGeneral_URLGet" val="Link copied to clipboard!"/>
